@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // sokoban.cpp : Defines the entry point for the console application.
 //
 
@@ -72,13 +72,3 @@ int main()
 	return 0;
     
 }
-
-=======
-#include <stdio.h>
-
-int main (void)
-{
-    printf ("Hello, world!\n");
-    return 0;
-}
->>>>>>> 2be62ffa3e91d1ee3f371b4836219e4043499c9f
