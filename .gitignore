@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Ignore everything
 !*/
 !.gitignore
@@ -15,3 +16,38 @@ src/sokoban.vcxproj.filters
 src/stdafx.cpp
 src/stdafx.h
 src/targetver.h
+=======
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+>>>>>>> 2be62ffa3e91d1ee3f371b4836219e4043499c9f
