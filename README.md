@@ -10,7 +10,15 @@ Subdirectory | Description
 src/         | source files 
 src/tests    | unit tests 
 doc/         | documentation 
-res/         | static resources
+res/         | static resources
+### Structure
+* Main - menu module 
+* Level - level drawer, game-play handler
+* Generator - level generator, which returns 2-dimensional 
+* MemoryWorker - manager of continous memory, based on JSON
+### Dependencies 
+* Allegro Framework [Refer to allegro ](http://liballeg.org/)
+* JSON-library
 
 ### Build
 To build the project, do the following:
