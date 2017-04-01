@@ -1,0 +1,17 @@
+# Ignore everything
+!*/
+!.gitignore
+
+src/packages/
+!*.c
+src/Debug/
+src/.vs/sokoban/v14/.suo
+src/ReadMe.txt
+src/packages.config
+src/sokoban.VC.db
+src/sokoban.sln
+src/sokoban.vcxproj
+src/sokoban.vcxproj.filters
+src/stdafx.cpp
+src/stdafx.h
+src/targetver.h
