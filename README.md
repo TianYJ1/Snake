@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # sokoban
 =======
 # Sokoban-project
@@ -38,4 +37,4 @@ make clean
 * **Ryabota Igor** - x@x.ru
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
->>>>>>> 2be62ffa3e91d1ee3f371b4836219e4043499c9f
+
