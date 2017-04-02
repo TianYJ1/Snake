@@ -57,6 +57,7 @@ void setNewScreen()
 }
 void initVars()
 {
+	srand(time(NULL));
 	AllegroFont = al_create_builtin_font();
 	font  = al_load_ttf_font("SansPosterBold.ttf", 24, 0);
 
