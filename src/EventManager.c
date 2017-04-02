@@ -12,10 +12,14 @@ int onKeyUp(int key)
 	switch (key)
 	{
 		case ALLEGRO_KEY_ESCAPE:
-			if (SCENE_NOW == 0)
+			if (SCENE_NOW == MAINMENU_SCENE)
 				EventManagerThreadRunning = false;
-			else
+			else if (SCENE_NOW == LEVEL_SELECT_SCENE)
 				changeScene(SCENE_NOW - 1);
+			else if (SCENE_NOW == LEVEL_SCENE_PAUSE)
+				onResume(0);
+			else if (SCENE_NOW == LEVEL_SCENE)
+				onPause(0);
 			return 1;
 		break;
 		case ALLEGRO_KEY_D:
@@ -86,6 +90,14 @@ int initEventManager()
 			break;
 			case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
 				onMouseClick(Event.mouse.x, Event.mouse.y);
+			break;
+			case ALLEGRO_EVENT_DISPLAY_CLOSE:
+				EventManagerThreadRunning = false;
+			break;
+			case ALLEGRO_EVENT_DISPLAY_RESIZE:
+				
+				setNewScreen();
+				
 			break;
 		}
 		

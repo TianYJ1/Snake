@@ -1,38 +1,54 @@
 #include "LibraryMerger.h"
-#define SRPITES_AMOUNT 256
+
 ALLEGRO_BITMAP * sprites[SRPITES_AMOUNT] = { 0 };
 int spritesScene[SRPITES_AMOUNT] = { 0 };
 int spritesLayer[SRPITES_AMOUNT] = { 0 };
+int spritesEmpty[SRPITES_AMOUNT] = { 0 };
 float spritePos[SRPITES_AMOUNT][2] = { 0 };
 float spriteSize[SRPITES_AMOUNT][2] = { 0 };
 int spritesCount = 0;
 int addSprite(char * src, int x, int y, int w, int h, int scene, int layer)
 {
 	//al_set_path_filename(path, src);
-	sprites[spritesCount] = al_load_bitmap(src);
-	if (sprites[spritesCount] == NULL)
+	ALLEGRO_BITMAP * bmp = al_load_bitmap(src);
+	if (bmp == NULL)
 	{
 		printf("ERROR Loading sprite %s:No file\n", src);
 		return -1;
 	}
-	spritePos[spritesCount][0] = x; spritePos[spritesCount][1] = y;
-	spriteSize[spritesCount][0] = w; spriteSize[spritesCount][1] = h;
-	spritesScene[spritesCount] = scene;
-	spritesLayer[spritesCount] = layer;
+	int empty = addSpriteBmp(bmp,x,y,w,h,scene,layer);
 	printf("Added sprite name:%s\n", src);
-	spritesCount++;
 	renderScreen();
-	return spritesCount - 1;
+	return empty;
 }
 int addSpriteBmp(ALLEGRO_BITMAP * src, int x, int y, int w, int h, int scene, int layer)
 {
-	sprites[spritesCount] = src;
-	spritePos[spritesCount][0] = x; spritePos[spritesCount][1] = y;
-	spriteSize[spritesCount][0] = w; spriteSize[spritesCount][1] = h;
-	spritesCount++;
-	spritesLayer[spritesCount] = layer;
+	int empty = -1;
+	if (spritesCount > 5)
+	{
+		for (int i = 0; i < spritesCount; i++)
+		{
+			if (spritesEmpty[i] == 1)
+			{
+				empty = i;
+				break;
+			}
+		}
+
+	}
+	if (empty == -1)
+	{
+		empty = (spritesCount++);
+		
+	}
+	spritesEmpty[empty] = 0;
+	sprites[empty] = src;
+	spritePos[empty][0] = x; spritePos[empty][1] = y;
+	spriteSize[empty][0] = w; spriteSize[empty][1] = h;
+	spritesLayer[empty] = layer;
+	spritesScene[empty] = scene;
 	renderScreen();
-	return spritesCount - 1;
+	return empty;
 }
 void renderSprites(int layer)
 {
@@ -60,4 +76,36 @@ int moveSprite(int spriteId, int x, int y)
 		return 0;
 	}
 	else return -1;
+}
+void recalcSprites(float hC, float vC)
+{
+	for (int i = spritesCount - 1; i >= 0; i--)
+	{
+		spritePos[i][0] *= hC; spritePos[i][1] *= vC;
+		spriteSize[i][0] *= hC; spriteSize[i][1] *= vC;
+	}
+}
+void clearSpritesScene(int scene)
+{
+	for (int i = spritesCount - 1; i >=0; i--)
+	{
+		if (spritesEmpty[i] == 0 && spritesScene[i] == scene)
+			spritesEmpty[i] = 1;
+	}
+}
+void clearSpritesLayer(int layer)
+{
+	for (int i = spritesCount - 1; i >=0; i--)
+	{
+		if (spritesEmpty[i] == 0 && spritesLayer[i] == layer)
+			spritesEmpty[i] = 1;
+	}
+}
+void clearSprites(int scene, int layer)
+{
+	for (int i = spritesCount - 1; i >=0; i--)
+	{
+		if (spritesEmpty[i] == 0 && spritesLayer[i] == layer && spritesScene[i] == scene)
+			spritesEmpty[i] = 1;
+	}
 }

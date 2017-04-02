@@ -1,10 +1,9 @@
 #include "LibraryMerger.h"
-
-#define BUTTONS_COUNT 256
 char * buttonsTexts[BUTTONS_COUNT] = { 0 };
 int spritesId[BUTTONS_COUNT] = { -1 };
 int buttonsId[BUTTONS_COUNT] = { 0 };
 int buttonsScene[BUTTONS_COUNT] = { 0 };
+int buttonsEmpty[BUTTONS_COUNT] = { -1 };
 int (*callBacks[BUTTONS_COUNT])(int id) = {0};
 float buttonsPos[BUTTONS_COUNT][2] = { 0 };
 float buttonsSize[BUTTONS_COUNT][2] = { 0 };
@@ -15,13 +14,13 @@ void renderButtonsSc()
 {
 	for (int i = 0; i < buttonScount; i++)
 	{
-		if (buttonsScene[i] == SCENE_NOW || buttonsScene[i] == -1)
+		if (buttonsEmpty[i]== 0 && (buttonsScene[i] == SCENE_NOW || buttonsScene[i] == -1))
 		{
 			ALLEGRO_COLOR color = al_map_rgb(buttonsColorsRGB[i][0], buttonsColorsRGB[i][1], buttonsColorsRGB[i][2]);
 			if(spritesId[i] == -1)
 				al_draw_rounded_rectangle(buttonsPos[i][0], buttonsPos[i][1], buttonsPos[i][0]+buttonsSize[i][0], buttonsPos[i][1]+buttonsSize[i][1], 5, 5, color, 5);
-			int textX = (2 * buttonsPos[i][0] + buttonsSize[i][0]) / 2, textY = (2 * buttonsPos[i][1] + buttonsSize[i][1]) / 2;
-			al_draw_textf(AllegroFont, color, textX, textY, ALLEGRO_ALIGN_CENTER, "%s", buttonsTexts[i]);
+			int textX = buttonsPos[i][0] + buttonsSize[i][0] / 2, textY = buttonsPos[i][1] + buttonsSize[i][1] / 3;
+			al_draw_textf(font, color, textX, textY, ALLEGRO_ALIGN_CENTER, "%s", buttonsTexts[i]);
 		}
 	}
 	
@@ -35,36 +34,50 @@ void initButtons()
 }
 int addButton(char * text, float x, float y, float w, float h, int red, int blue, int green, int(*callback)(int), int scene, int buttonId)
 {
-	buttonsColorsRGB[buttonScount][0] = red; buttonsColorsRGB[buttonScount][1] = blue; buttonsColorsRGB[buttonScount][2] = green;
-	buttonsPos[buttonScount][0] = x; buttonsPos[buttonScount][1] = y;
-	buttonsSize[buttonScount][0] = w; buttonsSize[buttonScount][1] = h;
-	buttonsScene[buttonScount] = scene;
-	buttonsTexts[buttonScount] = text;
-	buttonsId[buttonScount] = buttonId;
-	callBacks[buttonScount] = callback;
-	spritesId[buttonScount] = -1;
-	buttonScount++;
+	int empty = -1;
+	if (buttonScount > 5)
+	{
+		for (int i = 0; i < buttonScount; i++)
+		{
+			if (buttonsEmpty[i] == 1)
+			{
+				empty = i;
+				break;
+			}
+		}
+		
+	}
+	if (empty == -1)
+	{
+		empty = (buttonScount++);
+		
+	}
+	buttonsEmpty[empty] = 0;
+	buttonsColorsRGB[empty][0] = red; buttonsColorsRGB[empty][1] = blue; buttonsColorsRGB[empty][2] = green;
+	buttonsPos[empty][0] = x; buttonsPos[empty][1] = y;
+	buttonsSize[empty][0] = w; buttonsSize[empty][1] = h;
+	buttonsScene[empty] = scene;
+	buttonsTexts[empty] = text;
+	buttonsId[empty] = buttonId;
+	callBacks[empty] = callback;
+	spritesId[empty] = -1;
 	renderScreen();
 	if (buttonScount < BUTTONS_COUNT)
-		return buttonScount;
+		return empty;
 	else
 		return -1;//maxium amount of buttons is reached!
 }
 
 int addButtonSprite(char * src, char * text, float x, float y, float w, float h, int red, int blue, int green, int(*callback)(int), int scene, int buttonId, int layer)
 {
-	buttonsColorsRGB[buttonScount][0] = red; buttonsColorsRGB[buttonScount][1] = blue; buttonsColorsRGB[buttonScount][2] = green;
-	buttonsPos[buttonScount][0] = x; buttonsPos[buttonScount][1] = y;
-	buttonsSize[buttonScount][0] = w; buttonsSize[buttonScount][1] = h;
-	buttonsScene[buttonScount] = scene;
-	buttonsTexts[buttonScount] = text;
-	spritesId[buttonScount] = addSprite(src, x, y, w, h, scene, layer);
-	buttonsId[buttonScount] = buttonId;
-	callBacks[buttonScount] = callback;
-	buttonScount++;
+	int empty = addButton(text,x,y,w,h,red,blue,green,callback,scene,buttonId);
+	if(strlen(src) >0)
+		spritesId[empty] = addSprite(src, x, y, w, h, scene, layer);
+	else
+		spritesId[empty] = -2;
 	renderScreen();
 	if (buttonScount < BUTTONS_COUNT)
-		return buttonScount;
+		return empty;
 	else
 		return -1;//maxium amount of buttons is reached!
 }
@@ -84,28 +97,55 @@ int detectButtons(float x, float y)
 		detectedButton = (*callBacks[detectedButton]) (buttonsId[detectedButton]);
 	return detectedButton;
 }
-void makeList(int count, char **names, int x, int y, int w, int h, int(*callBacks[])(int id), int scene)
+void makeList(int count, char names[][BUTTONS_NAME_SIZE], int x, int y, int w, int h, int(*callBacks[])(int id), int scene)
 {
 	for (int i = 0; i < count; i++)
 		addButton(names[i], x, y+h*i, w, h, 255, 255, 255, (*callBacks[i]), scene, i);
 	renderScreen();
 }
 
-void makeListSprites(int count, char **names, char * src, int x, int y, int w, int h, int(*callBacks[])(int id), int scene, int layer)
+void makeListSprites(int count, char names[][BUTTONS_NAME_SIZE], char * src, int x, int y, int w, int h, int(*callBacks[])(int id), int scene, int layer)
 {
 	for (int i = 0; i < count; i++)
-		addButtonSprite(src, names[i], x, y + h*i+15, w, h, 255, 255, 255, (*callBacks[i]), scene, i, layer);
+		addButtonSprite(src, names[i], x, y + (h + 15)*i, w, h, 255, 255, 255, (*callBacks[i]), scene, i, layer);
 	renderScreen();
 }
-void makeGrid(int rows, int colums, char **names, int x, int y, int w, int h, int(*callBacks[])(int id), int scene)
+void makeGrid(int count, int colums, char names[][BUTTONS_NAME_SIZE], int x, int y, int w, int h, int(*callBacks[])(int id), int scene)
 {
-	for (int i = 0; i < rows*colums; i++)
-		addButton(names[i], x+w*(i%colums), y + h*(i/rows), w, h, 255, 255, 255, (*callBacks[i]), scene, i);
+	int rows = ceil(count / colums);
+	for (int i = 0; i < count; i++)
+	{
+		if (names[i] != NULL)
+			addButton(names[i], x + w*(i%colums), y + h*(i / rows), w, h, 255, 255, 255, (*callBacks[i]), scene, i);
+	}
 	renderScreen();
 }
-void makeGridSprites(int rows, int colums, char **names, char * src, int x, int y, int w, int h, int(*callBacks[])(int id), int scene, int layer)
+void makeGridSprites(int count, int colums, char names[][BUTTONS_NAME_SIZE], char * src, int x, int y, int w, int h, int(*callBacks[])(int id), int scene, int layer)
 {
-	for (int i = 0; i < rows*colums; i++)
-		addButtonSprite(src, names[i], x + w*(i%colums), y + h*(i / rows), w, h, 255, 255, 255, (*callBacks[i]), scene, i, layer);
+	int rows = ceil(count / colums);
+	for (int i = 0; i < count; i++)
+		addButtonSprite(src, names[i], x + (w+15)*(i%colums), y + (15+h)*(i /rows), w, h, 255, 255, 255, (*callBacks[i]), scene, i, layer);
+
 	renderScreen();
+}
+void recalcButtons(float hC, float vC)
+{
+	for (int i = buttonScount - 1; i >= 0; i--)
+	{
+		buttonsPos[i][0] *= hC; buttonsPos[i][1] *= vC;
+		buttonsSize[i][0] *= hC; buttonsSize[i][1] *= vC;
+	}
+	renderButtonsSc();
+}
+void clearButtons(int scene)
+{
+	for (int i = buttonScount-1; i >0 ; i--)
+	{
+		if (buttonsEmpty[i] == 0 && buttonsScene[i] == scene)
+		{
+			buttonsEmpty[i] = 1;
+			if (spritesId[i] != -1)
+				clearSpritesScene(scene);
+		}
+	}
 }
