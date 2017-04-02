@@ -1,7 +1,4 @@
 #include "LibraryMerger.h"
-extern int SCENE_NOW;
-extern int EventManagerThreadRunning;
-extern ALLEGRO_DISPLAY* display;
 int onKeyDown(int key)
 {
 	return 0;
@@ -12,16 +9,35 @@ int onKeyPressed(int key)
 }
 int onKeyUp(int key)
 {
-	if (key == ALLEGRO_KEY_ESCAPE)
+	switch (key)
 	{
-		if (SCENE_NOW == 0)
-			EventManagerThreadRunning = false;
-		else
-			changeScene(SCENE_NOW - 1);
-		return 1;
+		case ALLEGRO_KEY_ESCAPE:
+			if (SCENE_NOW == 0)
+				EventManagerThreadRunning = false;
+			else
+				changeScene(SCENE_NOW - 1);
+			return 1;
+		break;
+		case ALLEGRO_KEY_D:
+		case ALLEGRO_KEY_RIGHT:
+			movePlayer(0, 1);
+		break;
+		case ALLEGRO_KEY_A:
+		case ALLEGRO_KEY_LEFT:
+			movePlayer(0, -1);
+			break;
+		case ALLEGRO_KEY_W:
+		case ALLEGRO_KEY_UP:
+			movePlayer(1, 0);
+			break;
+		case ALLEGRO_KEY_S:
+		case ALLEGRO_KEY_DOWN:
+			movePlayer(-1, 0);
+			break;
+		default:
+			return 0;
+		break;
 	}
-	else
-		return 0;
 }
 int onMouseClick(float x, float y)
 {

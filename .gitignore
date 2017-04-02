@@ -1,11 +1,9 @@
-<<<<<<< HEAD
 # Ignore everything
 !*/
 !.gitignore
 
 src/packages/
 !*.c
-src/Debug/
 src/.vs/sokoban/v14/.suo
 src/ReadMe.txt
 src/packages.config
@@ -16,7 +14,7 @@ src/sokoban.vcxproj.filters
 src/stdafx.cpp
 src/stdafx.h
 src/targetver.h
-=======
+
 # Object files
 *.o
 *.ko
@@ -50,5 +48,10 @@ src/targetver.h
 # Debug files
 *.dSYM/
 *.su
->>>>>>> 2be62ffa3e91d1ee3f371b4836219e4043499c9f
 src/sokoban.VC.VC.opendb
+src/res/Button.png
+!src/Debug/res/*
+*.ilk
+*.tlog
+*.pdb
+*.idb
