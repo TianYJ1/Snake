@@ -18,6 +18,13 @@ res/         | static resources
 * MemoryWorker - manager of continous memory, based on JSON
 ### Dependencies 
 * Allegro Framework [Refer to allegro ](http://liballeg.org/)
+	Addons using:
+	* Font addon
+	* Image addon
+	* TTF font addon
+	* Dialog addon
+	* Color addon
+	* Primitives addon
 * JSON-library
 
 ### Build
