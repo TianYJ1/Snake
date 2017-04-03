@@ -17,6 +17,8 @@ int onPause(int id)
 	//clearButtons(LEVEL_SCENE);
 	addButtonSprite("Button_exit.png", "", SCREEN_WIDTH_UNIT * 1100, SCREEN_HEIGHT_UNIT * 1000, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*onExit), LEVEL_SCENE_PAUSE, 0, 0);
 	addButtonSprite("Button_play.png", "", SCREEN_WIDTH_UNIT * 900, SCREEN_HEIGHT_UNIT * 1000, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*onResume), LEVEL_SCENE_PAUSE, 0, 0);
+	renderScreen();
+
 	return 1;
 }
 int onExit(int id)
@@ -24,13 +26,27 @@ int onExit(int id)
 	changeScene(MAINMENU_SCENE);
 	clearButtons(LEVEL_SCENE);
 	clearButtons(LEVEL_SCENE_PAUSE);
+	renderScreen();
 	return 1;
 }
 int onResume(int id)
 {
 	clearButtons(LEVEL_SCENE_PAUSE);
 	changeScene(LEVEL_SCENE);
+	renderScreen();
 	return 1;
+}
+char seed[SEED_LENTGH * 8] = { 0 };
+int regen(int id)
+{
+	clearSprites(LEVEL_SCENE, 2);
+	memset(seed, 0, SEED_LENTGH * 8);
+	generateSeed(&seed);
+	
+	addButtonSprite("", seed, SCREEN_WIDTH_UNIT * 500, SCREEN_HEIGHT_UNIT * 1700, SCREEN_WIDTH_UNIT * 800, 150, 255, 255, 255, NULL, LEVEL_SCENE, 0, 0);
+	generate(map, &seed);
+	renderMap();
+	renderScreen();
 }
 /*
 1 A-Z //rooms sizes
@@ -42,16 +58,18 @@ int onResume(int id)
 7 0-9
 8 0-9 //postion y
 */
-char seed[SEED_LENTGH * 8] = { 0 };
+
 
 
 void onLevelOpened(int levelId)
 {
-	playerSpriteId = addSprite("Level/Player/Character1.png", SCREEN_WIDTH_UNIT * MAP_OFFSET, SCREEN_WIDTH_UNIT *MAP_OFFSET, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, SCENE_NOW, 3);
+	playerSpriteId = addSprite("Level/Player/Character1.png", SCREEN_WIDTH_UNIT* MAP_OFFSET, SCREEN_WIDTH_UNIT *MAP_OFFSET, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, SCENE_NOW, 3);
 	generateSeed(&seed);
 	generate(map, &seed);
 	renderMap();
+	addButtonSprite("btntile.png", "Regen", SCREEN_WIDTH_UNIT*1500, 0, SCREEN_WIDTH_UNIT * 200, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*regen), LEVEL_SCENE, 0, 0);
 	addButtonSprite("Button_pause.png","", 0, 0, SCREEN_WIDTH_UNIT*100, SCREEN_WIDTH_UNIT*100, 255, 255, 255, (*onPause),LEVEL_SCENE, 0, 0);
+	renderScreen();
 }
 void renderMap()
 {
@@ -59,7 +77,7 @@ void renderMap()
 	{
 		for (int q = 0; q < LEVEL_HEIGHT; q++)
 		{
-			int x = i*TILE_SIZE*SCREEN_WIDTH_UNIT + SCREEN_WIDTH_UNIT *MAP_OFFSET, y = q*TILE_SIZE*SCREEN_WIDTH_UNIT + SCREEN_WIDTH_UNIT * MAP_OFFSET;
+			int x = i*(TILE_SIZE-2)*SCREEN_WIDTH_UNIT + SCREEN_WIDTH_UNIT *MAP_OFFSET, y = q*(TILE_SIZE-2)*SCREEN_WIDTH_UNIT + SCREEN_WIDTH_UNIT * MAP_OFFSET;
 			switch (map[i][q])
 			{
 				case 0:
@@ -72,14 +90,16 @@ void renderMap()
 		}
 	}
 }
+int x = 0, y = 0;
 void movePlayer(int up, int right)
 {
-	if (up == 1)
-		moveSprite(playerSpriteId, 0, -TILE_SIZE*SCREEN_WIDTH_UNIT);
-	if (up == -1)
-		moveSprite(playerSpriteId, 0, TILE_SIZE*SCREEN_WIDTH_UNIT);
-	if (right == 1)
-		moveSprite(playerSpriteId, TILE_SIZE*SCREEN_WIDTH_UNIT, 0);
-	if (right == -1)
-		moveSprite(playerSpriteId, -TILE_SIZE*SCREEN_WIDTH_UNIT, 0);
+	if (up == 1 && y>0)
+		y--;
+	if (up == -1 && y < (LEVEL_HEIGHT-1))
+		y++;
+	if (right == 1 && x < (LEVEL_WIDTH-1))
+		x++;
+	if (right == -1 && x>0)
+		x--;
+	moveSpriteTo(playerSpriteId, (TILE_SIZE-2)*SCREEN_WIDTH_UNIT*x + SCREEN_WIDTH_UNIT* MAP_OFFSET, (TILE_SIZE-2)*SCREEN_WIDTH_UNIT*y+ SCREEN_WIDTH_UNIT* MAP_OFFSET);
 }

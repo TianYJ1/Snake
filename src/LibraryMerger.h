@@ -3,6 +3,12 @@
 #include <math.h>
 #include <time.h>
 #include <stdlib.h>
+#include <stdarg.h>
+#if     _WIN32_WINNT < 0x0500
+#undef  _WIN32_WINNT
+#define _WIN32_WINNT   0x0500
+#endif
+#include <windows.h>
 
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_font.h>
@@ -18,11 +24,11 @@
 #include "Level.h"
 #include "Core.h"
 #include "levGen.h"
-#define DEBUG_MODE 0
+#define DEBUG_MODE 1
 
 #define LEVEL_HEIGHT 10
 #define LEVEL_WIDTH 10
-#define SEED_LENTGH 5
+#define SEED_LENTGH 3
 #define TILE_SIZE 64
 #define SRPITES_AMOUNT 2048
 #define BUTTONS_COUNT 1024

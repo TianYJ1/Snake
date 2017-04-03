@@ -2,32 +2,38 @@
 d:\school\info\sokoban\src\main.c(13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: see declaration of 'sprintf'
 d:\school\info\sokoban\src\main.c(18): warning C4101: 'color': unreferenced local variable
-d:\school\info\sokoban\src\main.c(40): warning C4013: 'makeListSprites' undefined; assuming extern returning int
-d:\school\info\sokoban\src\main.c(33): warning C4113: 'int (__cdecl *)()' differs in parameter lists from 'int (__cdecl *)(int)'
-d:\school\info\sokoban\src\main.c(33): warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'int (__cdecl *)(int)'
-d:\school\info\sokoban\src\main.c(33): warning C4133: 'initializing': incompatible types - from 'void (__cdecl *)()' to 'int (__cdecl *)(int)'
+d:\school\info\sokoban\src\main.c(43): warning C4013: 'makeListSprites' undefined; assuming extern returning int
+d:\school\info\sokoban\src\main.c(47): warning C4013: 'renderScreen' undefined; assuming extern returning int
+d:\school\info\sokoban\src\main.c(36): warning C4113: 'int (__cdecl *)()' differs in parameter lists from 'int (__cdecl *)(int)'
+d:\school\info\sokoban\src\main.c(36): warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'int (__cdecl *)(int)'
+d:\school\info\sokoban\src\main.c(36): warning C4133: 'initializing': incompatible types - from 'void (__cdecl *)()' to 'int (__cdecl *)(int)'
   levGen.c
 d:\school\info\sokoban\src\levgen.c(73): warning C4018: '<': signed/unsigned mismatch
   SpriteRenderer.c
-d:\school\info\sokoban\src\spriterenderer.c(21): warning C4013: 'renderScreen' undefined; assuming extern returning int
+d:\school\info\sokoban\src\spriterenderer.c(15): warning C4020: 'al_load_bitmap': too many actual parameters
+d:\school\info\sokoban\src\spriterenderer.c(98): warning C4013: 'renderScreen' undefined; assuming extern returning int
   Level.c
-d:\school\info\sokoban\src\level.c(53): warning C4047: 'function': 'char *' differs in levels of indirection from 'char (*)[40]'
-d:\school\info\sokoban\src\level.c(53): warning C4024: 'generateSeed': different types for formal and actual parameter 1
-d:\school\info\sokoban\src\level.c(61): warning C4098: 'onLevelOpened': 'void' function returning a value
-d:\school\info\sokoban\src\level.c(65): warning C4047: 'function': 'char *' differs in levels of indirection from 'char (*)[40]'
-d:\school\info\sokoban\src\level.c(65): warning C4024: 'generateSeed': different types for formal and actual parameter 1
-d:\school\info\sokoban\src\level.c(71): warning C4047: 'function': 'char *' differs in levels of indirection from 'char (*)[40]'
-d:\school\info\sokoban\src\level.c(71): warning C4024: 'generate': different types for formal and actual parameter 2
-d:\school\info\sokoban\src\level.c(55): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+d:\school\info\sokoban\src\level.c(20): warning C4013: 'renderScreen' undefined; assuming extern returning int
+d:\school\info\sokoban\src\level.c(44): warning C4047: 'function': 'char *' differs in levels of indirection from 'char (*)[24]'
+d:\school\info\sokoban\src\level.c(44): warning C4024: 'generateSeed': different types for formal and actual parameter 1
+d:\school\info\sokoban\src\level.c(47): warning C4047: 'function': 'char *' differs in levels of indirection from 'char (*)[24]'
+d:\school\info\sokoban\src\level.c(47): warning C4024: 'generate': different types for formal and actual parameter 2
+d:\school\info\sokoban\src\level.c(67): warning C4047: 'function': 'char *' differs in levels of indirection from 'char (*)[24]'
+d:\school\info\sokoban\src\level.c(67): warning C4024: 'generateSeed': different types for formal and actual parameter 1
+d:\school\info\sokoban\src\level.c(68): warning C4047: 'function': 'char *' differs in levels of indirection from 'char (*)[24]'
+d:\school\info\sokoban\src\level.c(68): warning C4024: 'generate': different types for formal and actual parameter 2
   EventManager.c
   Core.c
-d:\school\info\sokoban\src\core.c(61): warning C4047: '=': 'int' differs in levels of indirection from 'ALLEGRO_FONT *'
+d:\school\info\sokoban\src\core.c(85): warning C4047: '=': 'int' differs in levels of indirection from 'ALLEGRO_FONT *'
+d:\school\info\sokoban\src\core.c(91): warning C4098: 'initVars': 'void' function returning a value
+d:\school\info\sokoban\src\core.c(87): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
   Button.c
 d:\school\info\sokoban\src\button.c(32): warning C4047: '=': 'int' differs in levels of indirection from 'ALLEGRO_FONT *'
 d:\school\info\sokoban\src\button.c(33): warning C4013: 'renderScreen' undefined; assuming extern returning int
   Generating Code...
-d:\school\info\sokoban\src\eventmanager.c(45): warning C4715: 'onKeyUp': not all control paths return a value
+d:\school\info\sokoban\src\eventmanager.c(48): warning C4715: 'onKeyUp': not all control paths return a value
+d:\school\info\sokoban\src\level.c(50): warning C4716: 'regen': must return a value
 d:\school\info\sokoban\src\levgen.c(155): warning C4716: 'generate': must return a value
 d:\school\info\sokoban\src\main.c(22): warning C4716: 'openLevelSelect': must return a value
   sokoban.vcxproj -> D:\School\Info\sokoban\src\Debug\sokoban.exe

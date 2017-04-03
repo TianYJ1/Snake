@@ -61,7 +61,7 @@ int addButton(char * text, float x, float y, float w, float h, int red, int blue
 	buttonsId[empty] = buttonId;
 	callBacks[empty] = callback;
 	spritesId[empty] = -1;
-	renderScreen();
+	//renderScreen();
 	if (buttonScount < BUTTONS_COUNT)
 		return empty;
 	else
@@ -75,7 +75,7 @@ int addButtonSprite(char * src, char * text, float x, float y, float w, float h,
 		spritesId[empty] = addSprite(src, x, y, w, h, scene, layer);
 	else
 		spritesId[empty] = -2;
-	renderScreen();
+	//renderScreen();
 	if (buttonScount < BUTTONS_COUNT)
 		return empty;
 	else
@@ -130,6 +130,7 @@ void makeGridSprites(int count, int colums, char names[][BUTTONS_NAME_SIZE], cha
 }
 void recalcButtons(float hC, float vC)
 {
+	
 	for (int i = buttonScount - 1; i >= 0; i--)
 	{
 		buttonsPos[i][0] *= hC; buttonsPos[i][1] *= vC;
@@ -139,12 +140,12 @@ void recalcButtons(float hC, float vC)
 }
 void clearButtons(int scene)
 {
-	for (int i = buttonScount-1; i >0 ; i--)
+	for (int i = buttonScount-1; i >=0 ; i--)
 	{
 		if (buttonsEmpty[i] == 0 && buttonsScene[i] == scene)
 		{
 			buttonsEmpty[i] = 1;
-			if (spritesId[i] != -1)
+			//if (spritesId[i] != -1)
 				clearSpritesScene(scene);
 		}
 	}

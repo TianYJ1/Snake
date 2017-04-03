@@ -7,3 +7,4 @@ void recalcSprites(float hC, float vC);
 void clearSpritesScene(int scene);
 void clearSpritesLayer(int layer);
 void clearSprites(int scene, int layer);
+int moveSpriteTo(int spriteId, int x, int y);

@@ -15,7 +15,10 @@ int onKeyUp(int key)
 			if (SCENE_NOW == MAINMENU_SCENE)
 				EventManagerThreadRunning = false;
 			else if (SCENE_NOW == LEVEL_SELECT_SCENE)
-				changeScene(SCENE_NOW - 1);
+			{
+				changeScene(MAINMENU_SCENE);
+				clearButtons(LEVEL_SELECT_SCENE);
+			}
 			else if (SCENE_NOW == LEVEL_SCENE_PAUSE)
 				onResume(0);
 			else if (SCENE_NOW == LEVEL_SCENE)
@@ -60,8 +63,8 @@ int initEventManager()
 		al_show_native_message_box(display, "Error!", "Failed to create the event queue.", 0, 0, ALLEGRO_MESSAGEBOX_ERROR);
 		return -1;
 	}
-	printLog("Initied EventM");
-	printf("%s", al_install_mouse() ? "mouse ok" : "mouse fail");
+	Log_i(__func__, "Initied EventM");
+	Log_i(__func__, "%s", al_install_mouse() ? "mouse ok" : "mouse fail");
 	al_register_event_source(EventQueue, al_get_display_event_source(display));
 	al_register_event_source(EventQueue, al_get_keyboard_event_source());
 	al_register_event_source(EventQueue, al_get_mouse_event_source());

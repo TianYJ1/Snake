@@ -26,10 +26,13 @@ void Exit()
 }
 int main()
 {
+	if(!DEBUG_MODE)
+		ShowWindow(GetConsoleWindow(), SW_HIDE);
+	
 	initAddons();
 	initVars();
 	initButtons();
-	printLog("Initied");
+	Log_i(__func__, "Initied\n================\n");
 	int(*callBacks[3])(int id) = { openLevelSelect,Exit };
 	char names[][BUTTONS_NAME_SIZE] = { "Level Select\0" ,"Exit\0" };
 	
@@ -40,7 +43,8 @@ int main()
 	makeListSprites(2,names, "btntile.png", SCREEN_WIDTH/2-125, 50, 250, 150, callBacks, MAINMENU_SCENE, 1);
 
 	addSprite("back.jpg", 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, -1, 0);
-	printLog("Added button");
+	Log_i(__func__, "Added button");
+	renderScreen();
 	initEventManager();//last to be called untill die
 	//al_rest(5.0);
 	//system("pause");
