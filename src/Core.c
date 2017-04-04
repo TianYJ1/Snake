@@ -56,7 +56,9 @@ void Log_e(char * tag, const char *str, ...)
 	va_end(vl);
 	printf("E/%s::%s\n", tag, buf);
 	fprintf(targetFile, "E/%s::%s\n", tag, buf);
+
 	fflush(targetFile);
+	al_show_native_message_box(display, "Error!", buf, 0, 0, ALLEGRO_MESSAGEBOX_ERROR);
 }
 void setNewScreen()
 {
@@ -104,13 +106,16 @@ void initVars()
 		//al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
 	
 	path = al_get_standard_path(ALLEGRO_RESOURCES_PATH);
-#if DEBUG_MODE==1
-	al_append_path_component(path, "../res");
-	al_change_directory(al_path_cstr(path, '/'));  // change the working directory
-#else
+
 	al_append_path_component(path, "res");
-	al_change_directory(al_path_cstr(path, '/'));  // change the working directory
-#endif
+	if (!al_change_directory(al_path_cstr(path, '/')))
+	{
+		al_append_path_component(path, "../res");
+		if (!al_change_directory(al_path_cstr(path, '/')))
+		{
+			Log_e(__func__, "Res path not found", al_path_cstr(path, '/'));
+		}
+	}
 	Log_i(__func__, "Res path:%s", al_path_cstr(path, '/'));
 	
 	SCREEN_WIDTH_UNIT = SCREEN_WIDTH / 2000.0;

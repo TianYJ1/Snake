@@ -57,4 +57,5 @@ src/res/Button.png
 *.idb
 build/
 src/logs.txt
-src/Debug/
+src/Debug/*
+src/Release/*

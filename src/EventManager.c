@@ -60,7 +60,7 @@ int initEventManager()
 	EventQueue = al_create_event_queue();
 	if (EventQueue == NULL)
 	{
-		al_show_native_message_box(display, "Error!", "Failed to create the event queue.", 0, 0, ALLEGRO_MESSAGEBOX_ERROR);
+		Log_e(__func__, "Failed to create the event queue");
 		return -1;
 	}
 	Log_i(__func__, "Initied EventM");
