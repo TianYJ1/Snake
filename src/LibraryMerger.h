@@ -28,7 +28,7 @@
 
 #define LEVEL_HEIGHT 10
 #define LEVEL_WIDTH 10
-#define SEED_LENTGH 3
+#define SEED_LENTGH 5
 #define TILE_SIZE 64
 #define SRPITES_AMOUNT 2048
 #define BUTTONS_COUNT 1024

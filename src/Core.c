@@ -110,6 +110,7 @@ void initVars()
 	al_append_path_component(path, "res");
 	if (!al_change_directory(al_path_cstr(path, '/')))
 	{
+		path = al_get_standard_path(ALLEGRO_RESOURCES_PATH);
 		al_append_path_component(path, "../res");
 		if (!al_change_directory(al_path_cstr(path, '/')))
 		{

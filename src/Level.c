@@ -1,7 +1,7 @@
 #include "LibraryMerger.h"
 
 #define MAP_OFFSET 100
-int generate(int map[LEVEL_HEIGHT][LEVEL_WIDTH], char * seed);
+int generate(int map[LEVEL_HEIGHT][LEVEL_WIDTH], char * seed, char * cratesSeed);
 int map[LEVEL_HEIGHT][LEVEL_WIDTH];/* =
 {
 	{1,1,1,1},
@@ -37,14 +37,17 @@ int onResume(int id)
 	return 1;
 }
 char seed[SEED_LENTGH * 8] = { 0 };
+char cratesSeed[SEED_LENTGH * 8] = { 0 };
 int regen(int id)
 {
 	clearSprites(LEVEL_SCENE, 2);
 	memset(seed, 0, SEED_LENTGH * 8);
-	generateSeed(&seed);
+	memset(cratesSeed, 0, SEED_LENTGH * 8);
+	generateSeed(&seed, &cratesSeed, 8, 1);
 	
-	addButtonSprite("", seed, SCREEN_WIDTH_UNIT * 500, SCREEN_HEIGHT_UNIT * 1700, SCREEN_WIDTH_UNIT * 800, 150, 255, 255, 255, NULL, LEVEL_SCENE, 0, 0);
-	generate(map, &seed);
+	addButtonSprite("", seed, SCREEN_WIDTH_UNIT * 500, SCREEN_HEIGHT_UNIT * 1500, SCREEN_WIDTH_UNIT * 800, 150, 255, 255, 255, NULL, LEVEL_SCENE, 0, 0);
+	addButtonSprite("", cratesSeed, SCREEN_WIDTH_UNIT * 500, SCREEN_HEIGHT_UNIT * 1700, SCREEN_WIDTH_UNIT * 800, 150, 255, 255, 255, NULL, LEVEL_SCENE, 0, 0);
+	generate(map, &seed, &cratesSeed);
 	renderMap();
 	renderScreen();
 }
@@ -64,8 +67,8 @@ int regen(int id)
 void onLevelOpened(int levelId)
 {
 	playerSpriteId = addSprite("Level/Player/Character1.png", SCREEN_WIDTH_UNIT* MAP_OFFSET, SCREEN_WIDTH_UNIT *MAP_OFFSET, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, SCENE_NOW, 3);
-	generateSeed(&seed);
-	generate(map, &seed);
+	generateSeed(&seed, &cratesSeed, 2, 2);
+	generate(map, &seed, &cratesSeed);
 	renderMap();
 	addButtonSprite("btntile.png", "Regen", SCREEN_WIDTH_UNIT*1500, 0, SCREEN_WIDTH_UNIT * 200, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*regen), LEVEL_SCENE, 0, 0);
 	addButtonSprite("Button_pause.png","", 0, 0, SCREEN_WIDTH_UNIT*100, SCREEN_WIDTH_UNIT*100, 255, 255, 255, (*onPause),LEVEL_SCENE, 0, 0);
@@ -85,6 +88,12 @@ void renderMap()
 					break;
 				case 1:
 					mapSprites[i][q] = addSprite("Level/Tiles/WallRound_Brown.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, SCENE_NOW, 2);
+					break;
+				case 2:
+					mapSprites[i][q] = addSprite("Level/Tiles/EndPoint_Brown.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, SCENE_NOW, 2);
+					break;
+				case 3:
+					mapSprites[i][q] = addSprite("Level/Tiles/Crate_Black.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, SCENE_NOW, 2);
 					break;
 			}
 		}
