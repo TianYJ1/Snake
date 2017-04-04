@@ -5,6 +5,7 @@ Sokoban (倉庫番 sōkoban, warehouse keeper) is a type of transport puzzle, in
 This game is build using c-language and based on Allegro Library
 ### Directory structure
 The source code is organized as follows:
+
 Subdirectory | Description
 -------------|-------------------
 src/         | source files 
