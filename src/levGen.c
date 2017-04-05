@@ -1,6 +1,6 @@
 #include "LibraryMerger.h"
 
-void generateSeed(char * seed, char * cratesSeed, int difficul, int crates)
+void generateSeed(char * seed, int difficul)
 {
 	for (int i = 0; i < difficul *8; i += 8)
 	{
@@ -9,7 +9,7 @@ void generateSeed(char * seed, char * cratesSeed, int difficul, int crates)
 		seed[i] = rand() % 8 + 65;
 		seed[i + 1] = rand() % 15 + 65;
 		seed[i + 2] = i/10 + '0';
-		seed[i + 3] = i%10 + '0';
+		seed[i + 3] = rand() %10 + '0';
 		int x = rand() % LEVEL_WIDTH,  y = rand() % LEVEL_HEIGHT;
 		seed[i + 4] = x / 10 + '0';
 		seed[i + 5] = x % 10 + '0';
@@ -17,42 +17,11 @@ void generateSeed(char * seed, char * cratesSeed, int difficul, int crates)
 		seed[i + 7] = y % 10 + '0';
 		//CB0B0000
 	}
-	for (int i = 0; i < crates * 8; i += 8)
-	{
-		if (i >= SEED_LENTGH * 8)
-			break;
-		int randI = rand() % difficul;
-		if(randI / 10 > 0)
-			cratesSeed[i] = randI/10 + '0';
-		else
-			cratesSeed[i] = 'Y';
-		cratesSeed[i + 1] = randI % 10 + '0';
-		cratesSeed[i + 2] = rand() % 9 + 65;
-		cratesSeed[i + 3] = rand() % 9 + 65;
-		cratesSeed[i + 4] = rand() % 9 + 65;
-		cratesSeed[i + 5] = rand() % 9 + 65;
-		cratesSeed[i + 6] = rand() % 9 + 65;
-		cratesSeed[i + 7] = rand() % 9 + 65;
-
-		//CB0B0000
-	}
-	Log_i(__func__, "Seed:%s,cratesSeed:%s", seed, cratesSeed);
+	
+	Log_i(__func__, "Seed:%s", seed);
 }
 /*
-	//crates seeds
-	0-9 -
-	0-9 - room id
-	A-I
-	1	A - no
-	2	B - 1 top
-	3	C - 2 top
-	4	D - 1 right
-	5	E - 2 right
-	6	F - 1 left
-	7	G - 2 left
-	8	H - 1 bottom
-	9	I - 2 bottom
-	10
+	
 	//rooms seeds
 	1 A-Z //rooms sizes
 		A - 3*3
@@ -78,7 +47,7 @@ void generateSeed(char * seed, char * cratesSeed, int difficul, int crates)
 		L - all, except right
 		M - all, except top
 		N - all, except bottom
-	3 0-9 //room id
+	3 0-9 //count max walls
 	4 0-9 //roomd id
 	56 0-9 0-9 //postion x
 	78 0-9 0-9 //postion y
@@ -94,7 +63,7 @@ void generateSeed(char * seed, char * cratesSeed, int difficul, int crates)
 	8 0-9 //postion y
 */
 
-int generate(int map[LEVEL_HEIGHT][LEVEL_WIDTH] ,char * seed, char * cratesSeed)
+int generate(int map[LEVEL_HEIGHT][LEVEL_WIDTH] ,char * seed, int cratesCount)
 {
 	for (int i = 0; i < LEVEL_WIDTH; i++)
 	{
@@ -105,12 +74,9 @@ int generate(int map[LEVEL_HEIGHT][LEVEL_WIDTH] ,char * seed, char * cratesSeed)
 	for (int i = 0; i < strlen(seed); i += 8)
 	{
 		int width = 0, height = 0, emptyLeft = 0, emptyTop = 0, emptyBottom = 0, emptyRight = 0;
-		char * crateSeed;
-		if((i / 8)<10)
-			crateSeed = strstr(cratesSeed, "Y%i",1);
-		else
-			crateSeed = strstr(cratesSeed, "%i", i / 8);
-		Log_i(__func__, "crateSeed=%s, %i%i", crateSeed, ((i / 8) / 10), ((i / 8) % 10));
+		int crateSeedStart =-1;
+		
+		Log_i(__func__, "crateSeedStart=%i", crateSeedStart);
 		int emptyLimit = seed[i+2],y = seed[i+4]-'0'+ seed[i + 5] - '0', x = seed[i + 6] - '0' + seed[i + 7] - '0';
 		switch (seed[i+0])
 		{
@@ -147,6 +113,7 @@ int generate(int map[LEVEL_HEIGHT][LEVEL_WIDTH] ,char * seed, char * cratesSeed)
 				break;
 		}
 		char wallEmpty = seed[i + 1];
+		int wallsCount = seed[i + 3] - '0';
 		/*
 		A - left
 		B - right
@@ -161,83 +128,60 @@ int generate(int map[LEVEL_HEIGHT][LEVEL_WIDTH] ,char * seed, char * cratesSeed)
 		*/
 		for (int q = 0; q < width; q++)
 		{
-			if(wallEmpty != 'C' && wallEmpty != 'E' && wallEmpty != 'F' && wallEmpty != 'J' && wallEmpty != 'M' && map[y][x + q]==0)
+			if(wallEmpty != 'C' && wallEmpty != 'A' && wallEmpty != 'E' && wallEmpty != 'F' && wallEmpty != 'B' && wallEmpty != 'J' && wallEmpty != 'M' && map[y][x + q]==0 && (wallsCount--)>=0)
 				map[y][x + q] = 1;
-			if (wallEmpty != 'D' && wallEmpty != 'G' && wallEmpty != 'H' && wallEmpty != 'J' && wallEmpty != 'N' && map[y + height][x + q] == 0)
+			if (wallEmpty != 'D' && wallEmpty != 'G' && wallEmpty != 'H' && wallEmpty != 'J' && wallEmpty != 'I' && wallEmpty != 'N' && map[y + height][x + q] == 0 && (wallsCount--) >= 0)
 				map[y+height][x + q] = 1;
 		}
 		
 		for (int q = 0; q <= height; q++)
 		{
-			if (wallEmpty != 'A' && wallEmpty != 'E' && wallEmpty != 'G' && wallEmpty != 'I' && wallEmpty != 'K' && map[y + q][x] == 0)
+			if (wallEmpty != 'A' && wallEmpty != 'E' && wallEmpty != 'G' && wallEmpty != 'I' && wallEmpty != 'K' && map[y + q][x] == 0 && (wallsCount--) >= 0)
 				map[y+q][x] = 1;
-			if (wallEmpty != 'B' && wallEmpty != 'F' && wallEmpty != 'H' && wallEmpty != 'I' && wallEmpty != 'L' && map[y + q][x + width] == 0)
+			if (wallEmpty != 'B' && wallEmpty != 'F' && wallEmpty != 'E' && wallEmpty != 'H' && wallEmpty != 'I' && wallEmpty != 'L' && map[y + q][x + width] == 0 && (wallsCount--) >= 0)
 				map[y + q][x + width] = 1;
 		}
 		for (int q = 1; q < height; q++)
 		{
 			for (int m = 1; m < width; m++)
-				map[m][q] = 0;
+			{
+				if(map[m][q] == 1)
+					map[m][q] = 0;
+			}
 		}
-		for (int i = 0; i < LEVEL_WIDTH; i++)
+		for (int q = 0; q < LEVEL_WIDTH; q++)
 		{
-			map[i][0] = 1;
-			map[i][LEVEL_HEIGHT - 1] = 1;
+			if(map[q][0] == 0)
+				map[q][0] = 1;
+			if(map[q][LEVEL_HEIGHT - 1] == 0)
+				map[q][LEVEL_HEIGHT - 1] = 1;
 		}
 		for (int q = 0; q < LEVEL_HEIGHT; q++)
 		{
-			map[0][q] = 1;
-			map[LEVEL_WIDTH - 1][q] = 1;
+			if(map[0][q] == 0)
+				map[0][q] = 1;
+			if(map[LEVEL_WIDTH - 1][q] == 0)
+				map[LEVEL_WIDTH - 1][q] = 1;
 		}
-		
-		if (crateSeed)
+		if (wallEmpty >= 'A' && (--cratesCount) > 0)
 		{
+			
 			int crateX = x + width / 2, crateY = y + height / 2;
 			map[crateY][crateX] = 2;
-			map[crateY][crateX] = 3;
-			for (int q = 2; q < SEED_LENTGH; q++)
-			{
-				switch (crateSeed[q])
-				{
-				case 'D':
-					if (map[crateY][crateX + 1] == 0)
-						crateX++;
-					break;
-				case 'E':
-					if (map[crateY][crateX + 2] == 0)
-						crateX += 2;
-					break;
-				case 'F':
-					if (map[crateY][crateX - 1] == 0)
-						crateX--;
-					break;
-				case 'G':
-					if (map[crateY][crateX - 2] == 0)
-						crateX -= 2;
-					break;
-				case 'B':
-					if (map[crateY - 1][crateX] == 0)
-						crateY -= 1;
-					break;
-				case 'C':
-					if (map[crateY - 2][crateX] == 0)
-						crateY -= 2;
-					break;
-				case 'H':
-					if (map[crateY + 1][crateX] == 0)
-						crateY += 1;
-					break;
-				case 'I':
-					if (map[crateY + 2][crateX] == 0)
-						crateY += 2;
-					break;
-				}
-				if (crateSeed[q] != 'A')
-					steps++;
-				
-			}
-			
+			map[LEVEL_HEIGHT - crateY - 1][LEVEL_WIDTH - crateX - 1] = 3;
 		}
 	}
-	
+}
+int wallCountAround(int x, int y)
+{
+	int count = 0;
+	if (x > 0 && map[y][x - 1] == 1)
+		count++;
+	if (y > 0 && map[y-1][x] == 1)
+		count++;
+	if (x < (LEVEL_WIDTH-1) && map[y][x + 1] == 1)
+		count++;
+	if (x < (LEVEL_HEIGHT-1) && map[y + 1][x] == 1)
+		count++;
+	return count;
 }

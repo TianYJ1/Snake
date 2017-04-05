@@ -1,7 +1,7 @@
 #include "LibraryMerger.h"
 
 #define MAP_OFFSET 100
-int generate(int map[LEVEL_HEIGHT][LEVEL_WIDTH], char * seed, char * cratesSeed);
+int generate(int map[LEVEL_HEIGHT][LEVEL_WIDTH], char * seed, int cratesCount);
 int map[LEVEL_HEIGHT][LEVEL_WIDTH];/* =
 {
 	{1,1,1,1},
@@ -43,11 +43,11 @@ int regen(int id)
 	clearSprites(LEVEL_SCENE, 2);
 	memset(seed, 0, SEED_LENTGH * 8);
 	memset(cratesSeed, 0, SEED_LENTGH * 8);
-	generateSeed(&seed, &cratesSeed, 8, 1);
+	generateSeed(&seed, 3);
 	
 	addButtonSprite("", seed, SCREEN_WIDTH_UNIT * 500, SCREEN_HEIGHT_UNIT * 1500, SCREEN_WIDTH_UNIT * 800, 150, 255, 255, 255, NULL, LEVEL_SCENE, 0, 0);
 	addButtonSprite("", cratesSeed, SCREEN_WIDTH_UNIT * 500, SCREEN_HEIGHT_UNIT * 1700, SCREEN_WIDTH_UNIT * 800, 150, 255, 255, 255, NULL, LEVEL_SCENE, 0, 0);
-	generate(map, &seed, &cratesSeed);
+	generate(map, &seed, 2);
 	renderMap();
 	renderScreen();
 }
@@ -67,8 +67,8 @@ int regen(int id)
 void onLevelOpened(int levelId)
 {
 	playerSpriteId = addSprite("Level/Player/Character1.png", SCREEN_WIDTH_UNIT* MAP_OFFSET, SCREEN_WIDTH_UNIT *MAP_OFFSET, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, SCENE_NOW, 3);
-	generateSeed(&seed, &cratesSeed, 2, 2);
-	generate(map, &seed, &cratesSeed);
+	generateSeed(&seed, 5);
+	generate(map, &seed, 2);
 	renderMap();
 	addButtonSprite("btntile.png", "Regen", SCREEN_WIDTH_UNIT*1500, 0, SCREEN_WIDTH_UNIT * 200, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*regen), LEVEL_SCENE, 0, 0);
 	addButtonSprite("Button_pause.png","", 0, 0, SCREEN_WIDTH_UNIT*100, SCREEN_WIDTH_UNIT*100, 255, 255, 255, (*onPause),LEVEL_SCENE, 0, 0);
@@ -76,9 +76,10 @@ void onLevelOpened(int levelId)
 }
 void renderMap()
 {
-	for (int i = 0; i < LEVEL_WIDTH; i++)
+	
+	for (int q = 0; q < LEVEL_HEIGHT; q++)
 	{
-		for (int q = 0; q < LEVEL_HEIGHT; q++)
+		for (int i = 0; i < LEVEL_WIDTH; i++)
 		{
 			int x = i*(TILE_SIZE-2)*SCREEN_WIDTH_UNIT + SCREEN_WIDTH_UNIT *MAP_OFFSET, y = q*(TILE_SIZE-2)*SCREEN_WIDTH_UNIT + SCREEN_WIDTH_UNIT * MAP_OFFSET;
 			switch (map[i][q])
