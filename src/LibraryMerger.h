@@ -44,5 +44,5 @@ float SCREEN_WIDTH_UNIT, SCREEN_HEIGHT_UNIT;
 extern ALLEGRO_DISPLAY* display;
 extern ALLEGRO_FONT* font;
 extern ALLEGRO_PATH *path;
-
+extern char * resourcePath;
 extern int map[LEVEL_HEIGHT][LEVEL_WIDTH];

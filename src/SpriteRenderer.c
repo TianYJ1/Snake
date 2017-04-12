@@ -12,7 +12,7 @@ int addSprite(char * src, int x, int y, int w, int h, int scene, int layer)
 {
 	//al_set_path_filename(path, src);
 	
-	ALLEGRO_BITMAP * bmp = al_load_bitmap(src, NULL);
+	ALLEGRO_BITMAP * bmp = al_load_bitmap(src);
 	if (bmp == NULL)
 	{
 		Log_e(__func__, "ERROR Loading sprite %s:No file", src);
@@ -65,7 +65,7 @@ void renderSprites(int layer)
 	{
 		if ((spritesLayer[i] == -1 || spritesLayer[i] == layer) && (spritesScene[i] == SCENE_NOW || spritesScene[i] == -1) && sprites[i])
 		{
-			Log_i(__func__, "Srpite render layer_%i, count=%i, spr_#%i: %i, %i*%i at %.0fX%.0fY", layer, spritesCount, i, sprites[i] == NULL, al_get_bitmap_width(sprites[i]), al_get_bitmap_height(sprites[i]), spritePos[i][0], spritePos[i][1]);
+			//Log_i(__func__, "Srpite render layer_%i, count=%i, spr_#%i: %i, %i*%i at %.0fX%.0fY", layer, spritesCount, i, sprites[i] == NULL, al_get_bitmap_width(sprites[i]), al_get_bitmap_height(sprites[i]), spritePos[i][0], spritePos[i][1]);
 			/*al_run_detached_thread(al_draw_scaled_bitmap, NULL, sprites[i],
 				0, 0,                                // source origin
 				al_get_bitmap_width(sprites[i]),     // source width al_get_bitmap_width(sprites[i])
@@ -141,4 +141,17 @@ void clearSprites(int scene, int layer)
 		if (spritesEmpty[i] == 0 && spritesLayer[i] == layer && spritesScene[i] == scene)
 			spritesEmpty[i] = 1;
 	}
+}
+int changeSprite(int id, char * src)
+{
+	//al_set_path_filename(path, src);
+
+	ALLEGRO_BITMAP * bmp = al_load_bitmap(src);
+	if (bmp == NULL)
+	{
+		Log_e(__func__, "ERROR Loading sprite %s:No file", src);
+		return -1;
+	}
+	sprites[id] = bmp;
+	return 0;
 }

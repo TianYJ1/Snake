@@ -59,3 +59,4 @@ build/
 src/logs.txt
 src/Debug/*
 src/Release/*
+src/YASGen0_Generator.c
