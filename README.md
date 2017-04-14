@@ -11,7 +11,7 @@ Subdirectory | Description
 src/         | source files 
 src/tests    | unit tests 
 doc/         | documentation 
-res/         | static resources
+src/res/     | static resources
 ### Structure
 * Main - menu module 
 * Level - level drawer, game-play handler
