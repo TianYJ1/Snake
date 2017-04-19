@@ -1,5 +1,5 @@
 #pragma once
-void onLevelOpened(int levelId);
+void onLevelFileOpened(int playerX, int playerY);
 void renderMap();
 void movePlayer(int up, int right);
 int onPause(int id);
