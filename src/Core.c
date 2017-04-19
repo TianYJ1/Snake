@@ -5,6 +5,7 @@ int AllegroFont, SCREEN_WIDTH = 0, SCREEN_HEIGHT = 0, SCENE_NOW = 0, EventManage
 ALLEGRO_DISPLAY* display = NULL;
 ALLEGRO_PATH *path;
 FILE *targetFile;
+char * resourcePath;
 void initAddons()
 {
 	al_init();
@@ -118,7 +119,7 @@ void initVars()
 		}
 	}
 	Log_i(__func__, "Res path:%s", al_path_cstr(path, '/'));
-	
+	resourcePath = al_path_cstr(path, '/');
 	SCREEN_WIDTH_UNIT = SCREEN_WIDTH / 2000.0;
 	SCREEN_HEIGHT_UNIT = SCREEN_HEIGHT / 2000.0;
 	font = al_load_ttf_font("SansPosterBold.ttf", SCREEN_HEIGHT_UNIT * 80, 0);

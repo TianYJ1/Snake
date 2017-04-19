@@ -6,3 +6,4 @@ void Log_e(char * tag, const char *str, ...);
 void initVars();
 int openLevel(int num);
 void setNewScreen();
+void renderScreen();

@@ -1,6 +1,27 @@
 #include "LibraryMerger.h"
 
-
+int openFolderDialog()
+{
+	ALLEGRO_FILECHOOSER *dialog = al_create_native_file_dialog(resourcePath,"Choose folder","*.*",ALLEGRO_FILECHOOSER_FOLDER);
+	if (al_show_native_file_dialog(display, dialog))
+	{
+		char * path = al_get_native_file_dialog_path(dialog, 0);
+		ALLEGRO_FS_ENTRY* dir = al_create_fs_entry(path);
+		if (al_open_directory(dir))
+		{
+			ALLEGRO_FS_ENTRY* file;
+			while (file = al_read_directory(dir))
+			{
+				printf("%s\n", al_get_fs_entry_name(file));
+				al_destroy_fs_entry(file);
+			}
+		}
+		al_destroy_fs_entry(dir);
+		Log_i(__func__, "Folder: %s", path);
+		
+	}
+	return 1;
+}
 int openLevelSelect()
 {
 	clearButtons(LEVEL_SELECT_SCENE);
@@ -17,8 +38,10 @@ int openLevelSelect()
 	
 	ALLEGRO_COLOR color = al_map_rgb(255, 80, 80);
 	addButtonSprite("","Choose crates amount:", SCREEN_WIDTH_UNIT*500, SCREEN_WIDTH_UNIT * 10, SCREEN_HEIGHT*1/8, 150, 255, 255, 255, NULL, LEVEL_SELECT_SCENE, 0, 1);
+	addButtonSprite("btntile.png", "Change folder", SCREEN_WIDTH_UNIT * 1200, SCREEN_WIDTH_UNIT * 1, SCREEN_WIDTH_UNIT*500, SCREEN_WIDTH_UNIT*150, 255, 255, 255, openFolderDialog, LEVEL_SELECT_SCENE, 1, 4);
 	makeGridSprites(cratesAmount,3,names, "btntile.png", SCREEN_WIDTH*4/8, SCREEN_HEIGHT * 1 / 8, 100, 100, callBacks, LEVEL_SELECT_SCENE, 1);
-
+	
+	
 }
 void Exit()
 {
