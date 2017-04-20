@@ -63,7 +63,7 @@ void renderSprites(int layer)
 	//WaitForSingleObject(hMutex, INFINITE);
 	for (int i = 0; i < spritesCount; i++)
 	{
-		if ((spritesLayer[i] == -1 || spritesLayer[i] == layer) && (spritesScene[i] == SCENE_NOW || spritesScene[i] == -1) && sprites[i])
+		if ((spritesLayer[i] == -1 || spritesLayer[i] == layer) && (spritesScene[i] == SCENE_NOW || spritesScene[i] == -1) && sprites[i] && spritesEmpty[i] == 0)
 		{
 			//Log_i(__func__, "Srpite render layer_%i, count=%i, spr_#%i: %i, %i*%i at %.0fX%.0fY", layer, spritesCount, i, sprites[i] == NULL, al_get_bitmap_width(sprites[i]), al_get_bitmap_height(sprites[i]), spritePos[i][0], spritePos[i][1]);
 			/*al_run_detached_thread(al_draw_scaled_bitmap, NULL, sprites[i],

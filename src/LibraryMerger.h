@@ -33,16 +33,20 @@
 #define SRPITES_AMOUNT 2048
 #define BUTTONS_COUNT 1024
 
+#define LEVEL_SELECT_ITEMS_PER_PAGE 12
 
 #define MAINMENU_SCENE 0
 #define LEVEL_SELECT_SCENE 1
 #define LEVEL_SCENE 2
 #define LEVEL_SCENE_PAUSE 3
 
+
+
 extern int AllegroFont, SCREEN_WIDTH, SCREEN_HEIGHT, SCENE_NOW, EventManagerThreadRunning;
-float SCREEN_WIDTH_UNIT, SCREEN_HEIGHT_UNIT;
+extern float SCREEN_WIDTH_UNIT, SCREEN_HEIGHT_UNIT;
 extern ALLEGRO_DISPLAY* display;
 extern ALLEGRO_FONT* font;
 extern ALLEGRO_PATH *path;
 extern char * resourcePath;
 extern int map[LEVEL_HEIGHT][LEVEL_WIDTH];
+extern char levelsPaths[256][128];

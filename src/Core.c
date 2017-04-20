@@ -3,6 +3,7 @@
 ALLEGRO_FONT* font = NULL;
 int AllegroFont, SCREEN_WIDTH = 0, SCREEN_HEIGHT = 0, SCENE_NOW = 0, EventManagerThreadRunning = 1;
 ALLEGRO_DISPLAY* display = NULL;
+float SCREEN_WIDTH_UNIT = 0, SCREEN_HEIGHT_UNIT = 0;
 ALLEGRO_PATH *path;
 FILE *targetFile;
 char * resourcePath;
@@ -79,7 +80,7 @@ void setNewScreen()
 	//SCREEN_WIDTH -= 250; SCREEN_HEIGHT -= 40;
 	recalcSprites(wC, hC);
 	recalcButtons(wC, hC);
-	font = al_load_ttf_font("SansPosterBold.ttf", SCREEN_HEIGHT_UNIT * 80, 0);
+	font = al_load_ttf_font("SansPosterBold.ttf", SCREEN_HEIGHT_UNIT * 60, 0);
 	renderScreen();
 }
 void initVars()
@@ -102,9 +103,9 @@ void initVars()
 	Log_i(__func__,"Screen:%i %i", SCREEN_WIDTH, SCREEN_HEIGHT);
 	
 	al_set_new_display_flags(ALLEGRO_WINDOWED | ALLEGRO_RESIZABLE);
-	SCREEN_WIDTH /= 2; SCREEN_HEIGHT /= 2;
+	//SCREEN_WIDTH /= 2; SCREEN_HEIGHT /= 2;
 	//else
-		//al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
+		al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
 	
 	path = al_get_standard_path(ALLEGRO_RESOURCES_PATH);
 
@@ -122,7 +123,7 @@ void initVars()
 	resourcePath = al_path_cstr(path, '/');
 	SCREEN_WIDTH_UNIT = SCREEN_WIDTH / 2000.0;
 	SCREEN_HEIGHT_UNIT = SCREEN_HEIGHT / 2000.0;
-	font = al_load_ttf_font("SansPosterBold.ttf", SCREEN_HEIGHT_UNIT * 80, 0);
+	font = al_load_ttf_font("SansPosterBold.ttf", -SCREEN_HEIGHT_UNIT * 80, ALLEGRO_TTF_MONOCHROME);
 	display = al_create_display(SCREEN_WIDTH, SCREEN_HEIGHT);
 	//SCREEN_WIDTH -= 250; SCREEN_HEIGHT -= 40;
 	al_clear_to_color(al_map_rgb(0, 0, 0));
@@ -130,9 +131,54 @@ void initVars()
 }
 int openLevel(int num)
 {
-	printf("\nOpening Level #%i", num + 1);
+	printf("\nOpening Level #%i", levelsPaths[num]);
+	FILE *sourceFile = fopen(levelsPaths[num], "r");
+	char str[256];
+	bool prevStrIsData = false;
+	int y = 0;
+	for (int q = 0; q < LEVEL_HEIGHT; q++)
+	{
+		for (int i = 0; i < LEVEL_WIDTH; i++)
+			map[q][i] = 0;
+	}
+	int playerX = 0, playerY = 0;
+	while (fgets(str, sizeof(str), sourceFile) != NULL)
+	{
+		for (int i = 0; i < strlen(str); i++)
+		{
+			switch (str[i])
+			{
+				case '1':
+				case '#':
+					map[y][i] = 1;
+				break;
+				case '3':
+				case '$':
+					map[y][i] = 3;
+				break;
+				case '2':
+				case '.':
+					map[y][i] = 2;
+				break;
+				case '9':
+				case '@':
+					playerX = i; playerY=y;
+				break;
+				case '0':
+				case ' ':
+					map[y][i] = 0;
+				break;
+			}
+		}
+		y++;
+		Log_i(__func__, "levelStr=%s", str);
+		
+		
+	}
+	fclose(sourceFile);
 	changeScene(LEVEL_SCENE);
-	onLevelOpened(num);
+	//onLevelOpened(num);
+	onLevelFileOpened(playerX, playerY);
 	return 1;
 }
 

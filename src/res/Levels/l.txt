@@ -1,0 +1,1297 @@
+[Candidate 31]
+#          
+       ####
+  #### # .#
+  # @### .#
+  #.$   # #
+ ####     #
+##       .#
+# $$      #
+#   $    ##
+####   ### 
+   #####   
+Pushes: 34
+Box lines + box changes (estimates): 15
+Fitness: 23015
+Candidate number: 31
+Time of birth, milliseconds: 4914
+Fitness calculation time, milliseconds: 609
+Children: 2
+
+Solution 88/34
+ldRRdddddlUlUdlluRuRRRRRRdrUUUUddddldllllUdlluurRRRRRdrUUddldlllllUluR
+RRRRRluuLLLrrrdrrU
+
+
+[Candidate 43]
+#          
+       ####
+  #### #* #
+ ##  ### .#
+ #.     # #
+#####     #
+#  #    #@#
+# $ $   . #
+#   $    ##
+####   ### 
+   #####   
+Pushes: 31
+Box lines + box changes (estimates): 15
+Fitness: 16015
+Candidate number: 43
+Time of birth, milliseconds: 7020
+Fitness calculation time, milliseconds: 125
+Children: 3
+
+Solution 106/31
+dllllLrddlUllluurDldRRRdrruululDLdlluRRRRurrddlUUluRRRlddrruUddldlldlU
+ruulldRRRdldllUluRdrUUUruLLLrrrrdrrU
+
+
+[Candidate 56]
+#          
+       ####
+  #### #  #
+  #@ ### .#
+  #.$   # #
+ ####     #
+ #       .#
+ # #      #
+ # $$    ##
+ ###   ### 
+   #####   
+Pushes: 23
+Box lines + box changes (estimates): 9
+Fitness: 13009
+Candidate number: 56
+Time of birth, milliseconds: 8268
+Fitness calculation time, milliseconds: 109
+Children: 0
+
+Solution 73/23
+dRRdddddlUruulllddRRdrUUdllluurrRRRRdrUUddldllllUdlluurRRRRRluuLLLrrrd
+rrU
+
+
+[Candidate 68]
+#          
+       ####
+  #### #  #
+  #  ### .#
+  #     # #
+ ####     #
+ #  @     #
+ # #      #
+ # $     ##
+ ###   ### 
+   #####   
+Pushes: 11
+Box lines + box changes (estimates): 5
+Fitness: 11005
+Candidate number: 68
+Time of birth, milliseconds: 10827
+Fitness calculation time, milliseconds: 46
+Children: 0
+
+Solution 33/11
+llddRluurrrdddlUUdlluurRRRRRdrUUU
+
+
+[Candidate 67]
+#          
+       ####
+  #### # .#
+ ## @###. #
+ #. $     #
+#####     #
+#  #    # #
+# $ $   . #
+#   $    ##
+####   ### 
+   #####   
+Pushes: 37
+Box lines + box changes (estimates): 13
+Fitness: 10013
+Candidate number: 67
+Time of birth, milliseconds: 10047
+Fitness calculation time, milliseconds: 780
+Children: 0
+
+Solution 119/37
+ldRRdddLrddlUllluurDldRRRdrruululDLrrrddlUruulldRRRlluuuRdddddllUluRdr
+UUUruLLLrrrRdrUdldddlllllluRRRdrUluRdrUUluRRRdrUU
+
+
+[Candidate 65]
+#          
+  ###  ####
+  #@## #  #
+ ##  ###..#
+ #. $     #
+#####     #
+#  #    # #
+# $ $   . #
+#   $    ##
+####   ### 
+   #####   
+Pushes: 36
+Box lines + box changes (estimates): 13
+Fitness: 10013
+Candidate number: 65
+Time of birth, milliseconds: 9220
+Fitness calculation time, milliseconds: 717
+Children: 1
+
+Solution 119/36
+ddRRdddLrddlUllluurDldRRRdrruululDLrrrddlUruulldRRRlluuuRdddddllUluRdr
+UUUruLLLrrrRRdrUdlldddlllllluRRRdrUluRdrUUluRRdrU
+
+
+[Candidate 76]
+#          
+       ####
+  #### # .#
+ ##  ### .#
+ #.     # #
+#####  $$ #
+#      $  #
+#  #@   * #
+#        ##
+####   ### 
+   #####   
+Pushes: 19
+Box lines + box changes (estimates): 10
+Fitness: 9010
+Candidate number: 76
+Time of birth, milliseconds: 11607
+Fitness calculation time, milliseconds: 795
+Children: 0
+
+Solution 60/19
+rruRRlddrUlluuurDlddrrrUUUUddddllluurRDLLdlUUruLLLrrrrdrdrUU
+
+
+[Candidate 15]
+#          
+       ####
+  #### #*.#
+ ##  ### .#
+ #.     # #
+#####     #
+#  #      #
+# $ $     #
+#   $  @ ##
+####   ### 
+   #####   
+Pushes: 37
+Box lines + box changes (estimates): 11
+Fitness: 8011
+Candidate number: 15
+Time of birth, milliseconds: 1934
+Fitness calculation time, milliseconds: 156
+Children: 3
+
+Solution 112/37
+lluLrddlUllluurDldRRRdrruululDLrrrddlUUUUruLLLrrdddddlUluRdrUluRdrUluR
+RRdrUUUddddldllllllluRRRdrUluRdrUluRRRdrUU
+
+
+[Candidate 8]
+#          
+       ####
+  #### #* #
+ ##  ### .#
+ #.     #@#
+#####     #
+#  #      #
+# $ $   . #
+#   $    ##
+####   ### 
+   #####   
+Pushes: 31
+Box lines + box changes (estimates): 11
+Fitness: 8011
+Candidate number: 8
+Time of birth, milliseconds: 952
+Fitness calculation time, milliseconds: 156
+Children: 9
+
+Solution 102/31
+dddllllLrddlUllluurDldRRRdrruululDLrrrddlUruulldRRRdldllUluRdrUUUruLLL
+rrddddlllluRRRdrUluRdrUluRRRdrUU
+
+
+[Candidate 10]
+#          
+       ####
+  #### # @#
+  #  ### .#
+  #.    # #
+#####     #
+#  #      #
+# $ $    .#
+#   $    ##
+####   ### 
+   #####   
+Pushes: 31
+Box lines + box changes (estimates): 11
+Fitness: 8011
+Candidate number: 10
+Time of birth, milliseconds: 1264
+Fitness calculation time, milliseconds: 156
+Children: 9
+
+Solution 104/31
+dddddllllLrddlUllluurDldRRRdrruululDLrrrddlUruulldRRRRdlldllUluRdrUUUr
+uLLrddddlllluRRRdrUluRdrUluRRRdrUU
+
+
+[Candidate 59]
+#          
+#          
+  ####  ###
+  #  ####.#
+  #.    # #
+#####     #
+#  #     @#
+# $ $    .#
+#   $    ##
+####   ### 
+   #####   
+Pushes: 31
+Box lines + box changes (estimates): 11
+Fitness: 8011
+Candidate number: 59
+Time of birth, milliseconds: 8580
+Fitness calculation time, milliseconds: 156
+Children: 2
+
+Solution 100/31
+dllllLrddlUllluurDldRRRdrruululDLrrrddlUruulldRRRRdlldllUluRdrUUUruLLr
+ddddlllluRRRdrUluRdrUluRRRdrUU
+
+
+[Candidate 12]
+#          
+       ####
+  #### #  #
+  #  ###  #
+  # .   # #
+#####   . #
+#  #      #
+# $ $    .#
+#   $   @##
+####   ### 
+   #####   
+Pushes: 27
+Box lines + box changes (estimates): 11
+Fitness: 8011
+Candidate number: 12
+Time of birth, milliseconds: 1498
+Fitness calculation time, milliseconds: 140
+Children: 0
+
+Solution 93/27
+llluLrddlUllluurDldRRRdrruululDLrrrddlUruulldRRRRdlldllUluRdrUluRdrUlu
+RRdddlllllluRRRdrUUUruL
+
+
+[Candidate 29]
+#          
+       ####
+  #### # .#
+  #  ###@*#
+  #.    # #
+ ####$$ $ #
+##      . #
+#         #
+#        ##
+####   ### 
+   #####   
+Pushes: 20
+Box lines + box changes (estimates): 10
+Fitness: 8010
+Candidate number: 29
+Time of birth, milliseconds: 3494
+Fitness calculation time, milliseconds: 859
+Children: 8
+
+Solution 58/20
+urDDDLdllURuLLDrddlluRRRlluuLrrrdddrrUUUUddddlluuRlddrruUU
+
+
+[Candidate 81]
+#          
+       ####
+  #### #  #
+  # @### .#
+  #.$   # #
+#####   $ #
+#       * #
+#       $ #
+#        ##
+##.#   ### 
+ #######   
+Pushes: 20
+Box lines + box changes (estimates): 10
+Fitness: 7010
+Candidate number: 81
+Time of birth, milliseconds: 12792
+Fitness calculation time, milliseconds: 967
+Children: 0
+
+Solution 64/20
+ldRRdrrdRlddrUluuuLrdddrrUULLulDrdLulDrdLLLulDDrrrruuuuLLrrrdrrU
+
+
+[Candidate 46]
+#          
+       ####
+  #### # +#
+ ##  ###*$#
+ #.     # #
+ ####   $ #
+####      #
+#       * #
+#        ##
+####   ### 
+   #####   
+Pushes: 16
+Box lines + box changes (estimates): 8
+Fitness: 7008
+Candidate number: 46
+Time of birth, milliseconds: 7317
+Fitness calculation time, milliseconds: 156
+Children: 0
+
+Solution 35/16
+DDDLdlddrUrUUlDuLLdlUruLLLrrrrdrrUU
+
+
+[Candidate 6]
+#          
+       ####
+  #### #*@#
+ ##  ### *#
+ #.     # #
+ ####   $ #
+####      #
+#       * #
+#        ##
+####   ### 
+   #####   
+Pushes: 15
+Box lines + box changes (estimates): 8
+Fitness: 7008
+Candidate number: 6
+Time of birth, milliseconds: 702
+Fitness calculation time, milliseconds: 156
+Children: 7
+
+Solution 34/15
+DDDLdlddrUrUUlDuLLdlUruLLLrrrrdrrU
+
+
+[Candidate 9]
+#          
+       ####
+  #### #*@#
+ ##  ### *#
+ #.     # #
+#####   $ #
+#         #
+#  #    * #
+#        ##
+####   ### 
+   #####   
+Pushes: 15
+Box lines + box changes (estimates): 8
+Fitness: 7008
+Candidate number: 9
+Time of birth, milliseconds: 1108
+Fitness calculation time, milliseconds: 156
+Children: 9
+
+Solution 34/15
+DDDLdlddrUrUUlDuLLdlUruLLLrrrrdrrU
+
+
+[Candidate 14]
+#          
+       ####
+  #### #@ #
+ ##  ### *#
+ #.     # #
+ ####   $ #
+####      #
+#       * #
+#        ##
+####   ### 
+   #####   
+Pushes: 15
+Box lines + box changes (estimates): 8
+Fitness: 7008
+Candidate number: 14
+Time of birth, milliseconds: 1778
+Fitness calculation time, milliseconds: 156
+Children: 6
+
+Solution 35/15
+rDDDLdlddrUrUUlDuLLdlUruLLLrrrrdrrU
+
+
+[Candidate 27]
+#          
+       ####
+  #### #*@#
+ ##  ### *#
+ #.     # #
+#####   $ #
+#         #
+#  #    * #
+#        ##
+####   ### 
+   #####   
+Pushes: 15
+Box lines + box changes (estimates): 8
+Fitness: 7008
+Candidate number: 27
+Time of birth, milliseconds: 3214
+Fitness calculation time, milliseconds: 140
+Children: 1
+
+Solution 34/15
+DDDLdlddrUrUUlDuLLdlUruLLLrrrrdrrU
+
+
+[Candidate 70]
+#          
+       ####
+  #### #  #
+ ##  ###@*#
+ #.     # #
+#####   $ #
+#  #      #
+#       * #
+###      ##
+  ##   ### 
+   #####   
+Pushes: 15
+Box lines + box changes (estimates): 8
+Fitness: 7008
+Candidate number: 70
+Time of birth, milliseconds: 10936
+Fitness calculation time, milliseconds: 93
+Children: 0
+
+Solution 36/15
+urDDDLdlddrUrUUlDuLLdlUruLLLrrrrdrrU
+
+
+[Candidate 47]
+#          
+       ####
+  #### # @#
+  #  ###**#
+  #     # #
+  ###   $ #
+####      #
+#    .  $ #
+#        ##
+##.#   ### 
+ #######   
+Pushes: 21
+Box lines + box changes (estimates): 8
+Fitness: 6008
+Candidate number: 47
+Time of birth, milliseconds: 7488
+Fitness calculation time, milliseconds: 125
+Children: 4
+
+Solution 52/21
+DDDLdlddrUrULLLulDrdLulDrdLLulDrrrrrruuuLLulDDrrrrUU
+
+
+[Candidate 78]
+#          
+       ####
+  #### #*@#
+  #  ### *#
+  #     # #
+  ###   $ #
+####      #
+#    .  $ #
+#        ##
+##.#   ### 
+ #######   
+Pushes: 21
+Box lines + box changes (estimates): 8
+Fitness: 6008
+Candidate number: 78
+Time of birth, milliseconds: 12480
+Fitness calculation time, milliseconds: 109
+Children: 0
+
+Solution 52/21
+DDDLdlddrUrULLLulDrdLulDrdLLulDrrrrrruuuLLulDDrrrrUU
+
+
+[Candidate 13]
+#          
+       ### 
+  #### #*##
+ ##  ### +#
+ #.     #$#
+ ####   $ #
+ ###      #
+ #      * #
+ #       ##
+ ###   ### 
+   #####   
+Pushes: 14
+Box lines + box changes (estimates): 8
+Fitness: 6008
+Candidate number: 13
+Time of birth, milliseconds: 1638
+Fitness calculation time, milliseconds: 140
+Children: 6
+
+Solution 33/14
+DDLdlddrUrUUlDuLLdlUruLLLrrrrdrrU
+
+
+[Candidate 60]
+#          
+       ####
+  #### #. #
+  #  ###$.#
+  #@$   $ #
+#####    .#
+#  #      #
+#         #
+##       ##
+ ###   ### 
+   #####   
+Pushes: 11
+Box lines + box changes (estimates): 8
+Fitness: 6008
+Candidate number: 60
+Time of birth, milliseconds: 8736
+Fitness calculation time, milliseconds: 125
+Children: 5
+
+Solution 28/11
+RRdrruRUrDDlllluRRRdrUdlddrU
+
+
+[Candidate 30]
+#          
+       ####
+  #### # .#
+  #  ###@*#
+  #     # #
+ ####     #
+##    . . #
+#     $   #
+#     $$ ##
+####   ### 
+   #####   
+Pushes: 21
+Box lines + box changes (estimates): 6
+Fitness: 6006
+Candidate number: 30
+Time of birth, milliseconds: 4368
+Fitness calculation time, milliseconds: 531
+Children: 0
+
+Solution 90/21
+urDDDldllldRurrdrUUdllldlddrUUluurrrdddLruulullddrRdrUllUdlddrUUrrruuU
+UddllulldRRRlddrruUU
+
+
+[Candidate 17]
+#          
+       ####
+  #### #  #
+  #  ###@*#
+  #.  $ # #
+#####   $ #
+#       . #
+#  #      #
+#        ##
+####   ### 
+   #####   
+Pushes: 14
+Box lines + box changes (estimates): 6
+Fitness: 6006
+Candidate number: 17
+Time of birth, milliseconds: 2168
+Fitness calculation time, milliseconds: 141
+Children: 2
+
+Solution 38/14
+urDDDLLuLrddlluRurDldRluuLLrrrdddrrUUU
+
+
+[Candidate 23]
+#          
+       ####
+  #### #*@#
+  #  ### *#
+  #.  $ # #
+#####   $ #
+#       . #
+#  #      #
+#        ##
+####   ### 
+   #####   
+Pushes: 14
+Box lines + box changes (estimates): 6
+Fitness: 6006
+Candidate number: 23
+Time of birth, milliseconds: 2824
+Fitness calculation time, milliseconds: 156
+Children: 4
+
+Solution 36/14
+DDDLLuLrddlluRurDldRluuLLrrrdddrrUUU
+
+
+[Candidate 73]
+#          
+       ####
+  #### #*@#
+  #  ### *#
+  #.  $ # #
+ ####   $ #
+##      . #
+#         #
+#        ##
+####   ### 
+   #####   
+Pushes: 14
+Box lines + box changes (estimates): 6
+Fitness: 6006
+Candidate number: 73
+Time of birth, milliseconds: 11217
+Fitness calculation time, milliseconds: 140
+Children: 2
+
+Solution 36/14
+DDDLLuLrddlluRurDldRluuLLrrrdddrrUUU
+
+
+[Candidate 64]
+#          
+       ####
+  #### # .#
+  #  ### .#
+  #@$   $ #
+#####    *#
+#  #      #
+#         #
+##       ##
+ ###   ### 
+   #####   
+Pushes: 11
+Box lines + box changes (estimates): 6
+Fitness: 6006
+Candidate number: 64
+Time of birth, milliseconds: 9111
+Fitness calculation time, milliseconds: 109
+Children: 0
+
+Solution 32/11
+RRdrrrdrUUUlDldlluRRRlddrruUlldR
+
+
+[Candidate 63]
+#          
+#          
+  ####     
+  #  ####  
+  #+$   ###
+  ###$ $  #
+ ####    .#
+ #      . #
+ #       ##
+ ###   ### 
+   #####   
+Pushes: 15
+Box lines + box changes (estimates): 8
+Fitness: 5008
+Candidate number: 63
+Time of birth, milliseconds: 9033
+Fitness calculation time, milliseconds: 78
+Children: 0
+
+Solution 41/15
+RRDrRuLdlDrddlluRRRurruLdlluurDldRRlluuLL
+
+
+[Candidate 42]
+#          
+       ####
+  #### #@.#
+  #  ### *#
+  #     # #
+  ###     #
+####      #
+#  $$     #
+#       .##
+####   ### 
+   #####   
+Pushes: 24
+Box lines + box changes (estimates): 6
+Fitness: 5006
+Candidate number: 42
+Time of birth, milliseconds: 6880
+Fitness calculation time, milliseconds: 125
+Children: 4
+
+Solution 59/24
+rDDDldllllDLdRRRRurrUUUUddddlldlllllluRRRdrUluRdrUluRRRdrUU
+
+
+[Candidate 19]
+#          
+#          
+  ####     
+ ##  ####  
+ #.     ###
+ ####.    #
+####      #
+# $     . #
+# @$$    ##
+####   ### 
+   #####   
+Pushes: 21
+Box lines + box changes (estimates): 6
+Fitness: 5006
+Candidate number: 19
+Time of birth, milliseconds: 2371
+Fitness calculation time, milliseconds: 125
+Children: 4
+
+Solution 59/21
+luRRRurrdddllULrrUdlluRRRRllUUddlllldRRurrddlUluRdrUUruuLLL
+
+
+[Candidate 18]
+#          
+       ####
+  #### # @#
+  # *###**#
+  #     # #
+  ###     #
+####      #
+#       $ #
+#        ##
+##.#   ### 
+ #######   
+Pushes: 16
+Box lines + box changes (estimates): 6
+Fitness: 5006
+Candidate number: 18
+Time of birth, milliseconds: 2309
+Fitness calculation time, milliseconds: 62
+Children: 9
+
+Solution 42/16
+DDDldlddrUrULLLulDrdLulDrdLLulDrrrrrruruUU
+
+
+[Candidate 20]
+#          
+       ####
+  #### #*@#
+### *### *#
+#.      # #
+#####     #
+####      #
+#       $ #
+#        ##
+####   ### 
+   #####   
+Pushes: 16
+Box lines + box changes (estimates): 6
+Fitness: 5006
+Candidate number: 20
+Time of birth, milliseconds: 2496
+Fitness calculation time, milliseconds: 78
+Children: 0
+
+Solution 36/16
+DDDldlddrUrULLLdlUUruLLLLrrrrrdrdrUU
+
+
+[Candidate 22]
+#          
+       ####
+  #### #*+#
+ ##  ### $#
+ #.     # #
+#####     #
+#         #
+#  #    $ #
+#        ##
+####   ### 
+   #####   
+Pushes: 16
+Box lines + box changes (estimates): 6
+Fitness: 5006
+Candidate number: 22
+Time of birth, milliseconds: 2746
+Fitness calculation time, milliseconds: 62
+Children: 3
+
+Solution 35/16
+DDDldlddrUrULLLdlUUruLLLrrrrdrdrUUU
+
+
+[Candidate 36]
+#          
+       ####
+  #### #*+#
+ ##* ### $#
+ #.     # #
+#####     #
+#         #
+#  #    $ #
+#        ##
+####   ### 
+   #####   
+Pushes: 16
+Box lines + box changes (estimates): 6
+Fitness: 5006
+Candidate number: 36
+Time of birth, milliseconds: 5913
+Fitness calculation time, milliseconds: 78
+Children: 5
+
+Solution 35/16
+DDDldlddrUrULLLdlUUruLLLrrrrdrdrUUU
+
+
+[Candidate 41]
+#          
+       ####
+  #### #@.#
+ ##  ###*$#
+ #.     # #
+#####     #
+#         #
+#  #    $ #
+#        ##
+####   ### 
+   #####   
+Pushes: 16
+Box lines + box changes (estimates): 6
+Fitness: 5006
+Candidate number: 41
+Time of birth, milliseconds: 6802
+Fitness calculation time, milliseconds: 62
+Children: 2
+
+Solution 36/16
+rDDDldlddrUrULLLdlUUruLLLrrrrdrdrUUU
+
+
+[Candidate 86]
+#          
+       ####
+  #### #@ #
+  #  ###**#
+  #     # #
+  ###     #
+####      #
+#       $ #
+#        ##
+##.#   ### 
+ #######   
+Pushes: 16
+Box lines + box changes (estimates): 6
+Fitness: 5006
+Candidate number: 86
+Time of birth, milliseconds: 14025
+Fitness calculation time, milliseconds: 62
+Children: 0
+
+Solution 43/16
+rDDDldlddrUrULLLulDrdLulDrdLLulDrrrrrruruUU
+
+
+[Candidate 25]
+#          
+       ####
+  #### #*+#
+  #  ### $#
+  #.    # #
+#####     #
+#  #      #
+#  #    $ #
+#        ##
+####   ### 
+   #####   
+Pushes: 15
+Box lines + box changes (estimates): 6
+Fitness: 5006
+Candidate number: 25
+Time of birth, milliseconds: 3073
+Fitness calculation time, milliseconds: 63
+Children: 0
+
+Solution 33/15
+DDDldlddrUrULLLdlUUruLLrrrdrdrUUU
+
+
+[Candidate 38]
+#          
+       ####
+  ###  #*@#
+ ##*#### *#
+ #.     # #
+#####     #
+#         #
+#  #    $ #
+#        ##
+####   ### 
+   #####   
+Pushes: 15
+Box lines + box changes (estimates): 6
+Fitness: 5006
+Candidate number: 38
+Time of birth, milliseconds: 6084
+Fitness calculation time, milliseconds: 63
+Children: 2
+
+Solution 34/15
+DDDldlddrUrULLLdlUUruLLLrrrrdrdrUU
+
+
+[Candidate 45]
+#          
+       ####
+  #### # @#
+ ##  ### *#
+ #.     # #
+ ####     #
+ #        #
+ # #    $ #
+ #       ##
+ ###   ### 
+   #####   
+Pushes: 15
+Box lines + box changes (estimates): 6
+Fitness: 5006
+Candidate number: 45
+Time of birth, milliseconds: 7239
+Fitness calculation time, milliseconds: 62
+Children: 4
+
+Solution 34/15
+DDDldlddrUrULLLdlUUruLLLrrrrdrdrUU
+
+
+[Candidate 57]
+#          
+       ####
+  #### #@.#
+  #* ###*$#
+  #.    # #
+#####     #
+#         #
+#  #    $ #
+#        ##
+####   ### 
+   #####   
+Pushes: 15
+Box lines + box changes (estimates): 6
+Fitness: 5006
+Candidate number: 57
+Time of birth, milliseconds: 8393
+Fitness calculation time, milliseconds: 62
+Children: 0
+
+Solution 34/15
+rDDDldlddrUrULLLdlUUruLLrrrdrdrUUU
+
+
+[Candidate 83]
+#          
+       ####
+  #### #*+#
+  #* ### $#
+  #.    # #
+#####     #
+#  #      #
+#       $ #
+#        ##
+####   ### 
+   #####   
+Pushes: 15
+Box lines + box changes (estimates): 6
+Fitness: 5006
+Candidate number: 83
+Time of birth, milliseconds: 13822
+Fitness calculation time, milliseconds: 78
+Children: 0
+
+Solution 33/15
+DDDldlddrUrULLLdlUUruLLrrrdrdrUUU
+
+
+[Candidate 84]
+#          
+       ####
+  #### #*@#
+ ##  ### *#
+ #.     # #
+#####     #
+#         #
+#  #    $ #
+#        ##
+####   ### 
+   #####   
+Pushes: 15
+Box lines + box changes (estimates): 6
+Fitness: 5006
+Candidate number: 84
+Time of birth, milliseconds: 13900
+Fitness calculation time, milliseconds: 62
+Children: 0
+
+Solution 34/15
+DDDldlddrUrULLLdlUUruLLLrrrrdrdrUU
+
+
+[Candidate 53]
+#          
+       ####
+  #### #*@#
+  #  ### *#
+  #.    # #
+#####     #
+#  #      #
+#       $ #
+#        ##
+####   ### 
+   #####   
+Pushes: 14
+Box lines + box changes (estimates): 6
+Fitness: 5006
+Candidate number: 53
+Time of birth, milliseconds: 8003
+Fitness calculation time, milliseconds: 47
+Children: 1
+
+Solution 32/14
+DDDldlddrUrULLLdlUUruLLrrrdrdrUU
+
+
+[Candidate 85]
+#          
+       ####
+  #### #@ #
+  #  ###**#
+  #.    # #
+#####     #
+#  #      #
+#       $ #
+#        ##
+####   ### 
+   #####   
+Pushes: 14
+Box lines + box changes (estimates): 6
+Fitness: 5006
+Candidate number: 85
+Time of birth, milliseconds: 13962
+Fitness calculation time, milliseconds: 63
+Children: 0
+
+Solution 33/14
+rDDDldlddrUrULLLdlUUruLLrrrdrdrUU
+
+
+[Candidate 35]
+#          
+       ####
+  #### #*@#
+  #  ### *#
+  #     # #
+  ###   $ #
+ ###      #
+ #      . #
+ #       ##
+ ###   ### 
+   #####   
+Pushes: 10
+Box lines + box changes (estimates): 6
+Fitness: 5006
+Candidate number: 35
+Time of birth, milliseconds: 5850
+Fitness calculation time, milliseconds: 63
+Children: 0
+
+Solution 24/10
+DDDLddrUllluurDldRurDrUU
+
+
+[Candidate 37]
+#          
+       ####
+  #### #*@#
+  #  ### *#
+  #     # #
+  ###   $ #
+####      #
+#       . #
+#        ##
+####   ### 
+   #####   
+Pushes: 10
+Box lines + box changes (estimates): 6
+Fitness: 5006
+Candidate number: 37
+Time of birth, milliseconds: 6006
+Fitness calculation time, milliseconds: 63
+Children: 2
+
+Solution 24/10
+DDDLddrUllluurDldRurDrUU
+
+
+[Candidate 77]
+#          
+       ####
+  #### #@ #
+  #  ###**#
+  #     # #
+  ###   $ #
+####      #
+#       . #
+#        ##
+####   ### 
+   #####   
+Pushes: 10
+Box lines + box changes (estimates): 6
+Fitness: 5006
+Candidate number: 77
+Time of birth, milliseconds: 12402
+Fitness calculation time, milliseconds: 78
+Children: 0
+
+Solution 25/10
+rDDDLddrUllluurDldRurDrUU
+
+
+[Candidate 75]
+#          
+       ####
+  #### #* #
+ ##  ### .#
+ #+ $   # #
+#####   $ #
+#        $#
+#  #     .#
+#        ##
+####   ### 
+   #####   
+Pushes: 14
+Box lines + box changes (estimates): 5
+Fitness: 5005
+Candidate number: 75
+Time of birth, milliseconds: 11466
+Fitness calculation time, milliseconds: 141
+Children: 0
+
+Solution 47/14
+rRRdrruLrddrdrUULdlluurDldRRurDllluuLLLrrrrdrrU
+
+
+[Tested candidates]
+1=58 8 86 0 0 86 33 129 14134 442496779977077400
+2=58 8 86 0 0 86 33 129 14134 -3864691328396136658
+3=58 8 86 0 0 86 33 129 14134 -4095761120412370592
+4=58 8 86 0 0 86 33 129 14134 -6169183469364701880
+5=58 8 86 0 0 86 33 129 14134 -8591860978361928189
+6=58 8 86 0 0 86 33 129 14134 -8945393619418035416
+7=58 8 86 0 0 86 33 129 14134 -8729693698896912948
+8=58 8 86 0 0 86 33 129 14134 -8789273739505754791
+9=58 8 86 0 0 86 33 129 14134 -8721885114837908786
+10=58 8 86 0 0 86 33 129 14134 -8355990225448597148
+11=58 8 86 0 0 86 33 129 14134 -8509841698956989466
+12=58 8 86 0 0 86 33 129 14134 -8470798281853648091
+13=58 8 86 0 0 86 33 129 14134 -7877837237384740507
+14=58 8 86 0 0 86 33 129 14134 -8255008677167368607
+15=58 8 86 0 0 86 33 129 14134 -8180550906514184233
+16=58 8 86 0 0 86 33 129 14134 -6293289622228783714
+17=58 8 86 0 0 86 33 129 14134 -6919364900034173826
+18=58 8 86 0 0 86 33 129 14134 -4426486833201351372
+19=58 8 86 0 0 86 33 129 14134 -4733508124175237550
+20=58 8 86 0 0 86 33 129 14134 -6164094107088999292
+21=58 8 86 0 0 86 33 129 14134 -5709514314858617012
+22=58 8 86 0 0 86 33 129 14134 -5175124619671980074
+23=58 8 86 0 0 86 33 129 14134 -5697843834222416662
+24=58 8 86 0 0 86 33 129 14134 -4440445840095182153
+25=58 8 86 0 0 86 33 129 14134 -4165599303429403061
+26=58 8 86 0 0 86 33 129 14134 -2762075829797987757
+27=58 8 86 0 0 86 33 129 14134 -3805055974860251735
+28=58 8 86 0 0 86 33 129 14134 -2973894856591294989
+29=58 8 86 0 0 86 33 129 14134 -3446179739371790295
+30=58 8 86 0 0 86 33 129 14134 -2960474435142152686
+31=58 8 86 0 0 86 33 129 14134 -700429922466350075
+32=58 8 86 0 0 86 33 129 14134 -2180451708919644648
+33=58 8 86 0 0 86 33 129 14134 -2687358457997450313
+34=58 8 86 0 0 86 33 129 14134 -2426947507113673765
+35=58 8 86 0 0 86 33 129 14134 -2641209182895758047
+36=58 8 86 0 0 86 33 129 14134 -2504167930636695204
+37=58 8 86 0 0 86 33 129 14134 -2442173664881031192
+38=58 8 86 0 0 86 33 129 14134 -2191006969089569112
+39=58 8 86 0 0 86 33 129 14134 -1643779532139938518
+40=58 8 86 0 0 86 33 129 14134 -775508178162888354
+41=58 8 86 0 0 86 33 129 14134 -1378001850338112150
+42=58 8 86 0 0 86 33 129 14134 -1002587198907572343
+43=58 8 86 0 0 86 33 129 14134 -686914452820322749
+44=58 8 86 0 0 86 33 129 14134 -688199256602081353
+45=58 8 86 0 0 86 33 129 14134 -633731703904182025
+46=58 8 86 0 0 86 33 129 14134 405999019580127454
+47=58 8 86 0 0 86 33 129 14134 333025382457758002
+48=58 8 86 0 0 86 33 129 14134 137879889612316015
+49=58 8 86 0 0 86 33 129 14134 1046292953388664963
+50=58 8 86 0 0 86 33 129 14134 7686172910167701899
+51=58 8 86 0 0 86 33 129 14134 5201131899927125086
+52=58 8 86 0 0 86 33 129 14134 1309906170998557639
+53=58 8 86 0 0 86 33 129 14134 1246106457198728863
+54=58 8 86 0 0 86 33 129 14134 3465720206764493299
+55=58 8 86 0 0 86 33 129 14134 3383272717206319635
+56=58 8 86 0 0 86 33 129 14134 3093131562369824770
+57=58 8 86 0 0 86 33 129 14134 1358260563900243860
+58=58 8 86 0 0 86 33 129 14134 1633191347961089325
+59=58 8 86 0 0 86 33 129 14134 1534092183340887191
+60=58 8 86 0 0 86 33 129 14134 2718306246020318227
+61=58 8 86 0 0 86 33 129 14134 1862035450518900033
+62=58 8 86 0 0 86 33 129 14134 2135714038078659064
+63=58 8 86 0 0 86 33 129 14134 2927631646827184164
+64=58 8 86 0 0 86 33 129 14134 2915836671156794525
+65=58 8 86 0 0 86 33 129 14134 4341032355908515084
+66=58 8 86 0 0 86 33 129 14134 4216535370786860767
+67=58 8 86 0 0 86 33 129 14134 3887501498510704030
+68=58 8 86 0 0 86 33 129 14134 5015880651604514173
+69=58 8 86 0 0 86 33 129 14134 6852855071527078711
+70=58 8 86 0 0 86 33 129 14134 5478216963512132389
+71=58 8 86 0 0 86 33 129 14134 5932634469508245633
+72=58 8 86 0 0 86 33 129 14134 5580204203822031453
+73=58 8 86 0 0 86 33 129 14134 5703926513116392385
+74=58 8 86 0 0 86 33 129 14134 5978724422490024307
+75=58 8 86 0 0 86 33 129 14134 6667721696677137205
+76=58 8 86 0 0 86 33 129 14134 7522037375797608102
+77=58 8 86 0 0 86 33 129 14134 7224001325256223980
+78=58 8 86 0 0 86 33 129 14134 8615652416474579327
+79=58 8 86 0 0 86 33 129 14134 8114561772688229899
+80=58 8 86 0 0 86 33 129 14134 7845819694688327413
+81=58 8 86 0 0 86 33 129 14134 7875189488863970631
+82=58 8 86 0 0 86 33 129 14134 8612201153249950276
+83=58 8 86 0 0 86 33 129 14134 8365022576690809657
+84=58 8 86 0 0 86 33 129 14134 8738541027755306153
+85=58 8 86 0 0 86 33 129 14134 9161890430833147999

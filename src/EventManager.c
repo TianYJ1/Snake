@@ -1,4 +1,5 @@
 #include "LibraryMerger.h"
+extern int yOffset;
 int onKeyDown(int key)
 {
 	return 0;
@@ -6,6 +7,26 @@ int onKeyDown(int key)
 int onKeyPressed(int key)
 {
 	return 0;
+}
+
+int onMouseWheel(float dir)
+{
+	if (dir != 0)
+	{
+
+		if (SCENE_NOW == LEVEL_SELECT_SCENE)
+		{
+			Log_i(__func__, "Mouse wheel:%f", dir);
+			yOffset += dir;
+			if (yOffset > 0)
+				yOffset = 0;
+			showDirectoryListing();
+
+		}
+		return 1;
+	}
+	else
+		return 0;
 }
 int onKeyUp(int key)
 {
@@ -98,9 +119,10 @@ int initEventManager()
 				EventManagerThreadRunning = false;
 			break;
 			case ALLEGRO_EVENT_DISPLAY_RESIZE:
-				
 				setNewScreen();
-				
+			break;
+			case ALLEGRO_EVENT_MOUSE_AXES:
+				onMouseWheel(Event.mouse.dz);
 			break;
 		}
 		

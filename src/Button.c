@@ -74,7 +74,7 @@ int addButtonSprite(char * src, char * text, float x, float y, float w, float h,
 	if(strlen(src) >0)
 		spritesId[empty] = addSprite(src, x, y, w, h, scene, layer);
 	else
-		spritesId[empty] = -2;
+		spritesId[empty] = -1;
 	//renderScreen();
 	if (buttonScount < BUTTONS_COUNT)
 		return empty;
@@ -122,9 +122,14 @@ void makeGrid(int count, int colums, char names[][BUTTONS_NAME_SIZE], int x, int
 }
 void makeGridSprites(int count, int colums, char names[][BUTTONS_NAME_SIZE], char * src, int x, int y, int w, int h, int(*callBacks[])(int id), int scene, int layer)
 {
+	
 	int rows = ceil(count / colums);
+	
+	if (count == 0 || colums == 0 || rows == 0)
+		return;
+	Log_i(__func__, "Grid:%iX%i, count=%i", rows, colums, count);
 	for (int i = 0; i < count; i++)
-		addButtonSprite(src, names[i], x + (w+15)*(i%colums), y + (15+h)*(i /rows), w, h, 255, 255, 255, (*callBacks[i]), scene, i, layer);
+		addButtonSprite(src, names[i], x + (w+15)*(i%rows), y + (15+h)*(i /rows), w, h, 255, 255, 255, (*callBacks[i]), scene, i, layer);
 
 	renderScreen();
 }

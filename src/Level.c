@@ -64,6 +64,15 @@ int regen(int id)
 
 
 int x = 0, y = 0;
+void onLevelFileOpened(int playerX, int playerY)
+{
+	renderMap();
+	x = playerX; y = playerY;
+	addButtonSprite("btntile.png", "Regen", SCREEN_WIDTH_UNIT * 1500, 0, SCREEN_WIDTH_UNIT * 200, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*regen), LEVEL_SCENE, 0, 0);
+	addButtonSprite("Button_pause.png", "", 0, 0, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*onPause), LEVEL_SCENE, 0, 0);
+	playerSpriteId = addSprite("Level/Player/Character1.png", SCREEN_WIDTH_UNIT* MAP_OFFSET + TILE_SIZE*SCREEN_WIDTH_UNIT*playerX, SCREEN_WIDTH_UNIT *MAP_OFFSET + TILE_SIZE*SCREEN_WIDTH_UNIT*playerY, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, SCENE_NOW, 3);
+	renderScreen();
+}
 void onLevelOpened(int levelId)
 {
 	
