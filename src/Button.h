@@ -10,3 +10,4 @@ int addButtonSprite(char * src, char * text, float x, float y, float w, float h,
 void makeGridSprites(int count, int colums, char names[][BUTTONS_NAME_SIZE], char * src, int x, int y, int w, int h, int(*callBacks[])(int id), int scene, int layer);
 void recalcButtons(float hC, float vC);
 void clearButtons(int scene);
+void makeListSprites(int count, char names[][BUTTONS_NAME_SIZE], char * src, int x, int y, int w, int h, int(*callBacks[])(int id), int scene, int layer);

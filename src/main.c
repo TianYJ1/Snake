@@ -4,18 +4,18 @@ char levelsPaths[256][128] = { 0 };
 extern float SCREEN_WIDTH_UNIT, SCREEN_HEIGHT_UNIT;
 int yOffset = 0;
 void showDirectoryListing();
-int openFolderDialog()
+int openFolderDialog(int i)
 {
 
 	ALLEGRO_FILECHOOSER *dialog = al_create_native_file_dialog("D:/School/Info/sokoban/src/res/","Choose folder","*.*",ALLEGRO_FILECHOOSER_FOLDER);
 	if (al_show_native_file_dialog(display, dialog))
 	{
-		pathCur = al_get_native_file_dialog_path(dialog, 0);
-		showDirectoryListing();
+	    convertConstCopy(al_get_native_file_dialog_path(dialog, 0), pathCur);
+	    showDirectoryListing();
 	}
 	return 1;
 }
-int openLevelSelect()
+int openLevelSelect(int i)
 {
 	changeScene(LEVEL_SELECT_SCENE);
 	clearButtons(LEVEL_SELECT_SCENE);
@@ -23,8 +23,8 @@ int openLevelSelect()
 	showDirectoryListing();
 	renderScreen();
 	showDirectoryListing();
-	
-	
+
+
 }
 char names[64][BUTTONS_NAME_SIZE];
 int levelSelectPage = 0;
@@ -35,11 +35,11 @@ void sliceFile()
 	ALLEGRO_FILECHOOSER *dialog = al_create_native_file_dialog("D:/School/Info/sokoban/src/res/", "Choose source", "*.txt", ALLEGRO_FILECHOOSER_FILE_MUST_EXIST);
 	if (al_show_native_file_dialog(display, dialog))
 	{
-		pathSource = al_get_native_file_dialog_path(dialog, 0);
+		convertConstCopy(al_get_native_file_dialog_path(dialog, 0), pathSource);
 		dialog = al_create_native_file_dialog("D:/School/Info/sokoban/src/res/", "Choose folder", "*.*", ALLEGRO_FILECHOOSER_FOLDER);
 		if (al_show_native_file_dialog(display, dialog))
 		{
-			pathTarget = al_get_native_file_dialog_path(dialog, 0);
+			convertConstCopy(al_get_native_file_dialog_path(dialog, 0), pathTarget);
 			char destFileStr[256] = { 0 };
 			FILE *sourceFile = fopen(pathSource, "r");
 			sprintf(destFileStr, "%s/%i.txt", pathTarget, c++);
@@ -47,13 +47,13 @@ void sliceFile()
 			if (sourceFile == NULL)
 			{
 				Log_e(__func__, "Source file error!\n");
-				return 1;
+				return;
 			}
 			char str[256];
 			bool prevStrIsData = false;
 			while (fgets(str, sizeof(str), sourceFile) != NULL)
 			{
-				
+
 				Log_i(__func__, "destFileStr=%s,str=%s", destFileStr,str);
 				int occur = 0;
 				if (strstr(str,"#"))
@@ -79,7 +79,7 @@ void sliceFile()
 					if (destFile == NULL)
 					{
 						Log_e(__func__, "destFile file error!\n");
-						return 1;
+						return;
 					}
 					fprintf(destFile, "%s", str);
 					prevStrIsData = true;
@@ -102,7 +102,7 @@ int nextPage(int i)
 int prevPage(int i)
 {
 	levelSelectPage--;
-	
+
 	clearButtons(LEVEL_SELECT_SCENE);
 	clearSpritesScene(LEVEL_SELECT_SCENE);
 	showDirectoryListing();
@@ -121,16 +121,18 @@ void showDirectoryListing()
 		ALLEGRO_FS_ENTRY* file;
 		int count = 0;
 		int(*callBacks[64])(int id);
-		
+        memset(levelsPaths,0,sizeof(levelsPaths));
 		while (file = al_read_directory(dir))
 		{
 			if (file == NULL)
 				Log_e(__func__, "ERROR: Level file is null");
 			else
 			{
-				//printf("%s\n", al_get_fs_entry_name(file));
-				char *path = al_get_fs_entry_name(file);
-				char *filename = strrchr(path, '\\');
+				printf("path:%s\n", al_get_fs_entry_name(file));
+				char *path;
+				convertConstCopy(al_get_fs_entry_name(file), path);
+				char *filename;
+                filename = strrchr(path, '\\');
 				if (filename == NULL)
 				{
 					filename = strrchr(path, '/');
@@ -141,9 +143,9 @@ void showDirectoryListing()
 				}
 				else
 					filename++;
-				if (strstr(filename, "."))
+				if (strstr(filename, ".txt"))
 				{
-					
+
 					if (count >= levelSelectPage * LEVEL_SELECT_ITEMS_PER_PAGE && count < (levelSelectPage + 1) * LEVEL_SELECT_ITEMS_PER_PAGE)
 					{
 						sprintf(levelsPaths[count- levelSelectPage * LEVEL_SELECT_ITEMS_PER_PAGE], "%s", path);
@@ -151,6 +153,8 @@ void showDirectoryListing()
 						sprintf(names[count- levelSelectPage * LEVEL_SELECT_ITEMS_PER_PAGE], "%s", filename);
 						callBacks[count- levelSelectPage * LEVEL_SELECT_ITEMS_PER_PAGE] = &openLevel;
 						Log_i(__func__, "Level: %s", filename);
+
+
 					}
 					count++;
 				}
@@ -164,28 +168,35 @@ void showDirectoryListing()
 	al_destroy_fs_entry(dir);
 	Log_i(__func__, "Folder: %s", pathCur);
 }
-void Exit()
+int ExitProg(int i)
 {
 	EventManagerThreadRunning = 0;
 }
-int main()
+int main(void)
 {
-	if(!DEBUG_MODE)
-		ShowWindow(GetConsoleWindow(), SW_HIDE);
-	
+	//if(!DEBUG_MODE)
+		//ShowWindow(GetConsoleWindow(), SW_HIDE);
+	printf("qqq\n");
 	initAddons();
 	initVars();
 	initButtons();
 	Log_i(__func__, "Initied\n================\n");
-	int(*callBacks[3])(int id) = { openLevelSelect,Exit };
+	int(*callBacks[3])(int id) = { openLevelSelect,ExitProg };
 	char names[][BUTTONS_NAME_SIZE] = { "Level Select\0" ,"Exit\0" };
-	sprintf(resourcePath, "%s\\Levels\\", resourcePath);
+
+	char *p = (char*)malloc(strlen(resourcePath)+16);
+	sprintf(p,"%s",resourcePath);
+	free(resourcePath);
+
+	resourcePath = (char*)malloc(strlen(resourcePath)+16);
+
+	sprintf(resourcePath, "%sLevels", p);
 	pathCur = resourcePath;
 	addButton("TL", 0, 0, 50, 50, 255, 255, 255, NULL,0,0);
 	addButton("TR", SCREEN_WIDTH-50, 0, 50, 50, 255, 255, 255, NULL, MAINMENU_SCENE,0);
 	addButton("BL", 0, SCREEN_HEIGHT-50, 50, 50, 255, 255, 255, NULL, MAINMENU_SCENE,0);
 	addButton("BR", SCREEN_WIDTH-50, SCREEN_HEIGHT-50, 50, 50, 255, 255, 255, NULL, MAINMENU_SCENE,0);
-	
+
 	makeListSprites(2,names, "btntile.png", SCREEN_WIDTH/2-125, 50, 250, 150, callBacks, MAINMENU_SCENE, 1);
 	//sliceFile();
 	addSprite("back.jpg", 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, -1, 0);
@@ -198,5 +209,6 @@ int main()
 	al_destroy_display(display);
 	al_destroy_path(path);
 	return 0;
-    
+
 }
+

@@ -1,0 +1,66 @@
+I/initVars::Screen:640 480
+E/initVars::Res path not found: /home/user/sokoban/../res/
+E/initVars::Res path not found: /home/user/sokoban//home/user/sokoban/src/res/
+I/main::Initied
+================
+
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+E/initVars::Res path not found: /home/user/sokoban/../res/
+E/initVars::Res path not found: /home/user/sokoban//home/user/sokoban/src/res/
+I/main::Initied
+================
+
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/addSprite::Added sprite name:btntile.png
+I/addSprite::Added sprite name:btntile.png
+I/addSprite::Added sprite name:back.jpg
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/setNewScreen::New screen:640 508, coef=1,000000,1,058333
+I/setNewScreen::New screen:1615 922, coef=2,523438,1,814961
+I/setNewScreen::New screen:1615 922, coef=1,000000,1,000000
+I/addSprite::Added sprite name:btntile.png
+I/addSprite::Added sprite name:btntile.png
+I/addSprite::Added sprite name:btntile.png
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/addSprite::Added sprite name:btntile.png
+I/addSprite::Added sprite name:btntile.png
+I/addSprite::Added sprite name:back.jpg
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/addSprite::Added sprite name:btntile.png
+I/addSprite::Added sprite name:btntile.png
+I/addSprite::Added sprite name:btntile.png
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/addSprite::Added sprite name:btntile.png
+I/addSprite::Added sprite name:btntile.png
+I/addSprite::Added sprite name:back.jpg
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/addSprite::Added sprite name:btntile.png
+I/addSprite::Added sprite name:btntile.png
+I/addSprite::Added sprite name:back.jpg
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok

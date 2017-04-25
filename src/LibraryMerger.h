@@ -1,16 +1,13 @@
 #pragma once
+#pragma warnings 1591
 #include <stdio.h>
 #include <math.h>
 #include <time.h>
 #include <stdlib.h>
 #include <stdarg.h>
-#if     _WIN32_WINNT < 0x0500
-#undef  _WIN32_WINNT
-#define _WIN32_WINNT   0x0500
-#endif
-#include <windows.h>
 
-#include <allegro5/allegro.h>
+
+#include <allegro5/allegro5.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/allegro_image.h>
@@ -42,11 +39,13 @@
 
 
 
-extern int AllegroFont, SCREEN_WIDTH, SCREEN_HEIGHT, SCENE_NOW, EventManagerThreadRunning;
+extern int SCREEN_WIDTH, SCREEN_HEIGHT, SCENE_NOW, EventManagerThreadRunning;
 extern float SCREEN_WIDTH_UNIT, SCREEN_HEIGHT_UNIT;
 extern ALLEGRO_DISPLAY* display;
-extern ALLEGRO_FONT* font;
+extern ALLEGRO_FONT* font, *AllegroFont;
 extern ALLEGRO_PATH *path;
 extern char * resourcePath;
 extern int map[LEVEL_HEIGHT][LEVEL_WIDTH];
 extern char levelsPaths[256][128];
+
+void showDirectoryListing();

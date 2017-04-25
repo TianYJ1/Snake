@@ -43,8 +43,8 @@ int regen(int id)
 	clearSprites(LEVEL_SCENE, 2);
 	memset(seed, 0, SEED_LENTGH * 8);
 	memset(cratesSeed, 0, SEED_LENTGH * 8);
-	generateSeed(&seed,25);
-	
+	//generateSeed(&seed,25);
+
 	addButtonSprite("", seed, SCREEN_WIDTH_UNIT * 500, SCREEN_HEIGHT_UNIT * 1500, SCREEN_WIDTH_UNIT * 800, 150, 255, 255, 255, NULL, LEVEL_SCENE, 0, 0);
 	addButtonSprite("", cratesSeed, SCREEN_WIDTH_UNIT * 500, SCREEN_HEIGHT_UNIT * 1700, SCREEN_WIDTH_UNIT * 800, 150, 255, 255, 255, NULL, LEVEL_SCENE, 0, 0);
 	generate(map, 3);
@@ -75,13 +75,13 @@ void onLevelFileOpened(int playerX, int playerY)
 }
 void onLevelOpened(int levelId)
 {
-	
-	generateSeed(&seed, 5);
-	generate(map, 3);
+
+	//generateSeed(&seed, 5);
+	//generate(map, 3);
 	renderMap();
 	addButtonSprite("btntile.png", "Regen", SCREEN_WIDTH_UNIT*1500, 0, SCREEN_WIDTH_UNIT * 200, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*regen), LEVEL_SCENE, 0, 0);
 	addButtonSprite("Button_pause.png","", 0, 0, SCREEN_WIDTH_UNIT*100, SCREEN_WIDTH_UNIT*100, 255, 255, 255, (*onPause),LEVEL_SCENE, 0, 0);
-	
+
 	int i = 0;
 	for (; i < LEVEL_HEIGHT - 5; i++)
 	{
@@ -95,15 +95,15 @@ void onLevelOpened(int levelId)
 void renderMap()
 {
 	addSprite("Level/Tiles/Ground_Sand.png", SCREEN_WIDTH_UNIT *MAP_OFFSET, SCREEN_WIDTH_UNIT *MAP_OFFSET, (TILE_SIZE-2)*SCREEN_WIDTH_UNIT*LEVEL_WIDTH, (TILE_SIZE-2)*SCREEN_WIDTH_UNIT*LEVEL_HEIGHT, SCENE_NOW, 2);
-	for (int q = 0; q < LEVEL_HEIGHT; q++)
+	for (int q = 0; q < LEVEL_WIDTH; q++)
 	{
-		for (int i = 0; i < LEVEL_WIDTH; i++)
+		for (int i = 0; i < LEVEL_HEIGHT; i++)
 		{
 			int x = i*(TILE_SIZE-2)*SCREEN_WIDTH_UNIT + SCREEN_WIDTH_UNIT *MAP_OFFSET, y = q*(TILE_SIZE-2)*SCREEN_WIDTH_UNIT + SCREEN_WIDTH_UNIT * MAP_OFFSET;
 			switch (map[i][q])
 			{
 				case 0:
-					
+
 					break;
 				case 1:
 					mapSprites[i][q] = addSprite("Level/Tiles/WallRound_Brown.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, SCENE_NOW, 2);
@@ -120,7 +120,7 @@ void renderMap()
 }
 
 void movePlayer(int up, int right)
-{ 
+{
 	int newX = x, newY = y;
 	bool assign = true;
 	newX += right; newY -= up;
@@ -135,10 +135,10 @@ void movePlayer(int up, int right)
 			if (map[newX + right][newY - up] == 0)
 			{
 			}
-			
-				
+
+
 				Log_i(__func__, "Changed crate place");
-				
+
 			mapSprites[newX + right][newY - up] = mapSprites[newX][newY];
 			map[newX + right][newY - up] = 3;
 			map[newX][newY] = 0;

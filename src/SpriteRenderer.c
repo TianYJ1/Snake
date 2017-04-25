@@ -53,7 +53,7 @@ int addSpriteBmp(ALLEGRO_BITMAP * src, int x, int y, int w, int h, int scene, in
 	//renderScreen();
 	return empty;
 }
-HANDLE hMutex;
+
 void renderSrpite(int id)
 {
 

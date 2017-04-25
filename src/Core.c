@@ -1,7 +1,9 @@
+#define DEBUGMODE
 #include "LibraryMerger.h"
 
 ALLEGRO_FONT* font = NULL;
-int AllegroFont, SCREEN_WIDTH = 0, SCREEN_HEIGHT = 0, SCENE_NOW = 0, EventManagerThreadRunning = 1;
+int SCREEN_WIDTH = 0, SCREEN_HEIGHT = 0, SCENE_NOW = 0, EventManagerThreadRunning = 1;
+ALLEGRO_FONT* AllegroFont = NULL;
 ALLEGRO_DISPLAY* display = NULL;
 float SCREEN_WIDTH_UNIT = 0, SCREEN_HEIGHT_UNIT = 0;
 ALLEGRO_PATH *path;
@@ -9,36 +11,46 @@ FILE *targetFile;
 char * resourcePath;
 void initAddons()
 {
-	al_init();
+	printf("Allegro init: %i\n",al_init());
+	printf("%0x, %0x",ALLEGRO_VERSION_INT,al_get_allegro_version());
+	printf("1\n");
 	al_init_font_addon();
+	printf("2\n");
 	al_init_ttf_addon();
+	printf("3\n");
 	al_init_primitives_addon();
+	printf("4\n");
+	if(!al_install_keyboard())
+	{
+	      printf("failed to initialize the keyboard!\n");
+	//      return -1;
+   	}
 	al_init_native_dialog_addon();
-	al_install_keyboard();
-	al_init_image_addon();	
-	
+	printf("al_installed_keyboard_\n");
+	al_init_image_addon();
+
 }
 
 int threadsCount = 0;
 void renderScreen()
 {
-	al_clear_to_color(al_map_rgb(0, 0, 0));
+	//al_clear_to_color(al_map_rgb(0, 0, 0));
 	for (int i = 0; i < 6; i++)
 		renderSprites(i);
 	renderSprites(-1);
 	renderButtonsSc();
 	al_flip_display();
-	
+
 	//al_create_thread(renderSpriteThr, NULL, -1);
-	
+
 }
 void changeScene(int scene)
 {
 	SCENE_NOW = scene;
 	renderScreen();
-	
+
 }
-void Log_i(char * tag, const char *str, ...)
+void Log_i(const char * tag, const char *str, ...)
 {
 	char buf[128];
 	va_list vl;
@@ -49,7 +61,7 @@ void Log_i(char * tag, const char *str, ...)
 	fprintf(targetFile, "I/%s::%s\n",tag, buf);
 	fflush(targetFile);
 }
-void Log_e(char * tag, const char *str, ...)
+void Log_e(const char * tag, const char *str, ...)
 {
 	char buf[128];
 	va_list vl;
@@ -64,8 +76,8 @@ void Log_e(char * tag, const char *str, ...)
 }
 void setNewScreen()
 {
-	
-	
+
+
 	ALLEGRO_DISPLAY_MODE  disp_data;
 	al_get_display_mode(al_get_num_display_modes() - 1, &disp_data);
 	al_acknowledge_resize(display);
@@ -87,51 +99,61 @@ void initVars()
 {
 	srand(time(NULL));
 	AllegroFont = al_create_builtin_font();
-	
+	printf("font created\n");
 	targetFile = fopen("logs.txt", "a+");
 	if (targetFile == NULL)
 	{
 		printf("Target file error!\n");
-		return 2;
+		return;
 	}
-	
+	printf("file opened\n");
 	ALLEGRO_DISPLAY_MODE  disp_data;
 	al_get_display_mode(al_get_num_display_modes() - 1, &disp_data);
-	
+
 	SCREEN_WIDTH = disp_data.width; SCREEN_HEIGHT = disp_data.height;
-	
+
 	Log_i(__func__,"Screen:%i %i", SCREEN_WIDTH, SCREEN_HEIGHT);
-	
+
 	al_set_new_display_flags(ALLEGRO_WINDOWED | ALLEGRO_RESIZABLE);
 	//SCREEN_WIDTH /= 2; SCREEN_HEIGHT /= 2;
 	//else
-		al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
-	
+		//al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
+
 	path = al_get_standard_path(ALLEGRO_RESOURCES_PATH);
 
 	al_append_path_component(path, "res");
+	Log_i(__func__, "Res path:%s", al_path_cstr(path, '/'));
 	if (!al_change_directory(al_path_cstr(path, '/')))
 	{
 		path = al_get_standard_path(ALLEGRO_RESOURCES_PATH);
 		al_append_path_component(path, "../res");
 		if (!al_change_directory(al_path_cstr(path, '/')))
 		{
-			Log_e(__func__, "Res path not found", al_path_cstr(path, '/'));
+			Log_e(__func__, "Res path not found: %s", al_path_cstr(path, '/'));
+			path = al_get_standard_path(ALLEGRO_RESOURCES_PATH);
+			al_append_path_component(path, "/home/user/sokoban/src/res");
+		    	if (!al_change_directory(al_path_cstr(path, '/')))
+			{
+		        	Log_e(__func__, "Res path not found: %s", al_path_cstr(path, '/'));
+		        	return;
+		    	}
 		}
 	}
-	Log_i(__func__, "Res path:%s", al_path_cstr(path, '/'));
-	resourcePath = al_path_cstr(path, '/');
+	
+	const char *p = al_path_cstr(path, '/');
+	resourcePath = (char*)malloc(strlen(p)+1);
+	sprintf(resourcePath ,"%s",p);
 	SCREEN_WIDTH_UNIT = SCREEN_WIDTH / 2000.0;
 	SCREEN_HEIGHT_UNIT = SCREEN_HEIGHT / 2000.0;
 	font = al_load_ttf_font("SansPosterBold.ttf", -SCREEN_HEIGHT_UNIT * 80, ALLEGRO_TTF_MONOCHROME);
 	display = al_create_display(SCREEN_WIDTH, SCREEN_HEIGHT);
 	//SCREEN_WIDTH -= 250; SCREEN_HEIGHT -= 40;
-	al_clear_to_color(al_map_rgb(0, 0, 0));
+	//al_clear_to_color(al_map_rgb(0, 0, 0));
 
 }
 int openLevel(int num)
 {
-	printf("\nOpening Level #%i", levelsPaths[num]);
+	printf("\nOpening Level #%s", levelsPaths[num]);
 	FILE *sourceFile = fopen(levelsPaths[num], "r");
 	char str[256];
 	bool prevStrIsData = false;
@@ -172,8 +194,8 @@ int openLevel(int num)
 		}
 		y++;
 		Log_i(__func__, "levelStr=%s", str);
-		
-		
+
+
 	}
 	fclose(sourceFile);
 	changeScene(LEVEL_SCENE);
@@ -181,4 +203,10 @@ int openLevel(int num)
 	onLevelFileOpened(playerX, playerY);
 	return 1;
 }
-
+void convertConstCopy(const char *source, char *toChr)
+{
+    if(toChr)
+        free(toChr);
+    toChr = (char*)malloc(strlen(source)+1);
+    sprintf(toChr ,"%s",source);
+}
