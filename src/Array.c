@@ -5,14 +5,7 @@ int arraySize(const ArrayElement *arrayC)
 	 if (!arrayC)
 		 return 0;
 	int ret = 0;
-	__try
-	{
-		for (const ArrayElement *cur = arrayC; cur; cur = cur->linkToNext, ++ret);
-	}
-	__except(1)
-	{
-		ret = -1;
-	}
+	for (const ArrayElement *cur = arrayC; cur; cur = cur->linkToNext, ++ret);
 	return ret;
 }
 byte *get(const ArrayElement *arrayC, int i)
