@@ -37,8 +37,10 @@ int onKeyUp(int key)
 				EventManagerThreadRunning = false;
 			else if (SCENE_NOW == LEVEL_SELECT_SCENE)
 			{
-				changeScene(MAINMENU_SCENE);
 				clearButtons(LEVEL_SELECT_SCENE);
+				clearSpritesScene(LEVEL_SELECT_SCENE);
+				changeScene(MAINMENU_SCENE);
+				
 			}
 			else if (SCENE_NOW == LEVEL_SCENE_PAUSE)
 				onResume(0);

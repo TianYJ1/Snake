@@ -1,26 +1,29 @@
 #include "LibraryMerger.h"
-char * buttonsTexts[BUTTONS_COUNT] = { 0 };
-int spritesId[BUTTONS_COUNT] = { -1 };
-int buttonsId[BUTTONS_COUNT] = { 0 };
-int buttonsScene[BUTTONS_COUNT] = { 0 };
-int buttonsEmpty[BUTTONS_COUNT] = { -1 };
-int (*callBacks[BUTTONS_COUNT])(int id) = {0};
-float buttonsPos[BUTTONS_COUNT][2] = { 0 };
-float buttonsSize[BUTTONS_COUNT][2] = { 0 };
-int buttonsColorsRGB[BUTTONS_COUNT][3]= {255,255,255};
-int buttonScount = 0;
-
+ArrayElement * buttonsArr = NULL;
+Button *getStructButton(int i)
+{
+	Button *curButt = malloc(sizeof(Button));
+	Button *newBt = get(buttonsArr, i);
+	if (newBt)
+	{
+		memcpy(curButt, newBt, sizeof(Button));
+		return newBt;
+	}
+	else
+		return NULL;
+}
 void renderButtonsSc()
 {
-	for (int i = 0; i < buttonScount; i++)
+	for (int i = 0; i < arraySize(buttonsArr); i++)
 	{
-		if (buttonsEmpty[i]== 0 && (buttonsScene[i] == SCENE_NOW || buttonsScene[i] == -1))
+		Button *curButt = getStructButton(i);
+		if (curButt->scene == SCENE_NOW || curButt->scene == -1)
 		{
-			ALLEGRO_COLOR color = al_map_rgb(buttonsColorsRGB[i][0], buttonsColorsRGB[i][1], buttonsColorsRGB[i][2]);
-			if(spritesId[i] == -1)
-				al_draw_rounded_rectangle(buttonsPos[i][0], buttonsPos[i][1], buttonsPos[i][0]+buttonsSize[i][0], buttonsPos[i][1]+buttonsSize[i][1], 5, 5, color, 5);
-			int textX = buttonsPos[i][0] + buttonsSize[i][0] / 2, textY = buttonsPos[i][1] + buttonsSize[i][1] / 3;
-			al_draw_textf(font, color, textX, textY, ALLEGRO_ALIGN_CENTER, "%s", buttonsTexts[i]);
+			ALLEGRO_COLOR color = al_map_rgb(curButt->r, curButt->g, curButt->b);
+			if(curButt->spriteId == -1)
+				al_draw_rounded_rectangle(curButt->posX, curButt->posY, curButt->posX+ curButt->width, curButt->posY+ curButt->height, 5, 5, color, 5);
+			int textX = curButt->posX + curButt->width/ 2, textY = curButt->posY + curButt->height / 3;
+			al_draw_textf(font, color, textX, textY, ALLEGRO_ALIGN_CENTER, "%s", curButt->text);
 		}
 	}
 	
@@ -34,67 +37,50 @@ void initButtons()
 }
 int addButton(char * text, float x, float y, float w, float h, int red, int blue, int green, int(*callback)(int), int scene, int buttonId)
 {
-	int empty = -1;
-	if (buttonScount > 5)
-	{
-		for (int i = 0; i < buttonScount; i++)
-		{
-			if (buttonsEmpty[i] == 1)
-			{
-				empty = i;
-				break;
-			}
-		}
-		
-	}
-	if (empty == -1)
-	{
-		empty = (buttonScount++);
-		
-	}
-	buttonsEmpty[empty] = 0;
-	buttonsColorsRGB[empty][0] = red; buttonsColorsRGB[empty][1] = blue; buttonsColorsRGB[empty][2] = green;
-	buttonsPos[empty][0] = x; buttonsPos[empty][1] = y;
-	buttonsSize[empty][0] = w; buttonsSize[empty][1] = h;
-	buttonsScene[empty] = scene;
-	buttonsTexts[empty] = text;
-	buttonsId[empty] = buttonId;
-	callBacks[empty] = callback;
-	spritesId[empty] = -1;
-	//renderScreen();
-	if (buttonScount < BUTTONS_COUNT)
-		return empty;
-	else
-		return -1;//maxium amount of buttons is reached!
+	Button newButton;
+	newButton.text = text;
+	newButton.id = buttonId;
+	newButton.callback = callback;
+	newButton.spriteId = -1;
+	newButton.posX = x; newButton.posY = y;
+	newButton.width = w; newButton.height = h;
+	newButton.scene = scene; 
+	newButton.r = red; newButton.g = green; newButton.b = blue;
+	return add(&buttonsArr, (byte *)&newButton, sizeof(newButton));
 }
 
 int addButtonSprite(char * src, char * text, float x, float y, float w, float h, int red, int blue, int green, int(*callback)(int), int scene, int buttonId, int layer)
 {
-	int empty = addButton(text,x,y,w,h,red,blue,green,callback,scene,buttonId);
+	Button newButton;
+	newButton.text = text;
+	newButton.id = buttonId;
+	newButton.callback = callback;
+	newButton.posX = x; newButton.posY = y;
+	newButton.width = w; newButton.height = h;
+	newButton.scene = scene;
+	newButton.r = red; newButton.g = green; newButton.b = blue;
 	if(strlen(src) >0)
-		spritesId[empty] = addSprite(src, x, y, w, h, scene, layer);
+		newButton.spriteId = addSprite(src, x, y, w, h, scene, layer);
 	else
-		spritesId[empty] = -1;
-	//renderScreen();
-	if (buttonScount < BUTTONS_COUNT)
-		return empty;
-	else
-		return -1;//maxium amount of buttons is reached!
+		newButton.spriteId = -1;
+	return add(&buttonsArr, (byte *)&newButton, sizeof(newButton));
 }
 int detectButtons(float x, float y)
 {
 	int detectedButton = -1;
-	for (int i = buttonScount-1; i >=0 ; i--)
+	Button *curButt = getStructButton(0);
+	for (int i = arraySize(buttonsArr)-1; i >=0 ; i--)
 	{
-		if (x > buttonsPos[i][0] && y > buttonsPos[i][1] && x < (buttonsSize[i][0] + buttonsPos[i][0]) && y < (buttonsSize[i][1] + buttonsPos[i][1]) && buttonsScene[i]== SCENE_NOW)
+		curButt = getStructButton(i);
+		if (x > curButt->posX && y > curButt->posY && x < (curButt->posX + curButt->width) && y < (curButt->posY + curButt->height) && curButt->scene== SCENE_NOW)
 		{
 			detectedButton = i;
-			i = buttonScount;
+			i = arraySize(buttonsArr);
 			break;
 		}
 	}
-	if(detectedButton >= 0 && *callBacks[detectedButton] != NULL)
-		detectedButton = (*callBacks[detectedButton]) (buttonsId[detectedButton]);
+	if(detectedButton >= 0 && curButt->callback != NULL)
+		detectedButton = (*curButt->callback) (curButt->id);
 	return detectedButton;
 }
 void makeList(int count, char names[][BUTTONS_NAME_SIZE], int x, int y, int w, int h, int(*callBacks[])(int id), int scene)
@@ -136,22 +122,29 @@ void makeGridSprites(int count, int colums, char names[][BUTTONS_NAME_SIZE], cha
 void recalcButtons(float hC, float vC)
 {
 	
-	for (int i = buttonScount - 1; i >= 0; i--)
+	for (int i = 0; i < arraySize(buttonsArr); i++)
 	{
-		buttonsPos[i][0] *= hC; buttonsPos[i][1] *= vC;
-		buttonsSize[i][0] *= hC; buttonsSize[i][1] *= vC;
+		Button *curButt = getStructButton(i);
+		curButt->posX *= hC; curButt->posY *= vC;
+		curButt->width *= hC; curButt->height *= vC;
+		set(buttonsArr, i, curButt, sizeof(curButt));
 	}
 	renderButtonsSc();
 }
 void clearButtons(int scene)
 {
-	for (int i = buttonScount-1; i >=0 ; i--)
+	ArrayElement *cur = buttonsArr;
+	while (cur)
 	{
-		if (buttonsEmpty[i] == 0 && buttonsScene[i] == scene)
-		{
-			buttonsEmpty[i] = 1;
-			//if (spritesId[i] != -1)
-				clearSpritesScene(scene);
-		}
+		Button * curButt = (Button *)cur->container;
+		ArrayElement *next = cur->linkToNext;
+		if (curButt->scene == scene)
+			removeElOb(&buttonsArr, cur);
+		if (!next)
+			break;
+		cur = next;
+		
 	}
+	clearSpritesScene(scene);
+	clearLabels(scene);
 }

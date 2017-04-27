@@ -9,7 +9,7 @@ int map[LEVEL_HEIGHT][LEVEL_WIDTH];/* =
 	{ 1,0,0,1 },
 	{ 1,1,1,1 }
 };*/
-int playerSpriteId = 0;
+int playerSpriteId = 0, cratesLeftLabelId = 0, pushesMade = 0;
 int mapSprites[LEVEL_HEIGHT][LEVEL_WIDTH];
 int onPause(int id)
 {
@@ -61,16 +61,27 @@ int regen(int id)
 7 0-9
 8 0-9 //postion y
 */
+int levelNumC = 0;
+int restart(int i)
+{
+	clearButtons(LEVEL_SCENE);
+	openLevel(levelNumC);
+	//renderMap();
+}
 
-
-int x = 0, y = 0;
-void onLevelFileOpened(int playerX, int playerY)
+int x = 0, y = 0, cratesCountN =0;
+void onLevelFileOpened(int levelNum, int playerX, int playerY, int cratesCount)
 {
 	renderMap();
+	cratesCountN = cratesCount;
+	levelNumC = levelNum;
 	x = playerX; y = playerY;
-	addButtonSprite("btntile.png", "Regen", SCREEN_WIDTH_UNIT * 1500, 0, SCREEN_WIDTH_UNIT * 200, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*regen), LEVEL_SCENE, 0, 0);
+	//addButtonSprite("btntile.png", "Regen", SCREEN_WIDTH_UNIT * 1500, 0, SCREEN_WIDTH_UNIT * 200, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*regen), LEVEL_SCENE, 0, 0);
+	addButtonSprite("btntile.png", "Restart", SCREEN_WIDTH_UNIT * 1500, 0, SCREEN_WIDTH_UNIT * 200, SCREEN_WIDTH_UNIT * 200, 255, 255, 255, (*restart), LEVEL_SCENE, 0, 0);
 	addButtonSprite("Button_pause.png", "", 0, 0, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*onPause), LEVEL_SCENE, 0, 0);
-	playerSpriteId = addSprite("Level/Player/Character1.png", SCREEN_WIDTH_UNIT* MAP_OFFSET + TILE_SIZE*SCREEN_WIDTH_UNIT*playerX, SCREEN_WIDTH_UNIT *MAP_OFFSET + TILE_SIZE*SCREEN_WIDTH_UNIT*playerY, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, SCENE_NOW, 3);
+	cratesLeftLabelId = addLabel(SCREEN_WIDTH_UNIT * 2000, SCREEN_HEIGHT_UNIT * 1900, 255, 255, 255, LEVEL_SCENE, ALLEGRO_ALIGN_RIGHT,"Crates left:%i\nPushes:%i",cratesCountN, pushesMade);
+	playerSpriteId = addSprite("Level/Player/Character1.png", SCREEN_WIDTH_UNIT* MAP_OFFSET + TILE_SIZE*SCREEN_WIDTH_UNIT*playerX, SCREEN_WIDTH_UNIT *MAP_OFFSET + TILE_SIZE*SCREEN_WIDTH_UNIT*playerY, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_SCENE, 3);
+	
 	renderScreen();
 }
 void onLevelOpened(int levelId)
@@ -79,7 +90,8 @@ void onLevelOpened(int levelId)
 	//generateSeed(&seed, 5);
 	//generate(map, 3);
 	renderMap();
-	addButtonSprite("btntile.png", "Regen", SCREEN_WIDTH_UNIT*1500, 0, SCREEN_WIDTH_UNIT * 200, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*regen), LEVEL_SCENE, 0, 0);
+	//addButtonSprite("btntile.png", "Regen", SCREEN_WIDTH_UNIT*1500, 0, SCREEN_WIDTH_UNIT * 200, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*regen), LEVEL_SCENE, 0, 0);
+	addButtonSprite("btntile.png", "Restart", SCREEN_WIDTH_UNIT * 1500, 0, SCREEN_WIDTH_UNIT * 200, SCREEN_WIDTH_UNIT * 200, 255, 255, 255, (*restart), LEVEL_SCENE, 0, 0);
 	addButtonSprite("Button_pause.png","", 0, 0, SCREEN_WIDTH_UNIT*100, SCREEN_WIDTH_UNIT*100, 255, 255, 255, (*onPause),LEVEL_SCENE, 0, 0);
 
 	int i = 0;
@@ -103,17 +115,21 @@ void renderMap()
 			switch (map[i][q])
 			{
 				case 0:
-
-					break;
+					//mapSprites[i][q] = addSprite("Level/Tiles/Ground_Sand.png", x,y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT,SCENE_NOW, 2);
+				break;
 				case 1:
-					mapSprites[i][q] = addSprite("Level/Tiles/WallRound_Brown.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, SCENE_NOW, 2);
-					break;
+					mapSprites[i][q] = addSprite("Level/Tiles/WallRound_Brown.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_SCENE, 2);
+				break;
 				case 2:
-					mapSprites[i][q] = addSprite("Level/Tiles/EndPoint_Brown.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, SCENE_NOW, 2);
-					break;
+					mapSprites[i][q] = addSprite("Level/Tiles/EndPoint_Brown.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_SCENE, 2);
+				break;
 				case 3:
-					mapSprites[i][q] = addSprite("Level/Tiles/Crate_Black.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, SCENE_NOW, 2);
-					break;
+					mapSprites[i][q] = addSprite("Level/Tiles/Crate_Black.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_SCENE, 2);
+				break;
+				case 4:
+					addSprite("Level/Tiles/EndPoint_Brown.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_SCENE, 2);
+					mapSprites[i][q] = addSprite("Level/Tiles/Crate_Black.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_SCENE, 2);
+				break;
 			}
 		}
 	}
@@ -127,21 +143,31 @@ void movePlayer(int up, int right)
 	if (map[newX][newY] == 1)
 		assign = false;
 	Log_i(__func__, "\n\t%i\n%i\t\t%i\n\t%i", map[newX][newY - 1], map[newX - 1][newY], map[newX + 1][newY], map[newX][newY + 1]);
-	if (map[newX][newY] == 3)
+	if (map[newX][newY] == 3 || map[newX][newY] == 4)
 	{
 		Log_i(__func__, "Crate detected");
 		if (map[newX + right][newY - up ] == 0 || map[newX + right][newY - up] == 2)
 		{
-			if (map[newX + right][newY - up] == 0)
-			{
-			}
-
-
-				Log_i(__func__, "Changed crate place");
-
+			Log_i(__func__, "Changed crate place");
+			pushesMade++;
 			mapSprites[newX + right][newY - up] = mapSprites[newX][newY];
-			map[newX + right][newY - up] = 3;
-			map[newX][newY] = 0;
+			if (map[newX + right][newY - up] == 2)
+			{
+				changeText(cratesLeftLabelId, "Crates left:%i\nPushes:%i", --cratesCountN, pushesMade);
+				map[newX + right][newY - up] = 4;
+			}
+			else 
+			{
+				if(map[newX][newY] == 4)
+					changeText(cratesLeftLabelId, "Crates left:%i\nPushes:%i", ++cratesCountN, pushesMade);
+				map[newX + right][newY - up] = 3;
+				
+			}
+			if(map[newX][newY] == 3)
+				map[newX][newY] = 0;
+			else
+				map[newX][newY] = 2;
+			
 			moveSpriteTo(mapSprites[newX][newY], (TILE_SIZE - 2)*SCREEN_WIDTH_UNIT*(newX + right) + SCREEN_WIDTH_UNIT* MAP_OFFSET, (TILE_SIZE - 2)*SCREEN_WIDTH_UNIT*(newY - up) + SCREEN_WIDTH_UNIT* MAP_OFFSET);
 		}
 		else

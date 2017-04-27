@@ -1,57 +1,25 @@
 #include "LibraryMerger.h"
-
-static ALLEGRO_BITMAP * sprites[SRPITES_AMOUNT] = { NULL };
-int spritesScene[SRPITES_AMOUNT] = { 0 };
-int spritesLayer[SRPITES_AMOUNT] = { 0 };
-int spritesEmpty[SRPITES_AMOUNT] = { 0 };
-int spriteLoading[SRPITES_AMOUNT] = { 0 };
-float spritePos[SRPITES_AMOUNT][2] = { 0 };
-float spriteSize[SRPITES_AMOUNT][2] = { 0 };
-int spritesCount = 0;
+ArrayElement * spritesArr = NULL;
 int addSprite(char * src, int x, int y, int w, int h, int scene, int layer)
 {
-	//al_set_path_filename(path, src);
-	
 	ALLEGRO_BITMAP * bmp = al_load_bitmap(src);
 	if (bmp == NULL)
 	{
 		Log_e(__func__, "ERROR Loading sprite %s:No file", src);
 		return -1;
 	}
-	int empty = addSpriteBmp(bmp,x,y,w,h,scene,layer);
-	Log_i(__func__, "Added sprite name:%s", src);
-	//renderScreen();
-	return empty;
+	return addSpriteBmp(bmp, x, y, w, h, scene, layer);
 }
 int addSpriteBmp(ALLEGRO_BITMAP * src, int x, int y, int w, int h, int scene, int layer)
 {
-	int empty = -1;
-	if (spritesCount > 5)
-	{
-		for (int i = 0; i < spritesCount; i++)
-		{
-			if (spritesEmpty[i] == 1)
-			{
-				empty = i;
-				break;
-			}
-		}
+	Sprite newSprite;
+	newSprite.bmp = src;
+	newSprite.id = arraySize(spritesArr);
+	newSprite.posX = x; newSprite.posY = y;
+	newSprite.width = w; newSprite.height = h;
+	newSprite.scene = scene; newSprite.layer = layer;
 
-	}
-	if (empty == -1)
-	{
-		empty = (spritesCount++);
-		sprites[empty + 1] = NULL;
-	}
-	spritesEmpty[empty] = 0;
-	sprites[empty] = src;
-	
-	spritePos[empty][0] = x; spritePos[empty][1] = y;
-	spriteSize[empty][0] = w; spriteSize[empty][1] = h;
-	spritesLayer[empty] = layer;
-	spritesScene[empty] = scene;
-	//renderScreen();
-	return empty;
+	return add(&spritesArr, (byte *)&newSprite, sizeof(newSprite));
 }
 
 void renderSrpite(int id)
@@ -60,41 +28,43 @@ void renderSrpite(int id)
 }
 void renderSprites(int layer)
 {
-	//WaitForSingleObject(hMutex, INFINITE);
-	for (int i = 0; i < spritesCount; i++)
+	for (int i = 0; i < arraySize(spritesArr); i++)
 	{
-		if ((spritesLayer[i] == -1 || spritesLayer[i] == layer) && (spritesScene[i] == SCENE_NOW || spritesScene[i] == -1) && sprites[i] && spritesEmpty[i] == 0)
+		Sprite *curSprite = getStruct(i);
+
+		int sprLayer = curSprite->layer, sprScene = curSprite->scene;
+		if ((sprLayer == -1 || sprLayer == layer) && (sprScene == SCENE_NOW || sprScene == -1) && curSprite->bmp)
 		{
-			//Log_i(__func__, "Srpite render layer_%i, count=%i, spr_#%i: %i, %i*%i at %.0fX%.0fY", layer, spritesCount, i, sprites[i] == NULL, al_get_bitmap_width(sprites[i]), al_get_bitmap_height(sprites[i]), spritePos[i][0], spritePos[i][1]);
-			/*al_run_detached_thread(al_draw_scaled_bitmap, NULL, sprites[i],
+			al_draw_scaled_bitmap(curSprite->bmp,
 				0, 0,                                // source origin
-				al_get_bitmap_width(sprites[i]),     // source width al_get_bitmap_width(sprites[i])
-				al_get_bitmap_height(sprites[i]),    // source height al_get_bitmap_height(sprites[i])
-				spritePos[i][0], spritePos[i][1],   // target origin
-				spriteSize[i][0], spriteSize[i][1], // target dimensions
-				0                                    // flags
-			);*/
-			
-			al_draw_scaled_bitmap(sprites[i],
-				0, 0,                                // source origin
-				al_get_bitmap_width(sprites[i]),     // source width al_get_bitmap_width(sprites[i])
-				al_get_bitmap_height(sprites[i]),    // source height al_get_bitmap_height(sprites[i])
-				spritePos[i][0], spritePos[i][1],   // target origin
-				spriteSize[i][0], spriteSize[i][1], // target dimensions
+				al_get_bitmap_width(curSprite->bmp),     // source width al_get_bitmap_width(sprites[i])
+				al_get_bitmap_height(curSprite->bmp),    // source height al_get_bitmap_height(sprites[i])
+				curSprite->posX, curSprite->posY,   // target origin
+				curSprite->width, curSprite->height, // target dimensions
 				0                                    // flags
 			);
-			//al_draw_circle(50, 50, 50, al_map_rgb(255,255,255), 15);
 		}
-		
-			
 	}
-	//ReleaseMutex(hMutex);
+}
+Sprite *getStruct(int i)
+{
+	Sprite *curSprite = malloc(sizeof(Sprite));
+	Sprite *newSpr = get(spritesArr, i);
+	if (newSpr)
+	{
+		memcpy(curSprite, newSpr, sizeof(Sprite));
+		return curSprite;
+	}
+	else
+		return NULL;
 }
 int moveSprite(int spriteId, int x, int y)
 {
-	if (spriteId < spritesCount)
+	if (spriteId <  arraySize(spritesArr))
 	{
-		spritePos[spriteId][0] += x; spritePos[spriteId][1] += y;
+		Sprite * curSprite = getStruct(spriteId);
+		curSprite->posX += x; curSprite->posY += y;
+		set(spritesArr, spriteId, curSprite, sizeof(curSprite));
 		renderScreen();
 		return 0;
 	}
@@ -102,9 +72,11 @@ int moveSprite(int spriteId, int x, int y)
 }
 int moveSpriteTo(int spriteId, int x, int y)
 {
-	if (spriteId < spritesCount)
+	if (spriteId <  arraySize(spritesArr))
 	{
-		spritePos[spriteId][0] = x; spritePos[spriteId][1] = y;
+		Sprite * curSprite = getStruct(spriteId);
+		curSprite->posX = x; curSprite->posY = y;
+		set(spritesArr, spriteId, curSprite, sizeof(curSprite));
 		renderScreen();
 		return 0;
 	}
@@ -112,46 +84,79 @@ int moveSpriteTo(int spriteId, int x, int y)
 }
 void recalcSprites(float hC, float vC)
 {
-	for (int i = spritesCount - 1; i >= 0; i--)
+	for (int i = 0; i < arraySize(spritesArr); i++)
 	{
-		spritePos[i][0] *= hC; spritePos[i][1] *= vC;
-		spriteSize[i][0] *= hC; spriteSize[i][1] *= vC;
+		Sprite *curSprite = getStruct(i);
+		curSprite->posX *= hC; curSprite->posY *= vC;
+		curSprite->width *= hC; curSprite->height*= vC;
+		set(spritesArr, i, curSprite, sizeof(curSprite));
 	}
 }
 void clearSpritesScene(int scene)
 {
-	for (int i = spritesCount - 1; i >=0; i--)
+	ArrayElement *cur = spritesArr;
+	while (cur)
 	{
-		if (spritesEmpty[i] == 0 && spritesScene[i] == scene)
-			spritesEmpty[i] = 1;
+		Sprite * curSprite = (Sprite *)cur->container;
+		ArrayElement *next = cur->linkToNext;
+		if (curSprite->scene == scene)
+			removeElOb(&spritesArr, cur);
+		if (!next)
+			break;
+		cur = next;
 	}
 }
 void clearSpritesLayer(int layer)
 {
-	for (int i = spritesCount - 1; i >=0; i--)
+	ArrayElement *cur = spritesArr;
+	int i = 0;
+	while (cur)
 	{
-		if (spritesEmpty[i] == 0 && spritesLayer[i] == layer)
-			spritesEmpty[i] = 1;
+		Sprite * curSprite = (Sprite *)cur->container;
+		ArrayElement *next = cur->linkToNext;
+		if (curSprite->layer == layer)
+		{
+			if (next && next->linkToNext)
+				next = next->linkToNext;
+			removeEl(spritesArr, i);
+		}
+		if (!next)
+			break;
+		cur = next;
+		i++;
 	}
 }
 void clearSprites(int scene, int layer)
 {
-	for (int i = spritesCount - 1; i >=0; i--)
+	
+	ArrayElement *cur = spritesArr;
+	int i = 0;
+	while (cur)
 	{
-		if (spritesEmpty[i] == 0 && spritesLayer[i] == layer && spritesScene[i] == scene)
-			spritesEmpty[i] = 1;
+		Sprite * curSprite = (Sprite *)cur->container;
+		ArrayElement *next = cur->linkToNext;
+		if (curSprite->layer == layer && curSprite->scene == scene)
+		{
+			if (next && next->linkToNext)
+				next = next->linkToNext;
+			removeEl(spritesArr, i);
+		}
+		if (!next)
+			break;
+		cur = next;
+		i++;
 	}
 }
 int changeSprite(int id, char * src)
 {
-	//al_set_path_filename(path, src);
-
 	ALLEGRO_BITMAP * bmp = al_load_bitmap(src);
 	if (bmp == NULL)
 	{
 		Log_e(__func__, "ERROR Loading sprite %s:No file", src);
 		return -1;
 	}
-	sprites[id] = bmp;
+	Sprite * curSprite = getStruct(id);
+	curSprite->bmp= bmp;
+	set(spritesArr, id, curSprite, sizeof(curSprite));
 	return 0;
 }

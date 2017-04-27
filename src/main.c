@@ -10,39 +10,38 @@ int openFolderDialog(int i)
 	ALLEGRO_FILECHOOSER *dialog = al_create_native_file_dialog("D:/School/Info/sokoban/src/res/","Choose folder","*.*",ALLEGRO_FILECHOOSER_FOLDER);
 	if (al_show_native_file_dialog(display, dialog))
 	{
-	    convertConstCopy(al_get_native_file_dialog_path(dialog, 0), pathCur);
+	    convertConstCopy(al_get_native_file_dialog_path(dialog, 0), &pathCur);
 	    showDirectoryListing();
 	}
 	return 1;
 }
 int openLevelSelect(int i)
 {
-	changeScene(LEVEL_SELECT_SCENE);
 	clearButtons(LEVEL_SELECT_SCENE);
 	clearSpritesScene(LEVEL_SELECT_SCENE);
+	changeScene(LEVEL_SELECT_SCENE);
 	showDirectoryListing();
 	renderScreen();
-	showDirectoryListing();
-
 
 }
 char names[64][BUTTONS_NAME_SIZE];
 int levelSelectPage = 0;
-void sliceFile()
+int sliceFile(int i)
 {
 	int c = 0;
-	char * pathSource = "", *pathTarget ="";
-	ALLEGRO_FILECHOOSER *dialog = al_create_native_file_dialog("D:/School/Info/sokoban/src/res/", "Choose source", "*.txt", ALLEGRO_FILECHOOSER_FILE_MUST_EXIST);
+	char * pathSource = NULL, *pathTarget = NULL;
+	ALLEGRO_FILECHOOSER *dialog = al_create_native_file_dialog("", "Choose source", "*.txt", ALLEGRO_FILECHOOSER_FILE_MUST_EXIST);
 	if (al_show_native_file_dialog(display, dialog))
 	{
-		convertConstCopy(al_get_native_file_dialog_path(dialog, 0), pathSource);
+		convertConstCopy(al_get_native_file_dialog_path(dialog, 0), &pathSource);
+		al_destroy_native_file_dialog(dialog);
 		dialog = al_create_native_file_dialog("D:/School/Info/sokoban/src/res/", "Choose folder", "*.*", ALLEGRO_FILECHOOSER_FOLDER);
 		if (al_show_native_file_dialog(display, dialog))
 		{
-			convertConstCopy(al_get_native_file_dialog_path(dialog, 0), pathTarget);
+			convertConstCopy(al_get_native_file_dialog_path(dialog, 0), &pathTarget);
 			char destFileStr[256] = { 0 };
 			FILE *sourceFile = fopen(pathSource, "r");
-			sprintf(destFileStr, "%s/%i.txt", pathTarget, c++);
+			sprintf(destFileStr, "%s/%03i.txt", pathTarget, ++c);
 			FILE *destFile = fopen(destFileStr, "w+");
 			if (sourceFile == NULL)
 			{
@@ -57,38 +56,48 @@ void sliceFile()
 				Log_i(__func__, "destFileStr=%s,str=%s", destFileStr,str);
 				int occur = 0;
 				if (strstr(str,"#"))
-					occur++;
+					occur+=2;
 				if (strstr(str,"."))
 					occur++;
 				if (strstr(str,"@"))
-					occur++;
+					occur+=2;
 				if (strstr(str,"$"))
-					occur++;
+					occur+=2;
 				if (strstr(str," "))
 					occur++;
 				if (occur <= 1)
+				{
+					//if (prevStrIsData)
+						//fprintf(destFile, "%s", str);
 					prevStrIsData = false;
+					
+				}
 				else
 				{
+					
 					if (!prevStrIsData)
 					{
-						sprintf(destFileStr, "%s/%i.txt", pathTarget, c++);
+						sprintf(destFileStr, "%s/%3i.txt", pathTarget, c++);
 						fclose(destFile);
 						destFile = fopen(destFileStr, "w+");
+						fprintf(destFile, "%s", str);
 					}
+					else fprintf(destFile, "%s", str);
 					if (destFile == NULL)
 					{
 						Log_e(__func__, "destFile file error!\n");
 						return;
 					}
-					fprintf(destFile, "%s", str);
+					
 					prevStrIsData = true;
 				}
 			}
 			fclose(destFile);
 			fclose(sourceFile);
-
+			al_show_native_message_box(display, "Complete", "Slicing is done!", "", NULL, 0);
+			al_destroy_native_file_dialog(dialog);
 		}
+		
 	}
 }
 int nextPage(int i)
@@ -101,6 +110,8 @@ int nextPage(int i)
 }
 int prevPage(int i)
 {
+	if (levelSelectPage == 0)
+		return;
 	levelSelectPage--;
 
 	clearButtons(LEVEL_SELECT_SCENE);
@@ -129,8 +140,8 @@ void showDirectoryListing()
 			else
 			{
 				printf("path:%s\n", al_get_fs_entry_name(file));
-				char *path;
-				convertConstCopy(al_get_fs_entry_name(file), path);
+				char *path = NULL;
+				convertConstCopy(al_get_fs_entry_name(file), &path);
 				char *filename;
                 filename = strrchr(path, '\\');
 				if (filename == NULL)
@@ -178,18 +189,22 @@ int main(void)
 		//ShowWindow(GetConsoleWindow(), SW_HIDE);
 	printf("qqq\n");
 	initAddons();
-	initVars();
+	if (initVars() < 0)
+	{
+		Log_e(__func__, "InitVars error");
+		return -1;
+	}
 	initButtons();
 	Log_i(__func__, "Initied\n================\n");
-	int(*callBacks[3])(int id) = { openLevelSelect,ExitProg };
-	char names[][BUTTONS_NAME_SIZE] = { "Level Select\0" ,"Exit\0" };
+	int(*callBacks[3])(int id) = { openLevelSelect,ExitProg, sliceFile};
+	char names[][BUTTONS_NAME_SIZE] = { "Level Select\0" ,"Exit\0" ,"Slice Levels"};
 
 	char *p = (char*)malloc(strlen(resourcePath)+16);
 	sprintf(p,"%s",resourcePath);
 	free(resourcePath);
 
 	resourcePath = (char*)malloc(strlen(resourcePath)+16);
-
+	
 	sprintf(resourcePath, "%sLevels", p);
 	pathCur = resourcePath;
 	addButton("TL", 0, 0, 50, 50, 255, 255, 255, NULL,0,0);
@@ -197,7 +212,7 @@ int main(void)
 	addButton("BL", 0, SCREEN_HEIGHT-50, 50, 50, 255, 255, 255, NULL, MAINMENU_SCENE,0);
 	addButton("BR", SCREEN_WIDTH-50, SCREEN_HEIGHT-50, 50, 50, 255, 255, 255, NULL, MAINMENU_SCENE,0);
 
-	makeListSprites(2,names, "btntile.png", SCREEN_WIDTH/2-125, 50, 250, 150, callBacks, MAINMENU_SCENE, 1);
+	makeListSprites(3,names, "btntile.png", SCREEN_WIDTH/2-125, 50, 250, 150, callBacks, MAINMENU_SCENE, 1);
 	//sliceFile();
 	addSprite("back.jpg", 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, -1, 0);
 	Log_i(__func__, "Added button");

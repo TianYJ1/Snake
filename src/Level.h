@@ -1,5 +1,5 @@
 #pragma once
-void onLevelFileOpened(int playerX, int playerY);
+void onLevelFileOpened(int levelNum, int playerX, int playerY, int cratesCount);
 void renderMap();
 void movePlayer(int up, int right);
 int onPause(int id);

@@ -1,5 +1,4 @@
 #pragma once
-#pragma warnings 1591
 #include <stdio.h>
 #include <math.h>
 #include <time.h>
@@ -20,6 +19,8 @@
 #include "SpriteRenderer.h"
 #include "Level.h"
 #include "Core.h"
+#include "Array.h"
+#include "Label.h"
 #include "levGen.h"
 #define DEBUG_MODE 1
 
@@ -49,3 +50,4 @@ extern int map[LEVEL_HEIGHT][LEVEL_WIDTH];
 extern char levelsPaths[256][128];
 
 void showDirectoryListing();
+extern ArrayElement *spritesArr;

@@ -1,5 +1,14 @@
 #pragma once
 #define BUTTONS_NAME_SIZE 64
+struct ButtonS
+{
+	char * text;
+	int id, spriteId, scene;
+	float posX, posY, width, height;
+	int r, g, b;
+	int(*callback)(int);
+};
+typedef struct ButtonS Button;
 void initButtons();
 int addButton(char * text, float x, float y, float w, float h, int red, int blue, int green, int(*callback)(int), int scene, int buttonId);
 int detectButtons(float x, float y);

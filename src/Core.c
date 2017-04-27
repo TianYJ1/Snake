@@ -34,11 +34,12 @@ void initAddons()
 int threadsCount = 0;
 void renderScreen()
 {
-	//al_clear_to_color(al_map_rgb(0, 0, 0));
+	al_clear_to_color(al_map_rgb(0, 0, 0));
 	for (int i = 0; i < 6; i++)
 		renderSprites(i);
 	renderSprites(-1);
 	renderButtonsSc();
+	renderLabelsSc();
 	al_flip_display();
 
 	//al_create_thread(renderSpriteThr, NULL, -1);
@@ -46,13 +47,14 @@ void renderScreen()
 }
 void changeScene(int scene)
 {
+	
 	SCENE_NOW = scene;
 	renderScreen();
-
+	
 }
 void Log_i(const char * tag, const char *str, ...)
 {
-	char buf[128];
+	char buf[1024];
 	va_list vl;
 	va_start(vl, str);
 	vsnprintf(buf, sizeof(buf), str, vl);
@@ -63,7 +65,7 @@ void Log_i(const char * tag, const char *str, ...)
 }
 void Log_e(const char * tag, const char *str, ...)
 {
-	char buf[128];
+	char buf[1024];
 	va_list vl;
 	va_start(vl, str);
 	vsnprintf(buf, sizeof(buf), str, vl);
@@ -72,7 +74,8 @@ void Log_e(const char * tag, const char *str, ...)
 	fprintf(targetFile, "E/%s::%s\n", tag, buf);
 
 	fflush(targetFile);
-	al_show_native_message_box(display, "Error!", buf, 0, 0, ALLEGRO_MESSAGEBOX_ERROR);
+	//al_show_native_message_box(display, "Error!", "qq", 0, 0, ALLEGRO_MESSAGEBOX_ERROR);
+	al_show_native_message_box(display,"Error!","An ERROR accuredued:",buf,NULL, ALLEGRO_MESSAGEBOX_ERROR);
 }
 void setNewScreen()
 {
@@ -95,7 +98,7 @@ void setNewScreen()
 	font = al_load_ttf_font("SansPosterBold.ttf", SCREEN_HEIGHT_UNIT * 60, 0);
 	renderScreen();
 }
-void initVars()
+int initVars()
 {
 	srand(time(NULL));
 	AllegroFont = al_create_builtin_font();
@@ -104,7 +107,7 @@ void initVars()
 	if (targetFile == NULL)
 	{
 		printf("Target file error!\n");
-		return;
+		return -1;
 	}
 	printf("file opened\n");
 	ALLEGRO_DISPLAY_MODE  disp_data;
@@ -113,12 +116,19 @@ void initVars()
 	SCREEN_WIDTH = disp_data.width; SCREEN_HEIGHT = disp_data.height;
 
 	Log_i(__func__,"Screen:%i %i", SCREEN_WIDTH, SCREEN_HEIGHT);
-
-	al_set_new_display_flags(ALLEGRO_WINDOWED | ALLEGRO_RESIZABLE);
-	//SCREEN_WIDTH /= 2; SCREEN_HEIGHT /= 2;
-	//else
-		//al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
-
+	
+	if(al_show_native_message_box(display, "FullScreen", "Would you like to run in fullscreen mode?", "", NULL, ALLEGRO_MESSAGEBOX_YES_NO))
+		al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
+	else
+	{
+		if (DEBUG_MODE)
+		{
+			SCREEN_WIDTH /= 2; SCREEN_HEIGHT /= 2;
+		}
+		else
+			SCREEN_HEIGHT -= SCREEN_HEIGHT_UNIT*200;
+		al_set_new_display_flags(ALLEGRO_WINDOWED | ALLEGRO_RESIZABLE);
+	}
 	path = al_get_standard_path(ALLEGRO_RESOURCES_PATH);
 
 	al_append_path_component(path, "res");
@@ -129,14 +139,15 @@ void initVars()
 		al_append_path_component(path, "../res");
 		if (!al_change_directory(al_path_cstr(path, '/')))
 		{
-			Log_e(__func__, "Res path not found: %s", al_path_cstr(path, '/'));
+			//const char * p = al_path_cstr(path, '/');
+			//Log_e(__func__, "Res path not found: %s", p);
 			path = al_get_standard_path(ALLEGRO_RESOURCES_PATH);
-			al_append_path_component(path, "/home/user/sokoban/src/res");
-		    	if (!al_change_directory(al_path_cstr(path, '/')))
+			al_append_path_component(path, "../../res");
+		    if (!al_change_directory(al_path_cstr(path, '/')))
 			{
-		        	Log_e(__func__, "Res path not found: %s", al_path_cstr(path, '/'));
-		        	return;
-		    	}
+		        Log_e(__func__, "Res path not found: %s", al_path_cstr(path, '/'));
+		        return -2;
+		    }
 		}
 	}
 	
@@ -149,6 +160,7 @@ void initVars()
 	display = al_create_display(SCREEN_WIDTH, SCREEN_HEIGHT);
 	//SCREEN_WIDTH -= 250; SCREEN_HEIGHT -= 40;
 	//al_clear_to_color(al_map_rgb(0, 0, 0));
+	return 0;
 
 }
 int openLevel(int num)
@@ -163,7 +175,7 @@ int openLevel(int num)
 		for (int i = 0; i < LEVEL_WIDTH; i++)
 			map[q][i] = 0;
 	}
-	int playerX = 0, playerY = 0;
+	int playerX = 0, playerY = 0, cratesCount = 0;
 	while (fgets(str, sizeof(str), sourceFile) != NULL)
 	{
 		for (int i = 0; i < strlen(str); i++)
@@ -172,15 +184,16 @@ int openLevel(int num)
 			{
 				case '1':
 				case '#':
-					map[y][i] = 1;
+					map[i][y] = 1;
 				break;
 				case '3':
 				case '$':
-					map[y][i] = 3;
+					cratesCount++;
+					map[i][y] = 3;
 				break;
 				case '2':
 				case '.':
-					map[y][i] = 2;
+					map[i][y] = 2;
 				break;
 				case '9':
 				case '@':
@@ -188,7 +201,11 @@ int openLevel(int num)
 				break;
 				case '0':
 				case ' ':
-					map[y][i] = 0;
+					map[i][y] = 0;
+				break;
+				case '4':
+				case '*':
+					map[i][y] = 4;
 				break;
 			}
 		}
@@ -200,13 +217,13 @@ int openLevel(int num)
 	fclose(sourceFile);
 	changeScene(LEVEL_SCENE);
 	//onLevelOpened(num);
-	onLevelFileOpened(playerX, playerY);
+	onLevelFileOpened(num, playerX, playerY, cratesCount);
 	return 1;
 }
-void convertConstCopy(const char *source, char *toChr)
+void convertConstCopy(const char *source, char **toChr)
 {
-    if(toChr)
-        free(toChr);
-    toChr = (char*)malloc(strlen(source)+1);
-    sprintf(toChr ,"%s",source);
+    if(*toChr)
+        free(*toChr);
+    *toChr = (char*)malloc(strlen(source)+1);
+    sprintf(*toChr ,"%s",source);
 }
