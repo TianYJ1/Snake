@@ -18,7 +18,7 @@ src/res/     | static resources
 * Generator - level generator, which returns 2-dimensional 
 * MemoryWorker - manager of continous memory, based on JSON
 ### Dependencies 
-* Allegro Framework [Refer to allegro ](http://liballeg.org/)
+* [Allegro](http://liballeg.org/) Framework
 	Addons using:
 	* Font addon
 	* Image addon
@@ -37,7 +37,16 @@ To rebuild everything from scratch, do the following:
 ````
 make clean
 ````
-
+#### Building Allegro
+````
+cd ~; git clone git://github.com/liballeg/allegro5cd allegro5;git checkout 5.2; mkdir build; cd build
+sudo ccmake -DCMAKE_INSTALL_PREFIX=/usr ..
+````
+Here press 'c', 'c', 'g', unpack will begin.
+If an error connected to OPUS occurs, change WANT_OPUS in list of packages in white box on the right side
+````
+sudo make;sudo make install
+````
 ## Authors
 * **Arseniy Prosvirin** - arseniy.p@d7ss.com
 * **Ryabota Igor** - x@x.ru
