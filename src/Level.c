@@ -9,7 +9,7 @@ int map[LEVEL_HEIGHT][LEVEL_WIDTH];/* =
 	{ 1,0,0,1 },
 	{ 1,1,1,1 }
 };*/
-int playerSpriteId = 0, cratesLeftLabelId = 0, pushesMade = 0;
+int playerSpriteId = 0, cratesLeftLabelId = 0, pushesMade = 0, pushesMadeLabelId = 0;
 int mapSprites[LEVEL_HEIGHT][LEVEL_WIDTH];
 int onPause(int id)
 {
@@ -79,7 +79,8 @@ void onLevelFileOpened(int levelNum, int playerX, int playerY, int cratesCount)
 	//addButtonSprite("btntile.png", "Regen", SCREEN_WIDTH_UNIT * 1500, 0, SCREEN_WIDTH_UNIT * 200, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*regen), LEVEL_SCENE, 0, 0);
 	addButtonSprite("btntile.png", "Restart", SCREEN_WIDTH_UNIT * 1500, 0, SCREEN_WIDTH_UNIT * 200, SCREEN_WIDTH_UNIT * 200, 255, 255, 255, (*restart), LEVEL_SCENE, 0, 0);
 	addButtonSprite("Button_pause.png", "", 0, 0, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*onPause), LEVEL_SCENE, 0, 0);
-	cratesLeftLabelId = addLabel(SCREEN_WIDTH_UNIT * 2000, SCREEN_HEIGHT_UNIT * 1900, 255, 255, 255, LEVEL_SCENE, ALLEGRO_ALIGN_RIGHT,"Crates left:%i\nPushes:%i",cratesCountN, pushesMade);
+	cratesLeftLabelId = addLabel(SCREEN_WIDTH_UNIT * 2000, SCREEN_HEIGHT_UNIT * 1900, 255, 255, 255, LEVEL_SCENE, ALLEGRO_ALIGN_RIGHT,"Crates left:%i",cratesCountN);
+	pushesMadeLabelId = addLabel(SCREEN_WIDTH_UNIT * 2000, SCREEN_HEIGHT_UNIT * 1800, 255, 255, 255, LEVEL_SCENE, ALLEGRO_ALIGN_RIGHT, "Pushes:%i", pushesMade);
 	playerSpriteId = addSprite("Level/Player/Character1.png", SCREEN_WIDTH_UNIT* MAP_OFFSET + TILE_SIZE*SCREEN_WIDTH_UNIT*playerX, SCREEN_WIDTH_UNIT *MAP_OFFSET + TILE_SIZE*SCREEN_WIDTH_UNIT*playerY, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_SCENE, 3);
 	
 	renderScreen();
@@ -149,17 +150,17 @@ void movePlayer(int up, int right)
 		if (map[newX + right][newY - up ] == 0 || map[newX + right][newY - up] == 2)
 		{
 			Log_i(__func__, "Changed crate place");
-			pushesMade++;
+			changeText(pushesMadeLabelId ,"Pushes:%i", ++pushesMade);
 			mapSprites[newX + right][newY - up] = mapSprites[newX][newY];
 			if (map[newX + right][newY - up] == 2)
 			{
-				changeText(cratesLeftLabelId, "Crates left:%i\nPushes:%i", --cratesCountN, pushesMade);
+				changeText(cratesLeftLabelId, "Crates left:%i", --cratesCountN);
 				map[newX + right][newY - up] = 4;
 			}
 			else 
 			{
 				if(map[newX][newY] == 4)
-					changeText(cratesLeftLabelId, "Crates left:%i\nPushes:%i", ++cratesCountN, pushesMade);
+					changeText(cratesLeftLabelId, "Crates left:%i", ++cratesCountN);
 				map[newX + right][newY - up] = 3;
 				
 			}
