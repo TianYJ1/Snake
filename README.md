@@ -2,7 +2,7 @@
 Sokoban (倉庫番 sōkoban, warehouse keeper) is a type of transport puzzle, in which the player pushes boxes or crates around in a warehouse, trying to get them to storage locations. The puzzle is usually implemented as a video game.
 
 ## Getting Started
-This game is build using c-language and based on Allegro Library
+This game is build using c-language and based on [Allegro](http://liballeg.org/) Library
 ### Directory structure
 The source code is organized as follows:
 
@@ -11,12 +11,16 @@ Subdirectory | Description
 src/         | source files 
 src/tests    | unit tests 
 doc/         | documentation 
-src/res/     | static resources
+res/     | static resources
 ### Structure
 * Main - menu module 
 * Level - level drawer, game-play handler
 * Generator - level generator, which returns 2-dimensional 
 * MemoryWorker - manager of continous memory, based on JSON
+* Managers:
+	** SpriteManager - manager for rendering sprites from bitmaps
+	** Button - button manager for handling clicks, writing text and placing sprites
+	** Label - manager for labels
 ### Dependencies 
 * [Allegro](http://liballeg.org/) Framework
 	Addons using:
