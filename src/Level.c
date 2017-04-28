@@ -1,6 +1,4 @@
 #include "LibraryMerger.h"
-
-#define MAP_OFFSET 100
 int generate(int map[LEVEL_HEIGHT][LEVEL_WIDTH], int cratesCount);
 int map[LEVEL_HEIGHT][LEVEL_WIDTH];/* =
 {
@@ -9,26 +7,38 @@ int map[LEVEL_HEIGHT][LEVEL_WIDTH];/* =
 	{ 1,0,0,1 },
 	{ 1,1,1,1 }
 };*/
-int playerSpriteId = 0, cratesLeftLabelId = 0, pushesMade = 0, pushesMadeLabelId = 0;
-int mapSprites[LEVEL_HEIGHT][LEVEL_WIDTH];
-int onPause(int id)
-{
-	changeScene(LEVEL_SCENE_PAUSE);
-	//clearButtons(LEVEL_SCENE);
-	addButtonSprite("Button_exit.png", "", SCREEN_WIDTH_UNIT * 1100, SCREEN_HEIGHT_UNIT * 1000, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*onExit), LEVEL_SCENE_PAUSE, 0, 0);
-	addButtonSprite("Button_play.png", "", SCREEN_WIDTH_UNIT * 900, SCREEN_HEIGHT_UNIT * 1000, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*onResume), LEVEL_SCENE_PAUSE, 0, 0);
-	renderScreen();
-
-	return 1;
-}
+int levelNumC = 0;
 int onExit(int id)
 {
-	changeScene(MAINMENU_SCENE);
+	if (levelNumC >= 0)
+		changeScene(MAINMENU_SCENE);
+	else
+	{
+		changeScene(LEVEL_EDITOR_SCENE);
+		renderMapLE();
+	}
 	clearButtons(LEVEL_SCENE);
 	clearButtons(LEVEL_SCENE_PAUSE);
 	renderScreen();
 	return 1;
 }
+int playerSpriteId = 0, cratesLeftLabelId = 0, pushesMade = 0, pushesMadeLabelId = 0, movesMade = 0;
+int mapSprites[LEVEL_HEIGHT][LEVEL_WIDTH];
+int onPause(int id)
+{
+	changeScene(LEVEL_SCENE_PAUSE);
+	//clearButtons(LEVEL_SCENE);
+	addButtonSprite("GUI/menu.png", "", SCREEN_WIDTH_UNIT * 1100, SCREEN_HEIGHT_UNIT * 800, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*onExit), LEVEL_SCENE_PAUSE, 0, 4);
+	addButtonSprite("Button_play.png", "", SCREEN_WIDTH_UNIT * 900, SCREEN_HEIGHT_UNIT * 800, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*onResume), LEVEL_SCENE_PAUSE, 0, 4);
+	addSprite("GUI/win_back_hor.png", SCREEN_WIDTH_UNIT * 600, SCREEN_HEIGHT_UNIT * 500, 900 * SCREEN_WIDTH_UNIT, SCREEN_HEIGHT_UNIT * 700, LEVEL_SCENE_PAUSE, 3);
+	addSprite("GUI/actions_back.png", SCREEN_WIDTH_UNIT * 800, SCREEN_HEIGHT_UNIT * 800, 500 * SCREEN_WIDTH_UNIT, SCREEN_HEIGHT_UNIT * 200, LEVEL_SCENE_PAUSE, 3);
+	addSprite("GUI/title_back.png", SCREEN_WIDTH_UNIT * 800, SCREEN_HEIGHT_UNIT * 400, 500 * SCREEN_WIDTH_UNIT, SCREEN_HEIGHT_UNIT * 200, LEVEL_SCENE_PAUSE, 3);
+	addLabel(SCREEN_WIDTH_UNIT * 1050, SCREEN_HEIGHT_UNIT * 450, 255, 90, 0, LEVEL_SCENE_PAUSE, ALLEGRO_ALIGN_CENTER, "PAUSE");
+	renderScreen();
+
+	return 1;
+}
+
 int onResume(int id)
 {
 	clearButtons(LEVEL_SCENE_PAUSE);
@@ -61,11 +71,13 @@ int regen(int id)
 7 0-9
 8 0-9 //postion y
 */
-int levelNumC = 0;
 int restart(int i)
 {
 	clearButtons(LEVEL_SCENE);
-	openLevel(levelNumC);
+	if (levelNumC >= 0)
+		openLevel(levelNumC);
+	else
+		playLevel(0);
 	//renderMap();
 }
 
@@ -75,14 +87,13 @@ void onLevelFileOpened(int levelNum, int playerX, int playerY, int cratesCount)
 	renderMap();
 	cratesCountN = cratesCount;
 	levelNumC = levelNum;
+	pushesMade = 0; movesMade = 0;
 	x = playerX; y = playerY;
-	//addButtonSprite("btntile.png", "Regen", SCREEN_WIDTH_UNIT * 1500, 0, SCREEN_WIDTH_UNIT * 200, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*regen), LEVEL_SCENE, 0, 0);
-	addButtonSprite("btntile.png", "Restart", SCREEN_WIDTH_UNIT * 1500, 0, SCREEN_WIDTH_UNIT * 200, SCREEN_WIDTH_UNIT * 200, 255, 255, 255, (*restart), LEVEL_SCENE, 0, 0);
-	addButtonSprite("Button_pause.png", "", 0, 0, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*onPause), LEVEL_SCENE, 0, 0);
+	addButtonSprite("GUI/replay.png", "", SCREEN_WIDTH_UNIT * 1870, 0, SCREEN_WIDTH_UNIT * 120, SCREEN_WIDTH_UNIT * 120, 255, 255, 255, (*restart), LEVEL_SCENE, 0, 0);
+	addButtonSprite("GUI/Button_pause.png", "", SCREEN_WIDTH_UNIT * 1750, 0, SCREEN_WIDTH_UNIT * 120, SCREEN_WIDTH_UNIT * 120, 255, 255, 255, (*onPause), LEVEL_SCENE, 0, 0);
 	cratesLeftLabelId = addLabel(SCREEN_WIDTH_UNIT * 2000, SCREEN_HEIGHT_UNIT * 1900, 255, 255, 255, LEVEL_SCENE, ALLEGRO_ALIGN_RIGHT,"Crates left:%i",cratesCountN);
 	pushesMadeLabelId = addLabel(SCREEN_WIDTH_UNIT * 2000, SCREEN_HEIGHT_UNIT * 1800, 255, 255, 255, LEVEL_SCENE, ALLEGRO_ALIGN_RIGHT, "Pushes:%i", pushesMade);
-	playerSpriteId = addSprite("Level/Player/Character1.png", SCREEN_WIDTH_UNIT* MAP_OFFSET + TILE_SIZE*SCREEN_WIDTH_UNIT*playerX, SCREEN_WIDTH_UNIT *MAP_OFFSET + TILE_SIZE*SCREEN_WIDTH_UNIT*playerY, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_SCENE, 3);
-	
+	playerSpriteId = addSprite("Level/Player/Character4.png", SCREEN_WIDTH_UNIT* MAP_OFFSET + TILE_SIZE*SCREEN_WIDTH_UNIT*playerX, SCREEN_WIDTH_UNIT *MAP_OFFSET + TILE_SIZE*SCREEN_WIDTH_UNIT*playerY, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_SCENE, 3);
 	renderScreen();
 }
 void onLevelOpened(int levelId)
@@ -135,13 +146,32 @@ void renderMap()
 		}
 	}
 }
-
+int openNextLevel(int i)
+{
+	
+	openLevel(levelNumC + 1);
+}
+void onLevelComlete()
+{
+	changeScene(LEVEL_SCENE_COMPLETE);
+	addSprite("GUI/level_complete.png", SCREEN_WIDTH_UNIT*600, SCREEN_HEIGHT_UNIT*50, 900*SCREEN_WIDTH_UNIT, SCREEN_HEIGHT_UNIT*1800, LEVEL_SCENE_COMPLETE, 5);
+	
+	addButtonSprite("GUI/replay.png", "", SCREEN_WIDTH_UNIT * 1000, SCREEN_HEIGHT_UNIT * 1580, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*restart), LEVEL_SCENE_COMPLETE, 1, 6);
+	if (levelNumC >= 0)
+		addButtonSprite("GUI/next.png", "", SCREEN_WIDTH_UNIT * 1200, SCREEN_HEIGHT_UNIT * 1580, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*openNextLevel), LEVEL_SCENE_COMPLETE, 1, 6);
+	addButtonSprite("GUI/menu.png", "", SCREEN_WIDTH_UNIT * 800, SCREEN_HEIGHT_UNIT * 1580, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*onExit), LEVEL_SCENE_COMPLETE, 1, 6);
+	addLabel(SCREEN_WIDTH_UNIT * 1300, SCREEN_HEIGHT_UNIT * 1100, 255, 255, 255, LEVEL_SCENE_COMPLETE, ALLEGRO_ALIGN_RIGHT, "%i pushes", pushesMade);
+	addLabel(SCREEN_WIDTH_UNIT * 1300, SCREEN_HEIGHT_UNIT * 1250, 255, 255, 255, LEVEL_SCENE_COMPLETE, ALLEGRO_ALIGN_RIGHT, "%i moves", movesMade);
+	
+}
 void movePlayer(int up, int right)
 {
+	if (SCENE_NOW != LEVEL_SCENE)
+		return;
 	int newX = x, newY = y;
 	bool assign = true;
 	newX += right; newY -= up;
-	if (map[newX][newY] == 1)
+	if (map[newX][newY] == 1 || newX >= LEVEL_WIDTH || newY >=LEVEL_HEIGHT || newX < 0 || newY < 0)
 		assign = false;
 	Log_i(__func__, "\n\t%i\n%i\t\t%i\n\t%i", map[newX][newY - 1], map[newX - 1][newY], map[newX + 1][newY], map[newX][newY + 1]);
 	if (map[newX][newY] == 3 || map[newX][newY] == 4)
@@ -155,6 +185,8 @@ void movePlayer(int up, int right)
 			if (map[newX + right][newY - up] == 2)
 			{
 				changeText(cratesLeftLabelId, "Crates left:%i", --cratesCountN);
+				if (cratesCountN == 0)
+					onLevelComlete();
 				map[newX + right][newY - up] = 4;
 			}
 			else 
@@ -177,6 +209,7 @@ void movePlayer(int up, int right)
 	if (assign)
 	{
 		x = newX; y = newY;
+		movesMade++;
 		if (up == 1)
 			changeSprite(playerSpriteId, "Level/Player/Character7.png");
 		if (up == -1)

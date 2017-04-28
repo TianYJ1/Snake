@@ -110,7 +110,8 @@ void makeGridSprites(int count, int colums, char names[][BUTTONS_NAME_SIZE], cha
 {
 	
 	int rows = ceil(count / colums);
-	
+	if (count < colums)
+		rows = 1;
 	if (count == 0 || colums == 0 || rows == 0)
 		return;
 	Log_i(__func__, "Grid:%iX%i, count=%i", rows, colums, count);

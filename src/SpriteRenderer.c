@@ -10,6 +10,7 @@ int addSprite(char * src, int x, int y, int w, int h, int scene, int layer)
 	}
 	return addSpriteBmp(bmp, x, y, w, h, scene, layer);
 }
+int lastId = 0;
 int addSpriteBmp(ALLEGRO_BITMAP * src, int x, int y, int w, int h, int scene, int layer)
 {
 	Sprite newSprite;
@@ -18,10 +19,36 @@ int addSpriteBmp(ALLEGRO_BITMAP * src, int x, int y, int w, int h, int scene, in
 	newSprite.posX = x; newSprite.posY = y;
 	newSprite.width = w; newSprite.height = h;
 	newSprite.scene = scene; newSprite.layer = layer;
-
-	return add(&spritesArr, (byte *)&newSprite, sizeof(newSprite));
+	add(&spritesArr, (byte *)&newSprite, sizeof(newSprite));
+	return newSprite.id;
 }
-
+void changeSprite(int spriteId, const char * src, ...)
+{
+	char buf[1024];
+	va_list vl;
+	va_start(vl, src);
+	vsnprintf(buf, sizeof(buf), src, vl);
+	va_end(vl);
+	ArrayElement *cur = spritesArr;
+	int i = 0;
+	while (cur->linkToNext)
+	{
+		Sprite * curSprite = (Sprite *)cur->container;
+		if (curSprite->id == spriteId)
+			break;
+		cur = cur->linkToNext;
+		i++;
+	}
+	Sprite * curSprite = (Sprite *)cur->container;
+	ALLEGRO_BITMAP * bmp = al_load_bitmap(buf);
+	if (bmp == NULL)
+	{
+		Log_e(__func__, "ERROR Loading sprite %s:No file", buf);
+		return -1;
+	}
+	curSprite->bmp = bmp;
+	set(spritesArr, i, curSprite, sizeof(curSprite));
+}
 void renderSrpite(int id)
 {
 
@@ -50,6 +77,7 @@ Sprite *getStruct(int i)
 {
 	Sprite *curSprite = malloc(sizeof(Sprite));
 	Sprite *newSpr = get(spritesArr, i);
+	
 	if (newSpr)
 	{
 		memcpy(curSprite, newSpr, sizeof(Sprite));
@@ -109,54 +137,29 @@ void clearSpritesScene(int scene)
 void clearSpritesLayer(int layer)
 {
 	ArrayElement *cur = spritesArr;
-	int i = 0;
 	while (cur)
 	{
 		Sprite * curSprite = (Sprite *)cur->container;
 		ArrayElement *next = cur->linkToNext;
 		if (curSprite->layer == layer)
-		{
-			if (next && next->linkToNext)
-				next = next->linkToNext;
-			removeEl(spritesArr, i);
-		}
+			removeElOb(&spritesArr, cur);
 		if (!next)
 			break;
 		cur = next;
-		i++;
 	}
 }
 void clearSprites(int scene, int layer)
 {
 	
 	ArrayElement *cur = spritesArr;
-	int i = 0;
 	while (cur)
 	{
 		Sprite * curSprite = (Sprite *)cur->container;
 		ArrayElement *next = cur->linkToNext;
 		if (curSprite->layer == layer && curSprite->scene == scene)
-		{
-			if (next && next->linkToNext)
-				next = next->linkToNext;
-			removeEl(spritesArr, i);
-		}
+			removeElOb(&spritesArr, cur);
 		if (!next)
 			break;
 		cur = next;
-		i++;
 	}
-}
-int changeSprite(int id, char * src)
-{
-	ALLEGRO_BITMAP * bmp = al_load_bitmap(src);
-	if (bmp == NULL)
-	{
-		Log_e(__func__, "ERROR Loading sprite %s:No file", src);
-		return -1;
-	}
-	Sprite * curSprite = getStruct(id);
-	curSprite->bmp= bmp;
-	set(spritesArr, id, curSprite, sizeof(curSprite));
-	return 0;
 }

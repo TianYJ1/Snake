@@ -30,12 +30,10 @@ void initAddons()
 	al_init_image_addon();
 
 }
-
-int threadsCount = 0;
 void renderScreen()
 {
 	al_clear_to_color(al_map_rgb(0, 0, 0));
-	for (int i = 0; i < 6; i++)
+	for (int i = 0; i < 16; i++)
 		renderSprites(i);
 	renderSprites(-1);
 	renderButtonsSc();
@@ -47,10 +45,8 @@ void renderScreen()
 }
 void changeScene(int scene)
 {
-	
 	SCENE_NOW = scene;
 	renderScreen();
-	
 }
 void Log_i(const char * tag, const char *str, ...)
 {
@@ -95,6 +91,7 @@ void setNewScreen()
 	//SCREEN_WIDTH -= 250; SCREEN_HEIGHT -= 40;
 	recalcSprites(wC, hC);
 	recalcButtons(wC, hC);
+	recalcLabels(wC, hC);
 	font = al_load_ttf_font("SansPosterBold.ttf", SCREEN_HEIGHT_UNIT * 60, 0);
 	renderScreen();
 }
@@ -128,6 +125,7 @@ int initVars()
 		else
 			SCREEN_HEIGHT -= SCREEN_HEIGHT_UNIT*200;
 		al_set_new_display_flags(ALLEGRO_WINDOWED | ALLEGRO_RESIZABLE);
+		
 	}
 	path = al_get_standard_path(ALLEGRO_RESOURCES_PATH);
 
@@ -158,6 +156,13 @@ int initVars()
 	SCREEN_HEIGHT_UNIT = SCREEN_HEIGHT / 2000.0;
 	font = al_load_ttf_font("SansPosterBold.ttf", -SCREEN_HEIGHT_UNIT * 80, ALLEGRO_TTF_MONOCHROME);
 	display = al_create_display(SCREEN_WIDTH, SCREEN_HEIGHT);
+	ALLEGRO_BITMAP * icon = al_load_bitmap("Level/Player/Character4.png");
+	if (icon == NULL)
+	{
+		Log_e(__func__, "ERROR Loading sprite %s:No file", "Level/Player/Character4.png");
+		return -1;
+	}
+	al_set_display_icon(display, icon);
 	//SCREEN_WIDTH -= 250; SCREEN_HEIGHT -= 40;
 	//al_clear_to_color(al_map_rgb(0, 0, 0));
 	return 0;

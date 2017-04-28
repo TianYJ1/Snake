@@ -22,14 +22,13 @@
 #include "Array.h"
 #include "Label.h"
 #include "levGen.h"
+#include "LevelEditor.h"
 #define DEBUG_MODE 1
 
 #define LEVEL_HEIGHT 15
 #define LEVEL_WIDTH 15
 #define SEED_LENTGH 5
 #define TILE_SIZE 64
-#define SRPITES_AMOUNT 2048
-#define BUTTONS_COUNT 1024
 
 #define LEVEL_SELECT_ITEMS_PER_PAGE 12
 
@@ -37,8 +36,10 @@
 #define LEVEL_SELECT_SCENE 1
 #define LEVEL_SCENE 2
 #define LEVEL_SCENE_PAUSE 3
+#define LEVEL_SCENE_COMPLETE 4
+#define LEVEL_EDITOR_SCENE 5
 
-
+#define MAP_OFFSET 100
 
 extern int SCREEN_WIDTH, SCREEN_HEIGHT, SCENE_NOW, EventManagerThreadRunning;
 extern float SCREEN_WIDTH_UNIT, SCREEN_HEIGHT_UNIT;

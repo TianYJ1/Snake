@@ -15,5 +15,5 @@ void clearSpritesScene(int scene);
 void clearSpritesLayer(int layer);
 void clearSprites(int scene, int layer);
 int moveSpriteTo(int spriteId, int x, int y);
-int changeSprite(int id, char * src);
-Sprite *getStruct(int i);
+void changeSprite(int spriteId, const char * src, ...);
+Sprite *getStruct(int id);

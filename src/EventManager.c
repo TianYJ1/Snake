@@ -69,10 +69,37 @@ int onKeyUp(int key)
 		break;
 	}
 }
+int mouseButton = -1;
 int onMouseClick(float x, float y)
 {
-	if (detectButtons(x, y) > 0)
+	if ((SCENE_NOW == LEVEL_EDITOR_SCENE && mouseClicked(x, y)) || detectButtons(x, y) > 0)
+	{
+		renderScreen();
 		return 1;
+	}
+	else
+		return 0;
+}
+int onMouseHold(int button, float x, float y)
+{
+	if (SCENE_NOW == LEVEL_EDITOR_SCENE)
+	{
+		if(button == 1)
+			mouseClicked(x, y);
+		else if (button == 2)
+			onRightMouseClicked(x, y);
+		return 1;
+	}
+	else
+		return 0;
+}
+int onMouseRightClick(float x, float y)
+{
+	if ((SCENE_NOW == LEVEL_EDITOR_SCENE && onRightMouseClicked(x, y)) || detectButtons(x, y) > 0)
+	{
+		renderScreen();
+		return 1;
+	}
 	else
 		return 0;
 }
@@ -103,7 +130,8 @@ int initEventManager()
 		//bool get_event = al_wait_for_event_until(EventQueue, &Event, &timeout);
 		if (keyPressed > 0)
 			onKeyDown(keyPressed);
-		
+		if (mouseButton > 0)
+			onMouseHold(mouseButton, Event.mouse.x, Event.mouse.y);
 		switch (Event.type)
 		{
 			case ALLEGRO_EVENT_KEY_DOWN:
@@ -113,9 +141,16 @@ int initEventManager()
 			case ALLEGRO_EVENT_KEY_UP:
 				onKeyUp(keyPressed);
 				keyPressed = -1;
+
+			case ALLEGRO_EVENT_MOUSE_BUTTON_DOWN:
+				mouseButton = Event.mouse.button;
 			break;
 			case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
-				onMouseClick(Event.mouse.x, Event.mouse.y);
+				if(Event.mouse.button == 1)
+					onMouseClick(Event.mouse.x, Event.mouse.y);
+				else if(Event.mouse.button == 2)
+					onMouseRightClick(Event.mouse.x, Event.mouse.y);
+				mouseButton = -1;
 			break;
 			case ALLEGRO_EVENT_DISPLAY_CLOSE:
 				EventManagerThreadRunning = false;

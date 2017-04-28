@@ -88,12 +88,11 @@ void removeElOb(ArrayElement **arrayC, ArrayElement *toRemove)
 	{
 		if (next)
 		{
-			(*arrayC)->linkToNext = next->linkToNext;
-			(*arrayC)->container = next->container;
-			if ((*arrayC)->linkToNext)
-				(*arrayC)->linkToNext->linkToPrev = arrayC;
-			free(next->container);
-			free(next);
+			free((*arrayC)->container);
+			free(*arrayC);
+			next->linkToPrev = NULL;
+			(*arrayC) = next;
+			
 		}
 		else
 		{

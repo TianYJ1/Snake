@@ -119,6 +119,7 @@ int prevPage(int i)
 	showDirectoryListing();
 	renderScreen();
 }
+int count = 0;
 void showDirectoryListing()
 {
 	clearButtons(LEVEL_SELECT_SCENE);
@@ -127,10 +128,13 @@ void showDirectoryListing()
 	addButtonSprite("btntile.png", "->", SCREEN_WIDTH_UNIT * 1100, SCREEN_HEIGHT_UNIT * 1800, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, nextPage, LEVEL_SELECT_SCENE, 1, 4);
 	addButtonSprite("btntile.png", "<-", SCREEN_WIDTH_UNIT * 900, SCREEN_HEIGHT_UNIT * 1800, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, prevPage, LEVEL_SELECT_SCENE, 1, 4);
 	ALLEGRO_FS_ENTRY* dir = al_create_fs_entry(pathCur);
+	while (count > 0)
+		sprintf(names[count--], "");
+	renderScreen();
 	if (al_open_directory(dir))
 	{
 		ALLEGRO_FS_ENTRY* file;
-		int count = 0;
+		
 		int(*callBacks[64])(int id);
         memset(levelsPaths,0,sizeof(levelsPaths));
 		while (file = al_read_directory(dir))
@@ -183,6 +187,11 @@ int ExitProg(int i)
 {
 	EventManagerThreadRunning = 0;
 }
+int openLevelEditor(int i)
+{
+	changeScene(LEVEL_EDITOR_SCENE);
+	onLevelEditorOpened();
+}
 int main(void)
 {
 	//if(!DEBUG_MODE)
@@ -196,8 +205,8 @@ int main(void)
 	}
 	initButtons();
 	Log_i(__func__, "Initied\n================\n");
-	int(*callBacks[3])(int id) = { openLevelSelect,ExitProg, sliceFile};
-	char names[][BUTTONS_NAME_SIZE] = { "Level Select\0" ,"Exit\0" ,"Slice Levels"};
+	int(*callBacks[])(int id) = { openLevelSelect,ExitProg, sliceFile, openLevelEditor };
+	char names[][BUTTONS_NAME_SIZE] = { "Level Select\0" ,"Exit\0" ,"Slice Levels","Level Editor"};
 
 	char *p = (char*)malloc(strlen(resourcePath)+16);
 	sprintf(p,"%s",resourcePath);
@@ -212,7 +221,7 @@ int main(void)
 	addButton("BL", 0, SCREEN_HEIGHT-50, 50, 50, 255, 255, 255, NULL, MAINMENU_SCENE,0);
 	addButton("BR", SCREEN_WIDTH-50, SCREEN_HEIGHT-50, 50, 50, 255, 255, 255, NULL, MAINMENU_SCENE,0);
 
-	makeListSprites(3,names, "btntile.png", SCREEN_WIDTH/2-125, 50, 250, 150, callBacks, MAINMENU_SCENE, 1);
+	makeListSprites(4,names, "btntile.png", SCREEN_WIDTH/2-125, 25, 250, 100, callBacks, MAINMENU_SCENE, 1);
 	//sliceFile();
 	addSprite("back.jpg", 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, -1, 0);
 	Log_i(__func__, "Added button");
