@@ -220,8 +220,8 @@ int main(void)
 	addButton("TR", SCREEN_WIDTH-50, 0, 50, 50, 255, 255, 255, NULL, MAINMENU_SCENE,0);
 	addButton("BL", 0, SCREEN_HEIGHT-50, 50, 50, 255, 255, 255, NULL, MAINMENU_SCENE,0);
 	addButton("BR", SCREEN_WIDTH-50, SCREEN_HEIGHT-50, 50, 50, 255, 255, 255, NULL, MAINMENU_SCENE,0);
-
-	makeListSprites(4,names, "btntile.png", SCREEN_WIDTH/2-125, 25, 250, 100, callBacks, MAINMENU_SCENE, 1);
+	
+	makeListSprites(4,names, "btntile.png", SCREEN_WIDTH/2-125, 25, 250, SCREEN_HEIGHT_UNIT *150, callBacks, MAINMENU_SCENE, 1);
 	//sliceFile();
 	addSprite("back.jpg", 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, -1, 0);
 	Log_i(__func__, "Added button");
@@ -230,7 +230,7 @@ int main(void)
 	//al_rest(5.0);
 	//system("pause");
 	//al_destroy_font(font);
-	al_destroy_display(display);
+	//al_destroy_display(display);
 	al_destroy_path(path);
 	return 0;
 

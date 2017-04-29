@@ -227,8 +227,8 @@ int openLevel(int num)
 }
 void convertConstCopy(const char *source, char **toChr)
 {
-    if(*toChr)
-        free(*toChr);
+    //if(*toChr && *toChr && *toChr != NULL && sizeof(*toChr))
+       // free(*toChr);
     *toChr = (char*)malloc(strlen(source)+1);
     sprintf(*toChr ,"%s",source);
 }

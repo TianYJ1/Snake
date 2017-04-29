@@ -33,7 +33,7 @@ int mouseClicked(int y, int x)
 		switch (currentInstrument)
 		{
 			case 0:
-				if(mapLE[y][x] != 4 && mapLE[y][x] != 9)
+				if(mapLE[y][x] != 5 && mapLE[y][x] != 9)
 					changeSprite(mapSprites[y][x], "Level/Tiles/Ground_Sand_border.png");
 			break;
 			case 1:
@@ -46,6 +46,10 @@ int mouseClicked(int y, int x)
 				changeSprite(mapSprites[y][x], "Level/Tiles/Crate_Black.png");
 			break;
 			case 4:
+				changeSprite(mapSprites[y][x], "Level/Tiles/Crate_Black.png");
+				break;
+
+			case 5:
 				mapLE[y][x] = 9;
 				mapLE[playerY][playerX] = 0;
 				changeSprite(mapSprites[playerY][playerX], "Level/Tiles/Ground_Sand_border.png");
@@ -62,7 +66,7 @@ int mouseClicked(int y, int x)
 }
 int saveDialog(int i)
 {
-	char * destFileStr = NULL;
+	char * destFileStr;
 	ALLEGRO_FILECHOOSER *dialog = al_create_native_file_dialog("", "Choose destination", "*.txt", ALLEGRO_FILECHOOSER_SAVE);
 	if (al_show_native_file_dialog(display, dialog))
 	{
@@ -94,7 +98,11 @@ int saveDialog(int i)
 					case 3:
 						c = '$';
 					break;
+
 					case 4:
+						c = '*';
+					break;
+					case 5:
 					case 9:
 						c = '@';
 					break;
@@ -120,8 +128,19 @@ int selectWall(int i)
 }
 int clearEl(int i)
 {
-	clearButtons(LEVEL_EDITOR_SCENE);
-	onLevelEditorOpened();
+	clearSprites(LEVEL_EDITOR_SCENE, 2);
+	//onLevelEditorOpened();
+	for (int q = 0; q < LEVEL_HEIGHT; q++)
+	{
+		for (int i = 0; i < LEVEL_WIDTH; i++)
+		{
+			if (q == 0 && i == 0)
+				mapLE[q][i] = 9;
+			else
+				mapLE[q][i] = 0;
+		}
+	}
+	renderMapLE();
 }
 int selectExit(int i)
 {
@@ -133,6 +152,12 @@ int selectCrate(int i)
 	currentInstrument = 3;
 	moveSpriteTo(pointerArrayId, SCREEN_WIDTH_UNIT * 1750, SCREEN_WIDTH_UNIT * 120 * currentInstrument);
 }
+int selectEXitCrate(int i)
+{
+	currentInstrument = 4;
+	moveSpriteTo(pointerArrayId, SCREEN_WIDTH_UNIT * 1750, SCREEN_WIDTH_UNIT * 120 * currentInstrument);
+}
+
 int onExitLE(int i)
 {
 	clearButtons(LEVEL_EDITOR_SCENE);
@@ -157,7 +182,7 @@ int playLevel(int i)
 }
 int selectPlayer(int i)
 {
-	currentInstrument = 4;
+	currentInstrument = 5;
 	moveSpriteTo(pointerArrayId, SCREEN_WIDTH_UNIT * 1750, SCREEN_WIDTH_UNIT * 120 * currentInstrument);
 }
 int openFileLoadDialog(int i)
@@ -190,7 +215,9 @@ void onLevelEditorOpened()
 	
 	addButtonSprite("Level/Tiles/EndPoint_Brown.png", "", SCREEN_WIDTH_UNIT * 1870, SCREEN_WIDTH_UNIT * 240, SCREEN_WIDTH_UNIT * 120, SCREEN_WIDTH_UNIT * 120, 255, 255, 255, (*selectExit), LEVEL_EDITOR_SCENE, 0, 3);
 	addButtonSprite("Level/Tiles/Crate_Black.png", "", SCREEN_WIDTH_UNIT * 1870, SCREEN_WIDTH_UNIT * 360, SCREEN_WIDTH_UNIT * 120, SCREEN_WIDTH_UNIT * 120, 255, 255, 255, (*selectCrate), LEVEL_EDITOR_SCENE, 0, 3);
-	addButtonSprite("Level/Player/Character4.png", "", SCREEN_WIDTH_UNIT * 1870, SCREEN_WIDTH_UNIT * 480, SCREEN_WIDTH_UNIT * 120, SCREEN_WIDTH_UNIT * 120, 255, 255, 255, (*selectPlayer), LEVEL_EDITOR_SCENE, 0, 3);
+	addButtonSprite("Level/Tiles/EndPoint_Brown.png", "", SCREEN_WIDTH_UNIT * 1870, SCREEN_WIDTH_UNIT * 510, SCREEN_WIDTH_UNIT * 120, SCREEN_WIDTH_UNIT * 120, 255, 255, 255, (*selectEXitCrate), LEVEL_EDITOR_SCENE, 0, 3);
+	addButtonSprite("Level/Tiles/Crate_Black.png", "", SCREEN_WIDTH_UNIT * 1870, SCREEN_WIDTH_UNIT * 480, SCREEN_WIDTH_UNIT * 120, SCREEN_WIDTH_UNIT * 120, 255, 255, 255, (*selectEXitCrate), LEVEL_EDITOR_SCENE, 0, 3);
+	addButtonSprite("Level/Player/Character4.png", "", SCREEN_WIDTH_UNIT * 1870, SCREEN_WIDTH_UNIT * 680, SCREEN_WIDTH_UNIT * 120, SCREEN_WIDTH_UNIT * 120, 255, 255, 255, (*selectPlayer), LEVEL_EDITOR_SCENE, 0, 3);
 	addButtonSprite("GUI/open.png", "", SCREEN_WIDTH_UNIT * 0, SCREEN_WIDTH_UNIT * 0, SCREEN_WIDTH_UNIT * 120, SCREEN_WIDTH_UNIT * 120, 255, 255, 255, (*openFileLoadDialog), LEVEL_EDITOR_SCENE, 0, 3);
 	addButtonSprite("GUI/save.png", "", SCREEN_WIDTH_UNIT * 0, SCREEN_WIDTH_UNIT * 120, SCREEN_WIDTH_UNIT * 120, SCREEN_WIDTH_UNIT * 120, 255, 255, 255, (*saveDialog), LEVEL_EDITOR_SCENE, 0, 3);
 	addButtonSprite("Button_play.png", "", SCREEN_WIDTH_UNIT * 0, SCREEN_WIDTH_UNIT * 240, SCREEN_WIDTH_UNIT * 120, SCREEN_WIDTH_UNIT * 120, 255, 255, 255, (*playLevel), LEVEL_EDITOR_SCENE, 0, 3);
@@ -242,6 +269,7 @@ void loadFromFile(const char * src, ...)
 				case '9':
 				case '@':
 					playerY = i; playerX = y;
+					mapLE[0][0] = 0;
 					mapLE[i][y] = 9;
 					break;
 				case '0':
@@ -292,6 +320,7 @@ void renderMapLE()
 					addSprite("Level/Tiles/EndPoint_Brown.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_EDITOR_SCENE, 2);
 					mapSprites[i][q] = addSprite("Level/Tiles/Crate_Black.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_EDITOR_SCENE, 2);
 				break;
+
 				case 5:
 				case 9:
 					mapSprites[i][q] = addSprite("Level/Player/Character4.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_EDITOR_SCENE, 2); 

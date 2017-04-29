@@ -55,15 +55,47 @@ int onKeyUp(int key)
 		case ALLEGRO_KEY_A:
 		case ALLEGRO_KEY_LEFT:
 			movePlayer(0, -1);
-			break;
+		break;
 		case ALLEGRO_KEY_W:
 		case ALLEGRO_KEY_UP:
 			movePlayer(1, 0);
-			break;
+		break;
 		case ALLEGRO_KEY_S:
 		case ALLEGRO_KEY_DOWN:
 			movePlayer(-1, 0);
-			break;
+		break;
+		case ALLEGRO_KEY_PAD_0:
+		case ALLEGRO_KEY_0:
+			if (SCENE_NOW == LEVEL_EDITOR_SCENE)
+				selectSand(0);
+		break;
+		case ALLEGRO_KEY_PAD_1:
+		case ALLEGRO_KEY_1:
+			if (SCENE_NOW == LEVEL_EDITOR_SCENE)
+				selectWall(0);
+		break;
+		case ALLEGRO_KEY_PAD_2:
+		case ALLEGRO_KEY_2:
+			if (SCENE_NOW == LEVEL_EDITOR_SCENE)
+				selectExit(0);
+		break;
+		case ALLEGRO_KEY_PAD_3:
+		case ALLEGRO_KEY_3:
+			if (SCENE_NOW == LEVEL_EDITOR_SCENE)
+				selectCrate(0);
+		break;
+		case ALLEGRO_KEY_PAD_4:
+		case ALLEGRO_KEY_4:
+			if (SCENE_NOW == LEVEL_EDITOR_SCENE)
+				selectEXitCrate(0);
+		break;
+		case ALLEGRO_KEY_5:
+		case ALLEGRO_KEY_9:
+		case ALLEGRO_KEY_PAD_5:
+		case ALLEGRO_KEY_PAD_9:
+			if (SCENE_NOW == LEVEL_EDITOR_SCENE)
+				selectPlayer(0);
+		break;
 		default:
 			return 0;
 		break;
