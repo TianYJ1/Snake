@@ -3,7 +3,7 @@ char * pathCur;
 char levelsPaths[256][128] = { 0 };
 extern float SCREEN_WIDTH_UNIT, SCREEN_HEIGHT_UNIT;
 int yOffset = 0;
-void showDirectoryListing();
+
 int openFolderDialog(int i)
 {
 
@@ -11,7 +11,7 @@ int openFolderDialog(int i)
 	if (al_show_native_file_dialog(display, dialog))
 	{
 	    convertConstCopy(al_get_native_file_dialog_path(dialog, 0), &pathCur);
-	    showDirectoryListing();
+	    showDirectoryListing(0);
 	}
 	return 1;
 }
@@ -20,11 +20,11 @@ int openLevelSelect(int i)
 	clearButtons(LEVEL_SELECT_SCENE);
 	clearSpritesScene(LEVEL_SELECT_SCENE);
 	changeScene(LEVEL_SELECT_SCENE);
-	showDirectoryListing();
+	showDirectoryListing(0);
 	renderScreen();
 
 }
-char names[64][BUTTONS_NAME_SIZE];
+char levelsNames[64][BUTTONS_NAME_SIZE];
 int levelSelectPage = 0;
 int sliceFile(int i)
 {
@@ -105,7 +105,7 @@ int nextPage(int i)
 	levelSelectPage++;
 	clearButtons(LEVEL_SELECT_SCENE);
 	clearSpritesScene(LEVEL_SELECT_SCENE);
-	showDirectoryListing();
+	showDirectoryListing(0);
 	renderScreen();
 }
 int prevPage(int i)
@@ -116,25 +116,36 @@ int prevPage(int i)
 
 	clearButtons(LEVEL_SELECT_SCENE);
 	clearSpritesScene(LEVEL_SELECT_SCENE);
-	showDirectoryListing();
+	showDirectoryListing(0);
 	renderScreen();
 }
 int count = 0;
-void showDirectoryListing()
+int showDirectoryListing(int i)
 {
 	clearButtons(LEVEL_SELECT_SCENE);
 	clearSpritesScene(LEVEL_SELECT_SCENE);
 	addButtonSprite("btntile.png", "Change folder", SCREEN_WIDTH_UNIT * 1600, SCREEN_WIDTH_UNIT * 1, SCREEN_WIDTH_UNIT * 400, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, openFolderDialog, LEVEL_SELECT_SCENE, 1, 4);
-	addButtonSprite("btntile.png", "->", SCREEN_WIDTH_UNIT * 1100, SCREEN_HEIGHT_UNIT * 1800, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, nextPage, LEVEL_SELECT_SCENE, 1, 4);
-	addButtonSprite("btntile.png", "<-", SCREEN_WIDTH_UNIT * 900, SCREEN_HEIGHT_UNIT * 1800, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, prevPage, LEVEL_SELECT_SCENE, 1, 4);
+	
+	addSprite("GUI/win_back_hor.png", SCREEN_WIDTH_UNIT * 350, SCREEN_HEIGHT_UNIT * 100, SCREEN_WIDTH_UNIT * 1300, SCREEN_HEIGHT_UNIT * 1700, SCENE_NOW, 1);
+	addSprite("GUI/actions_back.png", SCREEN_WIDTH_UNIT * 750, SCREEN_HEIGHT_UNIT * 1700, 500 * SCREEN_WIDTH_UNIT, SCREEN_HEIGHT_UNIT * 200, SCENE_NOW, 1);
+	addSprite("GUI/title_back.png", SCREEN_WIDTH_UNIT * 550, SCREEN_HEIGHT_UNIT * 50, 950 * SCREEN_WIDTH_UNIT, SCREEN_HEIGHT_UNIT * 200, SCENE_NOW, 1);
+	addLabel(SCREEN_WIDTH_UNIT * 1025, SCREEN_HEIGHT_UNIT * 90, 255, 90, 0, SCENE_NOW, ALLEGRO_ALIGN_CENTER, "LEVEL SELECT");
+
+
+	addButtonSprite("btntile.png", "->", SCREEN_WIDTH_UNIT * 1100, SCREEN_HEIGHT_UNIT * 1700, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, nextPage, LEVEL_SELECT_SCENE, 1, 4);
+	addButtonSprite("btntile.png", "<-", SCREEN_WIDTH_UNIT * 800, SCREEN_HEIGHT_UNIT * 1700, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, prevPage, LEVEL_SELECT_SCENE, 1, 4);
+	addButtonSprite("GUI/replay.png", "", SCREEN_WIDTH_UNIT * 900, SCREEN_HEIGHT_UNIT * 1700, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, showDirectoryListing, LEVEL_SELECT_SCENE, 1, 4);
+	addButtonSprite("GUI/open.png", "", SCREEN_WIDTH_UNIT * 1000, SCREEN_HEIGHT_UNIT * 1700, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, openFolderDialog, LEVEL_SELECT_SCENE, 1, 4);
+	
 	ALLEGRO_FS_ENTRY* dir = al_create_fs_entry(pathCur);
+
 	while (count > 0)
-		sprintf(names[count--], "");
+		sprintf(levelsNames[count--], "");
 	renderScreen();
 	if (al_open_directory(dir))
 	{
 		ALLEGRO_FS_ENTRY* file;
-		
+		Log_i(__func__, "LISTING");
 		int(*callBacks[64])(int id);
         memset(levelsPaths,0,sizeof(levelsPaths));
 		while (file = al_read_directory(dir))
@@ -143,7 +154,7 @@ void showDirectoryListing()
 				Log_e(__func__, "ERROR: Level file is null");
 			else
 			{
-				printf("path:%s\n", al_get_fs_entry_name(file));
+				//printf("path:%s\n", al_get_fs_entry_name(file));
 				char *path = NULL;
 				convertConstCopy(al_get_fs_entry_name(file), &path);
 				char *filename;
@@ -160,12 +171,12 @@ void showDirectoryListing()
 					filename++;
 				if (strstr(filename, ".txt"))
 				{
-
-					if (count >= levelSelectPage * LEVEL_SELECT_ITEMS_PER_PAGE && count < (levelSelectPage + 1) * LEVEL_SELECT_ITEMS_PER_PAGE)
+					
+					if (count >= levelSelectPage * LEVEL_SELECT_ITEMS_PER_PAGE && (count) < (levelSelectPage + 1) * LEVEL_SELECT_ITEMS_PER_PAGE)
 					{
-						sprintf(levelsPaths[count- levelSelectPage * LEVEL_SELECT_ITEMS_PER_PAGE], "%s", path);
+						sprintf(levelsPaths[count - levelSelectPage * LEVEL_SELECT_ITEMS_PER_PAGE], "%s", path);
 						filename[strlen(filename) - 4] = 0;
-						sprintf(names[count- levelSelectPage * LEVEL_SELECT_ITEMS_PER_PAGE], "%s", filename);
+						sprintf(levelsNames[count- levelSelectPage * LEVEL_SELECT_ITEMS_PER_PAGE], "%s", filename);
 						callBacks[count- levelSelectPage * LEVEL_SELECT_ITEMS_PER_PAGE] = &openLevel;
 						Log_i(__func__, "Level: %s", filename);
 
@@ -178,7 +189,11 @@ void showDirectoryListing()
 			}
 		}
 		al_destroy_fs_entry(file);
-		makeGridSprites(count- levelSelectPage * LEVEL_SELECT_ITEMS_PER_PAGE-1, 3, names, "btntile.png", SCREEN_WIDTH_UNIT * 40, SCREEN_HEIGHT_UNIT * 500, SCREEN_WIDTH_UNIT * 400, SCREEN_WIDTH_UNIT * 100, callBacks, LEVEL_SELECT_SCENE, 1);
+		if ((count - levelSelectPage * LEVEL_SELECT_ITEMS_PER_PAGE) > LEVEL_SELECT_ITEMS_PER_PAGE)
+			count--;
+		if ((count - levelSelectPage * LEVEL_SELECT_ITEMS_PER_PAGE)  <= 0)
+			prevPage(0);
+		makeGridSprites(count- levelSelectPage * LEVEL_SELECT_ITEMS_PER_PAGE, 4, levelsNames, "btntile.png", SCREEN_WIDTH_UNIT * 650, SCREEN_HEIGHT_UNIT * 400, SCREEN_WIDTH_UNIT * 150, SCREEN_WIDTH_UNIT * 150, callBacks, LEVEL_SELECT_SCENE, 1);
 	}
 	al_destroy_fs_entry(dir);
 	Log_i(__func__, "Folder: %s", pathCur);
@@ -212,8 +227,7 @@ int main(void)
 	sprintf(p,"%s",resourcePath);
 	free(resourcePath);
 
-	resourcePath = (char*)malloc(strlen(resourcePath)+16);
-	
+	resourcePath = (char*)malloc(strlen(resourcePath) + 16);
 	sprintf(resourcePath, "%sLevels", p);
 	pathCur = resourcePath;
 	addButton("TL", 0, 0, 50, 50, 255, 255, 255, NULL,0,0);
@@ -226,12 +240,19 @@ int main(void)
 	addSprite("back.jpg", 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, -1, 0);
 	Log_i(__func__, "Added button");
 	renderScreen();
+	
+	resourcePath = (char*)malloc(strlen(resourcePath) + 16);
+	putMem(getUnformatted("tt_%i", 0), getUnformatted("m_%i", 1));
+	putMem(getUnformatted("tt_%i", 2), getUnformatted("m_%i", 1));
+	
+	
 	initEventManager();//last to be called untill die
+	saveMem();
 	//al_rest(5.0);
 	//system("pause");
 	//al_destroy_font(font);
 	//al_destroy_display(display);
-	al_destroy_path(path);
+	//al_destroy_path(path);
 	return 0;
 
 }

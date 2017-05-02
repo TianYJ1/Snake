@@ -20,7 +20,7 @@ int onMouseWheel(float dir)
 			yOffset += dir;
 			if (yOffset > 0)
 				yOffset = 0;
-			showDirectoryListing();
+			showDirectoryListing(0);
 
 		}
 		return 1;

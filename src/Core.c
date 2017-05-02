@@ -9,6 +9,7 @@ float SCREEN_WIDTH_UNIT = 0, SCREEN_HEIGHT_UNIT = 0;
 ALLEGRO_PATH *path;
 FILE *targetFile;
 char * resourcePath;
+ALLEGRO_SAMPLE *menuSample = NULL, *levelSample = NULL;
 void initAddons()
 {
 	printf("Allegro init: %i\n",al_init());
@@ -28,7 +29,20 @@ void initAddons()
 	al_init_native_dialog_addon();
 	printf("al_installed_keyboard_\n");
 	al_init_image_addon();
+	if (!al_install_audio()) {
+		Log_e(__func__, "failed to initialize audio!\n");
+		return;
+	}
 
+	if (!al_init_acodec_addon()) {
+		Log_e(__func__, "failed to initialize audio codecs!\n");
+		return;
+	}
+
+	if (!al_reserve_samples(2)) {
+		Log_e(__func__, "failed to reserve samples!\n");
+		return;
+	}
 }
 void renderScreen()
 {
@@ -45,8 +59,23 @@ void renderScreen()
 }
 void changeScene(int scene)
 {
+	if (SCENE_NOW != scene)
+	{
+		switch (scene)
+		{
+			case MAINMENU_SCENE:
+				al_stop_samples();
+				al_play_sample(menuSample, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
+			break;
+			case LEVEL_SCENE:
+				al_stop_samples();
+				al_play_sample(levelSample, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
+			break;
+		}
+	}
 	SCENE_NOW = scene;
 	renderScreen();
+
 }
 void Log_i(const char * tag, const char *str, ...)
 {
@@ -111,7 +140,7 @@ int initVars()
 	al_get_display_mode(al_get_num_display_modes() - 1, &disp_data);
 
 	SCREEN_WIDTH = disp_data.width; SCREEN_HEIGHT = disp_data.height;
-
+	
 	Log_i(__func__,"Screen:%i %i", SCREEN_WIDTH, SCREEN_HEIGHT);
 	
 	if(al_show_native_message_box(display, "FullScreen", "Would you like to run in fullscreen mode?", "", NULL, ALLEGRO_MESSAGEBOX_YES_NO))
@@ -163,6 +192,20 @@ int initVars()
 		return -1;
 	}
 	al_set_display_icon(display, icon);
+	menuSample = al_load_sample("Sounds/menu.wav");
+
+	if (!menuSample) {
+		Log_e(__func__, "Audio clip menuSample not loaded!\n");
+		return -1;
+	}
+	levelSample = al_load_sample("Sounds/level.wav");
+
+	if (!levelSample) {
+		Log_e(__func__, "Audio clip levelSample not loaded!\n");
+		return -1;
+	}
+	al_play_sample(menuSample, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
+	loadMem();
 	//SCREEN_WIDTH -= 250; SCREEN_HEIGHT -= 40;
 	//al_clear_to_color(al_map_rgb(0, 0, 0));
 	return 0;
@@ -172,6 +215,11 @@ int openLevel(int num)
 {
 	printf("\nOpening Level #%s", levelsPaths[num]);
 	FILE *sourceFile = fopen(levelsPaths[num], "r");
+	if (!sourceFile)
+	{
+		Log_e(__func__, "ERROR: Source file for level not found: %s", levelsPaths[num]);
+		return;
+	}
 	char str[256];
 	bool prevStrIsData = false;
 	int y = 0;

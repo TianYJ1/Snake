@@ -1,7 +1,7 @@
 #include "LibraryMerger.h"
 int mapLE[LEVEL_HEIGHT][LEVEL_WIDTH];
 extern int map[LEVEL_HEIGHT][LEVEL_WIDTH];
-int mapSprites[LEVEL_HEIGHT][LEVEL_WIDTH];
+int mapSpritesLE[LEVEL_HEIGHT][LEVEL_WIDTH];
 int currentInstrument = 0;
 int pointerArrayId = 0;
 int playerX = 0, playerY = 0;
@@ -34,26 +34,26 @@ int mouseClicked(int y, int x)
 		{
 			case 0:
 				if(mapLE[y][x] != 5 && mapLE[y][x] != 9)
-					changeSprite(mapSprites[y][x], "Level/Tiles/Ground_Sand_border.png");
+					changeSprite(mapSpritesLE[y][x], "Level/Tiles/Ground_Sand_border.png");
 			break;
 			case 1:
-				changeSprite(mapSprites[y][x], "Level/Tiles/WallRound_Brown.png");
+				changeSprite(mapSpritesLE[y][x], "Level/Tiles/WallRound_Brown.png");
 			break;
 			case 2:
-				changeSprite(mapSprites[y][x], "Level/Tiles/EndPoint_Brown.png");
+				changeSprite(mapSpritesLE[y][x], "Level/Tiles/EndPoint_Brown.png");
 			break;
 			case 3:
-				changeSprite(mapSprites[y][x], "Level/Tiles/Crate_Black.png");
+				changeSprite(mapSpritesLE[y][x], "Level/Tiles/Crate_Black.png");
 			break;
 			case 4:
-				changeSprite(mapSprites[y][x], "Level/Tiles/Crate_Black.png");
+				changeSprite(mapSpritesLE[y][x], "Level/Tiles/Crate_Black.png");
 				break;
 
 			case 5:
 				mapLE[y][x] = 9;
 				mapLE[playerY][playerX] = 0;
-				changeSprite(mapSprites[playerY][playerX], "Level/Tiles/Ground_Sand_border.png");
-				changeSprite(mapSprites[y][x], "Level/Player/Character4.png");
+				changeSprite(mapSpritesLE[playerY][playerX], "Level/Tiles/Ground_Sand_border.png");
+				changeSprite(mapSpritesLE[y][x], "Level/Player/Character4.png");
 				playerX = x; playerY = y;
 			break;
 		}
@@ -305,25 +305,25 @@ void renderMapLE()
 			switch (mapLE[i][q])
 			{
 				case 0:
-					mapSprites[i][q] = addSprite("Level/Tiles/Ground_Sand_border.png", x,y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT,LEVEL_EDITOR_SCENE, 2);
+					mapSpritesLE[i][q] = addSprite("Level/Tiles/Ground_Sand_border.png", x,y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT,LEVEL_EDITOR_SCENE, 2);
 				break;
 				case 1:
-					mapSprites[i][q] = addSprite("Level/Tiles/WallRound_Brown.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_EDITOR_SCENE, 2);
+					mapSpritesLE[i][q] = addSprite("Level/Tiles/WallRound_Brown.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_EDITOR_SCENE, 2);
 				break;
 				case 2:
-					mapSprites[i][q] = addSprite("Level/Tiles/EndPoint_Brown.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_EDITOR_SCENE, 2);
+					mapSpritesLE[i][q] = addSprite("Level/Tiles/EndPoint_Brown.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_EDITOR_SCENE, 2);
 				break;
 				case 3:
-					mapSprites[i][q] = addSprite("Level/Tiles/Crate_Black.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_EDITOR_SCENE, 2);
+					mapSpritesLE[i][q] = addSprite("Level/Tiles/Crate_Black.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_EDITOR_SCENE, 2);
 				break;
 				case 4:
 					addSprite("Level/Tiles/EndPoint_Brown.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_EDITOR_SCENE, 2);
-					mapSprites[i][q] = addSprite("Level/Tiles/Crate_Black.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_EDITOR_SCENE, 2);
+					mapSpritesLE[i][q] = addSprite("Level/Tiles/Crate_Black.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_EDITOR_SCENE, 2);
 				break;
 
 				case 5:
 				case 9:
-					mapSprites[i][q] = addSprite("Level/Player/Character4.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_EDITOR_SCENE, 2); 
+					mapSpritesLE[i][q] = addSprite("Level/Player/Character4.png", x, y, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_EDITOR_SCENE, 2);
 					//changeSprite(mapSprites[playerX][playerY], "Level/Player/Character4.png");
 				break;
 			}

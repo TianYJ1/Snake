@@ -5,14 +5,14 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
-
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_ttf.h>
 #include <allegro5/allegro_native_dialog.h>
-
+#include <allegro5/allegro_audio.h>
+#include <allegro5/allegro_acodec.h>
 
 #include "Button.h"
 #include "EventManager.h"
@@ -23,6 +23,9 @@
 #include "Label.h"
 #include "levGen.h"
 #include "LevelEditor.h"
+#include "MemoryWorker.h"
+#include "CuTest.h"
+
 #define DEBUG_MODE 1
 
 #define LEVEL_HEIGHT 15
@@ -49,6 +52,7 @@ extern ALLEGRO_PATH *path;
 extern char * resourcePath;
 extern int map[LEVEL_HEIGHT][LEVEL_WIDTH];
 extern char levelsPaths[256][128];
+extern char levelsNames[64][BUTTONS_NAME_SIZE];
 
-void showDirectoryListing();
+int showDirectoryListing(int i);
 extern ArrayElement *spritesArr;
