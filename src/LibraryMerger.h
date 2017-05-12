@@ -24,7 +24,7 @@
 #include "levGen.h"
 #include "LevelEditor.h"
 #include "MemoryWorker.h"
-#include "Main.h"
+
 
 #define DEBUG_MODE 1
 
