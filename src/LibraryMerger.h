@@ -24,7 +24,7 @@
 #include "levGen.h"
 #include "LevelEditor.h"
 #include "MemoryWorker.h"
-#include "CuTest.h"
+#include "Main.h"
 
 #define DEBUG_MODE 1
 
@@ -54,5 +54,6 @@ extern int map[LEVEL_HEIGHT][LEVEL_WIDTH];
 extern char levelsPaths[256][128];
 extern char levelsNames[64][BUTTONS_NAME_SIZE];
 
-int showDirectoryListing(int i);
+
 extern ArrayElement *spritesArr;
+
