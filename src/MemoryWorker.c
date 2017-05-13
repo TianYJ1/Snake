@@ -90,7 +90,7 @@ void saveMem()
 	ArrayElement *cur = memArr;
 	while (cur)
 	{
-		MemEntry *memEl = (Sprite *)cur->container;
+		MemEntry *memEl = (MemEntry *)cur->container;
 		ArrayElement *next = cur->linkToNext;
 		fprintf(saverFile, "%s=%s\n", memEl->key, memEl->data);
 		Log_i(__func__, "Saved: %s=%s", memEl->key, memEl->data);
