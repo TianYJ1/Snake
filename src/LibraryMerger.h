@@ -1,28 +1,26 @@
 #pragma once
 /*! 
 @file LibraryMerger.h
-\addtogroup LibraryMerger
+\defgroup LibraryMerger Library merger
 @{
 
 @author arseniy899
-	\brief LibraryMerger.
-         Merger of libraries.
-
-	Here all requried libraries ar included
+	\brief LibraryMerger.\n
+    Here all requried libraries ar included
 */
-/**
+/*<
 	Including system libraries
-*/
+**/
 #include <stdio.h>
 #include <math.h>
 #include <time.h>
 #include <stdlib.h>
 #include <stdarg.h>
-/**
-Including allegro5 libraries
-Refer to Allegro http://liballeg.org/
-Requeried addons see in README.md
-*/
+/*<
+Including allegro5 libraries\n
+Refer to [Allegro](http://liballeg.org/)\n
+Requeried addons see in README.md\n
+**/
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_primitives.h>
@@ -31,9 +29,9 @@ Requeried addons see in README.md
 #include <allegro5/allegro_native_dialog.h>
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_acodec.h>
-/**
+/*<
 Including all psedo-classes (managers) of the project for giving access everything to everything
-*/
+**/
 #include "Button.h"
 #include "EventManager.h"
 #include "SpriteRenderer.h"
@@ -45,9 +43,9 @@ Including all psedo-classes (managers) of the project for giving access everythi
 #include "LevelEditor.h"
 #include "MemoryWorker.h"
 
-/**
+/*<
 Defining constants
-*/
+**/
 #define DEBUG_MODE 1//!< Debug mode is setting debug mode to true if 1. In this mode screen is half-size and windowned
 
 #define LEVEL_HEIGHT 15 //!< Determines cells amount in height at level
@@ -56,9 +54,11 @@ Defining constants
 #define TILE_SIZE 64 //!< Size of cells on level in pixels
 
 #define LEVEL_SELECT_ITEMS_PER_PAGE 12 //!< Amount of levels showed on Level Select Scene on any page (max)
-/**
-\addtogroup Constants of scenes-id
-@{
+/*!
+ \addtogroup C Constants of scenes id
+	\brief Scenes id
+	These ids are requried to determine which scene is currenlty running and going to be run. It's much easier to use friendly names.
+@{	
 */
 #define MAINMENU_SCENE 0
 #define LEVEL_SELECT_SCENE 1
@@ -66,12 +66,12 @@ Defining constants
 #define LEVEL_SCENE_PAUSE 3
 #define LEVEL_SCENE_COMPLETE 4
 #define LEVEL_EDITOR_SCENE 5
-/** 
+/*! 
 @}
 */
 #define MAP_OFFSET 100 //!< Offset of all objects on level
 
-extern int SCREEN_WIDTH, SCREEN_HEIGHT, SCENE_NOW, EventManagerThreadRunning //!< Flag, which control main cycle. If it is false (0), the game stops
+extern int SCREEN_WIDTH, SCREEN_HEIGHT, SCENE_NOW, EventManagerThreadRunning; //!< Flag, which control main cycle. If it is false (0), the game stops
 extern float SCREEN_WIDTH_UNIT, SCREEN_HEIGHT_UNIT;//!< Universal screen units which are inependent from screen size. Max units - 2000. Everything is counted percent-like
 extern ALLEGRO_DISPLAY* display; 
 extern ALLEGRO_FONT* font, *AllegroFont; //!< Allgero font for rendering

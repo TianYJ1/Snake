@@ -420,7 +420,7 @@ int openLevel(int num)
 	if (!sourceFile)
 	{
 		Log_e(__func__, "ERROR: Source file for level not found: %s", levelsPaths[num]);
-		return;
+		return 0;
 	}
 	char str[256];
 	bool prevStrIsData = false;

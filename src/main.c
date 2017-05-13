@@ -17,24 +17,24 @@ src/tests    | unit tests
 doc/         | documentation
 res/     | static resources
 ### Structure
-* Main - menu module
-* Level - level drawer, game-play handler
-* Generator - level generator, which returns 2-dimensional array (will be changed to LevelEditor)
-* MemoryWorker - manager of continous memory, based on bare parser
-* Managers:
-* SpriteManager - manager for rendering sprites from bitmaps
-* Button - button manager for handling clicks, writing text and placing sprites
-* Label - manager for labels
+- \ref Main -> Core.h - menu module
+- Level.h - level drawer, game-play handler
+- MemoryWorker.h - manager of continous memory, based on bare parser
+- Managers:
+	+ SpriteRenderer.h - manager for rendering sprites from bitmaps
+	+ Button.h - button manager for handling clicks, writing text and placing sprites
+	+ Label.h - manager for labels
+
 ### Dependencies
-* [Allegro](http://liballeg.org/) framework <br />
+- [Allegro](http://liballeg.org/) framework \n
 Addons using:
-* Font addon
-* Image addon
-* TTF font addon
-* Dialog addon
-* Color addon
-* Primitives addon
-* Audio addon, Audiocodec addon
+	+ Font addon
+	+ Image addon
+	+ TTF font addon
+	+ Dialog addon
+	+ Color addon
+	+ Primitives addon
+	+ Audio addon, Audiocodec addon
 
 
 ### Build
@@ -46,8 +46,8 @@ To rebuild everything from scratch, do the following:
 ````
 make clean
 ````
-#### Building Allegro
-##### Any Linux
+#### Building Allegro #######
+#### Any Linux #######
 ````
 cd ~; git clone git://github.com/liballeg/allegro5cd allegro5;git checkout 5.2; mkdir build; cd build
 sudo ccmake -DCMAKE_INSTALL_PREFIX=/usr ..
@@ -57,14 +57,14 @@ If an error connected to OPUS occurs, change WANT_OPUS to 'OFF' in list of packa
 ````
 sudo make;sudo make install
 ````
-##### On Ubuntu
+#### On Ubuntu #######
 ````
 sudo add-apt-repository ppa:allegro/5.2
 sudo apt-get update
 sudo apt-get install liballegro5-dev
 ````
-### Testing
-#### Installing
+### Testing #######
+#### Installing #######
 Tests in project are based on [Unity Test Framework](http://www.throwtheswitch.org/unity). To get it, just type:
 ````
 git clone https://github.com/ThrowTheSwitch/Unity.git
@@ -77,20 +77,32 @@ make tests D_UNITY=<UNITY PATH>
 where <UNITY_PATH> is absolute path to your directory which contains Unity. After building everything, run **test-sokoban**.
 All tests will gone, if not - please, let us know
 ## Authors
-* **Arseniy Prosvirin** - arseniy.p@d7ss.com
+* **Arseniy Prosvirin** - arseniy.p@d7ss.com\n
 * **Ryabota Igor** - x@x.ru
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/arseniy899/sokoban_pub/blob/master/LICENSE) file for details
 
 
 */
-char * pathCur;
+/*!
+@file Main.c
+\defgroup Main Main
+@{
+
+@author arseniy899
+\brief Main\n
+There main entry point exists (without tests)
+*/
+char * pathCur;//!< string for carrying path to folder which was last opened by user. Default: <resource_path>/Levels
 char names [128][128] = {0};
 char levelsPaths[256][128] = { 0 };
 char levelsNames[64][BUTTONS_NAME_SIZE];
-extern float SCREEN_WIDTH_UNIT, SCREEN_HEIGHT_UNIT;
-int levelSelectPage = 0, yOffset = 0;
-
+int levelSelectPage = 0/*!< Page currently selected for viewing in level select*/, yOffset = 0/*!< Offset by y (needed for moving content by rotating mouse wheel, deprecated)*/;
+/*<
+	\brief Default entry point
+	@retval  0 if no error accurued while init
+	@retval -1 if error accurued while init. See runtime logs for more info
+*/
 int main(void)
 {
 	//if(!DEBUG_MODE)
@@ -140,5 +152,6 @@ int main(void)
 	return 0;
 
 }
-
-
+/*<
+@}
+*/

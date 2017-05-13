@@ -14,7 +14,7 @@ src/sokoban.vcxproj.filters
 src/stdafx.cpp
 src/stdafx.h
 src/targetver.h
-
+/doc/generated/*
 # Object files
 *.o
 *.ko
