@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "Array.h"
 ArrayElement *getLastEl(const ArrayElement *arrayC);
 int arraySize(const ArrayElement *arrayC)
@@ -8,16 +9,19 @@ int arraySize(const ArrayElement *arrayC)
 	for (const ArrayElement *cur = arrayC; cur; cur = cur->linkToNext, ++ret);
 	return ret;
 }
-byte *get(const ArrayElement *arrayC, int i)
+byte *get(ArrayElement *arrayC, int i)
 {
 	if (i > arraySize(arrayC))
 		return NULL;
 	ArrayElement *cur = arrayC;
-	while (cur->linkToNext && (i--) > 0)
+	while (cur && cur->linkToNext && (i--) > 0)
 		cur = cur->linkToNext;
-	return cur->container;
+	if(cur)
+		return cur->container;
+	else
+		return NULL;
 }
-ArrayElement *getEl(const ArrayElement *arrayC, int i)
+ArrayElement *getEl(ArrayElement *arrayC, int i)
 {
 	if (i > arraySize(arrayC))
 		return NULL;

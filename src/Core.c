@@ -85,7 +85,7 @@ int sliceFile(int i)
 			if (sourceFile == NULL)
 			{
 				Log_e(__func__, "Source file error!\n");
-				return;
+				return -1;
 			}
 			char str[256];
 			bool prevStrIsData = false;
@@ -125,7 +125,7 @@ int sliceFile(int i)
 					if (destFile == NULL)
 					{
 						Log_e(__func__, "destFile file error!\n");
-						return;
+						return -1;
 					}
 					
 					prevStrIsData = true;
@@ -150,13 +150,14 @@ int nextPage(int i)
 int prevPage(int i)
 {
 	if (levelSelectPage == 0)
-		return;
+		return 1;
 	levelSelectPage--;
 
 	clearButtons(LEVEL_SELECT_SCENE);
 	clearSpritesScene(LEVEL_SELECT_SCENE);
 	showDirectoryListing(0);
 	renderScreen();
+	return 0;
 }
 int count = 0;
 int showDirectoryListing(int i)
@@ -248,8 +249,10 @@ int openLevelEditor(int i)
 }
 void renderScreen()
 {
+	if(!display)
+		return;
 	al_clear_to_color(al_map_rgb(0, 0, 0));
-	for (int i = 0; i < 16; i++)
+	for (int i = 0; i < SPRITES_LAYERS_AMOUNT; i++)
 		renderSprites(i);
 	renderSprites(-1);
 	renderButtonsSc();

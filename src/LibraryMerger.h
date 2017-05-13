@@ -52,7 +52,7 @@ Defining constants
 #define LEVEL_WIDTH 15 //!< Cells amount in width
 #define SEED_LENTGH 5 //!< Requried for level generator, not yet implemented
 #define TILE_SIZE 64 //!< Size of cells on level in pixels
-
+#define SPRITES_LAYERS_AMOUNT 16
 #define LEVEL_SELECT_ITEMS_PER_PAGE 12 //!< Amount of levels showed on Level Select Scene on any page (max)
 /*!
  \addtogroup C Constants of scenes id

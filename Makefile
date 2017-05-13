@@ -5,7 +5,7 @@ PROJECT  := sokoban
 # ------------------
 # External programs
 # ------------------
-CC  := gcc
+CC  := gcc -g -w
 RM  := rm -rf
 
 # --------------------
@@ -13,7 +13,7 @@ RM  := rm -rf
 # --------------------
 D_SRC    := ./src
 D_TESTS  := $(D_SRC)/tests
-D_UNITY  :=
+D_UNITY	 :=~/Unity
 
 ENTRY_POINT := $(D_SRC)/main.c
 
@@ -29,7 +29,7 @@ PROJECT_WITH_TESTS_O  := $(PROJECT_WITH_TESTS:.c=.o)
 # ------------
 # Flags 
 # ------------
-CFLAGS  := 
+CFLAGS  := -lm
 CFLAGS  += -std=c99
 LFLAGS  :=
 LIBS := `pkg-config --libs allegro-5 allegro_font-5 allegro_image-5 allegro_image-5 allegro_memfile-5 allegro_primitives-5 allegro_image-5 allegro_image-5 allegro_acodec-5 allegro_ttf-5 allegro_main-5.0 allegro_dialog-5` -lm

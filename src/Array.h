@@ -11,7 +11,7 @@ struct SArrayElement
 };
 typedef struct SArrayElement ArrayElement;
 int arraySize(const ArrayElement *arrayC);
-byte *get(const ArrayElement *arrayC, int i);
+byte *get(ArrayElement *arrayC, int i);
 int add(ArrayElement **arrayC, const byte * cont, const size_t size);
 int addInd(const ArrayElement *arrayC, int i, const byte * cont, const size_t size);
 void removeEl(ArrayElement *arrayC, int i);

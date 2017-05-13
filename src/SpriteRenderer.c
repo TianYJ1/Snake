@@ -2,6 +2,10 @@
 ArrayElement * spritesArr = NULL;
 int addSprite(char * src, int x, int y, int w, int h, int scene, int layer)
 {
+	if(strlen(src) == 0)
+		return -3;
+	if(layer > SPRITES_LAYERS_AMOUNT)
+		return -2;
 	ALLEGRO_BITMAP * bmp = al_load_bitmap(src);
 	if (bmp == NULL)
 	{
@@ -13,6 +17,10 @@ int addSprite(char * src, int x, int y, int w, int h, int scene, int layer)
 int lastId = 0;
 int addSpriteBmp(ALLEGRO_BITMAP * src, int x, int y, int w, int h, int scene, int layer)
 {
+	if(layer > SPRITES_LAYERS_AMOUNT)
+		return -2;
+	if(!src)
+		return -1;
 	Sprite newSprite;
 	newSprite.bmp = src;
 	newSprite.id = arraySize(spritesArr);

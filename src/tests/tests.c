@@ -10,8 +10,11 @@ int levelSelectPage = 0, yOffset = 0;
 
 static void RunAllTests(void)
 {
+	RUN_TEST_GROUP(TestCore);
 	RUN_TEST_GROUP(TestArray);
 	RUN_TEST_GROUP(TestEventManager);
+	RUN_TEST_GROUP(TestLabel);
+
 }
 
 int main(int argc, const char * argv[])
