@@ -64,3 +64,665 @@ I/addSprite::Added sprite name:back.jpg
 I/main::Added button
 I/initEventManager::Initied EventM
 I/initEventManager::mouse ok
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/showDirectoryListing::Level:  84
+I/showDirectoryListing::Level: levels
+I/showDirectoryListing::Level:  71
+I/showDirectoryListing::Level:  36
+I/showDirectoryListing::Level:  66
+I/showDirectoryListing::Level:  24
+I/showDirectoryListing::Level:  40
+I/showDirectoryListing::Level:   2
+I/showDirectoryListing::Level:  52
+I/showDirectoryListing::Level:  29
+I/showDirectoryListing::Level:  77
+I/showDirectoryListing::Level:   1
+I/makeGridSprites::Grid:4X3, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/showDirectoryListing::Level:  84
+I/showDirectoryListing::Level: levels
+I/showDirectoryListing::Level:  71
+I/showDirectoryListing::Level:  36
+I/showDirectoryListing::Level:  66
+I/showDirectoryListing::Level:  24
+I/showDirectoryListing::Level:  40
+I/showDirectoryListing::Level:   2
+I/showDirectoryListing::Level:  52
+I/showDirectoryListing::Level:  29
+I/showDirectoryListing::Level:  77
+I/showDirectoryListing::Level:   1
+I/makeGridSprites::Grid:4X3, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/setNewScreen::New screen:320 268, coef=1,000000,1,116667
+I/setNewScreen::New screen:1295 640, coef=4,046875,2,388060
+I/setNewScreen::New screen:1295 640, coef=1,000000,1,000000
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/showDirectoryListing::Level:  84
+I/showDirectoryListing::Level: levels
+I/showDirectoryListing::Level:  71
+I/showDirectoryListing::Level:  36
+I/showDirectoryListing::Level:  66
+I/showDirectoryListing::Level:  24
+I/showDirectoryListing::Level:  40
+I/showDirectoryListing::Level:   2
+I/showDirectoryListing::Level:  52
+I/showDirectoryListing::Level:  29
+I/showDirectoryListing::Level:  77
+I/showDirectoryListing::Level:   1
+I/makeGridSprites::Grid:4X3, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::Level: 126
+I/showDirectoryListing::Level:  76
+I/showDirectoryListing::Level:  56
+I/showDirectoryListing::Level: 120
+I/showDirectoryListing::Level: 001
+I/showDirectoryListing::Level:  19
+I/showDirectoryListing::Level: 115
+I/showDirectoryListing::Level:   9
+I/showDirectoryListing::Level: 150
+I/showDirectoryListing::Level:   6
+I/showDirectoryListing::Level:  79
+I/showDirectoryListing::Level:  69
+I/makeGridSprites::Grid:4X3, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::Level: 128
+I/showDirectoryListing::Level:  92
+I/showDirectoryListing::Level: 119
+I/showDirectoryListing::Level:  39
+I/showDirectoryListing::Level:  83
+I/showDirectoryListing::Level: 142
+I/showDirectoryListing::Level:  13
+I/showDirectoryListing::Level:  28
+I/showDirectoryListing::Level:   8
+I/showDirectoryListing::Level:  95
+I/showDirectoryListing::Level:  61
+I/showDirectoryListing::Level: 116
+I/makeGridSprites::Grid:4X3, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::Level:  97
+I/showDirectoryListing::Level:  18
+I/showDirectoryListing::Level: 102
+I/showDirectoryListing::Level:  53
+I/showDirectoryListing::Level: 112
+I/showDirectoryListing::Level: 153
+I/showDirectoryListing::Level:  22
+I/showDirectoryListing::Level:  58
+I/showDirectoryListing::Level:  74
+I/showDirectoryListing::Level: 125
+I/showDirectoryListing::Level:  85
+I/showDirectoryListing::Level: 118
+I/makeGridSprites::Grid:4X3, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::Level: 148
+I/showDirectoryListing::Level:  99
+I/showDirectoryListing::Level: 107
+I/showDirectoryListing::Level:   4
+I/showDirectoryListing::Level:  48
+I/showDirectoryListing::Level:  64
+I/showDirectoryListing::Level:  94
+I/showDirectoryListing::Level:  41
+I/showDirectoryListing::Level: 149
+I/showDirectoryListing::Level:  54
+I/showDirectoryListing::Level: 103
+I/showDirectoryListing::Level: 154
+I/makeGridSprites::Grid:4X3, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::Level:  97
+I/showDirectoryListing::Level:  18
+I/showDirectoryListing::Level: 102
+I/showDirectoryListing::Level:  53
+I/showDirectoryListing::Level: 112
+I/showDirectoryListing::Level: 153
+I/showDirectoryListing::Level:  22
+I/showDirectoryListing::Level:  58
+I/showDirectoryListing::Level:  74
+I/showDirectoryListing::Level: 125
+I/showDirectoryListing::Level:  85
+I/showDirectoryListing::Level: 118
+I/makeGridSprites::Grid:4X3, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::Level: 148
+I/showDirectoryListing::Level:  99
+I/showDirectoryListing::Level: 107
+I/showDirectoryListing::Level:   4
+I/showDirectoryListing::Level:  48
+I/showDirectoryListing::Level:  64
+I/showDirectoryListing::Level:  94
+I/showDirectoryListing::Level:  41
+I/showDirectoryListing::Level: 149
+I/showDirectoryListing::Level:  54
+I/showDirectoryListing::Level: 103
+I/showDirectoryListing::Level: 154
+I/makeGridSprites::Grid:4X3, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::Level: 155
+I/showDirectoryListing::Level:  81
+I/showDirectoryListing::Level:  73
+I/showDirectoryListing::Level:  87
+I/showDirectoryListing::Level: 114
+I/showDirectoryListing::Level:  65
+I/showDirectoryListing::Level:  89
+I/showDirectoryListing::Level:  47
+I/showDirectoryListing::Level:  21
+I/showDirectoryListing::Level:  90
+I/showDirectoryListing::Level:  33
+I/showDirectoryListing::Level: 143
+I/makeGridSprites::Grid:4X3, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::Level: 117
+I/showDirectoryListing::Level:  78
+I/showDirectoryListing::Level:  14
+I/showDirectoryListing::Level: 127
+I/showDirectoryListing::Level: 101
+I/showDirectoryListing::Level:  31
+I/showDirectoryListing::Level:  42
+I/showDirectoryListing::Level:  57
+I/showDirectoryListing::Level:  38
+I/showDirectoryListing::Level:  70
+I/showDirectoryListing::Level: 144
+I/showDirectoryListing::Level:  17
+I/makeGridSprites::Grid:4X3, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::Level:  51
+I/showDirectoryListing::Level: 141
+I/showDirectoryListing::Level:  91
+I/showDirectoryListing::Level: 136
+I/showDirectoryListing::Level:  86
+I/showDirectoryListing::Level: 146
+I/showDirectoryListing::Level: 109
+I/showDirectoryListing::Level: 131
+I/showDirectoryListing::Level:  16
+I/showDirectoryListing::Level: 113
+I/showDirectoryListing::Level:  23
+I/showDirectoryListing::Level:  63
+I/makeGridSprites::Grid:4X3, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::Level: 134
+I/showDirectoryListing::Level:  88
+I/showDirectoryListing::Level: 147
+I/showDirectoryListing::Level: 140
+I/showDirectoryListing::Level:   7
+I/showDirectoryListing::Level: 100
+I/showDirectoryListing::Level: 139
+I/showDirectoryListing::Level:  12
+I/showDirectoryListing::Level:  11
+I/showDirectoryListing::Level:  26
+I/showDirectoryListing::Level:  43
+I/showDirectoryListing::Level:  35
+I/makeGridSprites::Grid:4X3, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/setNewScreen::New screen:320 665, coef=1,000000,2,770833
+I/setNewScreen::New screen:1289 859, coef=4,028125,1,291729
+I/setNewScreen::New screen:1289 887, coef=1,000000,1,032596
+I/setNewScreen::New screen:1615 922, coef=1,252909,1,039459
+I/setNewScreen::New screen:1615 922, coef=1,000000,1,000000
+I/setNewScreen::New screen:1615 922, coef=1,000000,1,000000
+I/setNewScreen::New screen:1289 859, coef=0,798142,0,931670
+I/setNewScreen::New screen:1289 859, coef=1,000000,1,000000
+I/showDirectoryListing::Level:  84
+I/showDirectoryListing::Level: levels
+I/showDirectoryListing::Level:  71
+I/showDirectoryListing::Level:  36
+I/showDirectoryListing::Level:  66
+I/showDirectoryListing::Level:  24
+I/showDirectoryListing::Level:  40
+I/showDirectoryListing::Level:   2
+I/showDirectoryListing::Level:  52
+I/showDirectoryListing::Level:  29
+I/showDirectoryListing::Level:  77
+I/showDirectoryListing::Level:   1
+I/makeGridSprites::Grid:4X3, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::Level:  84
+I/showDirectoryListing::Level: levels
+I/showDirectoryListing::Level:  71
+I/showDirectoryListing::Level:  36
+I/showDirectoryListing::Level:  66
+I/showDirectoryListing::Level:  24
+I/showDirectoryListing::Level:  40
+I/showDirectoryListing::Level:   2
+I/showDirectoryListing::Level:  52
+I/showDirectoryListing::Level:  29
+I/showDirectoryListing::Level:  77
+I/showDirectoryListing::Level:   1
+I/makeGridSprites::Grid:4X3, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::Level: 126
+I/showDirectoryListing::Level:  76
+I/showDirectoryListing::Level:  56
+I/showDirectoryListing::Level: 120
+I/showDirectoryListing::Level: 001
+I/showDirectoryListing::Level:  19
+I/showDirectoryListing::Level: 115
+I/showDirectoryListing::Level:   9
+I/showDirectoryListing::Level: 150
+I/showDirectoryListing::Level:   6
+I/showDirectoryListing::Level:  79
+I/showDirectoryListing::Level:  69
+I/makeGridSprites::Grid:4X3, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::Level: 128
+I/showDirectoryListing::Level:  92
+I/showDirectoryListing::Level: 119
+I/showDirectoryListing::Level:  39
+I/showDirectoryListing::Level:  83
+I/showDirectoryListing::Level: 142
+I/showDirectoryListing::Level:  13
+I/showDirectoryListing::Level:  28
+I/showDirectoryListing::Level:   8
+I/showDirectoryListing::Level:  95
+I/showDirectoryListing::Level:  61
+I/showDirectoryListing::Level: 116
+I/makeGridSprites::Grid:4X3, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::Level:  97
+I/showDirectoryListing::Level:  18
+I/showDirectoryListing::Level: 102
+I/showDirectoryListing::Level:  53
+I/showDirectoryListing::Level: 112
+I/showDirectoryListing::Level: 153
+I/showDirectoryListing::Level:  22
+I/showDirectoryListing::Level:  58
+I/showDirectoryListing::Level:  74
+I/showDirectoryListing::Level: 125
+I/showDirectoryListing::Level:  85
+I/showDirectoryListing::Level: 118
+I/makeGridSprites::Grid:4X3, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::Level: 148
+I/showDirectoryListing::Level:  99
+I/showDirectoryListing::Level: 107
+I/showDirectoryListing::Level:   4
+I/showDirectoryListing::Level:  48
+I/showDirectoryListing::Level:  64
+I/showDirectoryListing::Level:  94
+I/showDirectoryListing::Level:  41
+I/showDirectoryListing::Level: 149
+I/showDirectoryListing::Level:  54
+I/showDirectoryListing::Level: 103
+I/showDirectoryListing::Level: 154
+I/makeGridSprites::Grid:4X3, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::Level: 155
+I/showDirectoryListing::Level:  81
+I/showDirectoryListing::Level:  73
+I/showDirectoryListing::Level:  87
+I/showDirectoryListing::Level: 114
+I/showDirectoryListing::Level:  65
+I/showDirectoryListing::Level:  89
+I/showDirectoryListing::Level:  47
+I/showDirectoryListing::Level:  21
+I/showDirectoryListing::Level:  90
+I/showDirectoryListing::Level:  33
+I/showDirectoryListing::Level: 143
+I/makeGridSprites::Grid:4X3, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/loadMem::Loaded: tt_0=m_1
+
+I/loadMem::Loaded: tt_2=m_1
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  1.txt_steps=3
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  1.txt_pushes=2
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  0.txt_steps=1
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  0.txt_pushes=1
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  2.txt_steps=10
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  2.txt_pushes=3
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  3.txt_steps=11
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  3.txt_pushes=4
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  q.txt_steps=1
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  q.txt_pushes=1
+
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/setNewScreen::New screen:762 549, coef=2,381250,2,287500
+I/setNewScreen::New screen:762 549, coef=1,000000,1,000000
+I/setNewScreen::New screen:762 618, coef=1,000000,1,125683
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: levels
+I/showDirectoryListing::Level: 14
+I/showDirectoryListing::Level:   2
+I/showDirectoryListing::Level:   1
+I/showDirectoryListing::Level:   9
+I/showDirectoryListing::Level:   6
+I/showDirectoryListing::Level:   8
+I/showDirectoryListing::Level: 17
+I/showDirectoryListing::Level: my
+I/showDirectoryListing::Level: 16
+I/showDirectoryListing::Level:   4
+I/showDirectoryListing::Level: 15
+I/makeGridSprites::Grid:3X4, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: 13
+I/showDirectoryListing::Level: 11
+I/showDirectoryListing::Level:   7
+I/showDirectoryListing::Level:   0
+I/showDirectoryListing::Level: 12
+I/showDirectoryListing::Level:   3
+I/showDirectoryListing::Level: 10
+I/showDirectoryListing::Level:   5
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: 13
+I/showDirectoryListing::Level: 11
+I/showDirectoryListing::Level:   7
+I/showDirectoryListing::Level:   0
+I/showDirectoryListing::Level: 12
+I/showDirectoryListing::Level:   3
+I/showDirectoryListing::Level: 10
+I/showDirectoryListing::Level:   5
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: levels
+I/showDirectoryListing::Level: 14
+I/showDirectoryListing::Level:   2
+I/showDirectoryListing::Level:   1
+I/showDirectoryListing::Level:   9
+I/showDirectoryListing::Level:   6
+I/showDirectoryListing::Level:   8
+I/showDirectoryListing::Level: 17
+I/showDirectoryListing::Level: my
+I/showDirectoryListing::Level: 16
+I/showDirectoryListing::Level:   4
+I/showDirectoryListing::Level: 15
+I/makeGridSprites::Grid:3X4, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: 13
+I/showDirectoryListing::Level: 11
+I/showDirectoryListing::Level:   7
+I/showDirectoryListing::Level:   0
+I/showDirectoryListing::Level: 12
+I/showDirectoryListing::Level:   3
+I/showDirectoryListing::Level: 10
+I/showDirectoryListing::Level:   5
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: 13
+I/showDirectoryListing::Level: 11
+I/showDirectoryListing::Level:   7
+I/showDirectoryListing::Level:   0
+I/showDirectoryListing::Level: 12
+I/showDirectoryListing::Level:   3
+I/showDirectoryListing::Level: 10
+I/showDirectoryListing::Level:   5
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: 13
+I/showDirectoryListing::Level: 11
+I/showDirectoryListing::Level:   7
+I/showDirectoryListing::Level:   0
+I/showDirectoryListing::Level: 12
+I/showDirectoryListing::Level:   3
+I/showDirectoryListing::Level: 10
+I/showDirectoryListing::Level:   5
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: 13
+I/showDirectoryListing::Level: 11
+I/showDirectoryListing::Level:   7
+I/showDirectoryListing::Level:   0
+I/showDirectoryListing::Level: 12
+I/showDirectoryListing::Level:   3
+I/showDirectoryListing::Level: 10
+I/showDirectoryListing::Level:   5
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: levels
+I/showDirectoryListing::Level: 14
+I/showDirectoryListing::Level:   2
+I/showDirectoryListing::Level:   1
+I/showDirectoryListing::Level:   9
+I/showDirectoryListing::Level:   6
+I/showDirectoryListing::Level:   8
+I/showDirectoryListing::Level: 17
+I/showDirectoryListing::Level: my
+I/showDirectoryListing::Level: 16
+I/showDirectoryListing::Level:   4
+I/showDirectoryListing::Level: 15
+I/makeGridSprites::Grid:3X4, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: levels
+I/showDirectoryListing::Level: 14
+I/showDirectoryListing::Level:   2
+I/showDirectoryListing::Level:   1
+I/showDirectoryListing::Level:   9
+I/showDirectoryListing::Level:   6
+I/showDirectoryListing::Level:   8
+I/showDirectoryListing::Level: 17
+I/showDirectoryListing::Level: my
+I/showDirectoryListing::Level: 16
+I/showDirectoryListing::Level:   4
+I/showDirectoryListing::Level: 15
+I/makeGridSprites::Grid:3X4, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/saveMem::Saved: tt_0=m_1
+I/saveMem::Saved: tt_2=m_1
+I/saveMem::Saved: level_D:\School\Info\sokoban\res\Levels\  1.txt_steps=3
+
+I/saveMem::Saved: level_D:\School\Info\sokoban\res\Levels\  1.txt_pushes=2
+
+I/saveMem::Saved: level_D:\School\Info\sokoban\res\Levels\  0.txt_steps=1
+
+I/saveMem::Saved: level_D:\School\Info\sokoban\res\Levels\  0.txt_pushes=1
+
+I/saveMem::Saved: level_D:\School\Info\sokoban\res\Levels\  2.txt_steps=10
+
+I/saveMem::Saved: level_D:\School\Info\sokoban\res\Levels\  2.txt_pushes=3
+
+I/saveMem::Saved: level_D:\School\Info\sokoban\res\Levels\  3.txt_steps=11
+
+I/saveMem::Saved: level_D:\School\Info\sokoban\res\Levels\  3.txt_pushes=4
+
+I/saveMem::Saved: level_D:\School\Info\sokoban\res\Levels\  q.txt_steps=1
+
+I/saveMem::Saved: level_D:\School\Info\sokoban\res\Levels\  q.txt_pushes=1
+
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/loadMem::Loaded: tt_0=m_1
+
+I/loadMem::Loaded: tt_2=m_1
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  1.txt_steps=3
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  1.txt_pushes=2
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  0.txt_steps=1
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  0.txt_pushes=1
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  2.txt_steps=10
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  2.txt_pushes=3
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  3.txt_steps=11
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  3.txt_pushes=4
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  q.txt_steps=1
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  q.txt_pushes=1
+
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/setNewScreen::New screen:842 522, coef=2,631250,2,175000
+I/setNewScreen::New screen:842 522, coef=1,000000,1,000000
+I/saveMem::Saved: tt_0=m_1
+I/saveMem::Saved: tt_2=m_1
+I/saveMem::Saved: level_D:\School\Info\sokoban\res\Levels\  1.txt_steps=3
+
+I/saveMem::Saved: level_D:\School\Info\sokoban\res\Levels\  1.txt_pushes=2
+
+I/saveMem::Saved: level_D:\School\Info\sokoban\res\Levels\  0.txt_steps=1
+
+I/saveMem::Saved: level_D:\School\Info\sokoban\res\Levels\  0.txt_pushes=1
+
+I/saveMem::Saved: level_D:\School\Info\sokoban\res\Levels\  2.txt_steps=10
+
+I/saveMem::Saved: level_D:\School\Info\sokoban\res\Levels\  2.txt_pushes=3
+
+I/saveMem::Saved: level_D:\School\Info\sokoban\res\Levels\  3.txt_steps=11
+
+I/saveMem::Saved: level_D:\School\Info\sokoban\res\Levels\  3.txt_pushes=4
+
+I/saveMem::Saved: level_D:\School\Info\sokoban\res\Levels\  q.txt_steps=1
+
+I/saveMem::Saved: level_D:\School\Info\sokoban\res\Levels\  q.txt_pushes=1
+

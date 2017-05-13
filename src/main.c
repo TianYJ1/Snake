@@ -1,212 +1,96 @@
-#include "LibraryMerger.h"
+﻿#include "LibraryMerger.h"
+/**
+\mainpage Sokoban
+
+# Sokoban-project
+Sokoban (倉庫番 sōkoban, warehouse keeper) is a type of transport puzzle, in which the player pushes boxes or crates around in a warehouse, trying to get them to storage locations. The puzzle is usually implemented as a video game.
+
+## Getting Started
+This game is build using c-language and based on [Allegro](http://liballeg.org/) Library
+### Directory structure
+The source code is organized as follows:
+
+Subdirectory | Description
+-------------|-------------------
+src/         | source files
+src/tests    | unit tests
+doc/         | documentation
+res/     | static resources
+### Structure
+* Main - menu module
+* Level - level drawer, game-play handler
+* Generator - level generator, which returns 2-dimensional array (will be changed to LevelEditor)
+* MemoryWorker - manager of continous memory, based on bare parser
+* Managers:
+* SpriteManager - manager for rendering sprites from bitmaps
+* Button - button manager for handling clicks, writing text and placing sprites
+* Label - manager for labels
+### Dependencies
+* [Allegro](http://liballeg.org/) framework <br />
+Addons using:
+* Font addon
+* Image addon
+* TTF font addon
+* Dialog addon
+* Color addon
+* Primitives addon
+* Audio addon, Audiocodec addon
+
+
+### Build
+To build the project, do the following:
+````
+make
+````
+To rebuild everything from scratch, do the following:
+````
+make clean
+````
+#### Building Allegro
+##### Any Linux
+````
+cd ~; git clone git://github.com/liballeg/allegro5cd allegro5;git checkout 5.2; mkdir build; cd build
+sudo ccmake -DCMAKE_INSTALL_PREFIX=/usr ..
+````
+Here press 'c', 'c', 'g', unpack will begin.
+If an error connected to OPUS occurs, change WANT_OPUS to 'OFF' in list of packages in white box on the right side
+````
+sudo make;sudo make install
+````
+##### On Ubuntu
+````
+sudo add-apt-repository ppa:allegro/5.2
+sudo apt-get update
+sudo apt-get install liballegro5-dev
+````
+### Testing
+#### Installing
+Tests in project are based on [Unity Test Framework](http://www.throwtheswitch.org/unity). To get it, just type:
+````
+git clone https://github.com/ThrowTheSwitch/Unity.git
+````
+#### Building and running tests
+Do the following:
+````
+make tests D_UNITY=<UNITY PATH>
+````
+where <UNITY_PATH> is absolute path to your directory which contains Unity. After building everything, run **test-sokoban**.
+All tests will gone, if not - please, let us know
+## Authors
+* **Arseniy Prosvirin** - arseniy.p@d7ss.com
+* **Ryabota Igor** - x@x.ru
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+
+*/
 char * pathCur;
+char names [128][128] = {0};
 char levelsPaths[256][128] = { 0 };
-extern float SCREEN_WIDTH_UNIT, SCREEN_HEIGHT_UNIT;
-int yOffset = 0;
-
-int openFolderDialog(int i)
-{
-
-	ALLEGRO_FILECHOOSER *dialog = al_create_native_file_dialog("D:/School/Info/sokoban/src/res/","Choose folder","*.*",ALLEGRO_FILECHOOSER_FOLDER);
-	if (al_show_native_file_dialog(display, dialog))
-	{
-	    convertConstCopy(al_get_native_file_dialog_path(dialog, 0), &pathCur);
-	    showDirectoryListing(0);
-	}
-	return 1;
-}
-int openLevelSelect(int i)
-{
-	clearButtons(LEVEL_SELECT_SCENE);
-	clearSpritesScene(LEVEL_SELECT_SCENE);
-	changeScene(LEVEL_SELECT_SCENE);
-	showDirectoryListing(0);
-	renderScreen();
-
-}
 char levelsNames[64][BUTTONS_NAME_SIZE];
-int levelSelectPage = 0;
-int sliceFile(int i)
-{
-	int c = 0;
-	char * pathSource = NULL, *pathTarget = NULL;
-	ALLEGRO_FILECHOOSER *dialog = al_create_native_file_dialog("", "Choose source", "*.txt", ALLEGRO_FILECHOOSER_FILE_MUST_EXIST);
-	if (al_show_native_file_dialog(display, dialog))
-	{
-		convertConstCopy(al_get_native_file_dialog_path(dialog, 0), &pathSource);
-		al_destroy_native_file_dialog(dialog);
-		dialog = al_create_native_file_dialog("D:/School/Info/sokoban/src/res/", "Choose folder", "*.*", ALLEGRO_FILECHOOSER_FOLDER);
-		if (al_show_native_file_dialog(display, dialog))
-		{
-			convertConstCopy(al_get_native_file_dialog_path(dialog, 0), &pathTarget);
-			char destFileStr[256] = { 0 };
-			FILE *sourceFile = fopen(pathSource, "r");
-			sprintf(destFileStr, "%s/%03i.txt", pathTarget, ++c);
-			FILE *destFile = fopen(destFileStr, "w+");
-			if (sourceFile == NULL)
-			{
-				Log_e(__func__, "Source file error!\n");
-				return;
-			}
-			char str[256];
-			bool prevStrIsData = false;
-			while (fgets(str, sizeof(str), sourceFile) != NULL)
-			{
+extern float SCREEN_WIDTH_UNIT, SCREEN_HEIGHT_UNIT;
+int levelSelectPage = 0, yOffset = 0;
 
-				Log_i(__func__, "destFileStr=%s,str=%s", destFileStr,str);
-				int occur = 0;
-				if (strstr(str,"#"))
-					occur+=2;
-				if (strstr(str,"."))
-					occur++;
-				if (strstr(str,"@"))
-					occur+=2;
-				if (strstr(str,"$"))
-					occur+=2;
-				if (strstr(str," "))
-					occur++;
-				if (occur <= 1)
-				{
-					//if (prevStrIsData)
-						//fprintf(destFile, "%s", str);
-					prevStrIsData = false;
-					
-				}
-				else
-				{
-					
-					if (!prevStrIsData)
-					{
-						sprintf(destFileStr, "%s/%3i.txt", pathTarget, c++);
-						fclose(destFile);
-						destFile = fopen(destFileStr, "w+");
-						fprintf(destFile, "%s", str);
-					}
-					else fprintf(destFile, "%s", str);
-					if (destFile == NULL)
-					{
-						Log_e(__func__, "destFile file error!\n");
-						return;
-					}
-					
-					prevStrIsData = true;
-				}
-			}
-			fclose(destFile);
-			fclose(sourceFile);
-			al_show_native_message_box(display, "Complete", "Slicing is done!", "", NULL, 0);
-			al_destroy_native_file_dialog(dialog);
-		}
-		
-	}
-}
-int nextPage(int i)
-{
-	levelSelectPage++;
-	clearButtons(LEVEL_SELECT_SCENE);
-	clearSpritesScene(LEVEL_SELECT_SCENE);
-	showDirectoryListing(0);
-	renderScreen();
-}
-int prevPage(int i)
-{
-	if (levelSelectPage == 0)
-		return;
-	levelSelectPage--;
-
-	clearButtons(LEVEL_SELECT_SCENE);
-	clearSpritesScene(LEVEL_SELECT_SCENE);
-	showDirectoryListing(0);
-	renderScreen();
-}
-int count = 0;
-int showDirectoryListing(int i)
-{
-	clearButtons(LEVEL_SELECT_SCENE);
-	clearSpritesScene(LEVEL_SELECT_SCENE);
-	addButtonSprite("btntile.png", "Change folder", SCREEN_WIDTH_UNIT * 1600, SCREEN_WIDTH_UNIT * 1, SCREEN_WIDTH_UNIT * 400, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, openFolderDialog, LEVEL_SELECT_SCENE, 1, 4);
-	
-	addSprite("GUI/win_back_hor.png", SCREEN_WIDTH_UNIT * 350, SCREEN_HEIGHT_UNIT * 100, SCREEN_WIDTH_UNIT * 1300, SCREEN_HEIGHT_UNIT * 1700, SCENE_NOW, 1);
-	addSprite("GUI/actions_back.png", SCREEN_WIDTH_UNIT * 750, SCREEN_HEIGHT_UNIT * 1700, 500 * SCREEN_WIDTH_UNIT, SCREEN_HEIGHT_UNIT * 200, SCENE_NOW, 1);
-	addSprite("GUI/title_back.png", SCREEN_WIDTH_UNIT * 550, SCREEN_HEIGHT_UNIT * 50, 950 * SCREEN_WIDTH_UNIT, SCREEN_HEIGHT_UNIT * 200, SCENE_NOW, 1);
-	addLabel(SCREEN_WIDTH_UNIT * 1025, SCREEN_HEIGHT_UNIT * 90, 255, 90, 0, SCENE_NOW, ALLEGRO_ALIGN_CENTER, "LEVEL SELECT");
-
-
-	addButtonSprite("btntile.png", "->", SCREEN_WIDTH_UNIT * 1100, SCREEN_HEIGHT_UNIT * 1700, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, nextPage, LEVEL_SELECT_SCENE, 1, 4);
-	addButtonSprite("btntile.png", "<-", SCREEN_WIDTH_UNIT * 800, SCREEN_HEIGHT_UNIT * 1700, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, prevPage, LEVEL_SELECT_SCENE, 1, 4);
-	addButtonSprite("GUI/replay.png", "", SCREEN_WIDTH_UNIT * 900, SCREEN_HEIGHT_UNIT * 1700, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, showDirectoryListing, LEVEL_SELECT_SCENE, 1, 4);
-	addButtonSprite("GUI/open.png", "", SCREEN_WIDTH_UNIT * 1000, SCREEN_HEIGHT_UNIT * 1700, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, openFolderDialog, LEVEL_SELECT_SCENE, 1, 4);
-	
-	ALLEGRO_FS_ENTRY* dir = al_create_fs_entry(pathCur);
-
-	while (count > 0)
-		sprintf(levelsNames[count--], "");
-	renderScreen();
-	if (al_open_directory(dir))
-	{
-		ALLEGRO_FS_ENTRY* file;
-		Log_i(__func__, "LISTING");
-		int(*callBacks[64])(int id);
-        memset(levelsPaths,0,sizeof(levelsPaths));
-		while (file = al_read_directory(dir))
-		{
-			if (file == NULL)
-				Log_e(__func__, "ERROR: Level file is null");
-			else
-			{
-				//printf("path:%s\n", al_get_fs_entry_name(file));
-				char *path = NULL;
-				convertConstCopy(al_get_fs_entry_name(file), &path);
-				char *filename;
-                filename = strrchr(path, '\\');
-				if (filename == NULL)
-				{
-					filename = strrchr(path, '/');
-					if (filename == NULL)
-						filename = path;
-					else
-						filename++;
-				}
-				else
-					filename++;
-				if (strstr(filename, ".txt"))
-				{
-					
-					if (count >= levelSelectPage * LEVEL_SELECT_ITEMS_PER_PAGE && (count) < (levelSelectPage + 1) * LEVEL_SELECT_ITEMS_PER_PAGE)
-					{
-						sprintf(levelsPaths[count - levelSelectPage * LEVEL_SELECT_ITEMS_PER_PAGE], "%s", path);
-						filename[strlen(filename) - 4] = 0;
-						sprintf(levelsNames[count- levelSelectPage * LEVEL_SELECT_ITEMS_PER_PAGE], "%s", filename);
-						callBacks[count- levelSelectPage * LEVEL_SELECT_ITEMS_PER_PAGE] = &openLevel;
-						Log_i(__func__, "Level: %s", filename);
-
-
-					}
-					count++;
-				}
-				if (count > (levelSelectPage + 1) * LEVEL_SELECT_ITEMS_PER_PAGE)
-					break;
-			}
-		}
-		al_destroy_fs_entry(file);
-		if ((count - levelSelectPage * LEVEL_SELECT_ITEMS_PER_PAGE) > LEVEL_SELECT_ITEMS_PER_PAGE)
-			count--;
-		if ((count - levelSelectPage * LEVEL_SELECT_ITEMS_PER_PAGE)  <= 0)
-			prevPage(0);
-		makeGridSprites(count- levelSelectPage * LEVEL_SELECT_ITEMS_PER_PAGE, 4, levelsNames, "btntile.png", SCREEN_WIDTH_UNIT * 650, SCREEN_HEIGHT_UNIT * 400, SCREEN_WIDTH_UNIT * 150, SCREEN_WIDTH_UNIT * 150, callBacks, LEVEL_SELECT_SCENE, 1);
-	}
-	al_destroy_fs_entry(dir);
-	Log_i(__func__, "Folder: %s", pathCur);
-}
-int ExitProg(int i)
-{
-	EventManagerThreadRunning = 0;
-}
-int openLevelEditor(int i)
-{
-	changeScene(LEVEL_EDITOR_SCENE);
-	onLevelEditorOpened();
-}
 int main(void)
 {
 	//if(!DEBUG_MODE)
@@ -256,4 +140,5 @@ int main(void)
 	return 0;
 
 }
+
 

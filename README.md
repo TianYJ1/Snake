@@ -16,7 +16,7 @@ res/     | static resources
 * Main - menu module 
 * Level - level drawer, game-play handler
 * Generator - level generator, which returns 2-dimensional array (will be changed to LevelEditor)
-* MemoryWorker - manager of continous memory, based on JSON
+* MemoryWorker - manager of continous memory, based on bare parser
 * Managers:
 	* SpriteManager - manager for rendering sprites from bitmaps
 	* Button - button manager for handling clicks, writing text and placing sprites
@@ -30,7 +30,8 @@ res/     | static resources
 	* Dialog addon
 	* Color addon
 	* Primitives addon
-* JSON-library
+	* Audio addon, Audiocodec addon
+
 
 ### Build
 To build the project, do the following:
@@ -42,6 +43,7 @@ To rebuild everything from scratch, do the following:
 make clean
 ````
 #### Building Allegro
+##### Any Linux
 ````
 cd ~; git clone git://github.com/liballeg/allegro5cd allegro5;git checkout 5.2; mkdir build; cd build
 sudo ccmake -DCMAKE_INSTALL_PREFIX=/usr ..
@@ -51,6 +53,25 @@ If an error connected to OPUS occurs, change WANT_OPUS to 'OFF' in list of packa
 ````
 sudo make;sudo make install
 ````
+##### On Ubuntu
+````
+sudo add-apt-repository ppa:allegro/5.2
+sudo apt-get update
+sudo apt-get install liballegro5-dev
+````
+### Testing
+#### Installing
+Tests in project are based on [Unity Test Framework](http://www.throwtheswitch.org/unity). To get it, just type:
+````
+git clone https://github.com/ThrowTheSwitch/Unity.git
+````
+#### Building and running tests
+Do the following:
+````
+make tests D_UNITY=<UNITY PATH>
+````
+where <UNITY_PATH> is absolute path to your directory which contains Unity. After building everything, run **test-sokoban**.
+All tests will gone, if not - please, let us know
 ## Authors
 * **Arseniy Prosvirin** - arseniy.p@d7ss.com
 * **Ryabota Igor** - x@x.ru

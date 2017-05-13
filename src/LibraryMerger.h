@@ -1,10 +1,28 @@
 #pragma once
+/*! 
+@file LibraryMerger.h
+\addtogroup LibraryMerger
+@{
+
+@author arseniy899
+	\brief LibraryMerger.
+         Merger of libraries.
+
+	Here all requried libraries ar included
+*/
+/**
+	Including system libraries
+*/
 #include <stdio.h>
 #include <math.h>
 #include <time.h>
 #include <stdlib.h>
 #include <stdarg.h>
-
+/**
+Including allegro5 libraries
+Refer to Allegro http://liballeg.org/
+Requeried addons see in README.md
+*/
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_primitives.h>
@@ -13,7 +31,9 @@
 #include <allegro5/allegro_native_dialog.h>
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_acodec.h>
-
+/**
+Including all psedo-classes (managers) of the project for giving access everything to everything
+*/
 #include "Button.h"
 #include "EventManager.h"
 #include "SpriteRenderer.h"
@@ -24,35 +44,43 @@
 #include "levGen.h"
 #include "LevelEditor.h"
 #include "MemoryWorker.h"
-#include "CuTest.h"
 
-#define DEBUG_MODE 1
+/**
+Defining constants
+*/
+#define DEBUG_MODE 1//!< Debug mode is setting debug mode to true if 1. In this mode screen is half-size and windowned
 
-#define LEVEL_HEIGHT 15
-#define LEVEL_WIDTH 15
-#define SEED_LENTGH 5
-#define TILE_SIZE 64
+#define LEVEL_HEIGHT 15 //!< Determines cells amount in height at level
+#define LEVEL_WIDTH 15 //!< Cells amount in width
+#define SEED_LENTGH 5 //!< Requried for level generator, not yet implemented
+#define TILE_SIZE 64 //!< Size of cells on level in pixels
 
-#define LEVEL_SELECT_ITEMS_PER_PAGE 12
-
+#define LEVEL_SELECT_ITEMS_PER_PAGE 12 //!< Amount of levels showed on Level Select Scene on any page (max)
+/**
+\addtogroup Constants of scenes-id
+@{
+*/
 #define MAINMENU_SCENE 0
 #define LEVEL_SELECT_SCENE 1
 #define LEVEL_SCENE 2
 #define LEVEL_SCENE_PAUSE 3
 #define LEVEL_SCENE_COMPLETE 4
 #define LEVEL_EDITOR_SCENE 5
+/** 
+@}
+*/
+#define MAP_OFFSET 100 //!< Offset of all objects on level
 
-#define MAP_OFFSET 100
-
-extern int SCREEN_WIDTH, SCREEN_HEIGHT, SCENE_NOW, EventManagerThreadRunning;
-extern float SCREEN_WIDTH_UNIT, SCREEN_HEIGHT_UNIT;
-extern ALLEGRO_DISPLAY* display;
-extern ALLEGRO_FONT* font, *AllegroFont;
-extern ALLEGRO_PATH *path;
-extern char * resourcePath;
-extern int map[LEVEL_HEIGHT][LEVEL_WIDTH];
-extern char levelsPaths[256][128];
-extern char levelsNames[64][BUTTONS_NAME_SIZE];
-
-int showDirectoryListing(int i);
-extern ArrayElement *spritesArr;
+extern int SCREEN_WIDTH, SCREEN_HEIGHT, SCENE_NOW, EventManagerThreadRunning //!< Flag, which control main cycle. If it is false (0), the game stops
+extern float SCREEN_WIDTH_UNIT, SCREEN_HEIGHT_UNIT;//!< Universal screen units which are inependent from screen size. Max units - 2000. Everything is counted percent-like
+extern ALLEGRO_DISPLAY* display; 
+extern ALLEGRO_FONT* font, *AllegroFont; //!< Allgero font for rendering
+extern ALLEGRO_PATH *path; //!< Temp var for allegro while looping over levels in selected folder
+extern char * resourcePath;//!< Path to resources where system find directory if presented or null if no resources found
+extern int map[LEVEL_HEIGHT][LEVEL_WIDTH]; //!< Array for storing current running level map
+extern char levelsPaths[256][128]; //!< Array for storing paths to levels from folder selected by user to choose level from
+extern char levelsNames[64][BUTTONS_NAME_SIZE]; //!< Names of levels for show in level select
+extern ArrayElement *spritesArr; //!< Array for storing all sprites in games (Based on Array.h: list array)
+/**
+@}
+*/

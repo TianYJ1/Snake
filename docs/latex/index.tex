@@ -1,0 +1,78 @@
+\section*{Sokoban-\/project}
+
+Sokoban (倉庫番 sōkoban, warehouse keeper) is a type of transport puzzle, in which the player pushes boxes or crates around in a warehouse, trying to get them to storage locations. The puzzle is usually implemented as a video game.
+
+\subsection*{Getting Started}
+
+This game is build using c-\/language and based on \href{http://liballeg.org/}{\tt Allegro} Library \subsubsection*{Directory structure}
+
+The source code is organized as follows\+:
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Subdirectory }&\textbf{ Description  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Subdirectory }&\textbf{ Description  }\\\cline{1-2}
+\endhead
+src/ &source files \\\cline{1-2}
+src/tests &unit tests \\\cline{1-2}
+doc/ &documentation \\\cline{1-2}
+res/     &static resources \\\cline{1-2}
+\end{longtabu}
+\subsubsection*{Structure}
+
+Main -\/ menu module Level -\/ level drawer, game-\/play handler Generator -\/ level generator, which returns 2-\/dimensional array (will be changed to Level\+Editor) Memory\+Worker -\/ manager of continous memory, based on bare parser Managers\+: Sprite\+Manager -\/ manager for rendering sprites from bitmaps Button -\/ button manager for handling clicks, writing text and placing sprites Label -\/ manager for labels \subsubsection*{Dependencies}
+
+\href{http://liballeg.org/}{\tt Allegro} framework ~\newline
+ Addons using\+: Font addon Image addon T\+TF font addon Dialog addon Color addon Primitives addon Audio addon, Audiocodec addon
+
+\subsubsection*{Build}
+
+To build the project, do the following\+: 
+\begin{DoxyCode}
+make
+\end{DoxyCode}
+ To rebuild everything from scratch, do the following\+: 
+\begin{DoxyCode}
+make clean
+\end{DoxyCode}
+ \paragraph*{Building Allegro}
+
+\#\#\#\#\# Any Linux 
+\begin{DoxyCode}
+cd ~; git clone git:\textcolor{comment}{//github.com/liballeg/allegro5cd allegro5;git checkout 5.2; mkdir build; cd build}
+sudo ccmake -DCMAKE\_INSTALL\_PREFIX=/usr ..
+\end{DoxyCode}
+ Here press \textquotesingle{}c\textquotesingle{}, \textquotesingle{}c\textquotesingle{}, \textquotesingle{}g\textquotesingle{}, unpack will begin. If an error connected to O\+P\+US occurs, change W\+A\+N\+T\+\_\+\+O\+P\+US to \textquotesingle{}O\+FF\textquotesingle{} in list of packages in white box on the right side 
+\begin{DoxyCode}
+sudo make;sudo make install
+\end{DoxyCode}
+ \#\#\#\#\# On Ubuntu 
+\begin{DoxyCode}
+sudo add-apt-repository ppa:allegro/5.2
+sudo apt-\textcolor{keyword}{get} update
+sudo apt-\textcolor{keyword}{get} install liballegro5-dev
+\end{DoxyCode}
+ \subsubsection*{Testing}
+
+\paragraph*{Installing}
+
+Tests in project are based on \href{http://www.throwtheswitch.org/unity}{\tt Unity Test Framework}. To get it, just type\+: 
+\begin{DoxyCode}
+git clone https:\textcolor{comment}{//github.com/ThrowTheSwitch/Unity.git}
+\end{DoxyCode}
+ \paragraph*{Building and running tests}
+
+Do the following\+: 
+\begin{DoxyCode}
+make tests D\_UNITY=<UNITY PATH>
+\end{DoxyCode}
+ where $<$\+U\+N\+I\+T\+Y\+\_\+\+P\+A\+T\+H$>$ is absolute path to your directory which contains Unity. After building everything, run {\bfseries test-\/sokoban}. All tests will gone, if not -\/ please, let us know \subsection*{Authors}
+
+{\bfseries Arseniy Prosvirin} -\/ \href{mailto:arseniy.p@d7ss.com}{\tt arseniy.\+p@d7ss.\+com} {\bfseries Ryabota Igor} -\/ \href{mailto:x@x.ru}{\tt x@x.\+ru} \subsection*{License}
+
+This project is licensed under the M\+IT License -\/ see the \mbox{[}L\+I\+C\+E\+N\+SE\mbox{]}(L\+I\+C\+E\+N\+SE) file for details 
