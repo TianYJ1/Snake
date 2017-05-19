@@ -1,4 +1,4 @@
-﻿#include "LibraryMerger.h"
+#include "LibraryMerger.h"
 /**
 \mainpage Sokoban
 
@@ -104,6 +104,7 @@ int levelSelectPage = 0/*!< Page currently selected for viewing in level select*
 	@retval -1 if error accurued while init. See runtime logs for more info
 */
 int main(void)
+
 {
 	//if(!DEBUG_MODE)
 		//ShowWindow(GetConsoleWindow(), SW_HIDE);

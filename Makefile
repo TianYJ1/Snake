@@ -7,11 +7,13 @@ PROJECT  := sokoban
 # ------------------
 CC  := gcc -g -w
 RM  := rm -rf
+DG  := doxygen
 
 # --------------------
 # Directories & Files
 # --------------------
 D_SRC    := ./src
+
 D_TESTS  := $(D_SRC)/tests
 D_UNITY	 :=~/Unity
 
@@ -26,8 +28,13 @@ PROJECT_WITH_TESTS := $(FILES_TESTS_C) $(FILES_PROGR_C)
 PROJECT_WITHOUT_TESTS_O  := $(PROJECT_WITHOUT_TESTS:.c=.o)
 PROJECT_WITH_TESTS_O  := $(PROJECT_WITH_TESTS:.c=.o)
 
+D_DOC    := ./doc
+FILES_C  := $(wildcard $(D_SRC)/*.c)
+FILES_O  := $(FILES_C:.c=.o)
+
+
 # ------------
-# Flags 
+# Flags
 # ------------
 CFLAGS  := -lm
 CFLAGS  += -std=c99
@@ -36,7 +43,7 @@ LIBS := `pkg-config --libs allegro-5 allegro_font-5 allegro_image-5 allegro_imag
 INCS := -I $(D_UNITY)/src -I $(D_UNITY)/extras/fixture/src 
 
 # ------------
-# Targets 
+# Targets
 # ------------
 default: $(PROJECT)
 
@@ -54,6 +61,18 @@ $(PROJECT): $(PROJECT_WITHOUT_TESTS_O)
 test-$(PROJECT): $(PROJECT_WITH_TESTS_O)
 	$(CC) -I $(D_SRC) $(LFLAGS) $(PROJECT_WITH_TESTS_O) -o $@ $(LIBS) $(INCS)
 
+.phony: doxygen
+doxygen:
+	$(DG) $(D_DOC)/doxygen.config
+
+.phony: html
+html: doxygen
+
+.phony: pdf
+pdf: doxygen
+	make -C $(D_DOC)/output/latex
+
 .phony:	clean
 clean:
 	-$(RM) $(PROJECT_WITH_TESTS_O) $(PROJECT) test-$(PROJECT)
+	-$(RM) $(FILES_O) $(PROJECT) $(D_DOC)/output
