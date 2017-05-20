@@ -1,0 +1,84 @@
+\hypertarget{structth__quant__info}{}\section{th\+\_\+quant\+\_\+info Struct Reference}
+\label{structth__quant__info}\index{th\+\_\+quant\+\_\+info@{th\+\_\+quant\+\_\+info}}
+
+
+{\ttfamily \#include $<$codec.\+h$>$}
+
+
+
+Collaboration diagram for th\+\_\+quant\+\_\+info\+:
+% FIG 0
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+ogg\+\_\+uint16\+\_\+t \hyperlink{structth__quant__info_ad5c1c0d1aa4127fcf864ae747d732ed9}{dc\+\_\+scale} \mbox{[}64\mbox{]}
+\item 
+ogg\+\_\+uint16\+\_\+t \hyperlink{structth__quant__info_a102f079c8f4a135dc0895c10768aeb06}{ac\+\_\+scale} \mbox{[}64\mbox{]}
+\item 
+unsigned char \hyperlink{structth__quant__info_a4ac56bf0a45b5743b36daf85d5cd9e33}{loop\+\_\+filter\+\_\+limits} \mbox{[}64\mbox{]}
+\item 
+\hyperlink{structth__quant__ranges}{th\+\_\+quant\+\_\+ranges} \hyperlink{structth__quant__info_a6feacf4b365e305a7df7b93d87ee7bb8}{qi\+\_\+ranges} \mbox{[}2\mbox{]}\mbox{[}3\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A complete set of quantization parameters. The quantizer for each coefficient is calculated as\+: 
+\begin{DoxyCode}
+Q=\hyperlink{dumb_8h_aacc3ee1a7f283f8ef65cea31f4436a95}{MAX}(\hyperlink{dumb_8h_a74e75242132eaabbc1c512488a135926}{MIN}(qmin[qti][ci!=0],scale[ci!=0][qi]*base[qti][pli][qi][ci]/100),
+ 1024).
+\end{DoxyCode}
+
+
+{\itshape qti} is the quantization type index\+: 0 for intra, 1 for inter. {\ttfamily ci!=0} is 0 for the DC coefficient and 1 for AC coefficients. {\itshape qi} is the quality index, ranging between 0 (low quality) and 63 (high quality). {\itshape pli} is the color plane index\+: 0 for Y\textquotesingle{}, 1 for Cb, 2 for Cr. {\itshape ci} is the D\+CT coefficient index. Coefficient indices correspond to the normal 2D D\+CT block ordering--row-\/major with low frequencies first--{\itshape not} zig-\/zag order.
+
+Minimum quantizers are constant, and are given by\+: 
+\begin{DoxyCode}
+qmin[2][2]=\{\{4,2\},\{8,4\}\}.
+\end{DoxyCode}
+
+
+Parameters that can be stored in the bitstream are as follows\+:
+\begin{DoxyItemize}
+\item The two scale matrices ac\+\_\+scale and dc\+\_\+scale. 
+\begin{DoxyCode}
+scale[2][64]=\{\hyperlink{structth__quant__info_ad5c1c0d1aa4127fcf864ae747d732ed9}{dc\_scale},\hyperlink{structth__quant__info_a102f079c8f4a135dc0895c10768aeb06}{ac\_scale}\}.
+\end{DoxyCode}
+
+\item The base matrices for each {\itshape qi}, {\itshape qti} and {\itshape pli} (up to 384 in all). In order to avoid storing a full 384 base matrices, only a sparse set of matrices are stored, and the rest are linearly interpolated. This is done as follows. For each {\itshape qti} and {\itshape pli}, a series of {\itshape n} {\itshape qi} ranges is defined. The size of each {\itshape qi} range can vary arbitrarily, but they must sum to 63. Then, {\ttfamily n+1} matrices are specified, one for each endpoint of the ranges. For interpolation purposes, each range\textquotesingle{}s endpoints are the first {\itshape qi} value it contains and one past the last {\itshape qi} value it contains. Fractional values are rounded to the nearest integer, with ties rounded away from zero.
+
+Base matrices are stored by reference, so if the same matrices are used multiple times, they will only appear once in the bitstream. The bitstream is also capable of omitting an entire set of ranges and its associated matrices if they are the same as either the previous set (indexed in row-\/major order) or if the inter set is the same as the intra set.
+\item Loop filter limit values. The same limits are used for the loop filter in all color planes, despite potentially differing levels of quantization in each.
+\end{DoxyItemize}
+
+For the current encoder, {\ttfamily scale\mbox{[}ci!=0\mbox{]}\mbox{[}qi\mbox{]}} must be no greater than {\ttfamily scale\mbox{[}ci!=0\mbox{]}\mbox{[}qi-\/1\mbox{]}} and {\ttfamily base\mbox{[}qti\mbox{]}\mbox{[}pli\mbox{]}\mbox{[}qi\mbox{]}\mbox{[}ci\mbox{]}} must be no greater than {\ttfamily base\mbox{[}qti\mbox{]}\mbox{[}pli\mbox{]}\mbox{[}qi-\/1\mbox{]}\mbox{[}ci\mbox{]}}. These two conditions ensure that the actual quantizer for a given {\itshape qti}, {\itshape pli}, and {\itshape ci} does not increase as {\itshape qi} increases. This is not required by the decoder. 
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{structth__quant__info_a102f079c8f4a135dc0895c10768aeb06}\label{structth__quant__info_a102f079c8f4a135dc0895c10768aeb06}} 
+\index{th\+\_\+quant\+\_\+info@{th\+\_\+quant\+\_\+info}!ac\+\_\+scale@{ac\+\_\+scale}}
+\index{ac\+\_\+scale@{ac\+\_\+scale}!th\+\_\+quant\+\_\+info@{th\+\_\+quant\+\_\+info}}
+\subsubsection{\texorpdfstring{ac\+\_\+scale}{ac\_scale}}
+{\footnotesize\ttfamily ogg\+\_\+uint16\+\_\+t th\+\_\+quant\+\_\+info\+::ac\+\_\+scale\mbox{[}64\mbox{]}}
+
+The AC scaling factors. \mbox{\Hypertarget{structth__quant__info_ad5c1c0d1aa4127fcf864ae747d732ed9}\label{structth__quant__info_ad5c1c0d1aa4127fcf864ae747d732ed9}} 
+\index{th\+\_\+quant\+\_\+info@{th\+\_\+quant\+\_\+info}!dc\+\_\+scale@{dc\+\_\+scale}}
+\index{dc\+\_\+scale@{dc\+\_\+scale}!th\+\_\+quant\+\_\+info@{th\+\_\+quant\+\_\+info}}
+\subsubsection{\texorpdfstring{dc\+\_\+scale}{dc\_scale}}
+{\footnotesize\ttfamily ogg\+\_\+uint16\+\_\+t th\+\_\+quant\+\_\+info\+::dc\+\_\+scale\mbox{[}64\mbox{]}}
+
+The DC scaling factors. \mbox{\Hypertarget{structth__quant__info_a4ac56bf0a45b5743b36daf85d5cd9e33}\label{structth__quant__info_a4ac56bf0a45b5743b36daf85d5cd9e33}} 
+\index{th\+\_\+quant\+\_\+info@{th\+\_\+quant\+\_\+info}!loop\+\_\+filter\+\_\+limits@{loop\+\_\+filter\+\_\+limits}}
+\index{loop\+\_\+filter\+\_\+limits@{loop\+\_\+filter\+\_\+limits}!th\+\_\+quant\+\_\+info@{th\+\_\+quant\+\_\+info}}
+\subsubsection{\texorpdfstring{loop\+\_\+filter\+\_\+limits}{loop\_filter\_limits}}
+{\footnotesize\ttfamily unsigned char th\+\_\+quant\+\_\+info\+::loop\+\_\+filter\+\_\+limits\mbox{[}64\mbox{]}}
+
+The loop filter limit values. \mbox{\Hypertarget{structth__quant__info_a6feacf4b365e305a7df7b93d87ee7bb8}\label{structth__quant__info_a6feacf4b365e305a7df7b93d87ee7bb8}} 
+\index{th\+\_\+quant\+\_\+info@{th\+\_\+quant\+\_\+info}!qi\+\_\+ranges@{qi\+\_\+ranges}}
+\index{qi\+\_\+ranges@{qi\+\_\+ranges}!th\+\_\+quant\+\_\+info@{th\+\_\+quant\+\_\+info}}
+\subsubsection{\texorpdfstring{qi\+\_\+ranges}{qi\_ranges}}
+{\footnotesize\ttfamily \hyperlink{structth__quant__ranges}{th\+\_\+quant\+\_\+ranges} th\+\_\+quant\+\_\+info\+::qi\+\_\+ranges\mbox{[}2\mbox{]}\mbox{[}3\mbox{]}}
+
+The {\itshape qi} ranges for each {\itshape ci} and {\itshape pli}. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/packages/\+Allegro\+Deps.\+1.\+5.\+0.\+1/build/native/include/theora/\hyperlink{theora_2codec_8h}{codec.\+h}\end{DoxyCompactItemize}

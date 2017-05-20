@@ -1,0 +1,25 @@
+digraph "src/packages/AllegroDeps.1.5.0.1/build/native/include/FLAC/ordinals.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node2 [label="src/packages/AllegroDeps.1.5.0.1\l/build/native/include/FLAC\l/ordinals.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="src/packages/AllegroDeps.1.5.0.1\l/build/native/include/FLAC\l/callback.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$callback_8h.html",tooltip="This module defines the structures for describing I/O callbacks to the other FLAC interfaces..."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="src/packages/AllegroDeps.1.5.0.1\l/build/native/include/FLAC/all.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$all_8h.html"];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="src/packages/AllegroDeps.1.5.0.1\l/build/native/include/FLAC\l/metadata.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$metadata_8h.html",tooltip="This module provides functions for creating and manipulating FLAC metadata blocks in memory..."];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="src/packages/AllegroDeps.1.5.0.1\l/build/native/include/FLAC\l/format.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$format_8h.html",tooltip="This module contains structure definitions for the representation of FLAC format components in memory..."];
+  Node6 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="src/packages/AllegroDeps.1.5.0.1\l/build/native/include/FLAC\l/stream_decoder.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stream__decoder_8h.html",tooltip="This module contains the functions which implement the stream decoder. "];
+  Node7 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="src/packages/AllegroDeps.1.5.0.1\l/build/native/include/FLAC\l/stream_encoder.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stream__encoder_8h.html",tooltip="This module contains the functions which implement the stream encoder. "];
+  Node8 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+}

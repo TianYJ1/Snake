@@ -1,0 +1,179 @@
+\hypertarget{group__flac__callbacks}{}\section{F\+L\+A\+C/callback.h\+: I/O callback structures}
+\label{group__flac__callbacks}\index{F\+L\+A\+C/callback.\+h\+: I/\+O callback structures@{F\+L\+A\+C/callback.\+h\+: I/\+O callback structures}}
+
+
+This module defines the structures for describing I/O callbacks to the other F\+L\+AC interfaces.  
+
+
+Collaboration diagram for F\+L\+A\+C/callback.h\+: I/O callback structures\+:
+% FIG 0
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_f_l_a_c_____i_o_callbacks}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callbacks}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$ \hyperlink{group__flac__callbacks_ga4c329c3168dee6e352384c5e9306260d}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle}
+\item 
+typedef size\+\_\+t($\ast$ \hyperlink{group__flac__callbacks_ga49d95218a6c09b215cd92cc96de71bf9}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Read}) (\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$ptr, size\+\_\+t size, size\+\_\+t nmemb, \hyperlink{group__flac__callbacks_ga4c329c3168dee6e352384c5e9306260d}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle} handle)
+\item 
+typedef size\+\_\+t($\ast$ \hyperlink{group__flac__callbacks_gad991792235879aecae289b56a112e1b8}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Write}) (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$ptr, size\+\_\+t size, size\+\_\+t nmemb, \hyperlink{group__flac__callbacks_ga4c329c3168dee6e352384c5e9306260d}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle} handle)
+\item 
+typedef int($\ast$ \hyperlink{group__flac__callbacks_gab3942bbbd6ae09bcefe7cb3a0060c49c}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Seek}) (\hyperlink{group__flac__callbacks_ga4c329c3168dee6e352384c5e9306260d}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle} handle, \hyperlink{ordinals_8h_a12b57f75f760b9062a13bcda1bdb3f3e}{F\+L\+A\+C\+\_\+\+\_\+int64} offset, int whence)
+\item 
+typedef \hyperlink{ordinals_8h_a12b57f75f760b9062a13bcda1bdb3f3e}{F\+L\+A\+C\+\_\+\+\_\+int64}($\ast$ \hyperlink{group__flac__callbacks_ga45314930cabc2e9c04867eae6bca309f}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Tell}) (\hyperlink{group__flac__callbacks_ga4c329c3168dee6e352384c5e9306260d}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle} handle)
+\item 
+typedef int($\ast$ \hyperlink{group__flac__callbacks_ga00ae3b3d373e691908e9539ebf720675}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Eof}) (\hyperlink{group__flac__callbacks_ga4c329c3168dee6e352384c5e9306260d}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle} handle)
+\item 
+typedef int($\ast$ \hyperlink{group__flac__callbacks_ga0032267fac38220689778833e08f7387}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Close}) (\hyperlink{group__flac__callbacks_ga4c329c3168dee6e352384c5e9306260d}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle} handle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module defines the structures for describing I/O callbacks to the other F\+L\+AC interfaces. 
+
+The purpose of the I/O callback functions is to create a common way for the metadata interfaces to handle I/O.
+
+Originally the metadata interfaces required filenames as the way of specifying F\+L\+AC files to operate on. This is problematic in some environments so there is an additional option to specify a set of callbacks for doing I/O on the F\+L\+AC file, instead of the filename.
+
+In addition to the callbacks, a F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle type is defined as an opaque structure for a data source.
+
+The callback function prototypes are similar (but not identical) to the stdio functions fread, fwrite, fseek, ftell, feof, and fclose. If you use stdio streams to implement the callbacks, you can pass fread, fwrite, and fclose anywhere a F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Read, F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Write, or F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Close is required, and a F\+I\+L\+E$\ast$ anywhere a F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle is required. \begin{DoxyWarning}{Warning}
+You generally C\+A\+N\+N\+OT directly use fseek or ftell for F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Seek or F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Tell since on most systems these use 32-\/bit offsets and F\+L\+AC requires 64-\/bit offsets to deal with large files. You will have to find an equivalent function (e.\+g. ftello), or write a wrapper. The same is true for feof() since this is usually implemented as a macro, not as a function whose address can be taken. 
+\end{DoxyWarning}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{group__flac__callbacks_ga0032267fac38220689778833e08f7387}\label{group__flac__callbacks_ga0032267fac38220689778833e08f7387}} 
+\index{F\+L\+A\+C/callback.\+h\+: I/\+O callback structures@{F\+L\+A\+C/callback.\+h\+: I/\+O callback structures}!F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Close@{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Close}}
+\index{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Close@{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Close}!F\+L\+A\+C/callback.\+h\+: I/\+O callback structures@{F\+L\+A\+C/callback.\+h\+: I/\+O callback structures}}
+\subsubsection{\texorpdfstring{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Close}{FLAC\_\_IOCallback\_Close}}
+{\footnotesize\ttfamily typedef int($\ast$ F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Close) (\hyperlink{group__flac__callbacks_ga4c329c3168dee6e352384c5e9306260d}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle} handle)}
+
+Signature for the close callback. The signature and semantics match P\+O\+S\+IX fclose() implementations and can generally be used interchangeably.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & The handle to the data source. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em int} & {\ttfamily 0} on success, {\ttfamily E\+OF} on error. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__flac__callbacks_ga00ae3b3d373e691908e9539ebf720675}\label{group__flac__callbacks_ga00ae3b3d373e691908e9539ebf720675}} 
+\index{F\+L\+A\+C/callback.\+h\+: I/\+O callback structures@{F\+L\+A\+C/callback.\+h\+: I/\+O callback structures}!F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Eof@{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Eof}}
+\index{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Eof@{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Eof}!F\+L\+A\+C/callback.\+h\+: I/\+O callback structures@{F\+L\+A\+C/callback.\+h\+: I/\+O callback structures}}
+\subsubsection{\texorpdfstring{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Eof}{FLAC\_\_IOCallback\_Eof}}
+{\footnotesize\ttfamily typedef int($\ast$ F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Eof) (\hyperlink{group__flac__callbacks_ga4c329c3168dee6e352384c5e9306260d}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle} handle)}
+
+Signature for the E\+OF callback. The signature and semantics mostly match P\+O\+S\+IX feof() but W\+A\+T\+C\+H\+O\+UT\+: on many systems, feof() is a macro, so in this case a wrapper function must be provided instead.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & The handle to the data source. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em int} & {\ttfamily 0} if not at end of file, nonzero if at end of file. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__flac__callbacks_ga49d95218a6c09b215cd92cc96de71bf9}\label{group__flac__callbacks_ga49d95218a6c09b215cd92cc96de71bf9}} 
+\index{F\+L\+A\+C/callback.\+h\+: I/\+O callback structures@{F\+L\+A\+C/callback.\+h\+: I/\+O callback structures}!F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Read@{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Read}}
+\index{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Read@{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Read}!F\+L\+A\+C/callback.\+h\+: I/\+O callback structures@{F\+L\+A\+C/callback.\+h\+: I/\+O callback structures}}
+\subsubsection{\texorpdfstring{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Read}{FLAC\_\_IOCallback\_Read}}
+{\footnotesize\ttfamily typedef size\+\_\+t($\ast$ F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Read) (\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$ptr, size\+\_\+t size, size\+\_\+t nmemb, \hyperlink{group__flac__callbacks_ga4c329c3168dee6e352384c5e9306260d}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle} handle)}
+
+Signature for the read callback. The signature and semantics match P\+O\+S\+IX fread() implementations and can generally be used interchangeably.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & The address of the read buffer. \\
+\hline
+{\em size} & The size of the records to be read. \\
+\hline
+{\em nmemb} & The number of records to be read. \\
+\hline
+{\em handle} & The handle to the data source. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em size\+\_\+t} & The number of records read. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__flac__callbacks_gab3942bbbd6ae09bcefe7cb3a0060c49c}\label{group__flac__callbacks_gab3942bbbd6ae09bcefe7cb3a0060c49c}} 
+\index{F\+L\+A\+C/callback.\+h\+: I/\+O callback structures@{F\+L\+A\+C/callback.\+h\+: I/\+O callback structures}!F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Seek@{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Seek}}
+\index{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Seek@{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Seek}!F\+L\+A\+C/callback.\+h\+: I/\+O callback structures@{F\+L\+A\+C/callback.\+h\+: I/\+O callback structures}}
+\subsubsection{\texorpdfstring{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Seek}{FLAC\_\_IOCallback\_Seek}}
+{\footnotesize\ttfamily typedef int($\ast$ F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Seek) (\hyperlink{group__flac__callbacks_ga4c329c3168dee6e352384c5e9306260d}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle} handle, \hyperlink{ordinals_8h_a12b57f75f760b9062a13bcda1bdb3f3e}{F\+L\+A\+C\+\_\+\+\_\+int64} offset, int whence)}
+
+Signature for the seek callback. The signature and semantics mostly match P\+O\+S\+IX fseek() W\+I\+TH O\+NE I\+M\+P\+O\+R\+T\+A\+NT E\+X\+C\+E\+P\+T\+I\+ON\+: the offset is a 64-\/bit type whereas fseek() is generally \textquotesingle{}long\textquotesingle{} and 32-\/bits wide.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & The handle to the data source. \\
+\hline
+{\em offset} & The new position, relative to {\itshape whence} \\
+\hline
+{\em whence} & {\ttfamily S\+E\+E\+K\+\_\+\+S\+ET}, {\ttfamily S\+E\+E\+K\+\_\+\+C\+UR}, or {\ttfamily S\+E\+E\+K\+\_\+\+E\+ND} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em int} & {\ttfamily 0} on success, {\ttfamily -\/1} on error. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__flac__callbacks_ga45314930cabc2e9c04867eae6bca309f}\label{group__flac__callbacks_ga45314930cabc2e9c04867eae6bca309f}} 
+\index{F\+L\+A\+C/callback.\+h\+: I/\+O callback structures@{F\+L\+A\+C/callback.\+h\+: I/\+O callback structures}!F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Tell@{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Tell}}
+\index{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Tell@{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Tell}!F\+L\+A\+C/callback.\+h\+: I/\+O callback structures@{F\+L\+A\+C/callback.\+h\+: I/\+O callback structures}}
+\subsubsection{\texorpdfstring{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Tell}{FLAC\_\_IOCallback\_Tell}}
+{\footnotesize\ttfamily typedef \hyperlink{ordinals_8h_a12b57f75f760b9062a13bcda1bdb3f3e}{F\+L\+A\+C\+\_\+\+\_\+int64}($\ast$ F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Tell) (\hyperlink{group__flac__callbacks_ga4c329c3168dee6e352384c5e9306260d}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle} handle)}
+
+Signature for the tell callback. The signature and semantics mostly match P\+O\+S\+IX ftell() W\+I\+TH O\+NE I\+M\+P\+O\+R\+T\+A\+NT E\+X\+C\+E\+P\+T\+I\+ON\+: the offset is a 64-\/bit type whereas ftell() is generally \textquotesingle{}long\textquotesingle{} and 32-\/bits wide.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & The handle to the data source. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em F\+L\+A\+C\+\_\+\+\_\+int64} & The current position on success, {\ttfamily -\/1} on error. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__flac__callbacks_gad991792235879aecae289b56a112e1b8}\label{group__flac__callbacks_gad991792235879aecae289b56a112e1b8}} 
+\index{F\+L\+A\+C/callback.\+h\+: I/\+O callback structures@{F\+L\+A\+C/callback.\+h\+: I/\+O callback structures}!F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Write@{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Write}}
+\index{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Write@{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Write}!F\+L\+A\+C/callback.\+h\+: I/\+O callback structures@{F\+L\+A\+C/callback.\+h\+: I/\+O callback structures}}
+\subsubsection{\texorpdfstring{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Write}{FLAC\_\_IOCallback\_Write}}
+{\footnotesize\ttfamily typedef size\+\_\+t($\ast$ F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Write) (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$ptr, size\+\_\+t size, size\+\_\+t nmemb, \hyperlink{group__flac__callbacks_ga4c329c3168dee6e352384c5e9306260d}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle} handle)}
+
+Signature for the write callback. The signature and semantics match P\+O\+S\+IX fwrite() implementations and can generally be used interchangeably.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & The address of the write buffer. \\
+\hline
+{\em size} & The size of the records to be written. \\
+\hline
+{\em nmemb} & The number of records to be written. \\
+\hline
+{\em handle} & The handle to the data source. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em size\+\_\+t} & The number of records written. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__flac__callbacks_ga4c329c3168dee6e352384c5e9306260d}\label{group__flac__callbacks_ga4c329c3168dee6e352384c5e9306260d}} 
+\index{F\+L\+A\+C/callback.\+h\+: I/\+O callback structures@{F\+L\+A\+C/callback.\+h\+: I/\+O callback structures}!F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle@{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle}}
+\index{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle@{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle}!F\+L\+A\+C/callback.\+h\+: I/\+O callback structures@{F\+L\+A\+C/callback.\+h\+: I/\+O callback structures}}
+\subsubsection{\texorpdfstring{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle}{FLAC\_\_IOHandle}}
+{\footnotesize\ttfamily typedef \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}$\ast$ \hyperlink{group__flac__callbacks_ga4c329c3168dee6e352384c5e9306260d}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle}}
+
+This is the opaque handle type used by the callbacks. Typically this is a {\ttfamily F\+I\+L\+E$\ast$} or address of a file descriptor. 

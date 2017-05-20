@@ -1,0 +1,130 @@
+\hypertarget{group__url__options}{}\section{U\+RL Reading Options}
+\label{group__url__options}\index{U\+R\+L Reading Options@{U\+R\+L Reading Options}}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_opus_server_info}{Opus\+Server\+Info}
+\end{DoxyCompactItemize}
+\subsection*{U\+RL reading options}
+\label{_amgrp723df1257afe999c3e0dda4938bf95e0}%
+Options for \hyperlink{group__stream__callbacks_ga5c588fac7542057282b50a5bd2dbb35a}{op\+\_\+url\+\_\+stream\+\_\+create()} and associated functions. These allow you to provide proxy configuration parameters, skip S\+SL certificate checks, etc. Options are processed in order, and if the same option is passed multiple times, only the value specified by the last occurrence has an effect (unless otherwise specified). They may be expanded in the future. \begin{DoxyCompactItemize}
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{group__url__options_ga8a8c97266e46504e064bba1a70495738}{opus\+\_\+server\+\_\+info\+\_\+init} (\hyperlink{struct_opus_server_info}{Opus\+Server\+Info} $\ast$\+\_\+info) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{group__url__options_ga096536e460277fe890acb265d8fdbd63}{opus\+\_\+server\+\_\+info\+\_\+clear} (\hyperlink{struct_opus_server_info}{Opus\+Server\+Info} $\ast$\+\_\+info) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+\#define \hyperlink{group__url__options_ga71080150b55e223be2710a0307108b72}{O\+P\+\_\+\+S\+S\+L\+\_\+\+S\+K\+I\+P\+\_\+\+C\+E\+R\+T\+I\+F\+I\+C\+A\+T\+E\+\_\+\+C\+H\+E\+CK}(\+\_\+b)
+\item 
+\#define \hyperlink{group__url__options_gab3b517acdb74c0d0b51800af86a58876}{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+O\+ST}(\+\_\+host)
+\item 
+\#define \hyperlink{group__url__options_ga838d23878f4135691684203baa75ed0c}{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+O\+RT}(\+\_\+port)
+\item 
+\#define \hyperlink{group__url__options_gaf0ce8d761ff48697fa0c44a62a445842}{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+U\+S\+ER}(\+\_\+user)
+\item 
+\#define \hyperlink{group__url__options_gaad96c33557407e406cca89477b2e7892}{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+A\+SS}(\+\_\+pass)
+\item 
+\#define \hyperlink{group__url__options_gacc2e4b086bee832d5d66caf18fd7d659}{O\+P\+\_\+\+G\+E\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+I\+N\+FO}(\+\_\+info)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__url__options_gacc2e4b086bee832d5d66caf18fd7d659}\label{group__url__options_gacc2e4b086bee832d5d66caf18fd7d659}} 
+\index{U\+R\+L Reading Options@{U\+R\+L Reading Options}!O\+P\+\_\+\+G\+E\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+I\+N\+FO@{O\+P\+\_\+\+G\+E\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+I\+N\+FO}}
+\index{O\+P\+\_\+\+G\+E\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+I\+N\+FO@{O\+P\+\_\+\+G\+E\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+I\+N\+FO}!U\+R\+L Reading Options@{U\+R\+L Reading Options}}
+\subsubsection{\texorpdfstring{O\+P\+\_\+\+G\+E\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+I\+N\+FO}{OP\_GET\_SERVER\_INFO}}
+{\footnotesize\ttfamily \#define O\+P\+\_\+\+G\+E\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+I\+N\+FO(\begin{DoxyParamCaption}\item[{}]{\+\_\+info }\end{DoxyParamCaption})}
+
+Parse information about the streaming server (if any) and return it. Very little validation is done. In particular, \hyperlink{struct_opus_server_info_a7f9aef47413c849bb240ef70394401b1}{Opus\+Server\+Info\+::url} may not be a valid U\+RL, \hyperlink{struct_opus_server_info_a1cf5db210f1cad5cf809bf54ddff68de}{Opus\+Server\+Info\+::bitrate\+\_\+kbps} may not really be in kbps, and \hyperlink{struct_opus_server_info_a5f0120b006af1122cbdc72f3cbb68fd7}{Opus\+Server\+Info\+::content\+\_\+type} may not be a valid M\+I\+ME type. The character set of the string fields is not specified anywhere, and should not be assumed to be valid U\+T\+F-\/8. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+info} & \hyperlink{struct_opus_server_info}{Opus\+Server\+Info} $\ast$\+: Returns information about the server. If there is any error opening the stream, the contents of this structure remain unmodified. On success, fills in the structure with the server information that was available, if any. After a successful return, the contents of this structure should be freed by calling \hyperlink{group__url__options_ga096536e460277fe890acb265d8fdbd63}{opus\+\_\+server\+\_\+info\+\_\+clear()}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__url__options_gab3b517acdb74c0d0b51800af86a58876}\label{group__url__options_gab3b517acdb74c0d0b51800af86a58876}} 
+\index{U\+R\+L Reading Options@{U\+R\+L Reading Options}!O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+O\+ST@{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+O\+ST}}
+\index{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+O\+ST@{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+O\+ST}!U\+R\+L Reading Options@{U\+R\+L Reading Options}}
+\subsubsection{\texorpdfstring{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+O\+ST}{OP\_HTTP\_PROXY\_HOST}}
+{\footnotesize\ttfamily \#define O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+O\+ST(\begin{DoxyParamCaption}\item[{}]{\+\_\+host }\end{DoxyParamCaption})}
+
+Proxy connections through the given host. If no port is specified via \hyperlink{group__url__options_ga838d23878f4135691684203baa75ed0c}{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+O\+RT}, the port number defaults to 8080 (http-\/alt). All proxy parameters are ignored for non-\/http and non-\/https U\+R\+Ls. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+host} & {\ttfamily const char $\ast$}\+: The proxy server hostname. This may be {\ttfamily N\+U\+LL} to disable the use of a proxy server. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__url__options_gaad96c33557407e406cca89477b2e7892}\label{group__url__options_gaad96c33557407e406cca89477b2e7892}} 
+\index{U\+R\+L Reading Options@{U\+R\+L Reading Options}!O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+A\+SS@{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+A\+SS}}
+\index{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+A\+SS@{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+A\+SS}!U\+R\+L Reading Options@{U\+R\+L Reading Options}}
+\subsubsection{\texorpdfstring{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+A\+SS}{OP\_HTTP\_PROXY\_PASS}}
+{\footnotesize\ttfamily \#define O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+A\+SS(\begin{DoxyParamCaption}\item[{}]{\+\_\+pass }\end{DoxyParamCaption})}
+
+Use the given password for authentication when proxying connections. All proxy parameters are ignored for non-\/http and non-\/https U\+R\+Ls. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+pass} & const char $\ast$\+: The proxy server password. This may be {\ttfamily N\+U\+LL} to disable proxy authentication. A non-\/{\ttfamily N\+U\+LL} value only has an effect if \hyperlink{group__url__options_gab3b517acdb74c0d0b51800af86a58876}{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+O\+ST} and \hyperlink{group__url__options_gaf0ce8d761ff48697fa0c44a62a445842}{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+U\+S\+ER} are also specified with non-\/{\ttfamily N\+U\+LL} arguments. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__url__options_ga838d23878f4135691684203baa75ed0c}\label{group__url__options_ga838d23878f4135691684203baa75ed0c}} 
+\index{U\+R\+L Reading Options@{U\+R\+L Reading Options}!O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+O\+RT@{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+O\+RT}}
+\index{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+O\+RT@{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+O\+RT}!U\+R\+L Reading Options@{U\+R\+L Reading Options}}
+\subsubsection{\texorpdfstring{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+O\+RT}{OP\_HTTP\_PROXY\_PORT}}
+{\footnotesize\ttfamily \#define O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+O\+RT(\begin{DoxyParamCaption}\item[{}]{\+\_\+port }\end{DoxyParamCaption})}
+
+Use the given port when proxying connections. This option only has an effect if \hyperlink{group__url__options_gab3b517acdb74c0d0b51800af86a58876}{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+O\+ST} is specified with a non-\/{\ttfamily N\+U\+LL} {\itshape \+\_\+host}. If this option is not provided, the proxy port number defaults to 8080 (http-\/alt). All proxy parameters are ignored for non-\/http and non-\/https U\+R\+Ls. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+port} & {\ttfamily opus\+\_\+int32}\+: The proxy server port. This must be in the range 0...65535 (inclusive), or the U\+RL function this is passed to will fail. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__url__options_gaf0ce8d761ff48697fa0c44a62a445842}\label{group__url__options_gaf0ce8d761ff48697fa0c44a62a445842}} 
+\index{U\+R\+L Reading Options@{U\+R\+L Reading Options}!O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+U\+S\+ER@{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+U\+S\+ER}}
+\index{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+U\+S\+ER@{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+U\+S\+ER}!U\+R\+L Reading Options@{U\+R\+L Reading Options}}
+\subsubsection{\texorpdfstring{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+U\+S\+ER}{OP\_HTTP\_PROXY\_USER}}
+{\footnotesize\ttfamily \#define O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+U\+S\+ER(\begin{DoxyParamCaption}\item[{}]{\+\_\+user }\end{DoxyParamCaption})}
+
+Use the given user name for authentication when proxying connections. All proxy parameters are ignored for non-\/http and non-\/https U\+R\+Ls. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+user} & const char $\ast$\+: The proxy server user name. This may be {\ttfamily N\+U\+LL} to disable proxy authentication. A non-\/{\ttfamily N\+U\+LL} value only has an effect if \hyperlink{group__url__options_gab3b517acdb74c0d0b51800af86a58876}{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+H\+O\+ST} and \hyperlink{group__url__options_gaad96c33557407e406cca89477b2e7892}{O\+P\+\_\+\+H\+T\+T\+P\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+P\+A\+SS} are also specified with non-\/{\ttfamily N\+U\+LL} arguments. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__url__options_ga71080150b55e223be2710a0307108b72}\label{group__url__options_ga71080150b55e223be2710a0307108b72}} 
+\index{U\+R\+L Reading Options@{U\+R\+L Reading Options}!O\+P\+\_\+\+S\+S\+L\+\_\+\+S\+K\+I\+P\+\_\+\+C\+E\+R\+T\+I\+F\+I\+C\+A\+T\+E\+\_\+\+C\+H\+E\+CK@{O\+P\+\_\+\+S\+S\+L\+\_\+\+S\+K\+I\+P\+\_\+\+C\+E\+R\+T\+I\+F\+I\+C\+A\+T\+E\+\_\+\+C\+H\+E\+CK}}
+\index{O\+P\+\_\+\+S\+S\+L\+\_\+\+S\+K\+I\+P\+\_\+\+C\+E\+R\+T\+I\+F\+I\+C\+A\+T\+E\+\_\+\+C\+H\+E\+CK@{O\+P\+\_\+\+S\+S\+L\+\_\+\+S\+K\+I\+P\+\_\+\+C\+E\+R\+T\+I\+F\+I\+C\+A\+T\+E\+\_\+\+C\+H\+E\+CK}!U\+R\+L Reading Options@{U\+R\+L Reading Options}}
+\subsubsection{\texorpdfstring{O\+P\+\_\+\+S\+S\+L\+\_\+\+S\+K\+I\+P\+\_\+\+C\+E\+R\+T\+I\+F\+I\+C\+A\+T\+E\+\_\+\+C\+H\+E\+CK}{OP\_SSL\_SKIP\_CERTIFICATE\_CHECK}}
+{\footnotesize\ttfamily \#define O\+P\+\_\+\+S\+S\+L\+\_\+\+S\+K\+I\+P\+\_\+\+C\+E\+R\+T\+I\+F\+I\+C\+A\+T\+E\+\_\+\+C\+H\+E\+CK(\begin{DoxyParamCaption}\item[{}]{\+\_\+b }\end{DoxyParamCaption})}
+
+Skip the certificate check when connecting via T\+L\+S/\+S\+SL (https). 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+b} & {\ttfamily opus\+\_\+int32}\+: Whether or not to skip the certificate check. The check will be skipped if {\itshape \+\_\+b} is non-\/zero, and will not be skipped if {\itshape \+\_\+b} is zero. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__url__options_ga096536e460277fe890acb265d8fdbd63}\label{group__url__options_ga096536e460277fe890acb265d8fdbd63}} 
+\index{U\+R\+L Reading Options@{U\+R\+L Reading Options}!opus\+\_\+server\+\_\+info\+\_\+clear@{opus\+\_\+server\+\_\+info\+\_\+clear}}
+\index{opus\+\_\+server\+\_\+info\+\_\+clear@{opus\+\_\+server\+\_\+info\+\_\+clear}!U\+R\+L Reading Options@{U\+R\+L Reading Options}}
+\subsubsection{\texorpdfstring{opus\+\_\+server\+\_\+info\+\_\+clear()}{opus\_server\_info\_clear()}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} opus\+\_\+server\+\_\+info\+\_\+clear (\begin{DoxyParamCaption}\item[{\hyperlink{struct_opus_server_info}{Opus\+Server\+Info} $\ast$}]{\+\_\+info }\end{DoxyParamCaption})}
+
+Clears the \hyperlink{struct_opus_server_info}{Opus\+Server\+Info} structure. This should be called on an \hyperlink{struct_opus_server_info}{Opus\+Server\+Info} structure after it is no longer needed. It will free all memory used by the structure members. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+info} & The \hyperlink{struct_opus_server_info}{Opus\+Server\+Info} structure to clear. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If you use this function, you must link against {\ttfamily libopusurl}. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__url__options_ga8a8c97266e46504e064bba1a70495738}\label{group__url__options_ga8a8c97266e46504e064bba1a70495738}} 
+\index{U\+R\+L Reading Options@{U\+R\+L Reading Options}!opus\+\_\+server\+\_\+info\+\_\+init@{opus\+\_\+server\+\_\+info\+\_\+init}}
+\index{opus\+\_\+server\+\_\+info\+\_\+init@{opus\+\_\+server\+\_\+info\+\_\+init}!U\+R\+L Reading Options@{U\+R\+L Reading Options}}
+\subsubsection{\texorpdfstring{opus\+\_\+server\+\_\+info\+\_\+init()}{opus\_server\_info\_init()}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} opus\+\_\+server\+\_\+info\+\_\+init (\begin{DoxyParamCaption}\item[{\hyperlink{struct_opus_server_info}{Opus\+Server\+Info} $\ast$}]{\+\_\+info }\end{DoxyParamCaption})}
+
+Initializes an \hyperlink{struct_opus_server_info}{Opus\+Server\+Info} structure. All fields are set as if the corresponding header was not available. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+info} & The \hyperlink{struct_opus_server_info}{Opus\+Server\+Info} structure to initialize. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If you use this function, you must link against {\ttfamily libopusurl}. 
+\end{DoxyNote}

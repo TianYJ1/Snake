@@ -1,0 +1,42 @@
+\hypertarget{struct_f_l_a_c_____stream_metadata___vorbis_comment___entry}{}\section{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Vorbis\+Comment\+\_\+\+Entry Struct Reference}
+\label{struct_f_l_a_c_____stream_metadata___vorbis_comment___entry}\index{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Vorbis\+Comment\+\_\+\+Entry@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Vorbis\+Comment\+\_\+\+Entry}}
+
+
+{\ttfamily \#include $<$format.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ordinals_8h_a9c4005ea7ef8d564b0cc993cdd0e4e5e}{F\+L\+A\+C\+\_\+\+\_\+uint32} \hyperlink{struct_f_l_a_c_____stream_metadata___vorbis_comment___entry_aa375f16819aaa4f7e08d8009167cb19e}{length}
+\item 
+\hyperlink{ordinals_8h_a5eb569b12d5b047cdacada4d57924ee3}{F\+L\+A\+C\+\_\+\+\_\+byte} $\ast$ \hyperlink{struct_f_l_a_c_____stream_metadata___vorbis_comment___entry_a78944f78822b92e7a4e5f15f118f6132}{entry}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Vorbis comment entry structure used in V\+O\+R\+B\+I\+S\+\_\+\+C\+O\+M\+M\+E\+NT blocks. (c.\+f. \href{../format.html#metadata_block_vorbis_comment}{\tt format specification})
+
+For convenience, the A\+P\+Is maintain a trailing N\+UL character at the end of {\itshape entry} which is not counted toward {\itshape length}, i.\+e. 
+\begin{DoxyCode}
+strlen(\hyperlink{struct_f_l_a_c_____stream_metadata___vorbis_comment___entry_a78944f78822b92e7a4e5f15f118f6132}{entry}) == \hyperlink{struct_f_l_a_c_____stream_metadata___vorbis_comment___entry_aa375f16819aaa4f7e08d8009167cb19e}{length} 
+\end{DoxyCode}
+ 
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{struct_f_l_a_c_____stream_metadata___vorbis_comment___entry_a78944f78822b92e7a4e5f15f118f6132}\label{struct_f_l_a_c_____stream_metadata___vorbis_comment___entry_a78944f78822b92e7a4e5f15f118f6132}} 
+\index{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Vorbis\+Comment\+\_\+\+Entry@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Vorbis\+Comment\+\_\+\+Entry}!entry@{entry}}
+\index{entry@{entry}!F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Vorbis\+Comment\+\_\+\+Entry@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Vorbis\+Comment\+\_\+\+Entry}}
+\subsubsection{\texorpdfstring{entry}{entry}}
+{\footnotesize\ttfamily \hyperlink{ordinals_8h_a5eb569b12d5b047cdacada4d57924ee3}{F\+L\+A\+C\+\_\+\+\_\+byte}$\ast$ F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Vorbis\+Comment\+\_\+\+Entry\+::entry}
+
+\mbox{\Hypertarget{struct_f_l_a_c_____stream_metadata___vorbis_comment___entry_aa375f16819aaa4f7e08d8009167cb19e}\label{struct_f_l_a_c_____stream_metadata___vorbis_comment___entry_aa375f16819aaa4f7e08d8009167cb19e}} 
+\index{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Vorbis\+Comment\+\_\+\+Entry@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Vorbis\+Comment\+\_\+\+Entry}!length@{length}}
+\index{length@{length}!F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Vorbis\+Comment\+\_\+\+Entry@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Vorbis\+Comment\+\_\+\+Entry}}
+\subsubsection{\texorpdfstring{length}{length}}
+{\footnotesize\ttfamily \hyperlink{ordinals_8h_a9c4005ea7ef8d564b0cc993cdd0e4e5e}{F\+L\+A\+C\+\_\+\+\_\+uint32} F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Vorbis\+Comment\+\_\+\+Entry\+::length}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/packages/\+Allegro\+Deps.\+1.\+5.\+0.\+1/build/native/include/\+F\+L\+A\+C/\hyperlink{format_8h}{format.\+h}\end{DoxyCompactItemize}

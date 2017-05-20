@@ -1,0 +1,298 @@
+\hypertarget{group___core}{}\section{Core}
+\label{group___core}\index{Core@{Core}}
+
+
+Core~\newline
+This is for managing common and miscellaneous (screen render, logging, opening and reading files, etc.)  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{group___core_gad48a041724bbc05fba4b66ce7530edb2}{init\+Addons} ()
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{group___core_ga02ff5c3ae037f5e07455e6e31faa8012}{change\+Scene} (int scene)
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{group___core_ga1160e13b7fea6357aae71e25703481de}{Log\+\_\+i} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$tag, \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$str,...)
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{group___core_ga5a29994cc1a93c0124f65b27a5daa5aa}{Log\+\_\+e} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$tag, \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$str,...)
+\item 
+int \hyperlink{group___core_ga5556333d0547b17be08de1a701d61e2c}{init\+Vars} ()
+\item 
+int \hyperlink{group___core_ga26c5e4f4587adfc14630f09bf91338ba}{open\+Level} (int num)
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{group___core_ga235968ecd656b8f1436aebad7eeaa5b8}{set\+New\+Screen} ()
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{group___core_ga6270007e1f0c1a21e81dc3c5bdee14a6}{render\+Screen} ()
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{group___core_ga408edec4092671024a17603aebcc9225}{convert\+Const\+Copy} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$source, char $\ast$$\ast$to\+Chr)
+\item 
+int \hyperlink{group___core_gae327268c8424aa3cb6cea07ea33a3019}{open\+Folder\+Dialog} (int i)
+\item 
+int \hyperlink{group___core_ga3c412437d5338d1b9242ca728ec3fa6a}{slice\+File} (int i)
+\item 
+int \hyperlink{group___core_ga26169da7eb509dc305939ffabf06ac58}{next\+Page} (int i)
+\item 
+int \hyperlink{group___core_ga8f29a9074178aa050d1938014a4d9d5b}{prev\+Page} (int i)
+\item 
+int \hyperlink{group___core_ga6851f8613954858f5ed67795db823076}{open\+Level\+Select} (int i)
+\item 
+int \hyperlink{group___core_ga70bec60930d92e442620c4cbe2232606}{show\+Directory\+Listing} (int i)
+\item 
+int \hyperlink{group___core_ga38f3d65c215c1ab12f47b8aa9dfe4cc5}{open\+Level\+Editor} (int i)
+\item 
+int \hyperlink{group___core_gac66e8a197a47d63d439a2b34a23d1444}{Exit\+Prog} (int i)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{group___core_ga6341080327d9c3d3ef08fdccd4f05262}{names} \mbox{[}128\mbox{]}\mbox{[}128\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array for storing levels names currently vewing in level select. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{group___core_ga39642f859bbe17ccc6e6d98f84a7cdea}{path\+Cur}
+\begin{DoxyCompactList}\small\item\em Temporary string for storing current chosen. \end{DoxyCompactList}\item 
+char \hyperlink{group___core_ga5a00f62db43aff74971290ceba5fa7df}{levels\+Paths} \mbox{[}256\mbox{]}\mbox{[}128\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array for storing levels pathes currently vewing in level select. \end{DoxyCompactList}\item 
+char \hyperlink{group___core_gae5cb82a78ca4ac2c20f9d071e7124f38}{levels\+Names} \mbox{[}64\mbox{]}\mbox{[}\hyperlink{group___button_ga5a86b4b0ec8a21993f74ae423ec74538}{B\+U\+T\+T\+O\+N\+S\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array for storing levels names currently vewing in level select. \end{DoxyCompactList}\item 
+int \hyperlink{group___core_ga75f52c6778fb4d3418ef0925d17fb164}{level\+Select\+Page}
+\item 
+int \hyperlink{group___core_ga016718268d32fcb95b1190cc1071e270}{y\+Offset}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Core~\newline
+This is for managing common and miscellaneous (screen render, logging, opening and reading files, etc.) 
+
+\begin{DoxyAuthor}{Author}
+arseniy899 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___core_ga02ff5c3ae037f5e07455e6e31faa8012}\label{group___core_ga02ff5c3ae037f5e07455e6e31faa8012}} 
+\index{Core@{Core}!change\+Scene@{change\+Scene}}
+\index{change\+Scene@{change\+Scene}!Core@{Core}}
+\subsubsection{\texorpdfstring{change\+Scene()}{changeScene()}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} change\+Scene (\begin{DoxyParamCaption}\item[{int}]{scene }\end{DoxyParamCaption})}
+
+Changes scene to another (clear and render new screen, clear old sprites) 
+\begin{DoxyParams}{Parameters}
+{\em scene} & Id of scene to be shown \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___core_ga408edec4092671024a17603aebcc9225}\label{group___core_ga408edec4092671024a17603aebcc9225}} 
+\index{Core@{Core}!convert\+Const\+Copy@{convert\+Const\+Copy}}
+\index{convert\+Const\+Copy@{convert\+Const\+Copy}!Core@{Core}}
+\subsubsection{\texorpdfstring{convert\+Const\+Copy()}{convertConstCopy()}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} convert\+Const\+Copy (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$}]{source,  }\item[{char $\ast$$\ast$}]{to\+Chr }\end{DoxyParamCaption})}
+
+Converts char data from source to destination with memory allocation for new one (copying). 
+\begin{DoxyParams}{Parameters}
+{\em source} & \mbox{[}in\mbox{]} Source for copying \\
+\hline
+{\em to\+Chr} & \mbox{[}out\mbox{]} Destination \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___core_gac66e8a197a47d63d439a2b34a23d1444}\label{group___core_gac66e8a197a47d63d439a2b34a23d1444}} 
+\index{Core@{Core}!Exit\+Prog@{Exit\+Prog}}
+\index{Exit\+Prog@{Exit\+Prog}!Core@{Core}}
+\subsubsection{\texorpdfstring{Exit\+Prog()}{ExitProg()}}
+{\footnotesize\ttfamily int Exit\+Prog (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+Clicked button for exiting game(\+Callback function) 
+\begin{DoxyParams}{Parameters}
+{\em i} & number of button clicked \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___core_gad48a041724bbc05fba4b66ce7530edb2}\label{group___core_gad48a041724bbc05fba4b66ce7530edb2}} 
+\index{Core@{Core}!init\+Addons@{init\+Addons}}
+\index{init\+Addons@{init\+Addons}!Core@{Core}}
+\subsubsection{\texorpdfstring{init\+Addons()}{initAddons()}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} init\+Addons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Run on start, initing allgero5 addons \mbox{\Hypertarget{group___core_ga5556333d0547b17be08de1a701d61e2c}\label{group___core_ga5556333d0547b17be08de1a701d61e2c}} 
+\index{Core@{Core}!init\+Vars@{init\+Vars}}
+\index{init\+Vars@{init\+Vars}!Core@{Core}}
+\subsubsection{\texorpdfstring{init\+Vars()}{initVars()}}
+{\footnotesize\ttfamily int init\+Vars (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group___core_ga5a29994cc1a93c0124f65b27a5daa5aa}\label{group___core_ga5a29994cc1a93c0124f65b27a5daa5aa}} 
+\index{Core@{Core}!Log\+\_\+e@{Log\+\_\+e}}
+\index{Log\+\_\+e@{Log\+\_\+e}!Core@{Core}}
+\subsubsection{\texorpdfstring{Log\+\_\+e()}{Log\_e()}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} Log\+\_\+e (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$}]{tag,  }\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$}]{str,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Outputs data to log, marked as E\+R\+R\+O\+R(\+E). Prints to console (if opened) and to log file \begin{DoxySeeAlso}{See also}
+\hyperlink{group___core_ga1160e13b7fea6357aae71e25703481de}{Log\+\_\+i()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & tag which will be marked for this log line \\
+\hline
+{\em str} & line to be printed as formatted Example Usage\+: 
+\begin{DoxyCode}
+\hyperlink{group___core_ga5a29994cc1a93c0124f65b27a5daa5aa}{Log\_e}(\textcolor{stringliteral}{"Loading Sprite"},\textcolor{stringliteral}{"Res path not found:%s"},\textcolor{stringliteral}{"/home/user/sokoban/../res/"}); \textcolor{comment}{// Output: E/Loading
+       Sprite::Res path not found: /home/user/sokoban/../res/}
+\end{DoxyCode}
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___core_ga1160e13b7fea6357aae71e25703481de}\label{group___core_ga1160e13b7fea6357aae71e25703481de}} 
+\index{Core@{Core}!Log\+\_\+i@{Log\+\_\+i}}
+\index{Log\+\_\+i@{Log\+\_\+i}!Core@{Core}}
+\subsubsection{\texorpdfstring{Log\+\_\+i()}{Log\_i()}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} Log\+\_\+i (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$}]{tag,  }\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$}]{str,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Outputs data to log, marked as I\+N\+F\+O(\+I). Prints to console (if opened) and to log file \begin{DoxySeeAlso}{See also}
+\hyperlink{group___core_ga5a29994cc1a93c0124f65b27a5daa5aa}{Log\+\_\+e()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & tag which will be marked for this log line \\
+\hline
+{\em str} & line to be printed as formatted\\
+\hline
+\end{DoxyParams}
+Example Usage\+: 
+\begin{DoxyCode}
+\hyperlink{group___core_ga1160e13b7fea6357aae71e25703481de}{Log\_i}(\textcolor{stringliteral}{"SpritesCount"},\textcolor{stringliteral}{"count=%i"},15); \textcolor{comment}{// Output: I/SpritesCount::count=15}
+\end{DoxyCode}
+ \mbox{\Hypertarget{group___core_ga26169da7eb509dc305939ffabf06ac58}\label{group___core_ga26169da7eb509dc305939ffabf06ac58}} 
+\index{Core@{Core}!next\+Page@{next\+Page}}
+\index{next\+Page@{next\+Page}!Core@{Core}}
+\subsubsection{\texorpdfstring{next\+Page()}{nextPage()}}
+{\footnotesize\ttfamily int next\+Page (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group___core_gae327268c8424aa3cb6cea07ea33a3019}\label{group___core_gae327268c8424aa3cb6cea07ea33a3019}} 
+\index{Core@{Core}!open\+Folder\+Dialog@{open\+Folder\+Dialog}}
+\index{open\+Folder\+Dialog@{open\+Folder\+Dialog}!Core@{Core}}
+\subsubsection{\texorpdfstring{open\+Folder\+Dialog()}{openFolderDialog()}}
+{\footnotesize\ttfamily int open\+Folder\+Dialog (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+Open dialog for user to choose folder to work with (Callback function) 
+\begin{DoxyParams}{Parameters}
+{\em i} & number of button clicked \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___core_ga26c5e4f4587adfc14630f09bf91338ba}\label{group___core_ga26c5e4f4587adfc14630f09bf91338ba}} 
+\index{Core@{Core}!open\+Level@{open\+Level}}
+\index{open\+Level@{open\+Level}!Core@{Core}}
+\subsubsection{\texorpdfstring{open\+Level()}{openLevel()}}
+{\footnotesize\ttfamily int open\+Level (\begin{DoxyParamCaption}\item[{int}]{num }\end{DoxyParamCaption})}
+
+Open level from file an puts it to \hyperlink{group___library_merger_gaf3cf0ba525aea0327b3c3512df21094a}{map} 
+\begin{DoxyParams}{Parameters}
+{\em num} & Number of level from list on page which is currently shown to user in Level\+Select\+Scene \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & If input file not found \\
+\hline
+{\em 1} & If level loaded successfully \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___core_ga38f3d65c215c1ab12f47b8aa9dfe4cc5}\label{group___core_ga38f3d65c215c1ab12f47b8aa9dfe4cc5}} 
+\index{Core@{Core}!open\+Level\+Editor@{open\+Level\+Editor}}
+\index{open\+Level\+Editor@{open\+Level\+Editor}!Core@{Core}}
+\subsubsection{\texorpdfstring{open\+Level\+Editor()}{openLevelEditor()}}
+{\footnotesize\ttfamily int open\+Level\+Editor (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group___core_ga6851f8613954858f5ed67795db823076}\label{group___core_ga6851f8613954858f5ed67795db823076}} 
+\index{Core@{Core}!open\+Level\+Select@{open\+Level\+Select}}
+\index{open\+Level\+Select@{open\+Level\+Select}!Core@{Core}}
+\subsubsection{\texorpdfstring{open\+Level\+Select()}{openLevelSelect()}}
+{\footnotesize\ttfamily int open\+Level\+Select (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group___core_ga8f29a9074178aa050d1938014a4d9d5b}\label{group___core_ga8f29a9074178aa050d1938014a4d9d5b}} 
+\index{Core@{Core}!prev\+Page@{prev\+Page}}
+\index{prev\+Page@{prev\+Page}!Core@{Core}}
+\subsubsection{\texorpdfstring{prev\+Page()}{prevPage()}}
+{\footnotesize\ttfamily int prev\+Page (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group___core_ga6270007e1f0c1a21e81dc3c5bdee14a6}\label{group___core_ga6270007e1f0c1a21e81dc3c5bdee14a6}} 
+\index{Core@{Core}!render\+Screen@{render\+Screen}}
+\index{render\+Screen@{render\+Screen}!Core@{Core}}
+\subsubsection{\texorpdfstring{render\+Screen()}{renderScreen()}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} render\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Method for rendering screen. M\+AX 6 layers and one extra -\/1 for sprites \mbox{\Hypertarget{group___core_ga235968ecd656b8f1436aebad7eeaa5b8}\label{group___core_ga235968ecd656b8f1436aebad7eeaa5b8}} 
+\index{Core@{Core}!set\+New\+Screen@{set\+New\+Screen}}
+\index{set\+New\+Screen@{set\+New\+Screen}!Core@{Core}}
+\subsubsection{\texorpdfstring{set\+New\+Screen()}{setNewScreen()}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} set\+New\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Method being called when game window was resized \mbox{\Hypertarget{group___core_ga70bec60930d92e442620c4cbe2232606}\label{group___core_ga70bec60930d92e442620c4cbe2232606}} 
+\index{Core@{Core}!show\+Directory\+Listing@{show\+Directory\+Listing}}
+\index{show\+Directory\+Listing@{show\+Directory\+Listing}!Core@{Core}}
+\subsubsection{\texorpdfstring{show\+Directory\+Listing()}{showDirectoryListing()}}
+{\footnotesize\ttfamily int show\+Directory\+Listing (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group___core_ga3c412437d5338d1b9242ca728ec3fa6a}\label{group___core_ga3c412437d5338d1b9242ca728ec3fa6a}} 
+\index{Core@{Core}!slice\+File@{slice\+File}}
+\index{slice\+File@{slice\+File}!Core@{Core}}
+\subsubsection{\texorpdfstring{slice\+File()}{sliceFile()}}
+{\footnotesize\ttfamily int slice\+File (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+Button for slicing was clicked (Callback function) 
+\begin{DoxyParams}{Parameters}
+{\em i} & number of button clicked \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{group___core_ga75f52c6778fb4d3418ef0925d17fb164}\label{group___core_ga75f52c6778fb4d3418ef0925d17fb164}} 
+\index{Core@{Core}!level\+Select\+Page@{level\+Select\+Page}}
+\index{level\+Select\+Page@{level\+Select\+Page}!Core@{Core}}
+\subsubsection{\texorpdfstring{level\+Select\+Page}{levelSelectPage}}
+{\footnotesize\ttfamily int level\+Select\+Page}
+
+Page currently selected for viewing in level select \mbox{\Hypertarget{group___core_gae5cb82a78ca4ac2c20f9d071e7124f38}\label{group___core_gae5cb82a78ca4ac2c20f9d071e7124f38}} 
+\index{Core@{Core}!levels\+Names@{levels\+Names}}
+\index{levels\+Names@{levels\+Names}!Core@{Core}}
+\subsubsection{\texorpdfstring{levels\+Names}{levelsNames}}
+{\footnotesize\ttfamily char levels\+Names\mbox{[}64\mbox{]}\mbox{[}\hyperlink{group___button_ga5a86b4b0ec8a21993f74ae423ec74538}{B\+U\+T\+T\+O\+N\+S\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE}\mbox{]}}
+
+
+
+Array for storing levels names currently vewing in level select. 
+
+\mbox{\Hypertarget{group___core_ga5a00f62db43aff74971290ceba5fa7df}\label{group___core_ga5a00f62db43aff74971290ceba5fa7df}} 
+\index{Core@{Core}!levels\+Paths@{levels\+Paths}}
+\index{levels\+Paths@{levels\+Paths}!Core@{Core}}
+\subsubsection{\texorpdfstring{levels\+Paths}{levelsPaths}}
+{\footnotesize\ttfamily char levels\+Paths\mbox{[}256\mbox{]}\mbox{[}128\mbox{]}}
+
+
+
+Array for storing levels pathes currently vewing in level select. 
+
+\mbox{\Hypertarget{group___core_ga6341080327d9c3d3ef08fdccd4f05262}\label{group___core_ga6341080327d9c3d3ef08fdccd4f05262}} 
+\index{Core@{Core}!names@{names}}
+\index{names@{names}!Core@{Core}}
+\subsubsection{\texorpdfstring{names}{names}}
+{\footnotesize\ttfamily char names\mbox{[}128\mbox{]}\mbox{[}128\mbox{]}}
+
+
+
+Array for storing levels names currently vewing in level select. 
+
+\mbox{\Hypertarget{group___core_ga39642f859bbe17ccc6e6d98f84a7cdea}\label{group___core_ga39642f859bbe17ccc6e6d98f84a7cdea}} 
+\index{Core@{Core}!path\+Cur@{path\+Cur}}
+\index{path\+Cur@{path\+Cur}!Core@{Core}}
+\subsubsection{\texorpdfstring{path\+Cur}{pathCur}}
+{\footnotesize\ttfamily char$\ast$ path\+Cur}
+
+
+
+Temporary string for storing current chosen. 
+
+Temporary string for storing current chosen. \mbox{\Hypertarget{group___core_ga016718268d32fcb95b1190cc1071e270}\label{group___core_ga016718268d32fcb95b1190cc1071e270}} 
+\index{Core@{Core}!y\+Offset@{y\+Offset}}
+\index{y\+Offset@{y\+Offset}!Core@{Core}}
+\subsubsection{\texorpdfstring{y\+Offset}{yOffset}}
+{\footnotesize\ttfamily int y\+Offset}
+
+Offset by y (needed for moving content by rotating mouse wheel, deprecated) 

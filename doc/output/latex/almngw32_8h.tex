@@ -1,0 +1,127 @@
+\hypertarget{almngw32_8h}{}\section{src/packages/\+Allegro.5.2.2.1/build/native/include/allegro5/platform/almngw32.h File Reference}
+\label{almngw32_8h}\index{src/packages/\+Allegro.\+5.\+2.\+2.\+1/build/native/include/allegro5/platform/almngw32.\+h@{src/packages/\+Allegro.\+5.\+2.\+2.\+1/build/native/include/allegro5/platform/almngw32.\+h}}
+{\ttfamily \#include $<$io.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$direct.\+h$>$}\newline
+{\ttfamily \#include $<$malloc.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}allegro5/platform/alplatf.\+h\char`\"{}}\newline
+Include dependency graph for almngw32.\+h\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{almngw32_8h_a33acc1140b0349a1dcb7192471dd0d05}{A\+L\+L\+E\+G\+R\+O\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+S\+TR}~\char`\"{}Min\+G\+W32\char`\"{}
+\item 
+\#define \hyperlink{almngw32_8h_a7cf463ad16f0baebeee5d583732a5135}{A\+L\+L\+E\+G\+R\+O\+\_\+\+W\+I\+N\+D\+O\+WS}
+\item 
+\#define \hyperlink{almngw32_8h_a9e861d05ea678e48a64fae360dc0a1c1}{A\+L\+L\+E\+G\+R\+O\+\_\+\+I386}
+\item 
+\#define \hyperlink{almngw32_8h_a313d0fd78cb7a7e9a343e15d66bed015}{A\+L\+L\+E\+G\+R\+O\+\_\+\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+AN}
+\item 
+\#define \hyperlink{almngw32_8h_a609ea1ecd41062e4d7ff115263410bed}{\+\_\+\+A\+L\+\_\+\+D\+LL}~\+\_\+\+\_\+declspec(dllimport)
+\item 
+\#define \hyperlink{almngw32_8h_ac3f27c4f17634825201562b928038951}{A\+L\+\_\+\+V\+AR}(type,  name)~extern \hyperlink{almsvc_8h_a609ea1ecd41062e4d7ff115263410bed}{\+\_\+\+A\+L\+\_\+\+D\+LL} type name
+\item 
+\#define \hyperlink{almngw32_8h_a1ae76af28baeb8b1a913a12bc7f5a205}{A\+L\+\_\+\+A\+R\+R\+AY}(type,  name)~extern \hyperlink{almsvc_8h_a609ea1ecd41062e4d7ff115263410bed}{\+\_\+\+A\+L\+\_\+\+D\+LL} type name\mbox{[}$\,$\mbox{]}
+\item 
+\#define \hyperlink{almngw32_8h_aad4b965593eec068a5372f54c57dc6c8}{A\+L\+\_\+\+F\+U\+NC}(type,  name,  args)~extern type name args
+\item 
+\#define \hyperlink{almngw32_8h_a211e750d5cfd9c9b029483a239a81e95}{A\+L\+\_\+\+M\+E\+T\+H\+OD}(type,  name,  args)~type ($\ast$name) args
+\item 
+\#define \hyperlink{almngw32_8h_acaf9daa577d31c0beae9568e30067c3a}{A\+L\+\_\+\+F\+U\+N\+C\+P\+TR}(type,  name,  args)~extern \hyperlink{almsvc_8h_a609ea1ecd41062e4d7ff115263410bed}{\+\_\+\+A\+L\+\_\+\+D\+LL} type ($\ast$name) args
+\item 
+\#define \hyperlink{almngw32_8h_a8ba7b9e2327176230b6c91f8d838fccf}{E\+N\+U\+M\+\_\+\+C\+U\+R\+R\+E\+N\+T\+\_\+\+S\+E\+T\+T\+I\+N\+GS}~((D\+W\+O\+RD)-\/1)
+\item 
+\#define \hyperlink{almngw32_8h_a83008ed5d2874fd74bf0b432fcc43211}{A\+L\+L\+E\+G\+R\+O\+\_\+\+E\+X\+T\+R\+A\+\_\+\+H\+E\+A\+D\+ER}~\char`\"{}allegro5/platform/alwin.\+h\char`\"{}
+\item 
+\#define \hyperlink{almngw32_8h_a68cd7eae641d738e099076c64dcd2e87}{A\+L\+L\+E\+G\+R\+O\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+H\+E\+A\+D\+ER}~\char`\"{}allegro5/platform/aintwin.\+h\char`\"{}
+\item 
+\#define \hyperlink{almngw32_8h_a5788eb4927e34d1609c84b573201f220}{A\+L\+L\+E\+G\+R\+O\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+H\+E\+A\+D\+ER}~\char`\"{}allegro5/platform/aintwthr.\+h\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{almngw32_8h_a609ea1ecd41062e4d7ff115263410bed}\label{almngw32_8h_a609ea1ecd41062e4d7ff115263410bed}} 
+\index{almngw32.\+h@{almngw32.\+h}!\+\_\+\+A\+L\+\_\+\+D\+LL@{\+\_\+\+A\+L\+\_\+\+D\+LL}}
+\index{\+\_\+\+A\+L\+\_\+\+D\+LL@{\+\_\+\+A\+L\+\_\+\+D\+LL}!almngw32.\+h@{almngw32.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+A\+L\+\_\+\+D\+LL}{\_AL\_DLL}}
+{\footnotesize\ttfamily \#define \+\_\+\+A\+L\+\_\+\+D\+LL~\+\_\+\+\_\+declspec(dllimport)}
+
+\mbox{\Hypertarget{almngw32_8h_a1ae76af28baeb8b1a913a12bc7f5a205}\label{almngw32_8h_a1ae76af28baeb8b1a913a12bc7f5a205}} 
+\index{almngw32.\+h@{almngw32.\+h}!A\+L\+\_\+\+A\+R\+R\+AY@{A\+L\+\_\+\+A\+R\+R\+AY}}
+\index{A\+L\+\_\+\+A\+R\+R\+AY@{A\+L\+\_\+\+A\+R\+R\+AY}!almngw32.\+h@{almngw32.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+\_\+\+A\+R\+R\+AY}{AL\_ARRAY}}
+{\footnotesize\ttfamily \#define A\+L\+\_\+\+A\+R\+R\+AY(\begin{DoxyParamCaption}\item[{}]{type,  }\item[{}]{name }\end{DoxyParamCaption})~extern \hyperlink{almsvc_8h_a609ea1ecd41062e4d7ff115263410bed}{\+\_\+\+A\+L\+\_\+\+D\+LL} type name\mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{almngw32_8h_aad4b965593eec068a5372f54c57dc6c8}\label{almngw32_8h_aad4b965593eec068a5372f54c57dc6c8}} 
+\index{almngw32.\+h@{almngw32.\+h}!A\+L\+\_\+\+F\+U\+NC@{A\+L\+\_\+\+F\+U\+NC}}
+\index{A\+L\+\_\+\+F\+U\+NC@{A\+L\+\_\+\+F\+U\+NC}!almngw32.\+h@{almngw32.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+\_\+\+F\+U\+NC}{AL\_FUNC}}
+{\footnotesize\ttfamily \#define A\+L\+\_\+\+F\+U\+NC(\begin{DoxyParamCaption}\item[{}]{type,  }\item[{}]{name,  }\item[{}]{args }\end{DoxyParamCaption})~extern type name args}
+
+\mbox{\Hypertarget{almngw32_8h_acaf9daa577d31c0beae9568e30067c3a}\label{almngw32_8h_acaf9daa577d31c0beae9568e30067c3a}} 
+\index{almngw32.\+h@{almngw32.\+h}!A\+L\+\_\+\+F\+U\+N\+C\+P\+TR@{A\+L\+\_\+\+F\+U\+N\+C\+P\+TR}}
+\index{A\+L\+\_\+\+F\+U\+N\+C\+P\+TR@{A\+L\+\_\+\+F\+U\+N\+C\+P\+TR}!almngw32.\+h@{almngw32.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+\_\+\+F\+U\+N\+C\+P\+TR}{AL\_FUNCPTR}}
+{\footnotesize\ttfamily \#define A\+L\+\_\+\+F\+U\+N\+C\+P\+TR(\begin{DoxyParamCaption}\item[{}]{type,  }\item[{}]{name,  }\item[{}]{args }\end{DoxyParamCaption})~extern \hyperlink{almsvc_8h_a609ea1ecd41062e4d7ff115263410bed}{\+\_\+\+A\+L\+\_\+\+D\+LL} type ($\ast$name) args}
+
+\mbox{\Hypertarget{almngw32_8h_a211e750d5cfd9c9b029483a239a81e95}\label{almngw32_8h_a211e750d5cfd9c9b029483a239a81e95}} 
+\index{almngw32.\+h@{almngw32.\+h}!A\+L\+\_\+\+M\+E\+T\+H\+OD@{A\+L\+\_\+\+M\+E\+T\+H\+OD}}
+\index{A\+L\+\_\+\+M\+E\+T\+H\+OD@{A\+L\+\_\+\+M\+E\+T\+H\+OD}!almngw32.\+h@{almngw32.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+\_\+\+M\+E\+T\+H\+OD}{AL\_METHOD}}
+{\footnotesize\ttfamily \#define A\+L\+\_\+\+M\+E\+T\+H\+OD(\begin{DoxyParamCaption}\item[{}]{type,  }\item[{}]{name,  }\item[{}]{args }\end{DoxyParamCaption})~type ($\ast$name) args}
+
+\mbox{\Hypertarget{almngw32_8h_ac3f27c4f17634825201562b928038951}\label{almngw32_8h_ac3f27c4f17634825201562b928038951}} 
+\index{almngw32.\+h@{almngw32.\+h}!A\+L\+\_\+\+V\+AR@{A\+L\+\_\+\+V\+AR}}
+\index{A\+L\+\_\+\+V\+AR@{A\+L\+\_\+\+V\+AR}!almngw32.\+h@{almngw32.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+\_\+\+V\+AR}{AL\_VAR}}
+{\footnotesize\ttfamily \#define A\+L\+\_\+\+V\+AR(\begin{DoxyParamCaption}\item[{}]{type,  }\item[{}]{name }\end{DoxyParamCaption})~extern \hyperlink{almsvc_8h_a609ea1ecd41062e4d7ff115263410bed}{\+\_\+\+A\+L\+\_\+\+D\+LL} type name}
+
+\mbox{\Hypertarget{almngw32_8h_a83008ed5d2874fd74bf0b432fcc43211}\label{almngw32_8h_a83008ed5d2874fd74bf0b432fcc43211}} 
+\index{almngw32.\+h@{almngw32.\+h}!A\+L\+L\+E\+G\+R\+O\+\_\+\+E\+X\+T\+R\+A\+\_\+\+H\+E\+A\+D\+ER@{A\+L\+L\+E\+G\+R\+O\+\_\+\+E\+X\+T\+R\+A\+\_\+\+H\+E\+A\+D\+ER}}
+\index{A\+L\+L\+E\+G\+R\+O\+\_\+\+E\+X\+T\+R\+A\+\_\+\+H\+E\+A\+D\+ER@{A\+L\+L\+E\+G\+R\+O\+\_\+\+E\+X\+T\+R\+A\+\_\+\+H\+E\+A\+D\+ER}!almngw32.\+h@{almngw32.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+L\+E\+G\+R\+O\+\_\+\+E\+X\+T\+R\+A\+\_\+\+H\+E\+A\+D\+ER}{ALLEGRO\_EXTRA\_HEADER}}
+{\footnotesize\ttfamily \#define A\+L\+L\+E\+G\+R\+O\+\_\+\+E\+X\+T\+R\+A\+\_\+\+H\+E\+A\+D\+ER~\char`\"{}allegro5/platform/alwin.\+h\char`\"{}}
+
+\mbox{\Hypertarget{almngw32_8h_a9e861d05ea678e48a64fae360dc0a1c1}\label{almngw32_8h_a9e861d05ea678e48a64fae360dc0a1c1}} 
+\index{almngw32.\+h@{almngw32.\+h}!A\+L\+L\+E\+G\+R\+O\+\_\+\+I386@{A\+L\+L\+E\+G\+R\+O\+\_\+\+I386}}
+\index{A\+L\+L\+E\+G\+R\+O\+\_\+\+I386@{A\+L\+L\+E\+G\+R\+O\+\_\+\+I386}!almngw32.\+h@{almngw32.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+L\+E\+G\+R\+O\+\_\+\+I386}{ALLEGRO\_I386}}
+{\footnotesize\ttfamily \#define A\+L\+L\+E\+G\+R\+O\+\_\+\+I386}
+
+\mbox{\Hypertarget{almngw32_8h_a68cd7eae641d738e099076c64dcd2e87}\label{almngw32_8h_a68cd7eae641d738e099076c64dcd2e87}} 
+\index{almngw32.\+h@{almngw32.\+h}!A\+L\+L\+E\+G\+R\+O\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+H\+E\+A\+D\+ER@{A\+L\+L\+E\+G\+R\+O\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+H\+E\+A\+D\+ER}}
+\index{A\+L\+L\+E\+G\+R\+O\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+H\+E\+A\+D\+ER@{A\+L\+L\+E\+G\+R\+O\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+H\+E\+A\+D\+ER}!almngw32.\+h@{almngw32.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+L\+E\+G\+R\+O\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+H\+E\+A\+D\+ER}{ALLEGRO\_INTERNAL\_HEADER}}
+{\footnotesize\ttfamily \#define A\+L\+L\+E\+G\+R\+O\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+H\+E\+A\+D\+ER~\char`\"{}allegro5/platform/aintwin.\+h\char`\"{}}
+
+\mbox{\Hypertarget{almngw32_8h_a5788eb4927e34d1609c84b573201f220}\label{almngw32_8h_a5788eb4927e34d1609c84b573201f220}} 
+\index{almngw32.\+h@{almngw32.\+h}!A\+L\+L\+E\+G\+R\+O\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+H\+E\+A\+D\+ER@{A\+L\+L\+E\+G\+R\+O\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+H\+E\+A\+D\+ER}}
+\index{A\+L\+L\+E\+G\+R\+O\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+H\+E\+A\+D\+ER@{A\+L\+L\+E\+G\+R\+O\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+H\+E\+A\+D\+ER}!almngw32.\+h@{almngw32.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+L\+E\+G\+R\+O\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+H\+E\+A\+D\+ER}{ALLEGRO\_INTERNAL\_THREAD\_HEADER}}
+{\footnotesize\ttfamily \#define A\+L\+L\+E\+G\+R\+O\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+H\+E\+A\+D\+ER~\char`\"{}allegro5/platform/aintwthr.\+h\char`\"{}}
+
+\mbox{\Hypertarget{almngw32_8h_a313d0fd78cb7a7e9a343e15d66bed015}\label{almngw32_8h_a313d0fd78cb7a7e9a343e15d66bed015}} 
+\index{almngw32.\+h@{almngw32.\+h}!A\+L\+L\+E\+G\+R\+O\+\_\+\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+AN@{A\+L\+L\+E\+G\+R\+O\+\_\+\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+AN}}
+\index{A\+L\+L\+E\+G\+R\+O\+\_\+\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+AN@{A\+L\+L\+E\+G\+R\+O\+\_\+\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+AN}!almngw32.\+h@{almngw32.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+L\+E\+G\+R\+O\+\_\+\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+AN}{ALLEGRO\_LITTLE\_ENDIAN}}
+{\footnotesize\ttfamily \#define A\+L\+L\+E\+G\+R\+O\+\_\+\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+AN}
+
+\mbox{\Hypertarget{almngw32_8h_a33acc1140b0349a1dcb7192471dd0d05}\label{almngw32_8h_a33acc1140b0349a1dcb7192471dd0d05}} 
+\index{almngw32.\+h@{almngw32.\+h}!A\+L\+L\+E\+G\+R\+O\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+S\+TR@{A\+L\+L\+E\+G\+R\+O\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+S\+TR}}
+\index{A\+L\+L\+E\+G\+R\+O\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+S\+TR@{A\+L\+L\+E\+G\+R\+O\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+S\+TR}!almngw32.\+h@{almngw32.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+L\+E\+G\+R\+O\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+S\+TR}{ALLEGRO\_PLATFORM\_STR}}
+{\footnotesize\ttfamily \#define A\+L\+L\+E\+G\+R\+O\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+S\+TR~\char`\"{}Min\+G\+W32\char`\"{}}
+
+\mbox{\Hypertarget{almngw32_8h_a7cf463ad16f0baebeee5d583732a5135}\label{almngw32_8h_a7cf463ad16f0baebeee5d583732a5135}} 
+\index{almngw32.\+h@{almngw32.\+h}!A\+L\+L\+E\+G\+R\+O\+\_\+\+W\+I\+N\+D\+O\+WS@{A\+L\+L\+E\+G\+R\+O\+\_\+\+W\+I\+N\+D\+O\+WS}}
+\index{A\+L\+L\+E\+G\+R\+O\+\_\+\+W\+I\+N\+D\+O\+WS@{A\+L\+L\+E\+G\+R\+O\+\_\+\+W\+I\+N\+D\+O\+WS}!almngw32.\+h@{almngw32.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+L\+E\+G\+R\+O\+\_\+\+W\+I\+N\+D\+O\+WS}{ALLEGRO\_WINDOWS}}
+{\footnotesize\ttfamily \#define A\+L\+L\+E\+G\+R\+O\+\_\+\+W\+I\+N\+D\+O\+WS}
+
+\mbox{\Hypertarget{almngw32_8h_a8ba7b9e2327176230b6c91f8d838fccf}\label{almngw32_8h_a8ba7b9e2327176230b6c91f8d838fccf}} 
+\index{almngw32.\+h@{almngw32.\+h}!E\+N\+U\+M\+\_\+\+C\+U\+R\+R\+E\+N\+T\+\_\+\+S\+E\+T\+T\+I\+N\+GS@{E\+N\+U\+M\+\_\+\+C\+U\+R\+R\+E\+N\+T\+\_\+\+S\+E\+T\+T\+I\+N\+GS}}
+\index{E\+N\+U\+M\+\_\+\+C\+U\+R\+R\+E\+N\+T\+\_\+\+S\+E\+T\+T\+I\+N\+GS@{E\+N\+U\+M\+\_\+\+C\+U\+R\+R\+E\+N\+T\+\_\+\+S\+E\+T\+T\+I\+N\+GS}!almngw32.\+h@{almngw32.\+h}}
+\subsubsection{\texorpdfstring{E\+N\+U\+M\+\_\+\+C\+U\+R\+R\+E\+N\+T\+\_\+\+S\+E\+T\+T\+I\+N\+GS}{ENUM\_CURRENT\_SETTINGS}}
+{\footnotesize\ttfamily \#define E\+N\+U\+M\+\_\+\+C\+U\+R\+R\+E\+N\+T\+\_\+\+S\+E\+T\+T\+I\+N\+GS~((D\+W\+O\+RD)-\/1)}
+

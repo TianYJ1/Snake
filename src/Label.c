@@ -28,7 +28,7 @@ void renderLabelsSc()
 
 	return;
 }
-int addLabel(float x, float y, int red, int blue, int green, int scene, int align,const char *text, ...)
+int addLabel(float x, float y, int red, int green, int blue, int scene, int align,const char *text, ...)
 {
 	char buf[1024];
 	va_list vl;

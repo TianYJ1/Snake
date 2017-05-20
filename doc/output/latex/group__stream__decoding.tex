@@ -1,0 +1,390 @@
+\hypertarget{group__stream__decoding}{}\section{Decoding}
+\label{group__stream__decoding}\index{Decoding@{Decoding}}
+\subsection*{Functions for decoding audio data}
+\label{_amgrp226a9332d44ee54e9c863d78e0829f0d}%
+These functions retrieve actual decoded audio data from the stream. The general functions, \hyperlink{group__stream__decoding_ga963c917749335e29bb2b698c1cb20a10}{op\+\_\+read()} and \hyperlink{group__stream__decoding_ga73493002d84a234f5e19b70f1dddbe2a}{op\+\_\+read\+\_\+float()} return 16-\/bit or floating-\/point output, both using native endian ordering. The number of channels returned can change from link to link in a chained stream. There are special functions, \hyperlink{group__stream__decoding_gaaca17ad3fd6430dc8fd43308149428eb}{op\+\_\+read\+\_\+stereo()} and \hyperlink{group__stream__decoding_ga9736f96563500c0978f56f0fd6bdad83}{op\+\_\+read\+\_\+float\+\_\+stereo()}, which always output two channels, to simplify applications which do not wish to handle multichannel audio. These downmix multichannel files to two channels, so they can always return samples in the same format for every link in a chained file.
+
+If the rest of your audio processing chain can handle floating point, the floating-\/point routines should be preferred, as they prevent clipping and other issues which might be avoided entirely if, e.\+g., you scale down the volume at some other stage. However, if you intend to consume 16-\/bit samples directly, the conversion in {\ttfamily libopusfile} provides noise-\/shaping dithering and, if compiled against {\ttfamily libopus}~1.\+1 or later, soft-\/clipping prevention.
+
+{\ttfamily libopusfile} can also be configured at compile time to use the fixed-\/point {\ttfamily libopus} A\+PI. If so, {\ttfamily libopusfile}\textquotesingle{}s floating-\/point A\+PI may also be disabled. In that configuration, nothing in {\ttfamily libopusfile} will use any floating-\/point operations, to simplify support on devices without an adequate F\+PU.
+
+\begin{DoxyWarning}{Warning}
+H\+T\+T\+PS streams may be be vulnerable to truncation attacks if you do not check the error return code from \hyperlink{group__stream__decoding_ga73493002d84a234f5e19b70f1dddbe2a}{op\+\_\+read\+\_\+float()} or its associated functions. If the remote peer does not close the connection gracefully (with a T\+LS \char`\"{}close notify\char`\"{} message), these functions will return \hyperlink{group__error__codes_ga3ad48a4f99b1bed72acec552296dfc08}{O\+P\+\_\+\+E\+R\+E\+AD} instead of 0 when they reach the end of the file. If you are reading from an $<$https\+:$>$ U\+RL (particularly if seeking is not supported), you should make sure to check for this error and warn the user appropriately. 
+\end{DoxyWarning}
+\begin{DoxyCompactItemize}
+\item 
+typedef int($\ast$ \hyperlink{group__stream__decoding_ga81a50874a82484034c22dfeddce177e1}{op\+\_\+decode\+\_\+cb\+\_\+func}) (\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$\+\_\+ctx, \hyperlink{group__opus__multistream_gad3497495deb9a8ace82e76cd4f93e0e4}{Opus\+M\+S\+Decoder} $\ast$\+\_\+decoder, \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$\+\_\+pcm, \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{structogg__packet}{ogg\+\_\+packet} $\ast$\+\_\+op, int \+\_\+nsamples, int \+\_\+nchannels, int \+\_\+format, int \+\_\+li)
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{group__stream__decoding_gae0d5b986dff23a82b6002915268ee3d1}{op\+\_\+set\+\_\+decode\+\_\+callback} (Ogg\+Opus\+File $\ast$\+\_\+of, \hyperlink{group__stream__decoding_ga81a50874a82484034c22dfeddce177e1}{op\+\_\+decode\+\_\+cb\+\_\+func} \+\_\+decode\+\_\+cb, \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$\+\_\+ctx) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+int \hyperlink{group__stream__decoding_ga7df927613ccf57996319678e08513289}{op\+\_\+set\+\_\+gain\+\_\+offset} (Ogg\+Opus\+File $\ast$\+\_\+of, int \+\_\+gain\+\_\+type, \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\+\_\+int32} \+\_\+gain\+\_\+offset\+\_\+q8) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{group__stream__decoding_gac1de9480ad0fa65de778d9c88f62f6f3}{op\+\_\+set\+\_\+dither\+\_\+enabled} (Ogg\+Opus\+File $\ast$\+\_\+of, int \+\_\+enabled) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT int \hyperlink{group__stream__decoding_ga963c917749335e29bb2b698c1cb20a10}{op\+\_\+read} (Ogg\+Opus\+File $\ast$\+\_\+of, \hyperlink{opus__types_8h_acc9ed7cf60479eb81f9648c6ec27dc26}{opus\+\_\+int16} $\ast$\+\_\+pcm, int \+\_\+buf\+\_\+size, int $\ast$\+\_\+li) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT int \hyperlink{group__stream__decoding_ga73493002d84a234f5e19b70f1dddbe2a}{op\+\_\+read\+\_\+float} (Ogg\+Opus\+File $\ast$\+\_\+of, float $\ast$\+\_\+pcm, int \+\_\+buf\+\_\+size, int $\ast$\+\_\+li) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT int \hyperlink{group__stream__decoding_gaaca17ad3fd6430dc8fd43308149428eb}{op\+\_\+read\+\_\+stereo} (Ogg\+Opus\+File $\ast$\+\_\+of, \hyperlink{opus__types_8h_acc9ed7cf60479eb81f9648c6ec27dc26}{opus\+\_\+int16} $\ast$\+\_\+pcm, int \+\_\+buf\+\_\+size) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT int \hyperlink{group__stream__decoding_ga9736f96563500c0978f56f0fd6bdad83}{op\+\_\+read\+\_\+float\+\_\+stereo} (Ogg\+Opus\+File $\ast$\+\_\+of, float $\ast$\+\_\+pcm, int \+\_\+buf\+\_\+size) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+\#define \hyperlink{group__stream__decoding_ga55ed1cb616d856a47d618fa099c742aa}{O\+P\+\_\+\+D\+E\+C\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+S\+H\+O\+RT}~(7008)
+\item 
+\#define \hyperlink{group__stream__decoding_gac5c6e0837a5d747fd909aff905f5da3f}{O\+P\+\_\+\+D\+E\+C\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+F\+L\+O\+AT}~(7040)
+\item 
+\#define \hyperlink{group__stream__decoding_gaf421eba19d82d5b0c170b548b8ff79f1}{O\+P\+\_\+\+D\+E\+C\+\_\+\+U\+S\+E\+\_\+\+D\+E\+F\+A\+U\+LT}~(6720)
+\item 
+\#define \hyperlink{group__stream__decoding_ga846edba35e7470251a6a95b1e2364855}{O\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+G\+A\+IN}~(0)
+\item 
+\#define \hyperlink{group__stream__decoding_ga72d2506ae978f7dbd3a6a59c57f21036}{O\+P\+\_\+\+A\+L\+B\+U\+M\+\_\+\+G\+A\+IN}~(3007)
+\item 
+\#define \hyperlink{group__stream__decoding_ga51082f7c661488bce9bfdf0e5401fabf}{O\+P\+\_\+\+T\+R\+A\+C\+K\+\_\+\+G\+A\+IN}~(3008)
+\item 
+\#define \hyperlink{group__stream__decoding_ga4215354abbd19df9eab5a5380dd96cb0}{O\+P\+\_\+\+A\+B\+S\+O\+L\+U\+T\+E\+\_\+\+G\+A\+IN}~(3009)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__stream__decoding_ga4215354abbd19df9eab5a5380dd96cb0}\label{group__stream__decoding_ga4215354abbd19df9eab5a5380dd96cb0}} 
+\index{Decoding@{Decoding}!O\+P\+\_\+\+A\+B\+S\+O\+L\+U\+T\+E\+\_\+\+G\+A\+IN@{O\+P\+\_\+\+A\+B\+S\+O\+L\+U\+T\+E\+\_\+\+G\+A\+IN}}
+\index{O\+P\+\_\+\+A\+B\+S\+O\+L\+U\+T\+E\+\_\+\+G\+A\+IN@{O\+P\+\_\+\+A\+B\+S\+O\+L\+U\+T\+E\+\_\+\+G\+A\+IN}!Decoding@{Decoding}}
+\subsubsection{\texorpdfstring{O\+P\+\_\+\+A\+B\+S\+O\+L\+U\+T\+E\+\_\+\+G\+A\+IN}{OP\_ABSOLUTE\_GAIN}}
+{\footnotesize\ttfamily \#define O\+P\+\_\+\+A\+B\+S\+O\+L\+U\+T\+E\+\_\+\+G\+A\+IN~(3009)}
+
+Gain offset type that indicates that the provided offset should be used as the gain directly, without applying any the header or track gains. \mbox{\Hypertarget{group__stream__decoding_ga72d2506ae978f7dbd3a6a59c57f21036}\label{group__stream__decoding_ga72d2506ae978f7dbd3a6a59c57f21036}} 
+\index{Decoding@{Decoding}!O\+P\+\_\+\+A\+L\+B\+U\+M\+\_\+\+G\+A\+IN@{O\+P\+\_\+\+A\+L\+B\+U\+M\+\_\+\+G\+A\+IN}}
+\index{O\+P\+\_\+\+A\+L\+B\+U\+M\+\_\+\+G\+A\+IN@{O\+P\+\_\+\+A\+L\+B\+U\+M\+\_\+\+G\+A\+IN}!Decoding@{Decoding}}
+\subsubsection{\texorpdfstring{O\+P\+\_\+\+A\+L\+B\+U\+M\+\_\+\+G\+A\+IN}{OP\_ALBUM\_GAIN}}
+{\footnotesize\ttfamily \#define O\+P\+\_\+\+A\+L\+B\+U\+M\+\_\+\+G\+A\+IN~(3007)}
+
+Gain offset type that indicates that the provided offset is relative to the R128\+\_\+\+A\+L\+B\+U\+M\+\_\+\+G\+A\+IN value (if any), in addition to the header gain. \mbox{\Hypertarget{group__stream__decoding_gac5c6e0837a5d747fd909aff905f5da3f}\label{group__stream__decoding_gac5c6e0837a5d747fd909aff905f5da3f}} 
+\index{Decoding@{Decoding}!O\+P\+\_\+\+D\+E\+C\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+F\+L\+O\+AT@{O\+P\+\_\+\+D\+E\+C\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+F\+L\+O\+AT}}
+\index{O\+P\+\_\+\+D\+E\+C\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+F\+L\+O\+AT@{O\+P\+\_\+\+D\+E\+C\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+F\+L\+O\+AT}!Decoding@{Decoding}}
+\subsubsection{\texorpdfstring{O\+P\+\_\+\+D\+E\+C\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+F\+L\+O\+AT}{OP\_DEC\_FORMAT\_FLOAT}}
+{\footnotesize\ttfamily \#define O\+P\+\_\+\+D\+E\+C\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+F\+L\+O\+AT~(7040)}
+
+Indicates that the decoding callback should produce 32-\/bit native-\/endian float samples. \mbox{\Hypertarget{group__stream__decoding_ga55ed1cb616d856a47d618fa099c742aa}\label{group__stream__decoding_ga55ed1cb616d856a47d618fa099c742aa}} 
+\index{Decoding@{Decoding}!O\+P\+\_\+\+D\+E\+C\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+S\+H\+O\+RT@{O\+P\+\_\+\+D\+E\+C\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+S\+H\+O\+RT}}
+\index{O\+P\+\_\+\+D\+E\+C\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+S\+H\+O\+RT@{O\+P\+\_\+\+D\+E\+C\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+S\+H\+O\+RT}!Decoding@{Decoding}}
+\subsubsection{\texorpdfstring{O\+P\+\_\+\+D\+E\+C\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+S\+H\+O\+RT}{OP\_DEC\_FORMAT\_SHORT}}
+{\footnotesize\ttfamily \#define O\+P\+\_\+\+D\+E\+C\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+S\+H\+O\+RT~(7008)}
+
+Indicates that the decoding callback should produce signed 16-\/bit native-\/endian output samples. \mbox{\Hypertarget{group__stream__decoding_gaf421eba19d82d5b0c170b548b8ff79f1}\label{group__stream__decoding_gaf421eba19d82d5b0c170b548b8ff79f1}} 
+\index{Decoding@{Decoding}!O\+P\+\_\+\+D\+E\+C\+\_\+\+U\+S\+E\+\_\+\+D\+E\+F\+A\+U\+LT@{O\+P\+\_\+\+D\+E\+C\+\_\+\+U\+S\+E\+\_\+\+D\+E\+F\+A\+U\+LT}}
+\index{O\+P\+\_\+\+D\+E\+C\+\_\+\+U\+S\+E\+\_\+\+D\+E\+F\+A\+U\+LT@{O\+P\+\_\+\+D\+E\+C\+\_\+\+U\+S\+E\+\_\+\+D\+E\+F\+A\+U\+LT}!Decoding@{Decoding}}
+\subsubsection{\texorpdfstring{O\+P\+\_\+\+D\+E\+C\+\_\+\+U\+S\+E\+\_\+\+D\+E\+F\+A\+U\+LT}{OP\_DEC\_USE\_DEFAULT}}
+{\footnotesize\ttfamily \#define O\+P\+\_\+\+D\+E\+C\+\_\+\+U\+S\+E\+\_\+\+D\+E\+F\+A\+U\+LT~(6720)}
+
+Indicates that the decoding callback did not decode anything, and that {\ttfamily libopusfile} should decode normally instead. \mbox{\Hypertarget{group__stream__decoding_ga846edba35e7470251a6a95b1e2364855}\label{group__stream__decoding_ga846edba35e7470251a6a95b1e2364855}} 
+\index{Decoding@{Decoding}!O\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+G\+A\+IN@{O\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+G\+A\+IN}}
+\index{O\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+G\+A\+IN@{O\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+G\+A\+IN}!Decoding@{Decoding}}
+\subsubsection{\texorpdfstring{O\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+G\+A\+IN}{OP\_HEADER\_GAIN}}
+{\footnotesize\ttfamily \#define O\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+G\+A\+IN~(0)}
+
+Gain offset type that indicates that the provided offset is relative to the header gain. This is the default. \mbox{\Hypertarget{group__stream__decoding_ga51082f7c661488bce9bfdf0e5401fabf}\label{group__stream__decoding_ga51082f7c661488bce9bfdf0e5401fabf}} 
+\index{Decoding@{Decoding}!O\+P\+\_\+\+T\+R\+A\+C\+K\+\_\+\+G\+A\+IN@{O\+P\+\_\+\+T\+R\+A\+C\+K\+\_\+\+G\+A\+IN}}
+\index{O\+P\+\_\+\+T\+R\+A\+C\+K\+\_\+\+G\+A\+IN@{O\+P\+\_\+\+T\+R\+A\+C\+K\+\_\+\+G\+A\+IN}!Decoding@{Decoding}}
+\subsubsection{\texorpdfstring{O\+P\+\_\+\+T\+R\+A\+C\+K\+\_\+\+G\+A\+IN}{OP\_TRACK\_GAIN}}
+{\footnotesize\ttfamily \#define O\+P\+\_\+\+T\+R\+A\+C\+K\+\_\+\+G\+A\+IN~(3008)}
+
+Gain offset type that indicates that the provided offset is relative to the R128\+\_\+\+T\+R\+A\+C\+K\+\_\+\+G\+A\+IN value (if any), in addition to the header gain. 
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{group__stream__decoding_ga81a50874a82484034c22dfeddce177e1}\label{group__stream__decoding_ga81a50874a82484034c22dfeddce177e1}} 
+\index{Decoding@{Decoding}!op\+\_\+decode\+\_\+cb\+\_\+func@{op\+\_\+decode\+\_\+cb\+\_\+func}}
+\index{op\+\_\+decode\+\_\+cb\+\_\+func@{op\+\_\+decode\+\_\+cb\+\_\+func}!Decoding@{Decoding}}
+\subsubsection{\texorpdfstring{op\+\_\+decode\+\_\+cb\+\_\+func}{op\_decode\_cb\_func}}
+{\footnotesize\ttfamily typedef int($\ast$ op\+\_\+decode\+\_\+cb\+\_\+func) (\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$\+\_\+ctx, \hyperlink{group__opus__multistream_gad3497495deb9a8ace82e76cd4f93e0e4}{Opus\+M\+S\+Decoder} $\ast$\+\_\+decoder, \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$\+\_\+pcm, \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{structogg__packet}{ogg\+\_\+packet} $\ast$\+\_\+op, int \+\_\+nsamples, int \+\_\+nchannels, int \+\_\+format, int \+\_\+li)}
+
+Called to decode an Opus packet. This should invoke the functional equivalent of \hyperlink{group__opus__multistream_ga2db65790cd7e0890a031b2eb17452d7b}{opus\+\_\+multistream\+\_\+decode()} or \hyperlink{group__opus__multistream_ga32b004586f69b063a447e123e6a2c151}{opus\+\_\+multistream\+\_\+decode\+\_\+float()}, except that it returns 0 on success instead of the number of decoded samples (which is known a priori). 
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \+\_\+ctx} & The application-\/provided callback context. \\
+\hline
+ & {\em \+\_\+decoder} & The decoder to use to decode the packet. \\
+\hline
+\mbox{\tt out}  & {\em \+\_\+pcm} & The buffer to decode into. This will always have enough room for {\itshape \+\_\+nchannels} of {\itshape \+\_\+nsamples} samples, which should be placed into this buffer interleaved. \\
+\hline
+ & {\em \+\_\+op} & The packet to decode. This will always have its granule position set to a valid value. \\
+\hline
+ & {\em \+\_\+nsamples} & The number of samples expected from the packet. \\
+\hline
+ & {\em \+\_\+nchannels} & The number of channels expected from the packet. \\
+\hline
+ & {\em \+\_\+format} & The desired sample output format. This is either \hyperlink{group__stream__decoding_ga55ed1cb616d856a47d618fa099c742aa}{O\+P\+\_\+\+D\+E\+C\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+S\+H\+O\+RT} or \hyperlink{group__stream__decoding_gac5c6e0837a5d747fd909aff905f5da3f}{O\+P\+\_\+\+D\+E\+C\+\_\+\+F\+O\+R\+M\+A\+T\+\_\+\+F\+L\+O\+AT}. \\
+\hline
+ & {\em \+\_\+li} & The index of the link from which this packet was decoded. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A non-\/negative value on success, or a negative value on error. Any error codes should be the same as those returned by \hyperlink{group__opus__multistream_ga2db65790cd7e0890a031b2eb17452d7b}{opus\+\_\+multistream\+\_\+decode()} or \hyperlink{group__opus__multistream_ga32b004586f69b063a447e123e6a2c151}{opus\+\_\+multistream\+\_\+decode\+\_\+float()}. Success codes are as follows\+: 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & Decoding was successful. The application has filled the buffer with exactly {\ttfamily {\itshape \+\_\+nsamples$\ast${\itshape \+\_\+nchannels}} samples} in the requested format. \\
+\hline
+{\em \hyperlink{group__stream__decoding_gaf421eba19d82d5b0c170b548b8ff79f1}{O\+P\+\_\+\+D\+E\+C\+\_\+\+U\+S\+E\+\_\+\+D\+E\+F\+A\+U\+LT}} & No decoding was done. {\ttfamily libopusfile} should do the decoding by itself instead. \\
+\hline
+\end{DoxyRetVals}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__stream__decoding_ga963c917749335e29bb2b698c1cb20a10}\label{group__stream__decoding_ga963c917749335e29bb2b698c1cb20a10}} 
+\index{Decoding@{Decoding}!op\+\_\+read@{op\+\_\+read}}
+\index{op\+\_\+read@{op\+\_\+read}!Decoding@{Decoding}}
+\subsubsection{\texorpdfstring{op\+\_\+read()}{op\_read()}}
+{\footnotesize\ttfamily O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT int op\+\_\+read (\begin{DoxyParamCaption}\item[{Ogg\+Opus\+File $\ast$}]{\+\_\+of,  }\item[{\hyperlink{opus__types_8h_acc9ed7cf60479eb81f9648c6ec27dc26}{opus\+\_\+int16} $\ast$}]{\+\_\+pcm,  }\item[{int}]{\+\_\+buf\+\_\+size,  }\item[{int $\ast$}]{\+\_\+li }\end{DoxyParamCaption})}
+
+Reads more samples from the stream. \begin{DoxyNote}{Note}
+Although {\itshape \+\_\+buf\+\_\+size} must indicate the total number of values that can be stored in {\itshape \+\_\+pcm}, the return value is the number of samples {\itshape per channel}. This is done because 
+\begin{DoxyEnumerate}
+\item The channel count cannot be known a priori (reading more samples might advance us into the next link, with a different channel count), so {\itshape \+\_\+buf\+\_\+size} cannot also be in units of samples per channel, 
+\item Returning the samples per channel matches the {\ttfamily libopus} A\+PI as closely as we\textquotesingle{}re able, 
+\item Returning the total number of values instead of samples per channel would mean the caller would need a division to compute the samples per channel, and might worry about the possibility of getting back samples for some channels and not others, and 
+\item This approach is relatively fool-\/proof\+: if an application passes too small a value to {\itshape \+\_\+buf\+\_\+size}, they will simply get fewer samples back, and if they assume the return value is the total number of values, then they will simply read too few (rather than reading too many and going off the end of the buffer). 
+\end{DoxyEnumerate}
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \+\_\+of} & The {\ttfamily Ogg\+Opus\+File} from which to read. \\
+\hline
+\mbox{\tt out}  & {\em \+\_\+pcm} & A buffer in which to store the output P\+CM samples, as signed native-\/endian 16-\/bit values at 48~k\+Hz with a nominal range of {\ttfamily \mbox{[}-\/32768,32767)}. Multiple channels are interleaved using the \href{http://www.xiph.org/vorbis/doc/Vorbis_I_spec.html#x1-800004.3.9}{\tt Vorbis channel ordering}. This must have room for at least {\itshape \+\_\+buf\+\_\+size} values. \\
+\hline
+ & {\em \+\_\+buf\+\_\+size} & The number of values that can be stored in {\itshape \+\_\+pcm}. It is recommended that this be large enough for at least 120 ms of data at 48 k\+Hz per channel (5760 values per channel). Smaller buffers will simply return less data, possibly consuming more memory to buffer the data internally. {\ttfamily libopusfile} may return less data than requested. If so, there is no guarantee that the remaining data in {\itshape \+\_\+pcm} will be unmodified. \\
+\hline
+\mbox{\tt out}  & {\em \+\_\+li} & The index of the link this data was decoded from. You may pass {\ttfamily N\+U\+LL} if you do not need this information. If this function fails (returning a negative value), this parameter is left unset. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of samples read per channel on success, or a negative value on failure. The channel count can be retrieved on success by calling {\ttfamily op\+\_\+head(\+\_\+of,$\ast$\+\_\+li)}. The number of samples returned may be 0 if the buffer was too small to store even a single sample for all channels, or if end-\/of-\/file was reached. The list of possible failure codes follows. Most of them can only be returned by unseekable, chained streams that encounter a new link. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \hyperlink{group__error__codes_ga2ac03d35986d3505305d468dd2138b72}{O\+P\+\_\+\+H\+O\+LE}} & There was a hole in the data, and some samples may have been skipped. Call this function again to continue decoding past the hole. \\
+\hline
+{\em \hyperlink{group__error__codes_ga3ad48a4f99b1bed72acec552296dfc08}{O\+P\+\_\+\+E\+R\+E\+AD}} & An underlying read operation failed. This may signal a truncation attack from an $<$https\+:$>$ source. \\
+\hline
+{\em \hyperlink{group__error__codes_ga2ddb887c0bb55c74ea6be391fabcba59}{O\+P\+\_\+\+E\+F\+A\+U\+LT}} & An internal memory allocation failed. \\
+\hline
+{\em \hyperlink{group__error__codes_gaeea27378f826033ca23584d8403665d3}{O\+P\+\_\+\+E\+I\+M\+PL}} & An unseekable stream encountered a new link that used a feature that is not implemented, such as an unsupported channel family. \\
+\hline
+{\em \hyperlink{group__error__codes_gae0879acafe9cc0ab72462d291fdb6fb6}{O\+P\+\_\+\+E\+I\+N\+V\+AL}} & The stream was only partially open. \\
+\hline
+{\em \hyperlink{group__error__codes_gafca3ae244d24e10b2851c77379453220}{O\+P\+\_\+\+E\+N\+O\+T\+F\+O\+R\+M\+AT}} & An unseekable stream encountered a new link that did not have any logical Opus streams in it. \\
+\hline
+{\em \hyperlink{group__error__codes_ga534f1b45c8733a2928434e482b38869f}{O\+P\+\_\+\+E\+B\+A\+D\+H\+E\+A\+D\+ER}} & An unseekable stream encountered a new link with a required header packet that was not properly formatted, contained illegal values, or was missing altogether. \\
+\hline
+{\em \hyperlink{group__error__codes_gaa9ae4494f623f3c0609f0b4bd99b8f32}{O\+P\+\_\+\+E\+V\+E\+R\+S\+I\+ON}} & An unseekable stream encountered a new link with an ID header that contained an unrecognized version number. \\
+\hline
+{\em \hyperlink{group__error__codes_gaa3fa0a3e6facc4f47924271e65bb21ff}{O\+P\+\_\+\+E\+B\+A\+D\+P\+A\+C\+K\+ET}} & Failed to properly decode the next packet. \\
+\hline
+{\em \hyperlink{group__error__codes_gaf7b58a439a471366e9eb5b8f2a8cd041}{O\+P\+\_\+\+E\+B\+A\+D\+L\+I\+NK}} & We failed to find data we had seen before. \\
+\hline
+{\em \hyperlink{group__error__codes_gaf82657fc888f1dcf2e0d8f066b8a6cc7}{O\+P\+\_\+\+E\+B\+A\+D\+T\+I\+M\+E\+S\+T\+A\+MP}} & An unseekable stream encountered a new link with a starting timestamp that failed basic validity checks. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__stream__decoding_ga73493002d84a234f5e19b70f1dddbe2a}\label{group__stream__decoding_ga73493002d84a234f5e19b70f1dddbe2a}} 
+\index{Decoding@{Decoding}!op\+\_\+read\+\_\+float@{op\+\_\+read\+\_\+float}}
+\index{op\+\_\+read\+\_\+float@{op\+\_\+read\+\_\+float}!Decoding@{Decoding}}
+\subsubsection{\texorpdfstring{op\+\_\+read\+\_\+float()}{op\_read\_float()}}
+{\footnotesize\ttfamily O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT int op\+\_\+read\+\_\+float (\begin{DoxyParamCaption}\item[{Ogg\+Opus\+File $\ast$}]{\+\_\+of,  }\item[{float $\ast$}]{\+\_\+pcm,  }\item[{int}]{\+\_\+buf\+\_\+size,  }\item[{int $\ast$}]{\+\_\+li }\end{DoxyParamCaption})}
+
+Reads more samples from the stream. \begin{DoxyNote}{Note}
+Although {\itshape \+\_\+buf\+\_\+size} must indicate the total number of values that can be stored in {\itshape \+\_\+pcm}, the return value is the number of samples {\itshape per channel}. 
+\begin{DoxyEnumerate}
+\item The channel count cannot be known a priori (reading more samples might advance us into the next link, with a different channel count), so {\itshape \+\_\+buf\+\_\+size} cannot also be in units of samples per channel, 
+\item Returning the samples per channel matches the {\ttfamily libopus} A\+PI as closely as we\textquotesingle{}re able, 
+\item Returning the total number of values instead of samples per channel would mean the caller would need a division to compute the samples per channel, and might worry about the possibility of getting back samples for some channels and not others, and 
+\item This approach is relatively fool-\/proof\+: if an application passes too small a value to {\itshape \+\_\+buf\+\_\+size}, they will simply get fewer samples back, and if they assume the return value is the total number of values, then they will simply read too few (rather than reading too many and going off the end of the buffer). 
+\end{DoxyEnumerate}
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \+\_\+of} & The {\ttfamily Ogg\+Opus\+File} from which to read. \\
+\hline
+\mbox{\tt out}  & {\em \+\_\+pcm} & A buffer in which to store the output P\+CM samples as signed floats at 48~k\+Hz with a nominal range of {\ttfamily \mbox{[}-\/1.\+0,1.\+0\mbox{]}}. Multiple channels are interleaved using the \href{http://www.xiph.org/vorbis/doc/Vorbis_I_spec.html#x1-800004.3.9}{\tt Vorbis channel ordering}. This must have room for at least {\itshape \+\_\+buf\+\_\+size} floats. \\
+\hline
+ & {\em \+\_\+buf\+\_\+size} & The number of floats that can be stored in {\itshape \+\_\+pcm}. It is recommended that this be large enough for at least 120 ms of data at 48 k\+Hz per channel (5760 samples per channel). Smaller buffers will simply return less data, possibly consuming more memory to buffer the data internally. If less than {\itshape \+\_\+buf\+\_\+size} values are returned, {\ttfamily libopusfile} makes no guarantee that the remaining data in {\itshape \+\_\+pcm} will be unmodified. \\
+\hline
+\mbox{\tt out}  & {\em \+\_\+li} & The index of the link this data was decoded from. You may pass {\ttfamily N\+U\+LL} if you do not need this information. If this function fails (returning a negative value), this parameter is left unset. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of samples read per channel on success, or a negative value on failure. The channel count can be retrieved on success by calling {\ttfamily op\+\_\+head(\+\_\+of,$\ast$\+\_\+li)}. The number of samples returned may be 0 if the buffer was too small to store even a single sample for all channels, or if end-\/of-\/file was reached. The list of possible failure codes follows. Most of them can only be returned by unseekable, chained streams that encounter a new link. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \hyperlink{group__error__codes_ga2ac03d35986d3505305d468dd2138b72}{O\+P\+\_\+\+H\+O\+LE}} & There was a hole in the data, and some samples may have been skipped. Call this function again to continue decoding past the hole. \\
+\hline
+{\em \hyperlink{group__error__codes_ga3ad48a4f99b1bed72acec552296dfc08}{O\+P\+\_\+\+E\+R\+E\+AD}} & An underlying read operation failed. This may signal a truncation attack from an $<$https\+:$>$ source. \\
+\hline
+{\em \hyperlink{group__error__codes_ga2ddb887c0bb55c74ea6be391fabcba59}{O\+P\+\_\+\+E\+F\+A\+U\+LT}} & An internal memory allocation failed. \\
+\hline
+{\em \hyperlink{group__error__codes_gaeea27378f826033ca23584d8403665d3}{O\+P\+\_\+\+E\+I\+M\+PL}} & An unseekable stream encountered a new link that used a feature that is not implemented, such as an unsupported channel family. \\
+\hline
+{\em \hyperlink{group__error__codes_gae0879acafe9cc0ab72462d291fdb6fb6}{O\+P\+\_\+\+E\+I\+N\+V\+AL}} & The stream was only partially open. \\
+\hline
+{\em \hyperlink{group__error__codes_gafca3ae244d24e10b2851c77379453220}{O\+P\+\_\+\+E\+N\+O\+T\+F\+O\+R\+M\+AT}} & An unseekable stream encountered a new link that did not have any logical Opus streams in it. \\
+\hline
+{\em \hyperlink{group__error__codes_ga534f1b45c8733a2928434e482b38869f}{O\+P\+\_\+\+E\+B\+A\+D\+H\+E\+A\+D\+ER}} & An unseekable stream encountered a new link with a required header packet that was not properly formatted, contained illegal values, or was missing altogether. \\
+\hline
+{\em \hyperlink{group__error__codes_gaa9ae4494f623f3c0609f0b4bd99b8f32}{O\+P\+\_\+\+E\+V\+E\+R\+S\+I\+ON}} & An unseekable stream encountered a new link with an ID header that contained an unrecognized version number. \\
+\hline
+{\em \hyperlink{group__error__codes_gaa3fa0a3e6facc4f47924271e65bb21ff}{O\+P\+\_\+\+E\+B\+A\+D\+P\+A\+C\+K\+ET}} & Failed to properly decode the next packet. \\
+\hline
+{\em \hyperlink{group__error__codes_gaf7b58a439a471366e9eb5b8f2a8cd041}{O\+P\+\_\+\+E\+B\+A\+D\+L\+I\+NK}} & We failed to find data we had seen before. \\
+\hline
+{\em \hyperlink{group__error__codes_gaf82657fc888f1dcf2e0d8f066b8a6cc7}{O\+P\+\_\+\+E\+B\+A\+D\+T\+I\+M\+E\+S\+T\+A\+MP}} & An unseekable stream encountered a new link with a starting timestamp that failed basic validity checks. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__stream__decoding_ga9736f96563500c0978f56f0fd6bdad83}\label{group__stream__decoding_ga9736f96563500c0978f56f0fd6bdad83}} 
+\index{Decoding@{Decoding}!op\+\_\+read\+\_\+float\+\_\+stereo@{op\+\_\+read\+\_\+float\+\_\+stereo}}
+\index{op\+\_\+read\+\_\+float\+\_\+stereo@{op\+\_\+read\+\_\+float\+\_\+stereo}!Decoding@{Decoding}}
+\subsubsection{\texorpdfstring{op\+\_\+read\+\_\+float\+\_\+stereo()}{op\_read\_float\_stereo()}}
+{\footnotesize\ttfamily O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT int op\+\_\+read\+\_\+float\+\_\+stereo (\begin{DoxyParamCaption}\item[{Ogg\+Opus\+File $\ast$}]{\+\_\+of,  }\item[{float $\ast$}]{\+\_\+pcm,  }\item[{int}]{\+\_\+buf\+\_\+size }\end{DoxyParamCaption})}
+
+Reads more samples from the stream and downmixes to stereo, if necessary. This function is intended for simple players that want a uniform output format, even if the channel count changes between links in a chained stream. \begin{DoxyNote}{Note}
+{\itshape \+\_\+buf\+\_\+size} indicates the total number of values that can be stored in {\itshape \+\_\+pcm}, while the return value is the number of samples {\itshape per channel}, even though the channel count is known, for consistency with \hyperlink{group__stream__decoding_ga73493002d84a234f5e19b70f1dddbe2a}{op\+\_\+read\+\_\+float()}. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \+\_\+of} & The {\ttfamily Ogg\+Opus\+File} from which to read. \\
+\hline
+\mbox{\tt out}  & {\em \+\_\+pcm} & A buffer in which to store the output P\+CM samples, as signed floats at 48~k\+Hz with a nominal range of {\ttfamily \mbox{[}-\/1.\+0,1.\+0\mbox{]}}. The left and right channels are interleaved in the buffer. This must have room for at least {\itshape \+\_\+buf\+\_\+size} values. \\
+\hline
+ & {\em \+\_\+buf\+\_\+size} & The number of values that can be stored in {\itshape \+\_\+pcm}. It is recommended that this be large enough for at least 120 ms of data at 48 k\+Hz per channel (11520 values total). Smaller buffers will simply return less data, possibly consuming more memory to buffer the data internally. If less than {\itshape \+\_\+buf\+\_\+size} values are returned, {\ttfamily libopusfile} makes no guarantee that the remaining data in {\itshape \+\_\+pcm} will be unmodified. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of samples read per channel on success, or a negative value on failure. The number of samples returned may be 0 if the buffer was too small to store even a single sample for both channels, or if end-\/of-\/file was reached. The list of possible failure codes follows. Most of them can only be returned by unseekable, chained streams that encounter a new link. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \hyperlink{group__error__codes_ga2ac03d35986d3505305d468dd2138b72}{O\+P\+\_\+\+H\+O\+LE}} & There was a hole in the data, and some samples may have been skipped. Call this function again to continue decoding past the hole. \\
+\hline
+{\em \hyperlink{group__error__codes_ga3ad48a4f99b1bed72acec552296dfc08}{O\+P\+\_\+\+E\+R\+E\+AD}} & An underlying read operation failed. This may signal a truncation attack from an $<$https\+:$>$ source. \\
+\hline
+{\em \hyperlink{group__error__codes_ga2ddb887c0bb55c74ea6be391fabcba59}{O\+P\+\_\+\+E\+F\+A\+U\+LT}} & An internal memory allocation failed. \\
+\hline
+{\em \hyperlink{group__error__codes_gaeea27378f826033ca23584d8403665d3}{O\+P\+\_\+\+E\+I\+M\+PL}} & An unseekable stream encountered a new link that used a feature that is not implemented, such as an unsupported channel family. \\
+\hline
+{\em \hyperlink{group__error__codes_gae0879acafe9cc0ab72462d291fdb6fb6}{O\+P\+\_\+\+E\+I\+N\+V\+AL}} & The stream was only partially open. \\
+\hline
+{\em \hyperlink{group__error__codes_gafca3ae244d24e10b2851c77379453220}{O\+P\+\_\+\+E\+N\+O\+T\+F\+O\+R\+M\+AT}} & An unseekable stream encountered a new link that that did not have any logical Opus streams in it. \\
+\hline
+{\em \hyperlink{group__error__codes_ga534f1b45c8733a2928434e482b38869f}{O\+P\+\_\+\+E\+B\+A\+D\+H\+E\+A\+D\+ER}} & An unseekable stream encountered a new link with a required header packet that was not properly formatted, contained illegal values, or was missing altogether. \\
+\hline
+{\em \hyperlink{group__error__codes_gaa9ae4494f623f3c0609f0b4bd99b8f32}{O\+P\+\_\+\+E\+V\+E\+R\+S\+I\+ON}} & An unseekable stream encountered a new link with an ID header that contained an unrecognized version number. \\
+\hline
+{\em \hyperlink{group__error__codes_gaa3fa0a3e6facc4f47924271e65bb21ff}{O\+P\+\_\+\+E\+B\+A\+D\+P\+A\+C\+K\+ET}} & Failed to properly decode the next packet. \\
+\hline
+{\em \hyperlink{group__error__codes_gaf7b58a439a471366e9eb5b8f2a8cd041}{O\+P\+\_\+\+E\+B\+A\+D\+L\+I\+NK}} & We failed to find data we had seen before. \\
+\hline
+{\em \hyperlink{group__error__codes_gaf82657fc888f1dcf2e0d8f066b8a6cc7}{O\+P\+\_\+\+E\+B\+A\+D\+T\+I\+M\+E\+S\+T\+A\+MP}} & An unseekable stream encountered a new link with a starting timestamp that failed basic validity checks. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__stream__decoding_gaaca17ad3fd6430dc8fd43308149428eb}\label{group__stream__decoding_gaaca17ad3fd6430dc8fd43308149428eb}} 
+\index{Decoding@{Decoding}!op\+\_\+read\+\_\+stereo@{op\+\_\+read\+\_\+stereo}}
+\index{op\+\_\+read\+\_\+stereo@{op\+\_\+read\+\_\+stereo}!Decoding@{Decoding}}
+\subsubsection{\texorpdfstring{op\+\_\+read\+\_\+stereo()}{op\_read\_stereo()}}
+{\footnotesize\ttfamily O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT int op\+\_\+read\+\_\+stereo (\begin{DoxyParamCaption}\item[{Ogg\+Opus\+File $\ast$}]{\+\_\+of,  }\item[{\hyperlink{opus__types_8h_acc9ed7cf60479eb81f9648c6ec27dc26}{opus\+\_\+int16} $\ast$}]{\+\_\+pcm,  }\item[{int}]{\+\_\+buf\+\_\+size }\end{DoxyParamCaption})}
+
+Reads more samples from the stream and downmixes to stereo, if necessary. This function is intended for simple players that want a uniform output format, even if the channel count changes between links in a chained stream. \begin{DoxyNote}{Note}
+{\itshape \+\_\+buf\+\_\+size} indicates the total number of values that can be stored in {\itshape \+\_\+pcm}, while the return value is the number of samples {\itshape per channel}, even though the channel count is known, for consistency with \hyperlink{group__stream__decoding_ga963c917749335e29bb2b698c1cb20a10}{op\+\_\+read()}. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \+\_\+of} & The {\ttfamily Ogg\+Opus\+File} from which to read. \\
+\hline
+\mbox{\tt out}  & {\em \+\_\+pcm} & A buffer in which to store the output P\+CM samples, as signed native-\/endian 16-\/bit values at 48~k\+Hz with a nominal range of {\ttfamily \mbox{[}-\/32768,32767)}. The left and right channels are interleaved in the buffer. This must have room for at least {\itshape \+\_\+buf\+\_\+size} values. \\
+\hline
+ & {\em \+\_\+buf\+\_\+size} & The number of values that can be stored in {\itshape \+\_\+pcm}. It is recommended that this be large enough for at least 120 ms of data at 48 k\+Hz per channel (11520 values total). Smaller buffers will simply return less data, possibly consuming more memory to buffer the data internally. If less than {\itshape \+\_\+buf\+\_\+size} values are returned, {\ttfamily libopusfile} makes no guarantee that the remaining data in {\itshape \+\_\+pcm} will be unmodified. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of samples read per channel on success, or a negative value on failure. The number of samples returned may be 0 if the buffer was too small to store even a single sample for both channels, or if end-\/of-\/file was reached. The list of possible failure codes follows. Most of them can only be returned by unseekable, chained streams that encounter a new link. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \hyperlink{group__error__codes_ga2ac03d35986d3505305d468dd2138b72}{O\+P\+\_\+\+H\+O\+LE}} & There was a hole in the data, and some samples may have been skipped. Call this function again to continue decoding past the hole. \\
+\hline
+{\em \hyperlink{group__error__codes_ga3ad48a4f99b1bed72acec552296dfc08}{O\+P\+\_\+\+E\+R\+E\+AD}} & An underlying read operation failed. This may signal a truncation attack from an $<$https\+:$>$ source. \\
+\hline
+{\em \hyperlink{group__error__codes_ga2ddb887c0bb55c74ea6be391fabcba59}{O\+P\+\_\+\+E\+F\+A\+U\+LT}} & An internal memory allocation failed. \\
+\hline
+{\em \hyperlink{group__error__codes_gaeea27378f826033ca23584d8403665d3}{O\+P\+\_\+\+E\+I\+M\+PL}} & An unseekable stream encountered a new link that used a feature that is not implemented, such as an unsupported channel family. \\
+\hline
+{\em \hyperlink{group__error__codes_gae0879acafe9cc0ab72462d291fdb6fb6}{O\+P\+\_\+\+E\+I\+N\+V\+AL}} & The stream was only partially open. \\
+\hline
+{\em \hyperlink{group__error__codes_gafca3ae244d24e10b2851c77379453220}{O\+P\+\_\+\+E\+N\+O\+T\+F\+O\+R\+M\+AT}} & An unseekable stream encountered a new link that did not have any logical Opus streams in it. \\
+\hline
+{\em \hyperlink{group__error__codes_ga534f1b45c8733a2928434e482b38869f}{O\+P\+\_\+\+E\+B\+A\+D\+H\+E\+A\+D\+ER}} & An unseekable stream encountered a new link with a required header packet that was not properly formatted, contained illegal values, or was missing altogether. \\
+\hline
+{\em \hyperlink{group__error__codes_gaa9ae4494f623f3c0609f0b4bd99b8f32}{O\+P\+\_\+\+E\+V\+E\+R\+S\+I\+ON}} & An unseekable stream encountered a new link with an ID header that contained an unrecognized version number. \\
+\hline
+{\em \hyperlink{group__error__codes_gaa3fa0a3e6facc4f47924271e65bb21ff}{O\+P\+\_\+\+E\+B\+A\+D\+P\+A\+C\+K\+ET}} & Failed to properly decode the next packet. \\
+\hline
+{\em \hyperlink{group__error__codes_gaf7b58a439a471366e9eb5b8f2a8cd041}{O\+P\+\_\+\+E\+B\+A\+D\+L\+I\+NK}} & We failed to find data we had seen before. \\
+\hline
+{\em \hyperlink{group__error__codes_gaf82657fc888f1dcf2e0d8f066b8a6cc7}{O\+P\+\_\+\+E\+B\+A\+D\+T\+I\+M\+E\+S\+T\+A\+MP}} & An unseekable stream encountered a new link with a starting timestamp that failed basic validity checks. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__stream__decoding_gae0d5b986dff23a82b6002915268ee3d1}\label{group__stream__decoding_gae0d5b986dff23a82b6002915268ee3d1}} 
+\index{Decoding@{Decoding}!op\+\_\+set\+\_\+decode\+\_\+callback@{op\+\_\+set\+\_\+decode\+\_\+callback}}
+\index{op\+\_\+set\+\_\+decode\+\_\+callback@{op\+\_\+set\+\_\+decode\+\_\+callback}!Decoding@{Decoding}}
+\subsubsection{\texorpdfstring{op\+\_\+set\+\_\+decode\+\_\+callback()}{op\_set\_decode\_callback()}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} op\+\_\+set\+\_\+decode\+\_\+callback (\begin{DoxyParamCaption}\item[{Ogg\+Opus\+File $\ast$}]{\+\_\+of,  }\item[{\hyperlink{group__stream__decoding_ga81a50874a82484034c22dfeddce177e1}{op\+\_\+decode\+\_\+cb\+\_\+func}}]{\+\_\+decode\+\_\+cb,  }\item[{\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$}]{\+\_\+ctx }\end{DoxyParamCaption})}
+
+Sets the packet decode callback function. If set, this is called once for each packet that needs to be decoded. This can be used by advanced applications to do additional processing on the compressed or uncompressed data. For example, an application might save the final entropy coder state for debugging and testing purposes, or it might apply additional filters before the downmixing, dithering, or soft-\/clipping performed by {\ttfamily libopusfile}, so long as these filters do not introduce any latency.
+
+A call to this function is no guarantee that the audio will eventually be delivered to the application. {\ttfamily libopusfile} may discard some or all of the decoded audio data (i.\+e., at the beginning or end of a link, or after a seek), however the callback is still required to provide all of it. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+of} & The {\ttfamily Ogg\+Opus\+File} on which to set the decode callback. \\
+\hline
+{\em \+\_\+decode\+\_\+cb} & The callback function to call. This may be {\ttfamily N\+U\+LL} to disable calling the callback. \\
+\hline
+{\em \+\_\+ctx} & The application-\/provided context pointer to pass to the callback on each call. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__stream__decoding_gac1de9480ad0fa65de778d9c88f62f6f3}\label{group__stream__decoding_gac1de9480ad0fa65de778d9c88f62f6f3}} 
+\index{Decoding@{Decoding}!op\+\_\+set\+\_\+dither\+\_\+enabled@{op\+\_\+set\+\_\+dither\+\_\+enabled}}
+\index{op\+\_\+set\+\_\+dither\+\_\+enabled@{op\+\_\+set\+\_\+dither\+\_\+enabled}!Decoding@{Decoding}}
+\subsubsection{\texorpdfstring{op\+\_\+set\+\_\+dither\+\_\+enabled()}{op\_set\_dither\_enabled()}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} op\+\_\+set\+\_\+dither\+\_\+enabled (\begin{DoxyParamCaption}\item[{Ogg\+Opus\+File $\ast$}]{\+\_\+of,  }\item[{int}]{\+\_\+enabled }\end{DoxyParamCaption})}
+
+Sets whether or not dithering is enabled for 16-\/bit decoding. By default, when {\ttfamily libopusfile} is compiled to use floating-\/point internally, calling \hyperlink{group__stream__decoding_ga963c917749335e29bb2b698c1cb20a10}{op\+\_\+read()} or \hyperlink{group__stream__decoding_gaaca17ad3fd6430dc8fd43308149428eb}{op\+\_\+read\+\_\+stereo()} will first decode to float, and then convert to fixed-\/point using noise-\/shaping dithering. This flag can be used to disable that dithering. When the application uses \hyperlink{group__stream__decoding_ga73493002d84a234f5e19b70f1dddbe2a}{op\+\_\+read\+\_\+float()} or \hyperlink{group__stream__decoding_ga9736f96563500c0978f56f0fd6bdad83}{op\+\_\+read\+\_\+float\+\_\+stereo()}, or when the library has been compiled to decode directly to fixed point, this flag has no effect. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+of} & The {\ttfamily Ogg\+Opus\+File} on which to enable or disable dithering. \\
+\hline
+{\em \+\_\+enabled} & A non-\/zero value to enable dithering, or 0 to disable it. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__stream__decoding_ga7df927613ccf57996319678e08513289}\label{group__stream__decoding_ga7df927613ccf57996319678e08513289}} 
+\index{Decoding@{Decoding}!op\+\_\+set\+\_\+gain\+\_\+offset@{op\+\_\+set\+\_\+gain\+\_\+offset}}
+\index{op\+\_\+set\+\_\+gain\+\_\+offset@{op\+\_\+set\+\_\+gain\+\_\+offset}!Decoding@{Decoding}}
+\subsubsection{\texorpdfstring{op\+\_\+set\+\_\+gain\+\_\+offset()}{op\_set\_gain\_offset()}}
+{\footnotesize\ttfamily int op\+\_\+set\+\_\+gain\+\_\+offset (\begin{DoxyParamCaption}\item[{Ogg\+Opus\+File $\ast$}]{\+\_\+of,  }\item[{int}]{\+\_\+gain\+\_\+type,  }\item[{\hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\+\_\+int32}}]{\+\_\+gain\+\_\+offset\+\_\+q8 }\end{DoxyParamCaption})}
+
+Sets the gain to be used for decoded output. By default, the gain in the header is applied with no additional offset. The total gain (including header gain and/or track gain, if applicable, and this offset), will be clamped to \mbox{[}-\/32768,32767\mbox{]}/256 dB. This is more than enough to saturate or underflow 16-\/bit P\+CM. \begin{DoxyNote}{Note}
+The new gain will not be applied to any already buffered, decoded output. This means you cannot change it sample-\/by-\/sample, as at best it will be updated packet-\/by-\/packet. It is meant for setting a target volume level, rather than applying smooth fades, etc. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+of} & The {\ttfamily Ogg\+Opus\+File} on which to set the gain offset. \\
+\hline
+{\em \+\_\+gain\+\_\+type} & One of \hyperlink{group__stream__decoding_ga846edba35e7470251a6a95b1e2364855}{O\+P\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+G\+A\+IN}, \hyperlink{group__stream__decoding_ga72d2506ae978f7dbd3a6a59c57f21036}{O\+P\+\_\+\+A\+L\+B\+U\+M\+\_\+\+G\+A\+IN}, \hyperlink{group__stream__decoding_ga51082f7c661488bce9bfdf0e5401fabf}{O\+P\+\_\+\+T\+R\+A\+C\+K\+\_\+\+G\+A\+IN}, or \hyperlink{group__stream__decoding_ga4215354abbd19df9eab5a5380dd96cb0}{O\+P\+\_\+\+A\+B\+S\+O\+L\+U\+T\+E\+\_\+\+G\+A\+IN}. \\
+\hline
+{\em \+\_\+gain\+\_\+offset\+\_\+q8} & The gain offset to apply, in 1/256ths of a dB. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success or a negative value on error. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \hyperlink{group__error__codes_gae0879acafe9cc0ab72462d291fdb6fb6}{O\+P\+\_\+\+E\+I\+N\+V\+AL}} & The {\itshape \+\_\+gain\+\_\+type} was unrecognized. \\
+\hline
+\end{DoxyRetVals}

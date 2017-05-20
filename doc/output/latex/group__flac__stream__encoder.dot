@@ -1,0 +1,9 @@
+digraph "FLAC/stream_encoder.h: stream encoder interface"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir=LR;
+  Node0 [label="FLAC/stream_encoder.h\l: stream encoder interface",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 [label="FLAC/_encoder.h: encoder\l interfaces",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__flac__encoder.html",tooltip="This module describes the encoder layers provided by libFLAC. "];
+  Node1->Node0 [shape=plaintext, dir="back", style="solid"];
+}

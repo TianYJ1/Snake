@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['_5f_5fdpmi_5fallocate_5fdos_5fmemory',['__dpmi_allocate_dos_memory',['../alwatcom_8h.html#a6b10133aaed8491cdea95c39c4558780',1,'alwatcom.h']]],
+  ['_5f_5fdpmi_5fallocate_5fldt_5fdescriptors',['__dpmi_allocate_ldt_descriptors',['../alwatcom_8h.html#ab12dd1f4a346a65fb0ae0e4b38fbf991',1,'alwatcom.h']]],
+  ['_5f_5fdpmi_5ffree_5fdos_5fmemory',['__dpmi_free_dos_memory',['../alwatcom_8h.html#ab96300ee865f09093f231530c1a80829',1,'alwatcom.h']]],
+  ['_5f_5fdpmi_5ffree_5fldt_5fdescriptor',['__dpmi_free_ldt_descriptor',['../alwatcom_8h.html#aa4ba86cbb986514ead5f762eb272865f',1,'alwatcom.h']]],
+  ['_5f_5fdpmi_5ffree_5fphysical_5faddress_5fmapping',['__dpmi_free_physical_address_mapping',['../alwatcom_8h.html#ac72a575a8282a4a44efbb3be959454d7',1,'alwatcom.h']]],
+  ['_5f_5fdpmi_5fget_5ffree_5fmemory_5finformation',['__dpmi_get_free_memory_information',['../alwatcom_8h.html#aba8324405aa9552adb3232bf02230b62',1,'alwatcom.h']]],
+  ['_5f_5fdpmi_5fget_5fsegment_5fbase_5faddress',['__dpmi_get_segment_base_address',['../alwatcom_8h.html#a61c76ab9616a46e16b5f9b36412c1dab',1,'alwatcom.h']]],
+  ['_5f_5fdpmi_5fint',['__dpmi_int',['../alwatcom_8h.html#af6494ca0f34f395e9a5a58397c6445fe',1,'alwatcom.h']]],
+  ['_5f_5fdpmi_5flock_5flinear_5fregion',['__dpmi_lock_linear_region',['../alwatcom_8h.html#ac817bc0811343a5b138fd988ea5daf07',1,'alwatcom.h']]],
+  ['_5f_5fdpmi_5fphysical_5faddress_5fmapping',['__dpmi_physical_address_mapping',['../alwatcom_8h.html#a6d0be9df277aa16f26519d3debe65d8f',1,'alwatcom.h']]],
+  ['_5f_5fdpmi_5fset_5fsegment_5fbase_5faddress',['__dpmi_set_segment_base_address',['../alwatcom_8h.html#ab1badc18a2205ea57f5af5c9993eceab',1,'alwatcom.h']]],
+  ['_5f_5fdpmi_5fset_5fsegment_5flimit',['__dpmi_set_segment_limit',['../alwatcom_8h.html#ad75713b292578f20fe2eed51a390f204',1,'alwatcom.h']]],
+  ['_5f_5fdpmi_5fsimulate_5freal_5fmode_5finterrupt',['__dpmi_simulate_real_mode_interrupt',['../alwatcom_8h.html#aae40e4379bab7bffcfd804a4c865ad97',1,'alwatcom.h']]],
+  ['_5f_5fdpmi_5fsimulate_5freal_5fmode_5fprocedure_5fretf',['__dpmi_simulate_real_mode_procedure_retf',['../alwatcom_8h.html#a4c4de8d6a62610b5677fc13fd56bd6dd',1,'alwatcom.h']]],
+  ['_5f_5fdpmi_5funlock_5flinear_5fregion',['__dpmi_unlock_linear_region',['../alwatcom_8h.html#a38dcd3a6d5a6adbe2db8a68d1f23ee64',1,'alwatcom.h']]],
+  ['_5fal_5fosx_5fget_5fpath',['_al_osx_get_path',['../alosx_8h.html#acfb52c59ff68aa09a431e493c51e15ea',1,'alosx.h']]],
+  ['_5fallocate_5freal_5fmode_5fcallback',['_allocate_real_mode_callback',['../alwatcom_8h.html#a77542c7216d53496d304417e1a240ab6',1,'alwatcom.h']]],
+  ['_5fgo32_5fdpmi_5flock_5fcode',['_go32_dpmi_lock_code',['../alwatcom_8h.html#afddf46d30106ffe6ae9d320a05543566',1,'alwatcom.h']]],
+  ['_5fgo32_5fdpmi_5flock_5fdata',['_go32_dpmi_lock_data',['../alwatcom_8h.html#a24e48a8516e3ee71685ccd3481207ef9',1,'alwatcom.h']]],
+  ['_5funlock_5fdpmi_5fdata',['_unlock_dpmi_data',['../alwatcom_8h.html#a4f306003e42ae2b1b23f351c07cb85aa',1,'alwatcom.h']]]
+];

@@ -1,0 +1,227 @@
+\hypertarget{_level_8c}{}\section{src/\+Level.c File Reference}
+\label{_level_8c}\index{src/\+Level.\+c@{src/\+Level.\+c}}
+{\ttfamily \#include \char`\"{}Library\+Merger.\+h\char`\"{}}\newline
+Include dependency graph for Level.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_level_8c_ab35fda1194d8343c79d773336a32fe3f}{generate} (int \hyperlink{group___library_merger_gaf3cf0ba525aea0327b3c3512df21094a}{map}\mbox{[}\hyperlink{group___library_merger_ga16621561d55e77faa59fbfdae692916f}{L\+E\+V\+E\+L\+\_\+\+H\+E\+I\+G\+HT}\mbox{]}\mbox{[}\hyperlink{group___library_merger_ga219cc98394ab36a78470c0627c4f8464}{L\+E\+V\+E\+L\+\_\+\+W\+I\+D\+TH}\mbox{]}, int crates\+Count)
+\item 
+int \hyperlink{_level_8c_ab16208f5b3f8b34d89e6b25626abbc1f}{on\+Exit} (int id)
+\item 
+int \hyperlink{_level_8c_a7c9616eb4936f64601753dd6c40de69b}{on\+Pause} (int id)
+\item 
+int \hyperlink{_level_8c_a06a2ef9ac7e6d9697b46de4e90206606}{on\+Resume} (int id)
+\item 
+int \hyperlink{_level_8c_a62294bf301e4d3f3b7aa9d5e941d16f0}{regen} (int id)
+\item 
+int \hyperlink{_level_8c_a43eacd2376a7d29b182d3e55acb8b5f3}{restart} (int i)
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{_level_8c_a117d1bc97dd6c1b442da815e3205582a}{on\+Level\+File\+Opened} (int level\+Num, int \hyperlink{_level_editor_8c_a72be647b61e771614eb2206cf5b7511a}{playerX}, int \hyperlink{_level_editor_8c_a7cb41b2b59751cfe9b4274b81154d452}{playerY}, int crates\+Count)
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{_level_8c_a30f33898bfed9c1543202e409296ad51}{on\+Level\+Opened} (int level\+Id)
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{_level_8c_a2d6238081fd4a76a2755d078b9b9b6fc}{render\+Map} ()
+\item 
+int \hyperlink{_level_8c_abb0400dac557f73409cdae866fc69b72}{open\+Next\+Level} (int i)
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{_level_8c_a221869d2ffade9c2bfa18d323a00798a}{on\+Level\+Comlete} ()
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{_level_8c_a05a78ac52c4ed2df344e089db4447957}{move\+Player} (int up, int right)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group___library_merger_gaf3cf0ba525aea0327b3c3512df21094a}{map} \mbox{[}\hyperlink{group___library_merger_ga16621561d55e77faa59fbfdae692916f}{L\+E\+V\+E\+L\+\_\+\+H\+E\+I\+G\+HT}\mbox{]}\mbox{[}\hyperlink{group___library_merger_ga219cc98394ab36a78470c0627c4f8464}{L\+E\+V\+E\+L\+\_\+\+W\+I\+D\+TH}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array for storing current running level map. \end{DoxyCompactList}\item 
+int \hyperlink{_level_8c_aea589917d95dcacec57eacfdd14cd650}{level\+NumC} = 0
+\item 
+int \hyperlink{_level_8c_a8917aa230a87b489a55909e3f3d1c3d6}{player\+Sprite\+Id} = 0
+\item 
+int \hyperlink{_level_8c_a889d95c9b3ac1148f85bfa6bcc218af1}{crates\+Left\+Label\+Id} = 0
+\item 
+int \hyperlink{_level_8c_a645082a4692fd97998d6b7518a998839}{pushes\+Made} = 0
+\item 
+int \hyperlink{_level_8c_a5b8d0383c69c3bccc5e0fba2ad24d4fd}{pushes\+Made\+Label\+Id} = 0
+\item 
+int \hyperlink{_level_8c_a7acd752d344ead838d403804d418701e}{moves\+Made} = 0
+\item 
+int \hyperlink{_level_8c_a2e03b53c3914ed1b05fe636034846bf9}{map\+Sprites} \mbox{[}\hyperlink{group___library_merger_ga16621561d55e77faa59fbfdae692916f}{L\+E\+V\+E\+L\+\_\+\+H\+E\+I\+G\+HT}\mbox{]}\mbox{[}\hyperlink{group___library_merger_ga219cc98394ab36a78470c0627c4f8464}{L\+E\+V\+E\+L\+\_\+\+W\+I\+D\+TH}\mbox{]}
+\item 
+char \hyperlink{_level_8c_a43cb5b949052153b5710c09478e04142}{seed} \mbox{[}\hyperlink{group___library_merger_ga9c1e5774cebc49f1e8f2e12d7ead3964}{S\+E\+E\+D\+\_\+\+L\+E\+N\+T\+GH} $\ast$8\mbox{]} = \{ 0 \}
+\item 
+char \hyperlink{_level_8c_abdc610d6e18a56f5abd7476a0d2b5d2f}{crates\+Seed} \mbox{[}\hyperlink{group___library_merger_ga9c1e5774cebc49f1e8f2e12d7ead3964}{S\+E\+E\+D\+\_\+\+L\+E\+N\+T\+GH} $\ast$8\mbox{]} = \{ 0 \}
+\item 
+int \hyperlink{_level_8c_a7ba8ab2f1e8f362163e17da3f15a5db9}{x} = 0
+\item 
+int \hyperlink{_level_8c_ad01ab75ae50a1a624185bfa014c66cfa}{y} = 0
+\item 
+int \hyperlink{_level_8c_a3f6f867bfb7ef8ce3cbcf57e54d44f56}{crates\+CountN} =0
+\item 
+int \hyperlink{_level_8c_abc16e65f240ed0c8f3e876e8732c0a33}{step} = 0
+\item 
+int \hyperlink{_level_8c_abf8d1cbae4f648c4728e7a2c902455e7}{sprite\+Num} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_level_8c_ab35fda1194d8343c79d773336a32fe3f}\label{_level_8c_ab35fda1194d8343c79d773336a32fe3f}} 
+\index{Level.\+c@{Level.\+c}!generate@{generate}}
+\index{generate@{generate}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily int generate (\begin{DoxyParamCaption}\item[{int}]{map\mbox{[}\+L\+E\+V\+E\+L\+\_\+\+H\+E\+I\+G\+H\+T\mbox{]}\mbox{[}\+L\+E\+V\+E\+L\+\_\+\+W\+I\+D\+T\+H\mbox{]},  }\item[{int}]{crates\+Count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_level_8c_a05a78ac52c4ed2df344e089db4447957}\label{_level_8c_a05a78ac52c4ed2df344e089db4447957}} 
+\index{Level.\+c@{Level.\+c}!move\+Player@{move\+Player}}
+\index{move\+Player@{move\+Player}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{move\+Player()}{movePlayer()}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} move\+Player (\begin{DoxyParamCaption}\item[{int}]{up,  }\item[{int}]{right }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_level_8c_ab16208f5b3f8b34d89e6b25626abbc1f}\label{_level_8c_ab16208f5b3f8b34d89e6b25626abbc1f}} 
+\index{Level.\+c@{Level.\+c}!on\+Exit@{on\+Exit}}
+\index{on\+Exit@{on\+Exit}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{on\+Exit()}{onExit()}}
+{\footnotesize\ttfamily int on\+Exit (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_level_8c_a221869d2ffade9c2bfa18d323a00798a}\label{_level_8c_a221869d2ffade9c2bfa18d323a00798a}} 
+\index{Level.\+c@{Level.\+c}!on\+Level\+Comlete@{on\+Level\+Comlete}}
+\index{on\+Level\+Comlete@{on\+Level\+Comlete}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{on\+Level\+Comlete()}{onLevelComlete()}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} on\+Level\+Comlete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_level_8c_a117d1bc97dd6c1b442da815e3205582a}\label{_level_8c_a117d1bc97dd6c1b442da815e3205582a}} 
+\index{Level.\+c@{Level.\+c}!on\+Level\+File\+Opened@{on\+Level\+File\+Opened}}
+\index{on\+Level\+File\+Opened@{on\+Level\+File\+Opened}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{on\+Level\+File\+Opened()}{onLevelFileOpened()}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} on\+Level\+File\+Opened (\begin{DoxyParamCaption}\item[{int}]{level\+Num,  }\item[{int}]{playerX,  }\item[{int}]{playerY,  }\item[{int}]{crates\+Count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_level_8c_a30f33898bfed9c1543202e409296ad51}\label{_level_8c_a30f33898bfed9c1543202e409296ad51}} 
+\index{Level.\+c@{Level.\+c}!on\+Level\+Opened@{on\+Level\+Opened}}
+\index{on\+Level\+Opened@{on\+Level\+Opened}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{on\+Level\+Opened()}{onLevelOpened()}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} on\+Level\+Opened (\begin{DoxyParamCaption}\item[{int}]{level\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_level_8c_a7c9616eb4936f64601753dd6c40de69b}\label{_level_8c_a7c9616eb4936f64601753dd6c40de69b}} 
+\index{Level.\+c@{Level.\+c}!on\+Pause@{on\+Pause}}
+\index{on\+Pause@{on\+Pause}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{on\+Pause()}{onPause()}}
+{\footnotesize\ttfamily int on\+Pause (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_level_8c_a06a2ef9ac7e6d9697b46de4e90206606}\label{_level_8c_a06a2ef9ac7e6d9697b46de4e90206606}} 
+\index{Level.\+c@{Level.\+c}!on\+Resume@{on\+Resume}}
+\index{on\+Resume@{on\+Resume}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{on\+Resume()}{onResume()}}
+{\footnotesize\ttfamily int on\+Resume (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_level_8c_abb0400dac557f73409cdae866fc69b72}\label{_level_8c_abb0400dac557f73409cdae866fc69b72}} 
+\index{Level.\+c@{Level.\+c}!open\+Next\+Level@{open\+Next\+Level}}
+\index{open\+Next\+Level@{open\+Next\+Level}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{open\+Next\+Level()}{openNextLevel()}}
+{\footnotesize\ttfamily int open\+Next\+Level (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_level_8c_a62294bf301e4d3f3b7aa9d5e941d16f0}\label{_level_8c_a62294bf301e4d3f3b7aa9d5e941d16f0}} 
+\index{Level.\+c@{Level.\+c}!regen@{regen}}
+\index{regen@{regen}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{regen()}{regen()}}
+{\footnotesize\ttfamily int regen (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_level_8c_a2d6238081fd4a76a2755d078b9b9b6fc}\label{_level_8c_a2d6238081fd4a76a2755d078b9b9b6fc}} 
+\index{Level.\+c@{Level.\+c}!render\+Map@{render\+Map}}
+\index{render\+Map@{render\+Map}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{render\+Map()}{renderMap()}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} render\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_level_8c_a43eacd2376a7d29b182d3e55acb8b5f3}\label{_level_8c_a43eacd2376a7d29b182d3e55acb8b5f3}} 
+\index{Level.\+c@{Level.\+c}!restart@{restart}}
+\index{restart@{restart}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{restart()}{restart()}}
+{\footnotesize\ttfamily int restart (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{_level_8c_a3f6f867bfb7ef8ce3cbcf57e54d44f56}\label{_level_8c_a3f6f867bfb7ef8ce3cbcf57e54d44f56}} 
+\index{Level.\+c@{Level.\+c}!crates\+CountN@{crates\+CountN}}
+\index{crates\+CountN@{crates\+CountN}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{crates\+CountN}{cratesCountN}}
+{\footnotesize\ttfamily int crates\+CountN =0}
+
+\mbox{\Hypertarget{_level_8c_a889d95c9b3ac1148f85bfa6bcc218af1}\label{_level_8c_a889d95c9b3ac1148f85bfa6bcc218af1}} 
+\index{Level.\+c@{Level.\+c}!crates\+Left\+Label\+Id@{crates\+Left\+Label\+Id}}
+\index{crates\+Left\+Label\+Id@{crates\+Left\+Label\+Id}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{crates\+Left\+Label\+Id}{cratesLeftLabelId}}
+{\footnotesize\ttfamily int crates\+Left\+Label\+Id = 0}
+
+\mbox{\Hypertarget{_level_8c_abdc610d6e18a56f5abd7476a0d2b5d2f}\label{_level_8c_abdc610d6e18a56f5abd7476a0d2b5d2f}} 
+\index{Level.\+c@{Level.\+c}!crates\+Seed@{crates\+Seed}}
+\index{crates\+Seed@{crates\+Seed}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{crates\+Seed}{cratesSeed}}
+{\footnotesize\ttfamily char crates\+Seed\mbox{[}\hyperlink{group___library_merger_ga9c1e5774cebc49f1e8f2e12d7ead3964}{S\+E\+E\+D\+\_\+\+L\+E\+N\+T\+GH} $\ast$8\mbox{]} = \{ 0 \}}
+
+\mbox{\Hypertarget{_level_8c_aea589917d95dcacec57eacfdd14cd650}\label{_level_8c_aea589917d95dcacec57eacfdd14cd650}} 
+\index{Level.\+c@{Level.\+c}!level\+NumC@{level\+NumC}}
+\index{level\+NumC@{level\+NumC}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{level\+NumC}{levelNumC}}
+{\footnotesize\ttfamily int level\+NumC = 0}
+
+\mbox{\Hypertarget{_level_8c_a2e03b53c3914ed1b05fe636034846bf9}\label{_level_8c_a2e03b53c3914ed1b05fe636034846bf9}} 
+\index{Level.\+c@{Level.\+c}!map\+Sprites@{map\+Sprites}}
+\index{map\+Sprites@{map\+Sprites}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{map\+Sprites}{mapSprites}}
+{\footnotesize\ttfamily int map\+Sprites\mbox{[}\hyperlink{group___library_merger_ga16621561d55e77faa59fbfdae692916f}{L\+E\+V\+E\+L\+\_\+\+H\+E\+I\+G\+HT}\mbox{]}\mbox{[}\hyperlink{group___library_merger_ga219cc98394ab36a78470c0627c4f8464}{L\+E\+V\+E\+L\+\_\+\+W\+I\+D\+TH}\mbox{]}}
+
+\mbox{\Hypertarget{_level_8c_a7acd752d344ead838d403804d418701e}\label{_level_8c_a7acd752d344ead838d403804d418701e}} 
+\index{Level.\+c@{Level.\+c}!moves\+Made@{moves\+Made}}
+\index{moves\+Made@{moves\+Made}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{moves\+Made}{movesMade}}
+{\footnotesize\ttfamily int moves\+Made = 0}
+
+\mbox{\Hypertarget{_level_8c_a8917aa230a87b489a55909e3f3d1c3d6}\label{_level_8c_a8917aa230a87b489a55909e3f3d1c3d6}} 
+\index{Level.\+c@{Level.\+c}!player\+Sprite\+Id@{player\+Sprite\+Id}}
+\index{player\+Sprite\+Id@{player\+Sprite\+Id}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{player\+Sprite\+Id}{playerSpriteId}}
+{\footnotesize\ttfamily int player\+Sprite\+Id = 0}
+
+\mbox{\Hypertarget{_level_8c_a645082a4692fd97998d6b7518a998839}\label{_level_8c_a645082a4692fd97998d6b7518a998839}} 
+\index{Level.\+c@{Level.\+c}!pushes\+Made@{pushes\+Made}}
+\index{pushes\+Made@{pushes\+Made}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{pushes\+Made}{pushesMade}}
+{\footnotesize\ttfamily int pushes\+Made = 0}
+
+\mbox{\Hypertarget{_level_8c_a5b8d0383c69c3bccc5e0fba2ad24d4fd}\label{_level_8c_a5b8d0383c69c3bccc5e0fba2ad24d4fd}} 
+\index{Level.\+c@{Level.\+c}!pushes\+Made\+Label\+Id@{pushes\+Made\+Label\+Id}}
+\index{pushes\+Made\+Label\+Id@{pushes\+Made\+Label\+Id}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{pushes\+Made\+Label\+Id}{pushesMadeLabelId}}
+{\footnotesize\ttfamily int pushes\+Made\+Label\+Id = 0}
+
+\mbox{\Hypertarget{_level_8c_a43cb5b949052153b5710c09478e04142}\label{_level_8c_a43cb5b949052153b5710c09478e04142}} 
+\index{Level.\+c@{Level.\+c}!seed@{seed}}
+\index{seed@{seed}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{seed}{seed}}
+{\footnotesize\ttfamily char seed\mbox{[}\hyperlink{group___library_merger_ga9c1e5774cebc49f1e8f2e12d7ead3964}{S\+E\+E\+D\+\_\+\+L\+E\+N\+T\+GH} $\ast$8\mbox{]} = \{ 0 \}}
+
+\mbox{\Hypertarget{_level_8c_abf8d1cbae4f648c4728e7a2c902455e7}\label{_level_8c_abf8d1cbae4f648c4728e7a2c902455e7}} 
+\index{Level.\+c@{Level.\+c}!sprite\+Num@{sprite\+Num}}
+\index{sprite\+Num@{sprite\+Num}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{sprite\+Num}{spriteNum}}
+{\footnotesize\ttfamily int sprite\+Num = 0}
+
+\mbox{\Hypertarget{_level_8c_abc16e65f240ed0c8f3e876e8732c0a33}\label{_level_8c_abc16e65f240ed0c8f3e876e8732c0a33}} 
+\index{Level.\+c@{Level.\+c}!step@{step}}
+\index{step@{step}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{step}{step}}
+{\footnotesize\ttfamily int step = 0}
+
+\mbox{\Hypertarget{_level_8c_a7ba8ab2f1e8f362163e17da3f15a5db9}\label{_level_8c_a7ba8ab2f1e8f362163e17da3f15a5db9}} 
+\index{Level.\+c@{Level.\+c}!x@{x}}
+\index{x@{x}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily \hyperlink{fixed_8h_acaad2e927f969d9882d1e1e80ac1c5e2}{al\+\_\+fixed} \hyperlink{fixed_8h_acaad2e927f969d9882d1e1e80ac1c5e2}{al\+\_\+fixed} \hyperlink{fixed_8h_acaad2e927f969d9882d1e1e80ac1c5e2}{al\+\_\+fixed} \hyperlink{fixed_8h_acaad2e927f969d9882d1e1e80ac1c5e2}{al\+\_\+fixed} \hyperlink{fixed_8h_acaad2e927f969d9882d1e1e80ac1c5e2}{al\+\_\+fixed} \hyperlink{fixed_8h_acaad2e927f969d9882d1e1e80ac1c5e2}{al\+\_\+fixed} x = 0}
+
+\mbox{\Hypertarget{_level_8c_ad01ab75ae50a1a624185bfa014c66cfa}\label{_level_8c_ad01ab75ae50a1a624185bfa014c66cfa}} 
+\index{Level.\+c@{Level.\+c}!y@{y}}
+\index{y@{y}!Level.\+c@{Level.\+c}}
+\subsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily \hyperlink{fixed_8h_acaad2e927f969d9882d1e1e80ac1c5e2}{al\+\_\+fixed} \hyperlink{fixed_8h_acaad2e927f969d9882d1e1e80ac1c5e2}{al\+\_\+fixed} y = 0}
+

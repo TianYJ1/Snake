@@ -1,0 +1,84 @@
+\hypertarget{structtjtransform}{}\section{tjtransform Struct Reference}
+\label{structtjtransform}\index{tjtransform@{tjtransform}}
+
+
+{\ttfamily \#include $<$turbojpeg.\+h$>$}
+
+
+
+Collaboration diagram for tjtransform\+:
+% FIG 0
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structtjregion}{tjregion} \hyperlink{structtjtransform_ac324e5e442abec8a961e5bf219db12cf}{r}
+\item 
+int \hyperlink{structtjtransform_a2525aab4ba6978a1c273f74fef50e498}{op}
+\item 
+int \hyperlink{structtjtransform_ac0e74655baa4402209a21e1ae481c8f6}{options}
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$ \hyperlink{structtjtransform_a688fe8f1a8ecc12a538d9e561cf338e3}{data}
+\item 
+int($\ast$ \hyperlink{structtjtransform_afd7fc262df33f741e120ef4183202ef5}{custom\+Filter} )(short $\ast$coeffs, \hyperlink{structtjregion}{tjregion} array\+Region, \hyperlink{structtjregion}{tjregion} plane\+Region, int component\+Index, int transform\+Index, struct \hyperlink{structtjtransform}{tjtransform} $\ast$transform)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Lossless transform 
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{structtjtransform_afd7fc262df33f741e120ef4183202ef5}\label{structtjtransform_afd7fc262df33f741e120ef4183202ef5}} 
+\index{tjtransform@{tjtransform}!custom\+Filter@{custom\+Filter}}
+\index{custom\+Filter@{custom\+Filter}!tjtransform@{tjtransform}}
+\subsubsection{\texorpdfstring{custom\+Filter}{customFilter}}
+{\footnotesize\ttfamily int($\ast$ tjtransform\+::custom\+Filter) (short $\ast$coeffs, \hyperlink{structtjregion}{tjregion} array\+Region, \hyperlink{structtjregion}{tjregion} plane\+Region, int component\+Index, int transform\+Index, struct \hyperlink{structtjtransform}{tjtransform} $\ast$transform)}
+
+A callback function that can be used to modify the D\+CT coefficients after they are losslessly transformed but before they are transcoded to a new J\+P\+EG image. This allows for custom filters or other transformations to be applied in the frequency domain.
+
+
+\begin{DoxyParams}{Parameters}
+{\em coeffs} & pointer to an array of transformed D\+CT coefficients. (N\+O\+TE\+: this pointer is not guaranteed to be valid once the callback returns, so applications wishing to hand off the D\+CT coefficients to another function or library should make a copy of them within the body of the callback.)\\
+\hline
+{\em array\+Region} & \hyperlink{structtjregion}{tjregion} structure containing the width and height of the array pointed to by {\ttfamily coeffs} as well as its offset relative to the component plane. Turbo\+J\+P\+EG implementations may choose to split each component plane into multiple D\+CT coefficient arrays and call the callback function once for each array.\\
+\hline
+{\em plane\+Region} & \hyperlink{structtjregion}{tjregion} structure containing the width and height of the component plane to which {\ttfamily coeffs} belongs\\
+\hline
+{\em component\+ID} & ID number of the component plane to which {\ttfamily coeffs} belongs (Y, Cb, and Cr have, respectively, ID\textquotesingle{}s of 0, 1, and 2 in typical J\+P\+EG images.)\\
+\hline
+{\em transform\+ID} & ID number of the transformed image to which {\ttfamily coeffs} belongs. This is the same as the index of the transform in the {\ttfamily transforms} array that was passed to \hyperlink{group___turbo_j_p_e_g_gae403193ceb4aafb7e0f56ab587b48616}{tj\+Transform()}.\\
+\hline
+{\em transform} & a pointer to a \hyperlink{structtjtransform}{tjtransform} structure that specifies the parameters and/or cropping region for this transform\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the callback was successful, or -\/1 if an error occurred. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structtjtransform_a688fe8f1a8ecc12a538d9e561cf338e3}\label{structtjtransform_a688fe8f1a8ecc12a538d9e561cf338e3}} 
+\index{tjtransform@{tjtransform}!data@{data}}
+\index{data@{data}!tjtransform@{tjtransform}}
+\subsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}$\ast$ tjtransform\+::data}
+
+Arbitrary data that can be accessed within the body of the callback function \mbox{\Hypertarget{structtjtransform_a2525aab4ba6978a1c273f74fef50e498}\label{structtjtransform_a2525aab4ba6978a1c273f74fef50e498}} 
+\index{tjtransform@{tjtransform}!op@{op}}
+\index{op@{op}!tjtransform@{tjtransform}}
+\subsubsection{\texorpdfstring{op}{op}}
+{\footnotesize\ttfamily int tjtransform\+::op}
+
+One of the \hyperlink{group___turbo_j_p_e_g_ga2de531af4e7e6c4f124908376b354866}{transform operations} \mbox{\Hypertarget{structtjtransform_ac0e74655baa4402209a21e1ae481c8f6}\label{structtjtransform_ac0e74655baa4402209a21e1ae481c8f6}} 
+\index{tjtransform@{tjtransform}!options@{options}}
+\index{options@{options}!tjtransform@{tjtransform}}
+\subsubsection{\texorpdfstring{options}{options}}
+{\footnotesize\ttfamily int tjtransform\+::options}
+
+The bitwise OR of one of more of the \hyperlink{group___turbo_j_p_e_g_ga9c771a757fc1294add611906b89ab2d2}{transform options} \mbox{\Hypertarget{structtjtransform_ac324e5e442abec8a961e5bf219db12cf}\label{structtjtransform_ac324e5e442abec8a961e5bf219db12cf}} 
+\index{tjtransform@{tjtransform}!r@{r}}
+\index{r@{r}!tjtransform@{tjtransform}}
+\subsubsection{\texorpdfstring{r}{r}}
+{\footnotesize\ttfamily \hyperlink{structtjregion}{tjregion} tjtransform\+::r}
+
+Cropping region 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/packages/\+Allegro\+Deps.\+1.\+5.\+0.\+1/build/native/include/\hyperlink{turbojpeg_8h}{turbojpeg.\+h}\end{DoxyCompactItemize}

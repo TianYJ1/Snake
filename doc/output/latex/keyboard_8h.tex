@@ -1,0 +1,122 @@
+\hypertarget{keyboard_8h}{}\section{src/packages/\+Allegro.5.2.2.1/build/native/include/allegro5/keyboard.h File Reference}
+\label{keyboard_8h}\index{src/packages/\+Allegro.\+5.\+2.\+2.\+1/build/native/include/allegro5/keyboard.\+h@{src/packages/\+Allegro.\+5.\+2.\+2.\+1/build/native/include/allegro5/keyboard.\+h}}
+{\ttfamily \#include \char`\"{}allegro5/base.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}allegro5/events.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}allegro5/keycodes.\+h\char`\"{}}\newline
+Include dependency graph for keyboard.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_a_l_l_e_g_r_o___k_e_y_b_o_a_r_d___s_t_a_t_e}{A\+L\+L\+E\+G\+R\+O\+\_\+\+K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+TE}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{keyboard_8h_a97e78d003940d6b0d5e9651fab1f10b9}{A\+L\+L\+E\+G\+R\+O\+\_\+\+K\+E\+Y\+B\+O\+A\+RD} \hyperlink{keyboard_8h_a97e78d003940d6b0d5e9651fab1f10b9}{A\+L\+L\+E\+G\+R\+O\+\_\+\+K\+E\+Y\+B\+O\+A\+RD}
+\item 
+typedef struct \hyperlink{struct_a_l_l_e_g_r_o___k_e_y_b_o_a_r_d___s_t_a_t_e}{A\+L\+L\+E\+G\+R\+O\+\_\+\+K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+TE} \hyperlink{keyboard_8h_a64fd339c352c91546361002876cde45b}{A\+L\+L\+E\+G\+R\+O\+\_\+\+K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+TE}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{keyboard_8h_aebe2dd8dbf5b7384aed4f1548e4971ad}{A\+L\+\_\+\+F\+U\+NC} (\hyperlink{astdbool_8h_abb452686968e48b67397da5f97445f5b}{bool}, al\+\_\+is\+\_\+keyboard\+\_\+installed,(\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}))
+\item 
+\hyperlink{keyboard_8h_a27654b90a0216845c3b6901d5049d75b}{A\+L\+\_\+\+F\+U\+NC} (\hyperlink{astdbool_8h_abb452686968e48b67397da5f97445f5b}{bool}, al\+\_\+install\+\_\+keyboard,(\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}))
+\item 
+\hyperlink{keyboard_8h_a2494fe6620283de14e85e557806e38be}{A\+L\+\_\+\+F\+U\+NC} (\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}, al\+\_\+uninstall\+\_\+keyboard,(\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}))
+\item 
+\hyperlink{keyboard_8h_aaad6d2141a8033905d2266dc3e86a729}{A\+L\+\_\+\+F\+U\+NC} (\hyperlink{astdbool_8h_abb452686968e48b67397da5f97445f5b}{bool}, al\+\_\+set\+\_\+keyboard\+\_\+leds,(int leds))
+\item 
+\hyperlink{keyboard_8h_a79c6e8b8a76153b3c0cdaa52f5ab9352}{A\+L\+\_\+\+F\+U\+NC} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$, al\+\_\+keycode\+\_\+to\+\_\+name,(int keycode))
+\item 
+\hyperlink{keyboard_8h_a8927866d2ab5f84e00c7512bfeacdb83}{A\+L\+\_\+\+F\+U\+NC} (\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}, al\+\_\+get\+\_\+keyboard\+\_\+state,(\hyperlink{struct_a_l_l_e_g_r_o___k_e_y_b_o_a_r_d___s_t_a_t_e}{A\+L\+L\+E\+G\+R\+O\+\_\+\+K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+TE} $\ast$ret\+\_\+state))
+\item 
+\hyperlink{keyboard_8h_a97e2544806445ad56a7ff729be9a93c4}{A\+L\+\_\+\+F\+U\+NC} (\hyperlink{astdbool_8h_abb452686968e48b67397da5f97445f5b}{bool}, al\+\_\+key\+\_\+down,(\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{struct_a_l_l_e_g_r_o___k_e_y_b_o_a_r_d___s_t_a_t_e}{A\+L\+L\+E\+G\+R\+O\+\_\+\+K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+TE} $\ast$, int keycode))
+\item 
+\hyperlink{keyboard_8h_acdef6392afac11a1b7353dd8a2a5586f}{A\+L\+\_\+\+F\+U\+NC} (\hyperlink{struct_a_l_l_e_g_r_o___e_v_e_n_t___s_o_u_r_c_e}{A\+L\+L\+E\+G\+R\+O\+\_\+\+E\+V\+E\+N\+T\+\_\+\+S\+O\+U\+R\+CE} $\ast$, al\+\_\+get\+\_\+keyboard\+\_\+event\+\_\+source,(\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}))
+\item 
+\hyperlink{keyboard_8h_a8dae2fbffd5d3536b4e39e06ed9ecbb1}{A\+L\+\_\+\+V\+AR} (\hyperlink{astdbool_8h_abb452686968e48b67397da5f97445f5b}{bool}, \+\_\+al\+\_\+three\+\_\+finger\+\_\+flag)
+\item 
+\hyperlink{keyboard_8h_af627d4c813bfae09075419f5f79e2e12}{A\+L\+\_\+\+V\+AR} (\hyperlink{astdbool_8h_abb452686968e48b67397da5f97445f5b}{bool}, \+\_\+al\+\_\+key\+\_\+led\+\_\+flag)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{keyboard_8h_a97e78d003940d6b0d5e9651fab1f10b9}\label{keyboard_8h_a97e78d003940d6b0d5e9651fab1f10b9}} 
+\index{keyboard.\+h@{keyboard.\+h}!A\+L\+L\+E\+G\+R\+O\+\_\+\+K\+E\+Y\+B\+O\+A\+RD@{A\+L\+L\+E\+G\+R\+O\+\_\+\+K\+E\+Y\+B\+O\+A\+RD}}
+\index{A\+L\+L\+E\+G\+R\+O\+\_\+\+K\+E\+Y\+B\+O\+A\+RD@{A\+L\+L\+E\+G\+R\+O\+\_\+\+K\+E\+Y\+B\+O\+A\+RD}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+L\+E\+G\+R\+O\+\_\+\+K\+E\+Y\+B\+O\+A\+RD}{ALLEGRO\_KEYBOARD}}
+{\footnotesize\ttfamily typedef struct \hyperlink{keyboard_8h_a97e78d003940d6b0d5e9651fab1f10b9}{A\+L\+L\+E\+G\+R\+O\+\_\+\+K\+E\+Y\+B\+O\+A\+RD} \hyperlink{keyboard_8h_a97e78d003940d6b0d5e9651fab1f10b9}{A\+L\+L\+E\+G\+R\+O\+\_\+\+K\+E\+Y\+B\+O\+A\+RD}}
+
+\mbox{\Hypertarget{keyboard_8h_a64fd339c352c91546361002876cde45b}\label{keyboard_8h_a64fd339c352c91546361002876cde45b}} 
+\index{keyboard.\+h@{keyboard.\+h}!A\+L\+L\+E\+G\+R\+O\+\_\+\+K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+TE@{A\+L\+L\+E\+G\+R\+O\+\_\+\+K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+TE}}
+\index{A\+L\+L\+E\+G\+R\+O\+\_\+\+K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+TE@{A\+L\+L\+E\+G\+R\+O\+\_\+\+K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+TE}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+L\+E\+G\+R\+O\+\_\+\+K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+TE}{ALLEGRO\_KEYBOARD\_STATE}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct_a_l_l_e_g_r_o___k_e_y_b_o_a_r_d___s_t_a_t_e}{A\+L\+L\+E\+G\+R\+O\+\_\+\+K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+TE} \hyperlink{struct_a_l_l_e_g_r_o___k_e_y_b_o_a_r_d___s_t_a_t_e}{A\+L\+L\+E\+G\+R\+O\+\_\+\+K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+TE}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{keyboard_8h_aebe2dd8dbf5b7384aed4f1548e4971ad}\label{keyboard_8h_aebe2dd8dbf5b7384aed4f1548e4971ad}} 
+\index{keyboard.\+h@{keyboard.\+h}!A\+L\+\_\+\+F\+U\+NC@{A\+L\+\_\+\+F\+U\+NC}}
+\index{A\+L\+\_\+\+F\+U\+NC@{A\+L\+\_\+\+F\+U\+NC}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+\_\+\+F\+U\+N\+C()}{AL\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily A\+L\+\_\+\+F\+U\+NC (\begin{DoxyParamCaption}\item[{\hyperlink{astdbool_8h_abb452686968e48b67397da5f97445f5b}{bool}}]{,  }\item[{al\+\_\+is\+\_\+keyboard\+\_\+installed}]{,  }\item[{(\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{keyboard_8h_a27654b90a0216845c3b6901d5049d75b}\label{keyboard_8h_a27654b90a0216845c3b6901d5049d75b}} 
+\index{keyboard.\+h@{keyboard.\+h}!A\+L\+\_\+\+F\+U\+NC@{A\+L\+\_\+\+F\+U\+NC}}
+\index{A\+L\+\_\+\+F\+U\+NC@{A\+L\+\_\+\+F\+U\+NC}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+\_\+\+F\+U\+N\+C()}{AL\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily A\+L\+\_\+\+F\+U\+NC (\begin{DoxyParamCaption}\item[{\hyperlink{astdbool_8h_abb452686968e48b67397da5f97445f5b}{bool}}]{,  }\item[{al\+\_\+install\+\_\+keyboard}]{,  }\item[{(\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{keyboard_8h_a2494fe6620283de14e85e557806e38be}\label{keyboard_8h_a2494fe6620283de14e85e557806e38be}} 
+\index{keyboard.\+h@{keyboard.\+h}!A\+L\+\_\+\+F\+U\+NC@{A\+L\+\_\+\+F\+U\+NC}}
+\index{A\+L\+\_\+\+F\+U\+NC@{A\+L\+\_\+\+F\+U\+NC}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+\_\+\+F\+U\+N\+C()}{AL\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily A\+L\+\_\+\+F\+U\+NC (\begin{DoxyParamCaption}\item[{\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}}]{,  }\item[{al\+\_\+uninstall\+\_\+keyboard}]{,  }\item[{(\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{keyboard_8h_aaad6d2141a8033905d2266dc3e86a729}\label{keyboard_8h_aaad6d2141a8033905d2266dc3e86a729}} 
+\index{keyboard.\+h@{keyboard.\+h}!A\+L\+\_\+\+F\+U\+NC@{A\+L\+\_\+\+F\+U\+NC}}
+\index{A\+L\+\_\+\+F\+U\+NC@{A\+L\+\_\+\+F\+U\+NC}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+\_\+\+F\+U\+N\+C()}{AL\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily A\+L\+\_\+\+F\+U\+NC (\begin{DoxyParamCaption}\item[{\hyperlink{astdbool_8h_abb452686968e48b67397da5f97445f5b}{bool}}]{,  }\item[{al\+\_\+set\+\_\+keyboard\+\_\+leds}]{,  }\item[{(int leds)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{keyboard_8h_a79c6e8b8a76153b3c0cdaa52f5ab9352}\label{keyboard_8h_a79c6e8b8a76153b3c0cdaa52f5ab9352}} 
+\index{keyboard.\+h@{keyboard.\+h}!A\+L\+\_\+\+F\+U\+NC@{A\+L\+\_\+\+F\+U\+NC}}
+\index{A\+L\+\_\+\+F\+U\+NC@{A\+L\+\_\+\+F\+U\+NC}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+\_\+\+F\+U\+N\+C()}{AL\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily A\+L\+\_\+\+F\+U\+NC (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$}]{,  }\item[{al\+\_\+keycode\+\_\+to\+\_\+name}]{,  }\item[{(int keycode)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{keyboard_8h_a8927866d2ab5f84e00c7512bfeacdb83}\label{keyboard_8h_a8927866d2ab5f84e00c7512bfeacdb83}} 
+\index{keyboard.\+h@{keyboard.\+h}!A\+L\+\_\+\+F\+U\+NC@{A\+L\+\_\+\+F\+U\+NC}}
+\index{A\+L\+\_\+\+F\+U\+NC@{A\+L\+\_\+\+F\+U\+NC}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+\_\+\+F\+U\+N\+C()}{AL\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily A\+L\+\_\+\+F\+U\+NC (\begin{DoxyParamCaption}\item[{\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}}]{,  }\item[{al\+\_\+get\+\_\+keyboard\+\_\+state}]{,  }\item[{(\hyperlink{struct_a_l_l_e_g_r_o___k_e_y_b_o_a_r_d___s_t_a_t_e}{A\+L\+L\+E\+G\+R\+O\+\_\+\+K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+TE} $\ast$ret\+\_\+state)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{keyboard_8h_a97e2544806445ad56a7ff729be9a93c4}\label{keyboard_8h_a97e2544806445ad56a7ff729be9a93c4}} 
+\index{keyboard.\+h@{keyboard.\+h}!A\+L\+\_\+\+F\+U\+NC@{A\+L\+\_\+\+F\+U\+NC}}
+\index{A\+L\+\_\+\+F\+U\+NC@{A\+L\+\_\+\+F\+U\+NC}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+\_\+\+F\+U\+N\+C()}{AL\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily A\+L\+\_\+\+F\+U\+NC (\begin{DoxyParamCaption}\item[{\hyperlink{astdbool_8h_abb452686968e48b67397da5f97445f5b}{bool}}]{,  }\item[{al\+\_\+key\+\_\+down}]{,  }\item[{(\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{struct_a_l_l_e_g_r_o___k_e_y_b_o_a_r_d___s_t_a_t_e}{A\+L\+L\+E\+G\+R\+O\+\_\+\+K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+TE} $\ast$, int keycode)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{keyboard_8h_acdef6392afac11a1b7353dd8a2a5586f}\label{keyboard_8h_acdef6392afac11a1b7353dd8a2a5586f}} 
+\index{keyboard.\+h@{keyboard.\+h}!A\+L\+\_\+\+F\+U\+NC@{A\+L\+\_\+\+F\+U\+NC}}
+\index{A\+L\+\_\+\+F\+U\+NC@{A\+L\+\_\+\+F\+U\+NC}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+\_\+\+F\+U\+N\+C()}{AL\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily A\+L\+\_\+\+F\+U\+NC (\begin{DoxyParamCaption}\item[{\hyperlink{struct_a_l_l_e_g_r_o___e_v_e_n_t___s_o_u_r_c_e}{A\+L\+L\+E\+G\+R\+O\+\_\+\+E\+V\+E\+N\+T\+\_\+\+S\+O\+U\+R\+CE} $\ast$}]{,  }\item[{al\+\_\+get\+\_\+keyboard\+\_\+event\+\_\+source}]{,  }\item[{(\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{keyboard_8h_a8dae2fbffd5d3536b4e39e06ed9ecbb1}\label{keyboard_8h_a8dae2fbffd5d3536b4e39e06ed9ecbb1}} 
+\index{keyboard.\+h@{keyboard.\+h}!A\+L\+\_\+\+V\+AR@{A\+L\+\_\+\+V\+AR}}
+\index{A\+L\+\_\+\+V\+AR@{A\+L\+\_\+\+V\+AR}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+\_\+\+V\+A\+R()}{AL\_VAR()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily A\+L\+\_\+\+V\+AR (\begin{DoxyParamCaption}\item[{\hyperlink{astdbool_8h_abb452686968e48b67397da5f97445f5b}{bool}}]{,  }\item[{\+\_\+al\+\_\+three\+\_\+finger\+\_\+flag}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{keyboard_8h_af627d4c813bfae09075419f5f79e2e12}\label{keyboard_8h_af627d4c813bfae09075419f5f79e2e12}} 
+\index{keyboard.\+h@{keyboard.\+h}!A\+L\+\_\+\+V\+AR@{A\+L\+\_\+\+V\+AR}}
+\index{A\+L\+\_\+\+V\+AR@{A\+L\+\_\+\+V\+AR}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+\_\+\+V\+A\+R()}{AL\_VAR()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily A\+L\+\_\+\+V\+AR (\begin{DoxyParamCaption}\item[{\hyperlink{astdbool_8h_abb452686968e48b67397da5f97445f5b}{bool}}]{,  }\item[{\+\_\+al\+\_\+key\+\_\+led\+\_\+flag}]{ }\end{DoxyParamCaption})}
+

@@ -1,0 +1,100 @@
+\hypertarget{group__porting__1__1__2__to__1__1__3}{}\section{Porting from F\+L\+AC 1.1.2 to 1.1.3}
+\label{group__porting__1__1__2__to__1__1__3}\index{Porting from F\+L\+A\+C 1.\+1.\+2 to 1.\+1.\+3@{Porting from F\+L\+A\+C 1.\+1.\+2 to 1.\+1.\+3}}
+
+
+This module describes porting from F\+L\+AC 1.\+1.\+2 to F\+L\+AC 1.\+1.\+3.  
+
+
+Collaboration diagram for Porting from F\+L\+AC 1.1.2 to 1.1.3\+:
+% FIG 0
+This module describes porting from F\+L\+AC 1.\+1.\+2 to F\+L\+AC 1.\+1.\+3. 
+
+The main change between the A\+P\+Is in 1.\+1.\+2 and 1.\+1.\+3 is that they have been simplified. First, lib\+Ogg\+F\+L\+AC has been merged into lib\+F\+L\+AC and lib\+Ogg\+F\+L\+A\+C++ has been merged into lib\+F\+L\+A\+C++. Second, both the three decoding layers and three encoding layers have been merged into a single stream decoder and stream encoder. That is, the functionality of F\+L\+A\+C\+\_\+\+\_\+\+Seekable\+Stream\+Decoder and F\+L\+A\+C\+\_\+\+\_\+\+File\+Decoder has been merged into \hyperlink{struct_f_l_a_c_____stream_decoder}{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Decoder}, and F\+L\+A\+C\+\_\+\+\_\+\+Seekable\+Stream\+Encoder and F\+L\+A\+C\+\_\+\+\_\+\+File\+Encoder into \hyperlink{struct_f_l_a_c_____stream_encoder}{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Encoder}. Only the \hyperlink{struct_f_l_a_c_____stream_decoder}{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Decoder} and \hyperlink{struct_f_l_a_c_____stream_encoder}{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Encoder} remain. What this means is there is now a single A\+PI that can be used to encode or decode streams to/from native F\+L\+AC or Ogg F\+L\+AC and the single A\+PI can work on both seekable and non-\/seekable streams.
+
+Instead of creating an encoder or decoder of a certain layer, now the client will always create a \hyperlink{struct_f_l_a_c_____stream_encoder}{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Encoder} or \hyperlink{struct_f_l_a_c_____stream_decoder}{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Decoder}. The old layers are now differentiated by the initialization function. For example, for the decoder, F\+L\+A\+C\+\_\+\+\_\+stream\+\_\+decoder\+\_\+init() has been replaced by \hyperlink{group__flac__stream__decoder_ga32c28a56a2bdfa2333edbd3d991894d7}{F\+L\+A\+C\+\_\+\+\_\+stream\+\_\+decoder\+\_\+init\+\_\+stream()}. This init function takes callbacks for the I/O, and the seeking callbacks are optional. This allows the client to use the same object for seekable and non-\/seekable streams. For decoding a F\+L\+AC file directly, the client can use \hyperlink{group__flac__stream__decoder_ga1692108a97012d1c5f79baf7df012c33}{F\+L\+A\+C\+\_\+\+\_\+stream\+\_\+decoder\+\_\+init\+\_\+file()} and pass just a filename and fewer callbacks; most of the other callbacks are supplied internally. For situations where fopen()ing by filename is not possible (e.\+g. Unicode filenames on Windows) the client can instead open the file itself and supply the F\+I\+L\+E$\ast$ to \hyperlink{group__flac__stream__decoder_ga38f9eb46bf112af205f86b4cbac9980c}{F\+L\+A\+C\+\_\+\+\_\+stream\+\_\+decoder\+\_\+init\+\_\+\+F\+I\+L\+E()}. The init functions now returns a F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Decoder\+Init\+Status instead of F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Decoder\+State. Since the callbacks and client data are now passed to the init function, the F\+L\+A\+C\+\_\+\+\_\+stream\+\_\+decoder\+\_\+set\+\_\+$\ast$\+\_\+callback() functions and F\+L\+A\+C\+\_\+\+\_\+stream\+\_\+decoder\+\_\+set\+\_\+client\+\_\+data() are no longer needed. The rest of the calls to the decoder are the same as before.
+
+There are counterpart init functions for Ogg F\+L\+AC, e.\+g. \hyperlink{group__flac__stream__decoder_ga78bf285b54e5aaee73a214c108683a72}{F\+L\+A\+C\+\_\+\+\_\+stream\+\_\+decoder\+\_\+init\+\_\+ogg\+\_\+stream()}. All the rest of the calls and callbacks are the same as for native F\+L\+AC.
+
+As an example, in F\+L\+AC 1.\+1.\+2 a seekable stream decoder would have been set up like so\+:
+
+
+\begin{DoxyCode}
+FLAC\_\_SeekableStreamDecoder *decoder = FLAC\_\_seekable\_stream\_decoder\_new();
+\textcolor{keywordflow}{if}(decoder == NULL) do\_something;
+FLAC\_\_seekable\_stream\_decoder\_set\_md5\_checking(decoder, \textcolor{keyword}{true});
+[... other settings ...]
+FLAC\_\_seekable\_stream\_decoder\_set\_read\_callback(decoder, my\_read\_callback);
+FLAC\_\_seekable\_stream\_decoder\_set\_seek\_callback(decoder, my\_seek\_callback);
+FLAC\_\_seekable\_stream\_decoder\_set\_tell\_callback(decoder, my\_tell\_callback);
+FLAC\_\_seekable\_stream\_decoder\_set\_length\_callback(decoder, my\_length\_callback);
+FLAC\_\_seekable\_stream\_decoder\_set\_eof\_callback(decoder, my\_eof\_callback);
+FLAC\_\_seekable\_stream\_decoder\_set\_write\_callback(decoder, my\_write\_callback);
+FLAC\_\_seekable\_stream\_decoder\_set\_metadata\_callback(decoder, my\_metadata\_callback);
+FLAC\_\_seekable\_stream\_decoder\_set\_error\_callback(decoder, my\_error\_callback);
+FLAC\_\_seekable\_stream\_decoder\_set\_client\_data(decoder, my\_client\_data);
+\textcolor{keywordflow}{if}(FLAC\_\_seekable\_stream\_decoder\_init(decoder) != FLAC\_\_SEEKABLE\_STREAM\_DECODER\_OK) do\_something;
+\end{DoxyCode}
+
+
+In F\+L\+AC 1.\+1.\+3 it is like this\+:
+
+
+\begin{DoxyCode}
+\hyperlink{struct_f_l_a_c_____stream_decoder}{FLAC\_\_StreamDecoder} *decoder = \hyperlink{group__flac__stream__decoder_ga7159eefc074dfbab4a37462f69326091}{FLAC\_\_stream\_decoder\_new}();
+\textcolor{keywordflow}{if}(decoder == NULL) do\_something;
+\hyperlink{group__flac__stream__decoder_ga48074d18a17ea88e8272cc8f865ae6e6}{FLAC\_\_stream\_decoder\_set\_md5\_checking}(decoder, \textcolor{keyword}{true});
+[... other settings ...]
+\textcolor{keywordflow}{if}(\hyperlink{group__flac__stream__decoder_ga32c28a56a2bdfa2333edbd3d991894d7}{FLAC\_\_stream\_decoder\_init\_stream}(
+  decoder,
+  my\_read\_callback,
+  my\_seek\_callback,      \textcolor{comment}{// or NULL}
+  my\_tell\_callback,      \textcolor{comment}{// or NULL}
+  my\_length\_callback,    \textcolor{comment}{// or NULL}
+  my\_eof\_callback,       \textcolor{comment}{// or NULL}
+  my\_write\_callback,
+  my\_metadata\_callback,  \textcolor{comment}{// or NULL}
+  my\_error\_callback,
+  my\_client\_data
+) != \hyperlink{group__flac__stream__decoder_ggaaed54a24ac6310d29c5cafba79759c44ac94c7e9396f30642f34805e5d626e011}{FLAC\_\_STREAM\_DECODER\_INIT\_STATUS\_OK}) do\_something;
+\end{DoxyCode}
+
+
+or you could do;
+
+
+\begin{DoxyCode}
+[...]
+FILE *file = fopen(\textcolor{stringliteral}{"somefile.flac"},\textcolor{stringliteral}{"rb"});
+\textcolor{keywordflow}{if}(file == NULL) do\_somthing;
+\textcolor{keywordflow}{if}(\hyperlink{group__flac__stream__decoder_ga38f9eb46bf112af205f86b4cbac9980c}{FLAC\_\_stream\_decoder\_init\_FILE}(
+  decoder,
+  file,
+  my\_write\_callback,
+  my\_metadata\_callback,  \textcolor{comment}{// or NULL}
+  my\_error\_callback,
+  my\_client\_data
+) != \hyperlink{group__flac__stream__decoder_ggaaed54a24ac6310d29c5cafba79759c44ac94c7e9396f30642f34805e5d626e011}{FLAC\_\_STREAM\_DECODER\_INIT\_STATUS\_OK}) do\_something;
+\end{DoxyCode}
+
+
+or just\+:
+
+
+\begin{DoxyCode}
+[...]
+\textcolor{keywordflow}{if}(\hyperlink{group__flac__stream__decoder_ga1692108a97012d1c5f79baf7df012c33}{FLAC\_\_stream\_decoder\_init\_file}(
+  decoder,
+  \textcolor{stringliteral}{"somefile.flac"},
+  my\_write\_callback,
+  my\_metadata\_callback,  \textcolor{comment}{// or NULL}
+  my\_error\_callback,
+  my\_client\_data
+) != \hyperlink{group__flac__stream__decoder_ggaaed54a24ac6310d29c5cafba79759c44ac94c7e9396f30642f34805e5d626e011}{FLAC\_\_STREAM\_DECODER\_INIT\_STATUS\_OK}) do\_something;
+\end{DoxyCode}
+
+
+Another small change to the decoder is in how it handles unparseable streams. Before, when the decoder found an unparseable stream (reserved for when the decoder encounters a stream from a future encoder that it can\textquotesingle{}t parse), it changed the state to {\ttfamily F\+L\+A\+C\+\_\+\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+U\+N\+P\+A\+R\+S\+E\+A\+B\+L\+E\+\_\+\+S\+T\+R\+E\+AM}. Now the decoder instead drops sync and calls the error callback with a new error code {\ttfamily F\+L\+A\+C\+\_\+\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+D\+E\+C\+O\+D\+E\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+U\+N\+P\+A\+R\+S\+E\+A\+B\+L\+E\+\_\+\+S\+T\+R\+E\+AM}. This is more robust. If your error callback does not discriminate on the the error state, your code does not need to be changed.
+
+The encoder now has a new setting\+: \hyperlink{group__flac__stream__encoder_ga83d38fd6fca7abbf8363bdc2536a299e}{F\+L\+A\+C\+\_\+\+\_\+stream\+\_\+encoder\+\_\+set\+\_\+apodization()}. This is for setting the method used to window the data before L\+PC analysis. You only need to add a call to this function if the default is not suitable. There are also two new convenience functions that may be useful\+: \hyperlink{group__flac__metadata__object_ga897138ca0a985d8741f73d6657f38845}{F\+L\+A\+C\+\_\+\+\_\+metadata\+\_\+object\+\_\+cuesheet\+\_\+calculate\+\_\+cddb\+\_\+id()} and \hyperlink{group__flac__metadata__level0_ga6ee2633dc179c2a0cb5fef5762faf0fd}{F\+L\+A\+C\+\_\+\+\_\+metadata\+\_\+get\+\_\+cuesheet()}.
+
+The {\itshape bytes} parameter to F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Decoder\+Read\+Callback, F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Encoder\+Read\+Callback, and F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Encoder\+Write\+Callback is now {\ttfamily size\+\_\+t} instead of {\ttfamily unsigned}. 

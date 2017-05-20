@@ -49,27 +49,37 @@ void setNewScreen();
 /** Method for rendering screen. MAX 6 layers and one extra -1 for sprites
 */
 void renderScreen();
+
 /** Converts char data from source to destination with memory allocation for new one (copying).
 	@param source [in] Source for copying
 	@param toChr [out] Destination
+*/
+void convertConstCopy(const char *source, char **toChr);
 
+/** Open dialog for user to choose folder to work with (Callback function)
+	@param i number of button clicked
+*/
+int openFolderDialog(int i);
+/** Button for slicing was clicked (Callback function)
+@param i number of button clicked
 */
 
-void convertConstCopy(const char *source, char **toChr);
-int openFolderDialog(int i);
-
 int sliceFile(int i);
+
 int nextPage(int i);
 int prevPage(int i);
 int openLevelSelect(int i);
 int showDirectoryListing(int i);
 int openLevelEditor(int i);
+/** Clicked button for exiting game(Callback function)
+@param i number of button clicked
+*/
 int ExitProg(int i);
-extern char names [128][128];
-extern char * pathCur;
-extern char names [128][128];
-extern char levelsPaths[256][128];
-extern char levelsNames[64][BUTTONS_NAME_SIZE];
+
+extern char names [128][128];//!< Array for storing levels names currently vewing in level select 
+extern char * pathCur; //!< Temporary string for storing current chosen 
+extern char levelsPaths[256][128];//!< Array for storing levels pathes currently vewing in level select 
+extern char levelsNames[64][BUTTONS_NAME_SIZE];//!< Array for storing levels names currently vewing in level select 
 extern int levelSelectPage, yOffset;
 /**
 @}

@@ -1,0 +1,41 @@
+\hypertarget{callback_8h}{}\section{src/packages/\+Allegro\+Deps.1.5.0.1/build/native/include/\+F\+L\+A\+C/callback.h File Reference}
+\label{callback_8h}\index{src/packages/\+Allegro\+Deps.\+1.\+5.\+0.\+1/build/native/include/\+F\+L\+A\+C/callback.\+h@{src/packages/\+Allegro\+Deps.\+1.\+5.\+0.\+1/build/native/include/\+F\+L\+A\+C/callback.\+h}}
+
+
+This module defines the structures for describing I/O callbacks to the other F\+L\+AC interfaces.  
+
+
+{\ttfamily \#include \char`\"{}ordinals.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for callback.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_f_l_a_c_____i_o_callbacks}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callbacks}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$ \hyperlink{group__flac__callbacks_ga4c329c3168dee6e352384c5e9306260d}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle}
+\item 
+typedef size\+\_\+t($\ast$ \hyperlink{group__flac__callbacks_ga49d95218a6c09b215cd92cc96de71bf9}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Read}) (\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$ptr, size\+\_\+t size, size\+\_\+t nmemb, \hyperlink{group__flac__callbacks_ga4c329c3168dee6e352384c5e9306260d}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle} handle)
+\item 
+typedef size\+\_\+t($\ast$ \hyperlink{group__flac__callbacks_gad991792235879aecae289b56a112e1b8}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Write}) (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$ptr, size\+\_\+t size, size\+\_\+t nmemb, \hyperlink{group__flac__callbacks_ga4c329c3168dee6e352384c5e9306260d}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle} handle)
+\item 
+typedef int($\ast$ \hyperlink{group__flac__callbacks_gab3942bbbd6ae09bcefe7cb3a0060c49c}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Seek}) (\hyperlink{group__flac__callbacks_ga4c329c3168dee6e352384c5e9306260d}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle} handle, \hyperlink{ordinals_8h_a12b57f75f760b9062a13bcda1bdb3f3e}{F\+L\+A\+C\+\_\+\+\_\+int64} offset, int whence)
+\item 
+typedef \hyperlink{ordinals_8h_a12b57f75f760b9062a13bcda1bdb3f3e}{F\+L\+A\+C\+\_\+\+\_\+int64}($\ast$ \hyperlink{group__flac__callbacks_ga45314930cabc2e9c04867eae6bca309f}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Tell}) (\hyperlink{group__flac__callbacks_ga4c329c3168dee6e352384c5e9306260d}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle} handle)
+\item 
+typedef int($\ast$ \hyperlink{group__flac__callbacks_ga00ae3b3d373e691908e9539ebf720675}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Eof}) (\hyperlink{group__flac__callbacks_ga4c329c3168dee6e352384c5e9306260d}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle} handle)
+\item 
+typedef int($\ast$ \hyperlink{group__flac__callbacks_ga0032267fac38220689778833e08f7387}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Callback\+\_\+\+Close}) (\hyperlink{group__flac__callbacks_ga4c329c3168dee6e352384c5e9306260d}{F\+L\+A\+C\+\_\+\+\_\+\+I\+O\+Handle} handle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module defines the structures for describing I/O callbacks to the other F\+L\+AC interfaces. 
+
+See the detailed documentation for callbacks in the \hyperlink{group__flac__callbacks}{callbacks } module. 

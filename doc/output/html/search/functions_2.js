@@ -1,0 +1,14 @@
+var searchData=
+[
+  ['changescene',['changeScene',['../group___core.html#ga02ff5c3ae037f5e07455e6e31faa8012',1,'changeScene(int scene):&#160;Core.c'],['../group___core.html#ga02ff5c3ae037f5e07455e6e31faa8012',1,'changeScene(int scene):&#160;Core.c']]],
+  ['changesprite',['changeSprite',['../_sprite_renderer_8c.html#a5e2b2687c1874a5106fb96f45e23e0a7',1,'changeSprite(int spriteId, const char *src,...):&#160;SpriteRenderer.c'],['../_sprite_renderer_8h.html#a5e2b2687c1874a5106fb96f45e23e0a7',1,'changeSprite(int spriteId, const char *src,...):&#160;SpriteRenderer.c']]],
+  ['changetext',['changeText',['../group___label.html#ga7258b92504aab236bca87a8ee0efa7e3',1,'changeText(int labelId, const char *text,...):&#160;Label.c'],['../group___label.html#ga7258b92504aab236bca87a8ee0efa7e3',1,'changeText(int labelId, const char *text,...):&#160;Label.c']]],
+  ['clear',['clear',['../_array_8c.html#a5dd77ce56d938995586cccc88332c347',1,'clear(ArrayElement **arrayC):&#160;Array.c'],['../_array_8h.html#a5dd77ce56d938995586cccc88332c347',1,'clear(ArrayElement **arrayC):&#160;Array.c']]],
+  ['clearbuttons',['clearButtons',['../group___button.html#ga9c75babf87b2f4f9ddde1401c1529118',1,'clearButtons(int scene):&#160;Button.c'],['../group___button.html#ga9c75babf87b2f4f9ddde1401c1529118',1,'clearButtons(int scene):&#160;Button.c']]],
+  ['clearel',['clearEl',['../_level_editor_8c.html#ae4900c78539b7e62ce7301eb5e71e798',1,'LevelEditor.c']]],
+  ['clearlabels',['clearLabels',['../group___label.html#ga5fd3c25c35d1f13655c76541995ebb26',1,'clearLabels(int scene):&#160;Label.c'],['../group___label.html#ga5fd3c25c35d1f13655c76541995ebb26',1,'clearLabels(int scene):&#160;Label.c']]],
+  ['clearsprites',['clearSprites',['../_sprite_renderer_8c.html#a02bd9e2af9473d1e455a4c001eb71e4a',1,'clearSprites(int scene, int layer):&#160;SpriteRenderer.c'],['../_sprite_renderer_8h.html#a02bd9e2af9473d1e455a4c001eb71e4a',1,'clearSprites(int scene, int layer):&#160;SpriteRenderer.c']]],
+  ['clearspriteslayer',['clearSpritesLayer',['../_sprite_renderer_8c.html#aeeaead9a9c693147309a2bc6478fa061',1,'clearSpritesLayer(int layer):&#160;SpriteRenderer.c'],['../_sprite_renderer_8h.html#aeeaead9a9c693147309a2bc6478fa061',1,'clearSpritesLayer(int layer):&#160;SpriteRenderer.c']]],
+  ['clearspritesscene',['clearSpritesScene',['../_sprite_renderer_8c.html#ae3c45662950d40f1b0158f9bc87762a3',1,'clearSpritesScene(int scene):&#160;SpriteRenderer.c'],['../_sprite_renderer_8h.html#ae3c45662950d40f1b0158f9bc87762a3',1,'clearSpritesScene(int scene):&#160;SpriteRenderer.c']]],
+  ['convertconstcopy',['convertConstCopy',['../group___core.html#ga408edec4092671024a17603aebcc9225',1,'convertConstCopy(const char *source, char **toChr):&#160;Core.c'],['../group___core.html#ga408edec4092671024a17603aebcc9225',1,'convertConstCopy(const char *source, char **toChr):&#160;Core.c']]]
+];

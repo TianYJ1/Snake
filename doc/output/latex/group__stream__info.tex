@@ -1,0 +1,284 @@
+\hypertarget{group__stream__info}{}\section{Stream Information}
+\label{group__stream__info}\index{Stream Information@{Stream Information}}
+\subsection*{Functions for obtaining information about streams}
+\label{_amgrp77b9681e34c86cf7994f702bc36a679d}%
+These functions allow you to get basic information about a stream, including seekability, the number of links (for chained streams), plus the size, duration, bitrate, header parameters, and meta information for each link (or, where available, the stream as a whole). Some of these (size, duration) are only available for seekable streams. You can also query the current stream position, link, and playback time, and instantaneous bitrate during playback.
+
+Some of these functions may be used successfully on the partially open streams returned by \hyperlink{group__stream__open__close_gafe0e84414bbd1b511b494b5c5cef3c0f}{op\+\_\+test\+\_\+callbacks()} or one of the associated convenience functions. Their documention will indicate so explicitly. \begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__stream__info_ga9272a4a6ac9e01fbc549008f5ff58b4c}{op\+\_\+seekable} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$\+\_\+of) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+int \hyperlink{group__stream__info_gaaf6ff40725a8bc7e73c9d396ab91837d}{op\+\_\+link\+\_\+count} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$\+\_\+of) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+\hyperlink{opus__types_8h_a643eaaadb9ef6cd44308e0299d8cd8ce}{opus\+\_\+uint32} \hyperlink{group__stream__info_ga41992ce6f066e07609e5fe2ccd961f40}{op\+\_\+serialno} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$\+\_\+of, int \+\_\+li) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+int \hyperlink{group__stream__info_ga42c829e67c0ce8359bfbfc31a45c04f4}{op\+\_\+channel\+\_\+count} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$\+\_\+of, int \+\_\+li) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+\hyperlink{opus__types_8h_ab6742070cf9d0ccffca2b80522b4f41a}{opus\+\_\+int64} \hyperlink{group__stream__info_gaa433bdeab96315d315269b60ba52b877}{op\+\_\+raw\+\_\+total} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$\+\_\+of, int \+\_\+li) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+ogg\+\_\+int64\+\_\+t \hyperlink{group__stream__info_ga8c228c3d95f2c903ad6cfd2b78d8dad6}{op\+\_\+pcm\+\_\+total} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$\+\_\+of, int \+\_\+li) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{struct_opus_head}{Opus\+Head} $\ast$ \hyperlink{group__stream__info_gabae95dfa8a278a305213332e295443bb}{op\+\_\+head} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$\+\_\+of, int \+\_\+li) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{struct_opus_tags}{Opus\+Tags} $\ast$ \hyperlink{group__stream__info_ga4b9b8b62a9fb04aee64c288e106a4822}{op\+\_\+tags} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$\+\_\+of, int \+\_\+li) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+int \hyperlink{group__stream__info_gabd97a260a6740ea7c2c59ca9ecd592bf}{op\+\_\+current\+\_\+link} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$\+\_\+of) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+\hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\+\_\+int32} \hyperlink{group__stream__info_ga2778b161df6d07abdd642f1a4802cc1c}{op\+\_\+bitrate} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$\+\_\+of, int \+\_\+li) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+\hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\+\_\+int32} \hyperlink{group__stream__info_ga7e9e871615055673d5e3c7b4c1dfce80}{op\+\_\+bitrate\+\_\+instant} (Ogg\+Opus\+File $\ast$\+\_\+of) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+\hyperlink{opus__types_8h_ab6742070cf9d0ccffca2b80522b4f41a}{opus\+\_\+int64} \hyperlink{group__stream__info_gab857684ab149c6225884ad94c3787561}{op\+\_\+raw\+\_\+tell} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$\+\_\+of) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+ogg\+\_\+int64\+\_\+t \hyperlink{group__stream__info_gae07b8e40d883cd2a43edfec8c5bfa205}{op\+\_\+pcm\+\_\+tell} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$\+\_\+of) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__stream__info_ga2778b161df6d07abdd642f1a4802cc1c}\label{group__stream__info_ga2778b161df6d07abdd642f1a4802cc1c}} 
+\index{Stream Information@{Stream Information}!op\+\_\+bitrate@{op\+\_\+bitrate}}
+\index{op\+\_\+bitrate@{op\+\_\+bitrate}!Stream Information@{Stream Information}}
+\subsubsection{\texorpdfstring{op\+\_\+bitrate()}{op\_bitrate()}}
+{\footnotesize\ttfamily \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\+\_\+int32} op\+\_\+bitrate (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$}]{\+\_\+of,  }\item[{int}]{\+\_\+li }\end{DoxyParamCaption})}
+
+Computes the bitrate of the stream, or of an individual link in a (possibly-\/chained) Ogg Opus stream. The stream must be seekable to compute the bitrate. For unseekable streams, use \hyperlink{group__stream__info_ga7e9e871615055673d5e3c7b4c1dfce80}{op\+\_\+bitrate\+\_\+instant()} to get periodic estimates. \begin{DoxyWarning}{Warning}
+If the Opus stream (or link) is concurrently multiplexed with other logical streams (e.\+g., video), this uses the size of the entire stream (or link) to compute the bitrate, not just the number of bytes in the first logical Opus stream. Returning the latter requires scanning the entire file, but this may be done by decoding the whole file and calling \hyperlink{group__stream__info_ga7e9e871615055673d5e3c7b4c1dfce80}{op\+\_\+bitrate\+\_\+instant()} once at the end. Install a trivial decoding callback with \hyperlink{group__stream__decoding_gae0d5b986dff23a82b6002915268ee3d1}{op\+\_\+set\+\_\+decode\+\_\+callback()} if you wish to skip actual decoding during this process. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+of} & The {\ttfamily Ogg\+Opus\+File} from which to retrieve the bitrate. \\
+\hline
+{\em \+\_\+li} & The index of the link whose bitrate should be computed. Use a negative number to get the bitrate of the whole stream. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The bitrate on success, or a negative value on error. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \hyperlink{group__error__codes_gae0879acafe9cc0ab72462d291fdb6fb6}{O\+P\+\_\+\+E\+I\+N\+V\+AL}} & The stream was only partially open, the stream was not seekable, or {\itshape \+\_\+li} was larger than the number of links. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__stream__info_ga7e9e871615055673d5e3c7b4c1dfce80}\label{group__stream__info_ga7e9e871615055673d5e3c7b4c1dfce80}} 
+\index{Stream Information@{Stream Information}!op\+\_\+bitrate\+\_\+instant@{op\+\_\+bitrate\+\_\+instant}}
+\index{op\+\_\+bitrate\+\_\+instant@{op\+\_\+bitrate\+\_\+instant}!Stream Information@{Stream Information}}
+\subsubsection{\texorpdfstring{op\+\_\+bitrate\+\_\+instant()}{op\_bitrate\_instant()}}
+{\footnotesize\ttfamily \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\+\_\+int32} op\+\_\+bitrate\+\_\+instant (\begin{DoxyParamCaption}\item[{Ogg\+Opus\+File $\ast$}]{\+\_\+of }\end{DoxyParamCaption})}
+
+Compute the instantaneous bitrate, measured as the ratio of bits to playable samples decoded since a) the last call to \hyperlink{group__stream__info_ga7e9e871615055673d5e3c7b4c1dfce80}{op\+\_\+bitrate\+\_\+instant()}, b) the last seek, or c) the start of playback, whichever was most recent. This will spike somewhat after a seek or at the start/end of a chain boundary, as pre-\/skip, pre-\/roll, and end-\/trimming causes samples to be decoded but not played. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+of} & The {\ttfamily Ogg\+Opus\+File} from which to retrieve the bitrate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The bitrate, in bits per second, or a negative value on error. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \hyperlink{group__error__codes_ga4fd28e64a5cbe5e0ba163916199611a5}{O\+P\+\_\+\+F\+A\+L\+SE}} & No data has been decoded since any of the events described above. \\
+\hline
+{\em \hyperlink{group__error__codes_gae0879acafe9cc0ab72462d291fdb6fb6}{O\+P\+\_\+\+E\+I\+N\+V\+AL}} & The stream was only partially open. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__stream__info_ga42c829e67c0ce8359bfbfc31a45c04f4}\label{group__stream__info_ga42c829e67c0ce8359bfbfc31a45c04f4}} 
+\index{Stream Information@{Stream Information}!op\+\_\+channel\+\_\+count@{op\+\_\+channel\+\_\+count}}
+\index{op\+\_\+channel\+\_\+count@{op\+\_\+channel\+\_\+count}!Stream Information@{Stream Information}}
+\subsubsection{\texorpdfstring{op\+\_\+channel\+\_\+count()}{op\_channel\_count()}}
+{\footnotesize\ttfamily int op\+\_\+channel\+\_\+count (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$}]{\+\_\+of,  }\item[{int}]{\+\_\+li }\end{DoxyParamCaption})}
+
+Get the channel count of the given link in a (possibly-\/chained) Ogg Opus stream. This is equivalent to {\ttfamily op\+\_\+head(\+\_\+of,\+\_\+li)-\/$>$channel\+\_\+count}, but is provided for convenience. This function may be called on partially-\/opened streams, but it will always return the channel count of the Opus stream in the first link. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+of} & The {\ttfamily Ogg\+Opus\+File} from which to retrieve the channel count. \\
+\hline
+{\em \+\_\+li} & The index of the link whose channel count should be retrieved. Use a negative number to get the channel count of the current link. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The channel count of the given link. If {\itshape \+\_\+li} is greater than the total number of links, this returns the channel count of the last link. If the source is not seekable, this always returns the channel count of the current link. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__stream__info_gabd97a260a6740ea7c2c59ca9ecd592bf}\label{group__stream__info_gabd97a260a6740ea7c2c59ca9ecd592bf}} 
+\index{Stream Information@{Stream Information}!op\+\_\+current\+\_\+link@{op\+\_\+current\+\_\+link}}
+\index{op\+\_\+current\+\_\+link@{op\+\_\+current\+\_\+link}!Stream Information@{Stream Information}}
+\subsubsection{\texorpdfstring{op\+\_\+current\+\_\+link()}{op\_current\_link()}}
+{\footnotesize\ttfamily int op\+\_\+current\+\_\+link (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$}]{\+\_\+of }\end{DoxyParamCaption})}
+
+Retrieve the index of the current link. This is the link that produced the data most recently read by \hyperlink{group__stream__decoding_ga73493002d84a234f5e19b70f1dddbe2a}{op\+\_\+read\+\_\+float()} or its associated functions, or, after a seek, the link that the seek target landed in. Reading more data may advance the link index (even on the first read after a seek). 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+of} & The {\ttfamily Ogg\+Opus\+File} from which to retrieve the current link index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The index of the current link on success, or a negative value on failure. For seekable streams, this is a number between 0 and the value returned by \hyperlink{group__stream__info_gaaf6ff40725a8bc7e73c9d396ab91837d}{op\+\_\+link\+\_\+count()}. For unseekable streams, this value starts at 0 and increments by one each time a new link is encountered (even though \hyperlink{group__stream__info_gaaf6ff40725a8bc7e73c9d396ab91837d}{op\+\_\+link\+\_\+count()} always returns 1). 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \hyperlink{group__error__codes_gae0879acafe9cc0ab72462d291fdb6fb6}{O\+P\+\_\+\+E\+I\+N\+V\+AL}} & The stream was only partially open. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__stream__info_gabae95dfa8a278a305213332e295443bb}\label{group__stream__info_gabae95dfa8a278a305213332e295443bb}} 
+\index{Stream Information@{Stream Information}!op\+\_\+head@{op\+\_\+head}}
+\index{op\+\_\+head@{op\+\_\+head}!Stream Information@{Stream Information}}
+\subsubsection{\texorpdfstring{op\+\_\+head()}{op\_head()}}
+{\footnotesize\ttfamily \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{struct_opus_head}{Opus\+Head}$\ast$ op\+\_\+head (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$}]{\+\_\+of,  }\item[{int}]{\+\_\+li }\end{DoxyParamCaption})}
+
+Get the ID header information for the given link in a (possibly chained) Ogg Opus stream. This function may be called on partially-\/opened streams, but it will always return the ID header information of the Opus stream in the first link. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+of} & The {\ttfamily Ogg\+Opus\+File} from which to retrieve the ID header information. \\
+\hline
+{\em \+\_\+li} & The index of the link whose ID header information should be retrieved. Use a negative number to get the ID header information of the current link. For an unseekable stream, {\itshape \+\_\+li} is ignored, and the ID header information for the current link is always returned, if available. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The contents of the ID header for the given link. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__stream__info_gaaf6ff40725a8bc7e73c9d396ab91837d}\label{group__stream__info_gaaf6ff40725a8bc7e73c9d396ab91837d}} 
+\index{Stream Information@{Stream Information}!op\+\_\+link\+\_\+count@{op\+\_\+link\+\_\+count}}
+\index{op\+\_\+link\+\_\+count@{op\+\_\+link\+\_\+count}!Stream Information@{Stream Information}}
+\subsubsection{\texorpdfstring{op\+\_\+link\+\_\+count()}{op\_link\_count()}}
+{\footnotesize\ttfamily int op\+\_\+link\+\_\+count (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$}]{\+\_\+of }\end{DoxyParamCaption})}
+
+Returns the number of links in this chained stream. This function may be called on partially-\/opened streams, but it will always return 1. The actual number of links is not known until the stream is fully opened. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+of} & The {\ttfamily Ogg\+Opus\+File} from which to retrieve the link count. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+For fully-\/open seekable sources, this returns the total number of links in the whole stream, which will be at least 1. For partially-\/open or unseekable sources, this always returns 1. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__stream__info_gae07b8e40d883cd2a43edfec8c5bfa205}\label{group__stream__info_gae07b8e40d883cd2a43edfec8c5bfa205}} 
+\index{Stream Information@{Stream Information}!op\+\_\+pcm\+\_\+tell@{op\+\_\+pcm\+\_\+tell}}
+\index{op\+\_\+pcm\+\_\+tell@{op\+\_\+pcm\+\_\+tell}!Stream Information@{Stream Information}}
+\subsubsection{\texorpdfstring{op\+\_\+pcm\+\_\+tell()}{op\_pcm\_tell()}}
+{\footnotesize\ttfamily ogg\+\_\+int64\+\_\+t op\+\_\+pcm\+\_\+tell (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$}]{\+\_\+of }\end{DoxyParamCaption})}
+
+Obtain the P\+CM offset of the next sample to be read. If the stream is not properly timestamped, this might not increment by the proper amount between reads, or even return monotonically increasing values. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+of} & The {\ttfamily Ogg\+Opus\+File} from which to retrieve the P\+CM offset. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The P\+CM offset of the next sample to be read. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \hyperlink{group__error__codes_gae0879acafe9cc0ab72462d291fdb6fb6}{O\+P\+\_\+\+E\+I\+N\+V\+AL}} & The stream was only partially open. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__stream__info_ga8c228c3d95f2c903ad6cfd2b78d8dad6}\label{group__stream__info_ga8c228c3d95f2c903ad6cfd2b78d8dad6}} 
+\index{Stream Information@{Stream Information}!op\+\_\+pcm\+\_\+total@{op\+\_\+pcm\+\_\+total}}
+\index{op\+\_\+pcm\+\_\+total@{op\+\_\+pcm\+\_\+total}!Stream Information@{Stream Information}}
+\subsubsection{\texorpdfstring{op\+\_\+pcm\+\_\+total()}{op\_pcm\_total()}}
+{\footnotesize\ttfamily ogg\+\_\+int64\+\_\+t op\+\_\+pcm\+\_\+total (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$}]{\+\_\+of,  }\item[{int}]{\+\_\+li }\end{DoxyParamCaption})}
+
+Get the total P\+CM length (number of samples at 48 k\+Hz) of the stream, or of an individual link in a (possibly-\/chained) Ogg Opus stream. Users looking for {\ttfamily op\+\_\+time\+\_\+total()} should use \hyperlink{group__stream__info_ga8c228c3d95f2c903ad6cfd2b78d8dad6}{op\+\_\+pcm\+\_\+total()} instead. Because timestamps in Opus are fixed at 48 k\+Hz, there is no need for a separate function to convert this to seconds (and leaving it out avoids introducing floating point to the A\+PI, for those that wish to avoid it). 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+of} & The {\ttfamily Ogg\+Opus\+File} from which to retrieve the P\+CM offset. \\
+\hline
+{\em \+\_\+li} & The index of the link whose P\+CM length should be computed. Use a negative number to get the P\+CM length of the entire stream. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The P\+CM length of the entire stream if {\itshape \+\_\+li} is negative, the P\+CM length of link {\itshape \+\_\+li} if it is non-\/negative, or a negative value on error. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \hyperlink{group__error__codes_gae0879acafe9cc0ab72462d291fdb6fb6}{O\+P\+\_\+\+E\+I\+N\+V\+AL}} & The source is not seekable (so we can\textquotesingle{}t know the length), {\itshape \+\_\+li} wasn\textquotesingle{}t less than the total number of links in the stream, or the stream was only partially open. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__stream__info_gab857684ab149c6225884ad94c3787561}\label{group__stream__info_gab857684ab149c6225884ad94c3787561}} 
+\index{Stream Information@{Stream Information}!op\+\_\+raw\+\_\+tell@{op\+\_\+raw\+\_\+tell}}
+\index{op\+\_\+raw\+\_\+tell@{op\+\_\+raw\+\_\+tell}!Stream Information@{Stream Information}}
+\subsubsection{\texorpdfstring{op\+\_\+raw\+\_\+tell()}{op\_raw\_tell()}}
+{\footnotesize\ttfamily \hyperlink{opus__types_8h_ab6742070cf9d0ccffca2b80522b4f41a}{opus\+\_\+int64} op\+\_\+raw\+\_\+tell (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$}]{\+\_\+of }\end{DoxyParamCaption})}
+
+Obtain the current value of the position indicator for {\itshape \+\_\+of}. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+of} & The {\ttfamily Ogg\+Opus\+File} from which to retrieve the position indicator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The byte position that is currently being read from. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \hyperlink{group__error__codes_gae0879acafe9cc0ab72462d291fdb6fb6}{O\+P\+\_\+\+E\+I\+N\+V\+AL}} & The stream was only partially open. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__stream__info_gaa433bdeab96315d315269b60ba52b877}\label{group__stream__info_gaa433bdeab96315d315269b60ba52b877}} 
+\index{Stream Information@{Stream Information}!op\+\_\+raw\+\_\+total@{op\+\_\+raw\+\_\+total}}
+\index{op\+\_\+raw\+\_\+total@{op\+\_\+raw\+\_\+total}!Stream Information@{Stream Information}}
+\subsubsection{\texorpdfstring{op\+\_\+raw\+\_\+total()}{op\_raw\_total()}}
+{\footnotesize\ttfamily \hyperlink{opus__types_8h_ab6742070cf9d0ccffca2b80522b4f41a}{opus\+\_\+int64} op\+\_\+raw\+\_\+total (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$}]{\+\_\+of,  }\item[{int}]{\+\_\+li }\end{DoxyParamCaption})}
+
+Get the total (compressed) size of the stream, or of an individual link in a (possibly-\/chained) Ogg Opus stream, including all headers and Ogg muxing overhead. \begin{DoxyWarning}{Warning}
+If the Opus stream (or link) is concurrently multiplexed with other logical streams (e.\+g., video), this returns the size of the entire stream (or link), not just the number of bytes in the first logical Opus stream. Returning the latter would require scanning the entire file. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+of} & The {\ttfamily Ogg\+Opus\+File} from which to retrieve the compressed size. \\
+\hline
+{\em \+\_\+li} & The index of the link whose compressed size should be computed. Use a negative number to get the compressed size of the entire stream. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The compressed size of the entire stream if {\itshape \+\_\+li} is negative, the compressed size of link {\itshape \+\_\+li} if it is non-\/negative, or a negative value on error. The compressed size of the entire stream may be smaller than that of the underlying source if trailing garbage was detected in the file. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \hyperlink{group__error__codes_gae0879acafe9cc0ab72462d291fdb6fb6}{O\+P\+\_\+\+E\+I\+N\+V\+AL}} & The source is not seekable (so we can\textquotesingle{}t know the length), {\itshape \+\_\+li} wasn\textquotesingle{}t less than the total number of links in the stream, or the stream was only partially open. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__stream__info_ga9272a4a6ac9e01fbc549008f5ff58b4c}\label{group__stream__info_ga9272a4a6ac9e01fbc549008f5ff58b4c}} 
+\index{Stream Information@{Stream Information}!op\+\_\+seekable@{op\+\_\+seekable}}
+\index{op\+\_\+seekable@{op\+\_\+seekable}!Stream Information@{Stream Information}}
+\subsubsection{\texorpdfstring{op\+\_\+seekable()}{op\_seekable()}}
+{\footnotesize\ttfamily int op\+\_\+seekable (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$}]{\+\_\+of }\end{DoxyParamCaption})}
+
+Returns whether or not the data source being read is seekable. This is true if 
+\begin{DoxyEnumerate}
+\item The {\ttfamily \href{#op_seek_func}{\tt seek()}} and {\ttfamily \href{#op_tell_func}{\tt tell()}} callbacks are both non-\/{\ttfamily N\+U\+LL}, 
+\item The {\ttfamily \href{#op_seek_func}{\tt seek()}} callback was successfully executed at least once, and 
+\item The {\ttfamily \href{#op_tell_func}{\tt tell()}} callback was successfully able to report the position indicator afterwards. 
+\end{DoxyEnumerate}This function may be called on partially-\/opened streams. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+of} & The {\ttfamily Ogg\+Opus\+File} whose seekable status is to be returned. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A non-\/zero value if seekable, and 0 if unseekable. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__stream__info_ga41992ce6f066e07609e5fe2ccd961f40}\label{group__stream__info_ga41992ce6f066e07609e5fe2ccd961f40}} 
+\index{Stream Information@{Stream Information}!op\+\_\+serialno@{op\+\_\+serialno}}
+\index{op\+\_\+serialno@{op\+\_\+serialno}!Stream Information@{Stream Information}}
+\subsubsection{\texorpdfstring{op\+\_\+serialno()}{op\_serialno()}}
+{\footnotesize\ttfamily \hyperlink{opus__types_8h_a643eaaadb9ef6cd44308e0299d8cd8ce}{opus\+\_\+uint32} op\+\_\+serialno (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$}]{\+\_\+of,  }\item[{int}]{\+\_\+li }\end{DoxyParamCaption})}
+
+Get the serial number of the given link in a (possibly-\/chained) Ogg Opus stream. This function may be called on partially-\/opened streams, but it will always return the serial number of the Opus stream in the first link. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+of} & The {\ttfamily Ogg\+Opus\+File} from which to retrieve the serial number. \\
+\hline
+{\em \+\_\+li} & The index of the link whose serial number should be retrieved. Use a negative number to get the serial number of the current link. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The serial number of the given link. If {\itshape \+\_\+li} is greater than the total number of links, this returns the serial number of the last link. If the source is not seekable, this always returns the serial number of the current link. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__stream__info_ga4b9b8b62a9fb04aee64c288e106a4822}\label{group__stream__info_ga4b9b8b62a9fb04aee64c288e106a4822}} 
+\index{Stream Information@{Stream Information}!op\+\_\+tags@{op\+\_\+tags}}
+\index{op\+\_\+tags@{op\+\_\+tags}!Stream Information@{Stream Information}}
+\subsubsection{\texorpdfstring{op\+\_\+tags()}{op\_tags()}}
+{\footnotesize\ttfamily \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{struct_opus_tags}{Opus\+Tags}$\ast$ op\+\_\+tags (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} Ogg\+Opus\+File $\ast$}]{\+\_\+of,  }\item[{int}]{\+\_\+li }\end{DoxyParamCaption})}
+
+Get the comment header information for the given link in a (possibly chained) Ogg Opus stream. This function may be called on partially-\/opened streams, but it will always return the tags from the Opus stream in the first link. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+of} & The {\ttfamily Ogg\+Opus\+File} from which to retrieve the comment header information. \\
+\hline
+{\em \+\_\+li} & The index of the link whose comment header information should be retrieved. Use a negative number to get the comment header information of the current link. For an unseekable stream, {\itshape \+\_\+li} is ignored, and the comment header information for the current link is always returned, if available. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The contents of the comment header for the given link, or {\ttfamily N\+U\+LL} if this is an unseekable stream that encountered an invalid link. 
+\end{DoxyReturn}

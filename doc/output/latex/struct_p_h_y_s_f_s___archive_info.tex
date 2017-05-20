@@ -1,0 +1,67 @@
+\hypertarget{struct_p_h_y_s_f_s___archive_info}{}\section{P\+H\+Y\+S\+F\+S\+\_\+\+Archive\+Info Struct Reference}
+\label{struct_p_h_y_s_f_s___archive_info}\index{P\+H\+Y\+S\+F\+S\+\_\+\+Archive\+Info@{P\+H\+Y\+S\+F\+S\+\_\+\+Archive\+Info}}
+
+
+Information on various Physics\+F\+S-\/supported archives.  
+
+
+
+
+{\ttfamily \#include $<$physfs.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$ \hyperlink{struct_p_h_y_s_f_s___archive_info_afedfd22d607fe194bbc6ae9bda021342}{extension}
+\item 
+\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$ \hyperlink{struct_p_h_y_s_f_s___archive_info_aa544edc050c4b8bea6cf6a0385aba736}{description}
+\item 
+\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$ \hyperlink{struct_p_h_y_s_f_s___archive_info_a359cd08b6f06b3845234e4cd06501ea2}{author}
+\item 
+\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$ \hyperlink{struct_p_h_y_s_f_s___archive_info_a2b54ca7e3dd183f133c83eeab8399f9f}{url}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Information on various Physics\+F\+S-\/supported archives. 
+
+This structure gives you details on what sort of archives are supported by this implementation of Physics\+FS. Archives tend to be things like Z\+IP files and such.
+
+\begin{DoxyWarning}{Warning}
+Not all binaries are created equal! Physics\+FS can be built with or without support for various archives. You can check with \hyperlink{physfs_8h_a4ca65fbaa485d68113912bbbd70bd19e}{P\+H\+Y\+S\+F\+S\+\_\+supported\+Archive\+Types()} to see if your archive type is supported.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{physfs_8h_a4ca65fbaa485d68113912bbbd70bd19e}{P\+H\+Y\+S\+F\+S\+\_\+supported\+Archive\+Types} 
+\end{DoxySeeAlso}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{struct_p_h_y_s_f_s___archive_info_a359cd08b6f06b3845234e4cd06501ea2}\label{struct_p_h_y_s_f_s___archive_info_a359cd08b6f06b3845234e4cd06501ea2}} 
+\index{P\+H\+Y\+S\+F\+S\+\_\+\+Archive\+Info@{P\+H\+Y\+S\+F\+S\+\_\+\+Archive\+Info}!author@{author}}
+\index{author@{author}!P\+H\+Y\+S\+F\+S\+\_\+\+Archive\+Info@{P\+H\+Y\+S\+F\+S\+\_\+\+Archive\+Info}}
+\subsubsection{\texorpdfstring{author}{author}}
+{\footnotesize\ttfamily \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char$\ast$ P\+H\+Y\+S\+F\+S\+\_\+\+Archive\+Info\+::author}
+
+Person who did support for this archive. \mbox{\Hypertarget{struct_p_h_y_s_f_s___archive_info_aa544edc050c4b8bea6cf6a0385aba736}\label{struct_p_h_y_s_f_s___archive_info_aa544edc050c4b8bea6cf6a0385aba736}} 
+\index{P\+H\+Y\+S\+F\+S\+\_\+\+Archive\+Info@{P\+H\+Y\+S\+F\+S\+\_\+\+Archive\+Info}!description@{description}}
+\index{description@{description}!P\+H\+Y\+S\+F\+S\+\_\+\+Archive\+Info@{P\+H\+Y\+S\+F\+S\+\_\+\+Archive\+Info}}
+\subsubsection{\texorpdfstring{description}{description}}
+{\footnotesize\ttfamily \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char$\ast$ P\+H\+Y\+S\+F\+S\+\_\+\+Archive\+Info\+::description}
+
+Human-\/readable archive description. \mbox{\Hypertarget{struct_p_h_y_s_f_s___archive_info_afedfd22d607fe194bbc6ae9bda021342}\label{struct_p_h_y_s_f_s___archive_info_afedfd22d607fe194bbc6ae9bda021342}} 
+\index{P\+H\+Y\+S\+F\+S\+\_\+\+Archive\+Info@{P\+H\+Y\+S\+F\+S\+\_\+\+Archive\+Info}!extension@{extension}}
+\index{extension@{extension}!P\+H\+Y\+S\+F\+S\+\_\+\+Archive\+Info@{P\+H\+Y\+S\+F\+S\+\_\+\+Archive\+Info}}
+\subsubsection{\texorpdfstring{extension}{extension}}
+{\footnotesize\ttfamily \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char$\ast$ P\+H\+Y\+S\+F\+S\+\_\+\+Archive\+Info\+::extension}
+
+Archive file extension\+: \char`\"{}\+Z\+I\+P\char`\"{}, for example. \mbox{\Hypertarget{struct_p_h_y_s_f_s___archive_info_a2b54ca7e3dd183f133c83eeab8399f9f}\label{struct_p_h_y_s_f_s___archive_info_a2b54ca7e3dd183f133c83eeab8399f9f}} 
+\index{P\+H\+Y\+S\+F\+S\+\_\+\+Archive\+Info@{P\+H\+Y\+S\+F\+S\+\_\+\+Archive\+Info}!url@{url}}
+\index{url@{url}!P\+H\+Y\+S\+F\+S\+\_\+\+Archive\+Info@{P\+H\+Y\+S\+F\+S\+\_\+\+Archive\+Info}}
+\subsubsection{\texorpdfstring{url}{url}}
+{\footnotesize\ttfamily \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char$\ast$ P\+H\+Y\+S\+F\+S\+\_\+\+Archive\+Info\+::url}
+
+U\+RL related to this archive 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/packages/\+Allegro\+Deps.\+1.\+5.\+0.\+1/build/native/include/\hyperlink{physfs_8h}{physfs.\+h}\end{DoxyCompactItemize}

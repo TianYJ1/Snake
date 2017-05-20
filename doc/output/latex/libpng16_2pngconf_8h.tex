@@ -1,0 +1,469 @@
+\hypertarget{libpng16_2pngconf_8h}{}\section{src/packages/\+Allegro\+Deps.1.5.0.1/build/native/include/libpng16/pngconf.h File Reference}
+\label{libpng16_2pngconf_8h}\index{src/packages/\+Allegro\+Deps.\+1.\+5.\+0.\+1/build/native/include/libpng16/pngconf.\+h@{src/packages/\+Allegro\+Deps.\+1.\+5.\+0.\+1/build/native/include/libpng16/pngconf.\+h}}
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$setjmp.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+Include dependency graph for pngconf.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{libpng16_2pngconf_8h_ab86c4fb86cd835c779bdb0aab716e12e}{P\+N\+G\+\_\+\+C\+O\+N\+ST}~\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} /$\ast$ backward compatibility only $\ast$/
+\item 
+\#define \hyperlink{libpng16_2pngconf_8h_a0cd9caf4240bf2dbba7bebbc03327a71}{P\+N\+G\+\_\+\+U\+S\+E\+\_\+\+R\+E\+A\+D\+\_\+\+M\+A\+C\+R\+OS}
+\item 
+\#define \hyperlink{libpng16_2pngconf_8h_a7f0a65bb873ad5f2409155335492dacd}{P\+N\+G\+A\+RG}(arglist)~arglist
+\item 
+\#define \hyperlink{libpng16_2pngconf_8h_a765fb7af16420558e5a275e476c31075}{P\+N\+G\+C\+A\+PI}
+\item 
+\#define \hyperlink{libpng16_2pngconf_8h_a8d53312122f86549be997a84f6c26f4f}{P\+N\+G\+C\+B\+A\+PI}~\hyperlink{pngconf_8h_a765fb7af16420558e5a275e476c31075}{P\+N\+G\+C\+A\+PI}
+\item 
+\#define \hyperlink{libpng16_2pngconf_8h_a618eb992ee4d84d25d62175d6cc2c4c2}{P\+N\+G\+A\+PI}~\hyperlink{pngconf_8h_a765fb7af16420558e5a275e476c31075}{P\+N\+G\+C\+A\+PI}
+\item 
+\#define \hyperlink{libpng16_2pngconf_8h_af9552d6d5e1aaddedf9bbfbe795be33b}{P\+N\+G\+\_\+\+I\+M\+P\+E\+XP}
+\item 
+\#define \hyperlink{libpng16_2pngconf_8h_a01bcf64d2960ad845e60a850acc24824}{P\+N\+G\+\_\+\+F\+U\+N\+C\+T\+I\+ON}(type,  name,  args,  attributes)~attributes type name args
+\item 
+\#define \hyperlink{libpng16_2pngconf_8h_a5343046e2fe5bb84b31529cfca15c68d}{P\+N\+G\+\_\+\+E\+X\+P\+O\+R\+T\+\_\+\+T\+Y\+PE}(type)~\hyperlink{pngconf_8h_af9552d6d5e1aaddedf9bbfbe795be33b}{P\+N\+G\+\_\+\+I\+M\+P\+E\+XP} type
+\item 
+\#define \hyperlink{libpng16_2pngconf_8h_a0b2856104147f9c08a8a465f93f9ed16}{P\+N\+G\+\_\+\+E\+X\+P\+O\+R\+TA}(ordinal,  type,  name,  args,  attributes)
+\item 
+\#define \hyperlink{libpng16_2pngconf_8h_a6501ad1ed16700c401830c9001c6768f}{P\+N\+G\+\_\+\+E\+M\+P\+TY}~/$\ast$empty list$\ast$/
+\item 
+\#define \hyperlink{libpng16_2pngconf_8h_abbd10d3d08ec9421a5d1792c72568fbe}{P\+N\+G\+\_\+\+E\+X\+P\+O\+RT}(ordinal,  type,  name,  args)~\hyperlink{png_8h_a7a6cb2e4b978ef55d064eeacf7bd0901}{P\+N\+G\+\_\+\+E\+X\+P\+O\+R\+TA}(ordinal, type, name, args, \hyperlink{pngconf_8h_a6501ad1ed16700c401830c9001c6768f}{P\+N\+G\+\_\+\+E\+M\+P\+TY})
+\item 
+\#define \hyperlink{libpng16_2pngconf_8h_aeaa0b925c80a0b4c2ae0ef3beffb3c4b}{P\+N\+G\+\_\+\+R\+E\+M\+O\+V\+ED}(ordinal,  type,  name,  args,  attributes)
+\item 
+\#define \hyperlink{libpng16_2pngconf_8h_a6ede3bdfd3c59b8f273ebd01850a2d73}{P\+N\+G\+\_\+\+C\+A\+L\+L\+B\+A\+CK}(type,  name,  args)~type (\hyperlink{pngconf_8h_a8d53312122f86549be997a84f6c26f4f}{P\+N\+G\+C\+B\+A\+PI} name) \hyperlink{pngconf_8h_a7f0a65bb873ad5f2409155335492dacd}{P\+N\+G\+A\+RG}(args)
+\item 
+\#define \hyperlink{libpng16_2pngconf_8h_a3c18aa259842612ced6e24dd8fb4d2e0}{P\+N\+G\+\_\+\+P\+E\+D\+A\+N\+T\+I\+C\+\_\+\+W\+A\+R\+N\+I\+N\+G\+S\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}
+\item 
+\#define \hyperlink{libpng16_2pngconf_8h_a9a714c4465a312ba0247ed37ca0ef566}{P\+N\+G\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED}~/$\ast$ Use of this function is deprecated $\ast$/
+\item 
+\#define \hyperlink{libpng16_2pngconf_8h_ac1fd573b7edfce6bc0a22bb97c6d2f5a}{P\+N\+G\+\_\+\+U\+S\+E\+\_\+\+R\+E\+S\+U\+LT}~/$\ast$ The result of this function must be checked $\ast$/
+\item 
+\#define \hyperlink{libpng16_2pngconf_8h_a00c00e6af5feef3f9152c51b6d2d2419}{P\+N\+G\+\_\+\+N\+O\+R\+E\+T\+U\+RN}~/$\ast$ This function does not return $\ast$/
+\item 
+\#define \hyperlink{libpng16_2pngconf_8h_acd488a80a1aa8b4241cbdbaca0fec35f}{P\+N\+G\+\_\+\+A\+L\+L\+O\+C\+A\+T\+ED}~/$\ast$ The result of the function is new memory $\ast$/
+\item 
+\#define \hyperlink{libpng16_2pngconf_8h_acfea924b6dbd05f97e6e768c26f271d0}{P\+N\+G\+\_\+\+P\+R\+I\+V\+A\+TE}~/$\ast$ This is a private libpng function $\ast$/
+\item 
+\#define \hyperlink{libpng16_2pngconf_8h_af21b002e402fd844f1767dc3e7e92756}{P\+N\+G\+\_\+\+R\+E\+S\+T\+R\+I\+CT}~/$\ast$ The C99 \char`\"{}restrict\char`\"{} feature $\ast$/
+\item 
+\#define \hyperlink{libpng16_2pngconf_8h_ab4862d69c446ce9b210ebbecf54f368d}{P\+N\+G\+\_\+\+F\+P\+\_\+\+E\+X\+P\+O\+RT}(ordinal,  type,  name,  args)
+\item 
+\#define \hyperlink{libpng16_2pngconf_8h_a04bffc9e2c79ddc82e31992519f15648}{P\+N\+G\+\_\+\+F\+I\+X\+E\+D\+\_\+\+E\+X\+P\+O\+RT}(ordinal,  type,  name,  args)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned int \hyperlink{libpng16_2pngconf_8h_aed373ad2e16fd6df7ccfa96329441d0d}{png\+\_\+uint\+\_\+32}
+\item 
+typedef size\+\_\+t \hyperlink{libpng16_2pngconf_8h_a975e35d0a699ea3b08b8feef90fd29eb}{png\+\_\+size\+\_\+t}
+\item 
+typedef ptrdiff\+\_\+t \hyperlink{libpng16_2pngconf_8h_afaf89e9cb295489d7b17f8253f9abd7e}{png\+\_\+ptrdiff\+\_\+t}
+\item 
+typedef \hyperlink{libpng16_2pngconf_8h_a975e35d0a699ea3b08b8feef90fd29eb}{png\+\_\+size\+\_\+t} \hyperlink{libpng16_2pngconf_8h_a4e009b891cfb02d2de674eca032d23cd}{png\+\_\+alloc\+\_\+size\+\_\+t}
+\item 
+typedef png\+\_\+int\+\_\+32 \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point}
+\item 
+typedef \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$ \hyperlink{libpng16_2pngconf_8h_a9dc088c359b6d7e45682af63a3361b58}{png\+\_\+voidp}
+\item 
+typedef \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$ \hyperlink{libpng16_2pngconf_8h_aa2688aa7a3bd08819701a744f9a5716c}{png\+\_\+const\+\_\+voidp}
+\item 
+typedef png\+\_\+byte $\ast$ \hyperlink{libpng16_2pngconf_8h_a759e1c893f977ec7b67820bc3ca37524}{png\+\_\+bytep}
+\item 
+typedef \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} png\+\_\+byte $\ast$ \hyperlink{libpng16_2pngconf_8h_a2e608af822427492832d11909c2f3fee}{png\+\_\+const\+\_\+bytep}
+\item 
+typedef \hyperlink{libpng16_2pngconf_8h_aed373ad2e16fd6df7ccfa96329441d0d}{png\+\_\+uint\+\_\+32} $\ast$ \hyperlink{libpng16_2pngconf_8h_aa1888639a0c1615d833d44c3e92ddb35}{png\+\_\+uint\+\_\+32p}
+\item 
+typedef \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{libpng16_2pngconf_8h_aed373ad2e16fd6df7ccfa96329441d0d}{png\+\_\+uint\+\_\+32} $\ast$ \hyperlink{libpng16_2pngconf_8h_aac691932e7b59d0a61e4cc0c8d69bf59}{png\+\_\+const\+\_\+uint\+\_\+32p}
+\item 
+typedef png\+\_\+int\+\_\+32 $\ast$ \hyperlink{libpng16_2pngconf_8h_a9a7ed2424e8bca16a29fb2e3834135a8}{png\+\_\+int\+\_\+32p}
+\item 
+typedef \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} png\+\_\+int\+\_\+32 $\ast$ \hyperlink{libpng16_2pngconf_8h_a3727b65bca0885dcc5fe15502b3958f3}{png\+\_\+const\+\_\+int\+\_\+32p}
+\item 
+typedef png\+\_\+uint\+\_\+16 $\ast$ \hyperlink{libpng16_2pngconf_8h_a889b8a2dc78a318391324801da36180a}{png\+\_\+uint\+\_\+16p}
+\item 
+typedef \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} png\+\_\+uint\+\_\+16 $\ast$ \hyperlink{libpng16_2pngconf_8h_a312412f2ed2bfcbefebc9494ef5e5c25}{png\+\_\+const\+\_\+uint\+\_\+16p}
+\item 
+typedef png\+\_\+int\+\_\+16 $\ast$ \hyperlink{libpng16_2pngconf_8h_aea89e2ad359309ef31fdc93d01ec015b}{png\+\_\+int\+\_\+16p}
+\item 
+typedef \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} png\+\_\+int\+\_\+16 $\ast$ \hyperlink{libpng16_2pngconf_8h_a49eca47f6495eaa9ce2b1ac0afdb9f97}{png\+\_\+const\+\_\+int\+\_\+16p}
+\item 
+typedef char $\ast$ \hyperlink{libpng16_2pngconf_8h_a0d08bb02251d02830803ff5d2d449750}{png\+\_\+charp}
+\item 
+typedef \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$ \hyperlink{libpng16_2pngconf_8h_adee13ff9d091a8ae795d650a4be82b80}{png\+\_\+const\+\_\+charp}
+\item 
+typedef \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point} $\ast$ \hyperlink{libpng16_2pngconf_8h_aa142d7c619d038d905381afa7102488a}{png\+\_\+fixed\+\_\+point\+\_\+p}
+\item 
+typedef \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point} $\ast$ \hyperlink{libpng16_2pngconf_8h_aa7e6a8205c0831f40493788316be1787}{png\+\_\+const\+\_\+fixed\+\_\+point\+\_\+p}
+\item 
+typedef \hyperlink{libpng16_2pngconf_8h_a975e35d0a699ea3b08b8feef90fd29eb}{png\+\_\+size\+\_\+t} $\ast$ \hyperlink{libpng16_2pngconf_8h_aa2e1f6524fa84719a2200120f746a074}{png\+\_\+size\+\_\+tp}
+\item 
+typedef \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{libpng16_2pngconf_8h_a975e35d0a699ea3b08b8feef90fd29eb}{png\+\_\+size\+\_\+t} $\ast$ \hyperlink{libpng16_2pngconf_8h_a5163fd3903c1fb4b4332d01e9e5c909f}{png\+\_\+const\+\_\+size\+\_\+tp}
+\item 
+typedef png\+\_\+byte $\ast$$\ast$ \hyperlink{libpng16_2pngconf_8h_a84797ddea34868883a274e458368a63b}{png\+\_\+bytepp}
+\item 
+typedef \hyperlink{libpng16_2pngconf_8h_aed373ad2e16fd6df7ccfa96329441d0d}{png\+\_\+uint\+\_\+32} $\ast$$\ast$ \hyperlink{libpng16_2pngconf_8h_a630434f3381df31efd64841989e72901}{png\+\_\+uint\+\_\+32pp}
+\item 
+typedef png\+\_\+int\+\_\+32 $\ast$$\ast$ \hyperlink{libpng16_2pngconf_8h_adc835c8099d1d33c73a29c1e3c042b95}{png\+\_\+int\+\_\+32pp}
+\item 
+typedef png\+\_\+uint\+\_\+16 $\ast$$\ast$ \hyperlink{libpng16_2pngconf_8h_ae2cbc4889061b5c3b8424c022d0e5fa7}{png\+\_\+uint\+\_\+16pp}
+\item 
+typedef png\+\_\+int\+\_\+16 $\ast$$\ast$ \hyperlink{libpng16_2pngconf_8h_a840123d508059527f451cc854461031d}{png\+\_\+int\+\_\+16pp}
+\item 
+typedef \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$$\ast$ \hyperlink{libpng16_2pngconf_8h_a9ba0f5658e27e4725a17730262509c22}{png\+\_\+const\+\_\+charpp}
+\item 
+typedef char $\ast$$\ast$ \hyperlink{libpng16_2pngconf_8h_a4f8968072e801b0fe68c18ba94c560a4}{png\+\_\+charpp}
+\item 
+typedef \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point} $\ast$$\ast$ \hyperlink{libpng16_2pngconf_8h_a2591ad0ce942364e383a0eb37722500a}{png\+\_\+fixed\+\_\+point\+\_\+pp}
+\item 
+typedef char $\ast$$\ast$$\ast$ \hyperlink{libpng16_2pngconf_8h_ad293b06e1ed5fd0f4bc2dcd1140e4630}{png\+\_\+charppp}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{libpng16_2pngconf_8h_acd488a80a1aa8b4241cbdbaca0fec35f}\label{libpng16_2pngconf_8h_acd488a80a1aa8b4241cbdbaca0fec35f}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!P\+N\+G\+\_\+\+A\+L\+L\+O\+C\+A\+T\+ED@{P\+N\+G\+\_\+\+A\+L\+L\+O\+C\+A\+T\+ED}}
+\index{P\+N\+G\+\_\+\+A\+L\+L\+O\+C\+A\+T\+ED@{P\+N\+G\+\_\+\+A\+L\+L\+O\+C\+A\+T\+ED}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{P\+N\+G\+\_\+\+A\+L\+L\+O\+C\+A\+T\+ED}{PNG\_ALLOCATED}}
+{\footnotesize\ttfamily \#define P\+N\+G\+\_\+\+A\+L\+L\+O\+C\+A\+T\+ED~/$\ast$ The result of the function is new memory $\ast$/}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a6ede3bdfd3c59b8f273ebd01850a2d73}\label{libpng16_2pngconf_8h_a6ede3bdfd3c59b8f273ebd01850a2d73}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!P\+N\+G\+\_\+\+C\+A\+L\+L\+B\+A\+CK@{P\+N\+G\+\_\+\+C\+A\+L\+L\+B\+A\+CK}}
+\index{P\+N\+G\+\_\+\+C\+A\+L\+L\+B\+A\+CK@{P\+N\+G\+\_\+\+C\+A\+L\+L\+B\+A\+CK}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{P\+N\+G\+\_\+\+C\+A\+L\+L\+B\+A\+CK}{PNG\_CALLBACK}}
+{\footnotesize\ttfamily \#define P\+N\+G\+\_\+\+C\+A\+L\+L\+B\+A\+CK(\begin{DoxyParamCaption}\item[{}]{type,  }\item[{}]{name,  }\item[{}]{args }\end{DoxyParamCaption})~type (\hyperlink{pngconf_8h_a8d53312122f86549be997a84f6c26f4f}{P\+N\+G\+C\+B\+A\+PI} name) \hyperlink{pngconf_8h_a7f0a65bb873ad5f2409155335492dacd}{P\+N\+G\+A\+RG}(args)}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_ab86c4fb86cd835c779bdb0aab716e12e}\label{libpng16_2pngconf_8h_ab86c4fb86cd835c779bdb0aab716e12e}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!P\+N\+G\+\_\+\+C\+O\+N\+ST@{P\+N\+G\+\_\+\+C\+O\+N\+ST}}
+\index{P\+N\+G\+\_\+\+C\+O\+N\+ST@{P\+N\+G\+\_\+\+C\+O\+N\+ST}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{P\+N\+G\+\_\+\+C\+O\+N\+ST}{PNG\_CONST}}
+{\footnotesize\ttfamily \#define P\+N\+G\+\_\+\+C\+O\+N\+ST~\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} /$\ast$ backward compatibility only $\ast$/}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a9a714c4465a312ba0247ed37ca0ef566}\label{libpng16_2pngconf_8h_a9a714c4465a312ba0247ed37ca0ef566}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!P\+N\+G\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED@{P\+N\+G\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED}}
+\index{P\+N\+G\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED@{P\+N\+G\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{P\+N\+G\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED}{PNG\_DEPRECATED}}
+{\footnotesize\ttfamily \#define P\+N\+G\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED~/$\ast$ Use of this function is deprecated $\ast$/}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a6501ad1ed16700c401830c9001c6768f}\label{libpng16_2pngconf_8h_a6501ad1ed16700c401830c9001c6768f}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!P\+N\+G\+\_\+\+E\+M\+P\+TY@{P\+N\+G\+\_\+\+E\+M\+P\+TY}}
+\index{P\+N\+G\+\_\+\+E\+M\+P\+TY@{P\+N\+G\+\_\+\+E\+M\+P\+TY}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{P\+N\+G\+\_\+\+E\+M\+P\+TY}{PNG\_EMPTY}}
+{\footnotesize\ttfamily \#define P\+N\+G\+\_\+\+E\+M\+P\+TY~/$\ast$empty list$\ast$/}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_abbd10d3d08ec9421a5d1792c72568fbe}\label{libpng16_2pngconf_8h_abbd10d3d08ec9421a5d1792c72568fbe}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!P\+N\+G\+\_\+\+E\+X\+P\+O\+RT@{P\+N\+G\+\_\+\+E\+X\+P\+O\+RT}}
+\index{P\+N\+G\+\_\+\+E\+X\+P\+O\+RT@{P\+N\+G\+\_\+\+E\+X\+P\+O\+RT}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{P\+N\+G\+\_\+\+E\+X\+P\+O\+RT}{PNG\_EXPORT}}
+{\footnotesize\ttfamily \#define P\+N\+G\+\_\+\+E\+X\+P\+O\+RT(\begin{DoxyParamCaption}\item[{}]{ordinal,  }\item[{}]{type,  }\item[{}]{name,  }\item[{}]{args }\end{DoxyParamCaption})~\hyperlink{png_8h_a7a6cb2e4b978ef55d064eeacf7bd0901}{P\+N\+G\+\_\+\+E\+X\+P\+O\+R\+TA}(ordinal, type, name, args, \hyperlink{pngconf_8h_a6501ad1ed16700c401830c9001c6768f}{P\+N\+G\+\_\+\+E\+M\+P\+TY})}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a5343046e2fe5bb84b31529cfca15c68d}\label{libpng16_2pngconf_8h_a5343046e2fe5bb84b31529cfca15c68d}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!P\+N\+G\+\_\+\+E\+X\+P\+O\+R\+T\+\_\+\+T\+Y\+PE@{P\+N\+G\+\_\+\+E\+X\+P\+O\+R\+T\+\_\+\+T\+Y\+PE}}
+\index{P\+N\+G\+\_\+\+E\+X\+P\+O\+R\+T\+\_\+\+T\+Y\+PE@{P\+N\+G\+\_\+\+E\+X\+P\+O\+R\+T\+\_\+\+T\+Y\+PE}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{P\+N\+G\+\_\+\+E\+X\+P\+O\+R\+T\+\_\+\+T\+Y\+PE}{PNG\_EXPORT\_TYPE}}
+{\footnotesize\ttfamily \#define P\+N\+G\+\_\+\+E\+X\+P\+O\+R\+T\+\_\+\+T\+Y\+PE(\begin{DoxyParamCaption}\item[{}]{type }\end{DoxyParamCaption})~\hyperlink{pngconf_8h_af9552d6d5e1aaddedf9bbfbe795be33b}{P\+N\+G\+\_\+\+I\+M\+P\+E\+XP} type}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a0b2856104147f9c08a8a465f93f9ed16}\label{libpng16_2pngconf_8h_a0b2856104147f9c08a8a465f93f9ed16}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!P\+N\+G\+\_\+\+E\+X\+P\+O\+R\+TA@{P\+N\+G\+\_\+\+E\+X\+P\+O\+R\+TA}}
+\index{P\+N\+G\+\_\+\+E\+X\+P\+O\+R\+TA@{P\+N\+G\+\_\+\+E\+X\+P\+O\+R\+TA}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{P\+N\+G\+\_\+\+E\+X\+P\+O\+R\+TA}{PNG\_EXPORTA}}
+{\footnotesize\ttfamily \#define P\+N\+G\+\_\+\+E\+X\+P\+O\+R\+TA(\begin{DoxyParamCaption}\item[{}]{ordinal,  }\item[{}]{type,  }\item[{}]{name,  }\item[{}]{args,  }\item[{}]{attributes }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\hyperlink{libpng16_2pngconf_8h_a01bcf64d2960ad845e60a850acc24824}{PNG\_FUNCTION}(\hyperlink{libpng16_2pngconf_8h_a5343046e2fe5bb84b31529cfca15c68d}{PNG\_EXPORT\_TYPE}(type),(\hyperlink{libpng16_2pngconf_8h_a618eb992ee4d84d25d62175d6cc2c4c2}{PNGAPI} name),
+      \hyperlink{libpng16_2pngconf_8h_a7f0a65bb873ad5f2409155335492dacd}{PNGARG}(args), \(\backslash\)
+        \textcolor{keyword}{extern} attributes)
+\end{DoxyCode}
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a04bffc9e2c79ddc82e31992519f15648}\label{libpng16_2pngconf_8h_a04bffc9e2c79ddc82e31992519f15648}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!P\+N\+G\+\_\+\+F\+I\+X\+E\+D\+\_\+\+E\+X\+P\+O\+RT@{P\+N\+G\+\_\+\+F\+I\+X\+E\+D\+\_\+\+E\+X\+P\+O\+RT}}
+\index{P\+N\+G\+\_\+\+F\+I\+X\+E\+D\+\_\+\+E\+X\+P\+O\+RT@{P\+N\+G\+\_\+\+F\+I\+X\+E\+D\+\_\+\+E\+X\+P\+O\+RT}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{P\+N\+G\+\_\+\+F\+I\+X\+E\+D\+\_\+\+E\+X\+P\+O\+RT}{PNG\_FIXED\_EXPORT}}
+{\footnotesize\ttfamily \#define P\+N\+G\+\_\+\+F\+I\+X\+E\+D\+\_\+\+E\+X\+P\+O\+RT(\begin{DoxyParamCaption}\item[{}]{ordinal,  }\item[{}]{type,  }\item[{}]{name,  }\item[{}]{args }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_ab4862d69c446ce9b210ebbecf54f368d}\label{libpng16_2pngconf_8h_ab4862d69c446ce9b210ebbecf54f368d}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!P\+N\+G\+\_\+\+F\+P\+\_\+\+E\+X\+P\+O\+RT@{P\+N\+G\+\_\+\+F\+P\+\_\+\+E\+X\+P\+O\+RT}}
+\index{P\+N\+G\+\_\+\+F\+P\+\_\+\+E\+X\+P\+O\+RT@{P\+N\+G\+\_\+\+F\+P\+\_\+\+E\+X\+P\+O\+RT}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{P\+N\+G\+\_\+\+F\+P\+\_\+\+E\+X\+P\+O\+RT}{PNG\_FP\_EXPORT}}
+{\footnotesize\ttfamily \#define P\+N\+G\+\_\+\+F\+P\+\_\+\+E\+X\+P\+O\+RT(\begin{DoxyParamCaption}\item[{}]{ordinal,  }\item[{}]{type,  }\item[{}]{name,  }\item[{}]{args }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a01bcf64d2960ad845e60a850acc24824}\label{libpng16_2pngconf_8h_a01bcf64d2960ad845e60a850acc24824}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!P\+N\+G\+\_\+\+F\+U\+N\+C\+T\+I\+ON@{P\+N\+G\+\_\+\+F\+U\+N\+C\+T\+I\+ON}}
+\index{P\+N\+G\+\_\+\+F\+U\+N\+C\+T\+I\+ON@{P\+N\+G\+\_\+\+F\+U\+N\+C\+T\+I\+ON}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{P\+N\+G\+\_\+\+F\+U\+N\+C\+T\+I\+ON}{PNG\_FUNCTION}}
+{\footnotesize\ttfamily \#define P\+N\+G\+\_\+\+F\+U\+N\+C\+T\+I\+ON(\begin{DoxyParamCaption}\item[{}]{type,  }\item[{}]{name,  }\item[{}]{args,  }\item[{}]{attributes }\end{DoxyParamCaption})~attributes type name args}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_af9552d6d5e1aaddedf9bbfbe795be33b}\label{libpng16_2pngconf_8h_af9552d6d5e1aaddedf9bbfbe795be33b}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!P\+N\+G\+\_\+\+I\+M\+P\+E\+XP@{P\+N\+G\+\_\+\+I\+M\+P\+E\+XP}}
+\index{P\+N\+G\+\_\+\+I\+M\+P\+E\+XP@{P\+N\+G\+\_\+\+I\+M\+P\+E\+XP}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{P\+N\+G\+\_\+\+I\+M\+P\+E\+XP}{PNG\_IMPEXP}}
+{\footnotesize\ttfamily \#define P\+N\+G\+\_\+\+I\+M\+P\+E\+XP}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a00c00e6af5feef3f9152c51b6d2d2419}\label{libpng16_2pngconf_8h_a00c00e6af5feef3f9152c51b6d2d2419}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!P\+N\+G\+\_\+\+N\+O\+R\+E\+T\+U\+RN@{P\+N\+G\+\_\+\+N\+O\+R\+E\+T\+U\+RN}}
+\index{P\+N\+G\+\_\+\+N\+O\+R\+E\+T\+U\+RN@{P\+N\+G\+\_\+\+N\+O\+R\+E\+T\+U\+RN}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{P\+N\+G\+\_\+\+N\+O\+R\+E\+T\+U\+RN}{PNG\_NORETURN}}
+{\footnotesize\ttfamily \#define P\+N\+G\+\_\+\+N\+O\+R\+E\+T\+U\+RN~/$\ast$ This function does not return $\ast$/}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a3c18aa259842612ced6e24dd8fb4d2e0}\label{libpng16_2pngconf_8h_a3c18aa259842612ced6e24dd8fb4d2e0}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!P\+N\+G\+\_\+\+P\+E\+D\+A\+N\+T\+I\+C\+\_\+\+W\+A\+R\+N\+I\+N\+G\+S\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED@{P\+N\+G\+\_\+\+P\+E\+D\+A\+N\+T\+I\+C\+\_\+\+W\+A\+R\+N\+I\+N\+G\+S\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}}
+\index{P\+N\+G\+\_\+\+P\+E\+D\+A\+N\+T\+I\+C\+\_\+\+W\+A\+R\+N\+I\+N\+G\+S\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED@{P\+N\+G\+\_\+\+P\+E\+D\+A\+N\+T\+I\+C\+\_\+\+W\+A\+R\+N\+I\+N\+G\+S\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{P\+N\+G\+\_\+\+P\+E\+D\+A\+N\+T\+I\+C\+\_\+\+W\+A\+R\+N\+I\+N\+G\+S\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}{PNG\_PEDANTIC\_WARNINGS\_SUPPORTED}}
+{\footnotesize\ttfamily \#define P\+N\+G\+\_\+\+P\+E\+D\+A\+N\+T\+I\+C\+\_\+\+W\+A\+R\+N\+I\+N\+G\+S\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_acfea924b6dbd05f97e6e768c26f271d0}\label{libpng16_2pngconf_8h_acfea924b6dbd05f97e6e768c26f271d0}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!P\+N\+G\+\_\+\+P\+R\+I\+V\+A\+TE@{P\+N\+G\+\_\+\+P\+R\+I\+V\+A\+TE}}
+\index{P\+N\+G\+\_\+\+P\+R\+I\+V\+A\+TE@{P\+N\+G\+\_\+\+P\+R\+I\+V\+A\+TE}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{P\+N\+G\+\_\+\+P\+R\+I\+V\+A\+TE}{PNG\_PRIVATE}}
+{\footnotesize\ttfamily \#define P\+N\+G\+\_\+\+P\+R\+I\+V\+A\+TE~/$\ast$ This is a private libpng function $\ast$/}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_aeaa0b925c80a0b4c2ae0ef3beffb3c4b}\label{libpng16_2pngconf_8h_aeaa0b925c80a0b4c2ae0ef3beffb3c4b}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!P\+N\+G\+\_\+\+R\+E\+M\+O\+V\+ED@{P\+N\+G\+\_\+\+R\+E\+M\+O\+V\+ED}}
+\index{P\+N\+G\+\_\+\+R\+E\+M\+O\+V\+ED@{P\+N\+G\+\_\+\+R\+E\+M\+O\+V\+ED}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{P\+N\+G\+\_\+\+R\+E\+M\+O\+V\+ED}{PNG\_REMOVED}}
+{\footnotesize\ttfamily \#define P\+N\+G\+\_\+\+R\+E\+M\+O\+V\+ED(\begin{DoxyParamCaption}\item[{}]{ordinal,  }\item[{}]{type,  }\item[{}]{name,  }\item[{}]{args,  }\item[{}]{attributes }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_af21b002e402fd844f1767dc3e7e92756}\label{libpng16_2pngconf_8h_af21b002e402fd844f1767dc3e7e92756}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!P\+N\+G\+\_\+\+R\+E\+S\+T\+R\+I\+CT@{P\+N\+G\+\_\+\+R\+E\+S\+T\+R\+I\+CT}}
+\index{P\+N\+G\+\_\+\+R\+E\+S\+T\+R\+I\+CT@{P\+N\+G\+\_\+\+R\+E\+S\+T\+R\+I\+CT}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{P\+N\+G\+\_\+\+R\+E\+S\+T\+R\+I\+CT}{PNG\_RESTRICT}}
+{\footnotesize\ttfamily \#define P\+N\+G\+\_\+\+R\+E\+S\+T\+R\+I\+CT~/$\ast$ The C99 \char`\"{}restrict\char`\"{} feature $\ast$/}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a0cd9caf4240bf2dbba7bebbc03327a71}\label{libpng16_2pngconf_8h_a0cd9caf4240bf2dbba7bebbc03327a71}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!P\+N\+G\+\_\+\+U\+S\+E\+\_\+\+R\+E\+A\+D\+\_\+\+M\+A\+C\+R\+OS@{P\+N\+G\+\_\+\+U\+S\+E\+\_\+\+R\+E\+A\+D\+\_\+\+M\+A\+C\+R\+OS}}
+\index{P\+N\+G\+\_\+\+U\+S\+E\+\_\+\+R\+E\+A\+D\+\_\+\+M\+A\+C\+R\+OS@{P\+N\+G\+\_\+\+U\+S\+E\+\_\+\+R\+E\+A\+D\+\_\+\+M\+A\+C\+R\+OS}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{P\+N\+G\+\_\+\+U\+S\+E\+\_\+\+R\+E\+A\+D\+\_\+\+M\+A\+C\+R\+OS}{PNG\_USE\_READ\_MACROS}}
+{\footnotesize\ttfamily \#define P\+N\+G\+\_\+\+U\+S\+E\+\_\+\+R\+E\+A\+D\+\_\+\+M\+A\+C\+R\+OS}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_ac1fd573b7edfce6bc0a22bb97c6d2f5a}\label{libpng16_2pngconf_8h_ac1fd573b7edfce6bc0a22bb97c6d2f5a}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!P\+N\+G\+\_\+\+U\+S\+E\+\_\+\+R\+E\+S\+U\+LT@{P\+N\+G\+\_\+\+U\+S\+E\+\_\+\+R\+E\+S\+U\+LT}}
+\index{P\+N\+G\+\_\+\+U\+S\+E\+\_\+\+R\+E\+S\+U\+LT@{P\+N\+G\+\_\+\+U\+S\+E\+\_\+\+R\+E\+S\+U\+LT}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{P\+N\+G\+\_\+\+U\+S\+E\+\_\+\+R\+E\+S\+U\+LT}{PNG\_USE\_RESULT}}
+{\footnotesize\ttfamily \#define P\+N\+G\+\_\+\+U\+S\+E\+\_\+\+R\+E\+S\+U\+LT~/$\ast$ The result of this function must be checked $\ast$/}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a618eb992ee4d84d25d62175d6cc2c4c2}\label{libpng16_2pngconf_8h_a618eb992ee4d84d25d62175d6cc2c4c2}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!P\+N\+G\+A\+PI@{P\+N\+G\+A\+PI}}
+\index{P\+N\+G\+A\+PI@{P\+N\+G\+A\+PI}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{P\+N\+G\+A\+PI}{PNGAPI}}
+{\footnotesize\ttfamily \#define P\+N\+G\+A\+PI~\hyperlink{pngconf_8h_a765fb7af16420558e5a275e476c31075}{P\+N\+G\+C\+A\+PI}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a7f0a65bb873ad5f2409155335492dacd}\label{libpng16_2pngconf_8h_a7f0a65bb873ad5f2409155335492dacd}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!P\+N\+G\+A\+RG@{P\+N\+G\+A\+RG}}
+\index{P\+N\+G\+A\+RG@{P\+N\+G\+A\+RG}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{P\+N\+G\+A\+RG}{PNGARG}}
+{\footnotesize\ttfamily \#define P\+N\+G\+A\+RG(\begin{DoxyParamCaption}\item[{}]{arglist }\end{DoxyParamCaption})~arglist}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a765fb7af16420558e5a275e476c31075}\label{libpng16_2pngconf_8h_a765fb7af16420558e5a275e476c31075}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!P\+N\+G\+C\+A\+PI@{P\+N\+G\+C\+A\+PI}}
+\index{P\+N\+G\+C\+A\+PI@{P\+N\+G\+C\+A\+PI}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{P\+N\+G\+C\+A\+PI}{PNGCAPI}}
+{\footnotesize\ttfamily \#define P\+N\+G\+C\+A\+PI}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a8d53312122f86549be997a84f6c26f4f}\label{libpng16_2pngconf_8h_a8d53312122f86549be997a84f6c26f4f}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!P\+N\+G\+C\+B\+A\+PI@{P\+N\+G\+C\+B\+A\+PI}}
+\index{P\+N\+G\+C\+B\+A\+PI@{P\+N\+G\+C\+B\+A\+PI}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{P\+N\+G\+C\+B\+A\+PI}{PNGCBAPI}}
+{\footnotesize\ttfamily \#define P\+N\+G\+C\+B\+A\+PI~\hyperlink{pngconf_8h_a765fb7af16420558e5a275e476c31075}{P\+N\+G\+C\+A\+PI}}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a4e009b891cfb02d2de674eca032d23cd}\label{libpng16_2pngconf_8h_a4e009b891cfb02d2de674eca032d23cd}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+alloc\+\_\+size\+\_\+t@{png\+\_\+alloc\+\_\+size\+\_\+t}}
+\index{png\+\_\+alloc\+\_\+size\+\_\+t@{png\+\_\+alloc\+\_\+size\+\_\+t}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+alloc\+\_\+size\+\_\+t}{png\_alloc\_size\_t}}
+{\footnotesize\ttfamily typedef \hyperlink{libpng16_2pngconf_8h_a975e35d0a699ea3b08b8feef90fd29eb}{png\+\_\+size\+\_\+t} \hyperlink{libpng16_2pngconf_8h_a4e009b891cfb02d2de674eca032d23cd}{png\+\_\+alloc\+\_\+size\+\_\+t}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a759e1c893f977ec7b67820bc3ca37524}\label{libpng16_2pngconf_8h_a759e1c893f977ec7b67820bc3ca37524}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+bytep@{png\+\_\+bytep}}
+\index{png\+\_\+bytep@{png\+\_\+bytep}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+bytep}{png\_bytep}}
+{\footnotesize\ttfamily typedef png\+\_\+byte$\ast$ \hyperlink{libpng16_2pngconf_8h_a759e1c893f977ec7b67820bc3ca37524}{png\+\_\+bytep}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a84797ddea34868883a274e458368a63b}\label{libpng16_2pngconf_8h_a84797ddea34868883a274e458368a63b}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+bytepp@{png\+\_\+bytepp}}
+\index{png\+\_\+bytepp@{png\+\_\+bytepp}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+bytepp}{png\_bytepp}}
+{\footnotesize\ttfamily typedef png\+\_\+byte$\ast$ $\ast$ \hyperlink{libpng16_2pngconf_8h_a84797ddea34868883a274e458368a63b}{png\+\_\+bytepp}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a0d08bb02251d02830803ff5d2d449750}\label{libpng16_2pngconf_8h_a0d08bb02251d02830803ff5d2d449750}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+charp@{png\+\_\+charp}}
+\index{png\+\_\+charp@{png\+\_\+charp}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+charp}{png\_charp}}
+{\footnotesize\ttfamily typedef char$\ast$ \hyperlink{libpng16_2pngconf_8h_a0d08bb02251d02830803ff5d2d449750}{png\+\_\+charp}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a4f8968072e801b0fe68c18ba94c560a4}\label{libpng16_2pngconf_8h_a4f8968072e801b0fe68c18ba94c560a4}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+charpp@{png\+\_\+charpp}}
+\index{png\+\_\+charpp@{png\+\_\+charpp}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+charpp}{png\_charpp}}
+{\footnotesize\ttfamily typedef char$\ast$ $\ast$ \hyperlink{libpng16_2pngconf_8h_a4f8968072e801b0fe68c18ba94c560a4}{png\+\_\+charpp}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_ad293b06e1ed5fd0f4bc2dcd1140e4630}\label{libpng16_2pngconf_8h_ad293b06e1ed5fd0f4bc2dcd1140e4630}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+charppp@{png\+\_\+charppp}}
+\index{png\+\_\+charppp@{png\+\_\+charppp}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+charppp}{png\_charppp}}
+{\footnotesize\ttfamily typedef char$\ast$ $\ast$ $\ast$ \hyperlink{libpng16_2pngconf_8h_ad293b06e1ed5fd0f4bc2dcd1140e4630}{png\+\_\+charppp}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a2e608af822427492832d11909c2f3fee}\label{libpng16_2pngconf_8h_a2e608af822427492832d11909c2f3fee}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+const\+\_\+bytep@{png\+\_\+const\+\_\+bytep}}
+\index{png\+\_\+const\+\_\+bytep@{png\+\_\+const\+\_\+bytep}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+const\+\_\+bytep}{png\_const\_bytep}}
+{\footnotesize\ttfamily typedef \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} png\+\_\+byte$\ast$ \hyperlink{libpng16_2pngconf_8h_a2e608af822427492832d11909c2f3fee}{png\+\_\+const\+\_\+bytep}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_adee13ff9d091a8ae795d650a4be82b80}\label{libpng16_2pngconf_8h_adee13ff9d091a8ae795d650a4be82b80}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+const\+\_\+charp@{png\+\_\+const\+\_\+charp}}
+\index{png\+\_\+const\+\_\+charp@{png\+\_\+const\+\_\+charp}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+const\+\_\+charp}{png\_const\_charp}}
+{\footnotesize\ttfamily typedef \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char$\ast$ \hyperlink{libpng16_2pngconf_8h_adee13ff9d091a8ae795d650a4be82b80}{png\+\_\+const\+\_\+charp}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a9ba0f5658e27e4725a17730262509c22}\label{libpng16_2pngconf_8h_a9ba0f5658e27e4725a17730262509c22}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+const\+\_\+charpp@{png\+\_\+const\+\_\+charpp}}
+\index{png\+\_\+const\+\_\+charpp@{png\+\_\+const\+\_\+charpp}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+const\+\_\+charpp}{png\_const\_charpp}}
+{\footnotesize\ttfamily typedef \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char$\ast$ $\ast$ \hyperlink{libpng16_2pngconf_8h_a9ba0f5658e27e4725a17730262509c22}{png\+\_\+const\+\_\+charpp}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_aa7e6a8205c0831f40493788316be1787}\label{libpng16_2pngconf_8h_aa7e6a8205c0831f40493788316be1787}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+const\+\_\+fixed\+\_\+point\+\_\+p@{png\+\_\+const\+\_\+fixed\+\_\+point\+\_\+p}}
+\index{png\+\_\+const\+\_\+fixed\+\_\+point\+\_\+p@{png\+\_\+const\+\_\+fixed\+\_\+point\+\_\+p}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+const\+\_\+fixed\+\_\+point\+\_\+p}{png\_const\_fixed\_point\_p}}
+{\footnotesize\ttfamily typedef \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point}$\ast$ \hyperlink{libpng16_2pngconf_8h_aa7e6a8205c0831f40493788316be1787}{png\+\_\+const\+\_\+fixed\+\_\+point\+\_\+p}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a49eca47f6495eaa9ce2b1ac0afdb9f97}\label{libpng16_2pngconf_8h_a49eca47f6495eaa9ce2b1ac0afdb9f97}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+const\+\_\+int\+\_\+16p@{png\+\_\+const\+\_\+int\+\_\+16p}}
+\index{png\+\_\+const\+\_\+int\+\_\+16p@{png\+\_\+const\+\_\+int\+\_\+16p}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+const\+\_\+int\+\_\+16p}{png\_const\_int\_16p}}
+{\footnotesize\ttfamily typedef \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} png\+\_\+int\+\_\+16$\ast$ \hyperlink{libpng16_2pngconf_8h_a49eca47f6495eaa9ce2b1ac0afdb9f97}{png\+\_\+const\+\_\+int\+\_\+16p}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a3727b65bca0885dcc5fe15502b3958f3}\label{libpng16_2pngconf_8h_a3727b65bca0885dcc5fe15502b3958f3}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+const\+\_\+int\+\_\+32p@{png\+\_\+const\+\_\+int\+\_\+32p}}
+\index{png\+\_\+const\+\_\+int\+\_\+32p@{png\+\_\+const\+\_\+int\+\_\+32p}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+const\+\_\+int\+\_\+32p}{png\_const\_int\_32p}}
+{\footnotesize\ttfamily typedef \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} png\+\_\+int\+\_\+32$\ast$ \hyperlink{libpng16_2pngconf_8h_a3727b65bca0885dcc5fe15502b3958f3}{png\+\_\+const\+\_\+int\+\_\+32p}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a5163fd3903c1fb4b4332d01e9e5c909f}\label{libpng16_2pngconf_8h_a5163fd3903c1fb4b4332d01e9e5c909f}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+const\+\_\+size\+\_\+tp@{png\+\_\+const\+\_\+size\+\_\+tp}}
+\index{png\+\_\+const\+\_\+size\+\_\+tp@{png\+\_\+const\+\_\+size\+\_\+tp}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+const\+\_\+size\+\_\+tp}{png\_const\_size\_tp}}
+{\footnotesize\ttfamily typedef \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{libpng16_2pngconf_8h_a975e35d0a699ea3b08b8feef90fd29eb}{png\+\_\+size\+\_\+t}$\ast$ \hyperlink{libpng16_2pngconf_8h_a5163fd3903c1fb4b4332d01e9e5c909f}{png\+\_\+const\+\_\+size\+\_\+tp}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a312412f2ed2bfcbefebc9494ef5e5c25}\label{libpng16_2pngconf_8h_a312412f2ed2bfcbefebc9494ef5e5c25}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+const\+\_\+uint\+\_\+16p@{png\+\_\+const\+\_\+uint\+\_\+16p}}
+\index{png\+\_\+const\+\_\+uint\+\_\+16p@{png\+\_\+const\+\_\+uint\+\_\+16p}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+const\+\_\+uint\+\_\+16p}{png\_const\_uint\_16p}}
+{\footnotesize\ttfamily typedef \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} png\+\_\+uint\+\_\+16$\ast$ \hyperlink{libpng16_2pngconf_8h_a312412f2ed2bfcbefebc9494ef5e5c25}{png\+\_\+const\+\_\+uint\+\_\+16p}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_aac691932e7b59d0a61e4cc0c8d69bf59}\label{libpng16_2pngconf_8h_aac691932e7b59d0a61e4cc0c8d69bf59}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+const\+\_\+uint\+\_\+32p@{png\+\_\+const\+\_\+uint\+\_\+32p}}
+\index{png\+\_\+const\+\_\+uint\+\_\+32p@{png\+\_\+const\+\_\+uint\+\_\+32p}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+const\+\_\+uint\+\_\+32p}{png\_const\_uint\_32p}}
+{\footnotesize\ttfamily typedef \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{libpng16_2pngconf_8h_aed373ad2e16fd6df7ccfa96329441d0d}{png\+\_\+uint\+\_\+32}$\ast$ \hyperlink{libpng16_2pngconf_8h_aac691932e7b59d0a61e4cc0c8d69bf59}{png\+\_\+const\+\_\+uint\+\_\+32p}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_aa2688aa7a3bd08819701a744f9a5716c}\label{libpng16_2pngconf_8h_aa2688aa7a3bd08819701a744f9a5716c}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+const\+\_\+voidp@{png\+\_\+const\+\_\+voidp}}
+\index{png\+\_\+const\+\_\+voidp@{png\+\_\+const\+\_\+voidp}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+const\+\_\+voidp}{png\_const\_voidp}}
+{\footnotesize\ttfamily typedef \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}$\ast$ \hyperlink{libpng16_2pngconf_8h_aa2688aa7a3bd08819701a744f9a5716c}{png\+\_\+const\+\_\+voidp}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}\label{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+fixed\+\_\+point@{png\+\_\+fixed\+\_\+point}}
+\index{png\+\_\+fixed\+\_\+point@{png\+\_\+fixed\+\_\+point}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+fixed\+\_\+point}{png\_fixed\_point}}
+{\footnotesize\ttfamily \hyperlink{libpng16_2png_8h_ad21074dd8cb2466bcf2d187b29d3a91f}{png\+\_\+const\+\_\+structrp} \hyperlink{libpng16_2png_8h_ad512a85b6e16f3397a23c50d60dc9746}{png\+\_\+const\+\_\+inforp} \hyperlink{png_8h_afeabf448295c7a089bd88fdfaea2e737}{info\+\_\+ptr} \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_aa142d7c619d038d905381afa7102488a}\label{libpng16_2pngconf_8h_aa142d7c619d038d905381afa7102488a}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+fixed\+\_\+point\+\_\+p@{png\+\_\+fixed\+\_\+point\+\_\+p}}
+\index{png\+\_\+fixed\+\_\+point\+\_\+p@{png\+\_\+fixed\+\_\+point\+\_\+p}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+fixed\+\_\+point\+\_\+p}{png\_fixed\_point\_p}}
+{\footnotesize\ttfamily typedef \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point}$\ast$ \hyperlink{libpng16_2pngconf_8h_aa142d7c619d038d905381afa7102488a}{png\+\_\+fixed\+\_\+point\+\_\+p}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a2591ad0ce942364e383a0eb37722500a}\label{libpng16_2pngconf_8h_a2591ad0ce942364e383a0eb37722500a}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+fixed\+\_\+point\+\_\+pp@{png\+\_\+fixed\+\_\+point\+\_\+pp}}
+\index{png\+\_\+fixed\+\_\+point\+\_\+pp@{png\+\_\+fixed\+\_\+point\+\_\+pp}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+fixed\+\_\+point\+\_\+pp}{png\_fixed\_point\_pp}}
+{\footnotesize\ttfamily typedef \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point}$\ast$ $\ast$ \hyperlink{libpng16_2pngconf_8h_a2591ad0ce942364e383a0eb37722500a}{png\+\_\+fixed\+\_\+point\+\_\+pp}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_aea89e2ad359309ef31fdc93d01ec015b}\label{libpng16_2pngconf_8h_aea89e2ad359309ef31fdc93d01ec015b}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+int\+\_\+16p@{png\+\_\+int\+\_\+16p}}
+\index{png\+\_\+int\+\_\+16p@{png\+\_\+int\+\_\+16p}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+int\+\_\+16p}{png\_int\_16p}}
+{\footnotesize\ttfamily typedef png\+\_\+int\+\_\+16$\ast$ \hyperlink{libpng16_2pngconf_8h_aea89e2ad359309ef31fdc93d01ec015b}{png\+\_\+int\+\_\+16p}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a840123d508059527f451cc854461031d}\label{libpng16_2pngconf_8h_a840123d508059527f451cc854461031d}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+int\+\_\+16pp@{png\+\_\+int\+\_\+16pp}}
+\index{png\+\_\+int\+\_\+16pp@{png\+\_\+int\+\_\+16pp}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+int\+\_\+16pp}{png\_int\_16pp}}
+{\footnotesize\ttfamily typedef png\+\_\+int\+\_\+16$\ast$ $\ast$ \hyperlink{libpng16_2pngconf_8h_a840123d508059527f451cc854461031d}{png\+\_\+int\+\_\+16pp}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a9a7ed2424e8bca16a29fb2e3834135a8}\label{libpng16_2pngconf_8h_a9a7ed2424e8bca16a29fb2e3834135a8}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+int\+\_\+32p@{png\+\_\+int\+\_\+32p}}
+\index{png\+\_\+int\+\_\+32p@{png\+\_\+int\+\_\+32p}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+int\+\_\+32p}{png\_int\_32p}}
+{\footnotesize\ttfamily typedef png\+\_\+int\+\_\+32$\ast$ \hyperlink{libpng16_2pngconf_8h_a9a7ed2424e8bca16a29fb2e3834135a8}{png\+\_\+int\+\_\+32p}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_adc835c8099d1d33c73a29c1e3c042b95}\label{libpng16_2pngconf_8h_adc835c8099d1d33c73a29c1e3c042b95}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+int\+\_\+32pp@{png\+\_\+int\+\_\+32pp}}
+\index{png\+\_\+int\+\_\+32pp@{png\+\_\+int\+\_\+32pp}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+int\+\_\+32pp}{png\_int\_32pp}}
+{\footnotesize\ttfamily typedef png\+\_\+int\+\_\+32$\ast$ $\ast$ \hyperlink{libpng16_2pngconf_8h_adc835c8099d1d33c73a29c1e3c042b95}{png\+\_\+int\+\_\+32pp}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_afaf89e9cb295489d7b17f8253f9abd7e}\label{libpng16_2pngconf_8h_afaf89e9cb295489d7b17f8253f9abd7e}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+ptrdiff\+\_\+t@{png\+\_\+ptrdiff\+\_\+t}}
+\index{png\+\_\+ptrdiff\+\_\+t@{png\+\_\+ptrdiff\+\_\+t}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+ptrdiff\+\_\+t}{png\_ptrdiff\_t}}
+{\footnotesize\ttfamily typedef ptrdiff\+\_\+t \hyperlink{libpng16_2pngconf_8h_afaf89e9cb295489d7b17f8253f9abd7e}{png\+\_\+ptrdiff\+\_\+t}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a975e35d0a699ea3b08b8feef90fd29eb}\label{libpng16_2pngconf_8h_a975e35d0a699ea3b08b8feef90fd29eb}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+size\+\_\+t@{png\+\_\+size\+\_\+t}}
+\index{png\+\_\+size\+\_\+t@{png\+\_\+size\+\_\+t}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+size\+\_\+t}{png\_size\_t}}
+{\footnotesize\ttfamily typedef size\+\_\+t \hyperlink{libpng16_2pngconf_8h_a975e35d0a699ea3b08b8feef90fd29eb}{png\+\_\+size\+\_\+t}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_aa2e1f6524fa84719a2200120f746a074}\label{libpng16_2pngconf_8h_aa2e1f6524fa84719a2200120f746a074}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+size\+\_\+tp@{png\+\_\+size\+\_\+tp}}
+\index{png\+\_\+size\+\_\+tp@{png\+\_\+size\+\_\+tp}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+size\+\_\+tp}{png\_size\_tp}}
+{\footnotesize\ttfamily typedef \hyperlink{libpng16_2pngconf_8h_a975e35d0a699ea3b08b8feef90fd29eb}{png\+\_\+size\+\_\+t}$\ast$ \hyperlink{libpng16_2pngconf_8h_aa2e1f6524fa84719a2200120f746a074}{png\+\_\+size\+\_\+tp}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a889b8a2dc78a318391324801da36180a}\label{libpng16_2pngconf_8h_a889b8a2dc78a318391324801da36180a}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+uint\+\_\+16p@{png\+\_\+uint\+\_\+16p}}
+\index{png\+\_\+uint\+\_\+16p@{png\+\_\+uint\+\_\+16p}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+uint\+\_\+16p}{png\_uint\_16p}}
+{\footnotesize\ttfamily typedef png\+\_\+uint\+\_\+16$\ast$ \hyperlink{libpng16_2pngconf_8h_a889b8a2dc78a318391324801da36180a}{png\+\_\+uint\+\_\+16p}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_ae2cbc4889061b5c3b8424c022d0e5fa7}\label{libpng16_2pngconf_8h_ae2cbc4889061b5c3b8424c022d0e5fa7}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+uint\+\_\+16pp@{png\+\_\+uint\+\_\+16pp}}
+\index{png\+\_\+uint\+\_\+16pp@{png\+\_\+uint\+\_\+16pp}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+uint\+\_\+16pp}{png\_uint\_16pp}}
+{\footnotesize\ttfamily typedef png\+\_\+uint\+\_\+16$\ast$ $\ast$ \hyperlink{libpng16_2pngconf_8h_ae2cbc4889061b5c3b8424c022d0e5fa7}{png\+\_\+uint\+\_\+16pp}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_aed373ad2e16fd6df7ccfa96329441d0d}\label{libpng16_2pngconf_8h_aed373ad2e16fd6df7ccfa96329441d0d}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+uint\+\_\+32@{png\+\_\+uint\+\_\+32}}
+\index{png\+\_\+uint\+\_\+32@{png\+\_\+uint\+\_\+32}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+uint\+\_\+32}{png\_uint\_32}}
+{\footnotesize\ttfamily \hyperlink{libpng16_2png_8h_ad21074dd8cb2466bcf2d187b29d3a91f}{png\+\_\+const\+\_\+structrp} \hyperlink{libpng16_2png_8h_ad512a85b6e16f3397a23c50d60dc9746}{png\+\_\+const\+\_\+inforp} double double double double double double double double double $\ast$blue\+\_\+Z \hyperlink{libpng16_2png_8h_ad21074dd8cb2466bcf2d187b29d3a91f}{png\+\_\+const\+\_\+structrp} \hyperlink{libpng16_2png_8h_ad512a85b6e16f3397a23c50d60dc9746}{png\+\_\+const\+\_\+inforp} \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point} \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point} \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point} \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point} \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point} \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point} \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point} \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point} \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point} $\ast$int\+\_\+blue\+\_\+Z \hyperlink{libpng16_2png_8h_ad21074dd8cb2466bcf2d187b29d3a91f}{png\+\_\+const\+\_\+structrp} \hyperlink{libpng16_2png_8h_aec9607cf2faca19004bc4e49d6d5e24a}{png\+\_\+inforp} double double double double double double double double double blue\+\_\+Z \hyperlink{libpng16_2png_8h_ad21074dd8cb2466bcf2d187b29d3a91f}{png\+\_\+const\+\_\+structrp} \hyperlink{libpng16_2png_8h_aec9607cf2faca19004bc4e49d6d5e24a}{png\+\_\+inforp} \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point} \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point} \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point} \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point} \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point} \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point} \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point} \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point} \hyperlink{libpng16_2pngconf_8h_a23911f489715bb4644c9c9c808cbab5a}{png\+\_\+fixed\+\_\+point} int\+\_\+blue\+\_\+Z \hyperlink{libpng16_2pngconf_8h_aed373ad2e16fd6df7ccfa96329441d0d}{png\+\_\+uint\+\_\+32}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_aa1888639a0c1615d833d44c3e92ddb35}\label{libpng16_2pngconf_8h_aa1888639a0c1615d833d44c3e92ddb35}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+uint\+\_\+32p@{png\+\_\+uint\+\_\+32p}}
+\index{png\+\_\+uint\+\_\+32p@{png\+\_\+uint\+\_\+32p}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+uint\+\_\+32p}{png\_uint\_32p}}
+{\footnotesize\ttfamily typedef \hyperlink{libpng16_2pngconf_8h_aed373ad2e16fd6df7ccfa96329441d0d}{png\+\_\+uint\+\_\+32}$\ast$ \hyperlink{libpng16_2pngconf_8h_aa1888639a0c1615d833d44c3e92ddb35}{png\+\_\+uint\+\_\+32p}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a630434f3381df31efd64841989e72901}\label{libpng16_2pngconf_8h_a630434f3381df31efd64841989e72901}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+uint\+\_\+32pp@{png\+\_\+uint\+\_\+32pp}}
+\index{png\+\_\+uint\+\_\+32pp@{png\+\_\+uint\+\_\+32pp}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+uint\+\_\+32pp}{png\_uint\_32pp}}
+{\footnotesize\ttfamily typedef \hyperlink{libpng16_2pngconf_8h_aed373ad2e16fd6df7ccfa96329441d0d}{png\+\_\+uint\+\_\+32}$\ast$ $\ast$ \hyperlink{libpng16_2pngconf_8h_a630434f3381df31efd64841989e72901}{png\+\_\+uint\+\_\+32pp}}
+
+\mbox{\Hypertarget{libpng16_2pngconf_8h_a9dc088c359b6d7e45682af63a3361b58}\label{libpng16_2pngconf_8h_a9dc088c359b6d7e45682af63a3361b58}} 
+\index{libpng16/pngconf.\+h@{libpng16/pngconf.\+h}!png\+\_\+voidp@{png\+\_\+voidp}}
+\index{png\+\_\+voidp@{png\+\_\+voidp}!libpng16/pngconf.\+h@{libpng16/pngconf.\+h}}
+\subsubsection{\texorpdfstring{png\+\_\+voidp}{png\_voidp}}
+{\footnotesize\ttfamily typedef \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}$\ast$ \hyperlink{libpng16_2pngconf_8h_a9dc088c359b6d7e45682af63a3361b58}{png\+\_\+voidp}}
+

@@ -1,0 +1,340 @@
+\hypertarget{group__stream__open__close}{}\section{Opening and Closing}
+\label{group__stream__open__close}\index{Opening and Closing@{Opening and Closing}}
+\subsection*{Functions for opening and closing streams}
+\label{_amgrpa843b580da843f32fd1721f9622af57c}%
+These functions allow you to test a stream to see if it is Opus, open it, and close it. Several flavors are provided for each of the built-\/in stream types, plus a more general version which takes a set of application-\/provided callbacks. \begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__stream__open__close_ga54158ed1570a0062cb674115cd3699ab}{op\+\_\+test} (\hyperlink{struct_opus_head}{Opus\+Head} $\ast$\+\_\+head, \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} unsigned char $\ast$\+\_\+initial\+\_\+data, size\+\_\+t \+\_\+initial\+\_\+bytes)
+\item 
+O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT Ogg\+Opus\+File $\ast$ \hyperlink{group__stream__open__close_ga15866bd0cd7ac77162db3b0428962e75}{op\+\_\+open\+\_\+file} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$\+\_\+path, int $\ast$\+\_\+error) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT Ogg\+Opus\+File $\ast$ \hyperlink{group__stream__open__close_gaffc5769a1e5977f186f77a1fb08cb248}{op\+\_\+open\+\_\+memory} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} unsigned char $\ast$\+\_\+data, size\+\_\+t \+\_\+size, int $\ast$\+\_\+error)
+\item 
+O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT Ogg\+Opus\+File $\ast$ \hyperlink{group__stream__open__close_ga9a0c2a744653a559b84a5be8f551fe8a}{op\+\_\+vopen\+\_\+url} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$\+\_\+url, int $\ast$\+\_\+error, va\+\_\+list \+\_\+ap) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT Ogg\+Opus\+File $\ast$ \hyperlink{group__stream__open__close_gace8a90b60d492f3488ee3f14a7276ddf}{op\+\_\+open\+\_\+url} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$\+\_\+url, int $\ast$\+\_\+error,...) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT Ogg\+Opus\+File $\ast$ \hyperlink{group__stream__open__close_ga5b81c0b685f3d3c9c7d7091e5536c759}{op\+\_\+open\+\_\+callbacks} (\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$\+\_\+source, \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{struct_opus_file_callbacks}{Opus\+File\+Callbacks} $\ast$\+\_\+cb, \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} unsigned char $\ast$\+\_\+initial\+\_\+data, size\+\_\+t \+\_\+initial\+\_\+bytes, int $\ast$\+\_\+error) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(2)
+\item 
+O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT Ogg\+Opus\+File $\ast$ \hyperlink{group__stream__open__close_ga3b12533b35cd3ac0d273c1e0efa35b6f}{op\+\_\+test\+\_\+file} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$\+\_\+path, int $\ast$\+\_\+error) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT Ogg\+Opus\+File $\ast$ \hyperlink{group__stream__open__close_gae093e19e16871f4cb53532fe1f0c1039}{op\+\_\+test\+\_\+memory} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} unsigned char $\ast$\+\_\+data, size\+\_\+t \+\_\+size, int $\ast$\+\_\+error)
+\item 
+O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT Ogg\+Opus\+File $\ast$ \hyperlink{group__stream__open__close_ga93b438960ec52e13e7c77446f754d016}{op\+\_\+vtest\+\_\+url} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$\+\_\+url, int $\ast$\+\_\+error, va\+\_\+list \+\_\+ap) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT Ogg\+Opus\+File $\ast$ \hyperlink{group__stream__open__close_ga8272aa50f50ac63b20333f0a114bb247}{op\+\_\+test\+\_\+url} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$\+\_\+url, int $\ast$\+\_\+error,...) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT Ogg\+Opus\+File $\ast$ \hyperlink{group__stream__open__close_gafe0e84414bbd1b511b494b5c5cef3c0f}{op\+\_\+test\+\_\+callbacks} (\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$\+\_\+source, \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{struct_opus_file_callbacks}{Opus\+File\+Callbacks} $\ast$\+\_\+cb, \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} unsigned char $\ast$\+\_\+initial\+\_\+data, size\+\_\+t \+\_\+initial\+\_\+bytes, int $\ast$\+\_\+error) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(2)
+\item 
+int \hyperlink{group__stream__open__close_ga7b7f1c778ce6ced5538ce66e292d894d}{op\+\_\+test\+\_\+open} (Ogg\+Opus\+File $\ast$\+\_\+of) O\+P\+\_\+\+A\+R\+G\+\_\+\+N\+O\+N\+N\+U\+LL(1)
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{group__stream__open__close_gaf494ef9aa761647d8167c49507560d1c}{op\+\_\+free} (Ogg\+Opus\+File $\ast$\+\_\+of)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__stream__open__close_gaf494ef9aa761647d8167c49507560d1c}\label{group__stream__open__close_gaf494ef9aa761647d8167c49507560d1c}} 
+\index{Opening and Closing@{Opening and Closing}!op\+\_\+free@{op\+\_\+free}}
+\index{op\+\_\+free@{op\+\_\+free}!Opening and Closing@{Opening and Closing}}
+\subsubsection{\texorpdfstring{op\+\_\+free()}{op\_free()}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} op\+\_\+free (\begin{DoxyParamCaption}\item[{Ogg\+Opus\+File $\ast$}]{\+\_\+of }\end{DoxyParamCaption})}
+
+Release all memory used by an {\ttfamily Ogg\+Opus\+File}. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+of} & The {\ttfamily Ogg\+Opus\+File} to free. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__stream__open__close_ga5b81c0b685f3d3c9c7d7091e5536c759}\label{group__stream__open__close_ga5b81c0b685f3d3c9c7d7091e5536c759}} 
+\index{Opening and Closing@{Opening and Closing}!op\+\_\+open\+\_\+callbacks@{op\+\_\+open\+\_\+callbacks}}
+\index{op\+\_\+open\+\_\+callbacks@{op\+\_\+open\+\_\+callbacks}!Opening and Closing@{Opening and Closing}}
+\subsubsection{\texorpdfstring{op\+\_\+open\+\_\+callbacks()}{op\_open\_callbacks()}}
+{\footnotesize\ttfamily O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT Ogg\+Opus\+File$\ast$ op\+\_\+open\+\_\+callbacks (\begin{DoxyParamCaption}\item[{\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$}]{\+\_\+source,  }\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{struct_opus_file_callbacks}{Opus\+File\+Callbacks} $\ast$}]{\+\_\+cb,  }\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} unsigned char $\ast$}]{\+\_\+initial\+\_\+data,  }\item[{size\+\_\+t}]{\+\_\+initial\+\_\+bytes,  }\item[{int $\ast$}]{\+\_\+error }\end{DoxyParamCaption})}
+
+Open a stream using the given set of callbacks to access it. 
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \+\_\+source} & The stream to read from (e.\+g., a {\ttfamily F\+I\+LE $\ast$}). \\
+\hline
+ & {\em \+\_\+cb} & The callbacks with which to access the stream. {\ttfamily \href{#op_read_func}{\tt read()}} must be implemented. {\ttfamily \href{#op_seek_func}{\tt seek()}} and {\ttfamily \href{#op_tell_func}{\tt tell()}} may be {\ttfamily N\+U\+LL}, or may always return -\/1 to indicate a source is unseekable, but if {\ttfamily \href{#op_seek_func}{\tt seek()}} is implemented and succeeds on a particular source, then {\ttfamily \href{#op_tell_func}{\tt tell()}} must also. {\ttfamily \href{#op_close_func}{\tt close()}} may be {\ttfamily N\+U\+LL}, but if it is not, it will be called when the {\ttfamily Ogg\+Opus\+File} is destroyed by \hyperlink{group__stream__open__close_gaf494ef9aa761647d8167c49507560d1c}{op\+\_\+free()}. It will not be called if \hyperlink{group__stream__open__close_ga5b81c0b685f3d3c9c7d7091e5536c759}{op\+\_\+open\+\_\+callbacks()} fails with an error. \\
+\hline
+ & {\em \+\_\+initial\+\_\+data} & An initial buffer of data from the start of the stream. Applications can read some number of bytes from the start of the stream to help identify this as an Opus stream, and then provide them here to allow the stream to be opened, even if it is unseekable. \\
+\hline
+ & {\em \+\_\+initial\+\_\+bytes} & The number of bytes in {\itshape \+\_\+initial\+\_\+data}. If the stream is seekable, its current position (as reported by {\ttfamily \href{#opus_tell_func}{\tt tell()}} at the start of this function) must be equal to {\itshape \+\_\+initial\+\_\+bytes}. Otherwise, seeking to absolute positions will generate inconsistent results. \\
+\hline
+\mbox{\tt out}  & {\em \+\_\+error} & Returns 0 on success, or a failure code on error. You may pass in {\ttfamily N\+U\+LL} if you don\textquotesingle{}t want the failure code. The failure code will be one of 
+\begin{DoxyDescription}
+\item[\hyperlink{group__error__codes_ga3ad48a4f99b1bed72acec552296dfc08}{O\+P\+\_\+\+E\+R\+E\+AD} ]An underlying read, seek, or tell operation failed when it should have succeeded, or we failed to find data in the stream we had seen before. 
+\item[\hyperlink{group__error__codes_ga2ddb887c0bb55c74ea6be391fabcba59}{O\+P\+\_\+\+E\+F\+A\+U\+LT} ]There was a memory allocation failure, or an internal library error. 
+\item[\hyperlink{group__error__codes_gaeea27378f826033ca23584d8403665d3}{O\+P\+\_\+\+E\+I\+M\+PL} ]The stream used a feature that is not implemented, such as an unsupported channel family. 
+\item[\hyperlink{group__error__codes_gae0879acafe9cc0ab72462d291fdb6fb6}{O\+P\+\_\+\+E\+I\+N\+V\+AL} ]{\ttfamily \href{#op_seek_func}{\tt seek()}} was implemented and succeeded on this source, but {\ttfamily \href{#op_tell_func}{\tt tell()}} did not, or the starting position indicator was not equal to {\itshape \+\_\+initial\+\_\+bytes}. 
+\item[\hyperlink{group__error__codes_gafca3ae244d24e10b2851c77379453220}{O\+P\+\_\+\+E\+N\+O\+T\+F\+O\+R\+M\+AT} ]The stream contained a link that did not have any logical Opus streams in it. 
+\item[\hyperlink{group__error__codes_ga534f1b45c8733a2928434e482b38869f}{O\+P\+\_\+\+E\+B\+A\+D\+H\+E\+A\+D\+ER} ]A required header packet was not properly formatted, contained illegal values, or was missing altogether. 
+\item[\hyperlink{group__error__codes_gaa9ae4494f623f3c0609f0b4bd99b8f32}{O\+P\+\_\+\+E\+V\+E\+R\+S\+I\+ON} ]An ID header contained an unrecognized version number. 
+\item[\hyperlink{group__error__codes_gaf7b58a439a471366e9eb5b8f2a8cd041}{O\+P\+\_\+\+E\+B\+A\+D\+L\+I\+NK} ]We failed to find data we had seen before after seeking. 
+\item[\hyperlink{group__error__codes_gaf82657fc888f1dcf2e0d8f066b8a6cc7}{O\+P\+\_\+\+E\+B\+A\+D\+T\+I\+M\+E\+S\+T\+A\+MP} ]The first or last timestamp in a link failed basic validity checks. 
+\end{DoxyDescription}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A freshly opened {\ttfamily Ogg\+Opus\+File}, or {\ttfamily N\+U\+LL} on error. {\ttfamily libopusfile} does {\itshape not} take ownership of the source if the call fails. The calling application is responsible for closing the source if this call returns an error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__stream__open__close_ga15866bd0cd7ac77162db3b0428962e75}\label{group__stream__open__close_ga15866bd0cd7ac77162db3b0428962e75}} 
+\index{Opening and Closing@{Opening and Closing}!op\+\_\+open\+\_\+file@{op\+\_\+open\+\_\+file}}
+\index{op\+\_\+open\+\_\+file@{op\+\_\+open\+\_\+file}!Opening and Closing@{Opening and Closing}}
+\subsubsection{\texorpdfstring{op\+\_\+open\+\_\+file()}{op\_open\_file()}}
+{\footnotesize\ttfamily O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT Ogg\+Opus\+File$\ast$ op\+\_\+open\+\_\+file (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$}]{\+\_\+path,  }\item[{int $\ast$}]{\+\_\+error }\end{DoxyParamCaption})}
+
+Open a stream from the given file path. 
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \+\_\+path} & The path to the file to open. \\
+\hline
+\mbox{\tt out}  & {\em \+\_\+error} & Returns 0 on success, or a failure code on error. You may pass in {\ttfamily N\+U\+LL} if you don\textquotesingle{}t want the failure code. The failure code will be \hyperlink{group__error__codes_ga2ddb887c0bb55c74ea6be391fabcba59}{O\+P\+\_\+\+E\+F\+A\+U\+LT} if the file could not be opened, or one of the other failure codes from \hyperlink{group__stream__open__close_ga5b81c0b685f3d3c9c7d7091e5536c759}{op\+\_\+open\+\_\+callbacks()} otherwise. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A freshly opened {\ttfamily Ogg\+Opus\+File}, or {\ttfamily N\+U\+LL} on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__stream__open__close_gaffc5769a1e5977f186f77a1fb08cb248}\label{group__stream__open__close_gaffc5769a1e5977f186f77a1fb08cb248}} 
+\index{Opening and Closing@{Opening and Closing}!op\+\_\+open\+\_\+memory@{op\+\_\+open\+\_\+memory}}
+\index{op\+\_\+open\+\_\+memory@{op\+\_\+open\+\_\+memory}!Opening and Closing@{Opening and Closing}}
+\subsubsection{\texorpdfstring{op\+\_\+open\+\_\+memory()}{op\_open\_memory()}}
+{\footnotesize\ttfamily O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT Ogg\+Opus\+File$\ast$ op\+\_\+open\+\_\+memory (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} unsigned char $\ast$}]{\+\_\+data,  }\item[{size\+\_\+t}]{\+\_\+size,  }\item[{int $\ast$}]{\+\_\+error }\end{DoxyParamCaption})}
+
+Open a stream from a memory buffer. 
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \+\_\+data} & The memory buffer to open. \\
+\hline
+ & {\em \+\_\+size} & The number of bytes in the buffer. \\
+\hline
+\mbox{\tt out}  & {\em \+\_\+error} & Returns 0 on success, or a failure code on error. You may pass in {\ttfamily N\+U\+LL} if you don\textquotesingle{}t want the failure code. See \hyperlink{group__stream__open__close_ga5b81c0b685f3d3c9c7d7091e5536c759}{op\+\_\+open\+\_\+callbacks()} for a full list of failure codes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A freshly opened {\ttfamily Ogg\+Opus\+File}, or {\ttfamily N\+U\+LL} on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__stream__open__close_gace8a90b60d492f3488ee3f14a7276ddf}\label{group__stream__open__close_gace8a90b60d492f3488ee3f14a7276ddf}} 
+\index{Opening and Closing@{Opening and Closing}!op\+\_\+open\+\_\+url@{op\+\_\+open\+\_\+url}}
+\index{op\+\_\+open\+\_\+url@{op\+\_\+open\+\_\+url}!Opening and Closing@{Opening and Closing}}
+\subsubsection{\texorpdfstring{op\+\_\+open\+\_\+url()}{op\_open\_url()}}
+{\footnotesize\ttfamily O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT Ogg\+Opus\+File$\ast$ op\+\_\+open\+\_\+url (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$}]{\+\_\+url,  }\item[{int $\ast$}]{\+\_\+error,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Open a stream from a U\+RL. \begin{DoxyNote}{Note}
+If you use this function, you must link against {\ttfamily libopusurl}. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \+\_\+url} & The U\+RL to open. Currently only the $<$file\+:$>$, $<$http\+:$>$, and $<$https\+:$>$ schemes are supported. Both $<$http\+:$>$ and $<$https\+:$>$ may be disabled at compile time, in which case opening such U\+R\+Ls will always fail. Currently this only supports U\+R\+Is. I\+R\+Is should be converted to U\+T\+F-\/8 and U\+R\+L-\/escaped, with internationalized domain names encoded in punycode, before passing them to this function. \\
+\hline
+\mbox{\tt out}  & {\em \+\_\+error} & Returns 0 on success, or a failure code on error. You may pass in {\ttfamily N\+U\+LL} if you don\textquotesingle{}t want the failure code. See \hyperlink{group__stream__open__close_ga5b81c0b685f3d3c9c7d7091e5536c759}{op\+\_\+open\+\_\+callbacks()} for a full list of failure codes. \\
+\hline
+ & {\em ...} & The \hyperlink{group__url__options}{optional flags} to use. This is a variable-\/length list of options terminated with {\ttfamily N\+U\+LL}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A freshly opened {\ttfamily Ogg\+Opus\+File}, or {\ttfamily N\+U\+LL} on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__stream__open__close_ga54158ed1570a0062cb674115cd3699ab}\label{group__stream__open__close_ga54158ed1570a0062cb674115cd3699ab}} 
+\index{Opening and Closing@{Opening and Closing}!op\+\_\+test@{op\+\_\+test}}
+\index{op\+\_\+test@{op\+\_\+test}!Opening and Closing@{Opening and Closing}}
+\subsubsection{\texorpdfstring{op\+\_\+test()}{op\_test()}}
+{\footnotesize\ttfamily int op\+\_\+test (\begin{DoxyParamCaption}\item[{\hyperlink{struct_opus_head}{Opus\+Head} $\ast$}]{\+\_\+head,  }\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} unsigned char $\ast$}]{\+\_\+initial\+\_\+data,  }\item[{size\+\_\+t}]{\+\_\+initial\+\_\+bytes }\end{DoxyParamCaption})}
+
+Test to see if this is an Opus stream. For good results, you will need at least 57 bytes (for a pure Opus-\/only stream). Something like 512 bytes will give more reliable results for multiplexed streams. This function is meant to be a quick-\/rejection filter. Its purpose is not to guarantee that a stream is a valid Opus stream, but to ensure that it looks enough like Opus that it isn\textquotesingle{}t going to be recognized as some other format (except possibly an Opus stream that is also multiplexed with other codecs, such as video). 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em \+\_\+head} & The parsed ID header contents. You may pass {\ttfamily N\+U\+LL} if you do not need this information. If the function fails, the contents of this structure remain untouched. \\
+\hline
+ & {\em \+\_\+initial\+\_\+data} & An initial buffer of data from the start of the stream. \\
+\hline
+ & {\em \+\_\+initial\+\_\+bytes} & The number of bytes in {\itshape \+\_\+initial\+\_\+data}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the data appears to be Opus, or a negative value on error. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \hyperlink{group__error__codes_ga4fd28e64a5cbe5e0ba163916199611a5}{O\+P\+\_\+\+F\+A\+L\+SE}} & There was not enough data to tell if this was an Opus stream or not. \\
+\hline
+{\em \hyperlink{group__error__codes_ga2ddb887c0bb55c74ea6be391fabcba59}{O\+P\+\_\+\+E\+F\+A\+U\+LT}} & An internal memory allocation failed. \\
+\hline
+{\em \hyperlink{group__error__codes_gaeea27378f826033ca23584d8403665d3}{O\+P\+\_\+\+E\+I\+M\+PL}} & The stream used a feature that is not implemented, such as an unsupported channel family. \\
+\hline
+{\em \hyperlink{group__error__codes_gafca3ae244d24e10b2851c77379453220}{O\+P\+\_\+\+E\+N\+O\+T\+F\+O\+R\+M\+AT}} & If the data did not contain a recognizable ID header for an Opus stream. \\
+\hline
+{\em \hyperlink{group__error__codes_gaa9ae4494f623f3c0609f0b4bd99b8f32}{O\+P\+\_\+\+E\+V\+E\+R\+S\+I\+ON}} & If the version field signaled a version this library does not know how to parse. \\
+\hline
+{\em \hyperlink{group__error__codes_ga534f1b45c8733a2928434e482b38869f}{O\+P\+\_\+\+E\+B\+A\+D\+H\+E\+A\+D\+ER}} & The ID header was not properly formatted or contained illegal values. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__stream__open__close_gafe0e84414bbd1b511b494b5c5cef3c0f}\label{group__stream__open__close_gafe0e84414bbd1b511b494b5c5cef3c0f}} 
+\index{Opening and Closing@{Opening and Closing}!op\+\_\+test\+\_\+callbacks@{op\+\_\+test\+\_\+callbacks}}
+\index{op\+\_\+test\+\_\+callbacks@{op\+\_\+test\+\_\+callbacks}!Opening and Closing@{Opening and Closing}}
+\subsubsection{\texorpdfstring{op\+\_\+test\+\_\+callbacks()}{op\_test\_callbacks()}}
+{\footnotesize\ttfamily O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT Ogg\+Opus\+File$\ast$ op\+\_\+test\+\_\+callbacks (\begin{DoxyParamCaption}\item[{\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$}]{\+\_\+source,  }\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{struct_opus_file_callbacks}{Opus\+File\+Callbacks} $\ast$}]{\+\_\+cb,  }\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} unsigned char $\ast$}]{\+\_\+initial\+\_\+data,  }\item[{size\+\_\+t}]{\+\_\+initial\+\_\+bytes,  }\item[{int $\ast$}]{\+\_\+error }\end{DoxyParamCaption})}
+
+Partially open a stream using the given set of callbacks to access it. This tests for Opusness and loads the headers for the first link. It does not seek (although it tests for seekability). You can query a partially open stream for the few pieces of basic information returned by \hyperlink{group__stream__info_ga41992ce6f066e07609e5fe2ccd961f40}{op\+\_\+serialno()}, \hyperlink{group__stream__info_ga42c829e67c0ce8359bfbfc31a45c04f4}{op\+\_\+channel\+\_\+count()}, \hyperlink{group__stream__info_gabae95dfa8a278a305213332e295443bb}{op\+\_\+head()}, and \hyperlink{group__stream__info_ga4b9b8b62a9fb04aee64c288e106a4822}{op\+\_\+tags()} (but only for the first link). You may also determine if it is seekable via a call to \hyperlink{group__stream__info_ga9272a4a6ac9e01fbc549008f5ff58b4c}{op\+\_\+seekable()}. You cannot read audio from the stream, seek, get the size or duration, get information from links other than the first one, or even get the total number of links until you finish opening the stream with \hyperlink{group__stream__open__close_ga7b7f1c778ce6ced5538ce66e292d894d}{op\+\_\+test\+\_\+open()}. If you do not need to do any of these things, you can dispose of it with \hyperlink{group__stream__open__close_gaf494ef9aa761647d8167c49507560d1c}{op\+\_\+free()} instead.
+
+This function is provided mostly to simplify porting existing code that used {\ttfamily libvorbisfile}. For new code, you are likely better off using \hyperlink{group__stream__open__close_ga54158ed1570a0062cb674115cd3699ab}{op\+\_\+test()} instead, which is less resource-\/intensive, requires less data to succeed, and imposes a hard limit on the amount of data it examines (important for unseekable sources, where all such data must be buffered until you are sure of the stream type). 
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \+\_\+source} & The stream to read from (e.\+g., a {\ttfamily F\+I\+LE $\ast$}). \\
+\hline
+ & {\em \+\_\+cb} & The callbacks with which to access the stream. {\ttfamily \href{#op_read_func}{\tt read()}} must be implemented. {\ttfamily \href{#op_seek_func}{\tt seek()}} and {\ttfamily \href{#op_tell_func}{\tt tell()}} may be {\ttfamily N\+U\+LL}, or may always return -\/1 to indicate a source is unseekable, but if {\ttfamily \href{#op_seek_func}{\tt seek()}} is implemented and succeeds on a particular source, then {\ttfamily \href{#op_tell_func}{\tt tell()}} must also. {\ttfamily \href{#op_close_func}{\tt close()}} may be {\ttfamily N\+U\+LL}, but if it is not, it will be called when the {\ttfamily Ogg\+Opus\+File} is destroyed by \hyperlink{group__stream__open__close_gaf494ef9aa761647d8167c49507560d1c}{op\+\_\+free()}. It will not be called if \hyperlink{group__stream__open__close_ga5b81c0b685f3d3c9c7d7091e5536c759}{op\+\_\+open\+\_\+callbacks()} fails with an error. \\
+\hline
+ & {\em \+\_\+initial\+\_\+data} & An initial buffer of data from the start of the stream. Applications can read some number of bytes from the start of the stream to help identify this as an Opus stream, and then provide them here to allow the stream to be tested more thoroughly, even if it is unseekable. \\
+\hline
+ & {\em \+\_\+initial\+\_\+bytes} & The number of bytes in {\itshape \+\_\+initial\+\_\+data}. If the stream is seekable, its current position (as reported by {\ttfamily \href{#opus_tell_func}{\tt tell()}} at the start of this function) must be equal to {\itshape \+\_\+initial\+\_\+bytes}. Otherwise, seeking to absolute positions will generate inconsistent results. \\
+\hline
+\mbox{\tt out}  & {\em \+\_\+error} & Returns 0 on success, or a failure code on error. You may pass in {\ttfamily N\+U\+LL} if you don\textquotesingle{}t want the failure code. See \hyperlink{group__stream__open__close_ga5b81c0b685f3d3c9c7d7091e5536c759}{op\+\_\+open\+\_\+callbacks()} for a full list of failure codes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A partially opened {\ttfamily Ogg\+Opus\+File}, or {\ttfamily N\+U\+LL} on error. {\ttfamily libopusfile} does {\itshape not} take ownership of the source if the call fails. The calling application is responsible for closing the source if this call returns an error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__stream__open__close_ga3b12533b35cd3ac0d273c1e0efa35b6f}\label{group__stream__open__close_ga3b12533b35cd3ac0d273c1e0efa35b6f}} 
+\index{Opening and Closing@{Opening and Closing}!op\+\_\+test\+\_\+file@{op\+\_\+test\+\_\+file}}
+\index{op\+\_\+test\+\_\+file@{op\+\_\+test\+\_\+file}!Opening and Closing@{Opening and Closing}}
+\subsubsection{\texorpdfstring{op\+\_\+test\+\_\+file()}{op\_test\_file()}}
+{\footnotesize\ttfamily O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT Ogg\+Opus\+File$\ast$ op\+\_\+test\+\_\+file (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$}]{\+\_\+path,  }\item[{int $\ast$}]{\+\_\+error }\end{DoxyParamCaption})}
+
+Partially open a stream from the given file path. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__stream__open__close_gafe0e84414bbd1b511b494b5c5cef3c0f}{op\+\_\+test\+\_\+callbacks} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \+\_\+path} & The path to the file to open. \\
+\hline
+\mbox{\tt out}  & {\em \+\_\+error} & Returns 0 on success, or a failure code on error. You may pass in {\ttfamily N\+U\+LL} if you don\textquotesingle{}t want the failure code. The failure code will be \hyperlink{group__error__codes_ga2ddb887c0bb55c74ea6be391fabcba59}{O\+P\+\_\+\+E\+F\+A\+U\+LT} if the file could not be opened, or one of the other failure codes from \hyperlink{group__stream__open__close_ga5b81c0b685f3d3c9c7d7091e5536c759}{op\+\_\+open\+\_\+callbacks()} otherwise. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A partially opened {\ttfamily Ogg\+Opus\+File}, or {\ttfamily N\+U\+LL} on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__stream__open__close_gae093e19e16871f4cb53532fe1f0c1039}\label{group__stream__open__close_gae093e19e16871f4cb53532fe1f0c1039}} 
+\index{Opening and Closing@{Opening and Closing}!op\+\_\+test\+\_\+memory@{op\+\_\+test\+\_\+memory}}
+\index{op\+\_\+test\+\_\+memory@{op\+\_\+test\+\_\+memory}!Opening and Closing@{Opening and Closing}}
+\subsubsection{\texorpdfstring{op\+\_\+test\+\_\+memory()}{op\_test\_memory()}}
+{\footnotesize\ttfamily O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT Ogg\+Opus\+File$\ast$ op\+\_\+test\+\_\+memory (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} unsigned char $\ast$}]{\+\_\+data,  }\item[{size\+\_\+t}]{\+\_\+size,  }\item[{int $\ast$}]{\+\_\+error }\end{DoxyParamCaption})}
+
+Partially open a stream from a memory buffer. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__stream__open__close_gafe0e84414bbd1b511b494b5c5cef3c0f}{op\+\_\+test\+\_\+callbacks} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \+\_\+data} & The memory buffer to open. \\
+\hline
+ & {\em \+\_\+size} & The number of bytes in the buffer. \\
+\hline
+\mbox{\tt out}  & {\em \+\_\+error} & Returns 0 on success, or a failure code on error. You may pass in {\ttfamily N\+U\+LL} if you don\textquotesingle{}t want the failure code. See \hyperlink{group__stream__open__close_ga5b81c0b685f3d3c9c7d7091e5536c759}{op\+\_\+open\+\_\+callbacks()} for a full list of failure codes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A partially opened {\ttfamily Ogg\+Opus\+File}, or {\ttfamily N\+U\+LL} on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__stream__open__close_ga7b7f1c778ce6ced5538ce66e292d894d}\label{group__stream__open__close_ga7b7f1c778ce6ced5538ce66e292d894d}} 
+\index{Opening and Closing@{Opening and Closing}!op\+\_\+test\+\_\+open@{op\+\_\+test\+\_\+open}}
+\index{op\+\_\+test\+\_\+open@{op\+\_\+test\+\_\+open}!Opening and Closing@{Opening and Closing}}
+\subsubsection{\texorpdfstring{op\+\_\+test\+\_\+open()}{op\_test\_open()}}
+{\footnotesize\ttfamily int op\+\_\+test\+\_\+open (\begin{DoxyParamCaption}\item[{Ogg\+Opus\+File $\ast$}]{\+\_\+of }\end{DoxyParamCaption})}
+
+Finish opening a stream partially opened with \hyperlink{group__stream__open__close_gafe0e84414bbd1b511b494b5c5cef3c0f}{op\+\_\+test\+\_\+callbacks()} or one of the associated convenience functions. If this function fails, you are still responsible for freeing the {\ttfamily Ogg\+Opus\+File} with \hyperlink{group__stream__open__close_gaf494ef9aa761647d8167c49507560d1c}{op\+\_\+free()}. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+of} & The {\ttfamily Ogg\+Opus\+File} to finish opening. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, or a negative value on error. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \hyperlink{group__error__codes_ga3ad48a4f99b1bed72acec552296dfc08}{O\+P\+\_\+\+E\+R\+E\+AD}} & An underlying read, seek, or tell operation failed when it should have succeeded. \\
+\hline
+{\em \hyperlink{group__error__codes_ga2ddb887c0bb55c74ea6be391fabcba59}{O\+P\+\_\+\+E\+F\+A\+U\+LT}} & There was a memory allocation failure, or an internal library error. \\
+\hline
+{\em \hyperlink{group__error__codes_gaeea27378f826033ca23584d8403665d3}{O\+P\+\_\+\+E\+I\+M\+PL}} & The stream used a feature that is not implemented, such as an unsupported channel family. \\
+\hline
+{\em \hyperlink{group__error__codes_gae0879acafe9cc0ab72462d291fdb6fb6}{O\+P\+\_\+\+E\+I\+N\+V\+AL}} & The stream was not partially opened with \hyperlink{group__stream__open__close_gafe0e84414bbd1b511b494b5c5cef3c0f}{op\+\_\+test\+\_\+callbacks()} or one of the associated convenience functions. \\
+\hline
+{\em \hyperlink{group__error__codes_gafca3ae244d24e10b2851c77379453220}{O\+P\+\_\+\+E\+N\+O\+T\+F\+O\+R\+M\+AT}} & The stream contained a link that did not have any logical Opus streams in it. \\
+\hline
+{\em \hyperlink{group__error__codes_ga534f1b45c8733a2928434e482b38869f}{O\+P\+\_\+\+E\+B\+A\+D\+H\+E\+A\+D\+ER}} & A required header packet was not properly formatted, contained illegal values, or was missing altogether. \\
+\hline
+{\em \hyperlink{group__error__codes_gaa9ae4494f623f3c0609f0b4bd99b8f32}{O\+P\+\_\+\+E\+V\+E\+R\+S\+I\+ON}} & An ID header contained an unrecognized version number. \\
+\hline
+{\em \hyperlink{group__error__codes_gaf7b58a439a471366e9eb5b8f2a8cd041}{O\+P\+\_\+\+E\+B\+A\+D\+L\+I\+NK}} & We failed to find data we had seen before after seeking. \\
+\hline
+{\em \hyperlink{group__error__codes_gaf82657fc888f1dcf2e0d8f066b8a6cc7}{O\+P\+\_\+\+E\+B\+A\+D\+T\+I\+M\+E\+S\+T\+A\+MP}} & The first or last timestamp in a link failed basic validity checks. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__stream__open__close_ga8272aa50f50ac63b20333f0a114bb247}\label{group__stream__open__close_ga8272aa50f50ac63b20333f0a114bb247}} 
+\index{Opening and Closing@{Opening and Closing}!op\+\_\+test\+\_\+url@{op\+\_\+test\+\_\+url}}
+\index{op\+\_\+test\+\_\+url@{op\+\_\+test\+\_\+url}!Opening and Closing@{Opening and Closing}}
+\subsubsection{\texorpdfstring{op\+\_\+test\+\_\+url()}{op\_test\_url()}}
+{\footnotesize\ttfamily O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT Ogg\+Opus\+File$\ast$ op\+\_\+test\+\_\+url (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$}]{\+\_\+url,  }\item[{int $\ast$}]{\+\_\+error,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Partially open a stream from a U\+RL. \begin{DoxyNote}{Note}
+If you use this function, you must link against {\ttfamily libopusurl}. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__stream__open__close_gafe0e84414bbd1b511b494b5c5cef3c0f}{op\+\_\+test\+\_\+callbacks} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \+\_\+url} & The U\+RL to open. Currently only the $<$file\+:$>$, $<$http\+:$>$, and $<$https\+:$>$ schemes are supported. Both $<$http\+:$>$ and $<$https\+:$>$ may be disabled at compile time, in which case opening such U\+R\+Ls will always fail. Currently this only supports U\+R\+Is. I\+R\+Is should be converted to U\+T\+F-\/8 and U\+R\+L-\/escaped, with internationalized domain names encoded in punycode, before passing them to this function. \\
+\hline
+\mbox{\tt out}  & {\em \+\_\+error} & Returns 0 on success, or a failure code on error. You may pass in {\ttfamily N\+U\+LL} if you don\textquotesingle{}t want the failure code. See \hyperlink{group__stream__open__close_ga5b81c0b685f3d3c9c7d7091e5536c759}{op\+\_\+open\+\_\+callbacks()} for a full list of failure codes. \\
+\hline
+ & {\em ...} & The \hyperlink{group__url__options}{optional flags} to use. This is a variable-\/length list of options terminated with {\ttfamily N\+U\+LL}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A partially opened {\ttfamily Ogg\+Opus\+File}, or {\ttfamily N\+U\+LL} on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__stream__open__close_ga9a0c2a744653a559b84a5be8f551fe8a}\label{group__stream__open__close_ga9a0c2a744653a559b84a5be8f551fe8a}} 
+\index{Opening and Closing@{Opening and Closing}!op\+\_\+vopen\+\_\+url@{op\+\_\+vopen\+\_\+url}}
+\index{op\+\_\+vopen\+\_\+url@{op\+\_\+vopen\+\_\+url}!Opening and Closing@{Opening and Closing}}
+\subsubsection{\texorpdfstring{op\+\_\+vopen\+\_\+url()}{op\_vopen\_url()}}
+{\footnotesize\ttfamily O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT Ogg\+Opus\+File$\ast$ op\+\_\+vopen\+\_\+url (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$}]{\+\_\+url,  }\item[{int $\ast$}]{\+\_\+error,  }\item[{va\+\_\+list}]{\+\_\+ap }\end{DoxyParamCaption})}
+
+Open a stream from a U\+RL. This function behaves identically to \hyperlink{group__stream__open__close_gace8a90b60d492f3488ee3f14a7276ddf}{op\+\_\+open\+\_\+url()}, except that it takes a va\+\_\+list instead of a variable number of arguments. It does not call the {\ttfamily va\+\_\+end} macro, and because it invokes the {\ttfamily va\+\_\+arg} macro, the value of {\itshape \+\_\+ap} is undefined after the call. \begin{DoxyNote}{Note}
+If you use this function, you must link against {\ttfamily libopusurl}. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \+\_\+url} & The U\+RL to open. Currently only the $<$file\+:$>$, $<$http\+:$>$, and $<$https\+:$>$ schemes are supported. Both $<$http\+:$>$ and $<$https\+:$>$ may be disabled at compile time, in which case opening such U\+R\+Ls will always fail. Currently this only supports U\+R\+Is. I\+R\+Is should be converted to U\+T\+F-\/8 and U\+R\+L-\/escaped, with internationalized domain names encoded in punycode, before passing them to this function. \\
+\hline
+\mbox{\tt out}  & {\em \+\_\+error} & Returns 0 on success, or a failure code on error. You may pass in {\ttfamily N\+U\+LL} if you don\textquotesingle{}t want the failure code. See \hyperlink{group__stream__open__close_ga5b81c0b685f3d3c9c7d7091e5536c759}{op\+\_\+open\+\_\+callbacks()} for a full list of failure codes. \\
+\hline
+\mbox{\tt in,out}  & {\em \+\_\+ap} & A list of the \hyperlink{group__url__options}{optional flags} to use. This is a variable-\/length list of options terminated with {\ttfamily N\+U\+LL}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A freshly opened {\ttfamily Ogg\+Opus\+File}, or {\ttfamily N\+U\+LL} on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__stream__open__close_ga93b438960ec52e13e7c77446f754d016}\label{group__stream__open__close_ga93b438960ec52e13e7c77446f754d016}} 
+\index{Opening and Closing@{Opening and Closing}!op\+\_\+vtest\+\_\+url@{op\+\_\+vtest\+\_\+url}}
+\index{op\+\_\+vtest\+\_\+url@{op\+\_\+vtest\+\_\+url}!Opening and Closing@{Opening and Closing}}
+\subsubsection{\texorpdfstring{op\+\_\+vtest\+\_\+url()}{op\_vtest\_url()}}
+{\footnotesize\ttfamily O\+P\+\_\+\+W\+A\+R\+N\+\_\+\+U\+N\+U\+S\+E\+D\+\_\+\+R\+E\+S\+U\+LT Ogg\+Opus\+File$\ast$ op\+\_\+vtest\+\_\+url (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$}]{\+\_\+url,  }\item[{int $\ast$}]{\+\_\+error,  }\item[{va\+\_\+list}]{\+\_\+ap }\end{DoxyParamCaption})}
+
+Partially open a stream from a U\+RL. This function behaves identically to \hyperlink{group__stream__open__close_ga8272aa50f50ac63b20333f0a114bb247}{op\+\_\+test\+\_\+url()}, except that it takes a va\+\_\+list instead of a variable number of arguments. It does not call the {\ttfamily va\+\_\+end} macro, and because it invokes the {\ttfamily va\+\_\+arg} macro, the value of {\itshape \+\_\+ap} is undefined after the call. \begin{DoxyNote}{Note}
+If you use this function, you must link against {\ttfamily libopusurl}. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__stream__open__close_ga8272aa50f50ac63b20333f0a114bb247}{op\+\_\+test\+\_\+url} 
+
+\hyperlink{group__stream__open__close_gafe0e84414bbd1b511b494b5c5cef3c0f}{op\+\_\+test\+\_\+callbacks} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \+\_\+url} & The U\+RL to open. Currently only the $<$file\+:$>$, $<$http\+:$>$, and $<$https\+:$>$ schemes are supported. Both $<$http\+:$>$ and $<$https\+:$>$ may be disabled at compile time, in which case opening such U\+R\+Ls will always fail. Currently this only supports U\+R\+Is. I\+R\+Is should be converted to U\+T\+F-\/8 and U\+R\+L-\/escaped, with internationalized domain names encoded in punycode, before passing them to this function. \\
+\hline
+\mbox{\tt out}  & {\em \+\_\+error} & Returns 0 on success, or a failure code on error. You may pass in {\ttfamily N\+U\+LL} if you don\textquotesingle{}t want the failure code. See \hyperlink{group__stream__open__close_ga5b81c0b685f3d3c9c7d7091e5536c759}{op\+\_\+open\+\_\+callbacks()} for a full list of failure codes. \\
+\hline
+\mbox{\tt in,out}  & {\em \+\_\+ap} & A list of the \hyperlink{group__url__options}{optional flags} to use. This is a variable-\/length list of options terminated with {\ttfamily N\+U\+LL}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A partially opened {\ttfamily Ogg\+Opus\+File}, or {\ttfamily N\+U\+LL} on error. 
+\end{DoxyReturn}

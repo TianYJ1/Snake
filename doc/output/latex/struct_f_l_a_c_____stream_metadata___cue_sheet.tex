@@ -1,0 +1,64 @@
+\hypertarget{struct_f_l_a_c_____stream_metadata___cue_sheet}{}\section{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet Struct Reference}
+\label{struct_f_l_a_c_____stream_metadata___cue_sheet}\index{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet}}
+
+
+{\ttfamily \#include $<$format.\+h$>$}
+
+
+
+Collaboration diagram for F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+:
+% FIG 0
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{struct_f_l_a_c_____stream_metadata___cue_sheet_a776e6057ac7939fba52edecd44ec45bc}{media\+\_\+catalog\+\_\+number} \mbox{[}129\mbox{]}
+\item 
+\hyperlink{ordinals_8h_aa78c8c70a3eb8a58af7436f278acde8e}{F\+L\+A\+C\+\_\+\+\_\+uint64} \hyperlink{struct_f_l_a_c_____stream_metadata___cue_sheet_a43fdc0a538ef2c3e0926ee22814baf40}{lead\+\_\+in}
+\item 
+\hyperlink{ordinals_8h_a95103469f1cbd78b8cf250194985b34e}{F\+L\+A\+C\+\_\+\+\_\+bool} \hyperlink{struct_f_l_a_c_____stream_metadata___cue_sheet_a6af66f921aefc6f779fbc0ab6daeab8a}{is\+\_\+cd}
+\item 
+unsigned \hyperlink{struct_f_l_a_c_____stream_metadata___cue_sheet_a6924f26a8e8fa9023f23539b959fe2ae}{num\+\_\+tracks}
+\item 
+\hyperlink{struct_f_l_a_c_____stream_metadata___cue_sheet___track}{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track} $\ast$ \hyperlink{struct_f_l_a_c_____stream_metadata___cue_sheet_a5c0c3440b01b773684d56aeb1e424fab}{tracks}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+F\+L\+AC C\+U\+E\+S\+H\+E\+ET structure. (See the \href{../format.html#metadata_block_cuesheet}{\tt format specification} for the full description of each field.) 
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{struct_f_l_a_c_____stream_metadata___cue_sheet_a6af66f921aefc6f779fbc0ab6daeab8a}\label{struct_f_l_a_c_____stream_metadata___cue_sheet_a6af66f921aefc6f779fbc0ab6daeab8a}} 
+\index{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet}!is\+\_\+cd@{is\+\_\+cd}}
+\index{is\+\_\+cd@{is\+\_\+cd}!F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet}}
+\subsubsection{\texorpdfstring{is\+\_\+cd}{is\_cd}}
+{\footnotesize\ttfamily \hyperlink{ordinals_8h_a95103469f1cbd78b8cf250194985b34e}{F\+L\+A\+C\+\_\+\+\_\+bool} F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+::is\+\_\+cd}
+
+{\ttfamily true} if C\+U\+E\+S\+H\+E\+ET corresponds to a Compact Disc, else {\ttfamily false}. \mbox{\Hypertarget{struct_f_l_a_c_____stream_metadata___cue_sheet_a43fdc0a538ef2c3e0926ee22814baf40}\label{struct_f_l_a_c_____stream_metadata___cue_sheet_a43fdc0a538ef2c3e0926ee22814baf40}} 
+\index{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet}!lead\+\_\+in@{lead\+\_\+in}}
+\index{lead\+\_\+in@{lead\+\_\+in}!F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet}}
+\subsubsection{\texorpdfstring{lead\+\_\+in}{lead\_in}}
+{\footnotesize\ttfamily \hyperlink{ordinals_8h_aa78c8c70a3eb8a58af7436f278acde8e}{F\+L\+A\+C\+\_\+\+\_\+uint64} F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+::lead\+\_\+in}
+
+The number of lead-\/in samples. \mbox{\Hypertarget{struct_f_l_a_c_____stream_metadata___cue_sheet_a776e6057ac7939fba52edecd44ec45bc}\label{struct_f_l_a_c_____stream_metadata___cue_sheet_a776e6057ac7939fba52edecd44ec45bc}} 
+\index{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet}!media\+\_\+catalog\+\_\+number@{media\+\_\+catalog\+\_\+number}}
+\index{media\+\_\+catalog\+\_\+number@{media\+\_\+catalog\+\_\+number}!F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet}}
+\subsubsection{\texorpdfstring{media\+\_\+catalog\+\_\+number}{media\_catalog\_number}}
+{\footnotesize\ttfamily char F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+::media\+\_\+catalog\+\_\+number\mbox{[}129\mbox{]}}
+
+Media catalog number, in A\+S\+C\+II printable characters 0x20-\/0x7e. In general, the media catalog number may be 0 to 128 bytes long; any unused characters should be right-\/padded with N\+UL characters. \mbox{\Hypertarget{struct_f_l_a_c_____stream_metadata___cue_sheet_a6924f26a8e8fa9023f23539b959fe2ae}\label{struct_f_l_a_c_____stream_metadata___cue_sheet_a6924f26a8e8fa9023f23539b959fe2ae}} 
+\index{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet}!num\+\_\+tracks@{num\+\_\+tracks}}
+\index{num\+\_\+tracks@{num\+\_\+tracks}!F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet}}
+\subsubsection{\texorpdfstring{num\+\_\+tracks}{num\_tracks}}
+{\footnotesize\ttfamily unsigned F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+::num\+\_\+tracks}
+
+The number of tracks. \mbox{\Hypertarget{struct_f_l_a_c_____stream_metadata___cue_sheet_a5c0c3440b01b773684d56aeb1e424fab}\label{struct_f_l_a_c_____stream_metadata___cue_sheet_a5c0c3440b01b773684d56aeb1e424fab}} 
+\index{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet}!tracks@{tracks}}
+\index{tracks@{tracks}!F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet}}
+\subsubsection{\texorpdfstring{tracks}{tracks}}
+{\footnotesize\ttfamily \hyperlink{struct_f_l_a_c_____stream_metadata___cue_sheet___track}{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track}$\ast$ F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+::tracks}
+
+N\+U\+LL if num\+\_\+tracks == 0, else pointer to array of tracks. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/packages/\+Allegro\+Deps.\+1.\+5.\+0.\+1/build/native/include/\+F\+L\+A\+C/\hyperlink{format_8h}{format.\+h}\end{DoxyCompactItemize}

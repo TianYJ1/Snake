@@ -1,0 +1,54 @@
+\hypertarget{alosx_8h}{}\section{src/packages/\+Allegro.5.2.2.1/build/native/include/allegro5/platform/alosx.h File Reference}
+\label{alosx_8h}\index{src/packages/\+Allegro.\+5.\+2.\+2.\+1/build/native/include/allegro5/platform/alosx.\+h@{src/packages/\+Allegro.\+5.\+2.\+2.\+1/build/native/include/allegro5/platform/alosx.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+Include dependency graph for alosx.\+h\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{alosx_8h_a0b3f6921365f2d25d8f5765165080db8}{A\+L\+L\+E\+G\+R\+O\+\_\+\+M\+A\+G\+I\+C\+\_\+\+M\+A\+IN}
+\item 
+\#define \hyperlink{alosx_8h_aa4e97f3782107649d3e4eb3875090b3a}{main}~\+\_\+al\+\_\+mangled\+\_\+main
+\item 
+\#define \hyperlink{alosx_8h_a05a4a4e0965e8d953cd014da4d65d511}{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+M\+A\+C\+O\+SX}~\hyperlink{base_8h_a30864c4432f73c4987f3f124a727f469}{A\+L\+\_\+\+ID}(\textquotesingle{}O\textquotesingle{},\textquotesingle{}S\textquotesingle{},\textquotesingle{}X\textquotesingle{},\textquotesingle{}K\textquotesingle{})
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{path_8h_afb91cf0e7626a148a3950c8351e4c9c8}{A\+L\+L\+E\+G\+R\+O\+\_\+\+P\+A\+TH} $\ast$ \hyperlink{alosx_8h_acfb52c59ff68aa09a431e493c51e15ea}{\+\_\+al\+\_\+osx\+\_\+get\+\_\+path} (int id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{alosx_8h_a0b3f6921365f2d25d8f5765165080db8}\label{alosx_8h_a0b3f6921365f2d25d8f5765165080db8}} 
+\index{alosx.\+h@{alosx.\+h}!A\+L\+L\+E\+G\+R\+O\+\_\+\+M\+A\+G\+I\+C\+\_\+\+M\+A\+IN@{A\+L\+L\+E\+G\+R\+O\+\_\+\+M\+A\+G\+I\+C\+\_\+\+M\+A\+IN}}
+\index{A\+L\+L\+E\+G\+R\+O\+\_\+\+M\+A\+G\+I\+C\+\_\+\+M\+A\+IN@{A\+L\+L\+E\+G\+R\+O\+\_\+\+M\+A\+G\+I\+C\+\_\+\+M\+A\+IN}!alosx.\+h@{alosx.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+L\+E\+G\+R\+O\+\_\+\+M\+A\+G\+I\+C\+\_\+\+M\+A\+IN}{ALLEGRO\_MAGIC\_MAIN}}
+{\footnotesize\ttfamily \#define A\+L\+L\+E\+G\+R\+O\+\_\+\+M\+A\+G\+I\+C\+\_\+\+M\+A\+IN}
+
+\mbox{\Hypertarget{alosx_8h_a05a4a4e0965e8d953cd014da4d65d511}\label{alosx_8h_a05a4a4e0965e8d953cd014da4d65d511}} 
+\index{alosx.\+h@{alosx.\+h}!K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+M\+A\+C\+O\+SX@{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+M\+A\+C\+O\+SX}}
+\index{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+M\+A\+C\+O\+SX@{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+M\+A\+C\+O\+SX}!alosx.\+h@{alosx.\+h}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+M\+A\+C\+O\+SX}{KEYBOARD\_MACOSX}}
+{\footnotesize\ttfamily \#define K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+M\+A\+C\+O\+SX~\hyperlink{base_8h_a30864c4432f73c4987f3f124a727f469}{A\+L\+\_\+\+ID}(\textquotesingle{}O\textquotesingle{},\textquotesingle{}S\textquotesingle{},\textquotesingle{}X\textquotesingle{},\textquotesingle{}K\textquotesingle{})}
+
+\mbox{\Hypertarget{alosx_8h_aa4e97f3782107649d3e4eb3875090b3a}\label{alosx_8h_aa4e97f3782107649d3e4eb3875090b3a}} 
+\index{alosx.\+h@{alosx.\+h}!main@{main}}
+\index{main@{main}!alosx.\+h@{alosx.\+h}}
+\subsubsection{\texorpdfstring{main}{main}}
+{\footnotesize\ttfamily \#define main~\+\_\+al\+\_\+mangled\+\_\+main}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{alosx_8h_acfb52c59ff68aa09a431e493c51e15ea}\label{alosx_8h_acfb52c59ff68aa09a431e493c51e15ea}} 
+\index{alosx.\+h@{alosx.\+h}!\+\_\+al\+\_\+osx\+\_\+get\+\_\+path@{\+\_\+al\+\_\+osx\+\_\+get\+\_\+path}}
+\index{\+\_\+al\+\_\+osx\+\_\+get\+\_\+path@{\+\_\+al\+\_\+osx\+\_\+get\+\_\+path}!alosx.\+h@{alosx.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+al\+\_\+osx\+\_\+get\+\_\+path()}{\_al\_osx\_get\_path()}}
+{\footnotesize\ttfamily \hyperlink{path_8h_afb91cf0e7626a148a3950c8351e4c9c8}{A\+L\+L\+E\+G\+R\+O\+\_\+\+P\+A\+TH}$\ast$ \+\_\+al\+\_\+osx\+\_\+get\+\_\+path (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+

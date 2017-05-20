@@ -1,0 +1,56 @@
+\hypertarget{_core_8h}{}\section{src/\+Core.h File Reference}
+\label{_core_8h}\index{src/\+Core.\+h@{src/\+Core.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{group___core_gad48a041724bbc05fba4b66ce7530edb2}{init\+Addons} ()
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{group___core_ga02ff5c3ae037f5e07455e6e31faa8012}{change\+Scene} (int scene)
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{group___core_ga1160e13b7fea6357aae71e25703481de}{Log\+\_\+i} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$tag, \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$str,...)
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{group___core_ga5a29994cc1a93c0124f65b27a5daa5aa}{Log\+\_\+e} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$tag, \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$str,...)
+\item 
+int \hyperlink{group___core_ga5556333d0547b17be08de1a701d61e2c}{init\+Vars} ()
+\item 
+int \hyperlink{group___core_ga26c5e4f4587adfc14630f09bf91338ba}{open\+Level} (int num)
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{group___core_ga235968ecd656b8f1436aebad7eeaa5b8}{set\+New\+Screen} ()
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{group___core_ga6270007e1f0c1a21e81dc3c5bdee14a6}{render\+Screen} ()
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{group___core_ga408edec4092671024a17603aebcc9225}{convert\+Const\+Copy} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$source, char $\ast$$\ast$to\+Chr)
+\item 
+int \hyperlink{group___core_gae327268c8424aa3cb6cea07ea33a3019}{open\+Folder\+Dialog} (int i)
+\item 
+int \hyperlink{group___core_ga3c412437d5338d1b9242ca728ec3fa6a}{slice\+File} (int i)
+\item 
+int \hyperlink{group___core_ga26169da7eb509dc305939ffabf06ac58}{next\+Page} (int i)
+\item 
+int \hyperlink{group___core_ga8f29a9074178aa050d1938014a4d9d5b}{prev\+Page} (int i)
+\item 
+int \hyperlink{group___core_ga6851f8613954858f5ed67795db823076}{open\+Level\+Select} (int i)
+\item 
+int \hyperlink{group___core_ga70bec60930d92e442620c4cbe2232606}{show\+Directory\+Listing} (int i)
+\item 
+int \hyperlink{group___core_ga38f3d65c215c1ab12f47b8aa9dfe4cc5}{open\+Level\+Editor} (int i)
+\item 
+int \hyperlink{group___core_gac66e8a197a47d63d439a2b34a23d1444}{Exit\+Prog} (int i)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{group___core_ga6341080327d9c3d3ef08fdccd4f05262}{names} \mbox{[}128\mbox{]}\mbox{[}128\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array for storing levels names currently vewing in level select. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{group___core_ga39642f859bbe17ccc6e6d98f84a7cdea}{path\+Cur}
+\begin{DoxyCompactList}\small\item\em Temporary string for storing current chosen. \end{DoxyCompactList}\item 
+char \hyperlink{group___core_ga5a00f62db43aff74971290ceba5fa7df}{levels\+Paths} \mbox{[}256\mbox{]}\mbox{[}128\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array for storing levels pathes currently vewing in level select. \end{DoxyCompactList}\item 
+char \hyperlink{group___core_gae5cb82a78ca4ac2c20f9d071e7124f38}{levels\+Names} \mbox{[}64\mbox{]}\mbox{[}\hyperlink{group___button_ga5a86b4b0ec8a21993f74ae423ec74538}{B\+U\+T\+T\+O\+N\+S\+\_\+\+N\+A\+M\+E\+\_\+\+S\+I\+ZE}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array for storing levels names currently vewing in level select. \end{DoxyCompactList}\item 
+int \hyperlink{group___core_ga75f52c6778fb4d3418ef0925d17fb164}{level\+Select\+Page}
+\item 
+int \hyperlink{group___core_ga016718268d32fcb95b1190cc1071e270}{y\+Offset}
+\end{DoxyCompactItemize}

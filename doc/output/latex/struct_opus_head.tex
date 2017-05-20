@@ -1,0 +1,92 @@
+\hypertarget{struct_opus_head}{}\section{Opus\+Head Struct Reference}
+\label{struct_opus_head}\index{Opus\+Head@{Opus\+Head}}
+
+
+{\ttfamily \#include $<$opusfile.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{struct_opus_head_a9b0e040fc6404ddc2b1fdbccf505f71e}{version}
+\item 
+int \hyperlink{struct_opus_head_ae3b3fc1a70e6b037c1d1d416fbdf2c8d}{channel\+\_\+count}
+\item 
+unsigned \hyperlink{struct_opus_head_ab448d3d3289d99f01dca8f19e878d57f}{pre\+\_\+skip}
+\item 
+\hyperlink{opus__types_8h_a643eaaadb9ef6cd44308e0299d8cd8ce}{opus\+\_\+uint32} \hyperlink{struct_opus_head_a73b80a913eca33d829f1667caee80d9e}{input\+\_\+sample\+\_\+rate}
+\item 
+int \hyperlink{struct_opus_head_a1f1c9e144ab05fe281f088d3e73eeab2}{output\+\_\+gain}
+\item 
+int \hyperlink{struct_opus_head_a338268b4264e059ae9ede890e6177304}{mapping\+\_\+family}
+\item 
+int \hyperlink{struct_opus_head_a241b040792d2181f3ff6fa7e9911ac40}{stream\+\_\+count}
+\item 
+int \hyperlink{struct_opus_head_a0b3e512ec24c989b0374358446197782}{coupled\+\_\+count}
+\item 
+unsigned char \hyperlink{struct_opus_head_ac6372a8a1729b034308bae47253d94b7}{mapping} \mbox{[}\hyperlink{group__header__info_gad6f0329582430a828244045ac85a5417}{O\+P\+U\+S\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+O\+U\+N\+T\+\_\+\+M\+AX}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ogg Opus bitstream information. This contains the basic playback parameters for a stream, and corresponds to the initial ID header packet of an Ogg Opus stream. 
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{struct_opus_head_ae3b3fc1a70e6b037c1d1d416fbdf2c8d}\label{struct_opus_head_ae3b3fc1a70e6b037c1d1d416fbdf2c8d}} 
+\index{Opus\+Head@{Opus\+Head}!channel\+\_\+count@{channel\+\_\+count}}
+\index{channel\+\_\+count@{channel\+\_\+count}!Opus\+Head@{Opus\+Head}}
+\subsubsection{\texorpdfstring{channel\+\_\+count}{channel\_count}}
+{\footnotesize\ttfamily int Opus\+Head\+::channel\+\_\+count}
+
+The number of channels, in the range 1...255. \mbox{\Hypertarget{struct_opus_head_a0b3e512ec24c989b0374358446197782}\label{struct_opus_head_a0b3e512ec24c989b0374358446197782}} 
+\index{Opus\+Head@{Opus\+Head}!coupled\+\_\+count@{coupled\+\_\+count}}
+\index{coupled\+\_\+count@{coupled\+\_\+count}!Opus\+Head@{Opus\+Head}}
+\subsubsection{\texorpdfstring{coupled\+\_\+count}{coupled\_count}}
+{\footnotesize\ttfamily int Opus\+Head\+::coupled\+\_\+count}
+
+The number of coupled Opus streams in each Ogg packet, in the range 0...127. This must satisfy {\ttfamily 0 $<$= coupled\+\_\+count $<$= stream\+\_\+count} and {\ttfamily coupled\+\_\+count + stream\+\_\+count $<$= 255}. The coupled streams appear first, before all uncoupled streams, in an Ogg Opus packet. \mbox{\Hypertarget{struct_opus_head_a73b80a913eca33d829f1667caee80d9e}\label{struct_opus_head_a73b80a913eca33d829f1667caee80d9e}} 
+\index{Opus\+Head@{Opus\+Head}!input\+\_\+sample\+\_\+rate@{input\+\_\+sample\+\_\+rate}}
+\index{input\+\_\+sample\+\_\+rate@{input\+\_\+sample\+\_\+rate}!Opus\+Head@{Opus\+Head}}
+\subsubsection{\texorpdfstring{input\+\_\+sample\+\_\+rate}{input\_sample\_rate}}
+{\footnotesize\ttfamily \hyperlink{opus__types_8h_a643eaaadb9ef6cd44308e0299d8cd8ce}{opus\+\_\+uint32} Opus\+Head\+::input\+\_\+sample\+\_\+rate}
+
+The sampling rate of the original input. All Opus audio is coded at 48 k\+Hz, and should also be decoded at 48 k\+Hz for playback (unless the target hardware does not support this sampling rate). However, this field may be used to resample the audio back to the original sampling rate, for example, when saving the output to a file. \mbox{\Hypertarget{struct_opus_head_ac6372a8a1729b034308bae47253d94b7}\label{struct_opus_head_ac6372a8a1729b034308bae47253d94b7}} 
+\index{Opus\+Head@{Opus\+Head}!mapping@{mapping}}
+\index{mapping@{mapping}!Opus\+Head@{Opus\+Head}}
+\subsubsection{\texorpdfstring{mapping}{mapping}}
+{\footnotesize\ttfamily unsigned char Opus\+Head\+::mapping\mbox{[}\hyperlink{group__header__info_gad6f0329582430a828244045ac85a5417}{O\+P\+U\+S\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+O\+U\+N\+T\+\_\+\+M\+AX}\mbox{]}}
+
+The mapping from coded stream channels to output channels. Let {\ttfamily index=mapping\mbox{[}k\mbox{]}} be the value for channel {\ttfamily k}. If {\ttfamily index$<$2$\ast$coupled\+\_\+count}, then it refers to the left channel from stream {\ttfamily (index/2)} if even, and the right channel from stream {\ttfamily (index/2)} if odd. Otherwise, it refers to the output of the uncoupled stream {\ttfamily (index-\/coupled\+\_\+count)}. \mbox{\Hypertarget{struct_opus_head_a338268b4264e059ae9ede890e6177304}\label{struct_opus_head_a338268b4264e059ae9ede890e6177304}} 
+\index{Opus\+Head@{Opus\+Head}!mapping\+\_\+family@{mapping\+\_\+family}}
+\index{mapping\+\_\+family@{mapping\+\_\+family}!Opus\+Head@{Opus\+Head}}
+\subsubsection{\texorpdfstring{mapping\+\_\+family}{mapping\_family}}
+{\footnotesize\ttfamily int Opus\+Head\+::mapping\+\_\+family}
+
+The channel mapping family, in the range 0...255. Channel mapping family 0 covers mono or stereo in a single stream. Channel mapping family 1 covers 1 to 8 channels in one or more streams, using the Vorbis speaker assignments. Channel mapping family 255 covers 1 to 255 channels in one or more streams, but without any defined speaker assignment. \mbox{\Hypertarget{struct_opus_head_a1f1c9e144ab05fe281f088d3e73eeab2}\label{struct_opus_head_a1f1c9e144ab05fe281f088d3e73eeab2}} 
+\index{Opus\+Head@{Opus\+Head}!output\+\_\+gain@{output\+\_\+gain}}
+\index{output\+\_\+gain@{output\+\_\+gain}!Opus\+Head@{Opus\+Head}}
+\subsubsection{\texorpdfstring{output\+\_\+gain}{output\_gain}}
+{\footnotesize\ttfamily int Opus\+Head\+::output\+\_\+gain}
+
+The gain to apply to the decoded output, in dB, as a Q8 value in the range -\/32768...32767. The {\ttfamily libopusfile} A\+PI will automatically apply this gain to the decoded output before returning it, scaling it by {\ttfamily pow(10,output\+\_\+gain/(20.\+0$\ast$256))}. \mbox{\Hypertarget{struct_opus_head_ab448d3d3289d99f01dca8f19e878d57f}\label{struct_opus_head_ab448d3d3289d99f01dca8f19e878d57f}} 
+\index{Opus\+Head@{Opus\+Head}!pre\+\_\+skip@{pre\+\_\+skip}}
+\index{pre\+\_\+skip@{pre\+\_\+skip}!Opus\+Head@{Opus\+Head}}
+\subsubsection{\texorpdfstring{pre\+\_\+skip}{pre\_skip}}
+{\footnotesize\ttfamily unsigned Opus\+Head\+::pre\+\_\+skip}
+
+The number of samples that should be discarded from the beginning of the stream. \mbox{\Hypertarget{struct_opus_head_a241b040792d2181f3ff6fa7e9911ac40}\label{struct_opus_head_a241b040792d2181f3ff6fa7e9911ac40}} 
+\index{Opus\+Head@{Opus\+Head}!stream\+\_\+count@{stream\+\_\+count}}
+\index{stream\+\_\+count@{stream\+\_\+count}!Opus\+Head@{Opus\+Head}}
+\subsubsection{\texorpdfstring{stream\+\_\+count}{stream\_count}}
+{\footnotesize\ttfamily int Opus\+Head\+::stream\+\_\+count}
+
+The number of Opus streams in each Ogg packet, in the range 1...255. \mbox{\Hypertarget{struct_opus_head_a9b0e040fc6404ddc2b1fdbccf505f71e}\label{struct_opus_head_a9b0e040fc6404ddc2b1fdbccf505f71e}} 
+\index{Opus\+Head@{Opus\+Head}!version@{version}}
+\index{version@{version}!Opus\+Head@{Opus\+Head}}
+\subsubsection{\texorpdfstring{version}{version}}
+{\footnotesize\ttfamily int Opus\+Head\+::version}
+
+The Ogg Opus format version, in the range 0...255. The top 4 bits represent a \char`\"{}major\char`\"{} version, and the bottom four bits represent backwards-\/compatible \char`\"{}minor\char`\"{} revisions. The current specification describes version 1. This library will recognize versions up through 15 as backwards compatible with the current specification. An earlier draft of the specification described a version 0, but the only difference between version 1 and version 0 is that version 0 did not specify the semantics for handling the version field. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/packages/\+Allegro\+Deps.\+1.\+5.\+0.\+1/build/native/include/opus/\hyperlink{opusfile_8h}{opusfile.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,19 @@
+digraph "FLAC C API"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir=LR;
+  Node0 [label="FLAC C API",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node4 [label="FLAC/metadata.h: metadata\l interfaces",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__flac__metadata.html",tooltip="This module provides functions for creating and manipulating FLAC metadata blocks in memory..."];
+  Node6 [label="FLAC/_encoder.h: encoder\l interfaces",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__flac__encoder.html",tooltip="This module describes the encoder layers provided by libFLAC. "];
+  Node3 [label="FLAC/format.h: format\l components",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__flac__format.html",tooltip="This module contains structure definitions for the representation of FLAC format components in memory..."];
+  Node2 [label="FLAC/export.h: export\l symbols",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__flac__export.html",tooltip="This module contains #defines and symbols for exporting function calls, and providing version informa..."];
+  Node5 [label="FLAC/_decoder.h: decoder\l interfaces",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__flac__decoder.html",tooltip="This module describes the decoder layers provided by libFLAC. "];
+  Node1 [label="FLAC/callback.h: I\l/O callback structures",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__flac__callbacks.html",tooltip="This module defines the structures for describing I/O callbacks to the other FLAC interfaces..."];
+  Node0->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node0->Node6 [shape=plaintext, dir="back", style="solid"];
+}

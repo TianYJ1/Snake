@@ -1,0 +1,106 @@
+\hypertarget{ftincrem_8h}{}\section{src/packages/\+Allegro\+Deps.1.5.0.1/build/native/include/freetype2/ftincrem.h File Reference}
+\label{ftincrem_8h}\index{src/packages/\+Allegro\+Deps.\+1.\+5.\+0.\+1/build/native/include/freetype2/ftincrem.\+h@{src/packages/\+Allegro\+Deps.\+1.\+5.\+0.\+1/build/native/include/freetype2/ftincrem.\+h}}
+{\ttfamily \#include $<$ft2build.\+h$>$}\newline
+Include dependency graph for ftincrem.\+h\+:
+% FIG 0
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_f_t___incremental___metrics_rec__}{F\+T\+\_\+\+Incremental\+\_\+\+Metrics\+Rec\+\_\+}
+\item 
+struct \hyperlink{struct_f_t___incremental___funcs_rec__}{F\+T\+\_\+\+Incremental\+\_\+\+Funcs\+Rec\+\_\+}
+\item 
+struct \hyperlink{struct_f_t___incremental___interface_rec__}{F\+T\+\_\+\+Incremental\+\_\+\+Interface\+Rec\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ftincrem_8h_a3d6a330a57d3d52a7ca4a404c83e40ba}{F\+T\+\_\+\+P\+A\+R\+A\+M\+\_\+\+T\+A\+G\+\_\+\+I\+N\+C\+R\+E\+M\+E\+N\+T\+AL}~\hyperlink{fttypes_8h_ae115fc8c5f7280f599d1b2ae713f6db0}{F\+T\+\_\+\+M\+A\+K\+E\+\_\+\+T\+AG}( \textquotesingle{}i\textquotesingle{}, \textquotesingle{}n\textquotesingle{}, \textquotesingle{}c\textquotesingle{}, \textquotesingle{}r\textquotesingle{} )
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef typedef\+F\+T\+\_\+\+B\+E\+G\+I\+N\+\_\+\+H\+E\+A\+D\+ER struct F\+T\+\_\+\+Incremental\+Rec\+\_\+ $\ast$ \hyperlink{ftincrem_8h_a2ec8ac9cacdca1f493e4c3c5d27ed3c4}{F\+T\+\_\+\+Incremental}
+\item 
+typedef struct \hyperlink{struct_f_t___incremental___metrics_rec__}{F\+T\+\_\+\+Incremental\+\_\+\+Metrics\+Rec\+\_\+} \hyperlink{ftincrem_8h_abc938547dd676b74b33da53eb9eeb952}{F\+T\+\_\+\+Incremental\+\_\+\+Metrics\+Rec}
+\item 
+typedef struct \hyperlink{struct_f_t___incremental___metrics_rec__}{F\+T\+\_\+\+Incremental\+\_\+\+Metrics\+Rec\+\_\+} $\ast$ \hyperlink{ftincrem_8h_a4f2282a95b9fda2f8fd4c9667fc062d6}{F\+T\+\_\+\+Incremental\+\_\+\+Metrics}
+\item 
+typedef \hyperlink{fttypes_8h_a64c8060bdb3d6eec844a1bf670e06bdd}{F\+T\+\_\+\+Error}($\ast$ \hyperlink{ftincrem_8h_ac6b537b5cb4b97b05cae225e24e85720}{F\+T\+\_\+\+Incremental\+\_\+\+Get\+Glyph\+Data\+Func}) (\hyperlink{ftincrem_8h_a2ec8ac9cacdca1f493e4c3c5d27ed3c4}{F\+T\+\_\+\+Incremental} incremental, \hyperlink{fttypes_8h_abcb8db4dbf35d2b55a9e8c7b0926dc52}{F\+T\+\_\+\+U\+Int} glyph\+\_\+index, \hyperlink{fttypes_8h_ace332b44e638cab5430903256dd11ee1}{F\+T\+\_\+\+Data} $\ast$adata)
+\item 
+typedef \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}($\ast$ \hyperlink{ftincrem_8h_a80ee63b054c3ca6ca7cf280071853bd6}{F\+T\+\_\+\+Incremental\+\_\+\+Free\+Glyph\+Data\+Func}) (\hyperlink{ftincrem_8h_a2ec8ac9cacdca1f493e4c3c5d27ed3c4}{F\+T\+\_\+\+Incremental} incremental, \hyperlink{fttypes_8h_ace332b44e638cab5430903256dd11ee1}{F\+T\+\_\+\+Data} $\ast$\hyperlink{jpeglib_8h_aa379dc8ae39e55ae0c431a61a7d2f2bc}{data})
+\item 
+typedef \hyperlink{fttypes_8h_a64c8060bdb3d6eec844a1bf670e06bdd}{F\+T\+\_\+\+Error}($\ast$ \hyperlink{ftincrem_8h_a3bd123a916bc132ec44104eab2e52a3f}{F\+T\+\_\+\+Incremental\+\_\+\+Get\+Glyph\+Metrics\+Func}) (\hyperlink{ftincrem_8h_a2ec8ac9cacdca1f493e4c3c5d27ed3c4}{F\+T\+\_\+\+Incremental} incremental, \hyperlink{fttypes_8h_abcb8db4dbf35d2b55a9e8c7b0926dc52}{F\+T\+\_\+\+U\+Int} glyph\+\_\+index, \hyperlink{fttypes_8h_a1a832a256bb5a7e6e884afaa1a07f3ae}{F\+T\+\_\+\+Bool} vertical, \hyperlink{ftincrem_8h_abc938547dd676b74b33da53eb9eeb952}{F\+T\+\_\+\+Incremental\+\_\+\+Metrics\+Rec} $\ast$ametrics)
+\item 
+typedef struct \hyperlink{struct_f_t___incremental___funcs_rec__}{F\+T\+\_\+\+Incremental\+\_\+\+Funcs\+Rec\+\_\+} \hyperlink{ftincrem_8h_ad771ba070b5075413589049634803c8e}{F\+T\+\_\+\+Incremental\+\_\+\+Funcs\+Rec}
+\item 
+typedef struct \hyperlink{struct_f_t___incremental___interface_rec__}{F\+T\+\_\+\+Incremental\+\_\+\+Interface\+Rec\+\_\+} \hyperlink{ftincrem_8h_a6054fa1706761af7e650da1e1805e775}{F\+T\+\_\+\+Incremental\+\_\+\+Interface\+Rec}
+\item 
+typedef \hyperlink{ftincrem_8h_a6054fa1706761af7e650da1e1805e775}{F\+T\+\_\+\+Incremental\+\_\+\+Interface\+Rec} $\ast$ \hyperlink{ftincrem_8h_aa5fc31202d43808d021640ea7f0068a3}{F\+T\+\_\+\+Incremental\+\_\+\+Interface}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{ftincrem_8h_a3d6a330a57d3d52a7ca4a404c83e40ba}\label{ftincrem_8h_a3d6a330a57d3d52a7ca4a404c83e40ba}} 
+\index{ftincrem.\+h@{ftincrem.\+h}!F\+T\+\_\+\+P\+A\+R\+A\+M\+\_\+\+T\+A\+G\+\_\+\+I\+N\+C\+R\+E\+M\+E\+N\+T\+AL@{F\+T\+\_\+\+P\+A\+R\+A\+M\+\_\+\+T\+A\+G\+\_\+\+I\+N\+C\+R\+E\+M\+E\+N\+T\+AL}}
+\index{F\+T\+\_\+\+P\+A\+R\+A\+M\+\_\+\+T\+A\+G\+\_\+\+I\+N\+C\+R\+E\+M\+E\+N\+T\+AL@{F\+T\+\_\+\+P\+A\+R\+A\+M\+\_\+\+T\+A\+G\+\_\+\+I\+N\+C\+R\+E\+M\+E\+N\+T\+AL}!ftincrem.\+h@{ftincrem.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+P\+A\+R\+A\+M\+\_\+\+T\+A\+G\+\_\+\+I\+N\+C\+R\+E\+M\+E\+N\+T\+AL}{FT\_PARAM\_TAG\_INCREMENTAL}}
+{\footnotesize\ttfamily \#define F\+T\+\_\+\+P\+A\+R\+A\+M\+\_\+\+T\+A\+G\+\_\+\+I\+N\+C\+R\+E\+M\+E\+N\+T\+AL~\hyperlink{fttypes_8h_ae115fc8c5f7280f599d1b2ae713f6db0}{F\+T\+\_\+\+M\+A\+K\+E\+\_\+\+T\+AG}( \textquotesingle{}i\textquotesingle{}, \textquotesingle{}n\textquotesingle{}, \textquotesingle{}c\textquotesingle{}, \textquotesingle{}r\textquotesingle{} )}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{ftincrem_8h_a2ec8ac9cacdca1f493e4c3c5d27ed3c4}\label{ftincrem_8h_a2ec8ac9cacdca1f493e4c3c5d27ed3c4}} 
+\index{ftincrem.\+h@{ftincrem.\+h}!F\+T\+\_\+\+Incremental@{F\+T\+\_\+\+Incremental}}
+\index{F\+T\+\_\+\+Incremental@{F\+T\+\_\+\+Incremental}!ftincrem.\+h@{ftincrem.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Incremental}{FT\_Incremental}}
+{\footnotesize\ttfamily typedef typedef\+F\+T\+\_\+\+B\+E\+G\+I\+N\+\_\+\+H\+E\+A\+D\+ER struct F\+T\+\_\+\+Incremental\+Rec\+\_\+$\ast$ \hyperlink{ftincrem_8h_a2ec8ac9cacdca1f493e4c3c5d27ed3c4}{F\+T\+\_\+\+Incremental}}
+
+\mbox{\Hypertarget{ftincrem_8h_a80ee63b054c3ca6ca7cf280071853bd6}\label{ftincrem_8h_a80ee63b054c3ca6ca7cf280071853bd6}} 
+\index{ftincrem.\+h@{ftincrem.\+h}!F\+T\+\_\+\+Incremental\+\_\+\+Free\+Glyph\+Data\+Func@{F\+T\+\_\+\+Incremental\+\_\+\+Free\+Glyph\+Data\+Func}}
+\index{F\+T\+\_\+\+Incremental\+\_\+\+Free\+Glyph\+Data\+Func@{F\+T\+\_\+\+Incremental\+\_\+\+Free\+Glyph\+Data\+Func}!ftincrem.\+h@{ftincrem.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Incremental\+\_\+\+Free\+Glyph\+Data\+Func}{FT\_Incremental\_FreeGlyphDataFunc}}
+{\footnotesize\ttfamily typedef \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}($\ast$ F\+T\+\_\+\+Incremental\+\_\+\+Free\+Glyph\+Data\+Func) (\hyperlink{ftincrem_8h_a2ec8ac9cacdca1f493e4c3c5d27ed3c4}{F\+T\+\_\+\+Incremental} incremental, \hyperlink{fttypes_8h_ace332b44e638cab5430903256dd11ee1}{F\+T\+\_\+\+Data} $\ast$\hyperlink{jpeglib_8h_aa379dc8ae39e55ae0c431a61a7d2f2bc}{data})}
+
+\mbox{\Hypertarget{ftincrem_8h_ad771ba070b5075413589049634803c8e}\label{ftincrem_8h_ad771ba070b5075413589049634803c8e}} 
+\index{ftincrem.\+h@{ftincrem.\+h}!F\+T\+\_\+\+Incremental\+\_\+\+Funcs\+Rec@{F\+T\+\_\+\+Incremental\+\_\+\+Funcs\+Rec}}
+\index{F\+T\+\_\+\+Incremental\+\_\+\+Funcs\+Rec@{F\+T\+\_\+\+Incremental\+\_\+\+Funcs\+Rec}!ftincrem.\+h@{ftincrem.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Incremental\+\_\+\+Funcs\+Rec}{FT\_Incremental\_FuncsRec}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct_f_t___incremental___funcs_rec__}{F\+T\+\_\+\+Incremental\+\_\+\+Funcs\+Rec\+\_\+}  \hyperlink{ftincrem_8h_ad771ba070b5075413589049634803c8e}{F\+T\+\_\+\+Incremental\+\_\+\+Funcs\+Rec}}
+
+\mbox{\Hypertarget{ftincrem_8h_ac6b537b5cb4b97b05cae225e24e85720}\label{ftincrem_8h_ac6b537b5cb4b97b05cae225e24e85720}} 
+\index{ftincrem.\+h@{ftincrem.\+h}!F\+T\+\_\+\+Incremental\+\_\+\+Get\+Glyph\+Data\+Func@{F\+T\+\_\+\+Incremental\+\_\+\+Get\+Glyph\+Data\+Func}}
+\index{F\+T\+\_\+\+Incremental\+\_\+\+Get\+Glyph\+Data\+Func@{F\+T\+\_\+\+Incremental\+\_\+\+Get\+Glyph\+Data\+Func}!ftincrem.\+h@{ftincrem.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Incremental\+\_\+\+Get\+Glyph\+Data\+Func}{FT\_Incremental\_GetGlyphDataFunc}}
+{\footnotesize\ttfamily typedef \hyperlink{fttypes_8h_a64c8060bdb3d6eec844a1bf670e06bdd}{F\+T\+\_\+\+Error}($\ast$ F\+T\+\_\+\+Incremental\+\_\+\+Get\+Glyph\+Data\+Func) (\hyperlink{ftincrem_8h_a2ec8ac9cacdca1f493e4c3c5d27ed3c4}{F\+T\+\_\+\+Incremental} incremental, \hyperlink{fttypes_8h_abcb8db4dbf35d2b55a9e8c7b0926dc52}{F\+T\+\_\+\+U\+Int} glyph\+\_\+index, \hyperlink{fttypes_8h_ace332b44e638cab5430903256dd11ee1}{F\+T\+\_\+\+Data} $\ast$adata)}
+
+\mbox{\Hypertarget{ftincrem_8h_a3bd123a916bc132ec44104eab2e52a3f}\label{ftincrem_8h_a3bd123a916bc132ec44104eab2e52a3f}} 
+\index{ftincrem.\+h@{ftincrem.\+h}!F\+T\+\_\+\+Incremental\+\_\+\+Get\+Glyph\+Metrics\+Func@{F\+T\+\_\+\+Incremental\+\_\+\+Get\+Glyph\+Metrics\+Func}}
+\index{F\+T\+\_\+\+Incremental\+\_\+\+Get\+Glyph\+Metrics\+Func@{F\+T\+\_\+\+Incremental\+\_\+\+Get\+Glyph\+Metrics\+Func}!ftincrem.\+h@{ftincrem.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Incremental\+\_\+\+Get\+Glyph\+Metrics\+Func}{FT\_Incremental\_GetGlyphMetricsFunc}}
+{\footnotesize\ttfamily typedef \hyperlink{fttypes_8h_a64c8060bdb3d6eec844a1bf670e06bdd}{F\+T\+\_\+\+Error}($\ast$ F\+T\+\_\+\+Incremental\+\_\+\+Get\+Glyph\+Metrics\+Func) (\hyperlink{ftincrem_8h_a2ec8ac9cacdca1f493e4c3c5d27ed3c4}{F\+T\+\_\+\+Incremental} incremental, \hyperlink{fttypes_8h_abcb8db4dbf35d2b55a9e8c7b0926dc52}{F\+T\+\_\+\+U\+Int} glyph\+\_\+index, \hyperlink{fttypes_8h_a1a832a256bb5a7e6e884afaa1a07f3ae}{F\+T\+\_\+\+Bool} vertical, \hyperlink{ftincrem_8h_abc938547dd676b74b33da53eb9eeb952}{F\+T\+\_\+\+Incremental\+\_\+\+Metrics\+Rec} $\ast$ametrics)}
+
+\mbox{\Hypertarget{ftincrem_8h_aa5fc31202d43808d021640ea7f0068a3}\label{ftincrem_8h_aa5fc31202d43808d021640ea7f0068a3}} 
+\index{ftincrem.\+h@{ftincrem.\+h}!F\+T\+\_\+\+Incremental\+\_\+\+Interface@{F\+T\+\_\+\+Incremental\+\_\+\+Interface}}
+\index{F\+T\+\_\+\+Incremental\+\_\+\+Interface@{F\+T\+\_\+\+Incremental\+\_\+\+Interface}!ftincrem.\+h@{ftincrem.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Incremental\+\_\+\+Interface}{FT\_Incremental\_Interface}}
+{\footnotesize\ttfamily typedef \hyperlink{ftincrem_8h_a6054fa1706761af7e650da1e1805e775}{F\+T\+\_\+\+Incremental\+\_\+\+Interface\+Rec}$\ast$ \hyperlink{ftincrem_8h_aa5fc31202d43808d021640ea7f0068a3}{F\+T\+\_\+\+Incremental\+\_\+\+Interface}}
+
+\mbox{\Hypertarget{ftincrem_8h_a6054fa1706761af7e650da1e1805e775}\label{ftincrem_8h_a6054fa1706761af7e650da1e1805e775}} 
+\index{ftincrem.\+h@{ftincrem.\+h}!F\+T\+\_\+\+Incremental\+\_\+\+Interface\+Rec@{F\+T\+\_\+\+Incremental\+\_\+\+Interface\+Rec}}
+\index{F\+T\+\_\+\+Incremental\+\_\+\+Interface\+Rec@{F\+T\+\_\+\+Incremental\+\_\+\+Interface\+Rec}!ftincrem.\+h@{ftincrem.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Incremental\+\_\+\+Interface\+Rec}{FT\_Incremental\_InterfaceRec}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct_f_t___incremental___interface_rec__}{F\+T\+\_\+\+Incremental\+\_\+\+Interface\+Rec\+\_\+}  \hyperlink{ftincrem_8h_a6054fa1706761af7e650da1e1805e775}{F\+T\+\_\+\+Incremental\+\_\+\+Interface\+Rec}}
+
+\mbox{\Hypertarget{ftincrem_8h_a4f2282a95b9fda2f8fd4c9667fc062d6}\label{ftincrem_8h_a4f2282a95b9fda2f8fd4c9667fc062d6}} 
+\index{ftincrem.\+h@{ftincrem.\+h}!F\+T\+\_\+\+Incremental\+\_\+\+Metrics@{F\+T\+\_\+\+Incremental\+\_\+\+Metrics}}
+\index{F\+T\+\_\+\+Incremental\+\_\+\+Metrics@{F\+T\+\_\+\+Incremental\+\_\+\+Metrics}!ftincrem.\+h@{ftincrem.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Incremental\+\_\+\+Metrics}{FT\_Incremental\_Metrics}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct_f_t___incremental___metrics_rec__}{F\+T\+\_\+\+Incremental\+\_\+\+Metrics\+Rec\+\_\+}$\ast$ \hyperlink{ftincrem_8h_a4f2282a95b9fda2f8fd4c9667fc062d6}{F\+T\+\_\+\+Incremental\+\_\+\+Metrics}}
+
+\mbox{\Hypertarget{ftincrem_8h_abc938547dd676b74b33da53eb9eeb952}\label{ftincrem_8h_abc938547dd676b74b33da53eb9eeb952}} 
+\index{ftincrem.\+h@{ftincrem.\+h}!F\+T\+\_\+\+Incremental\+\_\+\+Metrics\+Rec@{F\+T\+\_\+\+Incremental\+\_\+\+Metrics\+Rec}}
+\index{F\+T\+\_\+\+Incremental\+\_\+\+Metrics\+Rec@{F\+T\+\_\+\+Incremental\+\_\+\+Metrics\+Rec}!ftincrem.\+h@{ftincrem.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Incremental\+\_\+\+Metrics\+Rec}{FT\_Incremental\_MetricsRec}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct_f_t___incremental___metrics_rec__}{F\+T\+\_\+\+Incremental\+\_\+\+Metrics\+Rec\+\_\+}  \hyperlink{ftincrem_8h_abc938547dd676b74b33da53eb9eeb952}{F\+T\+\_\+\+Incremental\+\_\+\+Metrics\+Rec}}
+

@@ -1,0 +1,80 @@
+\hypertarget{struct_f_l_a_c_____stream_metadata___cue_sheet___track}{}\section{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track Struct Reference}
+\label{struct_f_l_a_c_____stream_metadata___cue_sheet___track}\index{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track}}
+
+
+{\ttfamily \#include $<$format.\+h$>$}
+
+
+
+Collaboration diagram for F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track\+:
+% FIG 0
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ordinals_8h_aa78c8c70a3eb8a58af7436f278acde8e}{F\+L\+A\+C\+\_\+\+\_\+uint64} \hyperlink{struct_f_l_a_c_____stream_metadata___cue_sheet___track_a40e1c888253a56b6dc4885a44138d1bf}{offset}
+\item 
+\hyperlink{ordinals_8h_a5eb569b12d5b047cdacada4d57924ee3}{F\+L\+A\+C\+\_\+\+\_\+byte} \hyperlink{struct_f_l_a_c_____stream_metadata___cue_sheet___track_a429103d63c44d1861b4dc0762726701a}{number}
+\item 
+char \hyperlink{struct_f_l_a_c_____stream_metadata___cue_sheet___track_a4990c8b13969f4c62683d915ebbf5744}{isrc} \mbox{[}13\mbox{]}
+\item 
+unsigned \hyperlink{struct_f_l_a_c_____stream_metadata___cue_sheet___track_a848575fc7a7292867ce76a9b3705f6e7}{type}\+:1
+\item 
+unsigned \hyperlink{struct_f_l_a_c_____stream_metadata___cue_sheet___track_ab4a97e43166ee16d1d16cccd901ddc3a}{pre\+\_\+emphasis}\+:1
+\item 
+\hyperlink{ordinals_8h_a5eb569b12d5b047cdacada4d57924ee3}{F\+L\+A\+C\+\_\+\+\_\+byte} \hyperlink{struct_f_l_a_c_____stream_metadata___cue_sheet___track_a5f1c1d7e3ddc533938b83951c7b3dda5}{num\+\_\+indices}
+\item 
+\hyperlink{struct_f_l_a_c_____stream_metadata___cue_sheet___index}{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Index} $\ast$ \hyperlink{struct_f_l_a_c_____stream_metadata___cue_sheet___track_a14e0692a77b5b6689e208f48369edb90}{indices}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+F\+L\+AC C\+U\+E\+S\+H\+E\+ET track structure. (See the \href{../format.html#cuesheet_track}{\tt format specification} for the full description of each field.) 
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{struct_f_l_a_c_____stream_metadata___cue_sheet___track_a14e0692a77b5b6689e208f48369edb90}\label{struct_f_l_a_c_____stream_metadata___cue_sheet___track_a14e0692a77b5b6689e208f48369edb90}} 
+\index{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track}!indices@{indices}}
+\index{indices@{indices}!F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track}}
+\subsubsection{\texorpdfstring{indices}{indices}}
+{\footnotesize\ttfamily \hyperlink{struct_f_l_a_c_____stream_metadata___cue_sheet___index}{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Index}$\ast$ F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track\+::indices}
+
+N\+U\+LL if num\+\_\+indices == 0, else pointer to array of index points. \mbox{\Hypertarget{struct_f_l_a_c_____stream_metadata___cue_sheet___track_a4990c8b13969f4c62683d915ebbf5744}\label{struct_f_l_a_c_____stream_metadata___cue_sheet___track_a4990c8b13969f4c62683d915ebbf5744}} 
+\index{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track}!isrc@{isrc}}
+\index{isrc@{isrc}!F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track}}
+\subsubsection{\texorpdfstring{isrc}{isrc}}
+{\footnotesize\ttfamily char F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track\+::isrc\mbox{[}13\mbox{]}}
+
+Track I\+S\+RC. This is a 12-\/digit alphanumeric code plus a trailing {\ttfamily N\+UL} byte \mbox{\Hypertarget{struct_f_l_a_c_____stream_metadata___cue_sheet___track_a5f1c1d7e3ddc533938b83951c7b3dda5}\label{struct_f_l_a_c_____stream_metadata___cue_sheet___track_a5f1c1d7e3ddc533938b83951c7b3dda5}} 
+\index{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track}!num\+\_\+indices@{num\+\_\+indices}}
+\index{num\+\_\+indices@{num\+\_\+indices}!F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track}}
+\subsubsection{\texorpdfstring{num\+\_\+indices}{num\_indices}}
+{\footnotesize\ttfamily \hyperlink{ordinals_8h_a5eb569b12d5b047cdacada4d57924ee3}{F\+L\+A\+C\+\_\+\+\_\+byte} F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track\+::num\+\_\+indices}
+
+The number of track index points. \mbox{\Hypertarget{struct_f_l_a_c_____stream_metadata___cue_sheet___track_a429103d63c44d1861b4dc0762726701a}\label{struct_f_l_a_c_____stream_metadata___cue_sheet___track_a429103d63c44d1861b4dc0762726701a}} 
+\index{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track}!number@{number}}
+\index{number@{number}!F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track}}
+\subsubsection{\texorpdfstring{number}{number}}
+{\footnotesize\ttfamily \hyperlink{ordinals_8h_a5eb569b12d5b047cdacada4d57924ee3}{F\+L\+A\+C\+\_\+\+\_\+byte} F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track\+::number}
+
+The track number. \mbox{\Hypertarget{struct_f_l_a_c_____stream_metadata___cue_sheet___track_a40e1c888253a56b6dc4885a44138d1bf}\label{struct_f_l_a_c_____stream_metadata___cue_sheet___track_a40e1c888253a56b6dc4885a44138d1bf}} 
+\index{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track}!offset@{offset}}
+\index{offset@{offset}!F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track}}
+\subsubsection{\texorpdfstring{offset}{offset}}
+{\footnotesize\ttfamily \hyperlink{ordinals_8h_aa78c8c70a3eb8a58af7436f278acde8e}{F\+L\+A\+C\+\_\+\+\_\+uint64} F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track\+::offset}
+
+Track offset in samples, relative to the beginning of the F\+L\+AC audio stream. \mbox{\Hypertarget{struct_f_l_a_c_____stream_metadata___cue_sheet___track_ab4a97e43166ee16d1d16cccd901ddc3a}\label{struct_f_l_a_c_____stream_metadata___cue_sheet___track_ab4a97e43166ee16d1d16cccd901ddc3a}} 
+\index{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track}!pre\+\_\+emphasis@{pre\+\_\+emphasis}}
+\index{pre\+\_\+emphasis@{pre\+\_\+emphasis}!F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track}}
+\subsubsection{\texorpdfstring{pre\+\_\+emphasis}{pre\_emphasis}}
+{\footnotesize\ttfamily unsigned F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track\+::pre\+\_\+emphasis}
+
+The pre-\/emphasis flag\+: 0 for no pre-\/emphasis, 1 for pre-\/emphasis. \mbox{\Hypertarget{struct_f_l_a_c_____stream_metadata___cue_sheet___track_a848575fc7a7292867ce76a9b3705f6e7}\label{struct_f_l_a_c_____stream_metadata___cue_sheet___track_a848575fc7a7292867ce76a9b3705f6e7}} 
+\index{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track}!type@{type}}
+\index{type@{type}!F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track}}
+\subsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily unsigned F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Cue\+Sheet\+\_\+\+Track\+::type}
+
+The track type\+: 0 for audio, 1 for non-\/audio. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/packages/\+Allegro\+Deps.\+1.\+5.\+0.\+1/build/native/include/\+F\+L\+A\+C/\hyperlink{format_8h}{format.\+h}\end{DoxyCompactItemize}

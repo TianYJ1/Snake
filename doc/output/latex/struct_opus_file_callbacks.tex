@@ -1,0 +1,52 @@
+\hypertarget{struct_opus_file_callbacks}{}\section{Opus\+File\+Callbacks Struct Reference}
+\label{struct_opus_file_callbacks}\index{Opus\+File\+Callbacks@{Opus\+File\+Callbacks}}
+
+
+{\ttfamily \#include $<$opusfile.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__stream__callbacks_ga9ffca429db1f3b77f2f303f1942188c3}{op\+\_\+read\+\_\+func} \hyperlink{struct_opus_file_callbacks_a602ea09a84743a8f4fdc76ab7c0b6ee6}{read}
+\item 
+\hyperlink{group__stream__callbacks_gae57cb396d1f193d3f4e7e56ddad7760e}{op\+\_\+seek\+\_\+func} \hyperlink{struct_opus_file_callbacks_acf98bb1d13f75d3770206a398be05c8f}{seek}
+\item 
+\hyperlink{group__stream__callbacks_gaca012812dea4bc3a27b0c23575efecaf}{op\+\_\+tell\+\_\+func} \hyperlink{struct_opus_file_callbacks_a1464ae2f33850101add14a7eb278ff1c}{tell}
+\item 
+\hyperlink{group__stream__callbacks_ga16c914ec90d301f125cdbeaa1ff57c2d}{op\+\_\+close\+\_\+func} \hyperlink{struct_opus_file_callbacks_a04548cff8eda8ab0322f47cb702fe889}{close}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The callbacks used to access non-\/{\ttfamily F\+I\+LE} stream resources. The function prototypes are basically the same as for the stdio functions {\ttfamily fread()}, {\ttfamily fseek()}, {\ttfamily ftell()}, and {\ttfamily fclose()}. The differences are that the {\ttfamily F\+I\+LE $\ast$} arguments have been replaced with a {\ttfamily void $\ast$}, which is to be used as a pointer to whatever internal data these functions might need, that \hyperlink{struct_opus_file_callbacks_acf98bb1d13f75d3770206a398be05c8f}{seek} and \hyperlink{struct_opus_file_callbacks_a1464ae2f33850101add14a7eb278ff1c}{tell} take and return 64-\/bit offsets, and that \hyperlink{struct_opus_file_callbacks_acf98bb1d13f75d3770206a398be05c8f}{seek} {\itshape must} return -\/1 if the stream is unseekable. 
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{struct_opus_file_callbacks_a04548cff8eda8ab0322f47cb702fe889}\label{struct_opus_file_callbacks_a04548cff8eda8ab0322f47cb702fe889}} 
+\index{Opus\+File\+Callbacks@{Opus\+File\+Callbacks}!close@{close}}
+\index{close@{close}!Opus\+File\+Callbacks@{Opus\+File\+Callbacks}}
+\subsubsection{\texorpdfstring{close}{close}}
+{\footnotesize\ttfamily \hyperlink{group__stream__callbacks_ga16c914ec90d301f125cdbeaa1ff57c2d}{op\+\_\+close\+\_\+func} Opus\+File\+Callbacks\+::close}
+
+Used to close the stream when the decoder is freed. This may be {\ttfamily N\+U\+LL} to leave the stream open. \mbox{\Hypertarget{struct_opus_file_callbacks_a602ea09a84743a8f4fdc76ab7c0b6ee6}\label{struct_opus_file_callbacks_a602ea09a84743a8f4fdc76ab7c0b6ee6}} 
+\index{Opus\+File\+Callbacks@{Opus\+File\+Callbacks}!read@{read}}
+\index{read@{read}!Opus\+File\+Callbacks@{Opus\+File\+Callbacks}}
+\subsubsection{\texorpdfstring{read}{read}}
+{\footnotesize\ttfamily \hyperlink{group__stream__callbacks_ga9ffca429db1f3b77f2f303f1942188c3}{op\+\_\+read\+\_\+func} Opus\+File\+Callbacks\+::read}
+
+Used to read data from the stream. This must not be {\ttfamily N\+U\+LL}. \mbox{\Hypertarget{struct_opus_file_callbacks_acf98bb1d13f75d3770206a398be05c8f}\label{struct_opus_file_callbacks_acf98bb1d13f75d3770206a398be05c8f}} 
+\index{Opus\+File\+Callbacks@{Opus\+File\+Callbacks}!seek@{seek}}
+\index{seek@{seek}!Opus\+File\+Callbacks@{Opus\+File\+Callbacks}}
+\subsubsection{\texorpdfstring{seek}{seek}}
+{\footnotesize\ttfamily \hyperlink{group__stream__callbacks_gae57cb396d1f193d3f4e7e56ddad7760e}{op\+\_\+seek\+\_\+func} Opus\+File\+Callbacks\+::seek}
+
+Used to seek in the stream. This may be {\ttfamily N\+U\+LL} if seeking is not implemented. \mbox{\Hypertarget{struct_opus_file_callbacks_a1464ae2f33850101add14a7eb278ff1c}\label{struct_opus_file_callbacks_a1464ae2f33850101add14a7eb278ff1c}} 
+\index{Opus\+File\+Callbacks@{Opus\+File\+Callbacks}!tell@{tell}}
+\index{tell@{tell}!Opus\+File\+Callbacks@{Opus\+File\+Callbacks}}
+\subsubsection{\texorpdfstring{tell}{tell}}
+{\footnotesize\ttfamily \hyperlink{group__stream__callbacks_gaca012812dea4bc3a27b0c23575efecaf}{op\+\_\+tell\+\_\+func} Opus\+File\+Callbacks\+::tell}
+
+Used to return the current read position in the stream. This may be {\ttfamily N\+U\+LL} if seeking is not implemented. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/packages/\+Allegro\+Deps.\+1.\+5.\+0.\+1/build/native/include/opus/\hyperlink{opusfile_8h}{opusfile.\+h}\end{DoxyCompactItemize}

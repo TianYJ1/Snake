@@ -1,0 +1,147 @@
+\hypertarget{structjpeg__error__mgr}{}\section{jpeg\+\_\+error\+\_\+mgr Struct Reference}
+\label{structjpeg__error__mgr}\index{jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}}
+
+
+{\ttfamily \#include $<$jpeglib.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}($\ast$ \hyperlink{structjpeg__error__mgr_aebcba526d672e824d5545b3eb07f881c}{error\+\_\+exit} )(\hyperlink{jpeglib_8h_a1a177ab705cefea8f30ec31a48e62650}{j\+\_\+common\+\_\+ptr} cinfo)
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}($\ast$ \hyperlink{structjpeg__error__mgr_ad1191212cf09f30ce06a648b04160790}{emit\+\_\+message} )(\hyperlink{jpeglib_8h_a1a177ab705cefea8f30ec31a48e62650}{j\+\_\+common\+\_\+ptr} cinfo, int msg\+\_\+level)
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}($\ast$ \hyperlink{structjpeg__error__mgr_abf5edd8e548e0b65dcee9ce26a7a330c}{output\+\_\+message} )(\hyperlink{jpeglib_8h_a1a177ab705cefea8f30ec31a48e62650}{j\+\_\+common\+\_\+ptr} cinfo)
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}($\ast$ \hyperlink{structjpeg__error__mgr_a5a42a63579855f682ff619a88ecdc705}{format\+\_\+message} )(\hyperlink{jpeglib_8h_a1a177ab705cefea8f30ec31a48e62650}{j\+\_\+common\+\_\+ptr} cinfo, char $\ast$buffer)
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}($\ast$ \hyperlink{structjpeg__error__mgr_a0260c7b8f7ef606f24716affacf98515}{reset\+\_\+error\+\_\+mgr} )(\hyperlink{jpeglib_8h_a1a177ab705cefea8f30ec31a48e62650}{j\+\_\+common\+\_\+ptr} cinfo)
+\item 
+int \hyperlink{structjpeg__error__mgr_a27fcf9391530acf9075836c5d11fff00}{msg\+\_\+code}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>int \hyperlink{structjpeg__error__mgr_a9b91e1ea3b7e8af8d37cb712a72f4597}{i} \mbox{[}8\mbox{]}\\
+\>char \hyperlink{structjpeg__error__mgr_a0b335f0919d328a95f02440a4ec2216b}{s} \mbox{[}\hyperlink{jpeglib_8h_abda041041041cc3985c7bb1a32e8b0be}{JMSG\_STR\_PARM\_MAX}\mbox{]}\\
+\} \hyperlink{structjpeg__error__mgr_a597816f5aeb65ac65c37616273644db9}{msg\_parm}\\
+
+\end{tabbing}\item 
+int \hyperlink{structjpeg__error__mgr_a77328bf266cc3c3c4d9741fc27a4ef9b}{trace\+\_\+level}
+\item 
+long \hyperlink{structjpeg__error__mgr_a6d74f34ca06fd61c9cc2b5818d317255}{num\+\_\+warnings}
+\item 
+\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}  $\ast$ \hyperlink{structjpeg__error__mgr_aeaa5c5dc26052bd7e367ceb35f670beb}{jpeg\+\_\+message\+\_\+table}
+\item 
+int \hyperlink{structjpeg__error__mgr_a01d4d8f17f2d2ad49e5bd981c01296b9}{last\+\_\+jpeg\+\_\+message}
+\item 
+\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char $\ast$\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}  $\ast$ \hyperlink{structjpeg__error__mgr_af327179ad6b8d663a173e25615257e33}{addon\+\_\+message\+\_\+table}
+\item 
+int \hyperlink{structjpeg__error__mgr_a35a1536b1171bb13510b5156ffa0af05}{first\+\_\+addon\+\_\+message}
+\item 
+int \hyperlink{structjpeg__error__mgr_a67531ea98e366e64d5b348446d50e806}{last\+\_\+addon\+\_\+message}
+\end{DoxyCompactItemize}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{structjpeg__error__mgr_af327179ad6b8d663a173e25615257e33}\label{structjpeg__error__mgr_af327179ad6b8d663a173e25615257e33}} 
+\index{jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}!addon\+\_\+message\+\_\+table@{addon\+\_\+message\+\_\+table}}
+\index{addon\+\_\+message\+\_\+table@{addon\+\_\+message\+\_\+table}!jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}}
+\subsubsection{\texorpdfstring{addon\+\_\+message\+\_\+table}{addon\_message\_table}}
+{\footnotesize\ttfamily \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char$\ast$ \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}$\ast$ jpeg\+\_\+error\+\_\+mgr\+::addon\+\_\+message\+\_\+table}
+
+\mbox{\Hypertarget{structjpeg__error__mgr_ad1191212cf09f30ce06a648b04160790}\label{structjpeg__error__mgr_ad1191212cf09f30ce06a648b04160790}} 
+\index{jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}!emit\+\_\+message@{emit\+\_\+message}}
+\index{emit\+\_\+message@{emit\+\_\+message}!jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}}
+\subsubsection{\texorpdfstring{emit\+\_\+message}{emit\_message}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}($\ast$ jpeg\+\_\+error\+\_\+mgr\+::emit\+\_\+message) (\hyperlink{jpeglib_8h_a1a177ab705cefea8f30ec31a48e62650}{j\+\_\+common\+\_\+ptr} cinfo, int msg\+\_\+level)}
+
+\mbox{\Hypertarget{structjpeg__error__mgr_aebcba526d672e824d5545b3eb07f881c}\label{structjpeg__error__mgr_aebcba526d672e824d5545b3eb07f881c}} 
+\index{jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}!error\+\_\+exit@{error\+\_\+exit}}
+\index{error\+\_\+exit@{error\+\_\+exit}!jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}}
+\subsubsection{\texorpdfstring{error\+\_\+exit}{error\_exit}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}($\ast$ jpeg\+\_\+error\+\_\+mgr\+::error\+\_\+exit) (\hyperlink{jpeglib_8h_a1a177ab705cefea8f30ec31a48e62650}{j\+\_\+common\+\_\+ptr} cinfo)}
+
+\mbox{\Hypertarget{structjpeg__error__mgr_a35a1536b1171bb13510b5156ffa0af05}\label{structjpeg__error__mgr_a35a1536b1171bb13510b5156ffa0af05}} 
+\index{jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}!first\+\_\+addon\+\_\+message@{first\+\_\+addon\+\_\+message}}
+\index{first\+\_\+addon\+\_\+message@{first\+\_\+addon\+\_\+message}!jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}}
+\subsubsection{\texorpdfstring{first\+\_\+addon\+\_\+message}{first\_addon\_message}}
+{\footnotesize\ttfamily int jpeg\+\_\+error\+\_\+mgr\+::first\+\_\+addon\+\_\+message}
+
+\mbox{\Hypertarget{structjpeg__error__mgr_a5a42a63579855f682ff619a88ecdc705}\label{structjpeg__error__mgr_a5a42a63579855f682ff619a88ecdc705}} 
+\index{jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}!format\+\_\+message@{format\+\_\+message}}
+\index{format\+\_\+message@{format\+\_\+message}!jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}}
+\subsubsection{\texorpdfstring{format\+\_\+message}{format\_message}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}($\ast$ jpeg\+\_\+error\+\_\+mgr\+::format\+\_\+message) (\hyperlink{jpeglib_8h_a1a177ab705cefea8f30ec31a48e62650}{j\+\_\+common\+\_\+ptr} cinfo, char $\ast$buffer)}
+
+\mbox{\Hypertarget{structjpeg__error__mgr_a9b91e1ea3b7e8af8d37cb712a72f4597}\label{structjpeg__error__mgr_a9b91e1ea3b7e8af8d37cb712a72f4597}} 
+\index{jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}!i@{i}}
+\index{i@{i}!jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}}
+\subsubsection{\texorpdfstring{i}{i}}
+{\footnotesize\ttfamily int jpeg\+\_\+error\+\_\+mgr\+::i\mbox{[}8\mbox{]}}
+
+\mbox{\Hypertarget{structjpeg__error__mgr_aeaa5c5dc26052bd7e367ceb35f670beb}\label{structjpeg__error__mgr_aeaa5c5dc26052bd7e367ceb35f670beb}} 
+\index{jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}!jpeg\+\_\+message\+\_\+table@{jpeg\+\_\+message\+\_\+table}}
+\index{jpeg\+\_\+message\+\_\+table@{jpeg\+\_\+message\+\_\+table}!jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}}
+\subsubsection{\texorpdfstring{jpeg\+\_\+message\+\_\+table}{jpeg\_message\_table}}
+{\footnotesize\ttfamily \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} char$\ast$ \hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const}$\ast$ jpeg\+\_\+error\+\_\+mgr\+::jpeg\+\_\+message\+\_\+table}
+
+\mbox{\Hypertarget{structjpeg__error__mgr_a67531ea98e366e64d5b348446d50e806}\label{structjpeg__error__mgr_a67531ea98e366e64d5b348446d50e806}} 
+\index{jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}!last\+\_\+addon\+\_\+message@{last\+\_\+addon\+\_\+message}}
+\index{last\+\_\+addon\+\_\+message@{last\+\_\+addon\+\_\+message}!jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}}
+\subsubsection{\texorpdfstring{last\+\_\+addon\+\_\+message}{last\_addon\_message}}
+{\footnotesize\ttfamily int jpeg\+\_\+error\+\_\+mgr\+::last\+\_\+addon\+\_\+message}
+
+\mbox{\Hypertarget{structjpeg__error__mgr_a01d4d8f17f2d2ad49e5bd981c01296b9}\label{structjpeg__error__mgr_a01d4d8f17f2d2ad49e5bd981c01296b9}} 
+\index{jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}!last\+\_\+jpeg\+\_\+message@{last\+\_\+jpeg\+\_\+message}}
+\index{last\+\_\+jpeg\+\_\+message@{last\+\_\+jpeg\+\_\+message}!jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}}
+\subsubsection{\texorpdfstring{last\+\_\+jpeg\+\_\+message}{last\_jpeg\_message}}
+{\footnotesize\ttfamily int jpeg\+\_\+error\+\_\+mgr\+::last\+\_\+jpeg\+\_\+message}
+
+\mbox{\Hypertarget{structjpeg__error__mgr_a27fcf9391530acf9075836c5d11fff00}\label{structjpeg__error__mgr_a27fcf9391530acf9075836c5d11fff00}} 
+\index{jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}!msg\+\_\+code@{msg\+\_\+code}}
+\index{msg\+\_\+code@{msg\+\_\+code}!jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}}
+\subsubsection{\texorpdfstring{msg\+\_\+code}{msg\_code}}
+{\footnotesize\ttfamily int jpeg\+\_\+error\+\_\+mgr\+::msg\+\_\+code}
+
+\mbox{\Hypertarget{structjpeg__error__mgr_a597816f5aeb65ac65c37616273644db9}\label{structjpeg__error__mgr_a597816f5aeb65ac65c37616273644db9}} 
+\index{jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}!msg\+\_\+parm@{msg\+\_\+parm}}
+\index{msg\+\_\+parm@{msg\+\_\+parm}!jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}}
+\subsubsection{\texorpdfstring{msg\+\_\+parm}{msg\_parm}}
+{\footnotesize\ttfamily union \{ ... \}   jpeg\+\_\+error\+\_\+mgr\+::msg\+\_\+parm}
+
+\mbox{\Hypertarget{structjpeg__error__mgr_a6d74f34ca06fd61c9cc2b5818d317255}\label{structjpeg__error__mgr_a6d74f34ca06fd61c9cc2b5818d317255}} 
+\index{jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}!num\+\_\+warnings@{num\+\_\+warnings}}
+\index{num\+\_\+warnings@{num\+\_\+warnings}!jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}}
+\subsubsection{\texorpdfstring{num\+\_\+warnings}{num\_warnings}}
+{\footnotesize\ttfamily long jpeg\+\_\+error\+\_\+mgr\+::num\+\_\+warnings}
+
+\mbox{\Hypertarget{structjpeg__error__mgr_abf5edd8e548e0b65dcee9ce26a7a330c}\label{structjpeg__error__mgr_abf5edd8e548e0b65dcee9ce26a7a330c}} 
+\index{jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}!output\+\_\+message@{output\+\_\+message}}
+\index{output\+\_\+message@{output\+\_\+message}!jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}}
+\subsubsection{\texorpdfstring{output\+\_\+message}{output\_message}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}($\ast$ jpeg\+\_\+error\+\_\+mgr\+::output\+\_\+message) (\hyperlink{jpeglib_8h_a1a177ab705cefea8f30ec31a48e62650}{j\+\_\+common\+\_\+ptr} cinfo)}
+
+\mbox{\Hypertarget{structjpeg__error__mgr_a0260c7b8f7ef606f24716affacf98515}\label{structjpeg__error__mgr_a0260c7b8f7ef606f24716affacf98515}} 
+\index{jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}!reset\+\_\+error\+\_\+mgr@{reset\+\_\+error\+\_\+mgr}}
+\index{reset\+\_\+error\+\_\+mgr@{reset\+\_\+error\+\_\+mgr}!jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}}
+\subsubsection{\texorpdfstring{reset\+\_\+error\+\_\+mgr}{reset\_error\_mgr}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}($\ast$ jpeg\+\_\+error\+\_\+mgr\+::reset\+\_\+error\+\_\+mgr) (\hyperlink{jpeglib_8h_a1a177ab705cefea8f30ec31a48e62650}{j\+\_\+common\+\_\+ptr} cinfo)}
+
+\mbox{\Hypertarget{structjpeg__error__mgr_a0b335f0919d328a95f02440a4ec2216b}\label{structjpeg__error__mgr_a0b335f0919d328a95f02440a4ec2216b}} 
+\index{jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}!s@{s}}
+\index{s@{s}!jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}}
+\subsubsection{\texorpdfstring{s}{s}}
+{\footnotesize\ttfamily char jpeg\+\_\+error\+\_\+mgr\+::s\mbox{[}\hyperlink{jpeglib_8h_abda041041041cc3985c7bb1a32e8b0be}{J\+M\+S\+G\+\_\+\+S\+T\+R\+\_\+\+P\+A\+R\+M\+\_\+\+M\+AX}\mbox{]}}
+
+\mbox{\Hypertarget{structjpeg__error__mgr_a77328bf266cc3c3c4d9741fc27a4ef9b}\label{structjpeg__error__mgr_a77328bf266cc3c3c4d9741fc27a4ef9b}} 
+\index{jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}!trace\+\_\+level@{trace\+\_\+level}}
+\index{trace\+\_\+level@{trace\+\_\+level}!jpeg\+\_\+error\+\_\+mgr@{jpeg\+\_\+error\+\_\+mgr}}
+\subsubsection{\texorpdfstring{trace\+\_\+level}{trace\_level}}
+{\footnotesize\ttfamily int jpeg\+\_\+error\+\_\+mgr\+::trace\+\_\+level}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/packages/\+Allegro\+Deps.\+1.\+5.\+0.\+1/build/native/include/\hyperlink{jpeglib_8h}{jpeglib.\+h}\end{DoxyCompactItemize}

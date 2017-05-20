@@ -1,0 +1,13 @@
+digraph "src/packages/AllegroDeps.1.5.0.1/build/native" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_488bd0c969434d61fffafaf0c70bec3a {
+    graph [ bgcolor="#ddddee", pencolor="black", label="build" fontname="Helvetica", fontsize="10", URL="dir_488bd0c969434d61fffafaf0c70bec3a.html"]
+  subgraph clusterdir_09345cb65e50051b5a4a822958709402 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_09345cb65e50051b5a4a822958709402.html"];
+    dir_09345cb65e50051b5a4a822958709402 [shape=plaintext label="native"];
+    dir_47b915466a09907373fd30a894b52bb3 [shape=box label="include" color="red" fillcolor="white" style="filled" URL="dir_47b915466a09907373fd30a894b52bb3.html"];
+  }
+  }
+}

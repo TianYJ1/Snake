@@ -1,0 +1,250 @@
+\hypertarget{structtheora__info}{}\section{theora\+\_\+info Struct Reference}
+\label{structtheora__info}\index{theora\+\_\+info@{theora\+\_\+info}}
+
+
+{\ttfamily \#include $<$theora.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+ogg\+\_\+uint32\+\_\+t \hyperlink{structtheora__info_a17c2fc651bb3329f1ea6b13ff1d3957b}{width}
+\item 
+ogg\+\_\+uint32\+\_\+t \hyperlink{structtheora__info_ae6f0274fc4a7f285c422d91abb35f9c6}{height}
+\item 
+ogg\+\_\+uint32\+\_\+t \hyperlink{structtheora__info_a8f28f4018a25634d40e4ae861fbbccfa}{frame\+\_\+width}
+\item 
+ogg\+\_\+uint32\+\_\+t \hyperlink{structtheora__info_a287e4c194f1d2e6deb39d59f1748ea48}{frame\+\_\+height}
+\item 
+ogg\+\_\+uint32\+\_\+t \hyperlink{structtheora__info_af5949a02bef29512f2705e6f6c944e3b}{offset\+\_\+x}
+\item 
+ogg\+\_\+uint32\+\_\+t \hyperlink{structtheora__info_a91c3922097ba32a85acd584a01dc2c93}{offset\+\_\+y}
+\item 
+ogg\+\_\+uint32\+\_\+t \hyperlink{structtheora__info_a3478199aa5ab213816c1819f70085ad7}{fps\+\_\+numerator}
+\item 
+ogg\+\_\+uint32\+\_\+t \hyperlink{structtheora__info_a9aa7e826e0323a4ae8cd8646a6cfbfea}{fps\+\_\+denominator}
+\item 
+ogg\+\_\+uint32\+\_\+t \hyperlink{structtheora__info_a5a3ed8c79815fba1aa06c3f7d8e48b35}{aspect\+\_\+numerator}
+\item 
+ogg\+\_\+uint32\+\_\+t \hyperlink{structtheora__info_afebc4d0cbfb34b68c833a8c79e83ae12}{aspect\+\_\+denominator}
+\item 
+\hyperlink{group__oldfuncs_gaa567da4ce591f7373149ce3ef3acdac9}{theora\+\_\+colorspace} \hyperlink{structtheora__info_a5eaba99c96706d47b426ab7b7602dc5d}{colorspace}
+\item 
+int \hyperlink{structtheora__info_a0cfba041767ae2416dd190a406afe713}{target\+\_\+bitrate}
+\item 
+int \hyperlink{structtheora__info_a71a4748a5f31bd58d0e403b7806c980d}{quality}
+\item 
+int \hyperlink{structtheora__info_a2dfae4fd175dbd19254eaf0697778ff5}{quick\+\_\+p}
+\item 
+unsigned char \hyperlink{structtheora__info_a7c5ebb9e6700aaef87f29f7c6074e474}{version\+\_\+major}
+\item 
+unsigned char \hyperlink{structtheora__info_a75eda4f30270d833c7b9dba43932a06a}{version\+\_\+minor}
+\item 
+unsigned char \hyperlink{structtheora__info_aa07967ecd6e20bd2928ead42b6397b3d}{version\+\_\+subminor}
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$ \hyperlink{structtheora__info_a719a1d77a4a3bfeab79aa5747dbbb04c}{codec\+\_\+setup}
+\item 
+int \hyperlink{structtheora__info_af294db65a8363a0bcf43f4727763b291}{dropframes\+\_\+p}
+\item 
+int \hyperlink{structtheora__info_a23648173369174f687085c0ce85ef30e}{keyframe\+\_\+auto\+\_\+p}
+\item 
+ogg\+\_\+uint32\+\_\+t \hyperlink{structtheora__info_a03e1b3e337af5f9dabaaaeb9050f145a}{keyframe\+\_\+frequency}
+\item 
+ogg\+\_\+uint32\+\_\+t \hyperlink{structtheora__info_ad9d2e22c44a53473010e6d1042dfe0d8}{keyframe\+\_\+frequency\+\_\+force}
+\item 
+ogg\+\_\+uint32\+\_\+t \hyperlink{structtheora__info_a588942d1ee90a26a7effdf6a0e98b9ce}{keyframe\+\_\+data\+\_\+target\+\_\+bitrate}
+\item 
+ogg\+\_\+int32\+\_\+t \hyperlink{structtheora__info_a95cb8958e29ad3d24047ee8f9e7fd99b}{keyframe\+\_\+auto\+\_\+threshold}
+\item 
+ogg\+\_\+uint32\+\_\+t \hyperlink{structtheora__info_aa79ca8c0e77a884d4487fd627fae32e9}{keyframe\+\_\+mindistance}
+\item 
+ogg\+\_\+int32\+\_\+t \hyperlink{structtheora__info_ac4789034f547b57d1075e035050eeed9}{noise\+\_\+sensitivity}
+\item 
+ogg\+\_\+int32\+\_\+t \hyperlink{structtheora__info_a3fb695de2b2f56dd0203b9e2eb0df1cc}{sharpness}
+\item 
+\hyperlink{group__oldfuncs_gae169da05bfaaf4e964a6866552d45079}{theora\+\_\+pixelformat} \hyperlink{structtheora__info_a65ab4376ab5242ee82e06c78fb7008ab}{pixelformat}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Theora bitstream info. Contains the basic playback parameters for a stream, corresponding to the initial \textquotesingle{}info\textquotesingle{} header packet.
+
+Encoded theora frames must be a multiple of 16 in width and height. To handle other frame sizes, a crop rectangle is specified in frame\+\_\+height and frame\+\_\+width, offset\+\_\+x and $\ast$ offset\+\_\+y. The offset and size should still be a multiple of 2 to avoid chroma sampling shifts. Offset values in this structure are measured from the upper left of the image.
+
+Frame rate, in frames per second, is stored as a rational fraction. Aspect ratio is also stored as a rational fraction, and refers to the aspect ratio of the frame pixels, not of the overall frame itself.
+
+See \href{http://svn.xiph.org/trunk/theora/examples/encoder_example.c}{\tt examples/encoder\+\_\+example.\+c} for usage examples of the other paramters and good default settings for the encoder parameters. 
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{structtheora__info_afebc4d0cbfb34b68c833a8c79e83ae12}\label{structtheora__info_afebc4d0cbfb34b68c833a8c79e83ae12}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!aspect\+\_\+denominator@{aspect\+\_\+denominator}}
+\index{aspect\+\_\+denominator@{aspect\+\_\+denominator}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{aspect\+\_\+denominator}{aspect\_denominator}}
+{\footnotesize\ttfamily ogg\+\_\+uint32\+\_\+t theora\+\_\+info\+::aspect\+\_\+denominator}
+
+pixel aspect ratio denominator \mbox{\Hypertarget{structtheora__info_a5a3ed8c79815fba1aa06c3f7d8e48b35}\label{structtheora__info_a5a3ed8c79815fba1aa06c3f7d8e48b35}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!aspect\+\_\+numerator@{aspect\+\_\+numerator}}
+\index{aspect\+\_\+numerator@{aspect\+\_\+numerator}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{aspect\+\_\+numerator}{aspect\_numerator}}
+{\footnotesize\ttfamily ogg\+\_\+uint32\+\_\+t theora\+\_\+info\+::aspect\+\_\+numerator}
+
+pixel aspect ratio numerator \mbox{\Hypertarget{structtheora__info_a719a1d77a4a3bfeab79aa5747dbbb04c}\label{structtheora__info_a719a1d77a4a3bfeab79aa5747dbbb04c}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!codec\+\_\+setup@{codec\+\_\+setup}}
+\index{codec\+\_\+setup@{codec\+\_\+setup}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{codec\+\_\+setup}{codec\_setup}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}$\ast$ theora\+\_\+info\+::codec\+\_\+setup}
+
+\mbox{\Hypertarget{structtheora__info_a5eaba99c96706d47b426ab7b7602dc5d}\label{structtheora__info_a5eaba99c96706d47b426ab7b7602dc5d}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!colorspace@{colorspace}}
+\index{colorspace@{colorspace}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{colorspace}{colorspace}}
+{\footnotesize\ttfamily \hyperlink{group__oldfuncs_gaa567da4ce591f7373149ce3ef3acdac9}{theora\+\_\+colorspace} theora\+\_\+info\+::colorspace}
+
+colorspace \mbox{\Hypertarget{structtheora__info_af294db65a8363a0bcf43f4727763b291}\label{structtheora__info_af294db65a8363a0bcf43f4727763b291}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!dropframes\+\_\+p@{dropframes\+\_\+p}}
+\index{dropframes\+\_\+p@{dropframes\+\_\+p}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{dropframes\+\_\+p}{dropframes\_p}}
+{\footnotesize\ttfamily int theora\+\_\+info\+::dropframes\+\_\+p}
+
+\mbox{\Hypertarget{structtheora__info_a9aa7e826e0323a4ae8cd8646a6cfbfea}\label{structtheora__info_a9aa7e826e0323a4ae8cd8646a6cfbfea}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!fps\+\_\+denominator@{fps\+\_\+denominator}}
+\index{fps\+\_\+denominator@{fps\+\_\+denominator}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{fps\+\_\+denominator}{fps\_denominator}}
+{\footnotesize\ttfamily ogg\+\_\+uint32\+\_\+t theora\+\_\+info\+::fps\+\_\+denominator}
+
+frame rate denominator \mbox{\Hypertarget{structtheora__info_a3478199aa5ab213816c1819f70085ad7}\label{structtheora__info_a3478199aa5ab213816c1819f70085ad7}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!fps\+\_\+numerator@{fps\+\_\+numerator}}
+\index{fps\+\_\+numerator@{fps\+\_\+numerator}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{fps\+\_\+numerator}{fps\_numerator}}
+{\footnotesize\ttfamily ogg\+\_\+uint32\+\_\+t theora\+\_\+info\+::fps\+\_\+numerator}
+
+frame rate numerator \mbox{\Hypertarget{structtheora__info_a287e4c194f1d2e6deb39d59f1748ea48}\label{structtheora__info_a287e4c194f1d2e6deb39d59f1748ea48}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!frame\+\_\+height@{frame\+\_\+height}}
+\index{frame\+\_\+height@{frame\+\_\+height}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{frame\+\_\+height}{frame\_height}}
+{\footnotesize\ttfamily ogg\+\_\+uint32\+\_\+t theora\+\_\+info\+::frame\+\_\+height}
+
+display frame height \mbox{\Hypertarget{structtheora__info_a8f28f4018a25634d40e4ae861fbbccfa}\label{structtheora__info_a8f28f4018a25634d40e4ae861fbbccfa}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!frame\+\_\+width@{frame\+\_\+width}}
+\index{frame\+\_\+width@{frame\+\_\+width}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{frame\+\_\+width}{frame\_width}}
+{\footnotesize\ttfamily ogg\+\_\+uint32\+\_\+t theora\+\_\+info\+::frame\+\_\+width}
+
+display frame width \mbox{\Hypertarget{structtheora__info_ae6f0274fc4a7f285c422d91abb35f9c6}\label{structtheora__info_ae6f0274fc4a7f285c422d91abb35f9c6}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!height@{height}}
+\index{height@{height}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily ogg\+\_\+uint32\+\_\+t theora\+\_\+info\+::height}
+
+encoded frame height \mbox{\Hypertarget{structtheora__info_a23648173369174f687085c0ce85ef30e}\label{structtheora__info_a23648173369174f687085c0ce85ef30e}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!keyframe\+\_\+auto\+\_\+p@{keyframe\+\_\+auto\+\_\+p}}
+\index{keyframe\+\_\+auto\+\_\+p@{keyframe\+\_\+auto\+\_\+p}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{keyframe\+\_\+auto\+\_\+p}{keyframe\_auto\_p}}
+{\footnotesize\ttfamily int theora\+\_\+info\+::keyframe\+\_\+auto\+\_\+p}
+
+\mbox{\Hypertarget{structtheora__info_a95cb8958e29ad3d24047ee8f9e7fd99b}\label{structtheora__info_a95cb8958e29ad3d24047ee8f9e7fd99b}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!keyframe\+\_\+auto\+\_\+threshold@{keyframe\+\_\+auto\+\_\+threshold}}
+\index{keyframe\+\_\+auto\+\_\+threshold@{keyframe\+\_\+auto\+\_\+threshold}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{keyframe\+\_\+auto\+\_\+threshold}{keyframe\_auto\_threshold}}
+{\footnotesize\ttfamily ogg\+\_\+int32\+\_\+t theora\+\_\+info\+::keyframe\+\_\+auto\+\_\+threshold}
+
+\mbox{\Hypertarget{structtheora__info_a588942d1ee90a26a7effdf6a0e98b9ce}\label{structtheora__info_a588942d1ee90a26a7effdf6a0e98b9ce}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!keyframe\+\_\+data\+\_\+target\+\_\+bitrate@{keyframe\+\_\+data\+\_\+target\+\_\+bitrate}}
+\index{keyframe\+\_\+data\+\_\+target\+\_\+bitrate@{keyframe\+\_\+data\+\_\+target\+\_\+bitrate}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{keyframe\+\_\+data\+\_\+target\+\_\+bitrate}{keyframe\_data\_target\_bitrate}}
+{\footnotesize\ttfamily ogg\+\_\+uint32\+\_\+t theora\+\_\+info\+::keyframe\+\_\+data\+\_\+target\+\_\+bitrate}
+
+\mbox{\Hypertarget{structtheora__info_a03e1b3e337af5f9dabaaaeb9050f145a}\label{structtheora__info_a03e1b3e337af5f9dabaaaeb9050f145a}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!keyframe\+\_\+frequency@{keyframe\+\_\+frequency}}
+\index{keyframe\+\_\+frequency@{keyframe\+\_\+frequency}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{keyframe\+\_\+frequency}{keyframe\_frequency}}
+{\footnotesize\ttfamily ogg\+\_\+uint32\+\_\+t theora\+\_\+info\+::keyframe\+\_\+frequency}
+
+\mbox{\Hypertarget{structtheora__info_ad9d2e22c44a53473010e6d1042dfe0d8}\label{structtheora__info_ad9d2e22c44a53473010e6d1042dfe0d8}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!keyframe\+\_\+frequency\+\_\+force@{keyframe\+\_\+frequency\+\_\+force}}
+\index{keyframe\+\_\+frequency\+\_\+force@{keyframe\+\_\+frequency\+\_\+force}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{keyframe\+\_\+frequency\+\_\+force}{keyframe\_frequency\_force}}
+{\footnotesize\ttfamily ogg\+\_\+uint32\+\_\+t theora\+\_\+info\+::keyframe\+\_\+frequency\+\_\+force}
+
+\mbox{\Hypertarget{structtheora__info_aa79ca8c0e77a884d4487fd627fae32e9}\label{structtheora__info_aa79ca8c0e77a884d4487fd627fae32e9}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!keyframe\+\_\+mindistance@{keyframe\+\_\+mindistance}}
+\index{keyframe\+\_\+mindistance@{keyframe\+\_\+mindistance}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{keyframe\+\_\+mindistance}{keyframe\_mindistance}}
+{\footnotesize\ttfamily ogg\+\_\+uint32\+\_\+t theora\+\_\+info\+::keyframe\+\_\+mindistance}
+
+\mbox{\Hypertarget{structtheora__info_ac4789034f547b57d1075e035050eeed9}\label{structtheora__info_ac4789034f547b57d1075e035050eeed9}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!noise\+\_\+sensitivity@{noise\+\_\+sensitivity}}
+\index{noise\+\_\+sensitivity@{noise\+\_\+sensitivity}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{noise\+\_\+sensitivity}{noise\_sensitivity}}
+{\footnotesize\ttfamily ogg\+\_\+int32\+\_\+t theora\+\_\+info\+::noise\+\_\+sensitivity}
+
+\mbox{\Hypertarget{structtheora__info_af5949a02bef29512f2705e6f6c944e3b}\label{structtheora__info_af5949a02bef29512f2705e6f6c944e3b}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!offset\+\_\+x@{offset\+\_\+x}}
+\index{offset\+\_\+x@{offset\+\_\+x}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{offset\+\_\+x}{offset\_x}}
+{\footnotesize\ttfamily ogg\+\_\+uint32\+\_\+t theora\+\_\+info\+::offset\+\_\+x}
+
+horizontal offset of the displayed frame \mbox{\Hypertarget{structtheora__info_a91c3922097ba32a85acd584a01dc2c93}\label{structtheora__info_a91c3922097ba32a85acd584a01dc2c93}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!offset\+\_\+y@{offset\+\_\+y}}
+\index{offset\+\_\+y@{offset\+\_\+y}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{offset\+\_\+y}{offset\_y}}
+{\footnotesize\ttfamily ogg\+\_\+uint32\+\_\+t theora\+\_\+info\+::offset\+\_\+y}
+
+vertical offset of the displayed frame \mbox{\Hypertarget{structtheora__info_a65ab4376ab5242ee82e06c78fb7008ab}\label{structtheora__info_a65ab4376ab5242ee82e06c78fb7008ab}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!pixelformat@{pixelformat}}
+\index{pixelformat@{pixelformat}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{pixelformat}{pixelformat}}
+{\footnotesize\ttfamily \hyperlink{group__oldfuncs_gae169da05bfaaf4e964a6866552d45079}{theora\+\_\+pixelformat} theora\+\_\+info\+::pixelformat}
+
+chroma subsampling mode to expect \mbox{\Hypertarget{structtheora__info_a71a4748a5f31bd58d0e403b7806c980d}\label{structtheora__info_a71a4748a5f31bd58d0e403b7806c980d}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!quality@{quality}}
+\index{quality@{quality}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{quality}{quality}}
+{\footnotesize\ttfamily int theora\+\_\+info\+::quality}
+
+Nominal quality setting, 0-\/63 \mbox{\Hypertarget{structtheora__info_a2dfae4fd175dbd19254eaf0697778ff5}\label{structtheora__info_a2dfae4fd175dbd19254eaf0697778ff5}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!quick\+\_\+p@{quick\+\_\+p}}
+\index{quick\+\_\+p@{quick\+\_\+p}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{quick\+\_\+p}{quick\_p}}
+{\footnotesize\ttfamily int theora\+\_\+info\+::quick\+\_\+p}
+
+Quick encode/decode \mbox{\Hypertarget{structtheora__info_a3fb695de2b2f56dd0203b9e2eb0df1cc}\label{structtheora__info_a3fb695de2b2f56dd0203b9e2eb0df1cc}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!sharpness@{sharpness}}
+\index{sharpness@{sharpness}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{sharpness}{sharpness}}
+{\footnotesize\ttfamily ogg\+\_\+int32\+\_\+t theora\+\_\+info\+::sharpness}
+
+\mbox{\Hypertarget{structtheora__info_a0cfba041767ae2416dd190a406afe713}\label{structtheora__info_a0cfba041767ae2416dd190a406afe713}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!target\+\_\+bitrate@{target\+\_\+bitrate}}
+\index{target\+\_\+bitrate@{target\+\_\+bitrate}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{target\+\_\+bitrate}{target\_bitrate}}
+{\footnotesize\ttfamily int theora\+\_\+info\+::target\+\_\+bitrate}
+
+nominal bitrate in bits per second \mbox{\Hypertarget{structtheora__info_a7c5ebb9e6700aaef87f29f7c6074e474}\label{structtheora__info_a7c5ebb9e6700aaef87f29f7c6074e474}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!version\+\_\+major@{version\+\_\+major}}
+\index{version\+\_\+major@{version\+\_\+major}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{version\+\_\+major}{version\_major}}
+{\footnotesize\ttfamily unsigned char theora\+\_\+info\+::version\+\_\+major}
+
+\mbox{\Hypertarget{structtheora__info_a75eda4f30270d833c7b9dba43932a06a}\label{structtheora__info_a75eda4f30270d833c7b9dba43932a06a}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!version\+\_\+minor@{version\+\_\+minor}}
+\index{version\+\_\+minor@{version\+\_\+minor}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{version\+\_\+minor}{version\_minor}}
+{\footnotesize\ttfamily unsigned char theora\+\_\+info\+::version\+\_\+minor}
+
+\mbox{\Hypertarget{structtheora__info_aa07967ecd6e20bd2928ead42b6397b3d}\label{structtheora__info_aa07967ecd6e20bd2928ead42b6397b3d}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!version\+\_\+subminor@{version\+\_\+subminor}}
+\index{version\+\_\+subminor@{version\+\_\+subminor}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{version\+\_\+subminor}{version\_subminor}}
+{\footnotesize\ttfamily unsigned char theora\+\_\+info\+::version\+\_\+subminor}
+
+\mbox{\Hypertarget{structtheora__info_a17c2fc651bb3329f1ea6b13ff1d3957b}\label{structtheora__info_a17c2fc651bb3329f1ea6b13ff1d3957b}} 
+\index{theora\+\_\+info@{theora\+\_\+info}!width@{width}}
+\index{width@{width}!theora\+\_\+info@{theora\+\_\+info}}
+\subsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily ogg\+\_\+uint32\+\_\+t theora\+\_\+info\+::width}
+
+encoded frame width 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/packages/\+Allegro\+Deps.\+1.\+5.\+0.\+1/build/native/include/theora/\hyperlink{theora_8h}{theora.\+h}\end{DoxyCompactItemize}

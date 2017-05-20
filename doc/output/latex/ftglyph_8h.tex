@@ -1,0 +1,243 @@
+\hypertarget{ftglyph_8h}{}\section{src/packages/\+Allegro\+Deps.1.5.0.1/build/native/include/freetype2/ftglyph.h File Reference}
+\label{ftglyph_8h}\index{src/packages/\+Allegro\+Deps.\+1.\+5.\+0.\+1/build/native/include/freetype2/ftglyph.\+h@{src/packages/\+Allegro\+Deps.\+1.\+5.\+0.\+1/build/native/include/freetype2/ftglyph.\+h}}
+{\ttfamily \#include $<$ft2build.\+h$>$}\newline
+Include dependency graph for ftglyph.\+h\+:
+% FIG 0
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_f_t___glyph_rec__}{F\+T\+\_\+\+Glyph\+Rec\+\_\+}
+\item 
+struct \hyperlink{struct_f_t___bitmap_glyph_rec__}{F\+T\+\_\+\+Bitmap\+Glyph\+Rec\+\_\+}
+\item 
+struct \hyperlink{struct_f_t___outline_glyph_rec__}{F\+T\+\_\+\+Outline\+Glyph\+Rec\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ftglyph_8h_aeeba500737768898d10be3db05dc4fa7}{ft\+\_\+glyph\+\_\+bbox\+\_\+unscaled}~\hyperlink{ftglyph_8h_a63cf1c261469985790ac18413991c629a164aa3698d7e988ff88f0210ea50a362}{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+U\+N\+S\+C\+A\+L\+ED}
+\item 
+\#define \hyperlink{ftglyph_8h_a647e5bd710ce5ce0213f797d8c194ae4}{ft\+\_\+glyph\+\_\+bbox\+\_\+subpixels}~\hyperlink{ftglyph_8h_a63cf1c261469985790ac18413991c629ac4c9557fb186f94126755df724f24d5d}{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+S\+U\+B\+P\+I\+X\+E\+LS}
+\item 
+\#define \hyperlink{ftglyph_8h_a103a05421b431e3bc36a4d1d4f112c5f}{ft\+\_\+glyph\+\_\+bbox\+\_\+gridfit}~\hyperlink{ftglyph_8h_a63cf1c261469985790ac18413991c629a283d784c8977003fbfab46d5b90abdc4}{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+G\+R\+I\+D\+F\+IT}
+\item 
+\#define \hyperlink{ftglyph_8h_a802bfb9077955ee66d0cd212d3db5674}{ft\+\_\+glyph\+\_\+bbox\+\_\+truncate}~\hyperlink{ftglyph_8h_a63cf1c261469985790ac18413991c629ae525ef754b5c5d491da3e4ca34457d68}{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+T\+R\+U\+N\+C\+A\+TE}
+\item 
+\#define \hyperlink{ftglyph_8h_acc5d8bcb6c56f16448003731495187de}{ft\+\_\+glyph\+\_\+bbox\+\_\+pixels}~\hyperlink{ftglyph_8h_a63cf1c261469985790ac18413991c629a4a7e48119ab3f99c274745aac68bdd78}{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+P\+I\+X\+E\+LS}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef typedef\+F\+T\+\_\+\+B\+E\+G\+I\+N\+\_\+\+H\+E\+A\+D\+ER struct \hyperlink{struct_f_t___glyph___class__}{F\+T\+\_\+\+Glyph\+\_\+\+Class\+\_\+} \hyperlink{ftglyph_8h_ad05b3999d93247f41f1c4ac20ea0104b}{F\+T\+\_\+\+Glyph\+\_\+\+Class}
+\item 
+typedef struct \hyperlink{struct_f_t___glyph_rec__}{F\+T\+\_\+\+Glyph\+Rec\+\_\+} $\ast$ \hyperlink{ftglyph_8h_aeb217021e2817832b003c325b185e003}{F\+T\+\_\+\+Glyph}
+\item 
+typedef struct \hyperlink{struct_f_t___glyph_rec__}{F\+T\+\_\+\+Glyph\+Rec\+\_\+} \hyperlink{ftglyph_8h_a095b515f46c978b33ffc9c20aad081a4}{F\+T\+\_\+\+Glyph\+Rec}
+\item 
+typedef struct \hyperlink{struct_f_t___bitmap_glyph_rec__}{F\+T\+\_\+\+Bitmap\+Glyph\+Rec\+\_\+} $\ast$ \hyperlink{ftglyph_8h_aa6ef094e0e1b9b21ef15c47d07f6acef}{F\+T\+\_\+\+Bitmap\+Glyph}
+\item 
+typedef struct \hyperlink{struct_f_t___bitmap_glyph_rec__}{F\+T\+\_\+\+Bitmap\+Glyph\+Rec\+\_\+} \hyperlink{ftglyph_8h_a4bcdd8c75b1b5e7d15d0c3353d1f4a15}{F\+T\+\_\+\+Bitmap\+Glyph\+Rec}
+\item 
+typedef struct \hyperlink{struct_f_t___outline_glyph_rec__}{F\+T\+\_\+\+Outline\+Glyph\+Rec\+\_\+} $\ast$ \hyperlink{ftglyph_8h_ac111c31b2896807d6831f1460c939c8a}{F\+T\+\_\+\+Outline\+Glyph}
+\item 
+typedef struct \hyperlink{struct_f_t___outline_glyph_rec__}{F\+T\+\_\+\+Outline\+Glyph\+Rec\+\_\+} \hyperlink{ftglyph_8h_a4ab231079cd961bc068ed04eb95a7664}{F\+T\+\_\+\+Outline\+Glyph\+Rec}
+\item 
+typedef enum \hyperlink{ftglyph_8h_a63cf1c261469985790ac18413991c629}{F\+T\+\_\+\+Glyph\+\_\+\+B\+Box\+\_\+\+Mode\+\_\+} \hyperlink{ftglyph_8h_ad5f91626f3a2adf683389cb6debd4348}{F\+T\+\_\+\+Glyph\+\_\+\+B\+Box\+\_\+\+Mode}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{ftglyph_8h_a63cf1c261469985790ac18413991c629}{F\+T\+\_\+\+Glyph\+\_\+\+B\+Box\+\_\+\+Mode\+\_\+} \{ \newline
+\hyperlink{ftglyph_8h_a63cf1c261469985790ac18413991c629a164aa3698d7e988ff88f0210ea50a362}{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+U\+N\+S\+C\+A\+L\+ED} = 0, 
+\hyperlink{ftglyph_8h_a63cf1c261469985790ac18413991c629ac4c9557fb186f94126755df724f24d5d}{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+S\+U\+B\+P\+I\+X\+E\+LS} = 0, 
+\hyperlink{ftglyph_8h_a63cf1c261469985790ac18413991c629a283d784c8977003fbfab46d5b90abdc4}{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+G\+R\+I\+D\+F\+IT} = 1, 
+\hyperlink{ftglyph_8h_a63cf1c261469985790ac18413991c629ae525ef754b5c5d491da3e4ca34457d68}{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+T\+R\+U\+N\+C\+A\+TE} = 2, 
+\newline
+\hyperlink{ftglyph_8h_a63cf1c261469985790ac18413991c629a4a7e48119ab3f99c274745aac68bdd78}{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+P\+I\+X\+E\+LS} = 3
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ftglyph_8h_a87ba3f101920f5c3c736395dc66060c3}{F\+T\+\_\+\+Get\+\_\+\+Glyph} (\hyperlink{freetype_8h_a768daa0d9c3fa499e6c37034ee9f2ca3}{F\+T\+\_\+\+Glyph\+Slot} slot, \hyperlink{ftglyph_8h_aeb217021e2817832b003c325b185e003}{F\+T\+\_\+\+Glyph} $\ast$aglyph)
+\item 
+\hyperlink{ftglyph_8h_a8e0e732ae2b7cb43965f32821306e393}{F\+T\+\_\+\+Glyph\+\_\+\+Copy} (\hyperlink{ftglyph_8h_aeb217021e2817832b003c325b185e003}{F\+T\+\_\+\+Glyph} source, \hyperlink{ftglyph_8h_aeb217021e2817832b003c325b185e003}{F\+T\+\_\+\+Glyph} $\ast$target)
+\item 
+\hyperlink{ftglyph_8h_adaa9caf44f6fbe0e51bbefcffc3caf0c}{F\+T\+\_\+\+Glyph\+\_\+\+Transform} (\hyperlink{ftglyph_8h_aeb217021e2817832b003c325b185e003}{F\+T\+\_\+\+Glyph} glyph, \hyperlink{fttypes_8h_afeacbc4365cf2ad77162b6292f3e3e23}{F\+T\+\_\+\+Matrix} $\ast$matrix, \hyperlink{ftimage_8h_ab158b5a7e422acb1968af95db786d018}{F\+T\+\_\+\+Vector} $\ast$delta)
+\item 
+\hyperlink{ftglyph_8h_aa0f41cf13ddb1522da52e67f80f3da2a}{F\+T\+\_\+\+Glyph\+\_\+\+Get\+\_\+\+C\+Box} (\hyperlink{ftglyph_8h_aeb217021e2817832b003c325b185e003}{F\+T\+\_\+\+Glyph} glyph, \hyperlink{fttypes_8h_abcb8db4dbf35d2b55a9e8c7b0926dc52}{F\+T\+\_\+\+U\+Int} bbox\+\_\+mode, \hyperlink{ftimage_8h_ae341c4eb5a7199947a13b2a1dcaf7af7}{F\+T\+\_\+\+B\+Box} $\ast$acbox)
+\item 
+\hyperlink{ftglyph_8h_a669fa0a60332582cf26b5749b566a256}{F\+T\+\_\+\+Glyph\+\_\+\+To\+\_\+\+Bitmap} (\hyperlink{ftglyph_8h_aeb217021e2817832b003c325b185e003}{F\+T\+\_\+\+Glyph} $\ast$the\+\_\+glyph, \hyperlink{freetype_8h_aaa0488bc4d2c5f0a6f4311ddee8edfb7}{F\+T\+\_\+\+Render\+\_\+\+Mode} render\+\_\+mode, \hyperlink{ftimage_8h_ab158b5a7e422acb1968af95db786d018}{F\+T\+\_\+\+Vector} $\ast$origin, \hyperlink{fttypes_8h_a1a832a256bb5a7e6e884afaa1a07f3ae}{F\+T\+\_\+\+Bool} destroy)
+\item 
+\hyperlink{ftglyph_8h_a5a00b3e4b1714db7e21d054481176e94}{F\+T\+\_\+\+Done\+\_\+\+Glyph} (\hyperlink{ftglyph_8h_aeb217021e2817832b003c325b185e003}{F\+T\+\_\+\+Glyph} glyph)
+\item 
+\hyperlink{ftglyph_8h_ae6d449f762dcc2c8254399fc8243d738}{F\+T\+\_\+\+Matrix\+\_\+\+Multiply} (\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{fttypes_8h_afeacbc4365cf2ad77162b6292f3e3e23}{F\+T\+\_\+\+Matrix} $\ast$a, \hyperlink{fttypes_8h_afeacbc4365cf2ad77162b6292f3e3e23}{F\+T\+\_\+\+Matrix} $\ast$b)
+\item 
+\hyperlink{ftglyph_8h_a830d14e28757debaec45f11acd06411b}{F\+T\+\_\+\+Matrix\+\_\+\+Invert} (\hyperlink{fttypes_8h_afeacbc4365cf2ad77162b6292f3e3e23}{F\+T\+\_\+\+Matrix} $\ast$matrix)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{ftglyph_8h_a103a05421b431e3bc36a4d1d4f112c5f}\label{ftglyph_8h_a103a05421b431e3bc36a4d1d4f112c5f}} 
+\index{ftglyph.\+h@{ftglyph.\+h}!ft\+\_\+glyph\+\_\+bbox\+\_\+gridfit@{ft\+\_\+glyph\+\_\+bbox\+\_\+gridfit}}
+\index{ft\+\_\+glyph\+\_\+bbox\+\_\+gridfit@{ft\+\_\+glyph\+\_\+bbox\+\_\+gridfit}!ftglyph.\+h@{ftglyph.\+h}}
+\subsubsection{\texorpdfstring{ft\+\_\+glyph\+\_\+bbox\+\_\+gridfit}{ft\_glyph\_bbox\_gridfit}}
+{\footnotesize\ttfamily \#define ft\+\_\+glyph\+\_\+bbox\+\_\+gridfit~\hyperlink{ftglyph_8h_a63cf1c261469985790ac18413991c629a283d784c8977003fbfab46d5b90abdc4}{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+G\+R\+I\+D\+F\+IT}}
+
+\mbox{\Hypertarget{ftglyph_8h_acc5d8bcb6c56f16448003731495187de}\label{ftglyph_8h_acc5d8bcb6c56f16448003731495187de}} 
+\index{ftglyph.\+h@{ftglyph.\+h}!ft\+\_\+glyph\+\_\+bbox\+\_\+pixels@{ft\+\_\+glyph\+\_\+bbox\+\_\+pixels}}
+\index{ft\+\_\+glyph\+\_\+bbox\+\_\+pixels@{ft\+\_\+glyph\+\_\+bbox\+\_\+pixels}!ftglyph.\+h@{ftglyph.\+h}}
+\subsubsection{\texorpdfstring{ft\+\_\+glyph\+\_\+bbox\+\_\+pixels}{ft\_glyph\_bbox\_pixels}}
+{\footnotesize\ttfamily \#define ft\+\_\+glyph\+\_\+bbox\+\_\+pixels~\hyperlink{ftglyph_8h_a63cf1c261469985790ac18413991c629a4a7e48119ab3f99c274745aac68bdd78}{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+P\+I\+X\+E\+LS}}
+
+\mbox{\Hypertarget{ftglyph_8h_a647e5bd710ce5ce0213f797d8c194ae4}\label{ftglyph_8h_a647e5bd710ce5ce0213f797d8c194ae4}} 
+\index{ftglyph.\+h@{ftglyph.\+h}!ft\+\_\+glyph\+\_\+bbox\+\_\+subpixels@{ft\+\_\+glyph\+\_\+bbox\+\_\+subpixels}}
+\index{ft\+\_\+glyph\+\_\+bbox\+\_\+subpixels@{ft\+\_\+glyph\+\_\+bbox\+\_\+subpixels}!ftglyph.\+h@{ftglyph.\+h}}
+\subsubsection{\texorpdfstring{ft\+\_\+glyph\+\_\+bbox\+\_\+subpixels}{ft\_glyph\_bbox\_subpixels}}
+{\footnotesize\ttfamily \#define ft\+\_\+glyph\+\_\+bbox\+\_\+subpixels~\hyperlink{ftglyph_8h_a63cf1c261469985790ac18413991c629ac4c9557fb186f94126755df724f24d5d}{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+S\+U\+B\+P\+I\+X\+E\+LS}}
+
+\mbox{\Hypertarget{ftglyph_8h_a802bfb9077955ee66d0cd212d3db5674}\label{ftglyph_8h_a802bfb9077955ee66d0cd212d3db5674}} 
+\index{ftglyph.\+h@{ftglyph.\+h}!ft\+\_\+glyph\+\_\+bbox\+\_\+truncate@{ft\+\_\+glyph\+\_\+bbox\+\_\+truncate}}
+\index{ft\+\_\+glyph\+\_\+bbox\+\_\+truncate@{ft\+\_\+glyph\+\_\+bbox\+\_\+truncate}!ftglyph.\+h@{ftglyph.\+h}}
+\subsubsection{\texorpdfstring{ft\+\_\+glyph\+\_\+bbox\+\_\+truncate}{ft\_glyph\_bbox\_truncate}}
+{\footnotesize\ttfamily \#define ft\+\_\+glyph\+\_\+bbox\+\_\+truncate~\hyperlink{ftglyph_8h_a63cf1c261469985790ac18413991c629ae525ef754b5c5d491da3e4ca34457d68}{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+T\+R\+U\+N\+C\+A\+TE}}
+
+\mbox{\Hypertarget{ftglyph_8h_aeeba500737768898d10be3db05dc4fa7}\label{ftglyph_8h_aeeba500737768898d10be3db05dc4fa7}} 
+\index{ftglyph.\+h@{ftglyph.\+h}!ft\+\_\+glyph\+\_\+bbox\+\_\+unscaled@{ft\+\_\+glyph\+\_\+bbox\+\_\+unscaled}}
+\index{ft\+\_\+glyph\+\_\+bbox\+\_\+unscaled@{ft\+\_\+glyph\+\_\+bbox\+\_\+unscaled}!ftglyph.\+h@{ftglyph.\+h}}
+\subsubsection{\texorpdfstring{ft\+\_\+glyph\+\_\+bbox\+\_\+unscaled}{ft\_glyph\_bbox\_unscaled}}
+{\footnotesize\ttfamily \#define ft\+\_\+glyph\+\_\+bbox\+\_\+unscaled~\hyperlink{ftglyph_8h_a63cf1c261469985790ac18413991c629a164aa3698d7e988ff88f0210ea50a362}{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+U\+N\+S\+C\+A\+L\+ED}}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{ftglyph_8h_aa6ef094e0e1b9b21ef15c47d07f6acef}\label{ftglyph_8h_aa6ef094e0e1b9b21ef15c47d07f6acef}} 
+\index{ftglyph.\+h@{ftglyph.\+h}!F\+T\+\_\+\+Bitmap\+Glyph@{F\+T\+\_\+\+Bitmap\+Glyph}}
+\index{F\+T\+\_\+\+Bitmap\+Glyph@{F\+T\+\_\+\+Bitmap\+Glyph}!ftglyph.\+h@{ftglyph.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Bitmap\+Glyph}{FT\_BitmapGlyph}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct_f_t___bitmap_glyph_rec__}{F\+T\+\_\+\+Bitmap\+Glyph\+Rec\+\_\+}$\ast$ \hyperlink{ftglyph_8h_aa6ef094e0e1b9b21ef15c47d07f6acef}{F\+T\+\_\+\+Bitmap\+Glyph}}
+
+\mbox{\Hypertarget{ftglyph_8h_a4bcdd8c75b1b5e7d15d0c3353d1f4a15}\label{ftglyph_8h_a4bcdd8c75b1b5e7d15d0c3353d1f4a15}} 
+\index{ftglyph.\+h@{ftglyph.\+h}!F\+T\+\_\+\+Bitmap\+Glyph\+Rec@{F\+T\+\_\+\+Bitmap\+Glyph\+Rec}}
+\index{F\+T\+\_\+\+Bitmap\+Glyph\+Rec@{F\+T\+\_\+\+Bitmap\+Glyph\+Rec}!ftglyph.\+h@{ftglyph.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Bitmap\+Glyph\+Rec}{FT\_BitmapGlyphRec}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct_f_t___bitmap_glyph_rec__}{F\+T\+\_\+\+Bitmap\+Glyph\+Rec\+\_\+}  \hyperlink{ftglyph_8h_a4bcdd8c75b1b5e7d15d0c3353d1f4a15}{F\+T\+\_\+\+Bitmap\+Glyph\+Rec}}
+
+\mbox{\Hypertarget{ftglyph_8h_aeb217021e2817832b003c325b185e003}\label{ftglyph_8h_aeb217021e2817832b003c325b185e003}} 
+\index{ftglyph.\+h@{ftglyph.\+h}!F\+T\+\_\+\+Glyph@{F\+T\+\_\+\+Glyph}}
+\index{F\+T\+\_\+\+Glyph@{F\+T\+\_\+\+Glyph}!ftglyph.\+h@{ftglyph.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Glyph}{FT\_Glyph}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct_f_t___glyph_rec__}{F\+T\+\_\+\+Glyph\+Rec\+\_\+}$\ast$ \hyperlink{ftglyph_8h_aeb217021e2817832b003c325b185e003}{F\+T\+\_\+\+Glyph}}
+
+\mbox{\Hypertarget{ftglyph_8h_ad5f91626f3a2adf683389cb6debd4348}\label{ftglyph_8h_ad5f91626f3a2adf683389cb6debd4348}} 
+\index{ftglyph.\+h@{ftglyph.\+h}!F\+T\+\_\+\+Glyph\+\_\+\+B\+Box\+\_\+\+Mode@{F\+T\+\_\+\+Glyph\+\_\+\+B\+Box\+\_\+\+Mode}}
+\index{F\+T\+\_\+\+Glyph\+\_\+\+B\+Box\+\_\+\+Mode@{F\+T\+\_\+\+Glyph\+\_\+\+B\+Box\+\_\+\+Mode}!ftglyph.\+h@{ftglyph.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Glyph\+\_\+\+B\+Box\+\_\+\+Mode}{FT\_Glyph\_BBox\_Mode}}
+{\footnotesize\ttfamily typedef enum \hyperlink{ftglyph_8h_a63cf1c261469985790ac18413991c629}{F\+T\+\_\+\+Glyph\+\_\+\+B\+Box\+\_\+\+Mode\+\_\+}  \hyperlink{ftglyph_8h_ad5f91626f3a2adf683389cb6debd4348}{F\+T\+\_\+\+Glyph\+\_\+\+B\+Box\+\_\+\+Mode}}
+
+\mbox{\Hypertarget{ftglyph_8h_ad05b3999d93247f41f1c4ac20ea0104b}\label{ftglyph_8h_ad05b3999d93247f41f1c4ac20ea0104b}} 
+\index{ftglyph.\+h@{ftglyph.\+h}!F\+T\+\_\+\+Glyph\+\_\+\+Class@{F\+T\+\_\+\+Glyph\+\_\+\+Class}}
+\index{F\+T\+\_\+\+Glyph\+\_\+\+Class@{F\+T\+\_\+\+Glyph\+\_\+\+Class}!ftglyph.\+h@{ftglyph.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Glyph\+\_\+\+Class}{FT\_Glyph\_Class}}
+{\footnotesize\ttfamily typedef typedef\+F\+T\+\_\+\+B\+E\+G\+I\+N\+\_\+\+H\+E\+A\+D\+ER struct \hyperlink{struct_f_t___glyph___class__}{F\+T\+\_\+\+Glyph\+\_\+\+Class\+\_\+} \hyperlink{ftglyph_8h_ad05b3999d93247f41f1c4ac20ea0104b}{F\+T\+\_\+\+Glyph\+\_\+\+Class}}
+
+\mbox{\Hypertarget{ftglyph_8h_a095b515f46c978b33ffc9c20aad081a4}\label{ftglyph_8h_a095b515f46c978b33ffc9c20aad081a4}} 
+\index{ftglyph.\+h@{ftglyph.\+h}!F\+T\+\_\+\+Glyph\+Rec@{F\+T\+\_\+\+Glyph\+Rec}}
+\index{F\+T\+\_\+\+Glyph\+Rec@{F\+T\+\_\+\+Glyph\+Rec}!ftglyph.\+h@{ftglyph.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Glyph\+Rec}{FT\_GlyphRec}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct_f_t___glyph_rec__}{F\+T\+\_\+\+Glyph\+Rec\+\_\+}  \hyperlink{ftglyph_8h_a095b515f46c978b33ffc9c20aad081a4}{F\+T\+\_\+\+Glyph\+Rec}}
+
+\mbox{\Hypertarget{ftglyph_8h_ac111c31b2896807d6831f1460c939c8a}\label{ftglyph_8h_ac111c31b2896807d6831f1460c939c8a}} 
+\index{ftglyph.\+h@{ftglyph.\+h}!F\+T\+\_\+\+Outline\+Glyph@{F\+T\+\_\+\+Outline\+Glyph}}
+\index{F\+T\+\_\+\+Outline\+Glyph@{F\+T\+\_\+\+Outline\+Glyph}!ftglyph.\+h@{ftglyph.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Outline\+Glyph}{FT\_OutlineGlyph}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct_f_t___outline_glyph_rec__}{F\+T\+\_\+\+Outline\+Glyph\+Rec\+\_\+}$\ast$ \hyperlink{ftglyph_8h_ac111c31b2896807d6831f1460c939c8a}{F\+T\+\_\+\+Outline\+Glyph}}
+
+\mbox{\Hypertarget{ftglyph_8h_a4ab231079cd961bc068ed04eb95a7664}\label{ftglyph_8h_a4ab231079cd961bc068ed04eb95a7664}} 
+\index{ftglyph.\+h@{ftglyph.\+h}!F\+T\+\_\+\+Outline\+Glyph\+Rec@{F\+T\+\_\+\+Outline\+Glyph\+Rec}}
+\index{F\+T\+\_\+\+Outline\+Glyph\+Rec@{F\+T\+\_\+\+Outline\+Glyph\+Rec}!ftglyph.\+h@{ftglyph.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Outline\+Glyph\+Rec}{FT\_OutlineGlyphRec}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct_f_t___outline_glyph_rec__}{F\+T\+\_\+\+Outline\+Glyph\+Rec\+\_\+}  \hyperlink{ftglyph_8h_a4ab231079cd961bc068ed04eb95a7664}{F\+T\+\_\+\+Outline\+Glyph\+Rec}}
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{ftglyph_8h_a63cf1c261469985790ac18413991c629}\label{ftglyph_8h_a63cf1c261469985790ac18413991c629}} 
+\index{ftglyph.\+h@{ftglyph.\+h}!F\+T\+\_\+\+Glyph\+\_\+\+B\+Box\+\_\+\+Mode\+\_\+@{F\+T\+\_\+\+Glyph\+\_\+\+B\+Box\+\_\+\+Mode\+\_\+}}
+\index{F\+T\+\_\+\+Glyph\+\_\+\+B\+Box\+\_\+\+Mode\+\_\+@{F\+T\+\_\+\+Glyph\+\_\+\+B\+Box\+\_\+\+Mode\+\_\+}!ftglyph.\+h@{ftglyph.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Glyph\+\_\+\+B\+Box\+\_\+\+Mode\+\_\+}{FT\_Glyph\_BBox\_Mode\_}}
+{\footnotesize\ttfamily enum \hyperlink{ftglyph_8h_a63cf1c261469985790ac18413991c629}{F\+T\+\_\+\+Glyph\+\_\+\+B\+Box\+\_\+\+Mode\+\_\+}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+U\+N\+S\+C\+A\+L\+ED@{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+U\+N\+S\+C\+A\+L\+ED}!ftglyph.\+h@{ftglyph.\+h}}\index{ftglyph.\+h@{ftglyph.\+h}!F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+U\+N\+S\+C\+A\+L\+ED@{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+U\+N\+S\+C\+A\+L\+ED}}}\mbox{\Hypertarget{ftglyph_8h_a63cf1c261469985790ac18413991c629a164aa3698d7e988ff88f0210ea50a362}\label{ftglyph_8h_a63cf1c261469985790ac18413991c629a164aa3698d7e988ff88f0210ea50a362}} 
+F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+U\+N\+S\+C\+A\+L\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+S\+U\+B\+P\+I\+X\+E\+LS@{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+S\+U\+B\+P\+I\+X\+E\+LS}!ftglyph.\+h@{ftglyph.\+h}}\index{ftglyph.\+h@{ftglyph.\+h}!F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+S\+U\+B\+P\+I\+X\+E\+LS@{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+S\+U\+B\+P\+I\+X\+E\+LS}}}\mbox{\Hypertarget{ftglyph_8h_a63cf1c261469985790ac18413991c629ac4c9557fb186f94126755df724f24d5d}\label{ftglyph_8h_a63cf1c261469985790ac18413991c629ac4c9557fb186f94126755df724f24d5d}} 
+F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+S\+U\+B\+P\+I\+X\+E\+LS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+G\+R\+I\+D\+F\+IT@{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+G\+R\+I\+D\+F\+IT}!ftglyph.\+h@{ftglyph.\+h}}\index{ftglyph.\+h@{ftglyph.\+h}!F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+G\+R\+I\+D\+F\+IT@{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+G\+R\+I\+D\+F\+IT}}}\mbox{\Hypertarget{ftglyph_8h_a63cf1c261469985790ac18413991c629a283d784c8977003fbfab46d5b90abdc4}\label{ftglyph_8h_a63cf1c261469985790ac18413991c629a283d784c8977003fbfab46d5b90abdc4}} 
+F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+G\+R\+I\+D\+F\+IT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+T\+R\+U\+N\+C\+A\+TE@{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+T\+R\+U\+N\+C\+A\+TE}!ftglyph.\+h@{ftglyph.\+h}}\index{ftglyph.\+h@{ftglyph.\+h}!F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+T\+R\+U\+N\+C\+A\+TE@{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+T\+R\+U\+N\+C\+A\+TE}}}\mbox{\Hypertarget{ftglyph_8h_a63cf1c261469985790ac18413991c629ae525ef754b5c5d491da3e4ca34457d68}\label{ftglyph_8h_a63cf1c261469985790ac18413991c629ae525ef754b5c5d491da3e4ca34457d68}} 
+F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+T\+R\+U\+N\+C\+A\+TE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+P\+I\+X\+E\+LS@{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+P\+I\+X\+E\+LS}!ftglyph.\+h@{ftglyph.\+h}}\index{ftglyph.\+h@{ftglyph.\+h}!F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+P\+I\+X\+E\+LS@{F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+P\+I\+X\+E\+LS}}}\mbox{\Hypertarget{ftglyph_8h_a63cf1c261469985790ac18413991c629a4a7e48119ab3f99c274745aac68bdd78}\label{ftglyph_8h_a63cf1c261469985790ac18413991c629a4a7e48119ab3f99c274745aac68bdd78}} 
+F\+T\+\_\+\+G\+L\+Y\+P\+H\+\_\+\+B\+B\+O\+X\+\_\+\+P\+I\+X\+E\+LS&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{ftglyph_8h_a5a00b3e4b1714db7e21d054481176e94}\label{ftglyph_8h_a5a00b3e4b1714db7e21d054481176e94}} 
+\index{ftglyph.\+h@{ftglyph.\+h}!F\+T\+\_\+\+Done\+\_\+\+Glyph@{F\+T\+\_\+\+Done\+\_\+\+Glyph}}
+\index{F\+T\+\_\+\+Done\+\_\+\+Glyph@{F\+T\+\_\+\+Done\+\_\+\+Glyph}!ftglyph.\+h@{ftglyph.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Done\+\_\+\+Glyph()}{FT\_Done\_Glyph()}}
+{\footnotesize\ttfamily F\+T\+\_\+\+Done\+\_\+\+Glyph (\begin{DoxyParamCaption}\item[{\hyperlink{ftglyph_8h_aeb217021e2817832b003c325b185e003}{F\+T\+\_\+\+Glyph}}]{glyph }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ftglyph_8h_a87ba3f101920f5c3c736395dc66060c3}\label{ftglyph_8h_a87ba3f101920f5c3c736395dc66060c3}} 
+\index{ftglyph.\+h@{ftglyph.\+h}!F\+T\+\_\+\+Get\+\_\+\+Glyph@{F\+T\+\_\+\+Get\+\_\+\+Glyph}}
+\index{F\+T\+\_\+\+Get\+\_\+\+Glyph@{F\+T\+\_\+\+Get\+\_\+\+Glyph}!ftglyph.\+h@{ftglyph.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Get\+\_\+\+Glyph()}{FT\_Get\_Glyph()}}
+{\footnotesize\ttfamily F\+T\+\_\+\+Get\+\_\+\+Glyph (\begin{DoxyParamCaption}\item[{\hyperlink{freetype_8h_a768daa0d9c3fa499e6c37034ee9f2ca3}{F\+T\+\_\+\+Glyph\+Slot}}]{slot,  }\item[{\hyperlink{ftglyph_8h_aeb217021e2817832b003c325b185e003}{F\+T\+\_\+\+Glyph} $\ast$}]{aglyph }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ftglyph_8h_a8e0e732ae2b7cb43965f32821306e393}\label{ftglyph_8h_a8e0e732ae2b7cb43965f32821306e393}} 
+\index{ftglyph.\+h@{ftglyph.\+h}!F\+T\+\_\+\+Glyph\+\_\+\+Copy@{F\+T\+\_\+\+Glyph\+\_\+\+Copy}}
+\index{F\+T\+\_\+\+Glyph\+\_\+\+Copy@{F\+T\+\_\+\+Glyph\+\_\+\+Copy}!ftglyph.\+h@{ftglyph.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Glyph\+\_\+\+Copy()}{FT\_Glyph\_Copy()}}
+{\footnotesize\ttfamily F\+T\+\_\+\+Glyph\+\_\+\+Copy (\begin{DoxyParamCaption}\item[{\hyperlink{ftglyph_8h_aeb217021e2817832b003c325b185e003}{F\+T\+\_\+\+Glyph}}]{source,  }\item[{\hyperlink{ftglyph_8h_aeb217021e2817832b003c325b185e003}{F\+T\+\_\+\+Glyph} $\ast$}]{target }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ftglyph_8h_aa0f41cf13ddb1522da52e67f80f3da2a}\label{ftglyph_8h_aa0f41cf13ddb1522da52e67f80f3da2a}} 
+\index{ftglyph.\+h@{ftglyph.\+h}!F\+T\+\_\+\+Glyph\+\_\+\+Get\+\_\+\+C\+Box@{F\+T\+\_\+\+Glyph\+\_\+\+Get\+\_\+\+C\+Box}}
+\index{F\+T\+\_\+\+Glyph\+\_\+\+Get\+\_\+\+C\+Box@{F\+T\+\_\+\+Glyph\+\_\+\+Get\+\_\+\+C\+Box}!ftglyph.\+h@{ftglyph.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Glyph\+\_\+\+Get\+\_\+\+C\+Box()}{FT\_Glyph\_Get\_CBox()}}
+{\footnotesize\ttfamily F\+T\+\_\+\+Glyph\+\_\+\+Get\+\_\+\+C\+Box (\begin{DoxyParamCaption}\item[{\hyperlink{ftglyph_8h_aeb217021e2817832b003c325b185e003}{F\+T\+\_\+\+Glyph}}]{glyph,  }\item[{\hyperlink{fttypes_8h_abcb8db4dbf35d2b55a9e8c7b0926dc52}{F\+T\+\_\+\+U\+Int}}]{bbox\+\_\+mode,  }\item[{\hyperlink{ftimage_8h_ae341c4eb5a7199947a13b2a1dcaf7af7}{F\+T\+\_\+\+B\+Box} $\ast$}]{acbox }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ftglyph_8h_a669fa0a60332582cf26b5749b566a256}\label{ftglyph_8h_a669fa0a60332582cf26b5749b566a256}} 
+\index{ftglyph.\+h@{ftglyph.\+h}!F\+T\+\_\+\+Glyph\+\_\+\+To\+\_\+\+Bitmap@{F\+T\+\_\+\+Glyph\+\_\+\+To\+\_\+\+Bitmap}}
+\index{F\+T\+\_\+\+Glyph\+\_\+\+To\+\_\+\+Bitmap@{F\+T\+\_\+\+Glyph\+\_\+\+To\+\_\+\+Bitmap}!ftglyph.\+h@{ftglyph.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Glyph\+\_\+\+To\+\_\+\+Bitmap()}{FT\_Glyph\_To\_Bitmap()}}
+{\footnotesize\ttfamily F\+T\+\_\+\+Glyph\+\_\+\+To\+\_\+\+Bitmap (\begin{DoxyParamCaption}\item[{\hyperlink{ftglyph_8h_aeb217021e2817832b003c325b185e003}{F\+T\+\_\+\+Glyph} $\ast$}]{the\+\_\+glyph,  }\item[{\hyperlink{freetype_8h_aaa0488bc4d2c5f0a6f4311ddee8edfb7}{F\+T\+\_\+\+Render\+\_\+\+Mode}}]{render\+\_\+mode,  }\item[{\hyperlink{ftimage_8h_ab158b5a7e422acb1968af95db786d018}{F\+T\+\_\+\+Vector} $\ast$}]{origin,  }\item[{\hyperlink{fttypes_8h_a1a832a256bb5a7e6e884afaa1a07f3ae}{F\+T\+\_\+\+Bool}}]{destroy }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ftglyph_8h_adaa9caf44f6fbe0e51bbefcffc3caf0c}\label{ftglyph_8h_adaa9caf44f6fbe0e51bbefcffc3caf0c}} 
+\index{ftglyph.\+h@{ftglyph.\+h}!F\+T\+\_\+\+Glyph\+\_\+\+Transform@{F\+T\+\_\+\+Glyph\+\_\+\+Transform}}
+\index{F\+T\+\_\+\+Glyph\+\_\+\+Transform@{F\+T\+\_\+\+Glyph\+\_\+\+Transform}!ftglyph.\+h@{ftglyph.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Glyph\+\_\+\+Transform()}{FT\_Glyph\_Transform()}}
+{\footnotesize\ttfamily F\+T\+\_\+\+Glyph\+\_\+\+Transform (\begin{DoxyParamCaption}\item[{\hyperlink{ftglyph_8h_aeb217021e2817832b003c325b185e003}{F\+T\+\_\+\+Glyph}}]{glyph,  }\item[{\hyperlink{fttypes_8h_afeacbc4365cf2ad77162b6292f3e3e23}{F\+T\+\_\+\+Matrix} $\ast$}]{matrix,  }\item[{\hyperlink{ftimage_8h_ab158b5a7e422acb1968af95db786d018}{F\+T\+\_\+\+Vector} $\ast$}]{delta }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ftglyph_8h_a830d14e28757debaec45f11acd06411b}\label{ftglyph_8h_a830d14e28757debaec45f11acd06411b}} 
+\index{ftglyph.\+h@{ftglyph.\+h}!F\+T\+\_\+\+Matrix\+\_\+\+Invert@{F\+T\+\_\+\+Matrix\+\_\+\+Invert}}
+\index{F\+T\+\_\+\+Matrix\+\_\+\+Invert@{F\+T\+\_\+\+Matrix\+\_\+\+Invert}!ftglyph.\+h@{ftglyph.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Matrix\+\_\+\+Invert()}{FT\_Matrix\_Invert()}}
+{\footnotesize\ttfamily F\+T\+\_\+\+Matrix\+\_\+\+Invert (\begin{DoxyParamCaption}\item[{\hyperlink{fttypes_8h_afeacbc4365cf2ad77162b6292f3e3e23}{F\+T\+\_\+\+Matrix} $\ast$}]{matrix }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ftglyph_8h_ae6d449f762dcc2c8254399fc8243d738}\label{ftglyph_8h_ae6d449f762dcc2c8254399fc8243d738}} 
+\index{ftglyph.\+h@{ftglyph.\+h}!F\+T\+\_\+\+Matrix\+\_\+\+Multiply@{F\+T\+\_\+\+Matrix\+\_\+\+Multiply}}
+\index{F\+T\+\_\+\+Matrix\+\_\+\+Multiply@{F\+T\+\_\+\+Matrix\+\_\+\+Multiply}!ftglyph.\+h@{ftglyph.\+h}}
+\subsubsection{\texorpdfstring{F\+T\+\_\+\+Matrix\+\_\+\+Multiply()}{FT\_Matrix\_Multiply()}}
+{\footnotesize\ttfamily F\+T\+\_\+\+Matrix\+\_\+\+Multiply (\begin{DoxyParamCaption}\item[{\hyperlink{zconf_8h_a2c212835823e3c54a8ab6d95c652660e}{const} \hyperlink{fttypes_8h_afeacbc4365cf2ad77162b6292f3e3e23}{F\+T\+\_\+\+Matrix} $\ast$}]{a,  }\item[{\hyperlink{fttypes_8h_afeacbc4365cf2ad77162b6292f3e3e23}{F\+T\+\_\+\+Matrix} $\ast$}]{b }\end{DoxyParamCaption})}
+

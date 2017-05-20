@@ -1,0 +1,52 @@
+\hypertarget{struct_f_l_a_c_____stream_metadata___seek_table}{}\section{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Seek\+Table Struct Reference}
+\label{struct_f_l_a_c_____stream_metadata___seek_table}\index{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Seek\+Table@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Seek\+Table}}
+
+
+{\ttfamily \#include $<$format.\+h$>$}
+
+
+
+Collaboration diagram for F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Seek\+Table\+:
+% FIG 0
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+unsigned \hyperlink{struct_f_l_a_c_____stream_metadata___seek_table_a12dcdb596297c199fe6cffa27a64e69f}{num\+\_\+points}
+\item 
+\hyperlink{struct_f_l_a_c_____stream_metadata___seek_point}{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Seek\+Point} $\ast$ \hyperlink{struct_f_l_a_c_____stream_metadata___seek_table_a0bf04ada03ea708dba9d31cd6c6159b8}{points}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+F\+L\+AC S\+E\+E\+K\+T\+A\+B\+LE structure. (c.\+f. \href{../format.html#metadata_block_seektable}{\tt format specification})
+
+\begin{DoxyNote}{Note}
+From the format specification\+:
+\begin{DoxyItemize}
+\item The seek points must be sorted by ascending sample number.
+\item Each seek point\textquotesingle{}s sample number must be the first sample of the target frame.
+\item Each seek point\textquotesingle{}s sample number must be unique within the table.
+\item Existence of a S\+E\+E\+K\+T\+A\+B\+LE block implies a correct setting of total\+\_\+samples in the stream\+\_\+info block.
+\item Behavior is undefined when more than one S\+E\+E\+K\+T\+A\+B\+LE block is present in a stream. 
+\end{DoxyItemize}
+\end{DoxyNote}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{struct_f_l_a_c_____stream_metadata___seek_table_a12dcdb596297c199fe6cffa27a64e69f}\label{struct_f_l_a_c_____stream_metadata___seek_table_a12dcdb596297c199fe6cffa27a64e69f}} 
+\index{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Seek\+Table@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Seek\+Table}!num\+\_\+points@{num\+\_\+points}}
+\index{num\+\_\+points@{num\+\_\+points}!F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Seek\+Table@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Seek\+Table}}
+\subsubsection{\texorpdfstring{num\+\_\+points}{num\_points}}
+{\footnotesize\ttfamily unsigned F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Seek\+Table\+::num\+\_\+points}
+
+\mbox{\Hypertarget{struct_f_l_a_c_____stream_metadata___seek_table_a0bf04ada03ea708dba9d31cd6c6159b8}\label{struct_f_l_a_c_____stream_metadata___seek_table_a0bf04ada03ea708dba9d31cd6c6159b8}} 
+\index{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Seek\+Table@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Seek\+Table}!points@{points}}
+\index{points@{points}!F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Seek\+Table@{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Seek\+Table}}
+\subsubsection{\texorpdfstring{points}{points}}
+{\footnotesize\ttfamily \hyperlink{struct_f_l_a_c_____stream_metadata___seek_point}{F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Seek\+Point}$\ast$ F\+L\+A\+C\+\_\+\+\_\+\+Stream\+Metadata\+\_\+\+Seek\+Table\+::points}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/packages/\+Allegro\+Deps.\+1.\+5.\+0.\+1/build/native/include/\+F\+L\+A\+C/\hyperlink{format_8h}{format.\+h}\end{DoxyCompactItemize}

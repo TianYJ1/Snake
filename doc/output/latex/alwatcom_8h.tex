@@ -1,0 +1,539 @@
+\hypertarget{alwatcom_8h}{}\section{src/packages/\+Allegro.5.2.2.1/build/native/include/allegro5/platform/alwatcom.h File Reference}
+\label{alwatcom_8h}\index{src/packages/\+Allegro.\+5.\+2.\+2.\+1/build/native/include/allegro5/platform/alwatcom.\+h@{src/packages/\+Allegro.\+5.\+2.\+2.\+1/build/native/include/allegro5/platform/alwatcom.\+h}}
+{\ttfamily \#include $<$io.\+h$>$}\newline
+{\ttfamily \#include $<$i86.\+h$>$}\newline
+{\ttfamily \#include $<$conio.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$direct.\+h$>$}\newline
+{\ttfamily \#include $<$malloc.\+h$>$}\newline
+Include dependency graph for alwatcom.\+h\+:
+% FIG 0
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+union \hyperlink{union____dpmi__regs}{\+\_\+\+\_\+dpmi\+\_\+regs}
+\item 
+struct \hyperlink{struct____dpmi__meminfo}{\+\_\+\+\_\+dpmi\+\_\+meminfo}
+\item 
+struct \hyperlink{struct____dpmi__free__mem__info}{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+mem\+\_\+info}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{alwatcom_8h_abfcdc80536e60e52dff25a6e4485472f}{A\+L\+L\+E\+G\+R\+O\+\_\+\+G\+U\+E\+S\+S\+\_\+\+I\+N\+T\+T\+Y\+P\+E\+S\+\_\+\+OK}
+\item 
+\#define \hyperlink{alwatcom_8h_a33acc1140b0349a1dcb7192471dd0d05}{A\+L\+L\+E\+G\+R\+O\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+S\+TR}~\char`\"{}Watcom\char`\"{}
+\item 
+\#define \hyperlink{alwatcom_8h_a6fbe39a94dc84250b7d1b999027a1863}{A\+L\+L\+E\+G\+R\+O\+\_\+\+D\+OS}
+\item 
+\#define \hyperlink{alwatcom_8h_a9e861d05ea678e48a64fae360dc0a1c1}{A\+L\+L\+E\+G\+R\+O\+\_\+\+I386}
+\item 
+\#define \hyperlink{alwatcom_8h_a313d0fd78cb7a7e9a343e15d66bed015}{A\+L\+L\+E\+G\+R\+O\+\_\+\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+AN}
+\item 
+\#define \hyperlink{alwatcom_8h_aa028d750c854cd520247fcab322e276c}{int64\+\_\+t}~signed long long
+\item 
+\#define \hyperlink{alwatcom_8h_a104204cb123abb831baa5adcfffc64e0}{uint64\+\_\+t}~unsigned long long
+\item 
+\#define \hyperlink{alwatcom_8h_aea8c8be1950d6e91d8f4a000a33edd54}{inportb}(port)~inp(port)
+\item 
+\#define \hyperlink{alwatcom_8h_ad857e589d19a7b91d389dfcb715c79c1}{inportw}(port)~inpw(port)
+\item 
+\#define \hyperlink{alwatcom_8h_a96d90dc5031ee76e6e611effb9d710d2}{outportb}(port,  \hyperlink{jpeglib_8h_aa0ccb5ee6d882ee3605ff47745c6467b}{val})~outp(port, \hyperlink{jpeglib_8h_aa0ccb5ee6d882ee3605ff47745c6467b}{val})
+\item 
+\#define \hyperlink{alwatcom_8h_a9e02fae1379fc140bea02a13d9c05a0b}{outportw}(port,  \hyperlink{jpeglib_8h_aa0ccb5ee6d882ee3605ff47745c6467b}{val})~outpw(port, \hyperlink{jpeglib_8h_aa0ccb5ee6d882ee3605ff47745c6467b}{val})
+\item 
+\#define \hyperlink{alwatcom_8h_a60c6fd507a18232e37b3cdf8a336f7c8}{ffblk}~find\+\_\+t
+\item 
+\#define \hyperlink{alwatcom_8h_a05c0097d95f87e9f891f4cdde679631c}{ff\+\_\+name}~name
+\item 
+\#define \hyperlink{alwatcom_8h_a89a1652add57b4ad06cd40bc3102342a}{ff\+\_\+attrib}~attrib
+\item 
+\#define \hyperlink{alwatcom_8h_aba789b017f51e8b3544a300fd546ee2a}{ff\+\_\+fsize}~size
+\item 
+\#define \hyperlink{alwatcom_8h_a1da4c7db26125c6baea6286aebddae2d}{ff\+\_\+ftime}~wr\+\_\+time
+\item 
+\#define \hyperlink{alwatcom_8h_aa840a5f1814de2b5a97d6e7c967a1c03}{ff\+\_\+fdate}~wr\+\_\+date
+\item 
+\#define \hyperlink{alwatcom_8h_aa42d070b3c8b7977f3b7d188260e48f6}{findfirst}(name,  dta,  attrib)~\+\_\+dos\+\_\+findfirst(name, attrib, dta)
+\item 
+\#define \hyperlink{alwatcom_8h_aa780a1e017f7f71017f8e95919fff73d}{findnext}(dta)~\+\_\+dos\+\_\+findnext(dta)
+\item 
+\#define \hyperlink{alwatcom_8h_a0902d9138db58e31574316589f0d4bfc}{random}()~rand()
+\item 
+\#define \hyperlink{alwatcom_8h_aeae499ff6b56bd5b839869f5cb037d07}{srandom}(n)~srand(n)
+\item 
+\#define \hyperlink{alwatcom_8h_a7eb06767fe7456076a470872464297c4}{\+\_\+dos\+\_\+ds}~\+\_\+default\+\_\+ds()
+\item 
+\#define \hyperlink{alwatcom_8h_ae5ad036b7e45c4be21c57fbe4944d7a9}{dosmemget}(offset,  length,  buffer)~memcpy(buffer, (\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$)(offset), length)
+\item 
+\#define \hyperlink{alwatcom_8h_ab9522b609447675437a1e66df39da1f1}{dosmemput}(buffer,  length,  offset)~memcpy((\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$)(offset), buffer, length)
+\item 
+\#define \hyperlink{alwatcom_8h_a9a48925e0bafed484be60e2270457354}{\+\_\+\+\_\+djgpp\+\_\+nearptr\+\_\+enable}()~1
+\item 
+\#define \hyperlink{alwatcom_8h_a884aa297078a7a738bcbbdfd82ada2ce}{\+\_\+\+\_\+djgpp\+\_\+nearptr\+\_\+disable}()
+\item 
+\#define \hyperlink{alwatcom_8h_aba8256d81e6725d97b5f3f3890fd742d}{\+\_\+\+\_\+djgpp\+\_\+base\+\_\+address}~0
+\item 
+\#define \hyperlink{alwatcom_8h_a00ba6e82d7d1448c8bb79827fc71f292}{\+\_\+\+\_\+djgpp\+\_\+conventional\+\_\+base}~0
+\item 
+\#define \hyperlink{alwatcom_8h_afdd7b25c8b0ea86c1dbc464f49b8a1a9}{\+\_\+crt0\+\_\+startup\+\_\+flags}~1
+\item 
+\#define \hyperlink{alwatcom_8h_adc2a72ab3126ee00571686ef7610318d}{\+\_\+\+C\+R\+T0\+\_\+\+F\+L\+A\+G\+\_\+\+N\+E\+A\+R\+P\+TR}~1
+\item 
+\#define \hyperlink{alwatcom_8h_a5516030500990c742daf5d79586707f9}{E\+N\+D\+\_\+\+O\+F\+\_\+\+F\+U\+N\+C\+T\+I\+ON}(\hyperlink{fmaths_8inl_a7ba8ab2f1e8f362163e17da3f15a5db9}{x})~\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{fmaths_8inl_a7ba8ab2f1e8f362163e17da3f15a5db9}{x}\#\#\+\_\+end(\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}) \{ \}
+\item 
+\#define \hyperlink{alwatcom_8h_a9c7bda10fbf9225018a92a7377bc1d6b}{E\+N\+D\+\_\+\+O\+F\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+F\+U\+N\+C\+T\+I\+ON}(\hyperlink{fmaths_8inl_a7ba8ab2f1e8f362163e17da3f15a5db9}{x})~static \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{fmaths_8inl_a7ba8ab2f1e8f362163e17da3f15a5db9}{x}\#\#\+\_\+end(\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}) \{ \}
+\item 
+\#define \hyperlink{alwatcom_8h_af2931faec2d43f61c8a96ef0fb213ac7}{L\+O\+C\+K\+\_\+\+D\+A\+TA}(d,  s)~\hyperlink{alwatcom_8h_a24e48a8516e3ee71685ccd3481207ef9}{\+\_\+go32\+\_\+dpmi\+\_\+lock\+\_\+data}(d, s)
+\item 
+\#define \hyperlink{alwatcom_8h_a8f21626e428bf77407a2f9a20fe87cb1}{L\+O\+C\+K\+\_\+\+C\+O\+DE}(c,  s)~\hyperlink{alwatcom_8h_afddf46d30106ffe6ae9d320a05543566}{\+\_\+go32\+\_\+dpmi\+\_\+lock\+\_\+code}(c, s)
+\item 
+\#define \hyperlink{alwatcom_8h_a98357512ea673398431370fb050897ae}{U\+N\+L\+O\+C\+K\+\_\+\+D\+A\+TA}(d,  s)~\hyperlink{alwatcom_8h_a4f306003e42ae2b1b23f351c07cb85aa}{\+\_\+unlock\+\_\+dpmi\+\_\+data}(d, s)
+\item 
+\#define \hyperlink{alwatcom_8h_a8f7cc07672fc33b595f1d877380b32a2}{L\+O\+C\+K\+\_\+\+V\+A\+R\+I\+A\+B\+LE}(\hyperlink{fmaths_8inl_a7ba8ab2f1e8f362163e17da3f15a5db9}{x})~\hyperlink{alwatcom_8h_af2931faec2d43f61c8a96ef0fb213ac7}{L\+O\+C\+K\+\_\+\+D\+A\+TA}((\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$)\&\hyperlink{fmaths_8inl_a7ba8ab2f1e8f362163e17da3f15a5db9}{x}, sizeof(\hyperlink{fmaths_8inl_a7ba8ab2f1e8f362163e17da3f15a5db9}{x}))
+\item 
+\#define \hyperlink{alwatcom_8h_af176200fe0ab0ab4550393536c45fd55}{L\+O\+C\+K\+\_\+\+F\+U\+N\+C\+T\+I\+ON}(\hyperlink{fmaths_8inl_a7ba8ab2f1e8f362163e17da3f15a5db9}{x})~\hyperlink{alwatcom_8h_a8f21626e428bf77407a2f9a20fe87cb1}{L\+O\+C\+K\+\_\+\+C\+O\+DE}((\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$)F\+P\+\_\+\+O\+FF(\hyperlink{fmaths_8inl_a7ba8ab2f1e8f362163e17da3f15a5db9}{x}), (long)F\+P\+\_\+\+O\+FF(\hyperlink{fmaths_8inl_a7ba8ab2f1e8f362163e17da3f15a5db9}{x}\#\#\+\_\+end) -\/ (long)F\+P\+\_\+\+O\+FF(\hyperlink{fmaths_8inl_a7ba8ab2f1e8f362163e17da3f15a5db9}{x}))
+\item 
+\#define \hyperlink{alwatcom_8h_a83008ed5d2874fd74bf0b432fcc43211}{A\+L\+L\+E\+G\+R\+O\+\_\+\+E\+X\+T\+R\+A\+\_\+\+H\+E\+A\+D\+ER}~\char`\"{}allegro5/platform/aldos.\+h\char`\"{}
+\item 
+\#define \hyperlink{alwatcom_8h_a68cd7eae641d738e099076c64dcd2e87}{A\+L\+L\+E\+G\+R\+O\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+H\+E\+A\+D\+ER}~\char`\"{}allegro5/platform/aintdos.\+h\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef union \hyperlink{union____dpmi__regs}{\+\_\+\+\_\+dpmi\+\_\+regs} \hyperlink{alwatcom_8h_aaea15772b5e117a4f01ded653cca1e68}{\+\_\+\+\_\+dpmi\+\_\+regs}
+\item 
+typedef struct \hyperlink{struct____dpmi__meminfo}{\+\_\+\+\_\+dpmi\+\_\+meminfo} \hyperlink{alwatcom_8h_a8c78472bcf94bd0bdd585f80d850ca01}{\+\_\+\+\_\+dpmi\+\_\+meminfo}
+\item 
+typedef struct \hyperlink{struct____dpmi__free__mem__info}{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+mem\+\_\+info} \hyperlink{alwatcom_8h_a3d5ea2a44a2ca295783b0af6d71f883f}{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+mem\+\_\+info}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{alwatcom_8h_af6494ca0f34f395e9a5a58397c6445fe}{\+\_\+\+\_\+dpmi\+\_\+int} (int vector, \hyperlink{union____dpmi__regs}{\+\_\+\+\_\+dpmi\+\_\+regs} $\ast$regs)
+\item 
+int \hyperlink{alwatcom_8h_a6b10133aaed8491cdea95c39c4558780}{\+\_\+\+\_\+dpmi\+\_\+allocate\+\_\+dos\+\_\+memory} (int paragraphs, int $\ast$ret)
+\item 
+int \hyperlink{alwatcom_8h_ab96300ee865f09093f231530c1a80829}{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+dos\+\_\+memory} (int selector)
+\item 
+int \hyperlink{alwatcom_8h_a6d0be9df277aa16f26519d3debe65d8f}{\+\_\+\+\_\+dpmi\+\_\+physical\+\_\+address\+\_\+mapping} (\hyperlink{struct____dpmi__meminfo}{\+\_\+\+\_\+dpmi\+\_\+meminfo} $\ast$info)
+\item 
+int \hyperlink{alwatcom_8h_ac72a575a8282a4a44efbb3be959454d7}{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+physical\+\_\+address\+\_\+mapping} (\hyperlink{struct____dpmi__meminfo}{\+\_\+\+\_\+dpmi\+\_\+meminfo} $\ast$info)
+\item 
+int \hyperlink{alwatcom_8h_ac817bc0811343a5b138fd988ea5daf07}{\+\_\+\+\_\+dpmi\+\_\+lock\+\_\+linear\+\_\+region} (\hyperlink{struct____dpmi__meminfo}{\+\_\+\+\_\+dpmi\+\_\+meminfo} $\ast$info)
+\item 
+int \hyperlink{alwatcom_8h_a38dcd3a6d5a6adbe2db8a68d1f23ee64}{\+\_\+\+\_\+dpmi\+\_\+unlock\+\_\+linear\+\_\+region} (\hyperlink{struct____dpmi__meminfo}{\+\_\+\+\_\+dpmi\+\_\+meminfo} $\ast$info)
+\item 
+int \hyperlink{alwatcom_8h_ab12dd1f4a346a65fb0ae0e4b38fbf991}{\+\_\+\+\_\+dpmi\+\_\+allocate\+\_\+ldt\+\_\+descriptors} (int \hyperlink{_core_8c_ad43c3812e6d13e0518d9f8b8f463ffcf}{count})
+\item 
+int \hyperlink{alwatcom_8h_aa4ba86cbb986514ead5f762eb272865f}{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+ldt\+\_\+descriptor} (int descriptor)
+\item 
+int \hyperlink{alwatcom_8h_a61c76ab9616a46e16b5f9b36412c1dab}{\+\_\+\+\_\+dpmi\+\_\+get\+\_\+segment\+\_\+base\+\_\+address} (int selector, unsigned long $\ast$addr)
+\item 
+int \hyperlink{alwatcom_8h_ab1badc18a2205ea57f5af5c9993eceab}{\+\_\+\+\_\+dpmi\+\_\+set\+\_\+segment\+\_\+base\+\_\+address} (int selector, unsigned long address)
+\item 
+int \hyperlink{alwatcom_8h_ad75713b292578f20fe2eed51a390f204}{\+\_\+\+\_\+dpmi\+\_\+set\+\_\+segment\+\_\+limit} (int selector, unsigned long limit)
+\item 
+int \hyperlink{alwatcom_8h_aba8324405aa9552adb3232bf02230b62}{\+\_\+\+\_\+dpmi\+\_\+get\+\_\+free\+\_\+memory\+\_\+information} (\hyperlink{struct____dpmi__free__mem__info}{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+mem\+\_\+info} $\ast$info)
+\item 
+int \hyperlink{alwatcom_8h_aae40e4379bab7bffcfd804a4c865ad97}{\+\_\+\+\_\+dpmi\+\_\+simulate\+\_\+real\+\_\+mode\+\_\+interrupt} (int vector, \hyperlink{union____dpmi__regs}{\+\_\+\+\_\+dpmi\+\_\+regs} $\ast$regs)
+\item 
+int \hyperlink{alwatcom_8h_a4c4de8d6a62610b5677fc13fd56bd6dd}{\+\_\+\+\_\+dpmi\+\_\+simulate\+\_\+real\+\_\+mode\+\_\+procedure\+\_\+retf} (\hyperlink{union____dpmi__regs}{\+\_\+\+\_\+dpmi\+\_\+regs} $\ast$regs)
+\item 
+int \hyperlink{alwatcom_8h_a24e48a8516e3ee71685ccd3481207ef9}{\+\_\+go32\+\_\+dpmi\+\_\+lock\+\_\+data} (\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$lockaddr, unsigned long locksize)
+\item 
+int \hyperlink{alwatcom_8h_afddf46d30106ffe6ae9d320a05543566}{\+\_\+go32\+\_\+dpmi\+\_\+lock\+\_\+code} (\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$lockaddr, unsigned long locksize)
+\item 
+long \hyperlink{alwatcom_8h_a77542c7216d53496d304417e1a240ab6}{\+\_\+allocate\+\_\+real\+\_\+mode\+\_\+callback} (\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}($\ast$handler)(\hyperlink{union____dpmi__regs}{\+\_\+\+\_\+dpmi\+\_\+regs} $\ast$r), \hyperlink{union____dpmi__regs}{\+\_\+\+\_\+dpmi\+\_\+regs} $\ast$regs)
+\item 
+\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{alwatcom_8h_a4f306003e42ae2b1b23f351c07cb85aa}{\+\_\+unlock\+\_\+dpmi\+\_\+data} (\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$addr, int size)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long \hyperlink{alwatcom_8h_ac75ae0ef04eadccf62eeacf7433259e8}{\+\_\+\+\_\+tb}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{alwatcom_8h_aba8256d81e6725d97b5f3f3890fd742d}\label{alwatcom_8h_aba8256d81e6725d97b5f3f3890fd742d}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+\_\+djgpp\+\_\+base\+\_\+address@{\+\_\+\+\_\+djgpp\+\_\+base\+\_\+address}}
+\index{\+\_\+\+\_\+djgpp\+\_\+base\+\_\+address@{\+\_\+\+\_\+djgpp\+\_\+base\+\_\+address}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+djgpp\+\_\+base\+\_\+address}{\_\_djgpp\_base\_address}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+djgpp\+\_\+base\+\_\+address~0}
+
+\mbox{\Hypertarget{alwatcom_8h_a00ba6e82d7d1448c8bb79827fc71f292}\label{alwatcom_8h_a00ba6e82d7d1448c8bb79827fc71f292}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+\_\+djgpp\+\_\+conventional\+\_\+base@{\+\_\+\+\_\+djgpp\+\_\+conventional\+\_\+base}}
+\index{\+\_\+\+\_\+djgpp\+\_\+conventional\+\_\+base@{\+\_\+\+\_\+djgpp\+\_\+conventional\+\_\+base}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+djgpp\+\_\+conventional\+\_\+base}{\_\_djgpp\_conventional\_base}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+djgpp\+\_\+conventional\+\_\+base~0}
+
+\mbox{\Hypertarget{alwatcom_8h_a884aa297078a7a738bcbbdfd82ada2ce}\label{alwatcom_8h_a884aa297078a7a738bcbbdfd82ada2ce}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+\_\+djgpp\+\_\+nearptr\+\_\+disable@{\+\_\+\+\_\+djgpp\+\_\+nearptr\+\_\+disable}}
+\index{\+\_\+\+\_\+djgpp\+\_\+nearptr\+\_\+disable@{\+\_\+\+\_\+djgpp\+\_\+nearptr\+\_\+disable}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+djgpp\+\_\+nearptr\+\_\+disable}{\_\_djgpp\_nearptr\_disable}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+djgpp\+\_\+nearptr\+\_\+disable(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alwatcom_8h_a9a48925e0bafed484be60e2270457354}\label{alwatcom_8h_a9a48925e0bafed484be60e2270457354}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+\_\+djgpp\+\_\+nearptr\+\_\+enable@{\+\_\+\+\_\+djgpp\+\_\+nearptr\+\_\+enable}}
+\index{\+\_\+\+\_\+djgpp\+\_\+nearptr\+\_\+enable@{\+\_\+\+\_\+djgpp\+\_\+nearptr\+\_\+enable}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+djgpp\+\_\+nearptr\+\_\+enable}{\_\_djgpp\_nearptr\_enable}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+djgpp\+\_\+nearptr\+\_\+enable(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~1}
+
+\mbox{\Hypertarget{alwatcom_8h_adc2a72ab3126ee00571686ef7610318d}\label{alwatcom_8h_adc2a72ab3126ee00571686ef7610318d}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+C\+R\+T0\+\_\+\+F\+L\+A\+G\+\_\+\+N\+E\+A\+R\+P\+TR@{\+\_\+\+C\+R\+T0\+\_\+\+F\+L\+A\+G\+\_\+\+N\+E\+A\+R\+P\+TR}}
+\index{\+\_\+\+C\+R\+T0\+\_\+\+F\+L\+A\+G\+\_\+\+N\+E\+A\+R\+P\+TR@{\+\_\+\+C\+R\+T0\+\_\+\+F\+L\+A\+G\+\_\+\+N\+E\+A\+R\+P\+TR}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+C\+R\+T0\+\_\+\+F\+L\+A\+G\+\_\+\+N\+E\+A\+R\+P\+TR}{\_CRT0\_FLAG\_NEARPTR}}
+{\footnotesize\ttfamily \#define \+\_\+\+C\+R\+T0\+\_\+\+F\+L\+A\+G\+\_\+\+N\+E\+A\+R\+P\+TR~1}
+
+\mbox{\Hypertarget{alwatcom_8h_afdd7b25c8b0ea86c1dbc464f49b8a1a9}\label{alwatcom_8h_afdd7b25c8b0ea86c1dbc464f49b8a1a9}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+crt0\+\_\+startup\+\_\+flags@{\+\_\+crt0\+\_\+startup\+\_\+flags}}
+\index{\+\_\+crt0\+\_\+startup\+\_\+flags@{\+\_\+crt0\+\_\+startup\+\_\+flags}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+crt0\+\_\+startup\+\_\+flags}{\_crt0\_startup\_flags}}
+{\footnotesize\ttfamily \#define \+\_\+crt0\+\_\+startup\+\_\+flags~1}
+
+\mbox{\Hypertarget{alwatcom_8h_a7eb06767fe7456076a470872464297c4}\label{alwatcom_8h_a7eb06767fe7456076a470872464297c4}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+dos\+\_\+ds@{\+\_\+dos\+\_\+ds}}
+\index{\+\_\+dos\+\_\+ds@{\+\_\+dos\+\_\+ds}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+dos\+\_\+ds}{\_dos\_ds}}
+{\footnotesize\ttfamily \#define \+\_\+dos\+\_\+ds~\+\_\+default\+\_\+ds()}
+
+\mbox{\Hypertarget{alwatcom_8h_a6fbe39a94dc84250b7d1b999027a1863}\label{alwatcom_8h_a6fbe39a94dc84250b7d1b999027a1863}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!A\+L\+L\+E\+G\+R\+O\+\_\+\+D\+OS@{A\+L\+L\+E\+G\+R\+O\+\_\+\+D\+OS}}
+\index{A\+L\+L\+E\+G\+R\+O\+\_\+\+D\+OS@{A\+L\+L\+E\+G\+R\+O\+\_\+\+D\+OS}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+L\+E\+G\+R\+O\+\_\+\+D\+OS}{ALLEGRO\_DOS}}
+{\footnotesize\ttfamily \#define A\+L\+L\+E\+G\+R\+O\+\_\+\+D\+OS}
+
+\mbox{\Hypertarget{alwatcom_8h_a83008ed5d2874fd74bf0b432fcc43211}\label{alwatcom_8h_a83008ed5d2874fd74bf0b432fcc43211}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!A\+L\+L\+E\+G\+R\+O\+\_\+\+E\+X\+T\+R\+A\+\_\+\+H\+E\+A\+D\+ER@{A\+L\+L\+E\+G\+R\+O\+\_\+\+E\+X\+T\+R\+A\+\_\+\+H\+E\+A\+D\+ER}}
+\index{A\+L\+L\+E\+G\+R\+O\+\_\+\+E\+X\+T\+R\+A\+\_\+\+H\+E\+A\+D\+ER@{A\+L\+L\+E\+G\+R\+O\+\_\+\+E\+X\+T\+R\+A\+\_\+\+H\+E\+A\+D\+ER}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+L\+E\+G\+R\+O\+\_\+\+E\+X\+T\+R\+A\+\_\+\+H\+E\+A\+D\+ER}{ALLEGRO\_EXTRA\_HEADER}}
+{\footnotesize\ttfamily \#define A\+L\+L\+E\+G\+R\+O\+\_\+\+E\+X\+T\+R\+A\+\_\+\+H\+E\+A\+D\+ER~\char`\"{}allegro5/platform/aldos.\+h\char`\"{}}
+
+\mbox{\Hypertarget{alwatcom_8h_abfcdc80536e60e52dff25a6e4485472f}\label{alwatcom_8h_abfcdc80536e60e52dff25a6e4485472f}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!A\+L\+L\+E\+G\+R\+O\+\_\+\+G\+U\+E\+S\+S\+\_\+\+I\+N\+T\+T\+Y\+P\+E\+S\+\_\+\+OK@{A\+L\+L\+E\+G\+R\+O\+\_\+\+G\+U\+E\+S\+S\+\_\+\+I\+N\+T\+T\+Y\+P\+E\+S\+\_\+\+OK}}
+\index{A\+L\+L\+E\+G\+R\+O\+\_\+\+G\+U\+E\+S\+S\+\_\+\+I\+N\+T\+T\+Y\+P\+E\+S\+\_\+\+OK@{A\+L\+L\+E\+G\+R\+O\+\_\+\+G\+U\+E\+S\+S\+\_\+\+I\+N\+T\+T\+Y\+P\+E\+S\+\_\+\+OK}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+L\+E\+G\+R\+O\+\_\+\+G\+U\+E\+S\+S\+\_\+\+I\+N\+T\+T\+Y\+P\+E\+S\+\_\+\+OK}{ALLEGRO\_GUESS\_INTTYPES\_OK}}
+{\footnotesize\ttfamily \#define A\+L\+L\+E\+G\+R\+O\+\_\+\+G\+U\+E\+S\+S\+\_\+\+I\+N\+T\+T\+Y\+P\+E\+S\+\_\+\+OK}
+
+\mbox{\Hypertarget{alwatcom_8h_a9e861d05ea678e48a64fae360dc0a1c1}\label{alwatcom_8h_a9e861d05ea678e48a64fae360dc0a1c1}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!A\+L\+L\+E\+G\+R\+O\+\_\+\+I386@{A\+L\+L\+E\+G\+R\+O\+\_\+\+I386}}
+\index{A\+L\+L\+E\+G\+R\+O\+\_\+\+I386@{A\+L\+L\+E\+G\+R\+O\+\_\+\+I386}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+L\+E\+G\+R\+O\+\_\+\+I386}{ALLEGRO\_I386}}
+{\footnotesize\ttfamily \#define A\+L\+L\+E\+G\+R\+O\+\_\+\+I386}
+
+\mbox{\Hypertarget{alwatcom_8h_a68cd7eae641d738e099076c64dcd2e87}\label{alwatcom_8h_a68cd7eae641d738e099076c64dcd2e87}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!A\+L\+L\+E\+G\+R\+O\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+H\+E\+A\+D\+ER@{A\+L\+L\+E\+G\+R\+O\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+H\+E\+A\+D\+ER}}
+\index{A\+L\+L\+E\+G\+R\+O\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+H\+E\+A\+D\+ER@{A\+L\+L\+E\+G\+R\+O\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+H\+E\+A\+D\+ER}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+L\+E\+G\+R\+O\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+H\+E\+A\+D\+ER}{ALLEGRO\_INTERNAL\_HEADER}}
+{\footnotesize\ttfamily \#define A\+L\+L\+E\+G\+R\+O\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+H\+E\+A\+D\+ER~\char`\"{}allegro5/platform/aintdos.\+h\char`\"{}}
+
+\mbox{\Hypertarget{alwatcom_8h_a313d0fd78cb7a7e9a343e15d66bed015}\label{alwatcom_8h_a313d0fd78cb7a7e9a343e15d66bed015}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!A\+L\+L\+E\+G\+R\+O\+\_\+\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+AN@{A\+L\+L\+E\+G\+R\+O\+\_\+\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+AN}}
+\index{A\+L\+L\+E\+G\+R\+O\+\_\+\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+AN@{A\+L\+L\+E\+G\+R\+O\+\_\+\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+AN}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+L\+E\+G\+R\+O\+\_\+\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+AN}{ALLEGRO\_LITTLE\_ENDIAN}}
+{\footnotesize\ttfamily \#define A\+L\+L\+E\+G\+R\+O\+\_\+\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+AN}
+
+\mbox{\Hypertarget{alwatcom_8h_a33acc1140b0349a1dcb7192471dd0d05}\label{alwatcom_8h_a33acc1140b0349a1dcb7192471dd0d05}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!A\+L\+L\+E\+G\+R\+O\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+S\+TR@{A\+L\+L\+E\+G\+R\+O\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+S\+TR}}
+\index{A\+L\+L\+E\+G\+R\+O\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+S\+TR@{A\+L\+L\+E\+G\+R\+O\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+S\+TR}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{A\+L\+L\+E\+G\+R\+O\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+S\+TR}{ALLEGRO\_PLATFORM\_STR}}
+{\footnotesize\ttfamily \#define A\+L\+L\+E\+G\+R\+O\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+S\+TR~\char`\"{}Watcom\char`\"{}}
+
+\mbox{\Hypertarget{alwatcom_8h_ae5ad036b7e45c4be21c57fbe4944d7a9}\label{alwatcom_8h_ae5ad036b7e45c4be21c57fbe4944d7a9}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!dosmemget@{dosmemget}}
+\index{dosmemget@{dosmemget}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{dosmemget}{dosmemget}}
+{\footnotesize\ttfamily \#define dosmemget(\begin{DoxyParamCaption}\item[{}]{offset,  }\item[{}]{length,  }\item[{}]{buffer }\end{DoxyParamCaption})~memcpy(buffer, (\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$)(offset), length)}
+
+\mbox{\Hypertarget{alwatcom_8h_ab9522b609447675437a1e66df39da1f1}\label{alwatcom_8h_ab9522b609447675437a1e66df39da1f1}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!dosmemput@{dosmemput}}
+\index{dosmemput@{dosmemput}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{dosmemput}{dosmemput}}
+{\footnotesize\ttfamily \#define dosmemput(\begin{DoxyParamCaption}\item[{}]{buffer,  }\item[{}]{length,  }\item[{}]{offset }\end{DoxyParamCaption})~memcpy((\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$)(offset), buffer, length)}
+
+\mbox{\Hypertarget{alwatcom_8h_a5516030500990c742daf5d79586707f9}\label{alwatcom_8h_a5516030500990c742daf5d79586707f9}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!E\+N\+D\+\_\+\+O\+F\+\_\+\+F\+U\+N\+C\+T\+I\+ON@{E\+N\+D\+\_\+\+O\+F\+\_\+\+F\+U\+N\+C\+T\+I\+ON}}
+\index{E\+N\+D\+\_\+\+O\+F\+\_\+\+F\+U\+N\+C\+T\+I\+ON@{E\+N\+D\+\_\+\+O\+F\+\_\+\+F\+U\+N\+C\+T\+I\+ON}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{E\+N\+D\+\_\+\+O\+F\+\_\+\+F\+U\+N\+C\+T\+I\+ON}{END\_OF\_FUNCTION}}
+{\footnotesize\ttfamily \#define E\+N\+D\+\_\+\+O\+F\+\_\+\+F\+U\+N\+C\+T\+I\+ON(\begin{DoxyParamCaption}\item[{}]{\hyperlink{fmaths_8inl_a7ba8ab2f1e8f362163e17da3f15a5db9}{x} }\end{DoxyParamCaption})~\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{fmaths_8inl_a7ba8ab2f1e8f362163e17da3f15a5db9}{x}\#\#\+\_\+end(\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}) \{ \}}
+
+\mbox{\Hypertarget{alwatcom_8h_a9c7bda10fbf9225018a92a7377bc1d6b}\label{alwatcom_8h_a9c7bda10fbf9225018a92a7377bc1d6b}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!E\+N\+D\+\_\+\+O\+F\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+F\+U\+N\+C\+T\+I\+ON@{E\+N\+D\+\_\+\+O\+F\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+F\+U\+N\+C\+T\+I\+ON}}
+\index{E\+N\+D\+\_\+\+O\+F\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+F\+U\+N\+C\+T\+I\+ON@{E\+N\+D\+\_\+\+O\+F\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+F\+U\+N\+C\+T\+I\+ON}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{E\+N\+D\+\_\+\+O\+F\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+F\+U\+N\+C\+T\+I\+ON}{END\_OF\_STATIC\_FUNCTION}}
+{\footnotesize\ttfamily \#define E\+N\+D\+\_\+\+O\+F\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+F\+U\+N\+C\+T\+I\+ON(\begin{DoxyParamCaption}\item[{}]{\hyperlink{fmaths_8inl_a7ba8ab2f1e8f362163e17da3f15a5db9}{x} }\end{DoxyParamCaption})~static \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \hyperlink{fmaths_8inl_a7ba8ab2f1e8f362163e17da3f15a5db9}{x}\#\#\+\_\+end(\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}) \{ \}}
+
+\mbox{\Hypertarget{alwatcom_8h_a89a1652add57b4ad06cd40bc3102342a}\label{alwatcom_8h_a89a1652add57b4ad06cd40bc3102342a}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!ff\+\_\+attrib@{ff\+\_\+attrib}}
+\index{ff\+\_\+attrib@{ff\+\_\+attrib}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{ff\+\_\+attrib}{ff\_attrib}}
+{\footnotesize\ttfamily \#define ff\+\_\+attrib~attrib}
+
+\mbox{\Hypertarget{alwatcom_8h_aa840a5f1814de2b5a97d6e7c967a1c03}\label{alwatcom_8h_aa840a5f1814de2b5a97d6e7c967a1c03}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!ff\+\_\+fdate@{ff\+\_\+fdate}}
+\index{ff\+\_\+fdate@{ff\+\_\+fdate}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{ff\+\_\+fdate}{ff\_fdate}}
+{\footnotesize\ttfamily \#define ff\+\_\+fdate~wr\+\_\+date}
+
+\mbox{\Hypertarget{alwatcom_8h_aba789b017f51e8b3544a300fd546ee2a}\label{alwatcom_8h_aba789b017f51e8b3544a300fd546ee2a}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!ff\+\_\+fsize@{ff\+\_\+fsize}}
+\index{ff\+\_\+fsize@{ff\+\_\+fsize}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{ff\+\_\+fsize}{ff\_fsize}}
+{\footnotesize\ttfamily \#define ff\+\_\+fsize~size}
+
+\mbox{\Hypertarget{alwatcom_8h_a1da4c7db26125c6baea6286aebddae2d}\label{alwatcom_8h_a1da4c7db26125c6baea6286aebddae2d}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!ff\+\_\+ftime@{ff\+\_\+ftime}}
+\index{ff\+\_\+ftime@{ff\+\_\+ftime}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{ff\+\_\+ftime}{ff\_ftime}}
+{\footnotesize\ttfamily \#define ff\+\_\+ftime~wr\+\_\+time}
+
+\mbox{\Hypertarget{alwatcom_8h_a05c0097d95f87e9f891f4cdde679631c}\label{alwatcom_8h_a05c0097d95f87e9f891f4cdde679631c}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!ff\+\_\+name@{ff\+\_\+name}}
+\index{ff\+\_\+name@{ff\+\_\+name}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{ff\+\_\+name}{ff\_name}}
+{\footnotesize\ttfamily \#define ff\+\_\+name~name}
+
+\mbox{\Hypertarget{alwatcom_8h_a60c6fd507a18232e37b3cdf8a336f7c8}\label{alwatcom_8h_a60c6fd507a18232e37b3cdf8a336f7c8}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!ffblk@{ffblk}}
+\index{ffblk@{ffblk}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{ffblk}{ffblk}}
+{\footnotesize\ttfamily \#define ffblk~find\+\_\+t}
+
+\mbox{\Hypertarget{alwatcom_8h_aa42d070b3c8b7977f3b7d188260e48f6}\label{alwatcom_8h_aa42d070b3c8b7977f3b7d188260e48f6}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!findfirst@{findfirst}}
+\index{findfirst@{findfirst}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{findfirst}{findfirst}}
+{\footnotesize\ttfamily \#define findfirst(\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{dta,  }\item[{}]{attrib }\end{DoxyParamCaption})~\+\_\+dos\+\_\+findfirst(name, attrib, dta)}
+
+\mbox{\Hypertarget{alwatcom_8h_aa780a1e017f7f71017f8e95919fff73d}\label{alwatcom_8h_aa780a1e017f7f71017f8e95919fff73d}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!findnext@{findnext}}
+\index{findnext@{findnext}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{findnext}{findnext}}
+{\footnotesize\ttfamily \#define findnext(\begin{DoxyParamCaption}\item[{}]{dta }\end{DoxyParamCaption})~\+\_\+dos\+\_\+findnext(dta)}
+
+\mbox{\Hypertarget{alwatcom_8h_aea8c8be1950d6e91d8f4a000a33edd54}\label{alwatcom_8h_aea8c8be1950d6e91d8f4a000a33edd54}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!inportb@{inportb}}
+\index{inportb@{inportb}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{inportb}{inportb}}
+{\footnotesize\ttfamily \#define inportb(\begin{DoxyParamCaption}\item[{}]{port }\end{DoxyParamCaption})~inp(port)}
+
+\mbox{\Hypertarget{alwatcom_8h_ad857e589d19a7b91d389dfcb715c79c1}\label{alwatcom_8h_ad857e589d19a7b91d389dfcb715c79c1}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!inportw@{inportw}}
+\index{inportw@{inportw}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{inportw}{inportw}}
+{\footnotesize\ttfamily \#define inportw(\begin{DoxyParamCaption}\item[{}]{port }\end{DoxyParamCaption})~inpw(port)}
+
+\mbox{\Hypertarget{alwatcom_8h_aa028d750c854cd520247fcab322e276c}\label{alwatcom_8h_aa028d750c854cd520247fcab322e276c}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!int64\+\_\+t@{int64\+\_\+t}}
+\index{int64\+\_\+t@{int64\+\_\+t}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{int64\+\_\+t}{int64\_t}}
+{\footnotesize\ttfamily \#define int64\+\_\+t~signed long long}
+
+\mbox{\Hypertarget{alwatcom_8h_a8f21626e428bf77407a2f9a20fe87cb1}\label{alwatcom_8h_a8f21626e428bf77407a2f9a20fe87cb1}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!L\+O\+C\+K\+\_\+\+C\+O\+DE@{L\+O\+C\+K\+\_\+\+C\+O\+DE}}
+\index{L\+O\+C\+K\+\_\+\+C\+O\+DE@{L\+O\+C\+K\+\_\+\+C\+O\+DE}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{L\+O\+C\+K\+\_\+\+C\+O\+DE}{LOCK\_CODE}}
+{\footnotesize\ttfamily \#define L\+O\+C\+K\+\_\+\+C\+O\+DE(\begin{DoxyParamCaption}\item[{}]{c,  }\item[{}]{s }\end{DoxyParamCaption})~\hyperlink{alwatcom_8h_afddf46d30106ffe6ae9d320a05543566}{\+\_\+go32\+\_\+dpmi\+\_\+lock\+\_\+code}(c, s)}
+
+\mbox{\Hypertarget{alwatcom_8h_af2931faec2d43f61c8a96ef0fb213ac7}\label{alwatcom_8h_af2931faec2d43f61c8a96ef0fb213ac7}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!L\+O\+C\+K\+\_\+\+D\+A\+TA@{L\+O\+C\+K\+\_\+\+D\+A\+TA}}
+\index{L\+O\+C\+K\+\_\+\+D\+A\+TA@{L\+O\+C\+K\+\_\+\+D\+A\+TA}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{L\+O\+C\+K\+\_\+\+D\+A\+TA}{LOCK\_DATA}}
+{\footnotesize\ttfamily \#define L\+O\+C\+K\+\_\+\+D\+A\+TA(\begin{DoxyParamCaption}\item[{}]{d,  }\item[{}]{s }\end{DoxyParamCaption})~\hyperlink{alwatcom_8h_a24e48a8516e3ee71685ccd3481207ef9}{\+\_\+go32\+\_\+dpmi\+\_\+lock\+\_\+data}(d, s)}
+
+\mbox{\Hypertarget{alwatcom_8h_af176200fe0ab0ab4550393536c45fd55}\label{alwatcom_8h_af176200fe0ab0ab4550393536c45fd55}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!L\+O\+C\+K\+\_\+\+F\+U\+N\+C\+T\+I\+ON@{L\+O\+C\+K\+\_\+\+F\+U\+N\+C\+T\+I\+ON}}
+\index{L\+O\+C\+K\+\_\+\+F\+U\+N\+C\+T\+I\+ON@{L\+O\+C\+K\+\_\+\+F\+U\+N\+C\+T\+I\+ON}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{L\+O\+C\+K\+\_\+\+F\+U\+N\+C\+T\+I\+ON}{LOCK\_FUNCTION}}
+{\footnotesize\ttfamily \#define L\+O\+C\+K\+\_\+\+F\+U\+N\+C\+T\+I\+ON(\begin{DoxyParamCaption}\item[{}]{\hyperlink{fmaths_8inl_a7ba8ab2f1e8f362163e17da3f15a5db9}{x} }\end{DoxyParamCaption})~\hyperlink{alwatcom_8h_a8f21626e428bf77407a2f9a20fe87cb1}{L\+O\+C\+K\+\_\+\+C\+O\+DE}((\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$)F\+P\+\_\+\+O\+FF(\hyperlink{fmaths_8inl_a7ba8ab2f1e8f362163e17da3f15a5db9}{x}), (long)F\+P\+\_\+\+O\+FF(\hyperlink{fmaths_8inl_a7ba8ab2f1e8f362163e17da3f15a5db9}{x}\#\#\+\_\+end) -\/ (long)F\+P\+\_\+\+O\+FF(\hyperlink{fmaths_8inl_a7ba8ab2f1e8f362163e17da3f15a5db9}{x}))}
+
+\mbox{\Hypertarget{alwatcom_8h_a8f7cc07672fc33b595f1d877380b32a2}\label{alwatcom_8h_a8f7cc07672fc33b595f1d877380b32a2}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!L\+O\+C\+K\+\_\+\+V\+A\+R\+I\+A\+B\+LE@{L\+O\+C\+K\+\_\+\+V\+A\+R\+I\+A\+B\+LE}}
+\index{L\+O\+C\+K\+\_\+\+V\+A\+R\+I\+A\+B\+LE@{L\+O\+C\+K\+\_\+\+V\+A\+R\+I\+A\+B\+LE}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{L\+O\+C\+K\+\_\+\+V\+A\+R\+I\+A\+B\+LE}{LOCK\_VARIABLE}}
+{\footnotesize\ttfamily \#define L\+O\+C\+K\+\_\+\+V\+A\+R\+I\+A\+B\+LE(\begin{DoxyParamCaption}\item[{}]{\hyperlink{fmaths_8inl_a7ba8ab2f1e8f362163e17da3f15a5db9}{x} }\end{DoxyParamCaption})~\hyperlink{alwatcom_8h_af2931faec2d43f61c8a96ef0fb213ac7}{L\+O\+C\+K\+\_\+\+D\+A\+TA}((\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$)\&\hyperlink{fmaths_8inl_a7ba8ab2f1e8f362163e17da3f15a5db9}{x}, sizeof(\hyperlink{fmaths_8inl_a7ba8ab2f1e8f362163e17da3f15a5db9}{x}))}
+
+\mbox{\Hypertarget{alwatcom_8h_a96d90dc5031ee76e6e611effb9d710d2}\label{alwatcom_8h_a96d90dc5031ee76e6e611effb9d710d2}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!outportb@{outportb}}
+\index{outportb@{outportb}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{outportb}{outportb}}
+{\footnotesize\ttfamily \#define outportb(\begin{DoxyParamCaption}\item[{}]{port,  }\item[{}]{\hyperlink{jpeglib_8h_aa0ccb5ee6d882ee3605ff47745c6467b}{val} }\end{DoxyParamCaption})~outp(port, \hyperlink{jpeglib_8h_aa0ccb5ee6d882ee3605ff47745c6467b}{val})}
+
+\mbox{\Hypertarget{alwatcom_8h_a9e02fae1379fc140bea02a13d9c05a0b}\label{alwatcom_8h_a9e02fae1379fc140bea02a13d9c05a0b}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!outportw@{outportw}}
+\index{outportw@{outportw}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{outportw}{outportw}}
+{\footnotesize\ttfamily \#define outportw(\begin{DoxyParamCaption}\item[{}]{port,  }\item[{}]{\hyperlink{jpeglib_8h_aa0ccb5ee6d882ee3605ff47745c6467b}{val} }\end{DoxyParamCaption})~outpw(port, \hyperlink{jpeglib_8h_aa0ccb5ee6d882ee3605ff47745c6467b}{val})}
+
+\mbox{\Hypertarget{alwatcom_8h_a0902d9138db58e31574316589f0d4bfc}\label{alwatcom_8h_a0902d9138db58e31574316589f0d4bfc}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!random@{random}}
+\index{random@{random}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{random}{random}}
+{\footnotesize\ttfamily \#define random(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~rand()}
+
+\mbox{\Hypertarget{alwatcom_8h_aeae499ff6b56bd5b839869f5cb037d07}\label{alwatcom_8h_aeae499ff6b56bd5b839869f5cb037d07}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!srandom@{srandom}}
+\index{srandom@{srandom}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{srandom}{srandom}}
+{\footnotesize\ttfamily \#define srandom(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~srand(n)}
+
+\mbox{\Hypertarget{alwatcom_8h_a104204cb123abb831baa5adcfffc64e0}\label{alwatcom_8h_a104204cb123abb831baa5adcfffc64e0}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!uint64\+\_\+t@{uint64\+\_\+t}}
+\index{uint64\+\_\+t@{uint64\+\_\+t}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{uint64\+\_\+t}{uint64\_t}}
+{\footnotesize\ttfamily \#define uint64\+\_\+t~unsigned long long}
+
+\mbox{\Hypertarget{alwatcom_8h_a98357512ea673398431370fb050897ae}\label{alwatcom_8h_a98357512ea673398431370fb050897ae}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!U\+N\+L\+O\+C\+K\+\_\+\+D\+A\+TA@{U\+N\+L\+O\+C\+K\+\_\+\+D\+A\+TA}}
+\index{U\+N\+L\+O\+C\+K\+\_\+\+D\+A\+TA@{U\+N\+L\+O\+C\+K\+\_\+\+D\+A\+TA}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{U\+N\+L\+O\+C\+K\+\_\+\+D\+A\+TA}{UNLOCK\_DATA}}
+{\footnotesize\ttfamily \#define U\+N\+L\+O\+C\+K\+\_\+\+D\+A\+TA(\begin{DoxyParamCaption}\item[{}]{d,  }\item[{}]{s }\end{DoxyParamCaption})~\hyperlink{alwatcom_8h_a4f306003e42ae2b1b23f351c07cb85aa}{\+\_\+unlock\+\_\+dpmi\+\_\+data}(d, s)}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{alwatcom_8h_a3d5ea2a44a2ca295783b0af6d71f883f}\label{alwatcom_8h_a3d5ea2a44a2ca295783b0af6d71f883f}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+\_\+dpmi\+\_\+free\+\_\+mem\+\_\+info@{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+mem\+\_\+info}}
+\index{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+mem\+\_\+info@{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+mem\+\_\+info}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+mem\+\_\+info}{\_\_dpmi\_free\_mem\_info}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct____dpmi__free__mem__info}{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+mem\+\_\+info}  \hyperlink{struct____dpmi__free__mem__info}{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+mem\+\_\+info}}
+
+\mbox{\Hypertarget{alwatcom_8h_a8c78472bcf94bd0bdd585f80d850ca01}\label{alwatcom_8h_a8c78472bcf94bd0bdd585f80d850ca01}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+\_\+dpmi\+\_\+meminfo@{\+\_\+\+\_\+dpmi\+\_\+meminfo}}
+\index{\+\_\+\+\_\+dpmi\+\_\+meminfo@{\+\_\+\+\_\+dpmi\+\_\+meminfo}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+dpmi\+\_\+meminfo}{\_\_dpmi\_meminfo}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct____dpmi__meminfo}{\+\_\+\+\_\+dpmi\+\_\+meminfo}  \hyperlink{struct____dpmi__meminfo}{\+\_\+\+\_\+dpmi\+\_\+meminfo}}
+
+\mbox{\Hypertarget{alwatcom_8h_aaea15772b5e117a4f01ded653cca1e68}\label{alwatcom_8h_aaea15772b5e117a4f01ded653cca1e68}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+\_\+dpmi\+\_\+regs@{\+\_\+\+\_\+dpmi\+\_\+regs}}
+\index{\+\_\+\+\_\+dpmi\+\_\+regs@{\+\_\+\+\_\+dpmi\+\_\+regs}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+dpmi\+\_\+regs}{\_\_dpmi\_regs}}
+{\footnotesize\ttfamily typedef union \hyperlink{union____dpmi__regs}{\+\_\+\+\_\+dpmi\+\_\+regs}  \hyperlink{union____dpmi__regs}{\+\_\+\+\_\+dpmi\+\_\+regs}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{alwatcom_8h_a6b10133aaed8491cdea95c39c4558780}\label{alwatcom_8h_a6b10133aaed8491cdea95c39c4558780}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+\_\+dpmi\+\_\+allocate\+\_\+dos\+\_\+memory@{\+\_\+\+\_\+dpmi\+\_\+allocate\+\_\+dos\+\_\+memory}}
+\index{\+\_\+\+\_\+dpmi\+\_\+allocate\+\_\+dos\+\_\+memory@{\+\_\+\+\_\+dpmi\+\_\+allocate\+\_\+dos\+\_\+memory}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+dpmi\+\_\+allocate\+\_\+dos\+\_\+memory()}{\_\_dpmi\_allocate\_dos\_memory()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+dpmi\+\_\+allocate\+\_\+dos\+\_\+memory (\begin{DoxyParamCaption}\item[{int}]{paragraphs,  }\item[{int $\ast$}]{ret }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alwatcom_8h_ab12dd1f4a346a65fb0ae0e4b38fbf991}\label{alwatcom_8h_ab12dd1f4a346a65fb0ae0e4b38fbf991}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+\_\+dpmi\+\_\+allocate\+\_\+ldt\+\_\+descriptors@{\+\_\+\+\_\+dpmi\+\_\+allocate\+\_\+ldt\+\_\+descriptors}}
+\index{\+\_\+\+\_\+dpmi\+\_\+allocate\+\_\+ldt\+\_\+descriptors@{\+\_\+\+\_\+dpmi\+\_\+allocate\+\_\+ldt\+\_\+descriptors}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+dpmi\+\_\+allocate\+\_\+ldt\+\_\+descriptors()}{\_\_dpmi\_allocate\_ldt\_descriptors()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+dpmi\+\_\+allocate\+\_\+ldt\+\_\+descriptors (\begin{DoxyParamCaption}\item[{int}]{count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alwatcom_8h_ab96300ee865f09093f231530c1a80829}\label{alwatcom_8h_ab96300ee865f09093f231530c1a80829}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+\_\+dpmi\+\_\+free\+\_\+dos\+\_\+memory@{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+dos\+\_\+memory}}
+\index{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+dos\+\_\+memory@{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+dos\+\_\+memory}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+dos\+\_\+memory()}{\_\_dpmi\_free\_dos\_memory()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+dpmi\+\_\+free\+\_\+dos\+\_\+memory (\begin{DoxyParamCaption}\item[{int}]{selector }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alwatcom_8h_aa4ba86cbb986514ead5f762eb272865f}\label{alwatcom_8h_aa4ba86cbb986514ead5f762eb272865f}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+\_\+dpmi\+\_\+free\+\_\+ldt\+\_\+descriptor@{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+ldt\+\_\+descriptor}}
+\index{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+ldt\+\_\+descriptor@{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+ldt\+\_\+descriptor}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+ldt\+\_\+descriptor()}{\_\_dpmi\_free\_ldt\_descriptor()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+dpmi\+\_\+free\+\_\+ldt\+\_\+descriptor (\begin{DoxyParamCaption}\item[{int}]{descriptor }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alwatcom_8h_ac72a575a8282a4a44efbb3be959454d7}\label{alwatcom_8h_ac72a575a8282a4a44efbb3be959454d7}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+\_\+dpmi\+\_\+free\+\_\+physical\+\_\+address\+\_\+mapping@{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+physical\+\_\+address\+\_\+mapping}}
+\index{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+physical\+\_\+address\+\_\+mapping@{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+physical\+\_\+address\+\_\+mapping}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+physical\+\_\+address\+\_\+mapping()}{\_\_dpmi\_free\_physical\_address\_mapping()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+dpmi\+\_\+free\+\_\+physical\+\_\+address\+\_\+mapping (\begin{DoxyParamCaption}\item[{\hyperlink{struct____dpmi__meminfo}{\+\_\+\+\_\+dpmi\+\_\+meminfo} $\ast$}]{info }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alwatcom_8h_aba8324405aa9552adb3232bf02230b62}\label{alwatcom_8h_aba8324405aa9552adb3232bf02230b62}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+\_\+dpmi\+\_\+get\+\_\+free\+\_\+memory\+\_\+information@{\+\_\+\+\_\+dpmi\+\_\+get\+\_\+free\+\_\+memory\+\_\+information}}
+\index{\+\_\+\+\_\+dpmi\+\_\+get\+\_\+free\+\_\+memory\+\_\+information@{\+\_\+\+\_\+dpmi\+\_\+get\+\_\+free\+\_\+memory\+\_\+information}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+dpmi\+\_\+get\+\_\+free\+\_\+memory\+\_\+information()}{\_\_dpmi\_get\_free\_memory\_information()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+dpmi\+\_\+get\+\_\+free\+\_\+memory\+\_\+information (\begin{DoxyParamCaption}\item[{\hyperlink{struct____dpmi__free__mem__info}{\+\_\+\+\_\+dpmi\+\_\+free\+\_\+mem\+\_\+info} $\ast$}]{info }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alwatcom_8h_a61c76ab9616a46e16b5f9b36412c1dab}\label{alwatcom_8h_a61c76ab9616a46e16b5f9b36412c1dab}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+\_\+dpmi\+\_\+get\+\_\+segment\+\_\+base\+\_\+address@{\+\_\+\+\_\+dpmi\+\_\+get\+\_\+segment\+\_\+base\+\_\+address}}
+\index{\+\_\+\+\_\+dpmi\+\_\+get\+\_\+segment\+\_\+base\+\_\+address@{\+\_\+\+\_\+dpmi\+\_\+get\+\_\+segment\+\_\+base\+\_\+address}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+dpmi\+\_\+get\+\_\+segment\+\_\+base\+\_\+address()}{\_\_dpmi\_get\_segment\_base\_address()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+dpmi\+\_\+get\+\_\+segment\+\_\+base\+\_\+address (\begin{DoxyParamCaption}\item[{int}]{selector,  }\item[{unsigned long $\ast$}]{addr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alwatcom_8h_af6494ca0f34f395e9a5a58397c6445fe}\label{alwatcom_8h_af6494ca0f34f395e9a5a58397c6445fe}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+\_\+dpmi\+\_\+int@{\+\_\+\+\_\+dpmi\+\_\+int}}
+\index{\+\_\+\+\_\+dpmi\+\_\+int@{\+\_\+\+\_\+dpmi\+\_\+int}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+dpmi\+\_\+int()}{\_\_dpmi\_int()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+dpmi\+\_\+int (\begin{DoxyParamCaption}\item[{int}]{vector,  }\item[{\hyperlink{union____dpmi__regs}{\+\_\+\+\_\+dpmi\+\_\+regs} $\ast$}]{regs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alwatcom_8h_ac817bc0811343a5b138fd988ea5daf07}\label{alwatcom_8h_ac817bc0811343a5b138fd988ea5daf07}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+\_\+dpmi\+\_\+lock\+\_\+linear\+\_\+region@{\+\_\+\+\_\+dpmi\+\_\+lock\+\_\+linear\+\_\+region}}
+\index{\+\_\+\+\_\+dpmi\+\_\+lock\+\_\+linear\+\_\+region@{\+\_\+\+\_\+dpmi\+\_\+lock\+\_\+linear\+\_\+region}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+dpmi\+\_\+lock\+\_\+linear\+\_\+region()}{\_\_dpmi\_lock\_linear\_region()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+dpmi\+\_\+lock\+\_\+linear\+\_\+region (\begin{DoxyParamCaption}\item[{\hyperlink{struct____dpmi__meminfo}{\+\_\+\+\_\+dpmi\+\_\+meminfo} $\ast$}]{info }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alwatcom_8h_a6d0be9df277aa16f26519d3debe65d8f}\label{alwatcom_8h_a6d0be9df277aa16f26519d3debe65d8f}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+\_\+dpmi\+\_\+physical\+\_\+address\+\_\+mapping@{\+\_\+\+\_\+dpmi\+\_\+physical\+\_\+address\+\_\+mapping}}
+\index{\+\_\+\+\_\+dpmi\+\_\+physical\+\_\+address\+\_\+mapping@{\+\_\+\+\_\+dpmi\+\_\+physical\+\_\+address\+\_\+mapping}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+dpmi\+\_\+physical\+\_\+address\+\_\+mapping()}{\_\_dpmi\_physical\_address\_mapping()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+dpmi\+\_\+physical\+\_\+address\+\_\+mapping (\begin{DoxyParamCaption}\item[{\hyperlink{struct____dpmi__meminfo}{\+\_\+\+\_\+dpmi\+\_\+meminfo} $\ast$}]{info }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alwatcom_8h_ab1badc18a2205ea57f5af5c9993eceab}\label{alwatcom_8h_ab1badc18a2205ea57f5af5c9993eceab}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+\_\+dpmi\+\_\+set\+\_\+segment\+\_\+base\+\_\+address@{\+\_\+\+\_\+dpmi\+\_\+set\+\_\+segment\+\_\+base\+\_\+address}}
+\index{\+\_\+\+\_\+dpmi\+\_\+set\+\_\+segment\+\_\+base\+\_\+address@{\+\_\+\+\_\+dpmi\+\_\+set\+\_\+segment\+\_\+base\+\_\+address}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+dpmi\+\_\+set\+\_\+segment\+\_\+base\+\_\+address()}{\_\_dpmi\_set\_segment\_base\_address()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+dpmi\+\_\+set\+\_\+segment\+\_\+base\+\_\+address (\begin{DoxyParamCaption}\item[{int}]{selector,  }\item[{unsigned long}]{address }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alwatcom_8h_ad75713b292578f20fe2eed51a390f204}\label{alwatcom_8h_ad75713b292578f20fe2eed51a390f204}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+\_\+dpmi\+\_\+set\+\_\+segment\+\_\+limit@{\+\_\+\+\_\+dpmi\+\_\+set\+\_\+segment\+\_\+limit}}
+\index{\+\_\+\+\_\+dpmi\+\_\+set\+\_\+segment\+\_\+limit@{\+\_\+\+\_\+dpmi\+\_\+set\+\_\+segment\+\_\+limit}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+dpmi\+\_\+set\+\_\+segment\+\_\+limit()}{\_\_dpmi\_set\_segment\_limit()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+dpmi\+\_\+set\+\_\+segment\+\_\+limit (\begin{DoxyParamCaption}\item[{int}]{selector,  }\item[{unsigned long}]{limit }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alwatcom_8h_aae40e4379bab7bffcfd804a4c865ad97}\label{alwatcom_8h_aae40e4379bab7bffcfd804a4c865ad97}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+\_\+dpmi\+\_\+simulate\+\_\+real\+\_\+mode\+\_\+interrupt@{\+\_\+\+\_\+dpmi\+\_\+simulate\+\_\+real\+\_\+mode\+\_\+interrupt}}
+\index{\+\_\+\+\_\+dpmi\+\_\+simulate\+\_\+real\+\_\+mode\+\_\+interrupt@{\+\_\+\+\_\+dpmi\+\_\+simulate\+\_\+real\+\_\+mode\+\_\+interrupt}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+dpmi\+\_\+simulate\+\_\+real\+\_\+mode\+\_\+interrupt()}{\_\_dpmi\_simulate\_real\_mode\_interrupt()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+dpmi\+\_\+simulate\+\_\+real\+\_\+mode\+\_\+interrupt (\begin{DoxyParamCaption}\item[{int}]{vector,  }\item[{\hyperlink{union____dpmi__regs}{\+\_\+\+\_\+dpmi\+\_\+regs} $\ast$}]{regs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alwatcom_8h_a4c4de8d6a62610b5677fc13fd56bd6dd}\label{alwatcom_8h_a4c4de8d6a62610b5677fc13fd56bd6dd}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+\_\+dpmi\+\_\+simulate\+\_\+real\+\_\+mode\+\_\+procedure\+\_\+retf@{\+\_\+\+\_\+dpmi\+\_\+simulate\+\_\+real\+\_\+mode\+\_\+procedure\+\_\+retf}}
+\index{\+\_\+\+\_\+dpmi\+\_\+simulate\+\_\+real\+\_\+mode\+\_\+procedure\+\_\+retf@{\+\_\+\+\_\+dpmi\+\_\+simulate\+\_\+real\+\_\+mode\+\_\+procedure\+\_\+retf}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+dpmi\+\_\+simulate\+\_\+real\+\_\+mode\+\_\+procedure\+\_\+retf()}{\_\_dpmi\_simulate\_real\_mode\_procedure\_retf()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+dpmi\+\_\+simulate\+\_\+real\+\_\+mode\+\_\+procedure\+\_\+retf (\begin{DoxyParamCaption}\item[{\hyperlink{union____dpmi__regs}{\+\_\+\+\_\+dpmi\+\_\+regs} $\ast$}]{regs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alwatcom_8h_a38dcd3a6d5a6adbe2db8a68d1f23ee64}\label{alwatcom_8h_a38dcd3a6d5a6adbe2db8a68d1f23ee64}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+\_\+dpmi\+\_\+unlock\+\_\+linear\+\_\+region@{\+\_\+\+\_\+dpmi\+\_\+unlock\+\_\+linear\+\_\+region}}
+\index{\+\_\+\+\_\+dpmi\+\_\+unlock\+\_\+linear\+\_\+region@{\+\_\+\+\_\+dpmi\+\_\+unlock\+\_\+linear\+\_\+region}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+dpmi\+\_\+unlock\+\_\+linear\+\_\+region()}{\_\_dpmi\_unlock\_linear\_region()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+dpmi\+\_\+unlock\+\_\+linear\+\_\+region (\begin{DoxyParamCaption}\item[{\hyperlink{struct____dpmi__meminfo}{\+\_\+\+\_\+dpmi\+\_\+meminfo} $\ast$}]{info }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alwatcom_8h_a77542c7216d53496d304417e1a240ab6}\label{alwatcom_8h_a77542c7216d53496d304417e1a240ab6}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+allocate\+\_\+real\+\_\+mode\+\_\+callback@{\+\_\+allocate\+\_\+real\+\_\+mode\+\_\+callback}}
+\index{\+\_\+allocate\+\_\+real\+\_\+mode\+\_\+callback@{\+\_\+allocate\+\_\+real\+\_\+mode\+\_\+callback}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+allocate\+\_\+real\+\_\+mode\+\_\+callback()}{\_allocate\_real\_mode\_callback()}}
+{\footnotesize\ttfamily long \+\_\+allocate\+\_\+real\+\_\+mode\+\_\+callback (\begin{DoxyParamCaption}\item[{\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void}($\ast$)(\hyperlink{union____dpmi__regs}{\+\_\+\+\_\+dpmi\+\_\+regs} $\ast$r)}]{handler,  }\item[{\hyperlink{union____dpmi__regs}{\+\_\+\+\_\+dpmi\+\_\+regs} $\ast$}]{regs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alwatcom_8h_afddf46d30106ffe6ae9d320a05543566}\label{alwatcom_8h_afddf46d30106ffe6ae9d320a05543566}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+go32\+\_\+dpmi\+\_\+lock\+\_\+code@{\+\_\+go32\+\_\+dpmi\+\_\+lock\+\_\+code}}
+\index{\+\_\+go32\+\_\+dpmi\+\_\+lock\+\_\+code@{\+\_\+go32\+\_\+dpmi\+\_\+lock\+\_\+code}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+go32\+\_\+dpmi\+\_\+lock\+\_\+code()}{\_go32\_dpmi\_lock\_code()}}
+{\footnotesize\ttfamily int \+\_\+go32\+\_\+dpmi\+\_\+lock\+\_\+code (\begin{DoxyParamCaption}\item[{\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$}]{lockaddr,  }\item[{unsigned long}]{locksize }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alwatcom_8h_a24e48a8516e3ee71685ccd3481207ef9}\label{alwatcom_8h_a24e48a8516e3ee71685ccd3481207ef9}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+go32\+\_\+dpmi\+\_\+lock\+\_\+data@{\+\_\+go32\+\_\+dpmi\+\_\+lock\+\_\+data}}
+\index{\+\_\+go32\+\_\+dpmi\+\_\+lock\+\_\+data@{\+\_\+go32\+\_\+dpmi\+\_\+lock\+\_\+data}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+go32\+\_\+dpmi\+\_\+lock\+\_\+data()}{\_go32\_dpmi\_lock\_data()}}
+{\footnotesize\ttfamily int \+\_\+go32\+\_\+dpmi\+\_\+lock\+\_\+data (\begin{DoxyParamCaption}\item[{\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$}]{lockaddr,  }\item[{unsigned long}]{locksize }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{alwatcom_8h_a4f306003e42ae2b1b23f351c07cb85aa}\label{alwatcom_8h_a4f306003e42ae2b1b23f351c07cb85aa}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+unlock\+\_\+dpmi\+\_\+data@{\+\_\+unlock\+\_\+dpmi\+\_\+data}}
+\index{\+\_\+unlock\+\_\+dpmi\+\_\+data@{\+\_\+unlock\+\_\+dpmi\+\_\+data}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+unlock\+\_\+dpmi\+\_\+data()}{\_unlock\_dpmi\_data()}}
+{\footnotesize\ttfamily \hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} \+\_\+unlock\+\_\+dpmi\+\_\+data (\begin{DoxyParamCaption}\item[{\hyperlink{png_8h_ac9c84fa68bbad002983e35ce3663c686}{void} $\ast$}]{addr,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{alwatcom_8h_ac75ae0ef04eadccf62eeacf7433259e8}\label{alwatcom_8h_ac75ae0ef04eadccf62eeacf7433259e8}} 
+\index{alwatcom.\+h@{alwatcom.\+h}!\+\_\+\+\_\+tb@{\+\_\+\+\_\+tb}}
+\index{\+\_\+\+\_\+tb@{\+\_\+\+\_\+tb}!alwatcom.\+h@{alwatcom.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+tb}{\_\_tb}}
+{\footnotesize\ttfamily unsigned long \+\_\+\+\_\+tb}
+

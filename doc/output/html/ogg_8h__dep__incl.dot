@@ -1,0 +1,21 @@
+digraph "src/packages/AllegroDeps.1.5.0.1/build/native/include/ogg/ogg.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node4 [label="src/packages/AllegroDeps.1.5.0.1\l/build/native/include/ogg/ogg.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="src/packages/AllegroDeps.1.5.0.1\l/build/native/include/opus\l/opusfile.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$opusfile_8h.html"];
+  Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="src/packages/AllegroDeps.1.5.0.1\l/build/native/include/theora/codec.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$theora_2codec_8h.html"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="src/packages/AllegroDeps.1.5.0.1\l/build/native/include/theora\l/theoradec.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$theoradec_8h.html"];
+  Node4 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="src/packages/AllegroDeps.1.5.0.1\l/build/native/include/theora\l/theora.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$theora_8h.html"];
+  Node4 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="src/packages/AllegroDeps.1.5.0.1\l/build/native/include/vorbis/codec.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$vorbis_2codec_8h.html"];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="src/packages/AllegroDeps.1.5.0.1\l/build/native/include/vorbis\l/vorbisenc.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$vorbisenc_8h.html"];
+  Node9 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="src/packages/AllegroDeps.1.5.0.1\l/build/native/include/vorbis\l/vorbisfile.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$vorbisfile_8h.html"];
+}
