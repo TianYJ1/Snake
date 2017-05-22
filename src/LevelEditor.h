@@ -31,12 +31,35 @@ int mouseClicked(int x, int y);
 */
 int onRightMouseClicked(int x, int y);
 int playLevel(int i);
-
+/** Callback for selecting tools by user (Crate and exit at the same point)
+	@param i button id
+	@return 0
+*/
 int selectEXitCrate(int i);
+/** Callback for selecting tools by user (player)
+@param i button id
+@return 0
+*/
 int selectPlayer(int i);
+/** Callback for selecting tools by user (sand)
+@param i button id
+@return 0
+*/
 int selectSand(int i);
+/** Callback for selecting tools by user (wall)
+@param i button id
+@return 0
+*/
 int selectWall(int i);
+/** Callback for selecting tools by user (exit)
+@param i button id
+@return 0
+*/
 int selectExit(int i);
+/** Callback for selecting tools by user (crate)
+@param i button id
+@return 0
+*/
 int selectCrate(int i);
 /**
 @}

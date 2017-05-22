@@ -1,9 +1,0 @@
-digraph "src/packages/Allegro.5.2.2.1/build/native/include/allegro5/inline" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_7400d09b5806ddf7f17843469fbebf51 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="allegro5" fontname="Helvetica", fontsize="10", URL="dir_7400d09b5806ddf7f17843469fbebf51.html"]
-  dir_70321c877c236b492a3157f3ea70ac94 [shape=box, label="inline", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_70321c877c236b492a3157f3ea70ac94.html"];
-  }
-}

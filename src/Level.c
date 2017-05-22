@@ -13,10 +13,7 @@ int onExit(int id)
 	if (levelNumC >= 0)
 		changeScene(MAINMENU_SCENE);
 	else
-	{
 		changeScene(LEVEL_EDITOR_SCENE);
-		
-	}
 	clearButtons(LEVEL_SCENE);
 	clearButtons(LEVEL_SCENE_PAUSE);
 	renderScreen();
@@ -164,6 +161,7 @@ void onLevelComlete()
 	
 	if (levelNumC >= 0)
 		addButtonSprite("GUI/next.png", "", SCREEN_WIDTH_UNIT * 1200, SCREEN_HEIGHT_UNIT * 1580, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*openNextLevel), LEVEL_SCENE_COMPLETE, 1, 6);
+	else { /* Just nothing, just to meet the criteria*/ }
 	renderScreen();
 	addButtonSprite("GUI/menu.png", "", SCREEN_WIDTH_UNIT * 800, SCREEN_HEIGHT_UNIT * 1580, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*onExit), LEVEL_SCENE_COMPLETE, 1, 6);
 	addButtonSprite("GUI/replay.png", "", SCREEN_WIDTH_UNIT * 1000, SCREEN_HEIGHT_UNIT * 1580, SCREEN_WIDTH_UNIT * 100, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*restart), LEVEL_SCENE_COMPLETE, 1, 6);
@@ -175,8 +173,10 @@ void onLevelComlete()
 	addLabel(SCREEN_WIDTH_UNIT * 1300, SCREEN_HEIGHT_UNIT * 1250, 255, 255, 255, LEVEL_SCENE_COMPLETE, ALLEGRO_ALIGN_RIGHT, "%i B(%i)", movesMade, movesBest);
 	if(movesBest == 0 || movesBest > movesMade)
 		putMem(getUnformatted("level_%s_steps", levelsPaths[levelNumC]), getUnformatted("%i", movesMade));
+	else { /* Just nothing, just to meet the criteria*/ }
 	if (pushesBest == 0 || pushesBest > pushesMade)
 		putMem(getUnformatted("level_%s_pushes", levelsPaths[levelNumC]), getUnformatted("%i", pushesMade));
+	else { /* Just nothing, just to meet the criteria*/ }
 	changeScene(LEVEL_SCENE_COMPLETE);
 	renderScreen();
 	
@@ -191,6 +191,7 @@ void movePlayer(int up, int right)
 	newX += right; newY -= up;
 	if (map[newX][newY] == 1 || newX >= LEVEL_WIDTH || newY >=LEVEL_HEIGHT || newX < 0 || newY < 0)
 		assign = false;
+	else { /* Just nothing, just to meet the criteria*/ }
 	Log_i(__func__, "\n\t%i\n%i\t\t%i\n\t%i", map[newX][newY - 1], map[newX - 1][newY], map[newX + 1][newY], map[newX][newY + 1]);
 	if (map[newX][newY] == 3 || map[newX][newY] == 4)
 	{
@@ -240,4 +241,5 @@ void movePlayer(int up, int right)
 		changeSprite(playerSpriteId, "Level/Player/Character%i.png",((step++)%2+spriteNum));
 		moveSpriteTo(playerSpriteId, (TILE_SIZE - 2)*SCREEN_WIDTH_UNIT*x + SCREEN_WIDTH_UNIT* MAP_OFFSET, (TILE_SIZE - 2)*SCREEN_WIDTH_UNIT*y + SCREEN_WIDTH_UNIT* MAP_OFFSET);
 	}
+	else { /* Just nothing, just to meet the criteria*/ }
 }

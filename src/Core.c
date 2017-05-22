@@ -1,10 +1,9 @@
-#define DEBUGMODE
 #include "LibraryMerger.h"
 
-ALLEGRO_FONT* font = NULL;
+ALLEGRO_FONT* font = NULL, *AllegroFont = NULL; //!< Allegro fonts for storing fonts
 int SCREEN_WIDTH = 0, SCREEN_HEIGHT = 0, SCENE_NOW = 0, EventManagerThreadRunning = 1;
-ALLEGRO_FONT* AllegroFont = NULL;
-ALLEGRO_DISPLAY* display = NULL;
+
+ALLEGRO_DISPLAY* display = NULL;//!< Allegro's display for storing display
 float SCREEN_WIDTH_UNIT = 0, SCREEN_HEIGHT_UNIT = 0;
 ALLEGRO_PATH *path;
 FILE *targetFile;

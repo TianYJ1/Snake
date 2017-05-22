@@ -1,9 +1,0 @@
-digraph "Library merger"
-{
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  rankdir=LR;
-  Node1 [label="Constants of scenes id",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___c.html",tooltip="Scenes id These ids are requried to determine which scene is currenlty running and going to be run..."];
-  Node0 [label="Library merger",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node0->Node1 [shape=plaintext, dir="back", style="solid"];
-}

@@ -17,13 +17,13 @@ src/tests    | unit tests
 doc/         | documentation
 res/     | static resources
 ### Structure
-- \ref Main -> Core.h - menu module
-- Level.h - level drawer, game-play handler
-- MemoryWorker.h - manager of continous memory, based on bare parser
+- \ref Main -> \ref Core - menu module
+- \ref Level - level drawer, game-play handler
+- \ref MemoryWorker - manager of continous memory, based on bare parser
 - Managers:
-	+ SpriteRenderer.h - manager for rendering sprites from bitmaps
-	+ Button.h - button manager for handling clicks, writing text and placing sprites
-	+ Label.h - manager for labels
+	+ \ref SpriteRenderer - manager for rendering sprites from bitmaps
+	+ \ref Button - button manager for handling clicks, writing text and placing sprites
+	+ \ref Label - manager for labels
 
 ### Dependencies
 - [Allegro](http://liballeg.org/) framework \n
@@ -47,7 +47,8 @@ To rebuild everything from scratch, do the following:
 make clean
 ````
 #### Building Allegro #######
-#### Any Linux #######
+
+#### Any Linux ####
 ````
 cd ~; git clone git://github.com/liballeg/allegro5cd allegro5;git checkout 5.2; mkdir build; cd build
 sudo ccmake -DCMAKE_INSTALL_PREFIX=/usr ..
@@ -74,7 +75,7 @@ Do the following:
 ````
 make tests D_UNITY=<UNITY PATH>
 ````
-where <UNITY_PATH> is absolute path to your directory which contains Unity. After building everything, run **test-sokoban**.
+where \<UNITY_PATH\> is absolute path to your directory which contains Unity. After building everything, run **test-sokoban**.
 All tests will gone, if not - please, let us know
 ## Authors
 * **Arseniy Prosvirin** - arseniy.p@d7ss.com\n
@@ -93,10 +94,10 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 \brief Main\n
 There main entry point exists (without tests)
 */
-char * pathCur;//!< string for carrying path to folder which was last opened by user. Default: <resource_path>/Levels
-char names [128][128] = {0};
-char levelsPaths[256][128] = { 0 };
-char levelsNames[64][BUTTONS_NAME_SIZE];
+char * pathCur;//!< string for carrying path to folder which was last opened by user. Default: \<resource_path\>/Levels
+char names [DEFAULT_LENGTH][DEFAULT_LENGTH] = {0};
+char levelsPaths[DEFAULT_LENGTH][DEFAULT_LENGTH] = { 0 };
+char levelsNames[DEFAULT_LENGTH][BUTTONS_NAME_SIZE] = { 0 };
 int levelSelectPage = 0/*!< Page currently selected for viewing in level select*/, yOffset = 0/*!< Offset by y (needed for moving content by rotating mouse wheel, deprecated)*/;
 /*<
 	\brief Default entry point
@@ -115,6 +116,7 @@ int main(void)
 		Log_e(__func__, "InitVars error");
 		return -1;
 	}
+	else { /* Just nothing, just to meet the criteria*/ }
 	initButtons();
 	Log_i(__func__, "Initied\n================\n");
 	int(*callBacks[])(int id) = { openLevelSelect,ExitProg, sliceFile, openLevelEditor };
@@ -147,9 +149,9 @@ int main(void)
 	saveMem();
 	//al_rest(5.0);
 	//system("pause");
-	//al_destroy_font(font);
-	//al_destroy_display(display);
-	//al_destroy_path(path);
+	al_destroy_font(font);
+	al_destroy_display(display);
+	al_destroy_path(path);
 	return 0;
 
 }

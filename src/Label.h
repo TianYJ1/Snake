@@ -31,6 +31,7 @@ void renderLabelsSc();
 	@code
 			addLabel(1050, 450, 255, 90, 0, LEVEL_SCENE_PAUSE, ALLEGRO_ALIGN_CENTER, "LEFT:%i",50);
 	@endcode
+	@return label's id
 */
 int addLabel(float x, float y, int red, int green, int blue, int scene, int align, const char *text, ...);
 /** Converts char data from source to destination with memory allocation for new one (copying).
@@ -40,6 +41,7 @@ int addLabel(float x, float y, int red, int green, int blue, int scene, int alig
 	@code
 		changeText(countLId, "Now:%s-%i","left",50);
 	@endcode
+	@return 0 if label exists, -1 if not
 */
 int changeText(int labelId, const char *text, ...);
 /** Being called when screen was resized

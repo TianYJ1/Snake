@@ -9,8 +9,8 @@ This is for managing and rendering sprites
 */
 struct SpriteS
 {
-	ALLEGRO_BITMAP * bmp;
-	int id,scene, layer;
+	ALLEGRO_BITMAP * bmp;//!< Allegro's bitmap for storing bitmap
+	int id/*!< Unique id of label for search by it */, layer/*!< At which layer sprite should be rendered*/, scene;//!< scene id on which this label should be rendered
 	float posX, posY, width, height;
 };
 typedef struct SpriteS Sprite;
@@ -21,6 +21,8 @@ typedef struct SpriteS Sprite;
 	@param w [in] width in px
 	@param h [in] height by y in px
 	@param scene [in] scene id on which this label should be rendered
+	@param layer [in] layer number on which this label should be rendered
+	@return sprite id
 */
 int addSprite(char * src, int x, int y, int w, int h, int scene, int layer);
 /** Add new sprite
@@ -29,17 +31,19 @@ int addSprite(char * src, int x, int y, int w, int h, int scene, int layer);
 	@param y [in] postion by y in px
 	@param w [in] width in px
 	@param h [in] height by y in px
+	@param layer [in] layer number on which this label should be rendered
 	@param scene [in] scene id on which this label should be rendered
+	@return sprite id
 */
 int addSpriteBmp(ALLEGRO_BITMAP * src, int x, int y, int w, int h, int scene, int layer);
 /** Being called when rendering sprites
+	@param layer layer to render
 */
 void renderSprites(int layer);
 /** Change sprite postion
 	@param spriteId [in] unique id of sprite
 	@param x [in] amount in pixels to move on by x (delta)
 	@param y [in] amount in pixels to move on by y (delta)
-
 */
 int moveSprite(int spriteId, int x, int y);
 /** Being called when screen was resized
@@ -69,13 +73,18 @@ int moveSpriteTo(int spriteId, int x, int y);
 /** Converts char data from source to destination with memory allocation for new one (copying).
 	@param spriteId [in] unique id of
 	@param src [in] bitmap of sprite (formatted)
+	@return 0 if sprite exists, else -1
 */
 void changeSprite(int spriteId, const char * src, ...);
-Sprite *getStruct(int id);
-/** Converts char data from source to destination with memory allocation for new one (copying).
-	@param id [in] unique id of sprite
-	@return Sprite expected sprite or NULL if not exists
+/** Get Sprite by it's index in array
+	@return Sprite
 */
+Sprite *getStruct(int id);
+/** Get Sprite by it's id
+	@return Sprite
+*/
+Sprite *getStructById(int id);
+
 /**
 @}
 */

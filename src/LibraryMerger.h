@@ -52,10 +52,10 @@ Defining constants
 #define LEVEL_WIDTH 15 //!< Cells amount in width
 #define SEED_LENTGH 5 //!< Requried for level generator, not yet implemented
 #define TILE_SIZE 64 //!< Size of cells on level in pixels
-#define SPRITES_LAYERS_AMOUNT 16
+#define SPRITES_LAYERS_AMOUNT 16 //!< Amount of layers for sprites rendering
 #define LEVEL_SELECT_ITEMS_PER_PAGE 12 //!< Amount of levels showed on Level Select Scene on any page (max)
 /*!
- \addtogroup C Constants of scenes id
+ \addgroup Const Constants of scenes id
 	\brief Scenes id
 	These ids are requried to determine which scene is currenlty running and going to be run. It's much easier to use friendly names.
 @{	
@@ -78,9 +78,10 @@ extern ALLEGRO_FONT* font, *AllegroFont; //!< Allgero font for rendering
 extern ALLEGRO_PATH *path; //!< Temp var for allegro while looping over levels in selected folder
 extern char * resourcePath;//!< Path to resources where system find directory if presented or null if no resources found
 extern int map[LEVEL_HEIGHT][LEVEL_WIDTH]; //!< Array for storing current running level map
-extern char levelsPaths[256][128]; //!< Array for storing paths to levels from folder selected by user to choose level from
-extern char levelsNames[64][BUTTONS_NAME_SIZE]; //!< Names of levels for show in level select
+extern char levelsPaths[DEFAULT_LENGTH][DEFAULT_LENGTH]; //!< Array for storing paths to levels from folder selected by user to choose level from
+extern char levelsNames[DEFAULT_LENGTH][BUTTONS_NAME_SIZE]; //!< Names of levels for show in level select
 extern ArrayElement *spritesArr; //!< Array for storing all sprites in games (Based on Array.h: list array)
+extern ALLEGRO_SAMPLE *menuSample /*!< Allegro's sample for playing in menu*/, *levelSample/*!< Allegro's sample for playing on level*/;
 /**
 @}
 */

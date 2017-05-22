@@ -23,7 +23,7 @@ int addSpriteBmp(ALLEGRO_BITMAP * src, int x, int y, int w, int h, int scene, in
 		return -1;
 	Sprite newSprite;
 	newSprite.bmp = src;
-	newSprite.id = arraySize(spritesArr);
+	newSprite.id = lastId++;// arraySize(spritesArr);
 	newSprite.posX = x; newSprite.posY = y;
 	newSprite.width = w; newSprite.height = h;
 	newSprite.scene = scene; newSprite.layer = layer;
@@ -66,7 +66,8 @@ void renderSprites(int layer)
 	for (int i = 0; i < arraySize(spritesArr); i++)
 	{
 		Sprite *curSprite = getStruct(i);
-
+		if (curSprite == NULL)
+			continue;
 		int sprLayer = curSprite->layer, sprScene = curSprite->scene;
 		if ((sprLayer == -1 || sprLayer == layer) && (sprScene == SCENE_NOW || sprScene == -1) && curSprite->bmp)
 		{
@@ -85,7 +86,6 @@ Sprite *getStruct(int i)
 {
 	Sprite *curSprite = malloc(sizeof(Sprite));
 	Sprite *newSpr = get(spritesArr, i);
-	
 	if (newSpr)
 	{
 		memcpy(curSprite, newSpr, sizeof(Sprite));
@@ -94,11 +94,27 @@ Sprite *getStruct(int i)
 	else
 		return NULL;
 }
+Sprite *getStructById(int id)
+{
+	Sprite *curSprite = malloc(sizeof(Sprite));
+	ArrayElement *cur = spritesArr;
+	while (cur)
+	{
+		curSprite = (Sprite *)cur->container;
+		ArrayElement *next = cur->linkToNext;
+		if (curSprite->id == id)
+			break;
+		if (!next)
+			return NULL;
+		cur = next;
+	}
+	return curSprite;
+}
 int moveSprite(int spriteId, int x, int y)
 {
-	if (spriteId <  arraySize(spritesArr))
+	Sprite * curSprite = getStructById(spriteId);
+	if (curSprite)
 	{
-		Sprite * curSprite = getStruct(spriteId);
 		curSprite->posX += x; curSprite->posY += y;
 		set(spritesArr, spriteId, curSprite, sizeof(curSprite));
 		renderScreen();
@@ -108,9 +124,10 @@ int moveSprite(int spriteId, int x, int y)
 }
 int moveSpriteTo(int spriteId, int x, int y)
 {
-	if (spriteId <  arraySize(spritesArr))
+	Sprite * curSprite = getStructById(spriteId);
+	if (curSprite)
 	{
-		Sprite * curSprite = getStruct(spriteId);
+		
 		curSprite->posX = x; curSprite->posY = y;
 		set(spritesArr, spriteId, curSprite, sizeof(curSprite));
 		renderScreen();

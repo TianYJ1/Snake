@@ -3,8 +3,9 @@
 ArrayElement *getLastEl(const ArrayElement *arrayC);
 int arraySize(const ArrayElement *arrayC)
 {
-	 if (!arrayC)
-		 return 0;
+	if (!arrayC)
+		return 0;
+	else { /* Just nothing, just to meet the criteria*/ }
 	int ret = 0;
 	for (const ArrayElement *cur = arrayC; cur; cur = cur->linkToNext, ++ret);
 	return ret;
@@ -13,6 +14,7 @@ byte *get(ArrayElement *arrayC, int i)
 {
 	if (i > arraySize(arrayC))
 		return NULL;
+	else { /* Just nothing, just to meet the criteria*/ }
 	ArrayElement *cur = arrayC;
 	while (cur && cur->linkToNext && (i--) > 0)
 		cur = cur->linkToNext;
@@ -80,6 +82,7 @@ void set(const ArrayElement *arrayC, int i, const byte * cont, const size_t size
 void removeEl(ArrayElement *arrayC, int i)
 {
 	if (i < 0 || i >= arraySize(arrayC)) return;
+	else { /* Just nothing, just to meet the criteria*/ }
 	ArrayElement *toRemove = getEl(arrayC, i);
 	removeElOb(arrayC, &toRemove);
 	
@@ -96,7 +99,6 @@ void removeElOb(ArrayElement **arrayC, ArrayElement *toRemove)
 			free(*arrayC);
 			next->linkToPrev = NULL;
 			(*arrayC) = next;
-			
 		}
 		else
 		{
@@ -152,7 +154,7 @@ void removeLast(const ArrayElement *arrayC)
 		free(toRemove->container);
 		free(toRemove);
 	}
-	
+	else { /* Just nothing, just to meet the criteria*/ }
 }
 void clear(ArrayElement **arrayC)
 {
@@ -165,6 +167,7 @@ void clear(ArrayElement **arrayC)
 			free(cur->container);
 			free(cur);
 		}
+		else { /* Just nothing, just to meet the criteria*/ }
 		cur = NULL;
 	}
 	free(*arrayC);
@@ -174,6 +177,7 @@ ArrayElement *getLastEl(const ArrayElement *arrayC)
 {
 	if (arrayC == NULL)
 		return NULL;
+	else { /* Just nothing, just to meet the criteria*/ }
 	ArrayElement *cur = arrayC;
 	while (cur->linkToNext)
 		cur = cur->linkToNext;
@@ -183,6 +187,7 @@ byte *getLast(const ArrayElement *arrayC)
 {
 	if (arrayC == NULL)
 		return NULL;
+	else { /* Just nothing, just to meet the criteria*/ }
 	ArrayElement *cur = arrayC;
 	while (cur->linkToNext)
 		cur = cur->linkToNext;
@@ -208,6 +213,7 @@ void sortArray(ArrayElement **arrayC, int(*compare)(byte *, byte *))
 				a1->container = a2->container;
 				a2->container = newT;
 			}
+			else { /* Just nothing, just to meet the criteria*/ }
 		}
 	}
 }

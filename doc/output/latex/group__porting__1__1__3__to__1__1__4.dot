@@ -1,9 +1,0 @@
-digraph "Porting from FLAC 1.1.3 to 1.1.4"
-{
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  rankdir=LR;
-  Node1 [label="Porting Guide for New\l Versions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__porting.html"];
-  Node0 [label="Porting from FLAC 1.1.3\l to 1.1.4",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node1->Node0 [shape=plaintext, dir="back", style="solid"];
-}

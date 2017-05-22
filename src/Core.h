@@ -1,4 +1,5 @@
 #pragma once
+#define DEFAULT_LENGTH 128
 /*!
 @file Core.h
 \defgroup Core Core
@@ -58,28 +59,55 @@ void convertConstCopy(const char *source, char **toChr);
 
 /** Open dialog for user to choose folder to work with (Callback function)
 	@param i number of button clicked
+	@return doesn't matter, used int for pointing
 */
 int openFolderDialog(int i);
-/** Button for slicing was clicked (Callback function)
-@param i number of button clicked
+/**
+	Shows dialog for slicing file when user clicked. Then slices it and output to selected folder
+	@param i number of button clicked
+	@return doesn't matter, used int for pointing
 */
-
 int sliceFile(int i);
-
+/**
+	Turns user to next page on level select
+	@param i number of button clicked
+	@return doesn't matter, used int for pointing
+*/
 int nextPage(int i);
+/**
+	Turns user to previous page on level select
+	@param i number of button clicked
+	@return doesn't matter, used int for pointing
+*/
 int prevPage(int i);
+/**
+	Show level select when user clicks the following button
+	@param i number of button clicked
+	@return doesn't matter, used int for pointing
+*/
 int openLevelSelect(int i);
+/**
+	When user clicks button to change folder
+	@param i number of button clicked
+	@return doesn't matter, used int for pointing
+*/
 int showDirectoryListing(int i);
+/**
+	When user selects button to open level editor
+	@param i number of button clicked
+	@return doesn't matter, used int for pointing
+*/
 int openLevelEditor(int i);
 /** Clicked button for exiting game(Callback function)
-@param i number of button clicked
+	@param i number of button clicked
+	@return doesn't matter, used int for pointing
 */
 int ExitProg(int i);
 
-extern char names [128][128];//!< Array for storing levels names currently vewing in level select 
+extern char names [DEFAULT_LENGTH][DEFAULT_LENGTH];//!< Array for storing levels names currently vewing in level select 
 extern char * pathCur; //!< Temporary string for storing current chosen 
-extern char levelsPaths[256][128];//!< Array for storing levels pathes currently vewing in level select 
-extern char levelsNames[64][BUTTONS_NAME_SIZE];//!< Array for storing levels names currently vewing in level select 
+extern char levelsPaths[DEFAULT_LENGTH][DEFAULT_LENGTH];//!< Array for storing levels pathes currently vewing in level select 
+extern char levelsNames[DEFAULT_LENGTH][BUTTONS_NAME_SIZE];//!< Array for storing levels names currently vewing in level select 
 extern int levelSelectPage, yOffset;
 /**
 @}
