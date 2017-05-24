@@ -26,7 +26,7 @@ typedef struct SArrayElement ArrayElement;
 	@param arrayC link to array (first element)
 	@return array's size
 */
-int arraySize(const ArrayElement *arrayC);
+int arraySize(ArrayElement *arrayC);
 /**
 	Get object at i position
 	@param arrayC link to array (first element)
@@ -41,7 +41,7 @@ byte *get(ArrayElement *arrayC, int i);
 	@param size size of your object in bytes (e.g sizeof() )
 	@return index where object was putted
 */
-int add(ArrayElement **arrayC, const byte * cont, const size_t size);
+int add(ArrayElement **arrayC, byte * cont, size_t size);
 /**
 	Add new object to array at specific position
 	@param arrayC link to array (first element)
@@ -50,7 +50,7 @@ int add(ArrayElement **arrayC, const byte * cont, const size_t size);
 	@param size size of your object in bytes (e.g sizeof() )
 	@return index where object was putted
 */
-int addInd(const ArrayElement *arrayC, int i, const byte * cont, const size_t size);
+int addInd(ArrayElement *arrayC, int i, byte * cont, size_t size);
 /**
 	Remove object at postion
 	@param arrayC link to array (first element)
@@ -61,7 +61,7 @@ void removeEl(ArrayElement *arrayC, int i);
 	Remove last object in list
 	@param arrayC link to array (first element)
 */
-void removeLast(const ArrayElement *arrayC);
+void removeLast(ArrayElement *arrayC);
 /**
 	Remove object by link to this object. To use it publicly, call removeCont
 	@see removeCont()
@@ -74,7 +74,7 @@ void removeElOb(ArrayElement **arrayC, ArrayElement *toRemove);
 	@param arrayC link to array (first element)
 	@param cont object to remove from array
 */
-void removeCont(ArrayElement **arrayC, const byte * cont);
+void removeCont(ArrayElement **arrayC, byte * cont);
 /**
 	Clear specified array
 	@param arrayC link to array (first element)
@@ -87,7 +87,7 @@ void clear(ArrayElement **arrayC);
 	@param cont your object to put
 	@param size size of your object in bytes (e.g sizeof() )
 */
-void set(const ArrayElement *arrayC, int i, const byte * cont, const size_t size);
+void set(ArrayElement *arrayC, int i, byte * cont, size_t size);
 /**
 	Joining two arrays into one.
 	@param *firstArray link first to array (first element)
@@ -118,13 +118,13 @@ void sortArray(ArrayElement **arrayC, int(*compare)(byte *, byte *));
 	@param cont your object for
 	@return index of object
 */
-int findInd(const ArrayElement *arrayC, const byte * cont);
+int findInd(ArrayElement *arrayC, byte * cont);
 /**
 	Get last object in the array
 	@param arrayC link first to array (first element)
 	@return object requested or NULL if array is empty
 */
-byte *getLast(const ArrayElement *arrayC);
+byte *getLast(ArrayElement *arrayC);
 /**
 @}
 */

@@ -52,14 +52,10 @@ void changeSprite(int spriteId, const char * src, ...)
 	if (bmp == NULL)
 	{
 		Log_e(__func__, "ERROR Loading sprite %s:No file", buf);
-		return -1;
+		return;
 	}
 	curSprite->bmp = bmp;
-	set(spritesArr, i, curSprite, sizeof(curSprite));
-}
-void renderSrpite(int id)
-{
-
+	set(spritesArr, i, (byte *)curSprite, sizeof(curSprite));
 }
 void renderSprites(int layer)
 {
@@ -85,7 +81,7 @@ void renderSprites(int layer)
 Sprite *getStruct(int i)
 {
 	Sprite *curSprite = malloc(sizeof(Sprite));
-	Sprite *newSpr = get(spritesArr, i);
+	Sprite *newSpr = (Sprite *)get(spritesArr, i);
 	if (newSpr)
 	{
 		memcpy(curSprite, newSpr, sizeof(Sprite));
@@ -116,7 +112,7 @@ int moveSprite(int spriteId, int x, int y)
 	if (curSprite)
 	{
 		curSprite->posX += x; curSprite->posY += y;
-		set(spritesArr, spriteId, curSprite, sizeof(curSprite));
+		set(spritesArr, spriteId, (byte *)curSprite, sizeof(curSprite));
 		renderScreen();
 		return 0;
 	}
@@ -129,7 +125,7 @@ int moveSpriteTo(int spriteId, int x, int y)
 	{
 		
 		curSprite->posX = x; curSprite->posY = y;
-		set(spritesArr, spriteId, curSprite, sizeof(curSprite));
+		set(spritesArr, spriteId, (byte *)curSprite, sizeof(curSprite));
 		renderScreen();
 		return 0;
 	}
@@ -142,7 +138,7 @@ void recalcSprites(float hC, float vC)
 		Sprite *curSprite = getStruct(i);
 		curSprite->posX *= hC; curSprite->posY *= vC;
 		curSprite->width *= hC; curSprite->height*= vC;
-		set(spritesArr, i, curSprite, sizeof(curSprite));
+		set(spritesArr, i, (byte *)&curSprite, sizeof(curSprite));
 	}
 }
 void clearSpritesScene(int scene)

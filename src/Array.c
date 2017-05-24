@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "Array.h"
-ArrayElement *getLastEl(const ArrayElement *arrayC);
-int arraySize(const ArrayElement *arrayC)
+ArrayElement *getLastEl(ArrayElement *arrayC);
+int arraySize(ArrayElement *arrayC)
 {
 	if (!arrayC)
 		return 0;
@@ -27,13 +27,14 @@ ArrayElement *getEl(ArrayElement *arrayC, int i)
 {
 	if (i > arraySize(arrayC))
 		return NULL;
+	else { /* Just nothing, just to meet the criteria*/ }
 	ArrayElement *cur = arrayC;
 	while (cur->linkToNext && (i--) > 0)
 		cur = cur->linkToNext;
 	return cur;
 }
 
-int add(ArrayElement **arrayC, const byte * cont, const size_t size)
+int add(ArrayElement **arrayC, byte * cont, size_t size)
 {
 	ArrayElement *newEl = malloc(sizeof(ArrayElement));
 	newEl->container = (byte*)malloc(size);
@@ -53,12 +54,13 @@ int add(ArrayElement **arrayC, const byte * cont, const size_t size)
 	}
 	return arraySize(*arrayC) - 1;
 }
-int addInd(const ArrayElement *arrayC, int i,const byte * cont, const size_t size)
+int addInd(ArrayElement *arrayC, int i, byte * cont, size_t size)
 {
 	if (i < 0 || i > arraySize(arrayC))
 		return 0;
+	else { /* Just nothing, just to meet the criteria*/ }
 	if (i == 0)
-		add(arrayC, cont, size);
+		add(&arrayC, cont, size);
 	else
 	{
 		ArrayElement *prev = getEl(arrayC, i), *next = prev->linkToNext;
@@ -72,7 +74,7 @@ int addInd(const ArrayElement *arrayC, int i,const byte * cont, const size_t siz
 	}
 	return i;
 }
-void set(const ArrayElement *arrayC, int i, const byte * cont, const size_t size)
+void set(ArrayElement *arrayC, int i, byte * cont, size_t size)
 {
 	if (i < 0 || i > arraySize(arrayC))
 		return;
@@ -84,7 +86,7 @@ void removeEl(ArrayElement *arrayC, int i)
 	if (i < 0 || i >= arraySize(arrayC)) return;
 	else { /* Just nothing, just to meet the criteria*/ }
 	ArrayElement *toRemove = getEl(arrayC, i);
-	removeElOb(arrayC, &toRemove);
+	removeElOb(&arrayC, toRemove);
 	
 }
 void removeElOb(ArrayElement **arrayC, ArrayElement *toRemove)
@@ -124,7 +126,7 @@ void removeElOb(ArrayElement **arrayC, ArrayElement *toRemove)
 	}
 
 }
-int findInd(const ArrayElement *arrayC, const byte * cont)
+int findInd(ArrayElement *arrayC, byte * cont)
 {
 	if (arrayC == NULL)
 		return -1;
@@ -139,13 +141,13 @@ int findInd(const ArrayElement *arrayC, const byte * cont)
 	}
 	return ind;
 }
-void removeCont(ArrayElement **arrayC, const byte * cont)
+void removeCont(ArrayElement **arrayC, byte * cont)
 {
 	int ind = findInd(*arrayC, cont);
 	if (ind >= 0)
 		removeEl(*arrayC, ind);
 }
-void removeLast(const ArrayElement *arrayC)
+void removeLast(ArrayElement *arrayC)
 {
 	ArrayElement *toRemove = getLastEl(arrayC), *prev = toRemove->linkToPrev;
 	if (toRemove != NULL)
@@ -173,7 +175,7 @@ void clear(ArrayElement **arrayC)
 	free(*arrayC);
 	*arrayC = NULL;
 }
-ArrayElement *getLastEl(const ArrayElement *arrayC)
+ArrayElement *getLastEl(ArrayElement *arrayC)
 {
 	if (arrayC == NULL)
 		return NULL;
@@ -183,7 +185,7 @@ ArrayElement *getLastEl(const ArrayElement *arrayC)
 		cur = cur->linkToNext;
 	return cur;
 }
-byte *getLast(const ArrayElement *arrayC)
+byte *getLast(ArrayElement *arrayC)
 {
 	if (arrayC == NULL)
 		return NULL;

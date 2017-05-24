@@ -5,8 +5,8 @@ PROJECT  := sokoban
 # ------------------
 # External programs
 # ------------------
-CC  := gcc -g -w
-RM  := rm -rf
+CC  := gcc -g 
+RM  := rm -rf 
 DG  := doxygen
 
 # --------------------
@@ -36,7 +36,7 @@ FILES_O  := $(FILES_C:.c=.o)
 # ------------
 # Flags
 # ------------
-CFLAGS  := -lm
+CFLAGS  := -lm -Wall
 CFLAGS  += -std=c99
 LFLAGS  :=
 LIBS := `pkg-config --libs allegro-5 allegro_font-5 allegro_image-5 allegro_image-5 allegro_memfile-5 allegro_primitives-5 allegro_image-5 allegro_image-5 allegro_acodec-5 allegro_ttf-5 allegro_main-5.0 allegro_dialog-5` -lm

@@ -17,7 +17,7 @@ int onExit(int id)
 	clearButtons(LEVEL_SCENE);
 	clearButtons(LEVEL_SCENE_PAUSE);
 	renderScreen();
-	return 1;
+	return 0;
 }
 int playerSpriteId = 0, cratesLeftLabelId = 0, pushesMade = 0, pushesMadeLabelId = 0, movesMade = 0;
 int mapSprites[LEVEL_HEIGHT][LEVEL_WIDTH];
@@ -33,7 +33,7 @@ int onPause(int id)
 	addLabel(SCREEN_WIDTH_UNIT * 1050, SCREEN_HEIGHT_UNIT * 450, 255, 90, 0, LEVEL_SCENE_PAUSE, ALLEGRO_ALIGN_CENTER, "PAUSE");
 	renderScreen();
 
-	return 1;
+	return 0;
 }
 
 int onResume(int id)
@@ -41,13 +41,13 @@ int onResume(int id)
 	clearButtons(LEVEL_SCENE_PAUSE);
 	changeScene(LEVEL_SCENE);
 	renderScreen();
-	return 1;
+	return 0;
 }
 char seed[SEED_LENTGH * 8] = { 0 };
 char cratesSeed[SEED_LENTGH * 8] = { 0 };
 int regen(int id)
 {
-	clearSprites(LEVEL_SCENE, 2);
+	/*clearSprites(LEVEL_SCENE, 2);
 	memset(seed, 0, SEED_LENTGH * 8);
 	memset(cratesSeed, 0, SEED_LENTGH * 8);
 	//generateSeed(&seed,25);
@@ -56,7 +56,8 @@ int regen(int id)
 	addButtonSprite("", cratesSeed, SCREEN_WIDTH_UNIT * 500, SCREEN_HEIGHT_UNIT * 1700, SCREEN_WIDTH_UNIT * 800, 150, 255, 255, 255, NULL, LEVEL_SCENE, 0, 0);
 	generate(map, 3);
 	renderMap();
-	renderScreen();
+	renderScreen();*/
+	return 0;
 }
 /*
 1 A-Z //rooms sizes
@@ -77,6 +78,7 @@ int restart(int i)
 	else
 		playLevel(0);
 	//renderMap();
+	return 0;
 }
 
 int x = 0, y = 0, cratesCountN =0;
@@ -98,7 +100,7 @@ void onLevelFileOpened(int levelNum, int playerX, int playerY, int cratesCount)
 void onLevelOpened(int levelId)
 {
 
-	//generateSeed(&seed, 5);
+	/*generateSeed(&seed, 5);
 	//generate(map, 3);
 	renderMap();
 	//addButtonSprite("btntile.png", "Regen", SCREEN_WIDTH_UNIT*1500, 0, SCREEN_WIDTH_UNIT * 200, SCREEN_WIDTH_UNIT * 100, 255, 255, 255, (*regen), LEVEL_SCENE, 0, 0);
@@ -113,7 +115,7 @@ void onLevelOpened(int levelId)
 	}
 	x = i; y = i;
 	playerSpriteId = addSprite("Level/Player/Character1.png", SCREEN_WIDTH_UNIT* MAP_OFFSET + TILE_SIZE*SCREEN_WIDTH_UNIT*i, SCREEN_WIDTH_UNIT *MAP_OFFSET + TILE_SIZE*SCREEN_WIDTH_UNIT*i, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, SCENE_NOW, 3);
-	renderScreen();
+	renderScreen();*/
 }
 void renderMap()
 {
@@ -149,7 +151,7 @@ int openNextLevel(int i)
 {
 	clearButtons(LEVEL_SCENE);
 	openLevel(levelNumC+1);
-
+	return 0;
 }
 void onLevelComlete()
 {

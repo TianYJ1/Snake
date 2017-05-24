@@ -46,7 +46,7 @@ Including all psedo-classes (managers) of the project for giving access everythi
 /*<
 Defining constants
 **/
-#define DEBUG_MODE 1//!< Debug mode is setting debug mode to true if 1. In this mode screen is half-size and windowned
+#define DEBUG_MODE 0//!< Debug mode is setting debug mode to true if 1. In this mode screen is half-size and windowned
 
 #define LEVEL_HEIGHT 15 //!< Determines cells amount in height at level
 #define LEVEL_WIDTH 15 //!< Cells amount in width

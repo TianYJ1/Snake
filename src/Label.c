@@ -1,14 +1,13 @@
-#pragma once
 #include "LibraryMerger.h"
 ArrayElement * labelsArr = NULL;
 Label *getStructLabel(int i)
 {
-	Label *curButt = malloc(sizeof(Label));
-	Label *newBt = get(labelsArr, i);
-	if (newBt)
+	Label *curLab = malloc(sizeof(Label));
+	Label *newLab = (Label *)get(labelsArr, i);
+	if (newLab)
 	{
-		memcpy(curButt, newBt, sizeof(Label));
-		return newBt;
+		memcpy(curLab, newLab, sizeof(Label));
+		return newLab;
 	}
 	else
 		return NULL;
@@ -17,11 +16,11 @@ void renderLabelsSc()
 {
 	for (int i = 0; i < arraySize(labelsArr); i++)
 	{
-		Label *curButt = getStructLabel(i);
-		if (curButt->scene == SCENE_NOW || curButt->scene == -1)
+		Label *curLab = getStructLabel(i);
+		if (curLab->scene == SCENE_NOW || curLab->scene == -1)
 		{
-			ALLEGRO_COLOR color = al_map_rgb(curButt->r, curButt->g, curButt->b);
-			al_draw_textf(font, color, curButt->posX, curButt->posY, curButt->align, "%s", curButt->text);
+			ALLEGRO_COLOR color = al_map_rgb(curLab->r, curLab->g, curLab->b);
+			al_draw_textf(font, color, curLab->posX, curLab->posY, curLab->align, "%s", curLab->text);
 		}
 	}
 
@@ -57,7 +56,7 @@ int changeText(int labelId, const char *text, ...)
 		Label *curLabel = getStructLabel(labelId);
 		curLabel->text = malloc(sizeof(buf));
 		memcpy(curLabel->text, buf, sizeof(buf));
-		set(labelsArr, labelId, curLabel, sizeof(curLabel));
+		set(labelsArr, labelId, (byte *)&curLabel, sizeof(curLabel));
 		renderScreen();
 		return 0;
 	}
@@ -68,9 +67,9 @@ void recalcLabels(float hC, float vC)
 
 	for (int i = 0; i < arraySize(labelsArr); i++)
 	{
-		Label *curButt = getStructLabel(i);
-		curButt->posX *= hC; curButt->posY *= vC;
-		set(labelsArr, i, curButt, sizeof(curButt));
+		Label *curLab = getStructLabel(i);
+		curLab->posX *= hC; curLab->posY *= vC;
+		set(labelsArr, i, (byte *)&curLab, sizeof(curLab));
 	}
 	renderLabelsSc();
 }

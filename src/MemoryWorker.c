@@ -39,7 +39,7 @@ void putMem(char *key, char *data)
 		if (strcmp(memEl->key,key) == 0)
 		{
 			memEl->data = data;
-			set(memArr, i, memEl, sizeof(memEl));
+			set(memArr, i, (byte *)&memEl, sizeof(memEl));
 			return;
 		}
 		if (!next)
@@ -60,15 +60,15 @@ void loadMem()
 		Log_e(__func__, "opening saving data file error");
 		return;
 	}
-	char str[256] = { 0 };
+	char str[DEFAULT_LENGTH] = { 0 };
 	while (fgets(str, sizeof(str), saverFile) != NULL)
 	{
 		char *eq = strstr(str, "=");
 		if (eq)
 		{
 			char *data = malloc(sizeof(str)), *key = malloc(sizeof(str));
-			memset(data, 0, sizeof(data));
-			memset(key, 0, sizeof(key));
+			memset(data, 0, sizeof(&data));
+			memset(key, 0, sizeof(&key));
 			memcpy(key, str, eq - str);
 			key[eq - str] = 0;
 			memcpy(data, eq + 1, str + sizeof(str) - eq);

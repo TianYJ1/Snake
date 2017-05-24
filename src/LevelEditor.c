@@ -10,13 +10,14 @@ int onRightMouseClicked(int x, int y)
 {
 	int temp = currentInstrument;
 	currentInstrument = 0;
-	mouseClicked(x, y);
+	int ret = mouseClicked(x, y);
 	currentInstrument = temp;
+	return ret;
 }
 int mouseClicked(int y, int x)
 {
 	if (lastX == x && lastY == y)
-		return;
+		return 0;
 	x -= SCREEN_WIDTH_UNIT * 10;
 	y -= SCREEN_WIDTH_UNIT * 10;
 	x /= TILE_SIZE*SCREEN_WIDTH_UNIT;
@@ -113,18 +114,19 @@ int saveDialog(int i)
 		}
 		fclose(destFile);
 	}
+	return 0;
 }
 int selectSand(int i)
 {
 	currentInstrument = 0;
 	moveSpriteTo(pointerArrayId, SCREEN_WIDTH_UNIT * 1750, SCREEN_WIDTH_UNIT * 120 * currentInstrument);
-	
+	return 0;
 }
 int selectWall(int i)
 {
 	currentInstrument = 1;
 	moveSpriteTo(pointerArrayId, SCREEN_WIDTH_UNIT * 1750, SCREEN_WIDTH_UNIT * 120 * currentInstrument);
-	
+	return 0;
 }
 int clearEl(int i)
 {
@@ -141,27 +143,32 @@ int clearEl(int i)
 		}
 	}
 	renderMapLE();
+	return 0;
 }
 int selectExit(int i)
 {
 	currentInstrument = 2;
 	moveSpriteTo(pointerArrayId, SCREEN_WIDTH_UNIT * 1750, SCREEN_WIDTH_UNIT * 120 * currentInstrument);
+	return 0;
 }
 int selectCrate(int i)
 {
 	currentInstrument = 3;
 	moveSpriteTo(pointerArrayId, SCREEN_WIDTH_UNIT * 1750, SCREEN_WIDTH_UNIT * 120 * currentInstrument);
+	return 0;
 }
 int selectEXitCrate(int i)
 {
 	currentInstrument = 4;
 	moveSpriteTo(pointerArrayId, SCREEN_WIDTH_UNIT * 1750, SCREEN_WIDTH_UNIT * 120 * currentInstrument);
+	return 0;
 }
 
 int onExitLE(int i)
 {
 	clearButtons(LEVEL_EDITOR_SCENE);
 	changeScene(MAINMENU_SCENE);
+	return 0;
 }
 int playLevel(int i)
 {
@@ -178,12 +185,13 @@ int playLevel(int i)
 		}
 	}
 	onLevelFileOpened(-1, playerY, playerX, cratesCount);
-	
+	return 0;	
 }
 int selectPlayer(int i)
 {
 	currentInstrument = 5;
 	moveSpriteTo(pointerArrayId, SCREEN_WIDTH_UNIT * 1750, SCREEN_WIDTH_UNIT * 120 * currentInstrument);
+	return 0;
 }
 int openFileLoadDialog(int i)
 {
@@ -196,6 +204,7 @@ int openFileLoadDialog(int i)
 		loadFromFile("%s", pathSource);
 		
 	}
+	return 0;
 }
 void onLevelEditorOpened()
 {
@@ -223,10 +232,8 @@ void onLevelEditorOpened()
 	addButtonSprite("Button_play.png", "", SCREEN_WIDTH_UNIT * 0, SCREEN_WIDTH_UNIT * 240, SCREEN_WIDTH_UNIT * 120, SCREEN_WIDTH_UNIT * 120, 255, 255, 255, (*playLevel), LEVEL_EDITOR_SCENE, 0, 3);
 	addButtonSprite("GUI/menu.png", "", SCREEN_WIDTH_UNIT * 0, SCREEN_WIDTH_UNIT * 360, SCREEN_WIDTH_UNIT * 120, SCREEN_WIDTH_UNIT * 120, 255, 255, 255, (*onExitLE), LEVEL_EDITOR_SCENE, 0, 3);
 	addButtonSprite("GUI/replay.png", "", SCREEN_WIDTH_UNIT * 0, SCREEN_WIDTH_UNIT * 480, SCREEN_WIDTH_UNIT * 120, SCREEN_WIDTH_UNIT * 120, 255, 255, 255, (*clearEl), LEVEL_EDITOR_SCENE, 0, 3);
-	
 
-	renderMapLE();
-	
+	renderMapLE();	
 }
 void loadFromFile(const char * src, ...)
 {
@@ -240,14 +247,12 @@ void loadFromFile(const char * src, ...)
 	{
 		FILE *sourceFile = fopen(buf, "r");
 		char str[256];
-		bool prevStrIsData = false;
 		int y = 0;
 		for (int q = 0; q < LEVEL_HEIGHT; q++)
 		{
 			for (int i = 0; i < LEVEL_WIDTH; i++)
 				mapLE[q][i] = 0;
 		}
-		int cratesCount = 0;
 		while (fgets(str, sizeof(str), sourceFile) != NULL)
 		{
 			for (int i = 0; i < strlen(str); i++)
@@ -289,10 +294,8 @@ void loadFromFile(const char * src, ...)
 		}
 		fclose(sourceFile);
 	}
-	pointerArrayId;
 	//pointerArrayId = addSprite("GUI/pointerArray.png", SCREEN_WIDTH_UNIT * 1750, 0, SCREEN_WIDTH_UNIT * 120, SCREEN_WIDTH_UNIT * 120, LEVEL_EDITOR_SCENE, 2);
 	renderMapLE();
-	pointerArrayId;
 }
 void renderMapLE()
 {

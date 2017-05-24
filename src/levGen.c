@@ -1,9 +1,9 @@
 #include "LibraryMerger.h"
-
+/*
 void generateSeed(char * seed, int difficul)
 {
 	
-	/*for (int i = 0; i < difficul *8; i += 8)
+	for (int i = 0; i < difficul *8; i += 8)
 	{
 		if (i >= SEED_LENTGH * 8)
 			break;
@@ -19,9 +19,9 @@ void generateSeed(char * seed, int difficul)
 		//CB0B0000
 	}
 	
-	Log_i(__func__, "Seed:%s", seed);*/
+	Log_i(__func__, "Seed:%s", seed);**
 }
-/*
+**
 	
 	//rooms seeds
 	1 A-Z //rooms sizes
@@ -62,9 +62,8 @@ void generateSeed(char * seed, int difficul)
 	6 0-9 //postion x
 	7 0-9 
 	8 0-9 //postion y
-*/
-
-/*int generate(int map[LEVEL_HEIGHT][LEVEL_WIDTH] ,char * seed, int cratesCount)
+**
+int generate(int map[LEVEL_HEIGHT][LEVEL_WIDTH] ,char * seed, int cratesCount)
 {
 	for (int i = 0; i < LEVEL_WIDTH; i++)
 	{
@@ -115,7 +114,7 @@ void generateSeed(char * seed, int difficul)
 		}
 		char wallEmpty = seed[i + 1];
 		int wallsCount = seed[i + 3] - '0';
-		/*
+		**
 		A - left
 		B - right
 		C - top
@@ -172,7 +171,7 @@ void generateSeed(char * seed, int difficul)
 			map[LEVEL_HEIGHT - crateY - 1][LEVEL_WIDTH - crateX - 1] = 3;
 		}
 	}
-}*/
+}**
 int wallCountAround(int x, int y)
 {
 	int count = 0;
@@ -240,7 +239,7 @@ int generate(int map[LEVEL_HEIGHT][LEVEL_WIDTH], int cratesCount)
 		map[q][LEVEL_WIDTH-1] = 1;
 	}
 }
-/*int generate(int map[LEVEL_HEIGHT][LEVEL_WIDTH], int cratesCount)
+**int generate(int map[LEVEL_HEIGHT][LEVEL_WIDTH], int cratesCount)
 {
 	for (int i = 0; i < LEVEL_WIDTH; i++)
 	{
@@ -293,7 +292,7 @@ int generate(int map[LEVEL_HEIGHT][LEVEL_WIDTH], int cratesCount)
 		{
 			int stepsCount = rand() % 3 + 2, dir = rand() % 4;
 			
-			/*for (int q = 0; q < stepsCount; q++)
+			**for (int q = 0; q < stepsCount; q++)
 			{
 				switch (dir)
 				{
@@ -352,7 +351,7 @@ int generate(int map[LEVEL_HEIGHT][LEVEL_WIDTH], int cratesCount)
 					map[y + 1][x - 1] = 0;
 				if (map[y - 1][x + 1] == -1 && dir != 3)
 					map[y - 1][x + 1] = 0;
-			}*//*
+			}**
 
 			prevDir = dir;
 		}

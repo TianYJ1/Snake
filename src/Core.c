@@ -52,7 +52,7 @@ int openFolderDialog(int i)
 	    convertConstCopy(al_get_native_file_dialog_path(dialog, 0), &pathCur);
 	    showDirectoryListing(0);
 	}
-	return 1;
+	return 0;
 }
 int openLevelSelect(int i)
 {
@@ -61,7 +61,7 @@ int openLevelSelect(int i)
 	changeScene(LEVEL_SELECT_SCENE);
 	showDirectoryListing(0);
 	renderScreen();
-
+	return 0;
 }
 
 int sliceFile(int i)
@@ -137,6 +137,7 @@ int sliceFile(int i)
 		}
 		
 	}
+	return 0;
 }
 int nextPage(int i)
 {
@@ -145,6 +146,7 @@ int nextPage(int i)
 	clearSpritesScene(LEVEL_SELECT_SCENE);
 	showDirectoryListing(0);
 	renderScreen();
+	return 0;
 }
 int prevPage(int i)
 {
@@ -179,7 +181,7 @@ int showDirectoryListing(int i)
 	ALLEGRO_FS_ENTRY* dir = al_create_fs_entry(pathCur);
 
 	while (count > 0)
-		sprintf(levelsNames[count--], "");
+		sprintf(levelsNames[count--], "%s","");
 	renderScreen();
 	if (al_open_directory(dir))
 	{
@@ -187,7 +189,7 @@ int showDirectoryListing(int i)
 		Log_i(__func__, "LISTING");
 		int(*callBacks[64])(int id);
         memset(levelsPaths,0,sizeof(levelsPaths));
-		while (file = al_read_directory(dir))
+		while ((file = al_read_directory(dir)))
 		{
 			if (file == NULL)
 				Log_e(__func__, "ERROR: Level file is null");
@@ -236,15 +238,18 @@ int showDirectoryListing(int i)
 	}
 	al_destroy_fs_entry(dir);
 	Log_i(__func__, "Folder: %s", pathCur);
+	return 0;
 }
 int ExitProg(int i)
 {
 	EventManagerThreadRunning = 0;
+	return 0;
 }
 int openLevelEditor(int i)
 {
 	changeScene(LEVEL_EDITOR_SCENE);
 	onLevelEditorOpened();
+	return 0;
 }
 void renderScreen()
 {
@@ -425,7 +430,6 @@ int openLevel(int num)
 		return 0;
 	}
 	char str[256];
-	bool prevStrIsData = false;
 	int y = 0;
 	for (int q = 0; q < LEVEL_HEIGHT; q++)
 	{
@@ -475,7 +479,7 @@ int openLevel(int num)
 	changeScene(LEVEL_SCENE);
 	//onLevelOpened(num);
 	onLevelFileOpened(num, playerX, playerY, cratesCount);
-	return 1;
+	return 0;
 }
 void convertConstCopy(const char *source, char **toChr)
 {

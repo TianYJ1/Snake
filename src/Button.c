@@ -3,7 +3,7 @@ ArrayElement * buttonsArr = NULL;
 Button *getStructButton(int i)
 {
 	Button *curButt = malloc(sizeof(Button));
-	Button *newBt = get(buttonsArr, i);
+	Button *newBt = (Button *)get(buttonsArr, i);
 	if (newBt)
 	{
 		memcpy(curButt, newBt, sizeof(Button));
@@ -128,7 +128,7 @@ void recalcButtons(float hC, float vC)
 		Button *curButt = getStructButton(i);
 		curButt->posX *= hC; curButt->posY *= vC;
 		curButt->width *= hC; curButt->height *= vC;
-		set(buttonsArr, i, curButt, sizeof(curButt));
+		set(buttonsArr, i, (byte *)&curButt, sizeof(curButt));
 	}
 	renderButtonsSc();
 }
