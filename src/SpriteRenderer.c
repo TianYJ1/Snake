@@ -138,7 +138,7 @@ void recalcSprites(float hC, float vC)
 		Sprite *curSprite = getStruct(i);
 		curSprite->posX *= hC; curSprite->posY *= vC;
 		curSprite->width *= hC; curSprite->height*= vC;
-		set(spritesArr, i, (byte *)&curSprite, sizeof(curSprite));
+		set(spritesArr, i, (byte *)curSprite, sizeof(curSprite));
 	}
 }
 void clearSpritesScene(int scene)

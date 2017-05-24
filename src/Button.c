@@ -128,7 +128,7 @@ void recalcButtons(float hC, float vC)
 		Button *curButt = getStructButton(i);
 		curButt->posX *= hC; curButt->posY *= vC;
 		curButt->width *= hC; curButt->height *= vC;
-		set(buttonsArr, i, (byte *)&curButt, sizeof(curButt));
+		set(buttonsArr, i, (byte *)curButt, sizeof(curButt));
 	}
 	renderButtonsSc();
 }

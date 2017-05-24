@@ -482,8 +482,11 @@ int openLevel(int num)
 					map[i][y] = 4;
 				break;
 				default:
-					Log_e(__func__, "input file was in incorrect format (symbols only ' ','@','#','.','*','$')");
-					return -1;
+               if (str[i] != '\0' && str[i] != '\n')
+               {
+                  Log_e(__func__, "input file was in incorrect format (symbols only ' ','@','#','.','*','$')");
+                  return -1;
+               }
 				break;
 			}
 		}

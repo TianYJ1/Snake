@@ -56,7 +56,7 @@ int changeText(int labelId, const char *text, ...)
 		Label *curLabel = getStructLabel(labelId);
 		curLabel->text = malloc(sizeof(buf));
 		memcpy(curLabel->text, buf, sizeof(buf));
-		set(labelsArr, labelId, (byte *)&curLabel, sizeof(curLabel));
+		set(labelsArr, labelId, (byte *)curLabel, sizeof(curLabel));
 		renderScreen();
 		return 0;
 	}
@@ -69,7 +69,7 @@ void recalcLabels(float hC, float vC)
 	{
 		Label *curLab = getStructLabel(i);
 		curLab->posX *= hC; curLab->posY *= vC;
-		set(labelsArr, i, (byte *)&curLab, sizeof(curLab));
+		set(labelsArr, i, (byte *)curLab, sizeof(curLab));
 	}
 	renderLabelsSc();
 }

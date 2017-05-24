@@ -31,22 +31,25 @@ char* getMem(char *key)
 void putMem(char *key, char *data)
 {
 	ArrayElement *cur = memArr;
-	int i = 0;
-	while (cur)
-	{
-		MemEntry *memEl = (MemEntry *)cur->container;
-		ArrayElement *next = cur->linkToNext;
-		if (strcmp(memEl->key,key) == 0)
-		{
-			memEl->data = data;
-			set(memArr, i, (byte *)&memEl, sizeof(memEl));
-			return;
-		}
-		if (!next)
-			break;
-		cur = next;
-		i++;
-	}
+   if (cur != NULL)
+   {
+      int i = 0;
+      while (cur != NULL)
+      {
+         MemEntry *memEl = (MemEntry *)cur->container;
+         ArrayElement *next = cur->linkToNext;
+         if (cur && memEl->key && strcmp(memEl->key, key) == 0)
+         {
+            memEl->data = data;
+            set(memArr, i, (byte *)memEl, sizeof(memEl));
+            return;
+         }
+         if (!next)
+            break;
+         cur = next;
+         i++;
+      }
+   }
 	MemEntry newEntry;
 	newEntry.data = data;
 	newEntry.key = key;
