@@ -44,6 +44,12 @@ int addLabel(float x, float y, int red, int green, int blue, int scene, int alig
 	@return 0 if label exists, -1 if not
 */
 int changeText(int labelId, const char *text, ...);
+/** Get label by it's id
+	@param i id of labels
+	@return pointer to label if label exists, null if not
+	
+*/
+Label *getStructLabel(int i);
 /** Being called when screen was resized
 	@param hC [in] coefficient of resizing in horizontal
 	@param vC [in] coefficient of resizing in vertical

@@ -1534,3 +1534,130 @@ I/saveMem::Saved: level__pushes=6
 
 I/saveMem::Saved: =======
 
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/loadMem::Loaded: tt_0=m_1
+
+I/loadMem::Loaded: tt_2=m_1
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  1.txt_steps=3
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  1.txt_pushes=2
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  0.txt_steps=1
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  0.txt_pushes=1
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  2.txt_steps=10
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  2.txt_pushes=3
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  3.txt_steps=11
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  3.txt_pushes=4
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  q.txt_steps=1
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  q.txt_pushes=1
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  4.txt_steps=11
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  4.txt_pushes=4
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  5.txt_steps=18
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  5.txt_pushes=5
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  6.txt_steps=40
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  6.txt_pushes=9
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  7.txt_steps=31
+
+I/loadMem::Loaded: level_D:\School\Info\sokoban\res\Levels\  7.txt_pushes=8
+
+I/loadMem::Loaded: level__steps=22
+
+I/loadMem::Loaded: level__pushes=6
+
+I/loadMem::Loaded: =======
+
+I/initVars::Screen:640 480
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: levels
+I/showDirectoryListing::Level: 14
+I/showDirectoryListing::Level:   2
+I/showDirectoryListing::Level:   1
+I/showDirectoryListing::Level:   9
+I/showDirectoryListing::Level:   6
+I/showDirectoryListing::Level:   8
+I/showDirectoryListing::Level: 17
+I/showDirectoryListing::Level: my
+I/showDirectoryListing::Level: 16
+I/showDirectoryListing::Level:   4
+I/showDirectoryListing::Level: 15
+I/makeGridSprites::Grid:3X4, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/setNewScreen::New screen:320 268, coef=1,000000,1,116667
+I/setNewScreen::New screen:1615 922, coef=5,046875,3,440299
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/setNewScreen::New screen:416 303, coef=1,300000,1,262500
+I/setNewScreen::New screen:416 303, coef=1,000000,1,000000
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/setNewScreen::New screen:360 276, coef=1,125000,1,150000
+I/setNewScreen::New screen set
+I/setNewScreen::New screen:360 276, coef=1,000000,1,000000
+I/setNewScreen::New screen set
+I/setNewScreen::New screen:360 455, coef=1,000000,1,648551
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: levels
+I/showDirectoryListing::Level: 14
+I/showDirectoryListing::Level:   2
+I/showDirectoryListing::Level:   1
+I/showDirectoryListing::Level:   9
+I/showDirectoryListing::Level:   6
+I/showDirectoryListing::Level:   8
+I/showDirectoryListing::Level: 17
+I/showDirectoryListing::Level: my
+I/showDirectoryListing::Level: 16
+I/showDirectoryListing::Level:   4
+I/showDirectoryListing::Level: 15
+I/makeGridSprites::Grid:3X4, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/setNewScreen::New screen:531 384, coef=1,659375,1,600000
+I/setNewScreen::New screen set
+I/setNewScreen::New screen:531 384, coef=1,000000,1,000000
+I/setNewScreen::New screen set
+I/setNewScreen::New screen:565 410, coef=1,064030,1,067708

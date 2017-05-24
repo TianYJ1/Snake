@@ -109,12 +109,18 @@ int main(void)
 {
 	//if(!DEBUG_MODE)
 		//ShowWindow(GetConsoleWindow(), SW_HIDE);
-	printf("qqq\n");
-	initAddons();
-	if (initVars() < 0)
+	if(initAddons() < 0)
+	{
+		Log_e(__func__, "InitAddons error");
+		return -1;
+	}
+	else if (initVars() < 0)
 	{
 		Log_e(__func__, "InitVars error");
 		return -1;
+		al_destroy_font(font);
+		al_destroy_display(display);
+		al_destroy_path(path);
 	}
 	else { /* Just nothing, just to meet the criteria*/ }
 	initButtons();

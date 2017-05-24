@@ -1,5 +1,5 @@
 #pragma once
-#define DEFAULT_LENGTH 128
+
 /*!
 @file Core.h
 \defgroup Core Core
@@ -11,7 +11,7 @@ This is for managing common and miscellaneous (screen render, logging, opening a
 */
 /** Run on start, initing allgero5 addons
 */
-void initAddons();
+int initAddons();
 /** Changes scene to another (clear and render new screen, clear old sprites) 
 	@param scene Id of scene to be shown
 */
@@ -103,7 +103,8 @@ int openLevelEditor(int i);
 	@return doesn't matter, used int for pointing
 */
 int ExitProg(int i);
-
+#define DEFAULT_LENGTH 128 //!< Default length for arrays
+#define DEFAULT_LENGTH_STR 1024 //!< Default length for strings
 extern char names [DEFAULT_LENGTH][DEFAULT_LENGTH];//!< Array for storing levels names currently vewing in level select 
 extern char * pathCur; //!< Temporary string for storing current chosen 
 extern char levelsPaths[DEFAULT_LENGTH][DEFAULT_LENGTH];//!< Array for storing levels pathes currently vewing in level select 

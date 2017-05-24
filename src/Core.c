@@ -9,39 +9,46 @@ ALLEGRO_PATH *path;
 FILE *targetFile;
 char * resourcePath;
 ALLEGRO_SAMPLE *menuSample = NULL, *levelSample = NULL;
-void initAddons()
+int initAddons()
 {
-	printf("Allegro init: %i\n",al_init());
+	al_init();
 	printf("%0x, %0x",ALLEGRO_VERSION_INT,al_get_allegro_version());
-	printf("1\n");
 	al_init_font_addon();
-	printf("2\n");
-	al_init_ttf_addon();
-	printf("3\n");
-	al_init_primitives_addon();
-	printf("4\n");
-	if(!al_install_keyboard())
+	if(!al_init_ttf_addon())
 	{
-	      printf("failed to initialize the keyboard!\n");
-	//      return -1;
-   	}
-	al_init_native_dialog_addon();
-	printf("al_installed_keyboard_\n");
-	al_init_image_addon();
-	if (!al_install_audio()) {
+		Log_e(__func__, "failed to initialize TTF!\n");
+		return -2;
+	}
+	else if(!al_init_primitives_addon())
+	{
+		Log_e(__func__, "failed to initialize primitives!\n");
+		return -3;
+	}
+	al_install_keyboard();
+	if(!al_init_native_dialog_addon())
+	{
+		Log_e(__func__, "failed to initialize dialogs!\n");
+		return -5;
+	}
+	else if(!al_init_image_addon())
+	{
+		Log_e(__func__, "failed to initialize images!\n");
+		return -6;
+	}
+	else if (!al_install_audio()) 
+	{
 		Log_e(__func__, "failed to initialize audio!\n");
-		return;
+		return -7;
 	}
-
-	if (!al_init_acodec_addon()) {
+	else if (!al_init_acodec_addon()) {
 		Log_e(__func__, "failed to initialize audio codecs!\n");
-		return;
+		return -8;
 	}
-
-	if (!al_reserve_samples(2)) {
+	else if (!al_reserve_samples(2)) {
 		Log_e(__func__, "failed to reserve samples!\n");
-		return;
+		return -9;
 	}
+	else return 0;
 }
 int openFolderDialog(int i)
 {
@@ -288,28 +295,33 @@ void changeScene(int scene)
 }
 void Log_i(const char * tag, const char *str, ...)
 {
-	char buf[1024];
+	char buf[DEFAULT_LENGTH_STR];
 	va_list vl;
 	va_start(vl, str);
 	vsnprintf(buf, sizeof(buf), str, vl);
 	va_end(vl);
 	printf("I/%s::%s\n", tag, buf);
-	fprintf(targetFile, "I/%s::%s\n",tag, buf);
-	fflush(targetFile);
+	if(targetFile != NULL)
+	{
+		fprintf(targetFile, "I/%s::%s\n",tag, buf);
+		fflush(targetFile);
+	}
 }
 void Log_e(const char * tag, const char *str, ...)
 {
-	char buf[1024];
+	char buf[DEFAULT_LENGTH_STR];
 	va_list vl;
 	va_start(vl, str);
 	vsnprintf(buf, sizeof(buf), str, vl);
 	va_end(vl);
 	printf("E/%s::%s\n", tag, buf);
-	fprintf(targetFile, "E/%s::%s\n", tag, buf);
-
-	fflush(targetFile);
-	//al_show_native_message_box(display, "Error!", "qq", 0, 0, ALLEGRO_MESSAGEBOX_ERROR);
-	al_show_native_message_box(display,"Error!","An ERROR accuredued:",buf,NULL, ALLEGRO_MESSAGEBOX_ERROR);
+	if(targetFile != NULL)
+	{
+		fprintf(targetFile, "E/%s::%s\n", tag, buf);
+		fflush(targetFile);
+	}
+	if(display)
+		al_show_native_message_box(display,"Error!","An ERROR accuredued:",buf,NULL, ALLEGRO_MESSAGEBOX_ERROR);
 }
 void setNewScreen()
 {
@@ -332,6 +344,7 @@ void setNewScreen()
 	recalcLabels(wC, hC);
 	font = al_load_ttf_font("SansPosterBold.ttf", SCREEN_HEIGHT_UNIT * 60, 0);
 	renderScreen();
+	Log_i(__func__, "New screen set");
 }
 int initVars()
 {
@@ -352,19 +365,19 @@ int initVars()
 	
 	Log_i(__func__,"Screen:%i %i", SCREEN_WIDTH, SCREEN_HEIGHT);
 	
-	if(al_show_native_message_box(display, "FullScreen", "Would you like to run in fullscreen mode?", "", NULL, ALLEGRO_MESSAGEBOX_YES_NO))
+	/*if(al_show_native_message_box(display, "FullScreen", "Would you like to run in fullscreen mode?", "", NULL, ALLEGRO_MESSAGEBOX_YES_NO))
 		al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
 	else
 	{
 		if (DEBUG_MODE)
-		{
+		{*/
 			SCREEN_WIDTH /= 2; SCREEN_HEIGHT /= 2;
-		}
+		/*}
 		else
-			SCREEN_HEIGHT -= SCREEN_HEIGHT_UNIT*200;
+			SCREEN_HEIGHT -= SCREEN_HEIGHT_UNIT*200;*/
 		al_set_new_display_flags(ALLEGRO_WINDOWED | ALLEGRO_RESIZABLE);
 		
-	}
+	//}
 	path = al_get_standard_path(ALLEGRO_RESOURCES_PATH);
 
 	al_append_path_component(path, "res");
@@ -427,9 +440,9 @@ int openLevel(int num)
 	if (!sourceFile)
 	{
 		Log_e(__func__, "ERROR: Source file for level not found: %s", levelsPaths[num]);
-		return 0;
+		return -1;
 	}
-	char str[256];
+	char str[DEFAULT_LENGTH_STR];
 	int y = 0;
 	for (int q = 0; q < LEVEL_HEIGHT; q++)
 	{
@@ -467,6 +480,10 @@ int openLevel(int num)
 				case '4':
 				case '*':
 					map[i][y] = 4;
+				break;
+				default:
+					Log_e(__func__, "input file was in incorrect format (symbols only ' ','@','#','.','*','$')");
+					return -1;
 				break;
 			}
 		}

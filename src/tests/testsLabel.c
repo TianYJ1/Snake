@@ -24,6 +24,6 @@ TEST(TestLabel, changeText)
 	sprintf(checkStr, "Crates left:%i", 50);
 	changeText(0, "Crates left:%i", 50);
 	Label *curLabel = getStructLabel(0);
-	TEST_ASSERT(curLabel);
+	TEST_ASSERT(curLabel != NULL);
 	TEST_ASSERT(strcmp(checkStr,curLabel->text) == 0);
 }

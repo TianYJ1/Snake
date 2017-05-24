@@ -73,7 +73,7 @@ void loadMem()
 			key[eq - str] = 0;
 			memcpy(data, eq + 1, str + sizeof(str) - eq);
 			data[str + sizeof(str) - eq] = 0;
-			Log_i(__func__, "Loaded: %s=%s", key, data);
+			//Log_i(__func__, "Loaded: %s=%s", key, data);
 			putMem(key, data);
 		}
 	}
