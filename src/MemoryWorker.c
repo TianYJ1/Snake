@@ -95,7 +95,7 @@ void saveMem()
 	{
 		MemEntry *memEl = (MemEntry *)cur->container;
 		ArrayElement *next = cur->linkToNext;
-		fprintf(saverFile, "%s=%s\n", memEl->key, memEl->data);
+		fprintf(saverFile, "%s=%s", memEl->key, memEl->data);
 		Log_i(__func__, "Saved: %s=%s", memEl->key, memEl->data);
 		if (!next)
 			break;

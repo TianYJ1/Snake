@@ -53,7 +53,7 @@ int initAddons()
 int openFolderDialog(int i)
 {
 
-	ALLEGRO_FILECHOOSER *dialog = al_create_native_file_dialog("D:/School/Info/sokoban/src/res/","Choose folder","*.*",ALLEGRO_FILECHOOSER_FOLDER);
+	ALLEGRO_FILECHOOSER *dialog = al_create_native_file_dialog("","Choose folder","*.*",ALLEGRO_FILECHOOSER_FOLDER);
 	if (al_show_native_file_dialog(display, dialog))
 	{
 	    convertConstCopy(al_get_native_file_dialog_path(dialog, 0), &pathCur);
@@ -80,7 +80,7 @@ int sliceFile(int i)
 	{
 		convertConstCopy(al_get_native_file_dialog_path(dialog, 0), &pathSource);
 		al_destroy_native_file_dialog(dialog);
-		dialog = al_create_native_file_dialog("D:/School/Info/sokoban/src/res/", "Choose folder", "*.*", ALLEGRO_FILECHOOSER_FOLDER);
+		dialog = al_create_native_file_dialog("", "Choose folder", "*.*", ALLEGRO_FILECHOOSER_FOLDER);
 		if (al_show_native_file_dialog(display, dialog))
 		{
 			convertConstCopy(al_get_native_file_dialog_path(dialog, 0), &pathTarget);
@@ -287,6 +287,10 @@ void changeScene(int scene)
 				al_stop_samples();
 				al_play_sample(levelSample, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
 			break;
+         case LEVEL_SCENE_PAUSE:
+         case LEVEL_EDITOR_SCENE:
+            al_stop_samples();
+         break;
 		}
 	}
 	SCENE_NOW = scene;
