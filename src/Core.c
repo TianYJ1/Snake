@@ -453,7 +453,7 @@ int openLevel(int num)
 		for (int i = 0; i < LEVEL_WIDTH; i++)
 			map[q][i] = 0;
 	}
-	int playerX = 0, playerY = 0, cratesCount = 0;
+	int playerX = 0, playerY = 0, cratesCount = 0; bool playerExists = false;
 	while (fgets(str, sizeof(str), sourceFile) != NULL)
 	{
 		for (int i = 0; i < strlen(str); i++)
@@ -475,7 +475,9 @@ int openLevel(int num)
 				break;
 				case '9':
 				case '@':
+				case '+':
 					playerX = i; playerY=y;
+					playerExists = true;
 				break;
 				case '0':
 				case ' ':
@@ -486,19 +488,25 @@ int openLevel(int num)
 					map[i][y] = 4;
 				break;
 				default:
-               if (str[i] != '\0' && str[i] != '\n')
-               {
-                  Log_e(__func__, "input file was in incorrect format (symbols only ' ','@','#','.','*','$')");
-                  return -1;
-               }
+					if (str[i] != '\0' && str[i] != '\n')
+				       	{
+				  		Log_e(__func__, "input file was in incorrect format (symbols only ' ','@','#','.','*','$','+')");
+						return -1;
+				       	}
 				break;
 			}
 		}
+		
 		y++;
 		Log_i(__func__, "levelStr=%s", str);
 
 
 	}
+	if (!playerExists)
+	{
+		Log_e(__func__, "input file has no position for player! Aborting...");
+		return -2;
+       	}
 	fclose(sourceFile);
 	changeScene(LEVEL_SCENE);
 	//onLevelOpened(num);

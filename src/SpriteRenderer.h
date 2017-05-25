@@ -84,7 +84,7 @@ Sprite *getStruct(int id);
 	@return Sprite
 */
 Sprite *getStructById(int id);
-
+extern int nextSpriteId;//!< Id of next sprite
 /**
 @}
 */

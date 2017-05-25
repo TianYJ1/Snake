@@ -1,5 +1,5 @@
 #include "LibraryMerger.h"
-ArrayElement * spritesArr = NULL;
+ArrayElement *spritesArr = NULL;
 int addSprite(char * src, int x, int y, int w, int h, int scene, int layer)
 {
 	if(strlen(src) == 0)
@@ -14,7 +14,7 @@ int addSprite(char * src, int x, int y, int w, int h, int scene, int layer)
 	}
 	return addSpriteBmp(bmp, x, y, w, h, scene, layer);
 }
-int lastId = 0;
+int nextSpriteId = 0;
 int addSpriteBmp(ALLEGRO_BITMAP * src, int x, int y, int w, int h, int scene, int layer)
 {
 	if(layer > SPRITES_LAYERS_AMOUNT)
@@ -23,7 +23,7 @@ int addSpriteBmp(ALLEGRO_BITMAP * src, int x, int y, int w, int h, int scene, in
 		return -1;
 	Sprite newSprite;
 	newSprite.bmp = src;
-	newSprite.id = lastId++;// arraySize(spritesArr);
+	newSprite.id = nextSpriteId++;// arraySize(spritesArr);
 	newSprite.posX = x; newSprite.posY = y;
 	newSprite.width = w; newSprite.height = h;
 	newSprite.scene = scene; newSprite.layer = layer;

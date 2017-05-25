@@ -69,6 +69,8 @@ TEST(TestArray, removeLastAddAtArray)
 
 TEST(TestArray, moveSprite)
 {
+	clear(&spritesArr);
+	nextSpriteId = 0;
 	TEST_ASSERT_EQUAL_INT(0, addSprite("back.jpg",0, 0, 0, 0, 0, rand() % SPRITES_LAYERS_AMOUNT) );
 	//getting sprite at 0. Check if it equals to our created
 	Sprite *curSprite = getStruct(0);

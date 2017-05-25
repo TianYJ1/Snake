@@ -1,5 +1,5 @@
 #include "LibraryMerger.h"
-ArrayElement * buttonsArr = NULL;
+ArrayElement *buttonsArr = NULL;
 Button *getStructButton(int i)
 {
 	Button *curButt = malloc(sizeof(Button));

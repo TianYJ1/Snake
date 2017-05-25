@@ -118,9 +118,6 @@ int main(void)
 	{
 		Log_e(__func__, "InitVars error");
 		return -1;
-		al_destroy_font(font);
-		al_destroy_display(display);
-		al_destroy_path(path);
 	}
 	else { /* Just nothing, just to meet the criteria*/ }
 	initButtons();
@@ -147,17 +144,31 @@ int main(void)
 	renderScreen();
 	
 	resourcePath = (char*)malloc(strlen(resourcePath) + 16);
-	putMem(getUnformatted("tt_%i", 0), getUnformatted("m_%i", 1));
-	putMem(getUnformatted("tt_%i", 2), getUnformatted("m_%i", 1));
-	
 	
 	initEventManager();//last to be called untill die
 	saveMem();
-	//al_rest(5.0);
-	//system("pause");
-	al_destroy_font(font);
-	al_destroy_display(display);
-	al_destroy_path(path);
+	if(font)
+		al_destroy_font(font);
+	if(AllegroFont)
+		al_destroy_font(AllegroFont);
+	if(menuSample)
+		al_destroy_sample(menuSample);
+	if(levelSample)
+		al_destroy_sample(levelSample);
+	if(spritesArr)
+		clear(&spritesArr);
+	if(buttonsArr)
+		clear(&buttonsArr);
+	if(labelsArr)
+		clear(&labelsArr);
+	
+	if(targetFile)
+		fclose(targetFile);
+	if(path)
+		al_destroy_path(path);
+	if(display)
+		al_destroy_display(display);
+
 	return 0;
 
 }

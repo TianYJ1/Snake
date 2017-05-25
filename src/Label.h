@@ -61,6 +61,7 @@ void recalcLabels(float hC, float vC);
 	@param scene scene id
 */
 void clearLabels(int scene);
+extern ArrayElement *labelsArr;//!< pointer to array for storing labels
 /**
 @}
 */

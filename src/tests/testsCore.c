@@ -7,9 +7,11 @@ TEST_GROUP(TestCore);
 
 TEST_GROUP_RUNNER(TestCore)
 {
-	initAddons();
-	initVars();
+	RUN_TEST_CASE(TestCore, initAddonsAllegro);
+	RUN_TEST_CASE(TestCore, initvars);	
 	RUN_TEST_CASE(TestCore, loadResourcesPath);
+	RUN_TEST_CASE(TestCore, showDirectoryListing);
+	RUN_TEST_CASE(TestCore, openLevel);
 }
 
 TEST_SETUP(TestCore)
@@ -21,7 +23,22 @@ TEST_TEAR_DOWN(TestCore)
 {
 }
 
-
+TEST(TestCore, initAddonsAllegro)
+{
+	TEST_ASSERT_MESSAGE(initAddons()>=0, "Error initing addons");
+}
+TEST(TestCore, showDirectoryListing)
+{
+	TEST_ASSERT_MESSAGE(showDirectoryListing(0)>=0, "Error showing directory");
+}
+TEST(TestCore, openLevel)
+{
+	TEST_ASSERT_MESSAGE(openLevel(0)>=0, "Error opening level");
+}
+TEST(TestCore, initvars)
+{
+	TEST_ASSERT_MESSAGE(initVars()>=0, "Error initing vars");
+}
 TEST(TestCore, loadResourcesPath)
 {
 	path = al_get_standard_path(ALLEGRO_RESOURCES_PATH);
