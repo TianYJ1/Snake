@@ -72,6 +72,11 @@ make tests D_UNITY=<UNITY PATH>
 ````
 where <UNITY_PATH> is absolute path to your directory which contains Unity. After building everything, run **test-sokoban**.
 All tests will gone, if not - please, let us know
+## Screenshots
+![Main Menu](https://snag.gy/UsJQWZ.jpg)
+![Level select](https://snag.gy/yNvHqz.jpg)
+![Level scene](https://snag.gy/Wfz1Jv.jpg)
+![Level editor](https://snag.gy/vim0AL.jpg)
 ## Authors
 * **Arseniy Prosvirin** - arseniy.p@d7ss.com
 * **Ryabota Igor** - x@x.ru
