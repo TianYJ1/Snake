@@ -1,5 +1,5 @@
 #include "LibraryMerger.h"
-ArrayElement * labelsArr = NULL;
+ArrayElement *labelsArr = NULL;
 Label *getStructLabel(int i)
 {
    Label *curLab = malloc(sizeof(Label));
@@ -7,6 +7,8 @@ Label *getStructLabel(int i)
    if (newLab)
    {
       memcpy(curLab, newLab, sizeof(Label));
+      if (curLab)
+         free(curLab);
       return newLab;
    }
    else

@@ -93,7 +93,11 @@ int sliceFile(int i)
          {
             Log_e(__func__, "Source file error!\n");
             if(destFile)
-               free(destFile);
+               fclose(destFile);
+            if (pathTarget)
+               free(pathTarget);
+            if (sourceFile)
+               fclose(sourceFile);
             return -1;
          }
          char str[DEFAULT_LENGTH_STR];
@@ -444,71 +448,80 @@ int initVars()
 }
 int openLevel(int num)
 {
-   printf("\nOpening Level #%s", levelsPaths[num]);
-   FILE *sourceFile = fopen(levelsPaths[num], "r");
-   if (!sourceFile)
-   {
-      Log_e(__func__, "ERROR: Source file for level not found: %s", levelsPaths[num]);
-      return -1;
-   }
-   char str[DEFAULT_LENGTH_STR];
-   int y = 0;
-   for (int q = 0; q < LEVEL_HEIGHT; q++)
-   {
-      for (int i = 0; i < LEVEL_WIDTH; i++)
-         map[q][i] = 0;
-   }
-   int playerX = 0, playerY = 0, cratesCount = 0;
-   while (fgets(str, sizeof(str), sourceFile) != NULL)
-   {
-      for (int i = 0; i < strlen(str); i++)
-      {
-         switch (str[i])
-         {
-            case '1':
-            case '#':
-               map[i][y] = 1;
-            break;
-            case '3':
-            case '$':
-               cratesCount++;
-               map[i][y] = 3;
-            break;
-            case '2':
-            case '.':
-               map[i][y] = 2;
-            break;
-            case '9':
-            case '@':
-               playerX = i; playerY=y;
-            break;
-            case '0':
-            case ' ':
-               map[i][y] = 0;
-            break;
-            case '4':
-            case '*':
-               map[i][y] = 4;
-            break;
-            default:
-               if (str[i] != '\0' && str[i] != '\n')
-               {
-                  Log_e(__func__, "input file was in incorrect format (symbols only ' ','@','#','.','*','$')");
-                  return -1;
-               }
-            break;
-         }
-      }
-      y++;
-      Log_i(__func__, "levelStr=%s", str);
+
+	printf("\nOpening Level #%s", levelsPaths[num]);
+	FILE *sourceFile = fopen(levelsPaths[num], "r");
+	if (!sourceFile)
+	{
+		Log_e(__func__, "ERROR: Source file for level not found: %s", levelsPaths[num]);
+		return -1;
+	}
+	char str[DEFAULT_LENGTH_STR];
+	int y = 0;
+	for (int q = 0; q < LEVEL_HEIGHT; q++)
+	{
+		for (int i = 0; i < LEVEL_WIDTH; i++)
+			map[q][i] = 0;
+	}
+	int playerX = 0, playerY = 0, cratesCount = 0; bool playerExists = false;
+	while (fgets(str, sizeof(str), sourceFile) != NULL)
+	{
+		for (int i = 0; i < strlen(str); i++)
+		{
+			switch (str[i])
+			{
+				case '1':
+				case '#':
+					map[i][y] = 1;
+				break;
+				case '3':
+				case '$':
+					cratesCount++;
+					map[i][y] = 3;
+				break;
+				case '2':
+				case '.':
+					map[i][y] = 2;
+				break;
+				case '9':
+				case '@':
+				case '+':
+					playerX = i; playerY=y;
+					playerExists = true;
+				break;
+				case '0':
+				case ' ':
+					map[i][y] = 0;
+				break;
+				case '4':
+				case '*':
+					map[i][y] = 4;
+				break;
+				default:
+					if (str[i] != '\0' && str[i] != '\n')
+				       	{
+				  		Log_e(__func__, "input file was in incorrect format (symbols only ' ','@','#','.','*','$','+')");
+						return -1;
+				       	}
+				break;
+			}
+		}
+		
+		y++;
+		Log_i(__func__, "levelStr=%s", str);
 
 
+	}
+	if (!playerExists)
+	{
+		Log_e(__func__, "input file has no position for player! Aborting...");
+		return -2;
    }
-   fclose(sourceFile);
-   changeScene(LEVEL_SCENE);
-   //onLevelOpened(num);
-   onLevelFileOpened(num, playerX, playerY, cratesCount);
-   return 0;
+	fclose(sourceFile);
+	changeScene(LEVEL_SCENE);
+	//onLevelOpened(num);
+	onLevelFileOpened(num, playerX, playerY, cratesCount);
+	return 0;
 }
 void convertConstCopy(const char *source, char **toChr)
 {

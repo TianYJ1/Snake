@@ -1,5 +1,5 @@
 #include "LibraryMerger.h"
-ArrayElement * buttonsArr = NULL;
+ArrayElement *buttonsArr = NULL;
 Button *getStructButton(int i)
 {
    Button *curButt = malloc(sizeof(Button));
@@ -7,6 +7,8 @@ Button *getStructButton(int i)
    if (newBt)
    {
       memcpy(curButt, newBt, sizeof(Button));
+      if (curButt)
+         free(curButt);
       return newBt;
    }
    else

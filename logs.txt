@@ -1661,3 +1661,772 @@ I/setNewScreen::New screen set
 I/setNewScreen::New screen:531 384, coef=1,000000,1,000000
 I/setNewScreen::New screen set
 I/setNewScreen::New screen:565 410, coef=1,064030,1,067708
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/setNewScreen::New screen:1339 894, coef=4,184375,3,725000
+I/setNewScreen::New screen set
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: levels
+I/showDirectoryListing::Level: 14
+I/showDirectoryListing::Level:   2
+I/showDirectoryListing::Level:   1
+I/showDirectoryListing::Level:   9
+I/showDirectoryListing::Level:   6
+I/showDirectoryListing::Level:   8
+I/showDirectoryListing::Level: 17
+I/showDirectoryListing::Level: my
+I/showDirectoryListing::Level: 16
+I/showDirectoryListing::Level:   4
+I/showDirectoryListing::Level: 15
+I/makeGridSprites::Grid:3X4, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: 13
+I/showDirectoryListing::Level: 11
+I/showDirectoryListing::Level:   7
+I/showDirectoryListing::Level:   0
+I/showDirectoryListing::Level: 12
+I/showDirectoryListing::Level:   3
+I/showDirectoryListing::Level: 10
+I/showDirectoryListing::Level:   5
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: 13
+I/showDirectoryListing::Level: 11
+I/showDirectoryListing::Level:   7
+I/showDirectoryListing::Level:   0
+I/showDirectoryListing::Level: 12
+I/showDirectoryListing::Level:   3
+I/showDirectoryListing::Level: 10
+I/showDirectoryListing::Level:   5
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: levels
+I/showDirectoryListing::Level: 14
+I/showDirectoryListing::Level:   2
+I/showDirectoryListing::Level:   1
+I/showDirectoryListing::Level:   9
+I/showDirectoryListing::Level:   6
+I/showDirectoryListing::Level:   8
+I/showDirectoryListing::Level: 17
+I/showDirectoryListing::Level: my
+I/showDirectoryListing::Level: 16
+I/showDirectoryListing::Level:   4
+I/showDirectoryListing::Level: 15
+I/makeGridSprites::Grid:3X4, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: 13
+I/showDirectoryListing::Level: 11
+I/showDirectoryListing::Level:   7
+I/showDirectoryListing::Level:   0
+I/showDirectoryListing::Level: 12
+I/showDirectoryListing::Level:   3
+I/showDirectoryListing::Level: 10
+I/showDirectoryListing::Level:   5
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: 13
+I/showDirectoryListing::Level: 11
+I/showDirectoryListing::Level:   7
+I/showDirectoryListing::Level:   0
+I/showDirectoryListing::Level: 12
+I/showDirectoryListing::Level:   3
+I/showDirectoryListing::Level: 10
+I/showDirectoryListing::Level:   5
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: 13
+I/showDirectoryListing::Level: 11
+I/showDirectoryListing::Level:   7
+I/showDirectoryListing::Level:   0
+I/showDirectoryListing::Level: 12
+I/showDirectoryListing::Level:   3
+I/showDirectoryListing::Level: 10
+I/showDirectoryListing::Level:   5
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: 13
+I/showDirectoryListing::Level: 11
+I/showDirectoryListing::Level:   7
+I/showDirectoryListing::Level:   0
+I/showDirectoryListing::Level: 12
+I/showDirectoryListing::Level:   3
+I/showDirectoryListing::Level: 10
+I/showDirectoryListing::Level:   5
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: levels
+I/showDirectoryListing::Level: 14
+I/showDirectoryListing::Level:   2
+I/showDirectoryListing::Level:   1
+I/showDirectoryListing::Level:   9
+I/showDirectoryListing::Level:   6
+I/showDirectoryListing::Level:   8
+I/showDirectoryListing::Level: 17
+I/showDirectoryListing::Level: my
+I/showDirectoryListing::Level: 16
+I/showDirectoryListing::Level:   4
+I/showDirectoryListing::Level: 15
+I/makeGridSprites::Grid:3X4, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: 13
+I/showDirectoryListing::Level: 11
+I/showDirectoryListing::Level:   7
+I/showDirectoryListing::Level:   0
+I/showDirectoryListing::Level: 12
+I/showDirectoryListing::Level:   3
+I/showDirectoryListing::Level: 10
+I/showDirectoryListing::Level:   5
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: 13
+I/showDirectoryListing::Level: 11
+I/showDirectoryListing::Level:   7
+I/showDirectoryListing::Level:   0
+I/showDirectoryListing::Level: 12
+I/showDirectoryListing::Level:   3
+I/showDirectoryListing::Level: 10
+I/showDirectoryListing::Level:   5
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: levels
+I/showDirectoryListing::Level: 14
+I/showDirectoryListing::Level:   2
+I/showDirectoryListing::Level:   1
+I/showDirectoryListing::Level:   9
+I/showDirectoryListing::Level:   6
+I/showDirectoryListing::Level:   8
+I/showDirectoryListing::Level: 17
+I/showDirectoryListing::Level: my
+I/showDirectoryListing::Level: 16
+I/showDirectoryListing::Level:   4
+I/showDirectoryListing::Level: 15
+I/makeGridSprites::Grid:3X4, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: 13
+I/showDirectoryListing::Level: 11
+I/showDirectoryListing::Level:   7
+I/showDirectoryListing::Level:   0
+I/showDirectoryListing::Level: 12
+I/showDirectoryListing::Level:   3
+I/showDirectoryListing::Level: 10
+I/showDirectoryListing::Level:   5
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: 13
+I/showDirectoryListing::Level: 11
+I/showDirectoryListing::Level:   7
+I/showDirectoryListing::Level:   0
+I/showDirectoryListing::Level: 12
+I/showDirectoryListing::Level:   3
+I/showDirectoryListing::Level: 10
+I/showDirectoryListing::Level:   5
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: 13
+I/showDirectoryListing::Level: 11
+I/showDirectoryListing::Level:   7
+I/showDirectoryListing::Level:   0
+I/showDirectoryListing::Level: 12
+I/showDirectoryListing::Level:   3
+I/showDirectoryListing::Level: 10
+I/showDirectoryListing::Level:   5
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: 13
+I/showDirectoryListing::Level: 11
+I/showDirectoryListing::Level:   7
+I/showDirectoryListing::Level:   0
+I/showDirectoryListing::Level: 12
+I/showDirectoryListing::Level:   3
+I/showDirectoryListing::Level: 10
+I/showDirectoryListing::Level:   5
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: 13
+I/showDirectoryListing::Level: 11
+I/showDirectoryListing::Level:   7
+I/showDirectoryListing::Level:   0
+I/showDirectoryListing::Level: 12
+I/showDirectoryListing::Level:   3
+I/showDirectoryListing::Level: 10
+I/showDirectoryListing::Level:   5
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: 13
+I/showDirectoryListing::Level: 11
+I/showDirectoryListing::Level:   7
+I/showDirectoryListing::Level:   0
+I/showDirectoryListing::Level: 12
+I/showDirectoryListing::Level:   3
+I/showDirectoryListing::Level: 10
+I/showDirectoryListing::Level:   5
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/makeGridSprites::Grid:2X4, count=8
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/saveMem::Saved: tt_0=m_1
+I/saveMem::Saved: tt_2=m_1
+I/setNewScreen::New screen:800 509, coef=2,500000,2,120833
+I/setNewScreen::New screen set
+I/setNewScreen::New screen:800 509, coef=1,000000,1,000000
+I/setNewScreen::New screen set
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: levels
+I/showDirectoryListing::Level: 14
+I/showDirectoryListing::Level:   2
+I/showDirectoryListing::Level:   1
+I/showDirectoryListing::Level:   9
+I/showDirectoryListing::Level:   6
+I/showDirectoryListing::Level:   8
+I/showDirectoryListing::Level: 17
+I/showDirectoryListing::Level: my
+I/showDirectoryListing::Level: 16
+I/showDirectoryListing::Level:   4
+I/showDirectoryListing::Level: 15
+I/makeGridSprites::Grid:3X4, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=  ##           
+
+I/openLevel::levelStr= #@ #          
+
+I/openLevel::levelStr= #$$#          
+
+I/openLevel::levelStr= #..#          
+
+I/openLevel::levelStr=  ##           
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/movePlayer::
+	0
+1		3
+	2
+I/movePlayer::Crate detected
+I/movePlayer::Changed crate place
+I/movePlayer::
+	1
+1		0
+	0
+I/movePlayer::
+	1
+0		1
+	3
+I/movePlayer::
+	0
+0		1
+	2
+I/movePlayer::Crate detected
+I/movePlayer::Changed crate place
+I/saveMem::Saved: tt_0=m_1
+I/saveMem::Saved: tt_2=m_1
+I/saveMem::Saved: level_/home/user/sokoban/res/Levels/  1.txt_steps=4
+I/saveMem::Saved: level_/home/user/sokoban/res/Levels/  1.txt_pushes=2
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/setNewScreen::New screen:839 495, coef=2,621875,2,062500
+I/setNewScreen::New screen set
+I/setNewScreen::New screen:839 495, coef=1,000000,1,000000
+I/setNewScreen::New screen set
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: levels
+I/showDirectoryListing::Level: 14
+I/showDirectoryListing::Level:   2
+I/showDirectoryListing::Level:   1
+I/showDirectoryListing::Level:   9
+I/showDirectoryListing::Level:   6
+I/showDirectoryListing::Level:   8
+I/showDirectoryListing::Level: 17
+I/showDirectoryListing::Level: my
+I/showDirectoryListing::Level: 16
+I/showDirectoryListing::Level:   4
+I/showDirectoryListing::Level: 15
+I/makeGridSprites::Grid:3X4, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level:  84
+I/showDirectoryListing::Level:  71
+I/showDirectoryListing::Level:  36
+I/showDirectoryListing::Level:  66
+I/showDirectoryListing::Level:  24
+I/showDirectoryListing::Level:  40
+I/showDirectoryListing::Level:   2
+I/showDirectoryListing::Level:  52
+I/showDirectoryListing::Level:  29
+I/showDirectoryListing::Level:  77
+I/showDirectoryListing::Level:   1
+I/showDirectoryListing::Level: 126
+I/makeGridSprites::Grid:3X4, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels/MicroBan
+E/openLevel::input file has no position for player! Aborting...
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: test
+I/showDirectoryListing::Level: seeds
+I/makeGridSprites::Grid:1X4, count=2
+I/showDirectoryListing::Folder: /home/user/sokoban/res
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: levels
+I/showDirectoryListing::Level: 14
+I/showDirectoryListing::Level:   2
+I/showDirectoryListing::Level:   1
+I/showDirectoryListing::Level:   9
+I/showDirectoryListing::Level:   6
+I/showDirectoryListing::Level:   8
+I/showDirectoryListing::Level: 17
+I/showDirectoryListing::Level: my
+I/showDirectoryListing::Level: 16
+I/showDirectoryListing::Level:   4
+I/showDirectoryListing::Level: 15
+I/makeGridSprites::Grid:3X4, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+E/openLevel::input file has no position for player! Aborting...
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/main::Initied
+================
+
+I/main::Added button
+I/initEventManager::Initied EventM
+I/initEventManager::mouse ok
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: levels
+I/showDirectoryListing::Level: 14
+I/showDirectoryListing::Level:   2
+I/showDirectoryListing::Level:   1
+I/showDirectoryListing::Level:   9
+I/showDirectoryListing::Level:   6
+I/showDirectoryListing::Level:   8
+I/showDirectoryListing::Level: 17
+I/showDirectoryListing::Level: my
+I/showDirectoryListing::Level: 16
+I/showDirectoryListing::Level:   4
+I/showDirectoryListing::Level: 15
+I/makeGridSprites::Grid:3X4, count=12
+I/showDirectoryListing::Folder: /home/user/sokoban/res/Levels
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=  ##           
+
+I/openLevel::levelStr= #@ #          
+
+I/openLevel::levelStr= #$$#          
+
+I/openLevel::levelStr= #..#          
+
+I/openLevel::levelStr=  ##           
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/setNewScreen::New screen:871 499, coef=2,721875,2,079167
+I/setNewScreen::New screen set
+I/setNewScreen::New screen:871 499, coef=1,000000,1,000000
+I/setNewScreen::New screen set
+I/setNewScreen::New screen:871 626, coef=1,000000,1,254509
+I/setNewScreen::New screen set
+I/setNewScreen::New screen:871 626, coef=1,000000,1,000000
+I/setNewScreen::New screen set
+I/saveMem::Saved: tt_0=m_1
+I/saveMem::Saved: tt_2=m_1
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+E/openLevel::ERROR: Source file for level not found: 
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: test
+I/showDirectoryListing::Level: seeds
+I/makeGridSprites::Grid:1X4, count=2
+I/showDirectoryListing::Folder: (null)
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=   ########    
+
+I/openLevel::levelStr=   #     @#    
+
+I/openLevel::levelStr=   #    @ #    
+
+I/openLevel::levelStr=   #    ###    
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   ######      
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: test
+I/showDirectoryListing::Level: seeds
+I/makeGridSprites::Grid:1X4, count=2
+I/showDirectoryListing::Folder: (null)
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=   ########    
+
+I/openLevel::levelStr=   #     @#    
+
+I/openLevel::levelStr=   #    @ #    
+
+I/openLevel::levelStr=   #    ###    
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   ######      
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: test
+I/showDirectoryListing::Level: seeds
+I/makeGridSprites::Grid:1X4, count=2
+I/showDirectoryListing::Folder: (null)
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=   ########    
+
+I/openLevel::levelStr=   #     @#    
+
+I/openLevel::levelStr=   #    @ #    
+
+I/openLevel::levelStr=   #    ###    
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   ######      
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: test
+I/showDirectoryListing::Level: seeds
+I/makeGridSprites::Grid:1X4, count=2
+I/showDirectoryListing::Folder: (null)
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=   ########    
+
+I/openLevel::levelStr=   #     @#    
+
+I/openLevel::levelStr=   #    @ #    
+
+I/openLevel::levelStr=   #    ###    
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   ######      
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: test
+I/showDirectoryListing::Level: seeds
+I/makeGridSprites::Grid:1X4, count=2
+I/showDirectoryListing::Folder: (null)
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=   ########    
+
+I/openLevel::levelStr=   #     @#    
+
+I/openLevel::levelStr=   #    @ #    
+
+I/openLevel::levelStr=   #    ###    
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   ######      
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: test
+I/showDirectoryListing::Level: seeds
+I/makeGridSprites::Grid:1X4, count=2
+I/showDirectoryListing::Folder: (null)
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=   ########    
+
+I/openLevel::levelStr=   #     @#    
+
+I/openLevel::levelStr=   #    @ #    
+
+I/openLevel::levelStr=   #    ###    
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   ######      
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: test
+I/showDirectoryListing::Level: seeds
+I/makeGridSprites::Grid:1X4, count=2
+I/showDirectoryListing::Folder: (null)
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=   ########    
+
+I/openLevel::levelStr=   #     @#    
+
+I/openLevel::levelStr=   #    @ #    
+
+I/openLevel::levelStr=   #    ###    
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   ######      
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/initVars::Screen:640 480
+I/initVars::Res path:/home/user/sokoban/res/
+I/showDirectoryListing::LISTING
+I/showDirectoryListing::Level: test
+I/showDirectoryListing::Level: seeds
+I/makeGridSprites::Grid:1X4, count=2
+I/showDirectoryListing::Folder: (null)
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=   ########    
+
+I/openLevel::levelStr=   #     @#    
+
+I/openLevel::levelStr=   #    @ #    
+
+I/openLevel::levelStr=   #    ###    
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   #    #      
+
+I/openLevel::levelStr=   ######      
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+
+I/openLevel::levelStr=               
+

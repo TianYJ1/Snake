@@ -33,6 +33,7 @@ Requeried addons see in README.md\n
 /*<
 Including all psedo-classes (managers) of the project for giving access everything to everything
 **/
+#include "Constants.h"
 #include "Button.h"
 #include "EventManager.h"
 #include "SpriteRenderer.h"
@@ -43,7 +44,7 @@ Including all psedo-classes (managers) of the project for giving access everythi
 #include "levGen.h"
 #include "LevelEditor.h"
 #include "MemoryWorker.h"
-#include "Constants.h"
+
 
 /*<
 Defining constants

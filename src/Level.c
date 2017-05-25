@@ -84,7 +84,7 @@ void onLevelFileOpened(int levelNum, int playerX, int playerY, int cratesCount)
    x = playerX; y = playerY;
    addButtonSprite(REPL_SPR, "", SCREEN_WIDTH_UNIT * 1870, 0, SCREEN_WIDTH_UNIT * 120, SCREEN_WIDTH_UNIT * 120, 255, 255, 255, (*restart), LEVEL_SCENE, 0, 0);
    addButtonSprite(PUASE_SPR, "", SCREEN_WIDTH_UNIT * 1750, 0, SCREEN_WIDTH_UNIT * 120, SCREEN_WIDTH_UNIT * 120, 255, 255, 255, (*onPause), LEVEL_SCENE, 0, 0);
-   cratesLeftLabelId = addLabel(SCREEN_WIDTH_UNIT * 2000, SCREEN_HEIGHT_UNIT * 1900, 255, 255, 255, LEVEL_SCENE, ALLEGRO_ALIGN_RIGHT,"$S%i", CR_LEFT,cratesCountN);
+   cratesLeftLabelId = addLabel(SCREEN_WIDTH_UNIT * 2000, SCREEN_HEIGHT_UNIT * 1900, 255, 255, 255, LEVEL_SCENE, ALLEGRO_ALIGN_RIGHT,"%s%i", CR_LEFT,cratesCountN);
    pushesMadeLabelId = addLabel(SCREEN_WIDTH_UNIT * 2000, SCREEN_HEIGHT_UNIT * 1800, 255, 255, 255, LEVEL_SCENE, ALLEGRO_ALIGN_RIGHT, "Pushes:%i", pushesMade);
    addLabel(SCREEN_WIDTH_UNIT * 2000, SCREEN_HEIGHT_UNIT * 1700, 255, 255, 255, LEVEL_SCENE, ALLEGRO_ALIGN_RIGHT, "Level name:%s", levelsNames[levelNum]);
    playerSpriteId = addSprite(LOGO_SPR_LINK, SCREEN_WIDTH_UNIT* MAP_OFFSET + TILE_SIZE*SCREEN_WIDTH_UNIT*playerX, SCREEN_WIDTH_UNIT *MAP_OFFSET + TILE_SIZE*SCREEN_WIDTH_UNIT*playerY, TILE_SIZE*SCREEN_WIDTH_UNIT, TILE_SIZE*SCREEN_WIDTH_UNIT, LEVEL_SCENE, 3);
@@ -187,7 +187,7 @@ void movePlayer(int up, int right)
    if (map[newX][newY] == 1 || newX >= LEVEL_WIDTH || newY >=LEVEL_HEIGHT || newX < 0 || newY < 0)
       assign = false;
    else { /* Just nothing, just to meet the criteria*/ }
-   Log_i(__func__, "\n\t%i\n%i\t\t%i\n\t%i", map[newX][newY - 1], map[newX - 1][newY], map[newX + 1][newY], map[newX][newY + 1]);
+   Log_i(__func__, "\n   %i\n%i      %i\n   %i", map[newX][newY - 1], map[newX - 1][newY], map[newX + 1][newY], map[newX][newY + 1]);
    if (map[newX][newY] == 3 || map[newX][newY] == 4)
    {
       Log_i(__func__, "Crate detected");

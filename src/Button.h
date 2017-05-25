@@ -7,7 +7,7 @@
 \brief Button\n
 This is for managing and rendering buttons
 */   
-#define BUTTONS_NAME_SIZE 64
+
 struct ButtonS
 {
    char * text;//<! Text on the button
@@ -116,6 +116,7 @@ void clearButtons(int scene);
    @param layer [in] layer number for sprite to appear on the screen
 */
 void makeListSprites(int count, char names[][BUTTONS_NAME_SIZE], char * src, int x, int y, int w, int h, int(*callBacks[])(int id), int scene, int layer);
+
 /**
 @}
 */

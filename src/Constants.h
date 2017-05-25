@@ -9,14 +9,17 @@
 This is for defining constans for whole project
 */
 //DEFINING numbers
-#define DEBUG_MODE                  0//!< Debug mode is setting debug mode to true if 1. In this mode screen is half-size and windowned
-#define LEVEL_HEIGHT                15 //!< Determines cells amount in height at level
-#define LEVEL_WIDTH                 15 //!< Cells amount in width
-#define SEED_LENTGH                 5 //!< Requried for level generator, not yet implemented
-#define TILE_SIZE                   64 //!< Size of cells on level in pixels
-#define SPRITES_LAYERS_AMOUNT       16 //!< Amount of layers for sprites rendering
-#define LEVEL_SELECT_ITEMS_PER_PAGE 12 //!< Amount of levels showed on Level Select Scene on any page (max)
-#define MAP_OFFSET                  100 //!< Offset of all objects on level
+#define DEBUG_MODE                  0/*!< Debug mode is setting debug mode to true if 1. In this mode screen is half-size and windowned*/
+#define LEVEL_HEIGHT                15 /*!< Determines cells amount in height at level */
+#define LEVEL_WIDTH                 15 /*!< Cells amount in width */
+#define SEED_LENTGH                 5 /*!< Requried for level generator, not yet implemented */
+#define TILE_SIZE                   64 /*!< Size of cells on level in pixels */
+#define SPRITES_LAYERS_AMOUNT       16 /*!< Amount of layers for sprites rendering */
+#define LEVEL_SELECT_ITEMS_PER_PAGE 12 /*!< Amount of levels showed on Level Select Scene on any page (max) */
+#define MAP_OFFSET                  100 /*!< Offset of all objects on level */
+#define BUTTONS_NAME_SIZE           64 /*!< Default length for texts on buttons*/
+#define DEFAULT_LENGTH              128 /*!< Default length for arrays */
+#define DEFAULT_LENGTH_STR          1024 /*!< Default length for strings */
 
 //DEFINING scenes
 #define MAINMENU_SCENE              0

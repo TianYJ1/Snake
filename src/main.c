@@ -127,15 +127,13 @@ int main(void)
    Log_i(__func__, "Initied\n================\n");
    int(*callBacks[])(int id) = { openLevelSelect,ExitProg, sliceFile, openLevelEditor };
    char names[][BUTTONS_NAME_SIZE] = { LEV_SEL_MENU ,EX_MENU,SLICE_MENU,LE_MENU};
-
    char *p = (char*)malloc(strlen(resourcePath)+16);
    sprintf(p,"%s",resourcePath);
    free(resourcePath);
-
    resourcePath = (char*)malloc(strlen(resourcePath) + 16);
    sprintf(resourcePath, "%s%s", p, DEF_LEV_FOLD);
    pathCur = resourcePath;
-   
+   free(p);
    makeListSprites(4,names, DEF_BUT_SPR, SCREEN_WIDTH/2-125, 25, 250, SCREEN_HEIGHT_UNIT *150, callBacks, MAINMENU_SCENE, 1);
    //sliceFile();
    addSprite(BG_SPR, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, -1, 0);
@@ -147,12 +145,26 @@ int main(void)
    
    initEventManager();//last to be called untill die
    saveMem();
-   //al_rest(5.0);
-   //system("pause");
-   al_destroy_font(font);
-   al_destroy_display(display);
-   al_destroy_path(path);
-   return 0;
+	if(font)
+		al_destroy_font(font);
+	if(AllegroFont)
+		al_destroy_font(AllegroFont);
+	if(menuSample)
+		al_destroy_sample(menuSample);
+	if(levelSample)
+		al_destroy_sample(levelSample);
+	if(spritesArr)
+		clear(&spritesArr);
+	if(labelsArr)
+		clear(&labelsArr);
+	if(targetFile)
+		fclose(targetFile);
+	if(path)
+		al_destroy_path(path);
+	if(display)
+		al_destroy_display(display);
+
+	return 0;
 
 }
 /*<

@@ -102,6 +102,6 @@ void saveMem()
       cur = next;
    }
    fclose(saverFile);
-   saverFile = fopen("saves.data", "r+");
+   saverFile = fopen(DATA_SAVE_FILE, "r+");
 
 }
