@@ -60,3 +60,5 @@ src/logs.txt
 src/Debug/*
 src/Release/*
 src/YASGen0_Generator.c
+res/saves.data
+src/allegro.log

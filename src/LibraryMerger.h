@@ -5,17 +5,18 @@
 @{
 
 @author arseniy899
-	\brief LibraryMerger.\n
+   \brief LibraryMerger.\n
     Here all requried libraries ar included
 */
 /*<
-	Including system libraries
+   Including system libraries
 **/
 #include <stdio.h>
 #include <math.h>
 #include <time.h>
 #include <stdlib.h>
 #include <stdarg.h>
+
 /*<
 Including allegro5 libraries\n
 Refer to [Allegro](http://liballeg.org/)\n
@@ -42,34 +43,12 @@ Including all psedo-classes (managers) of the project for giving access everythi
 #include "levGen.h"
 #include "LevelEditor.h"
 #include "MemoryWorker.h"
+#include "Constants.h"
 
 /*<
 Defining constants
 **/
-#define DEBUG_MODE 0//!< Debug mode is setting debug mode to true if 1. In this mode screen is half-size and windowned
 
-#define LEVEL_HEIGHT 15 //!< Determines cells amount in height at level
-#define LEVEL_WIDTH 15 //!< Cells amount in width
-#define SEED_LENTGH 5 //!< Requried for level generator, not yet implemented
-#define TILE_SIZE 64 //!< Size of cells on level in pixels
-#define SPRITES_LAYERS_AMOUNT 16 //!< Amount of layers for sprites rendering
-#define LEVEL_SELECT_ITEMS_PER_PAGE 12 //!< Amount of levels showed on Level Select Scene on any page (max)
-/*!
- \addgroup Const Constants of scenes id
-	\brief Scenes id
-	These ids are requried to determine which scene is currenlty running and going to be run. It's much easier to use friendly names.
-@{	
-*/
-#define MAINMENU_SCENE 0
-#define LEVEL_SELECT_SCENE 1
-#define LEVEL_SCENE 2
-#define LEVEL_SCENE_PAUSE 3
-#define LEVEL_SCENE_COMPLETE 4
-#define LEVEL_EDITOR_SCENE 5
-/*! 
-@}
-*/
-#define MAP_OFFSET 100 //!< Offset of all objects on level
 
 extern int SCREEN_WIDTH, SCREEN_HEIGHT, SCENE_NOW, EventManagerThreadRunning; //!< Flag, which control main cycle. If it is false (0), the game stops
 extern float SCREEN_WIDTH_UNIT, SCREEN_HEIGHT_UNIT;//!< Universal screen units which are inependent from screen size. Max units - 2000. Everything is counted percent-like
