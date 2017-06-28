@@ -1,7 +1,6 @@
 SHELL = /bin/sh
 
-PROJECT  := project_name
-
+PROJECT  := snake
 # ------------------
 # External programs
 # ------------------
